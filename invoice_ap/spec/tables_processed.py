@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from ..common import enums as E
-from .model import Table, day, dec, enum, flag, integer, lst, money, pct, pk, qty, ref, text, ts
+from .model import Table, day, dec, enum, flag, integer, lst, money, ordinal, pct, pk, qty, ref, text, ts
 
 TAX_CODES = ("GST0", "GST5", "GST12", "GST18", "EXEMPT")
 _LOWCONF = "unless capture_status = LOW_CONFIDENCE (then empty when unreadable)"
@@ -13,25 +13,28 @@ CAPTURED_INVOICE = Table(
     "Header fields as extracted from the document, plus engine-resolved references. Printed values are "
     "never corrected: a wrong printed total stays wrong here so validation can catch it.",
     "one row per received document", ("invoice_id",), (
-        ref("invoice_id", "intake_manifest.invoice_id", "Invoice ID from the intake manifest",
-            "invoice_id", unique=True, origin="assigned"),
+        pk("invoice_id", "invoice_id", "Invoice ID assigned after vendor resolution", origin="decided",
+           rule="ID-01: INV-<VEN-01 vendor_id, or VND-00000 if unresolved>-2026-<intake_seq>; equals "
+                "the source invoice_id exactly when the vendor was resolved correctly"),
         ref("doc_id", "intake_manifest.doc_id", "Source document", "doc_id", unique=True),
         enum("channel", E.CHANNELS, "Intake channel", origin="derived", derivation="intake_manifest.channel"),
-        ts("captured_at", "When extraction finished", origin="decided"),
+        ts("captured_at", "When extraction finished", origin="decided",
+           rule=">= intake_manifest.received_at and <= as_of_date"),
         enum("capture_status", E.CAPTURE_STATUSES, "LOW_CONFIDENCE when any required field < threshold",
              origin="decided", rule="CAP-01"),
         dec("min_field_confidence", "Lowest confidence over required fields", min_value="0",
             max_value="1", origin="derived", derivation="min(extraction_field.confidence)"),
         text("vendor_name", "Vendor name as printed", origin="captured"),
         text("vendor_tax_id", "Tax registration number as printed", origin="captured"),
-        ref("vendor_id", "vendor.vendor_id", "Vendor resolved from the tax registration number",
-            "vendor_id", required=False, origin="decided", rule="VEN-01; empty = VENDOR_NOT_FOUND"),
+        ref("vendor_id", "vendor.vendor_id", "Vendor resolved from the printed tax registration number",
+            "vendor_id", required=False, origin="decided",
+            rule="VEN-01 is its only source (never the sender or an ID); empty = VENDOR_NOT_FOUND"),
         text("vendor_invoice_number", "Invoice number as printed", origin="captured",
              required=False, required_when=_LOWCONF),
         text("normalized_invoice_number", "Number after DUP normalisation", origin="derived",
              derivation="uppercase, split on non-alphanumerics, strip leading zeros per numeric token, join"),
         day("invoice_date", "Invoice date (normalised to ISO)", origin="captured", required=False,
-            required_when=_LOWCONF),
+            required_when=_LOWCONF, rule="a valid calendar date; DATE-01 requires <= received date"),
         text("po_number", "PO reference as printed", required=False, origin="captured"),
         ref("po_id", "purchase_order.po_id", "Resolved PO", "po_id", required=False, origin="decided",
             rule="PO-01"),
@@ -54,8 +57,9 @@ CAPTURED_INVOICE_LINE = Table(
         pk("invoice_line_id", "invoice_line_id", "Line ID INVL-<invoice_id>-<printed line number>",
            rule="unique; built from invoice_id and the printed line number"),
         ref("invoice_id", "captured_invoice.invoice_id", "Parent captured invoice", "invoice_id"),
-        integer("line_number", "Printed line number", min_value="1", origin="captured"),
-        integer("po_line_number", "PO line number as printed", required=False, origin="captured"),
+        ordinal("line_number", "Printed line number", min_value="1", origin="captured"),
+        ordinal("po_line_number", "PO line number as printed", required=False, origin="captured",
+                rule="must resolve to a line of the quoted PO (PO-03)"),
         ref("po_line_id", "purchase_order_line.po_line_id", "Resolved PO line", "po_line_id",
             required=False, origin="decided", rule="PO-03"),
         ref("sku_id", "sku.sku_id", "SKU as printed", "sku_id", required=False, origin="captured"),
@@ -109,9 +113,11 @@ INVOICE_DECISION = Table(
         flag("payment_ready", "A payment record exists", origin="derived",
              derivation="exists payment for invoice_id", rule="never true when blocked"),
         ref("payment_id", "payment.payment_id", "Payment record", "payment_id", required=False),
-        ts("decided_at", "When validation and matching finished", origin="decided"),
+        ts("decided_at", "When validation and matching finished", origin="decided",
+           rule=">= captured_invoice.captured_at and <= as_of_date"),
         text("policy_version", "Policy version applied", fk="policy_version.policy_version"),
-        lst("rule_ids", "Rule IDs that fired", origin="decided"),
+        lst("rule_ids", "Rule IDs that fired", origin="decided", pattern=r"^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$",
+            rule="each ID is documented in docs/business_rules.md"),
     ))
 
 MATCH_RESULT = Table(
@@ -146,7 +152,8 @@ MATCH_RESULT = Table(
         money("expected_tax_amount", "Recomputed tax for the printed net", required=False,
               origin="derived", derivation="round_half_up(line_net_amount x rate / 100, 2)"),
         enum("line_match_status", E.MATCH_STATUSES, "Line match status", origin="decided", rule="MS-01"),
-        lst("rule_ids", "Rule IDs evaluated", origin="decided"),
+        lst("rule_ids", "Rule IDs evaluated", origin="decided", pattern=r"^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$",
+            rule="each ID is documented in docs/business_rules.md"),
     ))
 
 MATCH_ALLOCATION = Table(
@@ -159,7 +166,7 @@ MATCH_ALLOCATION = Table(
         ref("grn_line_id", "goods_receipt_line.grn_line_id", "Receipt line", "grn_line_id",
             rule="same PO line as the invoice line; posted before the invoice was processed"),
         qty("allocated_qty", "Quantity of the receipt line consumed", min_value="0.01", origin="decided"),
-        integer("allocation_seq", "FIFO order within the invoice line", min_value="1", origin="assigned"),
+        ordinal("allocation_seq", "FIFO order within the invoice line", min_value="1", origin="assigned"),
     ), unique_together=(("invoice_line_id", "grn_line_id"),))
 
 DUPLICATE_PAIR = Table(
@@ -172,7 +179,8 @@ DUPLICATE_PAIR = Table(
             rule="received before invoice_id; same vendor"),
         enum("match_type", E.DUPLICATE_MATCH_TYPES, "Which duplicate rule matched", origin="decided",
              rule="DUP-01..03"),
-        lst("matched_keys", "Fields that matched", origin="decided"),
+        lst("matched_keys", "Fields that matched", ("vendor_id", "normalized_number", "invoice_date",
+            "header_gross_amount", "po_id"), origin="decided", rule="the key set of the matching DUP rule"),
     ))
 
 AP_EXCEPTION = Table(
@@ -204,7 +212,8 @@ AP_EXCEPTION = Table(
         ref("assigned_user_id", "app_user.user_id", "Assignee inside the role", "user_id",
             origin="decided", rule="[assignment] rules"),
         enum("queue", E.QUEUES[:-1], "Work queue", origin="derived", derivation="routing matrix"),
-        ts("created_at", "Raised at", origin="decided"),
+        ts("created_at", "Raised at", origin="decided",
+           rule=">= captured_invoice.captured_at and <= as_of_date"),
         day("sla_due_date", "Created date + SLA business days", origin="derived", rule="SLA-01"),
         enum("status_as_of", E.EXCEPTION_STATUSES, "Status at the as-of date", origin="derived",
              derivation="last EXCEPTION ap_event"),
@@ -221,7 +230,7 @@ APPROVAL = Table(
         ref("invoice_id", "captured_invoice.invoice_id", "Invoice", "invoice_id",
             rule="invoice had no open blocking exception when approvals were requested"),
         enum("level", E.APPROVAL_LEVELS, "Approval level"),
-        integer("sequence", "Order within the invoice's chain", min_value="1", origin="assigned"),
+        ordinal("sequence", "Order within the invoice's chain", min_value="1", origin="assigned"),
         text("approval_band", "Band from the approval matrix", origin="derived", rule="APR-01"),
         enum("approver_role", ("SYSTEM", "BUSINESS_REQUESTER", "APPROVER"), "Role of the approver",
              origin="derived", derivation="approval.levels.<level>.role"),
@@ -272,7 +281,7 @@ AP_EVENT = Table(
         text("entity_id", "invoice_id, exception_id, approval_id or payment_id",
              rule="exists in the table named by entity_type"),
         ref("invoice_id", "captured_invoice.invoice_id", "Invoice the event belongs to", "invoice_id"),
-        integer("seq", "1-based sequence per entity", min_value="1", origin="assigned"),
+        ordinal("seq", "1-based sequence per entity", min_value="1", origin="assigned"),
         enum("from_status", E.INVOICE_STATUSES + E.EXCEPTION_STATUSES + E.APPROVAL_STATUSES
              + E.PAYMENT_STATUSES, "Status before (empty on creation)", required=False,
              required_when="seq > 1"),
@@ -292,8 +301,8 @@ POLICY_VERSION = Table(
         text("policy_version", "Semantic version from [policy].version", unique=True,
              pattern=r"^\d+\.\d+\.\d+$"),
         text("policy_id", "Policy identifier"),
-        day("effective_from", "Effective date"),
-        day("as_of_date", "Fixed as-of date"),
+        day("effective_from", "Effective date", rule="<= as_of_date"),
+        day("as_of_date", "Fixed as-of date", rule=">= effective_from; no completed event after it"),
         text("sha256", "SHA-256 of config/ap_policy.toml", pattern=r"^[0-9a-f]{64}$", origin="derived",
              derivation="sha256(policy file bytes)"),
     ))

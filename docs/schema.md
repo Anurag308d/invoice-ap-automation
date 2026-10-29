@@ -12,17 +12,21 @@ data (actor roles, users, payment terms, tax codes, SKUs), the vendor status his
 logs, the intake manifest, the engine's capture, match, exception and decision tables, the
 `match_allocation` bridge, and the ground truth.
 
-The Invoice entity has two physical representations that share one `invoice_id` (1:1):
+The Invoice entity has two physical representations, linked 1:1 through `doc_id`:
 
 - `source/invoice` (+ `invoice_line`): the invoice as the vendor issued it, which is what the
-  document prints. It is evaluation-only and serves as the extraction ground truth.
+  document prints. It is evaluation-only and serves as the extraction ground truth. Its
+  `invoice_id` uses the true vendor: `INV-<vendor_id>-2026-<intake_seq>`.
 - `processed/captured_invoice` (+ `captured_invoice_line`): the invoice as the AP system captured it.
   Approvals, payments, exceptions and events reference this record, because the engine never sees
-  the source layer.
+  the source layer. The engine assigns its `invoice_id` itself (rule ID-01), only after resolving
+  the vendor from the printed tax registration number (VEN-01). The intake manifest has no
+  `invoice_id`, so the vendor is never handed to the engine (ADR-037).
 
-The identity link (`invoice_id`, `invoice_line_id`) is a logical 1:1 relationship validated by the
-evaluation. It is not declared as a foreign key, because engine-written tables may not point into
-evaluation-only layers (enforced by `tests/test_spec.py`).
+The two `invoice_id`s are equal exactly when the engine resolved the vendor correctly, so their
+agreement is a measured outcome, not an input. The `doc_id` link is a logical 1:1 relationship
+validated by the evaluation. It is not declared as a foreign key, because engine-written tables
+may not point into evaluation-only layers (enforced by `tests/test_spec.py`).
 
 ## 2. Logical ERD: core entities
 
@@ -46,7 +50,7 @@ erDiagram
   VENDOR {
     string vendor_id PK "VND-00001"
     string tax_registration_id UK
-    string status_as_of "derived from history"
+    string snapshot_status "reporting only"
   }
   PURCHASE_ORDER {
     string po_id PK "PO-2026-000001"
@@ -153,12 +157,12 @@ lifecycle) reference their entity through `(entity_type, entity_id)`.
 | `goods_receipt` | master | `grn_id` | - | `po_id` -> `purchase_order.po_id`<br>`vendor_id` -> `vendor.vendor_id`<br>`received_by` -> `app_user.user_id` |
 | `goods_receipt_line` | master | `grn_line_id` | `(grn_id, line_number)`, `(grn_id, po_line_id)` | `grn_id` -> `goods_receipt.grn_id`<br>`po_line_id` -> `purchase_order_line.po_line_id` |
 | `erp_event` | master | `event_id` | `(entity_type, entity_id, seq)` | `actor_id` -> `app_user.user_id` |
-| `intake_manifest` | inbox | `doc_id` | `invoice_id`, `file_path` | `sender_vendor_id` -> `vendor.vendor_id` |
+| `intake_manifest` | inbox | `doc_id` | `intake_seq`, `file_path` | `sender_vendor_id` -> `vendor.vendor_id` (optional) |
 | `invoice` | source | `invoice_id` | `doc_id` | `doc_id` -> `intake_manifest.doc_id`<br>`vendor_id` -> `vendor.vendor_id`<br>`po_id` -> `purchase_order.po_id` (optional)<br>`attention_user_id` -> `app_user.user_id` (optional) |
 | `invoice_line` | source | `invoice_line_id` | `(invoice_id, line_number)` | `invoice_id` -> `invoice.invoice_id`<br>`po_line_id` -> `purchase_order_line.po_line_id` (optional)<br>`sku_id` -> `sku.sku_id` (optional)<br>`tax_code` -> `tax_code.tax_code` |
 | `ground_truth` | ground_truth | `invoice_id` | `doc_id` | `invoice_id` -> `invoice.invoice_id`<br>`doc_id` -> `intake_manifest.doc_id`<br>`expected_duplicate_of` -> `invoice.invoice_id` (optional) |
 | `ground_truth_line` | ground_truth | `invoice_line_id` | - | `invoice_line_id` -> `invoice_line.invoice_line_id`<br>`invoice_id` -> `invoice.invoice_id` |
-| `captured_invoice` | processed | `invoice_id` | `doc_id` | `invoice_id` -> `intake_manifest.invoice_id`<br>`doc_id` -> `intake_manifest.doc_id`<br>`vendor_id` -> `vendor.vendor_id` (optional)<br>`po_id` -> `purchase_order.po_id` (optional)<br>`attention_user_id` -> `app_user.user_id` (optional) |
+| `captured_invoice` | processed | `invoice_id` | `doc_id` | `doc_id` -> `intake_manifest.doc_id`<br>`vendor_id` -> `vendor.vendor_id` (optional)<br>`po_id` -> `purchase_order.po_id` (optional)<br>`attention_user_id` -> `app_user.user_id` (optional) |
 | `captured_invoice_line` | processed | `invoice_line_id` | `(invoice_id, line_number)` | `invoice_id` -> `captured_invoice.invoice_id`<br>`po_line_id` -> `purchase_order_line.po_line_id` (optional)<br>`sku_id` -> `sku.sku_id` (optional)<br>`tax_code` -> `tax_code.tax_code` |
 | `extraction_field` | processed | `extraction_field_id` | `(doc_id, invoice_line_id, field_name)` | `doc_id` -> `intake_manifest.doc_id`<br>`invoice_id` -> `captured_invoice.invoice_id`<br>`invoice_line_id` -> `captured_invoice_line.invoice_line_id` (optional) |
 | `invoice_decision` | processed | `invoice_id` | - | `invoice_id` -> `captured_invoice.invoice_id`<br>`duplicate_of_invoice_id` -> `captured_invoice.invoice_id` (optional)<br>`payment_id` -> `payment.payment_id` (optional)<br>`policy_version` -> `policy_version.policy_version` |
@@ -171,7 +175,7 @@ lifecycle) reference their entity through `(entity_type, entity_id)`.
 | `ap_event` | processed | `event_id` | `(entity_type, entity_id, seq)` | `invoice_id` -> `captured_invoice.invoice_id`<br>`actor_id` -> `app_user.user_id`<br>`policy_version` -> `policy_version.policy_version` |
 | `policy_version` | processed | `policy_version` | - | - |
 
-29 tables, 70 foreign keys. Polymorphic event references (`erp_event.entity_id`, `ap_event.entity_id`) are validated against the table named by `entity_type` instead of a declared FK.
+29 tables, 69 foreign keys. Polymorphic event references (`erp_event.entity_id`, `ap_event.entity_id`) are validated against the table named by `entity_type` instead of a declared FK.
 <!-- END GENERATED: keys -->
 
 ## 5. Cardinality
@@ -194,7 +198,7 @@ lifecycle) reference their entity through `(entity_type, entity_id)`.
 | C14 | invoice | ap_exception | 1:N (0..n) | - | `ap_exception.invoice_id` |
 | C15 | invoice (duplicate) | invoice (original) | N:1 | only detected duplicates | `duplicate_pair` |
 | C16 | intake_manifest | invoice / captured_invoice | 1:1 | mandatory | `doc_id` (unique) |
-| C17 | invoice | captured_invoice | 1:1 | identity link, not a declared FK | shared `invoice_id` |
+| C17 | invoice | captured_invoice | 1:1 | logical link, not a declared FK | shared `doc_id`; equal `invoice_id` is a measured VEN-01 outcome |
 | C18 | invoice / invoice_line | ground_truth / ground_truth_line | 1:1 | mandatory | `invoice_id`, `invoice_line_id` |
 | C19 | captured_invoice_line | match_result | 1:1 | non-PO lines get NOT_APPLICABLE | `match_result.invoice_line_id` |
 | C20 | actor_role | app_user | 1:N | every role has at least one user | `app_user.role_code` |
@@ -202,10 +206,13 @@ lifecycle) reference their entity through `(entity_type, entity_id)`.
 | C22 | payment_terms, tax_code, sku | vendor, PO lines, invoice lines | 1:N | - | reference FKs |
 | C23 | every stateful entity | its events | 1:N (1..n) | creation event mandatory | `vendor_status_history`, `erp_event`, `ap_event` |
 
-The many-to-many relationship C11 occurs in both directions. A consolidated invoice line consumes
-two receipt lines. A receipt line can be consumed by several invoice lines when a vendor bills one
-delivery in parts. The bridge allocates billed quantity to received quantity in FIFO order of
-posting.
+The many-to-many relationship C11 is generated in both directions:
+- archetype A21 (`C-CONSOLIDATED`, 45 POs at full scale): one invoice line consumes two receipt
+  lines;
+- archetype A12 (`C-PARTIAL-BILLING`, 10 POs, 20 invoices): one receipt line is consumed by two
+  invoice lines, because the vendor bills one delivery in parts.
+
+The bridge allocates billed quantity to received quantity in FIFO order of posting.
 
 ## 6. Optional relationships and conditional fields
 
@@ -230,13 +237,13 @@ posting.
 | Payment terms | Copied onto the PO at issue (snapshot), so a later change to the vendor's default would not alter open POs. Due date = invoice date + term days. |
 | PO validity | Not modelled: POs do not expire. `promised_delivery_date` is informational and drives the generated receipt dates. |
 | Users | `app_user.active_from`; every user is active for the whole of 2026. |
-| As-of date | Every `*_as_of` status is evaluated at `policy.as_of_date = 2026-12-31`. |
+| As-of date | `policy.as_of_date = 2026-10-22`, a fixed past date. Every `*_as_of` and `snapshot_*` value is evaluated then, and no completed event lies after it. The master `snapshot_*` columns are reporting only and never an engine input (ADR-038). |
 
 ## 8. Lifecycle state machines
 
 Every state change is an append-only event (`vendor_status_history`, `erp_event`, `ap_event`)
 carrying from-status, to-status, timestamp, actor role and id, and a reason or rule id. History is
-never overwritten. An entity's current status (`*_as_of` columns, `invoice_decision.status_as_of`) must
+never overwritten. An entity's current status (`snapshot_status` in master, `*_as_of` in processed) must
 equal the `to_status` of its last event, and the validation suite (Stage 5) checks every recorded
 sequence against these machines.
 
@@ -245,7 +252,7 @@ sequence against these machines.
 
 ```mermaid
 stateDiagram-v2
-  [*] --> ACTIVE: ONBOARDED by the system administrator
+  [*] --> ACTIVE: ONBOARDED
   ACTIVE --> BLOCKED: KYC_DOCUMENTS_EXPIRED
   BLOCKED --> ACTIVE: KYC_RENEWED
   ACTIVE --> CLOSED: RELATIONSHIP_ENDED
@@ -253,127 +260,128 @@ stateDiagram-v2
   CLOSED --> [*]
 ```
 
-| From | To | Trigger | Produced by the simulation |
-|---|---|---|---|
-| (create) | ACTIVE | ONBOARDED by the system administrator (effective = onboarded_date) | yes |
-| ACTIVE | BLOCKED | KYC_DOCUMENTS_EXPIRED (system administrator) | yes |
-| BLOCKED | ACTIVE | KYC_RENEWED (system administrator) | yes |
-| ACTIVE | CLOSED | RELATIONSHIP_ENDED (system administrator) | yes |
-| BLOCKED | CLOSED | RELATIONSHIP_ENDED (system administrator) | yes |
+| From | To | Label | Trigger | Produced by the simulation |
+|---|---|---|---|---|
+| (create) | ACTIVE | ONBOARDED | system administrator onboards the vendor; effective = onboarded_date | yes |
+| ACTIVE | BLOCKED | KYC_DOCUMENTS_EXPIRED | system administrator blocks the vendor | yes |
+| BLOCKED | ACTIVE | KYC_RENEWED | system administrator reinstates the vendor | yes |
+| ACTIVE | CLOSED | RELATIONSHIP_ENDED | system administrator closes the vendor | yes |
+| BLOCKED | CLOSED | RELATIONSHIP_ENDED | system administrator closes a blocked vendor | yes |
 
 #### PURCHASE_ORDER
 
 ```mermaid
 stateDiagram-v2
-  [*] --> ISSUED: PO_ISSUED by the business requester
-  ISSUED --> PARTIALLY_RECEIVED: GOODS_RECEIVED
-  ISSUED --> RECEIVED: GOODS_RECEIVED
-  PARTIALLY_RECEIVED --> RECEIVED: GOODS_RECEIVED
+  [*] --> ISSUED: PO_ISSUED
+  ISSUED --> PARTIALLY_RECEIVED: GOODS_RECEIVED partly
+  ISSUED --> RECEIVED: GOODS_RECEIVED in full
+  PARTIALLY_RECEIVED --> RECEIVED: GOODS_RECEIVED rest
 ```
 
-| From | To | Trigger | Produced by the simulation |
-|---|---|---|---|
-| (create) | ISSUED | PO_ISSUED by the business requester | yes |
-| ISSUED | PARTIALLY_RECEIVED | GOODS_RECEIVED: some ordered quantity still open | yes |
-| ISSUED | RECEIVED | GOODS_RECEIVED: every line received in full or over | yes |
-| PARTIALLY_RECEIVED | RECEIVED | GOODS_RECEIVED: remaining quantity received | yes |
+| From | To | Label | Trigger | Produced by the simulation |
+|---|---|---|---|---|
+| (create) | ISSUED | PO_ISSUED | business requester raises and issues the PO | yes |
+| ISSUED | PARTIALLY_RECEIVED | GOODS_RECEIVED partly | a GRN leaves some ordered quantity open | yes |
+| ISSUED | RECEIVED | GOODS_RECEIVED in full | a GRN receives every line in full or over | yes |
+| PARTIALLY_RECEIVED | RECEIVED | GOODS_RECEIVED rest | a later GRN receives the remaining quantity | yes |
 
 #### GOODS_RECEIPT
 
 ```mermaid
 stateDiagram-v2
-  [*] --> POSTED: GRN_POSTED by the business requester who confirm
+  [*] --> POSTED: GRN_POSTED
 ```
 
-| From | To | Trigger | Produced by the simulation |
-|---|---|---|---|
-| (create) | POSTED | GRN_POSTED by the business requester who confirmed the receipt | yes |
+| From | To | Label | Trigger | Produced by the simulation |
+|---|---|---|---|---|
+| (create) | POSTED | GRN_POSTED | the business requester who confirmed the receipt posts the GRN | yes |
 
 #### INVOICE
 
 ```mermaid
 stateDiagram-v2
-  [*] --> RECEIVED: intake registers the document
-  RECEIVED --> CAPTURED: CAP-01 extraction finished
-  CAPTURED --> ON_HOLD: at least one blocking exception is open
-  CAPTURED --> REJECTED: DUP-01 exact resubmission
-  CAPTURED --> PENDING_APPROVAL: every check passed
-  PENDING_APPROVAL --> APPROVED: the last required approval level approved
-  PENDING_APPROVAL --> REJECTED: an approver rejects
-  APPROVED --> PAYMENT_READY: PAY-01 satisfied and payment scheduled
-  APPROVED --> ON_HOLD: PAY-03 vendor not payable on the ready date
-  ON_HOLD --> PENDING_APPROVAL: blocking exceptions resolved by their owners
+  [*] --> RECEIVED: intake registers document
+  RECEIVED --> CAPTURED: CAP-01 extraction done
+  CAPTURED --> ON_HOLD: blocking exception open
+  CAPTURED --> REJECTED: DUP-01 exact duplicate
+  CAPTURED --> PENDING_APPROVAL: all checks passed
+  PENDING_APPROVAL --> APPROVED: last level approved
+  PENDING_APPROVAL --> REJECTED: approver rejects
+  APPROVED --> PAYMENT_READY: PAY-01 ready
+  APPROVED --> ON_HOLD: PAY-03 vendor not payable
+  ON_HOLD --> PENDING_APPROVAL: exceptions resolved
   ON_HOLD --> REJECTED: rejected after review
-  PAYMENT_READY --> PAID: PAY-05 payment run releases the payment
+  PAYMENT_READY --> PAID: PAY-05 payment run
   REJECTED --> [*]
   PAID --> [*]
 ```
 
-| From | To | Trigger | Produced by the simulation |
-|---|---|---|---|
-| (create) | RECEIVED | intake registers the document (SYSTEM) | yes |
-| RECEIVED | CAPTURED | CAP-01 extraction finished (SYSTEM) | yes |
-| CAPTURED | ON_HOLD | at least one blocking exception is open (SYSTEM) | yes |
-| CAPTURED | REJECTED | DUP-01 exact resubmission (SYSTEM) | yes |
-| CAPTURED | PENDING_APPROVAL | every check passed; APR-01 chain requested (SYSTEM) | yes |
-| PENDING_APPROVAL | APPROVED | the last required approval level approved | yes |
-| PENDING_APPROVAL | REJECTED | an approver rejects (not simulated) | no |
-| APPROVED | PAYMENT_READY | PAY-01 satisfied and payment scheduled (SYSTEM) | yes |
-| APPROVED | ON_HOLD | PAY-03 vendor not payable on the ready date (SYSTEM) | yes |
-| ON_HOLD | PENDING_APPROVAL | blocking exceptions resolved by their owners (not simulated) | no |
-| ON_HOLD | REJECTED | rejected after review (not simulated) | no |
-| PAYMENT_READY | PAID | PAY-05 payment run releases the payment (SYSTEM) | yes |
+| From | To | Label | Trigger | Produced by the simulation |
+|---|---|---|---|---|
+| (create) | RECEIVED | intake registers document | intake registers the document (SYSTEM) | yes |
+| RECEIVED | CAPTURED | CAP-01 extraction done | extraction finished and ID-01 assigned the invoice ID (SYSTEM) | yes |
+| CAPTURED | ON_HOLD | blocking exception open | at least one blocking exception is open (SYSTEM) | yes |
+| CAPTURED | REJECTED | DUP-01 exact duplicate | exact resubmission of an earlier invoice (SYSTEM) | yes |
+| CAPTURED | PENDING_APPROVAL | all checks passed | APR-01 approval chain requested (SYSTEM) | yes |
+| PENDING_APPROVAL | APPROVED | last level approved | the last required approval level approved | yes |
+| PENDING_APPROVAL | REJECTED | approver rejects | an approver rejects the invoice | no (no policy rule triggers it) |
+| APPROVED | PAYMENT_READY | PAY-01 ready | readiness satisfied and payment scheduled (SYSTEM) | yes |
+| APPROVED | ON_HOLD | PAY-03 vendor not payable | vendor not payable on the ready date (SYSTEM) | yes |
+| ON_HOLD | PENDING_APPROVAL | exceptions resolved | owners resolve every blocking exception | no (no policy rule triggers it) |
+| ON_HOLD | REJECTED | rejected after review | rejected after the owner's review | no (no policy rule triggers it) |
+| PAYMENT_READY | PAID | PAY-05 payment run | payment run releases the payment (SYSTEM) | yes |
 
 #### EXCEPTION
 
 ```mermaid
 stateDiagram-v2
-  [*] --> OPEN: raised and routed by RTE-01
-  OPEN --> CLOSED: auto-closed when the invoice is REJECTED, or res
+  [*] --> OPEN: raised and routed
+  OPEN --> CLOSED: closed
   CLOSED --> [*]
 ```
 
-| From | To | Trigger | Produced by the simulation |
-|---|---|---|---|
-| (create) | OPEN | raised and routed by RTE-01 (SYSTEM) | yes |
-| OPEN | CLOSED | auto-closed when the invoice is REJECTED, or resolved by its owner | yes |
+| From | To | Label | Trigger | Produced by the simulation |
+|---|---|---|---|---|
+| (create) | OPEN | raised and routed | RTE-01 routes it to a role and queue (SYSTEM) | yes |
+| OPEN | CLOSED | closed | auto-closed when the invoice is REJECTED, or resolved by its owner | yes |
 
 #### APPROVAL
 
 ```mermaid
 stateDiagram-v2
-  [*] --> PENDING: requested in sequence
-  PENDING --> APPROVED: approver decides after the level's turnaround
-  PENDING --> REJECTED: approver rejects
+  [*] --> PENDING: requested
+  PENDING --> APPROVED: approved
+  PENDING --> REJECTED: rejected
   APPROVED --> [*]
   REJECTED --> [*]
 ```
 
-| From | To | Trigger | Produced by the simulation |
-|---|---|---|---|
-| (create) | PENDING | requested in sequence (SYSTEM) | yes |
-| PENDING | APPROVED | approver decides after the level's turnaround (APR-SIM-01); AUTO at once | yes |
-| PENDING | REJECTED | approver rejects (not simulated) | no |
+| From | To | Label | Trigger | Produced by the simulation |
+|---|---|---|---|---|
+| (create) | PENDING | requested | requested in sequence (SYSTEM) | yes |
+| PENDING | APPROVED | approved | approver decides after the level's turnaround (APR-SIM-01); AUTO at once | yes |
+| PENDING | REJECTED | rejected | approver rejects | no (no policy rule triggers it) |
 
 #### PAYMENT
 
 ```mermaid
 stateDiagram-v2
-  [*] --> SCHEDULED: PAY-01 and PAY-02
-  SCHEDULED --> PAID: PAY-05 payment run on the scheduled date, on or 
+  [*] --> SCHEDULED: PAY-02 scheduled
+  SCHEDULED --> PAID: PAY-05 released
   PAID --> [*]
 ```
 
-| From | To | Trigger | Produced by the simulation |
-|---|---|---|---|
-| (create) | SCHEDULED | PAY-01 and PAY-02 (SYSTEM) | yes |
-| SCHEDULED | PAID | PAY-05 payment run on the scheduled date, on or before the as-of date (SYSTEM) | yes |
+| From | To | Label | Trigger | Produced by the simulation |
+|---|---|---|---|---|
+| (create) | SCHEDULED | PAY-02 scheduled | payment created and scheduled (PAY-01, PAY-02; SYSTEM) | yes |
+| SCHEDULED | PAID | PAY-05 released | payment run on a scheduled date on or before the as-of date (SYSTEM) | yes |
 <!-- END GENERATED: state-machines -->
 
 ## 9. Join validation (implemented in Stage 5)
 
 The validation suite checks every declared FK above. It also checks these semantic joins:
-- the vendor code embedded in each `invoice_id` equals `invoice.vendor_id`;
+- the vendor code embedded in each `invoice_id` equals `invoice.vendor_id`, and for captured
+  invoices equals `captured_invoice.vendor_id`, or `VND-00000` when it is unresolved;
 - each line's parent ID embedded in `po_line_id`, `grn_line_id` and `invoice_line_id` equals its FK;
 - `goods_receipt.vendor_id` equals the PO's vendor;
 - each GRN line's PO line belongs to the GRN's PO;

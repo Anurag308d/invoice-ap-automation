@@ -7,6 +7,7 @@ transitive path into generator internals or ground truth exists.
 from __future__ import annotations
 
 import ast
+import re
 import sys
 from pathlib import Path
 
@@ -20,7 +21,11 @@ ALLOWED_FOR = {
     "spec": {"common", "spec"},
 }
 FORBIDDEN_TEXT_IN_ENGINE = ("ground_truth", "SCENARIO_", "EDGE_CASES", "intended_issue",
-                            "CAPTURE_OVERLAYS", "catalogue", '"source"', "'source'")
+                            "CAPTURE_OVERLAYS", "catalogue", '"source"', "'source'",
+                            "snapshot_",          # as-of snapshots are reporting only (S1-R1-02)
+                            "vendor_of_invoice")  # never read a vendor out of an invoice_id (S1-R1-01)
+SENDER_FIELDS = ("sender_vendor_id", "sender_address")
+SENDER_CHECK_MODULE = "vendor_identity.py"  # the only engine module that may read them (VEN-04)
 
 
 def _modules(package: str) -> list[Path]:
@@ -68,3 +73,15 @@ def test_engine_source_never_names_evaluation_only_data():
             if path.name == "__init__.py" and needle in ("ground_truth",):
                 continue  # the package docstring states the rule itself
             assert needle not in text, f"{path.name} mentions {needle}"
+
+
+def test_engine_never_takes_the_vendor_from_the_sender_or_an_id():
+    """S1-R1-01 static half: vendor identity comes only from the printed tax registration number
+    (VEN-01). Sender fields may be read only by the VEN-04 cross-check module, and no engine code
+    slices an invoice_id. The ID-blind sandbox run (Stage 3) is the runtime half."""
+    for path in _modules("engine"):
+        text = path.read_text(encoding="utf-8")
+        if path.name != SENDER_CHECK_MODULE:
+            for needle in SENDER_FIELDS:
+                assert needle not in text, f"{path.name} reads {needle}"
+        assert not re.search(r"invoice_id[\"']?\]?\s*\[\s*-?\d*\s*:", text), f"{path.name} slices invoice_id"

@@ -37,6 +37,7 @@ LINE_WEIGHTS = ((1, 1090), (2, 260), (3, 80), (4, 35), (5, 15), (6, 10), (7, 5),
 NON_PO_SHARE = Fraction(5, 100)        # share of all invoices that are non-PO originals
 OPEN_PO_SHARE = Fraction(4, 100)       # POs neither received nor invoiced at the as-of date
 THREE_DELIVERY_SHARE = Fraction(1, 30)  # POs delivered and invoiced in three parts
+PART_BILLED_SHARE = Fraction(1, 150)   # POs whose single delivery is billed on two invoices
 VENDOR_TIER_WEIGHTS = (("STRATEGIC", 10), ("CORE", 30), ("TAIL", 60))
 VENDOR_SEGMENT_WEIGHTS = (("GOODS", 90), ("SERVICES", 10))
 
@@ -45,7 +46,8 @@ ARCHETYPES = {
     "A11": (1, 1, "single delivery, single invoice"),
     "A22": (2, 2, "split delivery, one invoice per delivery"),
     "A33": (3, 3, "three deliveries, one invoice per delivery"),
-    "A21": (2, 1, "split delivery, one consolidated invoice (N:M allocation)"),
+    "A21": (2, 1, "split delivery, one consolidated invoice (N:M: 1 invoice line -> 2 GRN lines)"),
+    "A12": (1, 2, "single delivery billed on two invoices (N:M: 1 GRN line -> 2 invoice lines)"),
     "A01": (0, 1, "invoiced but never received (missing receipt)"),
     "A10": (1, 0, "received, invoice not yet arrived at the as-of date"),
     "A00": (0, 0, "open PO: neither received nor invoiced at the as-of date"),
@@ -172,19 +174,21 @@ def allocate(scale: str | int | Fraction = "full") -> Allocation:
     missing = subs["MR-NO-GRN"]
 
     # Archetype counts solve three linear identities exactly (see docs/data_generation.md):
-    #   POs:      n11 + n22 + n33 + n21 + n01 + n10 + n00 = pos
-    #   GRNs:     n11 + 2*n22 + 3*n33 + 2*n21 + n10      = grns
-    #   invoices: n11 + 2*n22 + 3*n33 + n21 + n01        = po_backed originals
+    #   POs:      n11 + n22 + n33 + n21 + n12 + n01 + n10 + n00 = pos
+    #   GRNs:     n11 + 2*n22 + 3*n33 + 2*n21 + n12 + n10       = grns
+    #   invoices: n11 + 2*n22 + 3*n33 + n21 + 2*n12 + n01       = po_backed originals
     n01 = missing
-    spare = t.grns - po_backed + n01                    # = n21 + n10
+    n12 = max(1, round_half_up(t.pos * PART_BILLED_SHARE))
+    spare = t.grns - po_backed + n01 + n12              # = n21 + n10
     if spare < 0:
         raise AllocationError("too few GRNs for the PO-backed invoices")
     n21, n10 = spare // 2, spare - spare // 2
     n00 = round_half_up(t.pos * OPEN_PO_SHARE)
     n33 = round_half_up(t.pos * THREE_DELIVERY_SHARE)
-    n22 = po_backed - t.pos + n10 + n00 - 2 * n33
-    n11 = po_backed - n01 - n21 - 2 * n22 - 3 * n33
-    arch = {"A11": n11, "A22": n22, "A33": n33, "A21": n21, "A01": n01, "A10": n10, "A00": n00}
+    n22 = po_backed - t.pos + n10 + n00 - 2 * n33 - n12
+    n11 = po_backed - n01 - n21 - 2 * n22 - 3 * n33 - 2 * n12
+    arch = {"A11": n11, "A22": n22, "A33": n33, "A21": n21, "A12": n12, "A01": n01, "A10": n10,
+            "A00": n00}
     if min(arch.values()) < 0:
         raise AllocationError(f"infeasible archetype counts {arch}")
 
@@ -204,6 +208,7 @@ def allocate(scale: str | int | Fraction = "full") -> Allocation:
     subs["C-SPLIT-PARTIAL"] = n22 + 2 * n33            # first of two, first two of three
     subs["C-SPLIT-FINAL"] = (n22 - s22_demand) + n33    # completing invoices still clean
     subs["C-CONSOLIDATED"] = n21
+    subs["C-PARTIAL-BILLING"] = 2 * n12                 # both invoices of each A12 PO
 
     clean_total = sum(subs[s.code] for s in _subs("CLEAN"))
     if clean_total != cats["CLEAN"]:

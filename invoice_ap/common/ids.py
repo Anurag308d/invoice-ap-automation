@@ -3,13 +3,18 @@
 Assignment conventions: VND-00001, PO-2026-000001, GRN-2026-000001,
 INV-<vendor-code>-2026-000001 and INVL-<invoice-id>-01. Decision ADR-002: <vendor-code> is the
 vendor_id itself, so INV-VND-00001-2026-000001 embeds a machine-checkable vendor reference.
-Counters are zero-padded, never reused, and IDs are immutable once assigned.
+ADR-003/ADR-037: the 6-digit invoice counter is the document's global intake sequence, and the
+vendor segment is filled in only after vendor resolution (VEN-01), so the intake never hands the
+engine a vendor. Counters are zero-padded, never reused, and IDs are immutable once assigned.
 """
 from __future__ import annotations
 
 import re
 
 YEAR = 2026  # fiscal/document year embedded in transactional IDs (ADR-004)
+# Reserved vendor code used in an invoice_id when VEN-01 cannot resolve the vendor. Vendor
+# counters start at 1, so no real vendor ever has this code (ADR-037).
+UNRESOLVED_VENDOR = "VND-00000"
 
 PATTERNS: dict[str, str] = {
     "vendor_id": r"^VND-\d{5}$",

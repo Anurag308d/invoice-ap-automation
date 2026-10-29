@@ -2,8 +2,6 @@
 (from invoice_ap/common/lifecycle.py)."""
 from __future__ import annotations
 
-import re
-
 from ..common.lifecycle import TERMINAL, TRANSITIONS
 from . import TABLES
 
@@ -26,21 +24,18 @@ def keys_markdown() -> str:
     return "\n".join(out) + "\n"
 
 
-def _label(text: str) -> str:
-    return re.split(r"[:(;]", text)[0].strip()[:48]
-
-
 def state_machines_markdown() -> str:
     out: list[str] = []
     for entity, transitions in TRANSITIONS.items():
         out += [f"#### {entity}", "", "```mermaid", "stateDiagram-v2"]
-        for (src, dst), why in transitions.items():
-            out.append(f"  {src or '[*]'} --> {dst}: {_label(why)}")
+        for (src, dst), tr in transitions.items():
+            out.append(f"  {src or '[*]'} --> {dst}: {tr.label}")
         for state in TERMINAL[entity]:
             out.append(f"  {state} --> [*]")
-        out += ["```", "", "| From | To | Trigger | Produced by the simulation |", "|---|---|---|---|"]
-        for (src, dst), why in transitions.items():
-            simulated = "no" if "not simulated" in why else "yes"
-            out.append(f"| {src or '(create)'} | {dst} | {why} | {simulated} |")
+        out += ["```", "", "| From | To | Label | Trigger | Produced by the simulation |",
+                "|---|---|---|---|---|"]
+        for (src, dst), tr in transitions.items():
+            out.append(f"| {src or '(create)'} | {dst} | {tr.label} | {tr.detail} | "
+                       f"{'yes' if tr.simulated else 'no (no policy rule triggers it)'} |")
         out.append("")
     return "\n".join(out)

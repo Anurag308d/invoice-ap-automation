@@ -12,6 +12,7 @@ Placement codes (see docs/data_generation.md section 4):
   SPLIT_PARTIAL / SPLIT_FINAL  the remaining invoice slots on A22 and A33 POs, resolved from the
          PO structure: non-final deliveries are partial, the last one completes the PO
   S21    a consolidated invoice covering two deliveries (archetype A21)
+  S12    the two invoices that bill one delivery in parts (archetype A12)
   F      an invoice on a PO that is never received (archetype A01)
   NPO    a non-PO (services) original invoice
   DUP    an extra document that duplicates an earlier original invoice
@@ -33,10 +34,11 @@ class SubScenario:
     description: str
 
 
-# Five named categories at their exact assignment shares; the two extra required edge cases are
-# carved out of CLEAN at 1% each (ADR-005), so CLEAN is 68.0% at full scale.
+# Five named categories at their exact assignment shares. The two extra required edge cases are
+# carved out of CLEAN at 1% each (ADR-005) and degraded scans at 0.5% (ADR-017), so CLEAN is
+# 1,350 (67.5%) at full scale.
 CATEGORY_WEIGHTS = (
-    ("CLEAN", 1360),
+    ("CLEAN", 1350),
     ("PRICE_VARIANCE", 200),
     ("QTY_MISMATCH", 160),
     ("DUPLICATE", 100),
@@ -44,13 +46,14 @@ CATEGORY_WEIGHTS = (
     ("TAX_VENDOR", 60),
     ("ARITHMETIC", 20),
     ("INVOICE_BEFORE_PO", 20),
+    ("CAPTURE_REVIEW", 10),
 )
 CLEAN_S11_PAIRS_FULL = 5  # true-negative pairs (10 invoices) at full scale
 
 _A, _H, _R = "APPROVAL_PATH", "HOLD", "REJECT"
 SUBSCENARIOS: tuple[SubScenario, ...] = (
     # ---- CLEAN (business-clean; the true invoice conforms to PO, receipts and policy)
-    SubScenario("C-STD", "CLEAN", "S11", 325, (), (), _A,
+    SubScenario("C-STD", "CLEAN", "S11", 310, (), (), _A,
                 "Full delivery, invoice equals PO price and received quantity"),
     SubScenario("C-PARTIAL-OPEN", "CLEAN", "S11", 60, ("EC-04",), (), _A,
                 "Partial delivery; invoice bills exactly the received quantity; PO stays open"),
@@ -68,14 +71,14 @@ SUBSCENARIOS: tuple[SubScenario, ...] = (
                 "One line's tax printed 0.01 away from round(net x rate): inside rounding tolerance"),
     SubScenario("C-TN-SAME-DAY", "CLEAN", "PAIR11", 10, (), (), _A,
                 "True negative: same vendor, date and amount on two different POs (repeat order)"),
-    SubScenario("C-CAPTURE-DEGRADED", "CLEAN", "S11", 10, (), ("EXT_LOW_CONFIDENCE",), _H,
-                "Business-clean invoice whose scan has an unreadable field: must route to capture review"),
     SubScenario("C-SPLIT-PARTIAL", "CLEAN", "SPLIT_PARTIAL", 400, ("EC-04",), (), _A,
                 "Non-final delivery of a split PO, invoiced for exactly what was delivered"),
     SubScenario("C-SPLIT-FINAL", "CLEAN", "SPLIT_FINAL", 290, (), (), _A,
                 "Final delivery of a split PO; cumulative invoiced reaches the ordered quantity"),
     SubScenario("C-CONSOLIDATED", "CLEAN", "S21", 40, ("EC-04",), (), _A,
-                "Two partial deliveries billed on one invoice (many-to-many line allocation)"),
+                "Two partial deliveries billed on one invoice (one invoice line -> two receipt lines)"),
+    SubScenario("C-PARTIAL-BILLING", "CLEAN", "S12", 20, (), (), _A,
+                "One delivery billed on two invoices (one receipt line -> two invoice lines)"),
     SubScenario("C-NPO-RECURRING", "CLEAN", "NPO", 57, (), (), _A,
                 "Recurring same-amount monthly service invoices: duplicate-check true negatives"),
     SubScenario("C-NPO-ONEOFF", "CLEAN", "NPO", 38, (), (), _A,
@@ -138,4 +141,7 @@ SUBSCENARIOS: tuple[SubScenario, ...] = (
     # ---- INVOICE_BEFORE_PO (required edge case carved from CLEAN)
     SubScenario("DATE-INVOICE-BEFORE-PO", "INVOICE_BEFORE_PO", "S11", 20, ("EC-03",),
                 ("INVOICE_BEFORE_PO",), _H, "Invoice dated before the PO it quotes (retrospective PO)"),
+    # ---- CAPTURE_REVIEW (degraded documents, carved from CLEAN; ruling on Q2, ADR-017)
+    SubScenario("CAP-DEGRADED-SCAN", "CAPTURE_REVIEW", "S11", 10, (), ("EXT_LOW_CONFIDENCE",), _H,
+                "Otherwise clean invoice whose scan has an unreadable required field: capture review"),
 )

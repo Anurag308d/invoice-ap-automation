@@ -46,6 +46,13 @@ def test_embedded_references_are_recoverable():
     assert ids.parent_of_line(ids.grn_line_id("GRN-2026-000003", 4)) == "GRN-2026-000003"
 
 
+def test_unresolved_vendor_code_is_reserved():
+    inv = ids.invoice_id(ids.UNRESOLVED_VENDOR, 12)
+    assert inv == "INV-VND-00000-2026-000012" and ids.matches("invoice_id", inv)
+    with pytest.raises(ValueError):
+        ids.vendor_id(0)  # real vendor counters start at 1, so VND-00000 never collides
+
+
 @pytest.mark.parametrize("bad", [0, -1, 100000])
 def test_counters_refuse_overflow_and_non_positive(bad):
     with pytest.raises(ValueError):

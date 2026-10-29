@@ -43,7 +43,8 @@ flowchart LR
   SRC --> EV
   EV --> REP[("reports/ + dashboard")]
   M & I & SRC & GT & PR --> Q["validation suite<br/>(invoice_ap.quality)"] --> REP
-  M & I & SRC & GT & PR --> XP["exports: CSV / JSON / SQL seed"]
+  M & I & PR --> XP["exports: CSV / JSON / SQL seed<br/>(operational tables)"]
+  SRC & GT --> XE["evaluation exports<br/>(separate files, never an engine input)"]
 ```
 
 The diagram shows the order of the engine's concerns. The exact check order and its gates are in
@@ -69,15 +70,18 @@ section 4.
 data/<scale>/                 scale = starter | full
   master/        ERP data, engine-readable: actor_role, app_user, payment_terms, tax_code, sku, vendor,
                  vendor_status_history, purchase_order, purchase_order_line, goods_receipt,
-                 goods_receipt_line, erp_event  (*.csv)
-  inbox/         engine-readable: intake_manifest.csv + documents/<channel>/<doc_id>.<ext>
+                 goods_receipt_line, erp_event  (*.csv); snapshot_* columns are reporting only
+  inbox/         engine-readable: intake_manifest.csv (no invoice_id; sender vendor only for
+                 authenticated channels) + documents/<channel>/<doc_id>.<ext>
   source/        EVALUATION ONLY: invoice.csv, invoice_line.csv (the invoices as issued)
   ground_truth/  EVALUATION ONLY: ground_truth.csv + ground_truth.json, ground_truth_line.csv
   processed/     engine output: captured_invoice, captured_invoice_line, extraction_field,
                  invoice_decision, match_result, match_allocation (bridge), duplicate_pair,
                  ap_exception, approval, payment, ap_event, policy_version (*.csv) + decision_trace.jsonl
-  exports/       JSON for every table (json/<table>.json) + SQL seed (sql/seed.sql); the layer CSVs
-                 above are the CSV export, so they are not copied again
+  exports/       json/<table>.json and sql/seed.sql for master, inbox and processed tables;
+                 json/evaluation/ and sql/evaluation_seed.sql (separate files) for source and
+                 ground truth, so labels never sit in the seed's input tables. The layer CSVs
+                 above are the CSV export and are not copied again
   reports/       source_manifest.json, validation_summary.{json,md}, evaluation.{json,md},
                  distribution_summary.{json,md}, reproducibility.{json,md}, dashboard.html
 ```
@@ -95,12 +99,12 @@ can never use information from the future.
 flowchart TD
   A["RECEIVED: intake manifest row"] --> B["CAP-01 extract all fields with confidence"]
   B -->|"any required field < 0.90"| H1["EXT_LOW_CONFIDENCE -> ON_HOLD (capture review)"]
-  B --> C["VEN-01 resolve vendor by tax registration number"]
+  B --> C["VEN-01 vendor from the printed tax registration number only<br/>ID-01 assign invoice_id from that vendor and the intake sequence"]
   C -->|"not found"| H2["VENDOR_NOT_FOUND -> ON_HOLD"]
   C --> D["DUP-01..03 duplicate check vs all earlier documents"]
   D -->|"exact resubmission"| RJ["DUPLICATE_EXACT -> REJECTED"]
   D -->|"number reuse / same content"| H3["DUPLICATE_* -> ON_HOLD"]
-  D --> E["collect every remaining issue:<br/>VEN-02/03 vendor status at invoice date<br/>PO-01/02 PO exists and belongs to vendor<br/>DATE-01/02, ARI-01/02, TAX-01..03<br/>PO-03 + MAT-01..04 line match (skipped if PO invalid)"]
+  D --> E["collect every remaining issue:<br/>VEN-04 authenticated sender = vendor (PORTAL, EDI)<br/>VEN-02/03 vendor status at invoice date<br/>PO-01/02 PO exists and belongs to vendor<br/>DATE-01/02, ARI-01/02, TAX-01..03<br/>PO-03 + MAT-01..04 line match (skipped if PO invalid)"]
   E --> F["MS-01 match status, PRI-01 primary issue,<br/>RTE-01 route every exception"]
   F -->|"any blocking issue"| H4["ON_HOLD in the owning role's queue"]
   F -->|"none"| G["APR-01 approval chain from the amount band"]
@@ -123,6 +127,9 @@ evaluation (inputs, threshold, outcome), and `python -m invoice_ap explain <invo
 |---|---|---|
 | Layer separation | Evaluation-only data lives in `source/` and `ground_truth/`, never in `master/` or `inbox/`. | dataset layout |
 | Narrow engine entry point | `run_engine(master_dir, inbox_dir, out_dir, policy)`: the engine is never given the dataset root. | `invoice_ap/engine` (*Stage 3*) |
+| Vendor from the document only (S1-R1-01, ADR-037) | The manifest has no `invoice_id` (it would embed the vendor) and carries `sender_vendor_id` only for authenticated PORTAL/EDI senders. VEN-01 takes the vendor from the printed tax registration number, and ID-01 then assigns the invoice ID. Sender fields feed only the VEN-04 cross-check. | static ban `tests/test_boundary.py::test_engine_never_takes_the_vendor_from_the_sender_or_an_id` (active now); **ID-blind sandbox** `tests/test_engine_sandbox.py::test_id_blind_run` (*Stage 3*): blank `sender_vendor_id` and `sender_address` in a temp copy of the inbox; every decision must be identical |
+| No future information (S1-R1-02, ADR-038) | `snapshot_*` columns (vendor, PO, PO line, GRN) are evaluated at the as-of date and flagged reporting only. The engine uses effective-dated history and receipts posted before processing time. | static ban on `snapshot_` in engine code (active now); **time-travel sandbox** `tests/test_time_travel.py` (*Stage 4*): for sampled invoices, drop master rows and events recorded after the invoice's processing time and blank every `snapshot_*` column; the decision must not change |
+| Labels out of the SQL seed | Source and ground-truth tables are exported to separate files (`sql/evaluation_seed.sql`, `json/evaluation/`), never into the seed's input tables. | export layout (*Stage 5*) |
 | Static import rule | The engine imports only `common`, `spec` and itself, and `common` and `spec` import nothing from the generator. Evaluation-only names never appear in engine source. | `tests/test_boundary.py` (active now) |
 | Runtime sandbox | The engine runs on a temp copy that contains only `master/` and `inbox/`; its output must be byte-identical to the normal run. | `tests/test_engine_sandbox.py` (*Stage 3*) |
 | Label-free inputs | No master or inbox column has a label-like name; rendered documents contain no scenario codes or label words. | `tests/test_spec.py` (active now) + document scan (*Stage 3*) |
@@ -138,7 +145,8 @@ tautology. The remaining limitation, that one author wrote both, is discussed in
   sub-stream, seeded by `sha256(f"{seed}:{stream}")`, so adding draws to one stream never shifts another.
 - Counts come from the exact allocation (`invoice_ap/generator/allocation.py`). The RNG only decides
   which PO, vendor, SKU or date gets each slot. Labels are never drawn at random.
-- No wall clock. "Today" is `policy.as_of_date` (2026-12-31) and every timestamp is synthetic.
+- No wall clock. "Today" is `policy.as_of_date` (2026-10-22) and every timestamp is synthetic.
+- No dependence on hash order: Stage 5 builds with `PYTHONHASHSEED=1` and `=2` and compares checksums.
 - Floats never touch money. Distributions use integer draws plus `Decimal` arithmetic (including
   `Decimal.exp` for log-normal values), never `math.exp` or `random.gauss`, whose results can differ
   across platforms. `tests/test_repo_hygiene.py` bans these calls.
@@ -150,11 +158,26 @@ tautology. The remaining limitation, that one author wrote both, is discussed in
 
 ## 7. Time model
 
-All business dates fall in 2026, the year embedded in transactional IDs. POs are issued from
-January to October, receipts follow category lead times, and invoices arrive until 24 December.
-Timestamps are IST (`+05:30`). Business days skip weekends and the holidays listed in the policy.
-SLA due dates, approval turnaround and payment scheduling all use business-day arithmetic.
-Statuses called `*_as_of` are evaluated at 2026-12-31.
+The snapshot date is fixed in the policy: `as_of_date = 2026-10-22`. It is a past date, before
+the submission window opens, and is never read from the clock (ADR-011). All business dates fall
+in 2026, the year embedded in transactional IDs. POs are issued from 5 January, receipts follow
+category lead times, and invoices arrive until 21 October.
+
+**No completed event lies after the as-of date.** That covers:
+- vendor status changes;
+- GRN postings;
+- invoice receipt and capture;
+- exceptions raised;
+- approval decisions;
+- payments marked PAID.
+
+Only forward-dated plans may lie later: due dates, SLA due dates and scheduled payment dates.
+Such items stay PENDING, OPEN or SCHEDULED at the as-of date. A Stage-2 test asserts this for
+every timestamp.
+
+Timestamps are IST (`+05:30`). Business days skip weekends and the policy holidays. SLA due dates,
+approval turnaround and payment scheduling all use business-day arithmetic. `*_as_of` and
+`snapshot_*` values are evaluated at the as-of date.
 
 ## 8. CLI surface
 
@@ -172,7 +195,13 @@ Statuses called `*_as_of` are evaluated at 2026-12-31.
 ## 9. Performance and size budget
 
 The full build must take well under a minute on a laptop. The approach is single-pass and in
-memory, with indexed dictionaries and standard-library CSV, and no dataframe dependency. Preliminary
-size estimate for the committed data: about 4 MB for the starter build and 30-45 MB for the full
-build, dominated by per-field extraction evidence and JSON/SQL exports. Stage 5 measures the real
-figures and, if needed, slims exports (for example compact JSON) rather than duplicating files.
+memory, with indexed dictionaries and standard-library CSV, and no dataframe dependency.
+
+Committed data follows REV's Q3 ruling (ADR-028):
+- the full CSV layers, inbox documents, reports and manifest are committed;
+- JSON and SQL exports are committed for the starter build;
+- the full-scale JSON and SQL are committed only if the total committed data stays at or below
+  about 25 MB, as measured. Otherwise their checksums go in the manifest and `build-all`
+  regenerates them;
+- generated data is committed only when Stages 5 and 6 close;
+- a parity check proves the committed data equals a fresh build.

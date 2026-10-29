@@ -108,3 +108,38 @@ def test_json_spec_and_markdown_are_up_to_date():
     assert json.loads(SPEC_JSON.read_text(encoding="utf-8")) == to_dict()
     assert (DOCS_DIR / "data_dictionary.md").read_text(encoding="utf-8") == to_markdown(), \
         "run: python -m invoice_ap docs"
+
+
+NUMERIC = ("int", "money", "qty", "pct", "decimal")
+
+
+def test_every_non_text_field_has_a_rule_and_every_numeric_field_a_unit():
+    """S1-R1-06: Step 1 asks for a validation rule per field and units where they apply."""
+    missing = []
+    for t, f in FIELDS:
+        has_rule = f.allowed or f.pattern or f.min_value or f.max_value or f.rule or f.derivation or f.fk
+        if f.type != "text" and not has_rule:
+            missing.append(f"{t.name}.{f.name}: no validation rule")
+        if f.type in NUMERIC and not f.unit:
+            missing.append(f"{t.name}.{f.name}: no unit")
+    assert not missing, missing
+
+
+def test_snapshot_columns_are_reporting_only_and_named_for_the_static_ban():
+    """S1-R1-02: as-of snapshots in engine-readable layers carry the snapshot_ prefix and the flag."""
+    for t, f in FIELDS:
+        if t.layer in ("master", "inbox"):
+            assert f.reporting_only == f.name.startswith("snapshot_"), f"{t.name}.{f.name}"
+            assert not f.name.endswith("_as_of"), f"{t.name}.{f.name}"
+        else:
+            assert not f.reporting_only, f"{t.name}.{f.name}"
+
+
+def test_intake_manifest_never_hands_the_engine_a_vendor():
+    """S1-R1-01: no invoice_id (it embeds the vendor) and a sender vendor only where authenticated."""
+    manifest = BY_NAME["intake_manifest"]
+    assert "invoice_id" not in [f.name for f in manifest.fields]
+    sender = manifest.column("sender_vendor_id")
+    assert not sender.required and sender.required_when == "channel in (PORTAL, EDI)"
+    captured = BY_NAME["captured_invoice"].column("invoice_id")
+    assert captured.origin == "decided" and "ID-01" in captured.rule

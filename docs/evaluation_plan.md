@@ -17,7 +17,7 @@ deviation is listed and explained.
 
 | Criterion | Metric | Target | Computed from |
 |---|---|---|---|
-| R34a extracted fields match source | Field-level accuracy per field and per channel; document-level exact match; a list of every mismatch; **silent errors** = mismatches not flagged as low confidence and not caught by a validation rule | Silent errors = 0; field match 100% outside the deliberately degraded scans | `captured_*` + `extraction_field` vs `source/invoice*` |
+| R34a extracted fields match source | Field-level accuracy per field and per channel; document-level exact match; a list of every mismatch; **silent errors** = mismatches not flagged as low confidence and not caught by a validation rule. Vendor accuracy comes from the extracted vendor fields and the VEN-01 result, never from an ID | Silent errors = 0; field match 100% outside the deliberately degraded scans (CAPTURE_REVIEW) | `captured_*` + `extraction_field` vs `source/invoice*` |
 | R34b line arithmetic and tax reconcile | Agreement of ARI-01, ARI-02 and TAX-01..03 verdicts with ground truth; an independent recomputation of every line and header from the source data | 100% agreement | `ap_exception`, `match_result` vs `ground_truth*` |
 | R34c duplicate detection flags the correct pair | Pair precision, pair recall and pair accuracy (correct original); false positives on the true-negative sets (recurring same-amount, same-day different-PO) | 100% / 100% / 100%; 0 false positives | `duplicate_pair` vs `ground_truth.expected_duplicate_of` |
 | R34d three-way match and approval outcome agree with policy | Match-status agreement (invoice and line); per-exception-type precision, recall and F1; primary-issue confusion matrix; approval eligibility, band and level-sequence agreement | 100% agreement; F1 = 1.0 for every type present | `invoice_decision`, `match_result`, `approval` vs ground truth |
@@ -27,7 +27,7 @@ deviation is listed and explained.
 
 | ID | Metric | Definition |
 |---|---|---|
-| E1 | Extraction accuracy | Exact equality after canonical normalisation (dates ISO, decimals canonical) per field, broken down by channel and template. A document-level match requires every field and line to match. A confidence-calibration table shows accuracy per confidence bucket. |
+| E1 | Extraction accuracy | Exact equality after canonical normalisation (dates ISO, decimals canonical) per field, broken down by channel and template. A document-level match requires every field and line to match. A confidence-calibration table shows accuracy per confidence bucket. Vendor resolution compares `captured_invoice.vendor_id` with `invoice.vendor_id`, and the engine's ID-01 `invoice_id` with the source `invoice_id` (equal only when VEN-01 was right). |
 | E2 | Capture routing | Share of documents routed to capture review; precision and recall of routing against the documents that actually contain an extraction error. |
 | E3 | Exception classification | Multi-label, invoice level: precision, recall and F1 per exception type, plus micro and macro averages. Line-level labels are compared the same way. |
 | E4 | Primary outcome | Confusion matrix of expected vs predicted primary issue (including NONE), plus a confusion matrix of final status at the as-of date. |
@@ -64,7 +64,7 @@ The report lists every failing invoice with the differing fields.
 | (c) dependency and lifecycle consistency | Parent-before-child generation order; date-order checks; event sequences checked against `invoice_ap/common/lifecycle.py`; current status = last event (E13) |
 | (d) correct derived values and reconciliation | Independent recomputation of every derived column (E13); R34b metrics (E3) |
 | (e) normal, boundary, failure and exception coverage | Mix vs target and edge-case table (E12); boundary sub-scenarios (price at, inside and outside tolerance; quantity at and outside; tax rounding); true negatives (E6) |
-| (f) separate ground truth | `ground_truth/` folder; no-leakage tests (static imports now, runtime sandbox from Stage 3); label-free input check |
+| (f) separate ground truth | `ground_truth/` folder; label-free input check; no-leakage tests: static import, sender, ID and snapshot bans (active now), runtime and ID-blind sandboxes (Stage 3), time-travel sandbox (Stage 4); evaluation exports in separate files (Stage 5) |
 | (g) fixed-seed reproducibility, documentation and lawful provenance | E15 report; `source_manifest.json` (command, seed, scale, policy version, per-file SHA-256, provenance: 100% synthetic, no external data); these docs |
 
 ## 5. How we know it works

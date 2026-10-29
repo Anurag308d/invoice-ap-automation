@@ -22,7 +22,7 @@ Spec version 1.0.0. Machine-readable copy: `invoice_ap/spec/data_dictionary.json
 | `bool` | true or false | INTEGER |
 | `list` | pipe-separated, sorted, no spaces (empty = none) | TEXT |
 
-Origins: `source` = generated or printed as-is; `derived` = computed from other records by the formula shown (never generated independently, Step 6); `assigned` = deterministic ID or sequence; `captured` = extracted by the engine from a document; `decided` = set by an engine or oracle rule (rule IDs in docs/business_rules.md). Empty CSV cell = null. `*_as_of` fields are evaluated at `policy.as_of_date` (2026-12-31).
+Origins: `source` = generated or printed as-is; `derived` = computed from other records by the formula shown (never generated independently, Step 6); `assigned` = deterministic ID or sequence; `captured` = extracted by the engine from a document; `decided` = set by an engine or oracle rule (rule IDs in docs/business_rules.md). Empty CSV cell = null. `*_as_of` and `snapshot_*` fields are evaluated at `policy.as_of_date` (2026-10-22). `snapshot_*` columns in engine-readable layers are reporting only: the engine never reads them (ADR-038).
 
 ## Tables
 
@@ -70,7 +70,7 @@ The five assignment actors plus the SYSTEM automation actor.
 |---|---|---|---|---|---|---|---|---|
 | `role_code` | enum | yes | BUSINESS_REQUESTER, PROCESS_OWNER, APPROVER, OPERATIONS_ANALYST, SYSTEM_ADMINISTRATOR, SYSTEM | - | yes | assigned | - | Role code |
 | `role_name` | text | yes | - | - | - | source | - | Human-readable role name |
-| `is_human` | bool | yes | - | - | - | source | - | False only for SYSTEM |
+| `is_human` | bool | yes | true, false | - | - | source | - | False only for SYSTEM |
 | `responsibilities` | text | yes | - | - | - | source | - | What the role does in the AP workflow |
 
 ### app_user
@@ -90,7 +90,7 @@ Named users per role. Display names are role labels, never personal data.
 | `cost_center` | enum | conditional | OPERATIONS, MANUFACTURING, IT, FACILITIES, LOGISTICS, CORPORATE | - | - | source | required when role_code = BUSINESS_REQUESTER or responsibility = COST_CENTER_MANAGER | Department served |
 | `approval_level` | enum | conditional | L1, L2, L3 | - | - | source | required when role_code = APPROVER | Approval level held |
 | `email` | text | yes | `^[a-z0-9.\-]+@example\.com$` | - | yes | source | - | Synthetic address on the reserved example.com domain |
-| `active_from` | date | yes | - | calendar date | - | source | - | Date the user became active |
+| `active_from` | date | yes | - | calendar date | - | source | &lt;= policy.effective_from and &lt;= the user's first event | Date the user became active |
 
 ### payment_terms
 
@@ -120,7 +120,7 @@ Simplified synthetic GST-style tax codes with validity windows (effective-dated)
 | `rate_pct` | pct | yes | range [0.00, 40.00] | % | - | source | - | Tax rate |
 | `tax_category` | enum | yes | STANDARD, REDUCED, ZERO_RATED, EXEMPT | - | - | source | - | Tax category |
 | `description` | text | yes | - | - | - | source | - | Description |
-| `valid_from` | date | yes | - | calendar date | - | source | - | First date the code may be used |
+| `valid_from` | date | yes | - | calendar date | - | source | valid_from &lt; valid_to when valid_to is set | First date the code may be used |
 | `valid_to` | date | no | - | calendar date | - | source | valid_to >= valid_from; GST12 is retired before 2026 (TAX-01 rejects it) | Last date the code may be used (empty = open-ended) |
 
 ### sku
@@ -163,7 +163,7 @@ Vendor master (synthetic companies).
 | `preferred_channel` | enum | yes | PORTAL, EDI, EMAIL, SCAN | - | - | source | - | Usual invoice submission channel |
 | `remit_email` | text | yes | `^ap@vnd-\d{5}\.example$` | - | yes | source | - | Synthetic sender address on a reserved .example domain |
 | `onboarded_date` | date | yes | - | calendar date | - | source | equals effective_date of the vendor's first status event | Start of the vendor's active window |
-| `status_as_of` | enum | yes | ACTIVE, BLOCKED, CLOSED | - | - | derived | = to_status of the last vendor_status_history row with effective_date &lt;= as_of | Current status as of policy.as_of_date (2026-12-31) |
+| `snapshot_status` | enum | yes | ACTIVE, BLOCKED, CLOSED | - | - | derived | **Reporting only, never an engine input.**; = to_status of the last vendor_status_history row with effective_date &lt;= as_of | Status at policy.as_of_date (reporting only) |
 | `created_by` | id | yes | `^USR-\d{4}$` | - | - | source | FK -> `app_user.user_id` | System administrator who onboarded the vendor |
 
 ### vendor_status_history
@@ -179,11 +179,11 @@ Append-only, effective-dated vendor status changes (state machine in docs/schema
 |---|---|---|---|---|---|---|---|---|
 | `vsh_id` | id | yes | `^VSH-\d{6}$` | - | yes | assigned | unique, immutable, zero-padded counter | Status event identifier VSH-000001 |
 | `vendor_id` | id | yes | `^VND-\d{5}$` | - | - | source | FK -> `vendor.vendor_id` | Vendor |
-| `seq` | int | yes | range [1, inf] | - | - | assigned | - | 1-based sequence per vendor |
+| `seq` | int | yes | range [1, inf] | ordinal | - | assigned | - | 1-based sequence per vendor |
 | `from_status` | enum | conditional | ACTIVE, BLOCKED, CLOSED | - | - | source | required when seq > 1 | Status before the change (empty for the first row) |
 | `to_status` | enum | yes | ACTIVE, BLOCKED, CLOSED | - | - | source | transition allowed by the vendor state machine | Status after the change |
 | `effective_date` | date | yes | - | calendar date | - | source | non-decreasing per vendor; first = onboarded_date | Date the new status takes effect |
-| `recorded_at` | datetime | yes | - | IST timestamp | - | source | - | When the change was recorded |
+| `recorded_at` | datetime | yes | - | IST timestamp | - | source | on or before effective_date (no back-dating) and &lt;= as_of_date | When the change was recorded |
 | `actor_role` | enum | yes | SYSTEM_ADMINISTRATOR | - | - | source | - | Role that made the change |
 | `actor_id` | id | yes | `^USR-\d{4}$` | - | - | source | FK -> `app_user.user_id` | User that made the change |
 | `reason_code` | enum | yes | ONBOARDED, KYC_DOCUMENTS_EXPIRED, KYC_RENEWED, RELATIONSHIP_ENDED | - | - | source | - | Reason for the change |
@@ -206,11 +206,11 @@ Purchase orders raised by business requesters.
 | `po_date` | date | yes | - | calendar date | - | source | within 2026; vendor ACTIVE on po_date; on a business day | Issue date |
 | `currency` | enum | yes | INR | - | - | source | - | Currency |
 | `payment_terms_code` | enum | yes | NET15, NET30, NET45, NET60 | - | - | source | FK -> `payment_terms.terms_code` | Terms copied from the vendor at issue |
-| `line_count` | int | yes | range [1, 8] | - | - | derived | = count(purchase_order_line) | Number of PO lines |
+| `line_count` | int | yes | range [1, 8] | count | - | derived | = count(purchase_order_line) | Number of PO lines |
 | `total_net_amount` | money | yes | range [0.00, inf] | INR | - | derived | = sum(line_net_amount) | Sum of line net amounts |
 | `total_tax_amount` | money | yes | range [0.00, inf] | INR | - | derived | = sum(line_tax_amount) | Sum of line tax amounts |
 | `total_gross_amount` | money | yes | range [0.00, inf] | INR | - | derived | = total_net_amount + total_tax_amount | Net plus tax |
-| `status_as_of` | enum | yes | ISSUED, PARTIALLY_RECEIVED, RECEIVED | - | - | derived | = to_status of the last erp_event for the PO with event_at &lt;= as_of | Receiving status as of policy.as_of_date (2026-12-31) |
+| `snapshot_status` | enum | yes | ISSUED, PARTIALLY_RECEIVED, RECEIVED | - | - | derived | **Reporting only, never an engine input.**; = to_status of the last erp_event for the PO with event_at &lt;= as_of | Receiving status at policy.as_of_date (reporting only) |
 
 ### purchase_order_line
 
@@ -226,7 +226,7 @@ PO lines (1-8 per PO).
 |---|---|---|---|---|---|---|---|---|
 | `po_line_id` | id | yes | `^POL-PO-2026-\d{6}-\d{2}$` | - | yes | assigned | unique, immutable, zero-padded counter | PO line identifier POL-&lt;po_id>-01 |
 | `po_id` | id | yes | `^PO-2026-\d{6}$` | - | - | source | FK -> `purchase_order.po_id`; must exist; equals the po_id embedded in po_line_id | Parent PO |
-| `line_number` | int | yes | range [1, 8] | - | - | assigned | - | 1-based line number |
+| `line_number` | int | yes | range [1, 8] | ordinal | - | assigned | - | 1-based line number |
 | `sku_id` | id | yes | `^SKU-\d{5}$` | - | - | source | FK -> `sku.sku_id` | Ordered SKU |
 | `description` | text | yes | - | - | - | derived | = sku.description | Item description copied from the SKU |
 | `uom` | enum | yes | `enums.UOMS` (10 values) | - | - | derived | = sku.uom | Unit of measure copied from the SKU |
@@ -238,8 +238,8 @@ PO lines (1-8 per PO).
 | `line_tax_amount` | money | yes | range [0.00, inf] | INR | - | derived | = round_half_up(line_net_amount x tax_rate_pct / 100, 2) | Tax amount |
 | `line_gross_amount` | money | yes | range [0.00, inf] | INR | - | derived | = line_net_amount + line_tax_amount | Gross amount |
 | `promised_delivery_date` | date | yes | - | calendar date | - | source | po_date + SKU lead time (min..max days) | Delivery date promised on the PO |
-| `received_qty_as_of` | qty | yes | range [0, inf] | unit of measure of the line | - | derived | = sum(goods_receipt_line.received_qty) for this PO line | Total received as of policy.as_of_date (2026-12-31) |
-| `open_qty_as_of` | qty | yes | range [0, inf] | unit of measure of the line | - | derived | = max(ordered_qty - received_qty_as_of, 0) | Quantity still to receive as of policy.as_of_date (2026-12-31) |
+| `snapshot_received_qty` | qty | yes | range [0, inf] | unit of measure of the line | - | derived | **Reporting only, never an engine input.**; = sum(goods_receipt_line.received_qty) for this PO line posted &lt;= as_of | Total received at policy.as_of_date (reporting only) |
+| `snapshot_open_qty` | qty | yes | range [0, inf] | unit of measure of the line | - | derived | **Reporting only, never an engine input.**; = max(ordered_qty - snapshot_received_qty, 0) | Quantity still to receive at policy.as_of_date (reporting only) |
 
 ### goods_receipt
 
@@ -259,8 +259,8 @@ Goods receipts (GRNs) confirmed by business requesters.
 | `posted_at` | datetime | yes | - | IST timestamp | - | source | on received_date or later | When the GRN was posted |
 | `received_by` | id | yes | `^USR-\d{4}$` | - | - | source | FK -> `app_user.user_id`; user role BUSINESS_REQUESTER | Requester who confirmed the receipt |
 | `delivery_note_number` | text | yes | - | - | - | source | - | Vendor delivery-note reference |
-| `line_count` | int | yes | range [1, inf] | - | - | derived | = count(goods_receipt_line) | Number of receipt lines |
-| `status_as_of` | enum | yes | POSTED | - | - | derived | = to_status of the last erp_event for the GRN | Status as of policy.as_of_date (2026-12-31) |
+| `line_count` | int | yes | range [1, inf] | count | - | derived | = count(goods_receipt_line) | Number of receipt lines |
+| `snapshot_status` | enum | yes | POSTED | - | - | derived | **Reporting only, never an engine input.**; = to_status of the last erp_event for the GRN | Status at policy.as_of_date (reporting only) |
 
 ### goods_receipt_line
 
@@ -277,7 +277,7 @@ Received quantities per PO line.
 | `grn_line_id` | id | yes | `^GRNL-GRN-2026-\d{6}-\d{2}$` | - | yes | assigned | unique, immutable, zero-padded counter | Receipt line identifier GRNL-&lt;grn_id>-01 |
 | `grn_id` | id | yes | `^GRN-2026-\d{6}$` | - | - | source | FK -> `goods_receipt.grn_id` | Parent GRN |
 | `po_line_id` | id | yes | `^POL-PO-2026-\d{6}-\d{2}$` | - | - | source | FK -> `purchase_order_line.po_line_id`; must belong to the GRN's PO | PO line received |
-| `line_number` | int | yes | range [1, inf] | - | - | assigned | - | 1-based line number within the GRN |
+| `line_number` | int | yes | range [1, inf] | ordinal | - | assigned | - | 1-based line number within the GRN |
 | `received_qty` | qty | yes | range [0.01, inf] | unit of measure of the line | - | source | - | Quantity received |
 | `uom` | enum | yes | `enums.UOMS` (10 values) | - | - | derived | = purchase_order_line.uom | Unit of measure |
 | `cumulative_received_qty` | qty | yes | range [0, inf] | unit of measure of the line | - | derived | = sum(received_qty) of this and earlier GRN lines of the PO line | Running received total for the PO line, in posting order |
@@ -297,7 +297,7 @@ Append-only PO and GRN lifecycle events (state machines in docs/schema.md).
 | `event_id` | id | yes | `^ERP-2026-\d{6}$` | - | yes | assigned | unique, immutable, zero-padded counter | Event identifier ERP-2026-000001 |
 | `entity_type` | enum | yes | PURCHASE_ORDER, GOODS_RECEIPT | - | - | source | - | Entity whose state changed |
 | `entity_id` | text | yes | - | - | - | source | exists in the table named by entity_type | po_id or grn_id |
-| `seq` | int | yes | range [1, inf] | - | - | assigned | - | 1-based sequence per entity |
+| `seq` | int | yes | range [1, inf] | ordinal | - | assigned | - | 1-based sequence per entity |
 | `from_status` | enum | conditional | ISSUED, PARTIALLY_RECEIVED, RECEIVED, POSTED | - | - | source | required when seq > 1 | Status before (empty on creation) |
 | `to_status` | enum | yes | ISSUED, PARTIALLY_RECEIVED, RECEIVED, POSTED | - | - | source | transition allowed by the entity's state machine | Status after |
 | `event_at` | datetime | yes | - | IST timestamp | - | source | non-decreasing per entity | When the change happened |
@@ -308,7 +308,7 @@ Append-only PO and GRN lifecycle events (state machines in docs/schema.md).
 
 ### intake_manifest
 
-Register of every received invoice document. Carries no labels and no scenario information.
+Register of every received invoice document. Carries no labels, no scenario information and no invoice_id: the invoice ID embeds the vendor, so the engine assigns it only after resolving the vendor from the document (ID-01, ADR-037).
 
 - Layer: `inbox` (written by the generator); file `data/<scale>/inbox/intake_manifest.csv`
 - Grain: one row per received document
@@ -316,13 +316,13 @@ Register of every received invoice document. Carries no labels and no scenario i
 
 | Field | Type | Required | Allowed values / format | Unit | Unique | Origin | Validation rule / derivation | Description |
 |---|---|---|---|---|---|---|---|---|
-| `doc_id` | id | yes | `^DOC-2026-\d{6}$` | - | yes | assigned | unique, immutable, zero-padded counter | Document identifier DOC-2026-000001, in intake order |
-| `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | yes | assigned | global intake-order counter; vendor code = sender_vendor_id (ADR-003) | AP invoice ID assigned at intake |
+| `doc_id` | id | yes | `^DOC-2026-\d{6}$` | - | yes | assigned | unique; DOC-2026-&lt;intake_seq> | Document identifier DOC-2026-000001, in intake order |
+| `intake_seq` | int | yes | range [1, 999999] | ordinal | yes | assigned | 1..N without gaps, in received_at order | Global intake sequence; also the 6-digit counter of the invoice ID |
 | `channel` | enum | yes | PORTAL, EDI, EMAIL, SCAN | - | - | source | - | Intake channel |
 | `file_format` | enum | yes | PORTAL_JSON, EDI_FLAT, EMAIL_TEXT, OCR_TEXT | - | - | derived | = enums.FILE_FORMATS[channel] | Document format of the channel |
 | `received_at` | datetime | yes | - | IST timestamp | - | source | strictly increasing in doc_id order | Arrival timestamp |
-| `sender_address` | text | yes | - | - | - | source | - | Portal account, EDI partner ID, e-mail sender or mailroom batch |
-| `sender_vendor_id` | id | yes | `^VND-\d{5}$` | - | - | source | FK -> `vendor.vendor_id`; equals the vendor code embedded in invoice_id | Vendor identified by the channel at intake |
+| `sender_address` | text | yes | - | - | - | source | EMAIL: may be a forwarding mailbox rather than the vendor's remit address; SCAN: batch ID only; the engine never resolves the vendor from it (ADR-037) | Channel sender: portal account, EDI partner ID, e-mail From address or mailroom batch ID |
+| `sender_vendor_id` | id | conditional | `^VND-\d{5}$` | - | - | source | FK -> `vendor.vendor_id`; empty for EMAIL and SCAN; used only by the VEN-04 cross-check, never as the vendor; required when channel in (PORTAL, EDI) | Vendor authenticated by the channel |
 | `file_path` | text | yes | - | - | yes | source | - | Document path relative to the inbox folder |
 | `file_sha256` | text | yes | `^[0-9a-f]{64}$` | - | - | derived | = sha256(file bytes) | SHA-256 of the document bytes |
 | `file_bytes` | int | yes | range [1, inf] | bytes | - | derived | = len(file bytes) | Document size |
@@ -338,7 +338,7 @@ The true invoice as the vendor issued it (what is printed on the document). Eval
 
 | Field | Type | Required | Allowed values / format | Unit | Unique | Origin | Validation rule / derivation | Description |
 |---|---|---|---|---|---|---|---|---|
-| `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | yes | assigned | unique, immutable, zero-padded counter | Invoice identifier INV-&lt;vendor_id>-2026-000001 |
+| `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | yes | assigned | INV-&lt;true vendor_id>-2026-&lt;intake_seq of doc_id>; unique, immutable | Invoice identifier INV-&lt;vendor_id>-2026-000001 |
 | `doc_id` | id | yes | `^DOC-2026-\d{6}$` | - | yes | source | FK -> `intake_manifest.doc_id` | Rendered document |
 | `vendor_id` | id | yes | `^VND-\d{5}$` | - | - | source | FK -> `vendor.vendor_id`; equals the vendor code embedded in invoice_id | Issuing vendor |
 | `vendor_invoice_number` | text | yes | - | - | - | source | (vendor, normalised number) unique except labelled duplicate documents | Vendor's own invoice number as printed |
@@ -352,8 +352,8 @@ The true invoice as the vendor issued it (what is printed on the document). Eval
 | `lines_net_amount` | money | yes | range [0.00, inf] | INR | - | derived | = sum(invoice_line.line_net_amount) | Sum of printed line net amounts |
 | `lines_tax_amount` | money | yes | range [0.00, inf] | INR | - | derived | = sum(invoice_line.tax_amount) | Sum of printed line tax amounts |
 | `lines_gross_amount` | money | yes | range [0.00, inf] | INR | - | derived | = lines_net_amount + lines_tax_amount | Lines net plus lines tax |
-| `line_count` | int | yes | range [1, inf] | - | - | derived | = count(invoice_line) | Number of invoice lines |
-| `is_po_backed` | bool | yes | - | - | - | derived | = po_id is not empty | True when a PO is quoted |
+| `line_count` | int | yes | range [1, inf] | count | - | derived | = count(invoice_line) | Number of invoice lines |
+| `is_po_backed` | bool | yes | true, false | - | - | derived | = po_id is not empty | True when a PO is quoted |
 
 ### invoice_line
 
@@ -369,7 +369,7 @@ True invoice lines as printed. Evaluation-only.
 |---|---|---|---|---|---|---|---|---|
 | `invoice_line_id` | id | yes | `^INVL-INV-VND-\d{5}-2026-\d{6}-\d{2}$` | - | yes | assigned | unique, immutable, zero-padded counter | Line identifier INVL-&lt;invoice_id>-01 |
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | source | FK -> `invoice.invoice_id` | Parent invoice |
-| `line_number` | int | yes | range [1, inf] | - | - | assigned | - | 1-based line number |
+| `line_number` | int | yes | range [1, inf] | ordinal | - | assigned | - | 1-based line number |
 | `po_line_id` | id | conditional | `^POL-PO-2026-\d{6}-\d{2}$` | - | - | source | FK -> `purchase_order_line.po_line_id`; belongs to the invoice's PO; required when the invoice is PO-backed | PO line billed |
 | `sku_id` | id | conditional | `^SKU-\d{5}$` | - | - | source | FK -> `sku.sku_id`; required when po_line_id is not empty | SKU billed (empty for service lines) |
 | `description` | text | yes | - | - | - | source | - | Line description as printed |
@@ -396,16 +396,16 @@ Expected labels and decisions per invoice, derived by the rule-based oracle from
 |---|---|---|---|---|---|---|---|---|
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | yes | source | FK -> `invoice.invoice_id` | Invoice |
 | `doc_id` | id | yes | `^DOC-2026-\d{6}$` | - | yes | source | FK -> `intake_manifest.doc_id` | Document |
-| `scenario_category` | enum | yes | `enums.SCENARIO_CATEGORIES` (8 values) | - | - | source | - | Primary scenario category (mix table) |
-| `scenario_code` | enum | yes | `enums.SCENARIO_CODES` (40 values) | - | - | source | - | Sub-scenario code (docs/data_generation.md Table G6) |
+| `scenario_category` | enum | yes | `enums.SCENARIO_CATEGORIES` (9 values) | - | - | source | - | Primary scenario category (mix table) |
+| `scenario_code` | enum | yes | `enums.SCENARIO_CODES` (41 values) | - | - | source | - | Sub-scenario code (docs/data_generation.md Table G6) |
 | `edge_case_ids` | list | yes | EC-01, EC-02, EC-03, EC-04, EC-05, EC-06, EC-07, EC-08 | - | - | source | - | Assignment edge cases this invoice demonstrates |
-| `is_anomaly` | bool | yes | - | - | - | derived | = scenario_category != CLEAN | True unless scenario_category = CLEAN |
-| `is_po_backed` | bool | yes | - | - | - | derived | = invoice.po_id is not empty | PO quoted |
+| `is_anomaly` | bool | yes | true, false | - | - | derived | = intended_issue_types is not empty (CLEAN never has issues) | True when any issue is intended |
+| `is_po_backed` | bool | yes | true, false | - | - | derived | = invoice.po_id is not empty | PO quoted |
 | `capture_overlay` | enum | yes | NONE, DEGRADED_SCAN | - | - | source | - | Document-quality overlay applied when rendering |
-| `intended_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (23 values) | - | - | source | - | Labels the generator intended to inject |
-| `expected_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (23 values) | - | - | decided | must equal intended_issue_types (generation fails otherwise) | Labels the oracle derives under the policy |
-| `expected_primary_issue` | enum | yes | EXT_LOW_CONFIDENCE, DUPLICATE_EXACT, DUPLICATE_NUMBER_REUSE, DUPLICATE_SUSPECTED, VENDOR_NOT_FOUND, VENDOR_CLOSED, VENDOR_BLOCKED, PO_NOT_FOUND, VENDOR_PO_MISMATCH, INVOICE_DATE_IN_FUTURE, INVOICE_BEFORE_PO, HEADER_TOTAL_MISMATCH, LINE_AMOUNT_MISMATCH, TAX_CODE_INVALID, TAX_CODE_MISMATCH, TAX_AMOUNT_MISMATCH, PO_LINE_UNMATCHED, MISSING_RECEIPT, QTY_EXCEEDS_PO, QTY_EXCEEDS_RECEIVED, PRICE_VARIANCE, VENDOR_NOT_PAYABLE, PAYMENT_DUE_DATE_PASSED, NONE | - | - | decided | PRI-01 | Highest-precedence blocking issue |
-| `expected_blocked` | bool | yes | - | - | - | decided | - | At least one blocking issue |
+| `intended_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | source | - | Labels the generator intended to inject |
+| `expected_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | must equal intended_issue_types (generation fails otherwise) | Labels the oracle derives under the policy |
+| `expected_primary_issue` | enum | yes | EXT_LOW_CONFIDENCE, DUPLICATE_EXACT, DUPLICATE_NUMBER_REUSE, DUPLICATE_SUSPECTED, VENDOR_NOT_FOUND, VENDOR_SENDER_MISMATCH, VENDOR_CLOSED, VENDOR_BLOCKED, PO_NOT_FOUND, VENDOR_PO_MISMATCH, INVOICE_DATE_IN_FUTURE, INVOICE_BEFORE_PO, HEADER_TOTAL_MISMATCH, LINE_AMOUNT_MISMATCH, TAX_CODE_INVALID, TAX_CODE_MISMATCH, TAX_AMOUNT_MISMATCH, PO_LINE_UNMATCHED, MISSING_RECEIPT, QTY_EXCEEDS_PO, QTY_EXCEEDS_RECEIVED, PRICE_VARIANCE, VENDOR_NOT_PAYABLE, PAYMENT_DUE_DATE_PASSED, NONE | - | - | decided | PRI-01 | Highest-precedence blocking issue |
+| `expected_blocked` | bool | yes | true, false | - | - | decided | - | At least one blocking issue |
 | `expected_match_status` | enum | yes | `enums.MATCH_STATUSES` (8 values) | - | - | decided | MS-01 | Expected invoice match status |
 | `expected_duplicate_of` | id | conditional | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | decided | FK -> `invoice.invoice_id`; required when scenario_category = DUPLICATE | Original of a duplicate document |
 | `expected_assigned_roles` | list | yes | BUSINESS_REQUESTER, PROCESS_OWNER, APPROVER, OPERATIONS_ANALYST, SYSTEM_ADMINISTRATOR | - | - | decided | RTE-01 | Roles that must receive the blocking exceptions |
@@ -413,11 +413,11 @@ Expected labels and decisions per invoice, derived by the rule-based oracle from
 | `expected_approval_band` | text | no | - | - | - | decided | APR-01 | Approval band (empty when not eligible) |
 | `expected_approval_levels` | list | yes | AUTO, REQ, L1, L2, L3 | - | - | decided | - | Approval levels in order (empty when not eligible) |
 | `expected_final_status` | enum | yes | `enums.INVOICE_STATUSES` (8 values) | - | - | decided | - | Invoice status at the as-of date |
-| `expected_payment_ready` | bool | yes | - | - | - | decided | PAY-01 | A payment record must exist |
+| `expected_payment_ready` | bool | yes | true, false | - | - | decided | PAY-01 | A payment record must exist |
 | `expected_payment_status` | enum | conditional | SCHEDULED, PAID | - | - | decided | required when expected_payment_ready | Payment status at the as-of date |
-| `expected_due_date` | date | conditional | - | calendar date | - | decided | required when expected_payment_ready | Due date |
+| `expected_due_date` | date | conditional | - | calendar date | - | decided | invoice_date + payment-term days (PAY-02); may be after as_of; required when expected_payment_ready | Due date |
 | `expected_scheduled_date` | date | conditional | - | calendar date | - | decided | PAY-02; required when expected_payment_ready | Scheduled payment date |
-| `oracle_rule_ids` | list | yes | - | - | - | decided | - | Rule IDs that fired in the oracle |
+| `oracle_rule_ids` | list | yes | `^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$` | - | - | decided | each ID is documented in docs/business_rules.md | Rule IDs that fired in the oracle |
 | `policy_version` | text | yes | - | - | - | decided | - | Policy version used |
 | `description` | text | yes | - | - | - | source | - | Human-readable description of what was injected |
 
@@ -433,13 +433,13 @@ Expected line-level match results for every invoice line.
 |---|---|---|---|---|---|---|---|---|
 | `invoice_line_id` | id | yes | `^INVL-INV-VND-\d{5}-2026-\d{6}-\d{2}$` | - | yes | source | FK -> `invoice_line.invoice_line_id` | Invoice line |
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | source | FK -> `invoice.invoice_id` | Invoice |
-| `expected_line_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (23 values) | - | - | decided | - | Line-level labels |
+| `expected_line_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | - | Line-level labels |
 | `expected_price_status` | enum | yes | EXACT, WITHIN_TOLERANCE, OUT_OF_TOLERANCE, NOT_EVALUATED | - | - | decided | - | Price check result |
 | `expected_qty_status` | enum | yes | OK, EXCEEDS_RECEIVED, EXCEEDS_PO, NO_RECEIPT, NOT_EVALUATED | - | - | decided | - | Quantity check result |
 | `expected_tax_status` | enum | yes | OK, WITHIN_ROUNDING, CODE_MISMATCH, AMOUNT_MISMATCH, NOT_EVALUATED | - | - | decided | - | Tax check result |
 | `expected_received_qty` | qty | conditional | range [0, inf] | unit of measure of the line | - | decided | required when line matched | Cumulative received at processing time |
 | `expected_prior_invoiced_qty` | qty | conditional | range [0, inf] | unit of measure of the line | - | decided | required when line matched | Quantity billed on earlier non-duplicate invoices |
-| `expected_price_variance_pct` | decimal | conditional | - | % | - | decided | required when line matched | Signed unit-price variance vs PO |
+| `expected_price_variance_pct` | decimal | conditional | - | % | - | decided | (invoice unit price - PO unit price) / PO unit price x 100, exact; required when line matched | Signed unit-price variance vs PO |
 
 ### captured_invoice
 
@@ -451,18 +451,18 @@ Header fields as extracted from the document, plus engine-resolved references. P
 
 | Field | Type | Required | Allowed values / format | Unit | Unique | Origin | Validation rule / derivation | Description |
 |---|---|---|---|---|---|---|---|---|
-| `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | yes | assigned | FK -> `intake_manifest.invoice_id` | Invoice ID from the intake manifest |
+| `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | yes | decided | ID-01: INV-&lt;VEN-01 vendor_id, or VND-00000 if unresolved>-2026-&lt;intake_seq>; equals the source invoice_id exactly when the vendor was resolved correctly | Invoice ID assigned after vendor resolution |
 | `doc_id` | id | yes | `^DOC-2026-\d{6}$` | - | yes | source | FK -> `intake_manifest.doc_id` | Source document |
 | `channel` | enum | yes | PORTAL, EDI, EMAIL, SCAN | - | - | derived | = intake_manifest.channel | Intake channel |
-| `captured_at` | datetime | yes | - | IST timestamp | - | decided | - | When extraction finished |
+| `captured_at` | datetime | yes | - | IST timestamp | - | decided | >= intake_manifest.received_at and &lt;= as_of_date | When extraction finished |
 | `capture_status` | enum | yes | OK, LOW_CONFIDENCE | - | - | decided | CAP-01 | LOW_CONFIDENCE when any required field &lt; threshold |
-| `min_field_confidence` | decimal | yes | range [0, 1] | - | - | derived | = min(extraction_field.confidence) | Lowest confidence over required fields |
+| `min_field_confidence` | decimal | yes | range [0, 1] | score 0-1 | - | derived | = min(extraction_field.confidence) | Lowest confidence over required fields |
 | `vendor_name` | text | yes | - | - | - | captured | - | Vendor name as printed |
 | `vendor_tax_id` | text | yes | - | - | - | captured | - | Tax registration number as printed |
-| `vendor_id` | id | no | `^VND-\d{5}$` | - | - | decided | FK -> `vendor.vendor_id`; VEN-01; empty = VENDOR_NOT_FOUND | Vendor resolved from the tax registration number |
+| `vendor_id` | id | no | `^VND-\d{5}$` | - | - | decided | FK -> `vendor.vendor_id`; VEN-01 is its only source (never the sender or an ID); empty = VENDOR_NOT_FOUND | Vendor resolved from the printed tax registration number |
 | `vendor_invoice_number` | text | conditional | - | - | - | captured | required when unless capture_status = LOW_CONFIDENCE (then empty when unreadable) | Invoice number as printed |
 | `normalized_invoice_number` | text | yes | - | - | - | derived | = uppercase, split on non-alphanumerics, strip leading zeros per numeric token, join | Number after DUP normalisation |
-| `invoice_date` | date | conditional | - | calendar date | - | captured | required when unless capture_status = LOW_CONFIDENCE (then empty when unreadable) | Invoice date (normalised to ISO) |
+| `invoice_date` | date | conditional | - | calendar date | - | captured | a valid calendar date; DATE-01 requires &lt;= received date; required when unless capture_status = LOW_CONFIDENCE (then empty when unreadable) | Invoice date (normalised to ISO) |
 | `po_number` | text | no | - | - | - | captured | - | PO reference as printed |
 | `po_id` | id | no | `^PO-2026-\d{6}$` | - | - | decided | FK -> `purchase_order.po_id`; PO-01 | Resolved PO |
 | `attention_user_id` | id | no | `^USR-\d{4}$` | - | - | decided | FK -> `app_user.user_id` | Requester named on a non-PO invoice |
@@ -470,7 +470,7 @@ Header fields as extracted from the document, plus engine-resolved references. P
 | `header_net_amount` | money | conditional | range [0.00, inf] | INR | - | captured | required when unless capture_status = LOW_CONFIDENCE (then empty when unreadable) | Printed net total |
 | `header_tax_amount` | money | conditional | range [0.00, inf] | INR | - | captured | required when unless capture_status = LOW_CONFIDENCE (then empty when unreadable) | Printed tax total |
 | `header_gross_amount` | money | conditional | range [0.00, inf] | INR | - | captured | required when unless capture_status = LOW_CONFIDENCE (then empty when unreadable) | Printed invoice total |
-| `line_count` | int | yes | range [1, inf] | - | - | derived | = count(captured_invoice_line) | Lines extracted |
+| `line_count` | int | yes | range [1, inf] | count | - | derived | = count(captured_invoice_line) | Lines extracted |
 
 ### captured_invoice_line
 
@@ -485,8 +485,8 @@ Line fields as extracted.
 |---|---|---|---|---|---|---|---|---|
 | `invoice_line_id` | id | yes | `^INVL-INV-VND-\d{5}-2026-\d{6}-\d{2}$` | - | yes | assigned | unique; built from invoice_id and the printed line number | Line ID INVL-&lt;invoice_id>-&lt;printed line number> |
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | source | FK -> `captured_invoice.invoice_id` | Parent captured invoice |
-| `line_number` | int | yes | range [1, inf] | - | - | captured | - | Printed line number |
-| `po_line_number` | int | no | - | - | - | captured | - | PO line number as printed |
+| `line_number` | int | yes | range [1, inf] | ordinal | - | captured | - | Printed line number |
+| `po_line_number` | int | no | range [1, inf] | ordinal | - | captured | must resolve to a line of the quoted PO (PO-03) | PO line number as printed |
 | `po_line_id` | id | no | `^POL-PO-2026-\d{6}-\d{2}$` | - | - | decided | FK -> `purchase_order_line.po_line_id`; PO-03 | Resolved PO line |
 | `sku_id` | id | no | `^SKU-\d{5}$` | - | - | captured | FK -> `sku.sku_id` | SKU as printed |
 | `description` | text | yes | - | - | - | captured | - | Description as printed |
@@ -496,7 +496,7 @@ Line fields as extracted.
 | `line_net_amount` | money | yes | range [0.00, inf] | INR | - | captured | - | Line amount as printed |
 | `tax_code` | enum | yes | GST0, GST5, GST12, GST18, EXEMPT | - | - | captured | FK -> `tax_code.tax_code` | Tax code as printed |
 | `tax_amount` | money | yes | range [0.00, inf] | INR | - | captured | - | Tax amount as printed |
-| `min_field_confidence` | decimal | yes | range [0, 1] | - | - | derived | = min(extraction_field.confidence) | Lowest confidence over the line's fields |
+| `min_field_confidence` | decimal | yes | range [0, 1] | score 0-1 | - | derived | = min(extraction_field.confidence) | Lowest confidence over the line's fields |
 
 ### extraction_field
 
@@ -516,9 +516,9 @@ Per-field extraction evidence: raw text, normalised value, method and confidence
 | `field_name` | text | yes | - | - | - | source | - | Logical field name, e.g. header_gross_amount, quantity |
 | `raw_text` | text | no | - | - | - | captured | - | Text exactly as found in the document |
 | `normalized_value` | text | no | - | - | - | captured | - | Canonical value after normalisation |
-| `confidence` | decimal | yes | range [0, 1] | - | - | decided | - | Extraction confidence |
+| `confidence` | decimal | yes | range [0, 1] | score 0-1 | - | decided | - | Extraction confidence |
 | `method` | enum | yes | `enums.EXTRACTION_METHODS` (7 values) | - | - | decided | - | How the value was found |
-| `is_low_confidence` | bool | yes | - | - | - | derived | = confidence &lt; policy threshold | confidence &lt; extraction.min_field_confidence |
+| `is_low_confidence` | bool | yes | true, false | - | - | derived | = confidence &lt; policy threshold | confidence &lt; extraction.min_field_confidence |
 
 ### invoice_decision
 
@@ -533,17 +533,17 @@ Engine decision summary per invoice (what evaluation compares with ground truth)
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | yes | source | FK -> `captured_invoice.invoice_id` | Invoice |
 | `status_as_of` | enum | yes | `enums.INVOICE_STATUSES` (8 values) | - | - | derived | = to_status of the last INVOICE ap_event | Status at the as-of date |
 | `match_status` | enum | yes | `enums.MATCH_STATUSES` (8 values) | - | - | decided | MS-01 | Invoice match status |
-| `issue_types` | list | yes | `enums.EXCEPTION_TYPES` (23 values) | - | - | decided | - | All issues raised (blocking and non-blocking) |
-| `primary_issue` | enum | yes | EXT_LOW_CONFIDENCE, DUPLICATE_EXACT, DUPLICATE_NUMBER_REUSE, DUPLICATE_SUSPECTED, VENDOR_NOT_FOUND, VENDOR_CLOSED, VENDOR_BLOCKED, PO_NOT_FOUND, VENDOR_PO_MISMATCH, INVOICE_DATE_IN_FUTURE, INVOICE_BEFORE_PO, HEADER_TOTAL_MISMATCH, LINE_AMOUNT_MISMATCH, TAX_CODE_INVALID, TAX_CODE_MISMATCH, TAX_AMOUNT_MISMATCH, PO_LINE_UNMATCHED, MISSING_RECEIPT, QTY_EXCEEDS_PO, QTY_EXCEEDS_RECEIVED, PRICE_VARIANCE, VENDOR_NOT_PAYABLE, PAYMENT_DUE_DATE_PASSED, NONE | - | - | decided | PRI-01 | Highest-precedence blocking issue |
-| `blocked` | bool | yes | - | - | - | derived | = exists ap_exception with blocking and status_as_of = OPEN, or REJECTED | At least one open blocking exception |
+| `issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | - | All issues raised (blocking and non-blocking) |
+| `primary_issue` | enum | yes | EXT_LOW_CONFIDENCE, DUPLICATE_EXACT, DUPLICATE_NUMBER_REUSE, DUPLICATE_SUSPECTED, VENDOR_NOT_FOUND, VENDOR_SENDER_MISMATCH, VENDOR_CLOSED, VENDOR_BLOCKED, PO_NOT_FOUND, VENDOR_PO_MISMATCH, INVOICE_DATE_IN_FUTURE, INVOICE_BEFORE_PO, HEADER_TOTAL_MISMATCH, LINE_AMOUNT_MISMATCH, TAX_CODE_INVALID, TAX_CODE_MISMATCH, TAX_AMOUNT_MISMATCH, PO_LINE_UNMATCHED, MISSING_RECEIPT, QTY_EXCEEDS_PO, QTY_EXCEEDS_RECEIVED, PRICE_VARIANCE, VENDOR_NOT_PAYABLE, PAYMENT_DUE_DATE_PASSED, NONE | - | - | decided | PRI-01 | Highest-precedence blocking issue |
+| `blocked` | bool | yes | true, false | - | - | derived | = exists ap_exception with blocking and status_as_of = OPEN, or REJECTED | At least one open blocking exception |
 | `duplicate_of_invoice_id` | id | no | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | decided | FK -> `captured_invoice.invoice_id` | Original of a detected duplicate |
 | `approval_band` | text | no | - | - | - | decided | APR-01 | Approval band applied |
 | `approval_levels` | list | yes | AUTO, REQ, L1, L2, L3 | - | - | decided | - | Approval levels required, in order |
-| `payment_ready` | bool | yes | - | - | - | derived | = exists payment for invoice_id; never true when blocked | A payment record exists |
+| `payment_ready` | bool | yes | true, false | - | - | derived | = exists payment for invoice_id; never true when blocked | A payment record exists |
 | `payment_id` | id | no | `^PAY-2026-\d{6}$` | - | - | source | FK -> `payment.payment_id` | Payment record |
-| `decided_at` | datetime | yes | - | IST timestamp | - | decided | - | When validation and matching finished |
+| `decided_at` | datetime | yes | - | IST timestamp | - | decided | >= captured_invoice.captured_at and &lt;= as_of_date | When validation and matching finished |
 | `policy_version` | text | yes | - | - | - | source | FK -> `policy_version.policy_version` | Policy version applied |
-| `rule_ids` | list | yes | - | - | - | decided | - | Rule IDs that fired |
+| `rule_ids` | list | yes | `^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$` | - | - | decided | each ID is documented in docs/business_rules.md | Rule IDs that fired |
 
 ### match_result
 
@@ -573,7 +573,7 @@ Line-level three-way match (PO line vs receipts vs invoice line) with the tolera
 | `po_tax_code` | enum | no | GST0, GST5, GST12, GST18, EXEMPT | - | - | source | FK -> `tax_code.tax_code` | PO line tax code |
 | `expected_tax_amount` | money | no | range [0.00, inf] | INR | - | derived | = round_half_up(line_net_amount x rate / 100, 2) | Recomputed tax for the printed net |
 | `line_match_status` | enum | yes | `enums.MATCH_STATUSES` (8 values) | - | - | decided | MS-01 | Line match status |
-| `rule_ids` | list | yes | - | - | - | decided | - | Rule IDs evaluated |
+| `rule_ids` | list | yes | `^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$` | - | - | decided | each ID is documented in docs/business_rules.md | Rule IDs evaluated |
 
 ### match_allocation
 
@@ -590,7 +590,7 @@ Bridge table for the many-to-many invoice line &lt;-> goods receipt line relatio
 | `invoice_line_id` | id | yes | `^INVL-INV-VND-\d{5}-2026-\d{6}-\d{2}$` | - | - | source | FK -> `captured_invoice_line.invoice_line_id` | Invoice line |
 | `grn_line_id` | id | yes | `^GRNL-GRN-2026-\d{6}-\d{2}$` | - | - | source | FK -> `goods_receipt_line.grn_line_id`; same PO line as the invoice line; posted before the invoice was processed | Receipt line |
 | `allocated_qty` | qty | yes | range [0.01, inf] | unit of measure of the line | - | decided | - | Quantity of the receipt line consumed |
-| `allocation_seq` | int | yes | range [1, inf] | - | - | assigned | - | FIFO order within the invoice line |
+| `allocation_seq` | int | yes | range [1, inf] | ordinal | - | assigned | - | FIFO order within the invoice line |
 
 ### duplicate_pair
 
@@ -606,7 +606,7 @@ Detected duplicate -> original pairs.
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | yes | source | FK -> `captured_invoice.invoice_id` | Later document flagged as duplicate |
 | `original_invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | source | FK -> `captured_invoice.invoice_id`; received before invoice_id; same vendor | Earlier original |
 | `match_type` | enum | yes | EXACT, NUMBER_REUSE, CONTENT | - | - | decided | DUP-01..03 | Which duplicate rule matched |
-| `matched_keys` | list | yes | - | - | - | decided | - | Fields that matched |
+| `matched_keys` | list | yes | vendor_id, normalized_number, invoice_date, header_gross_amount, po_id | - | - | decided | the key set of the matching DUP rule | Fields that matched |
 
 ### ap_exception
 
@@ -621,10 +621,10 @@ Exceptions with expected vs actual, tolerance, routing and SLA (named ap_excepti
 | `exception_id` | id | yes | `^EXC-2026-\d{6}$` | - | yes | assigned | unique, immutable, zero-padded counter | EXC-2026-000001 |
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | source | FK -> `captured_invoice.invoice_id` | Invoice |
 | `invoice_line_id` | id | no | `^INVL-INV-VND-\d{5}-2026-\d{6}-\d{2}$` | - | - | source | FK -> `captured_invoice_line.invoice_line_id` | Line (empty = header level) |
-| `exception_type` | enum | yes | `enums.EXCEPTION_TYPES` (23 values) | - | - | decided | - | Exception type |
+| `exception_type` | enum | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | - | Exception type |
 | `severity` | enum | yes | LOW, MEDIUM, HIGH, CRITICAL | - | - | derived | = routing.types.&lt;exception_type>.severity | Severity from the routing matrix |
-| `blocking` | bool | yes | - | - | - | derived | = routing matrix | Blocks approval and payment |
-| `is_primary` | bool | yes | - | - | - | decided | PRI-01 | Chosen as the invoice's primary issue |
+| `blocking` | bool | yes | true, false | - | - | derived | = routing matrix | Blocks approval and payment |
+| `is_primary` | bool | yes | true, false | - | - | decided | PRI-01 | Chosen as the invoice's primary issue |
 | `rule_id` | text | yes | - | - | - | decided | - | Rule that raised it |
 | `policy_version` | text | yes | - | - | - | source | FK -> `policy_version.policy_version` | Policy version |
 | `expected_value` | text | no | - | - | - | decided | - | What the rule expected |
@@ -635,11 +635,11 @@ Exceptions with expected vs actual, tolerance, routing and SLA (named ap_excepti
 | `assigned_role` | enum | yes | BUSINESS_REQUESTER, PROCESS_OWNER, APPROVER, OPERATIONS_ANALYST, SYSTEM_ADMINISTRATOR | - | - | derived | = routing matrix RTE-01 | Actor role the exception is routed to |
 | `assigned_user_id` | id | yes | `^USR-\d{4}$` | - | - | decided | FK -> `app_user.user_id`; [assignment] rules | Assignee inside the role |
 | `queue` | enum | yes | AP_CAPTURE_REVIEW, AP_DUPLICATES, AP_VALIDATION, AP_TAX, PAYMENT_WATCH, PO_QUERIES, RECEIPT_CONFIRMATION, PRICE_REVIEW, POLICY_EXCEPTIONS, VENDOR_MASTER | - | - | derived | = routing matrix | Work queue |
-| `created_at` | datetime | yes | - | IST timestamp | - | decided | - | Raised at |
+| `created_at` | datetime | yes | - | IST timestamp | - | decided | >= captured_invoice.captured_at and &lt;= as_of_date | Raised at |
 | `sla_due_date` | date | yes | - | calendar date | - | derived | SLA-01 | Created date + SLA business days |
 | `status_as_of` | enum | yes | OPEN, CLOSED | - | - | derived | = last EXCEPTION ap_event | Status at the as-of date |
 | `resolution_code` | text | conditional | - | - | - | source | required when status_as_of = CLOSED | Why it was closed |
-| `is_overdue_as_of` | bool | yes | - | - | - | derived | = status_as_of = OPEN and sla_due_date &lt; as_of_date | Open past its SLA at the as-of date |
+| `is_overdue_as_of` | bool | yes | true, false | - | - | derived | = status_as_of = OPEN and sla_due_date &lt; as_of_date | Open past its SLA at the as-of date |
 
 ### approval
 
@@ -656,7 +656,7 @@ Approval requests and decisions per level, created only for eligible invoices.
 | `approval_id` | id | yes | `^APR-2026-\d{6}$` | - | yes | assigned | unique, immutable, zero-padded counter | APR-2026-000001 |
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | source | FK -> `captured_invoice.invoice_id`; invoice had no open blocking exception when approvals were requested | Invoice |
 | `level` | enum | yes | AUTO, REQ, L1, L2, L3 | - | - | source | - | Approval level |
-| `sequence` | int | yes | range [1, inf] | - | - | assigned | - | Order within the invoice's chain |
+| `sequence` | int | yes | range [1, inf] | ordinal | - | assigned | - | Order within the invoice's chain |
 | `approval_band` | text | yes | - | - | - | derived | APR-01 | Band from the approval matrix |
 | `approver_role` | enum | yes | SYSTEM, BUSINESS_REQUESTER, APPROVER | - | - | derived | = approval.levels.&lt;level>.role | Role of the approver |
 | `approver_user_id` | id | yes | `^USR-\d{4}$` | - | - | decided | FK -> `app_user.user_id` | Approver |
@@ -688,7 +688,7 @@ Payment records, created only for payment-ready invoices (no open blocking excep
 | `created_at` | datetime | yes | - | IST timestamp | - | decided | PAY-01 | Payment-ready time |
 | `paid_at` | datetime | conditional | - | IST timestamp | - | decided | PAY-05; required when status_as_of = PAID | Release time in the payment run |
 | `status_as_of` | enum | yes | SCHEDULED, PAID | - | - | derived | = last PAYMENT ap_event | Status at the as-of date |
-| `due_date_passed` | bool | yes | - | - | - | derived | = created_at date > due_date | Ready after the due date (PAY-06 warning) |
+| `due_date_passed` | bool | yes | true, false | - | - | derived | = created_at date > due_date | Ready after the due date (PAY-06 warning) |
 | `policy_version` | text | yes | - | - | - | source | FK -> `policy_version.policy_version` | Policy version |
 
 ### ap_event
@@ -706,7 +706,7 @@ Append-only lifecycle events for invoices, exceptions, approvals and payments. C
 | `entity_type` | enum | yes | INVOICE, EXCEPTION, APPROVAL, PAYMENT | - | - | source | - | Entity type |
 | `entity_id` | text | yes | - | - | - | source | exists in the table named by entity_type | invoice_id, exception_id, approval_id or payment_id |
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | source | FK -> `captured_invoice.invoice_id` | Invoice the event belongs to |
-| `seq` | int | yes | range [1, inf] | - | - | assigned | - | 1-based sequence per entity |
+| `seq` | int | yes | range [1, inf] | ordinal | - | assigned | - | 1-based sequence per entity |
 | `from_status` | enum | conditional | RECEIVED, CAPTURED, ON_HOLD, REJECTED, PENDING_APPROVAL, APPROVED, PAYMENT_READY, PAID, OPEN, CLOSED, PENDING, APPROVED, REJECTED, SCHEDULED, PAID | - | - | source | required when seq > 1 | Status before (empty on creation) |
 | `to_status` | enum | yes | RECEIVED, CAPTURED, ON_HOLD, REJECTED, PENDING_APPROVAL, APPROVED, PAYMENT_READY, PAID, OPEN, CLOSED, PENDING, APPROVED, REJECTED, SCHEDULED, PAID | - | - | source | allowed by the entity's state machine | Status after |
 | `event_at` | datetime | yes | - | IST timestamp | - | source | non-decreasing per entity | When it happened |
@@ -728,8 +728,8 @@ The policy file every decision references.
 |---|---|---|---|---|---|---|---|---|
 | `policy_version` | text | yes | `^\d+\.\d+\.\d+$` | - | yes | source | - | Semantic version from [policy].version |
 | `policy_id` | text | yes | - | - | - | source | - | Policy identifier |
-| `effective_from` | date | yes | - | calendar date | - | source | - | Effective date |
-| `as_of_date` | date | yes | - | calendar date | - | source | - | Fixed as-of date |
+| `effective_from` | date | yes | - | calendar date | - | source | &lt;= as_of_date | Effective date |
+| `as_of_date` | date | yes | - | calendar date | - | source | >= effective_from; no completed event after it | Fixed as-of date |
 | `sha256` | text | yes | `^[0-9a-f]{64}$` | - | - | derived | = sha256(policy file bytes) | SHA-256 of config/ap_policy.toml |
 
 ## Controlled vocabularies
@@ -747,7 +747,7 @@ Defined once in `invoice_ap/common/enums.py`.
 - `ERP_EVENT_REASONS`: PO_ISSUED, GOODS_RECEIVED, GRN_POSTED
 - `EVENT_ENTITY_TYPES`: VENDOR, PURCHASE_ORDER, GOODS_RECEIPT, INVOICE, EXCEPTION, APPROVAL, PAYMENT
 - `EXCEPTION_STATUSES`: OPEN, CLOSED
-- `EXCEPTION_TYPES`: EXT_LOW_CONFIDENCE, DUPLICATE_EXACT, DUPLICATE_NUMBER_REUSE, DUPLICATE_SUSPECTED, VENDOR_NOT_FOUND, VENDOR_CLOSED, VENDOR_BLOCKED, PO_NOT_FOUND, VENDOR_PO_MISMATCH, INVOICE_DATE_IN_FUTURE, INVOICE_BEFORE_PO, HEADER_TOTAL_MISMATCH, LINE_AMOUNT_MISMATCH, TAX_CODE_INVALID, TAX_CODE_MISMATCH, TAX_AMOUNT_MISMATCH, PO_LINE_UNMATCHED, MISSING_RECEIPT, QTY_EXCEEDS_PO, QTY_EXCEEDS_RECEIVED, PRICE_VARIANCE, VENDOR_NOT_PAYABLE, PAYMENT_DUE_DATE_PASSED
+- `EXCEPTION_TYPES`: EXT_LOW_CONFIDENCE, DUPLICATE_EXACT, DUPLICATE_NUMBER_REUSE, DUPLICATE_SUSPECTED, VENDOR_NOT_FOUND, VENDOR_SENDER_MISMATCH, VENDOR_CLOSED, VENDOR_BLOCKED, PO_NOT_FOUND, VENDOR_PO_MISMATCH, INVOICE_DATE_IN_FUTURE, INVOICE_BEFORE_PO, HEADER_TOTAL_MISMATCH, LINE_AMOUNT_MISMATCH, TAX_CODE_INVALID, TAX_CODE_MISMATCH, TAX_AMOUNT_MISMATCH, PO_LINE_UNMATCHED, MISSING_RECEIPT, QTY_EXCEEDS_PO, QTY_EXCEEDS_RECEIVED, PRICE_VARIANCE, VENDOR_NOT_PAYABLE, PAYMENT_DUE_DATE_PASSED
 - `EXTRACTION_METHODS`: STRUCTURED, SEGMENT, LABEL_EXACT, LABEL_SYNONYM, PATTERN, OCR_REPAIRED, NOT_FOUND
 - `GOODS_CATEGORIES`: RAW_MATERIALS, ELECTRICAL, MRO_SPARES, PACKAGING, IT_HARDWARE, OFFICE_SUPPLIES, SAFETY_EQUIPMENT, CANTEEN_SUPPLIES
 - `GRN_STATUSES`: POSTED
@@ -764,8 +764,8 @@ Defined once in `invoice_ap/common/enums.py`.
 - `QUEUES`: AP_CAPTURE_REVIEW, AP_DUPLICATES, AP_VALIDATION, AP_TAX, PAYMENT_WATCH, PO_QUERIES, RECEIPT_CONFIRMATION, PRICE_REVIEW, POLICY_EXCEPTIONS, VENDOR_MASTER, APPROVALS
 - `RECEIPT_TYPES`: PARTIAL, FULL, OVER
 - `RESPONSIBILITIES`: SYSTEM_USER, VENDOR_MASTER_OWNER, PLATFORM_ADMIN, POLICY_OWNER, AP_ANALYST, REQUESTER, COST_CENTER_MANAGER, FINANCE_CONTROLLER, CHIEF_FINANCIAL_OFFICER
-- `SCENARIO_CATEGORIES`: CLEAN, PRICE_VARIANCE, QTY_MISMATCH, DUPLICATE, MISSING_RECEIPT, TAX_VENDOR, ARITHMETIC, INVOICE_BEFORE_PO
-- `SCENARIO_CODES`: C-STD, C-PARTIAL-OPEN, C-OVERRECEIPT-WITHIN, C-QTY-AT-TOL, C-PRICE-AT-TOL, C-PRICE-INSIDE, C-PRICE-SMALL-VAR, C-TAX-ROUNDING, C-TN-SAME-DAY, C-CAPTURE-DEGRADED, C-SPLIT-PARTIAL, C-SPLIT-FINAL, C-CONSOLIDATED, C-NPO-RECURRING, C-NPO-ONEOFF, PV-OVER, PV-SPLIT-LATER, PV-UNDER, PV-BOUNDARY-OUT, QM-PARTIAL-BILLED-FULL, QM-OVERBILL-RECEIVED, QM-CUMULATIVE, QM-EXCEEDS-PO-OVERRECEIPT, QM-EXCEEDS-PO-AND-RECEIVED, QM-BOUNDARY-OUT, DUP-EXACT, DUP-EXACT-NORMALIZED, DUP-EXACT-NPO, DUP-NUMBER-REUSE, DUP-CONTENT, MR-NO-GRN, TV-CLOSED, TV-BLOCKED, TV-TAX-CODE, TV-TAX-AMOUNT, TV-VENDOR-PO, TV-NPO-TAX-AMOUNT, ARITH-HEADER-TOTAL, ARITH-LINE-EXTENSION, DATE-INVOICE-BEFORE-PO
+- `SCENARIO_CATEGORIES`: CLEAN, PRICE_VARIANCE, QTY_MISMATCH, DUPLICATE, MISSING_RECEIPT, TAX_VENDOR, ARITHMETIC, INVOICE_BEFORE_PO, CAPTURE_REVIEW
+- `SCENARIO_CODES`: C-STD, C-PARTIAL-OPEN, C-OVERRECEIPT-WITHIN, C-QTY-AT-TOL, C-PRICE-AT-TOL, C-PRICE-INSIDE, C-PRICE-SMALL-VAR, C-TAX-ROUNDING, C-TN-SAME-DAY, C-SPLIT-PARTIAL, C-SPLIT-FINAL, C-CONSOLIDATED, C-PARTIAL-BILLING, C-NPO-RECURRING, C-NPO-ONEOFF, PV-OVER, PV-SPLIT-LATER, PV-UNDER, PV-BOUNDARY-OUT, QM-PARTIAL-BILLED-FULL, QM-OVERBILL-RECEIVED, QM-CUMULATIVE, QM-EXCEEDS-PO-OVERRECEIPT, QM-EXCEEDS-PO-AND-RECEIVED, QM-BOUNDARY-OUT, DUP-EXACT, DUP-EXACT-NORMALIZED, DUP-EXACT-NPO, DUP-NUMBER-REUSE, DUP-CONTENT, MR-NO-GRN, TV-CLOSED, TV-BLOCKED, TV-TAX-CODE, TV-TAX-AMOUNT, TV-VENDOR-PO, TV-NPO-TAX-AMOUNT, ARITH-HEADER-TOTAL, ARITH-LINE-EXTENSION, DATE-INVOICE-BEFORE-PO, CAP-DEGRADED-SCAN
 - `SERVICE_CATEGORIES`: FACILITY_SERVICES, PROFESSIONAL_SERVICES, IT_SERVICES, LOGISTICS_SERVICES
 - `SEVERITIES`: LOW, MEDIUM, HIGH, CRITICAL
 - `TAX_CATEGORIES`: STANDARD, REDUCED, ZERO_RATED, EXEMPT

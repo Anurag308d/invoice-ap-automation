@@ -7,6 +7,10 @@ uniqueness, validation rule) plus a description and an origin:
   assigned - a deterministic identifier or sequence number
   captured - a value the engine extracted from a document
   decided  - a value the engine or the oracle decided by rule (rule IDs in `rule`)
+
+`reporting_only` marks convenience snapshots (named snapshot_*) that sit in an engine-readable layer
+but are evaluated at the as-of date. They would reveal the future to an invoice processed earlier,
+so the engine must never read them (static test plus the Stage-4 time-travel sandbox; ADR-038).
 """
 from __future__ import annotations
 
@@ -51,6 +55,7 @@ class Field:
     fk: str = ""
     rule: str = ""
     derivation: str = ""
+    reporting_only: bool = False
 
 
 @dataclass(frozen=True)
@@ -113,7 +118,12 @@ def text(name: str, desc: str, **kw) -> Field:
 
 
 def integer(name: str, desc: str, **kw) -> Field:
-    return Field(name, "int", desc, **kw)
+    return Field(name, "int", desc, unit=kw.pop("unit", "count"), **kw)
+
+
+def ordinal(name: str, desc: str, **kw) -> Field:
+    """1-based sequence or line number."""
+    return Field(name, "int", desc, unit="ordinal", min_value=kw.pop("min_value", "1"), **kw)
 
 
 def day(name: str, desc: str, **kw) -> Field:
@@ -125,8 +135,8 @@ def ts(name: str, desc: str, **kw) -> Field:
 
 
 def flag(name: str, desc: str, **kw) -> Field:
-    return Field(name, "bool", desc, **kw)
+    return Field(name, "bool", desc, allowed=("true", "false"), **kw)
 
 
 def dec(name: str, desc: str, **kw) -> Field:
-    return Field(name, "decimal", desc, **kw)
+    return Field(name, "decimal", desc, unit=kw.pop("unit", "score 0-1"), **kw)

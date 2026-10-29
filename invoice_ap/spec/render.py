@@ -13,6 +13,11 @@ _VOCAB = {name: value for name, value in sorted(vars(enums).items())
 _REVERSE = {value: name for name, value in _VOCAB.items()}
 
 
+def _as_of() -> str:
+    from ..common.policy import load_policy
+    return load_policy().raw["policy"]["as_of_date"]
+
+
 def to_dict() -> dict:
     return {
         "spec_version": SPEC_VERSION,
@@ -56,7 +61,7 @@ def _allowed(f) -> str:
 
 
 def _rule(f) -> str:
-    parts = []
+    parts = ["**Reporting only, never an engine input.**"] if f.reporting_only else []
     if f.fk:
         parts.append(f"FK -> `{f.fk}`")
     if f.derivation:
@@ -88,8 +93,9 @@ def to_markdown() -> str:
         "Origins: `source` = generated or printed as-is; `derived` = computed from other records by the "
         "formula shown (never generated independently, Step 6); `assigned` = deterministic ID or sequence; "
         "`captured` = extracted by the engine from a document; `decided` = set by an engine or oracle "
-        "rule (rule IDs in docs/business_rules.md). Empty CSV cell = null. `*_as_of` fields are evaluated "
-        "at `policy.as_of_date` (2026-12-31).",
+        "rule (rule IDs in docs/business_rules.md). Empty CSV cell = null. `*_as_of` and `snapshot_*` "
+        f"fields are evaluated at `policy.as_of_date` ({_as_of()}). `snapshot_*` columns in engine-readable "
+        "layers are reporting only: the engine never reads them (ADR-038).",
         "",
         "## Tables",
         "",

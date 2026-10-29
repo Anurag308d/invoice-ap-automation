@@ -12,7 +12,7 @@ from invoice_ap.generator.allocation_report import render_markdown
 from invoice_ap.generator.catalogue import CATEGORY_WEIGHTS, SUBSCENARIOS
 
 SCALES = ["full", "starter", "0.25", "0.5", "2"]
-PLACEMENTS = {"S11", "PAIR11", "S22_2", "SPLIT_PARTIAL", "SPLIT_FINAL", "S21", "F", "NPO", "DUP"}
+PLACEMENTS = {"S11", "PAIR11", "S22_2", "SPLIT_PARTIAL", "SPLIT_FINAL", "S21", "S12", "F", "NPO", "DUP"}
 
 
 def test_full_scale_volumes_are_the_assignment_numbers():
@@ -27,8 +27,10 @@ def test_starter_scale_is_one_tenth():
 
 def test_full_scale_mix_is_exact():
     cats = allocate("full").categories
-    assert cats == {"CLEAN": 1360, "PRICE_VARIANCE": 200, "QTY_MISMATCH": 160, "DUPLICATE": 100,
-                    "MISSING_RECEIPT": 80, "TAX_VENDOR": 60, "ARITHMETIC": 20, "INVOICE_BEFORE_PO": 20}
+    assert cats == {"CLEAN": 1350, "PRICE_VARIANCE": 200, "QTY_MISMATCH": 160, "DUPLICATE": 100,
+                    "MISSING_RECEIPT": 80, "TAX_VENDOR": 60, "ARITHMETIC": 20, "INVOICE_BEFORE_PO": 20,
+                    "CAPTURE_REVIEW": 10}
+    assert cats["CLEAN"] >= 1340  # REV A-36 floor for the carve-out variant (67%)
     # the five named exception categories hit their exact shares: 10/8/5/4/3 percent
     assert [cats[c] * 100 // 2000 for c in ("PRICE_VARIANCE", "QTY_MISMATCH", "DUPLICATE",
                                             "MISSING_RECEIPT", "TAX_VENDOR")] == [10, 8, 5, 4, 3]
@@ -52,6 +54,7 @@ def test_every_identity_holds(scale):
     assert sum(a.subscenarios[s.code] for s in SUBSCENARIOS if s.placement == "DUP") == a.duplicates
     assert a.subscenarios["MR-NO-GRN"] == arch["A01"]
     assert a.subscenarios["C-CONSOLIDATED"] == arch["A21"]
+    assert a.subscenarios["C-PARTIAL-BILLING"] == 2 * arch["A12"]
     s22 = sum(a.subscenarios[s.code] for s in SUBSCENARIOS if s.placement == "S22_2")
     assert s22 <= arch["A22"]
     assert a.subscenarios["C-SPLIT-PARTIAL"] + a.subscenarios["C-SPLIT-FINAL"] + s22 \
@@ -73,6 +76,20 @@ def test_every_scenario_and_edge_case_appears_at_least_once(scale):
         assert sum(a.subscenarios[s.code] for s in SUBSCENARIOS if ec in s.edge_cases) >= 1, ec
     assert a.line_histogram[1] >= 1 and a.line_histogram[8] >= 1
     assert a.subscenarios["C-NPO-RECURRING"] >= 2  # a recurring series needs two invoices
+
+
+def test_each_edge_case_has_at_least_ten_invoices_at_full_scale():
+    a = allocate("full")  # REV A-39: >= 10 at full scale, >= 1 at starter (previous test)
+    for ec in enums.EDGE_CASES:
+        assert sum(a.subscenarios[s.code] for s in SUBSCENARIOS if ec in s.edge_cases) >= 10, ec
+
+
+@pytest.mark.parametrize("scale", ["full", "starter"])
+def test_many_to_many_bridge_is_exercised_in_both_directions(scale):
+    a = allocate(scale)  # A21: 1 invoice line -> 2 GRN lines; A12: 1 GRN line -> 2 invoice lines
+    assert a.archetypes["A21"] >= 1 and a.archetypes["A12"] >= 1
+    if scale == "full":
+        assert a.archetypes["A12"] >= 10
 
 
 def test_allocation_is_deterministic():
@@ -111,7 +128,15 @@ def test_catalogue_is_consistent_with_vocabulary():
         assert set(s.edge_cases) <= set(enums.EDGE_CASES)
         assert set(s.intended_issues) <= set(enums.EXCEPTION_TYPES)
         assert s.decision in ("APPROVAL_PATH", "HOLD", "REJECT")
-        assert (s.category == "CLEAN" and s.code != "C-CAPTURE-DEGRADED") == (not s.intended_issues)
+
+
+def test_clean_means_no_issue_and_the_approval_path():
+    """S1-R1-03: CLEAN sub-scenarios intend no issue and go to approval; every other one is held or rejected."""
+    for s in SUBSCENARIOS:
+        if s.category == "CLEAN":
+            assert not s.intended_issues and s.decision == "APPROVAL_PATH", s.code
+        else:
+            assert s.intended_issues and s.decision in ("HOLD", "REJECT"), s.code
 
 
 def test_generated_tables_in_docs_are_current():

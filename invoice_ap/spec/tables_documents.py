@@ -3,26 +3,32 @@ from __future__ import annotations
 
 from ..common import enums as E
 from ..common.enums import SCENARIO_CODES
-from ..common.ids import PATTERNS
-from .model import Field, Table, day, dec, enum, flag, integer, lst, money, pct, pk, qty, ref, text, ts
+from .model import Table, day, dec, enum, flag, integer, lst, money, ordinal, pct, pk, qty, ref, text, ts
 
 TAX_CODES = ("GST0", "GST5", "GST12", "GST18", "EXEMPT")
 
 INTAKE_MANIFEST = Table(
     "intake_manifest", "inbox", "generator",
-    "Register of every received invoice document. Carries no labels and no scenario information.",
+    "Register of every received invoice document. Carries no labels, no scenario information and no "
+    "invoice_id: the invoice ID embeds the vendor, so the engine assigns it only after resolving the "
+    "vendor from the document (ID-01, ADR-037).",
     "one row per received document", ("doc_id",), (
-        pk("doc_id", "doc_id", "Document identifier DOC-2026-000001, in intake order"),
-        Field("invoice_id", "id", "AP invoice ID assigned at intake", pattern=PATTERNS["invoice_id"],
-              unique=True, origin="assigned",
-              rule="global intake-order counter; vendor code = sender_vendor_id (ADR-003)"),
+        pk("doc_id", "doc_id", "Document identifier DOC-2026-000001, in intake order",
+           rule="unique; DOC-2026-<intake_seq>"),
+        ordinal("intake_seq", "Global intake sequence; also the 6-digit counter of the invoice ID",
+                unique=True, origin="assigned", max_value="999999",
+                rule="1..N without gaps, in received_at order"),
         enum("channel", E.CHANNELS, "Intake channel"),
         enum("file_format", tuple(E.FILE_FORMATS.values()), "Document format of the channel",
              origin="derived", derivation="enums.FILE_FORMATS[channel]"),
         ts("received_at", "Arrival timestamp", rule="strictly increasing in doc_id order"),
-        text("sender_address", "Portal account, EDI partner ID, e-mail sender or mailroom batch"),
-        ref("sender_vendor_id", "vendor.vendor_id", "Vendor identified by the channel at intake",
-            "vendor_id", rule="equals the vendor code embedded in invoice_id"),
+        text("sender_address", "Channel sender: portal account, EDI partner ID, e-mail From address "
+             "or mailroom batch ID",
+             rule="EMAIL: may be a forwarding mailbox rather than the vendor's remit address; SCAN: "
+                  "batch ID only; the engine never resolves the vendor from it (ADR-037)"),
+        ref("sender_vendor_id", "vendor.vendor_id", "Vendor authenticated by the channel", "vendor_id",
+            required=False, required_when="channel in (PORTAL, EDI)",
+            rule="empty for EMAIL and SCAN; used only by the VEN-04 cross-check, never as the vendor"),
         text("file_path", "Document path relative to the inbox folder", unique=True),
         text("file_sha256", "SHA-256 of the document bytes", pattern=r"^[0-9a-f]{64}$",
              origin="derived", derivation="sha256(file bytes)"),
@@ -35,7 +41,8 @@ INVOICE = Table(
     "The true invoice as the vendor issued it (what is printed on the document). Evaluation-only: "
     "the engine never reads it; it is the extraction ground truth.",
     "one row per received invoice document (resubmissions are separate rows)", ("invoice_id",), (
-        pk("invoice_id", "invoice_id", "Invoice identifier INV-<vendor_id>-2026-000001"),
+        pk("invoice_id", "invoice_id", "Invoice identifier INV-<vendor_id>-2026-000001",
+           rule="INV-<true vendor_id>-2026-<intake_seq of doc_id>; unique, immutable"),
         ref("doc_id", "intake_manifest.doc_id", "Rendered document", "doc_id", unique=True),
         ref("vendor_id", "vendor.vendor_id", "Issuing vendor", "vendor_id",
             rule="equals the vendor code embedded in invoice_id"),
@@ -70,7 +77,7 @@ INVOICE_LINE = Table(
     "one row per printed invoice line", ("invoice_line_id",), (
         pk("invoice_line_id", "invoice_line_id", "Line identifier INVL-<invoice_id>-01"),
         ref("invoice_id", "invoice.invoice_id", "Parent invoice", "invoice_id"),
-        integer("line_number", "1-based line number", min_value="1", origin="assigned"),
+        ordinal("line_number", "1-based line number", min_value="1", origin="assigned"),
         ref("po_line_id", "purchase_order_line.po_line_id", "PO line billed", "po_line_id",
             required=False, required_when="the invoice is PO-backed",
             rule="belongs to the invoice's PO"),
@@ -106,8 +113,8 @@ GROUND_TRUTH = Table(
         enum("scenario_category", E.SCENARIO_CATEGORIES, "Primary scenario category (mix table)"),
         enum("scenario_code", SCENARIO_CODES, "Sub-scenario code (docs/data_generation.md Table G6)"),
         lst("edge_case_ids", "Assignment edge cases this invoice demonstrates", tuple(E.EDGE_CASES)),
-        flag("is_anomaly", "True unless scenario_category = CLEAN", origin="derived",
-             derivation="scenario_category != CLEAN"),
+        flag("is_anomaly", "True when any issue is intended", origin="derived",
+             derivation="intended_issue_types is not empty (CLEAN never has issues)"),
         flag("is_po_backed", "PO quoted", origin="derived", derivation="invoice.po_id is not empty"),
         enum("capture_overlay", E.CAPTURE_OVERLAYS, "Document-quality overlay applied when rendering"),
         lst("intended_issue_types", "Labels the generator intended to inject", _ISSUES),
@@ -133,10 +140,11 @@ GROUND_TRUTH = Table(
         enum("expected_payment_status", E.PAYMENT_STATUSES, "Payment status at the as-of date",
              required=False, required_when="expected_payment_ready", origin="decided"),
         day("expected_due_date", "Due date", required=False, required_when="expected_payment_ready",
-            origin="decided"),
+            origin="decided", rule="invoice_date + payment-term days (PAY-02); may be after as_of"),
         day("expected_scheduled_date", "Scheduled payment date", required=False,
             required_when="expected_payment_ready", origin="decided", rule="PAY-02"),
-        lst("oracle_rule_ids", "Rule IDs that fired in the oracle", origin="decided"),
+        lst("oracle_rule_ids", "Rule IDs that fired in the oracle", origin="decided",
+            pattern=r"^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$", rule="each ID is documented in docs/business_rules.md"),
         text("policy_version", "Policy version used", origin="decided"),
         text("description", "Human-readable description of what was injected"),
     ))
@@ -157,7 +165,8 @@ GROUND_TRUTH_LINE = Table(
         qty("expected_prior_invoiced_qty", "Quantity billed on earlier non-duplicate invoices",
             required=False, required_when="line matched", origin="decided"),
         dec("expected_price_variance_pct", "Signed unit-price variance vs PO", required=False,
-            required_when="line matched", unit="%", origin="decided"),
+            required_when="line matched", unit="%", origin="decided",
+            rule="(invoice unit price - PO unit price) / PO unit price x 100, exact"),
     ))
 
 DOCUMENT_TABLES = (INTAKE_MANIFEST, INVOICE, INVOICE_LINE, GROUND_TRUTH, GROUND_TRUTH_LINE)

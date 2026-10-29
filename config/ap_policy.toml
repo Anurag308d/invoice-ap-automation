@@ -15,7 +15,7 @@ owner_role = "PROCESS_OWNER"              # owns the policy content
 maintainer_role = "SYSTEM_ADMINISTRATOR"  # maintains this file, runs builds, keeps the audit trail
 currency = "INR"
 fiscal_year = 2026
-as_of_date = "2026-12-31"                 # fixed "today" for current statuses; no wall clock is read
+as_of_date = "2026-10-22"                 # fixed past snapshot date; no completed event after it; never the wall clock
 
 [calendar]
 weekend = ["SAT", "SUN"]
@@ -50,7 +50,10 @@ gate = true                               # a detected duplicate skips matching
 duplicates_consume_receipts = false       # duplicates never reduce the quantity still billable
 
 [vendor]
-rule_ids = { exists = "VEN-01", closed = "VEN-02", blocked = "VEN-03" }
+rule_ids = { exists = "VEN-01", sender = "VEN-04", closed = "VEN-02", blocked = "VEN-03", invoice_id = "ID-01" }
+identity_source = "PRINTED_TAX_REGISTRATION_ID"  # VEN-01: the only source of captured_invoice.vendor_id
+sender_check_channels = ["PORTAL", "EDI"] # VEN-04: authenticated sender must equal the VEN-01 vendor
+invoice_id_after_vendor_resolution = true # ID-01: INV-<VEN-01 vendor or VND-00000>-2026-<intake_seq>
 status_basis_date = "INVOICE_DATE"        # status effective on the invoice date decides VEN-02/VEN-03
 payable_statuses = ["ACTIVE"]
 
@@ -88,7 +91,8 @@ rule_id = "PRI-01"
 # Primary status = the highest blocking issue in this list (the same order as invoice_ap/common/enums.py).
 order = [
   "EXT_LOW_CONFIDENCE", "DUPLICATE_EXACT", "DUPLICATE_NUMBER_REUSE", "DUPLICATE_SUSPECTED",
-  "VENDOR_NOT_FOUND", "VENDOR_CLOSED", "VENDOR_BLOCKED", "PO_NOT_FOUND", "VENDOR_PO_MISMATCH",
+  "VENDOR_NOT_FOUND", "VENDOR_SENDER_MISMATCH", "VENDOR_CLOSED", "VENDOR_BLOCKED", "PO_NOT_FOUND",
+  "VENDOR_PO_MISMATCH",
   "INVOICE_DATE_IN_FUTURE", "INVOICE_BEFORE_PO", "HEADER_TOTAL_MISMATCH", "LINE_AMOUNT_MISMATCH",
   "TAX_CODE_INVALID", "TAX_CODE_MISMATCH", "TAX_AMOUNT_MISMATCH", "PO_LINE_UNMATCHED",
   "MISSING_RECEIPT", "QTY_EXCEEDS_PO", "QTY_EXCEEDS_RECEIVED", "PRICE_VARIANCE",
@@ -106,6 +110,7 @@ DUPLICATE_EXACT         = { raised_by = "DUP-01",  severity = "HIGH",   blocking
 DUPLICATE_NUMBER_REUSE  = { raised_by = "DUP-02",  severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_DUPLICATES",        sla_business_days = 2 }
 DUPLICATE_SUSPECTED     = { raised_by = "DUP-03",  severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_DUPLICATES",        sla_business_days = 2 }
 VENDOR_NOT_FOUND        = { raised_by = "VEN-01",  severity = "HIGH",   blocking = true,  role = "SYSTEM_ADMINISTRATOR", queue = "VENDOR_MASTER",        sla_business_days = 3 }
+VENDOR_SENDER_MISMATCH  = { raised_by = "VEN-04",  severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_VALIDATION",        sla_business_days = 2 }
 VENDOR_CLOSED           = { raised_by = "VEN-02",  severity = "HIGH",   blocking = true,  role = "SYSTEM_ADMINISTRATOR", queue = "VENDOR_MASTER",        sla_business_days = 3 }
 VENDOR_BLOCKED          = { raised_by = "VEN-03",  severity = "HIGH",   blocking = true,  role = "SYSTEM_ADMINISTRATOR", queue = "VENDOR_MASTER",        sla_business_days = 3 }
 PO_NOT_FOUND            = { raised_by = "PO-01",   severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_VALIDATION",        sla_business_days = 2 }

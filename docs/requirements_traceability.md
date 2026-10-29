@@ -18,7 +18,7 @@ Each later stage updates this file with concrete evidence.
 | R2 | Expose key decisions and exceptions | `invoice_decision`, `ap_exception`, `decision_trace.jsonl`, `explain`, dashboard | explain output; dashboard | 4-5 | designed |
 | R3 | Preserve traceability | rule IDs + `policy_version` on every decision, exception, approval, payment and event; `policy_version.sha256` | validation check "every decision has rule and policy version" | 4-5 | designed ([business_rules](business_rules.md)) |
 | R4 | Measurable outputs | `invoice_ap/evaluation` | `reports/evaluation.{json,md}` | 3-4 | designed ([evaluation_plan](evaluation_plan.md)) |
-| R5 | Medium complexity: related entities, conditional rules, >= 1 exception path, metrics | 29 tables, 23 exception types, gates and precedence, E1-E15 | data dictionary; evaluation report | 1-4 | designed |
+| R5 | Medium complexity: related entities, conditional rules, >= 1 exception path, metrics | 29 tables, 24 exception types, gates and precedence, E1-E15 | data dictionary; evaluation report | 1-4 | designed |
 | R6 | Five actors explicit in data, routing, approvals, administration | `actor_role`, `app_user`, routing matrix, approval levels, policy owner and maintainer roles | `tests/test_policy.py::test_all_five_actors_have_work`; queue CLI | 1, 5 | done (spec and policy); queue CLI planned |
 | R7 | Master data generated first | generation order ([data_generation §3](data_generation.md)) | generator order test | 2 | designed |
 | R8 | Dependent records use valid parent IDs | FK spec; validation suite | `tests/test_spec.py` FK tests; FK checks | 1, 5 | done (spec); data check planned |
@@ -35,7 +35,7 @@ Each later stage updates this file with concrete evidence.
 | R12 | Nine core entities | spec tables | `tests/test_spec.py::test_every_core_entity_has_exactly_one_table` | 1 | done |
 | R13 | PK for every entity, FK for every relationship | spec; SQL DDL constraints | `tests/test_spec.py`; SQLite `foreign_key_check` | 1, 5 | done (spec) |
 | R14 | Cardinality, optional relationships, effective dates, lifecycle states | [schema.md](schema.md) | doc review | 1 | done |
-| R15 | Bridge tables for N:M | `match_allocation` (invoice line <-> GRN line) | spec test; allocation data | 1, 4 | done (spec) |
+| R15 | Bridge tables for N:M | `match_allocation` (invoice line <-> GRN line), exercised both ways: A21 (1 invoice line -> 2 GRN lines) and A12 (1 GRN line -> 2 invoice lines) | `tests/test_allocation.py::test_many_to_many_bridge_is_exercised_in_both_directions`; Stage-4 data check | 1, 4 | done (spec, allocation) |
 | R16 | Event history retained | append-only event tables | lifecycle validation | 2-5 | designed |
 | R17 | All joins validated | [schema §9](schema.md#9-join-validation-implemented-in-stage-5) | `validation_summary` | 5 | designed |
 | R18 | Anomalies labelled; unrelated rows not corrupted | injection mechanics ([data_generation §6](data_generation.md)); ground truth | baseline-vs-injected diff test | 2 | designed |
@@ -57,7 +57,7 @@ Each later stage updates this file with concrete evidence.
 | R28g | Invoice exceeds PO quantity | QM-EXCEEDS-PO-* , QM-BOUNDARY-OUT (EC-07) | Table G7 | 1-2, 4 | done (allocation) |
 | R28h | Same invoice submitted twice | DUP-EXACT, DUP-EXACT-NORMALIZED, DUP-EXACT-NPO, DUP-CONTENT (EC-08) | Table G7; E6 | 1-2, 4 | done (allocation) |
 | R29 | Derived values computed from source records | spec `derivation` for every derived field | `tests/test_spec.py`; recomputation check | 1, 5 | done (spec) |
-| R30 | Separate ground_truth.csv/.json; no leakage | `ground_truth/` layer; boundary tests | `tests/test_boundary.py` (static, now); runtime sandbox test | 1-3 | done (static); runtime planned |
+| R30 | Separate ground_truth.csv/.json; no leakage | `ground_truth/` layer; no `invoice_id` in the manifest, sender vendor only for PORTAL/EDI (ADR-037); reporting-only `snapshot_*` columns (ADR-038); evaluation exports in separate files | active now: `tests/test_boundary.py` (imports, sender/ID/snapshot bans), `tests/test_spec.py` (label-free inputs, manifest, snapshot flags); Stage 3: runtime and ID-blind sandboxes; Stage 4: time-travel sandbox | 1-4 | done (static); runtime planned |
 | R31 | Validation: PK, FK, enums, date order, arithmetic, lifecycle, duplicates | `invoice_ap/quality` | `validation_summary.{json,md}` | 5 | designed |
 | R32 | CSV / JSON / SQL seed + README, dictionary, command, seed, manifest, validation summary | `invoice_ap/export`, `invoice_ap/report` | `exports/`, `reports/` | 5 | designed |
 | R33 | Regenerate twice; compare row counts and checksums | `python -m invoice_ap repro` | `reproducibility.{json,md}` | 5 | designed |
@@ -81,3 +81,25 @@ Each later stage updates this file with concrete evidence.
 | G9 | No imported complete solutions; licences respected | own code, MIT licence, no runtime dependencies | LICENSE; hygiene test | 1 | done |
 | G10 | Assumptions and deviations explained; what is incomplete; next steps | ADRs; README limitations | docs | 1, 6 | done (ADRs) |
 | G11 | No secrets, credentials, personal or sensitive data | synthetic names, role labels, reserved domains (ADR-027) | secret/PII scan test | 6 | designed |
+
+## REV-added acceptance items (ACCEPTANCE_CHECKLIST §C.2)
+
+| A-item | What REV added | Implementation (planned location) | Evidence (planned) | Stage | Status |
+|---|---|---|---|---|---|
+| A-10 | Non-circular evaluation; engine boundary; **blind run** | engine reads only `master/` and `inbox/`; oracle separate | `tests/test_boundary.py` (active); `tests/test_engine_sandbox.py::test_blind_run` (copy without `source/` and `ground_truth/`, outputs byte-identical) and `::test_id_blind_run` (sender fields blanked) | 1, 3 | static done; sandboxes planned |
+| A-50 | No vendor shortcut through `invoice_id` or the sender; ground truth out of the SQL seed's input tables; blind run | ADR-037 (ID-01 after VEN-01; VEN-04); evaluation exports in separate files `sql/evaluation_seed.sql`, `json/evaluation/` | `tests/test_spec.py::test_intake_manifest_never_hands_the_engine_a_vendor` (active); ID-blind sandbox (Stage 3); export-layout test (Stage 5) | 1, 3, 5 | designed + static done |
+| A-67 | One processing-time semantics shared by oracle and engine | receipt cutoff = processing time; cumulative per PO line in intake order (ADR-012, ADR-024); `snapshot_*` reporting only (ADR-038) | static `snapshot_` ban (active); `tests/test_time_travel.py` (Stage 4); REV-IC recomputation | 1, 4 | designed |
+| A-54 | Committed data equals a fresh build; results independent of PYTHONHASHSEED | `python -m invoice_ap repro`; parity check | `reproducibility.{json,md}` with PYTHONHASHSEED=1 and =2; committed-vs-fresh SHA-256 parity test (ADR-028) | 5 | planned |
+| A-60 | Per-invoice acceptance report | `invoice_ap/evaluation` | `reports/acceptance_per_invoice.csv` (invoice_id x R34a-e, pass/fail with reason) + aggregate in `evaluation.md` | 4 | designed ([evaluation_plan §3](evaluation_plan.md)) |
+| A-36 / A-39 | Numeric mix tolerances; every edge case >= 10 at full and >= 1 at starter | allocation (Table G2/G7) | `test_full_scale_mix_is_exact` (CLEAN >= 1,340), `test_each_edge_case_has_at_least_ten_invoices_at_full_scale`, `test_every_scenario_and_edge_case_appears_at_least_once`; Stage-2 ground-truth counts | 1, 2 | done (allocation) |
+| A-26 | N:M bridge exercised in both directions | archetypes A21 and A12 | `test_many_to_many_bridge_is_exercised_in_both_directions`; Stage-4 data: >= 1 GRN line allocated to >= 2 invoice lines | 1, 4 | done (allocation) |
+| A-61 | Scenarios spread across the timeline and ID range | seeded placement over the whole intake window | distribution summary with scenario decile positions | 2, 5 | designed ([data_generation §9](data_generation.md)) |
+| A-03 / A-72 | Negative and mutation tests for extraction and rules | `tests/` | corrupted-document tests (silent-error detection), rule mutation tests (flip a tolerance -> labels change) | 3, 4 | planned |
+| A-64 | Contacts and bank details obviously synthetic | `.example` / `example.com` addresses, `TRN-` tax IDs, no bank account numbers (ADR-027) | REV-IC regex scan; manifest provenance block | 2, 5 | designed |
+| A-74 | Prompt history includes relay messages and prompts to other tools | `ai_disclosure/prompt_history/` (orchestrator) | directory listing | 6 | planned |
+| A-80 | Timeline integrity (genuine, monotonic commit dates inside the 72-hour window) | one commit per stage and fix round, no `--date` overrides or rewrites | `git log --format='%h %ad %cd'` in the hand-off | 6 | in progress |
+| A-81 | Candidate hand-off list | README hand-off section | create/push repo; personal statement; other-tool prompts; deadline; recruitment e-mail; walkthrough rehearsal; author e-mail choice (S1-R1-09); MIT confirmation | 6 | planned |
+| A-82 | Traceability covers the A-items | this section | grep of A-ids | 1-6 | done (this table) |
+| A-31 / A-32 | Conventions for unspecified IDs; vendor invoice number kept apart from `invoice_id` | `invoice_ap/common/ids.py`; `vendor_invoice_number` field | `tests/test_ids_and_money.py` | 1 | done |
+| A-35 | Exact allocation proof | `invoice_ap/generator/allocation.py` | `tests/test_allocation.py`; independent table re-derivation script | 1 | done |
+| A-65 / A-66 / A-68 | Decimal money; determinism hygiene; code quality and portability | `invoice_ap/common/money.py`; banned-call test; stdlib only, pathlib, LF | `tests/test_ids_and_money.py`, `tests/test_repo_hygiene.py`; Python 3.11-3.13 runs | 1-6 | done (Stage 1 scope) |

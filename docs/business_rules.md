@@ -27,11 +27,13 @@ later checks for that invoice. All other checks are collected, so every issue is
 | Rule | Check | Exception when it fails | Notes |
 |---|---|---|---|
 | CAP-01 | Every required field is extracted with confidence >= 0.90 | `EXT_LOW_CONFIDENCE` (**gate**) | Values that cannot be trusted are not checked further. The extractor never corrects printed values. |
-| VEN-01 | Printed tax registration number resolves to a vendor | `VENDOR_NOT_FOUND` (**gate**) | Vendor identity comes from the document, not from the sender. |
+| VEN-01 | Printed tax registration number resolves to a vendor | `VENDOR_NOT_FOUND` (**gate**) | The **only** source of `captured_invoice.vendor_id`: never the sender, never an ID (ADR-037). |
+| ID-01 | Assign `invoice_id = INV-<VEN-01 vendor>-2026-<intake_seq>` (`VND-00000` when unresolved) | - | The invoice ID is an output of vendor resolution, never an input. It equals the source ID exactly when VEN-01 was right. |
 | DUP-01 | No earlier document with the same vendor, normalised number, invoice date and gross | `DUPLICATE_EXACT` -> **REJECTED** (**gate**) | "Same invoice submitted twice". |
 | DUP-02 | No earlier document with the same vendor and normalised number (different content) | `DUPLICATE_NUMBER_REUSE` -> HOLD (**gate**) | "Duplicate invoice number". |
 | DUP-03 | No earlier document with the same vendor, invoice date, gross and PO under a different number | `DUPLICATE_SUSPECTED` -> HOLD (**gate**) | Catches a resubmission whose number was altered. |
-| VEN-02 | Vendor status on the invoice date is not CLOSED | `VENDOR_CLOSED` | Status is read from the effective-dated history. |
+| VEN-04 | On PORTAL and EDI, the authenticated sender vendor equals the VEN-01 vendor | `VENDOR_SENDER_MISMATCH` | Flags a possible impersonation or misdirected upload. EMAIL senders are not authenticated (forwarding is common) and SCAN has no sender, so they are not compared. |
+| VEN-02 | Vendor status on the invoice date is not CLOSED | `VENDOR_CLOSED` | Status is read from the effective-dated history, never from the `snapshot_status` column. |
 | VEN-03 | Vendor status on the invoice date is not BLOCKED | `VENDOR_BLOCKED` | |
 | PO-01 | The printed PO number exists | `PO_NOT_FOUND` | Line matching is skipped. |
 | PO-02 | The PO belongs to the invoice's vendor | `VENDOR_PO_MISMATCH` | Line matching is skipped (matching against a foreign PO would produce noise). |
@@ -123,24 +125,25 @@ An invoice with no blocking issue has primary issue `NONE` and enters approval.
 | 3 | `DUPLICATE_NUMBER_REUSE` | DUP-02 | HIGH | yes | OPERATIONS_ANALYST | AP_DUPLICATES | 2 |
 | 4 | `DUPLICATE_SUSPECTED` | DUP-03 | HIGH | yes | OPERATIONS_ANALYST | AP_DUPLICATES | 2 |
 | 5 | `VENDOR_NOT_FOUND` | VEN-01 | HIGH | yes | SYSTEM_ADMINISTRATOR | VENDOR_MASTER | 3 |
-| 6 | `VENDOR_CLOSED` | VEN-02 | HIGH | yes | SYSTEM_ADMINISTRATOR | VENDOR_MASTER | 3 |
-| 7 | `VENDOR_BLOCKED` | VEN-03 | HIGH | yes | SYSTEM_ADMINISTRATOR | VENDOR_MASTER | 3 |
-| 8 | `PO_NOT_FOUND` | PO-01 | HIGH | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
-| 9 | `VENDOR_PO_MISMATCH` | PO-02 | HIGH | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
-| 10 | `INVOICE_DATE_IN_FUTURE` | DATE-01 | MEDIUM | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
-| 11 | `INVOICE_BEFORE_PO` | DATE-02 | MEDIUM | yes | PROCESS_OWNER | POLICY_EXCEPTIONS | 3 |
-| 12 | `HEADER_TOTAL_MISMATCH` | ARI-02 | HIGH | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
-| 13 | `LINE_AMOUNT_MISMATCH` | ARI-01 | HIGH | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
-| 14 | `TAX_CODE_INVALID` | TAX-01 | HIGH | yes | OPERATIONS_ANALYST | AP_TAX | 2 |
-| 15 | `TAX_CODE_MISMATCH` | TAX-02 | HIGH | yes | OPERATIONS_ANALYST | AP_TAX | 2 |
-| 16 | `TAX_AMOUNT_MISMATCH` | TAX-03 | MEDIUM | yes | OPERATIONS_ANALYST | AP_TAX | 2 |
-| 17 | `PO_LINE_UNMATCHED` | PO-03 | MEDIUM | yes | BUSINESS_REQUESTER | PO_QUERIES | 3 |
-| 18 | `MISSING_RECEIPT` | MAT-01 | MEDIUM | yes | BUSINESS_REQUESTER | RECEIPT_CONFIRMATION | 3 |
-| 19 | `QTY_EXCEEDS_PO` | MAT-04 | HIGH | yes | PROCESS_OWNER | POLICY_EXCEPTIONS | 3 |
-| 20 | `QTY_EXCEEDS_RECEIVED` | MAT-03 | MEDIUM | yes | BUSINESS_REQUESTER | RECEIPT_CONFIRMATION | 3 |
-| 21 | `PRICE_VARIANCE` | MAT-02 | MEDIUM | yes | BUSINESS_REQUESTER | PRICE_REVIEW | 3 |
-| 22 | `VENDOR_NOT_PAYABLE` | PAY-03 | HIGH | yes | SYSTEM_ADMINISTRATOR | VENDOR_MASTER | 2 |
-| 23 | `PAYMENT_DUE_DATE_PASSED` | PAY-06 | LOW | no | OPERATIONS_ANALYST | PAYMENT_WATCH | 1 |
+| 6 | `VENDOR_SENDER_MISMATCH` | VEN-04 | HIGH | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
+| 7 | `VENDOR_CLOSED` | VEN-02 | HIGH | yes | SYSTEM_ADMINISTRATOR | VENDOR_MASTER | 3 |
+| 8 | `VENDOR_BLOCKED` | VEN-03 | HIGH | yes | SYSTEM_ADMINISTRATOR | VENDOR_MASTER | 3 |
+| 9 | `PO_NOT_FOUND` | PO-01 | HIGH | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
+| 10 | `VENDOR_PO_MISMATCH` | PO-02 | HIGH | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
+| 11 | `INVOICE_DATE_IN_FUTURE` | DATE-01 | MEDIUM | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
+| 12 | `INVOICE_BEFORE_PO` | DATE-02 | MEDIUM | yes | PROCESS_OWNER | POLICY_EXCEPTIONS | 3 |
+| 13 | `HEADER_TOTAL_MISMATCH` | ARI-02 | HIGH | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
+| 14 | `LINE_AMOUNT_MISMATCH` | ARI-01 | HIGH | yes | OPERATIONS_ANALYST | AP_VALIDATION | 2 |
+| 15 | `TAX_CODE_INVALID` | TAX-01 | HIGH | yes | OPERATIONS_ANALYST | AP_TAX | 2 |
+| 16 | `TAX_CODE_MISMATCH` | TAX-02 | HIGH | yes | OPERATIONS_ANALYST | AP_TAX | 2 |
+| 17 | `TAX_AMOUNT_MISMATCH` | TAX-03 | MEDIUM | yes | OPERATIONS_ANALYST | AP_TAX | 2 |
+| 18 | `PO_LINE_UNMATCHED` | PO-03 | MEDIUM | yes | BUSINESS_REQUESTER | PO_QUERIES | 3 |
+| 19 | `MISSING_RECEIPT` | MAT-01 | MEDIUM | yes | BUSINESS_REQUESTER | RECEIPT_CONFIRMATION | 3 |
+| 20 | `QTY_EXCEEDS_PO` | MAT-04 | HIGH | yes | PROCESS_OWNER | POLICY_EXCEPTIONS | 3 |
+| 21 | `QTY_EXCEEDS_RECEIVED` | MAT-03 | MEDIUM | yes | BUSINESS_REQUESTER | RECEIPT_CONFIRMATION | 3 |
+| 22 | `PRICE_VARIANCE` | MAT-02 | MEDIUM | yes | BUSINESS_REQUESTER | PRICE_REVIEW | 3 |
+| 23 | `VENDOR_NOT_PAYABLE` | PAY-03 | HIGH | yes | SYSTEM_ADMINISTRATOR | VENDOR_MASTER | 2 |
+| 24 | `PAYMENT_DUE_DATE_PASSED` | PAY-06 | LOW | no | OPERATIONS_ANALYST | PAYMENT_WATCH | 1 |
 <!-- END GENERATED: routing-matrix -->
 
 Assignment within a role is deterministic:

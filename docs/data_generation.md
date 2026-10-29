@@ -30,7 +30,7 @@ Stage 2. Every count in this page comes from code: the tables in section 4 are g
 | `--seed` | `20261022` | Master seed; every random stream is derived from it. |
 | `--scale` | `starter` and `full` | `full` = factor 1, `starter` = factor 1/10, or any factor in (0, 5], e.g. `0.25`. Same code path. |
 | `--policy` | `config/ap_policy.toml` | Tolerances and rules used by the oracle. |
-| as-of date | `2026-12-31` | From the policy. "Current" statuses are evaluated at this date. |
+| as-of date | `2026-10-22` | From the policy: a fixed past snapshot date. No completed event lies after it (section 9). |
 
 Planned command (Stage 2): `python -m invoice_ap generate --scale full --seed 20261022`.
 Available now: `python -m invoice_ap plan --scale starter` prints the allocation.
@@ -47,7 +47,7 @@ Available now: `python -m invoice_ap plan --scale starter` prints the allocation
 | 6 | `invoice`, `invoice_line` (baseline) | 5 | Clean invoices consistent with PO, receipts and policy; totals derived from lines. |
 | 7 | injections | 6 | One documented mutation per anomalous slot (section 6). |
 | 8 | duplicate documents | 6-7 | Copies or variants of earlier originals (section 7). |
-| 9 | intake timeline, `intake_manifest`, invoice IDs | 6-8 | Global intake order assigns `DOC-` and `INV-` counters. |
+| 9 | intake timeline, `intake_manifest` | 6-8 | Global intake order assigns `intake_seq` and `DOC-` IDs. The source `invoice_id` is `INV-<true vendor>-2026-<intake_seq>`. The manifest carries no invoice ID, and carries a sender vendor only for PORTAL and EDI (ADR-037). |
 | 10 | inbox documents (*Stage 3*) | 9 | Rendered per channel and vendor template; the capture overlay is applied here. |
 | 11 | `ground_truth`, `ground_truth_line` | 2-9 | Oracle labels; asserted equal to the intent. |
 
@@ -67,8 +67,10 @@ sub-scenario at least one invoice, the code raises an error instead of silently 
 **Categories.** Invoices are apportioned over the eight categories of Table G2. The five named
 categories keep their exact assignment shares: 10, 8, 5, 4 and 3%. The two extra required edge
 cases ("invoice total differs from line sum" and "invoice date before PO date") are carved out of
-CLEAN at 1% each, so CLEAN is 68.0%, transparently below the "~70%" target (ADR-005). Each
-non-clean category is apportioned over its sub-scenarios (Table G6).
+CLEAN at 1% each. Degraded scans that must go to capture review form CAPTURE_REVIEW, carved out at
+0.5% (ADR-017). CLEAN is therefore 1,350 (67.5%), transparently below the "~70%" target and above
+REV's floor of 1,340 (ADR-005, rulings Q1 and Q2). Each non-clean category is apportioned over its
+sub-scenarios (Table G6).
 
 **Populations.** Duplicates are extra documents; they have no slot of their own. Non-PO originals
 are `round_half_up(5% x invoices)`. PO-backed originals are invoices minus duplicates minus non-PO
@@ -78,16 +80,17 @@ originals, which gives 1,800 at full scale.
 three linear identities exactly:
 
 ```
-POs:       n11 + n22 + n33 + n21 + n01 + n10 + n00 = POs                     (1,500)
-receipts:  n11 + 2 n22 + 3 n33 + 2 n21 + n10       = receipts                (1,800)
-invoices:  n11 + 2 n22 + 3 n33 + n21 + n01         = PO-backed originals     (1,800)
+POs:       n11 + n22 + n33 + n21 + n12 + n01 + n10 + n00 = POs               (1,500)
+receipts:  n11 + 2 n22 + 3 n33 + 2 n21 + n12 + n10       = receipts          (1,800)
+invoices:  n11 + 2 n22 + 3 n33 + n21 + 2 n12 + n01       = PO-backed originals (1,800)
 
 n01 = missing-receipt invoices                                  (80)
-n21 + n10 = receipts - PO-backed originals + n01  -> split in half   (40 + 40)
+n12 = max(1, round_half_up(POs / 150))   one delivery, two invoices (10)
+n21 + n10 = receipts - PO-backed originals + n01 + n12  -> split in half   (45 + 45)
 n00 = round_half_up(4% x POs)        open POs                    (60)
 n33 = round_half_up(POs / 30)        three-delivery POs          (50)
-n22 = PO-backed originals - POs + n10 + n00 - 2 n33               (300)
-n11 = PO-backed originals - n01 - n21 - 2 n22 - 3 n33             (930)
+n22 = PO-backed originals - POs + n10 + n00 - 2 n33 - n12         (295)
+n11 = PO-backed originals - n01 - n21 - 2 n22 - 3 n33 - 2 n12     (915)
 ```
 
 Every count must be >= 0; otherwise generation fails.
@@ -97,7 +100,9 @@ Every count must be >= 0; otherwise generation fails.
 - Each A22 PO gives a partial first invoice and a second invoice (slot S22_2 when a scenario needs
   it, otherwise a clean final invoice).
 - Each A33 PO gives two partial invoices and one final invoice.
-- Each A21 PO gives one consolidated invoice over two receipts.
+- Each A21 PO gives one consolidated invoice over two receipts: one invoice line, two GRN lines.
+- Each A12 PO gives two invoices that bill its single delivery in parts: one GRN line, two invoice
+  lines. Together with A21 this exercises the N:M bridge in both directions.
 - Each A01 PO gives one missing-receipt invoice.
 
 Anomalies take their slots first. The remaining S11 slots form the clean single-delivery pool,
@@ -129,7 +134,7 @@ Which PO gets which line count is a seeded shuffle.
 
 | Category | Target | Full | Full % | Starter | Starter % |
 |---|---|---|---|---|---|
-| CLEAN | ~70% | 1360 | 68.0% | 136 | 68.0% |
+| CLEAN | ~70% | 1350 | 67.5% | 135 | 67.5% |
 | PRICE_VARIANCE | 10% | 200 | 10.0% | 20 | 10.0% |
 | QTY_MISMATCH | 8% | 160 | 8.0% | 16 | 8.0% |
 | DUPLICATE | 5% | 100 | 5.0% | 10 | 5.0% |
@@ -137,6 +142,7 @@ Which PO gets which line count is a seeded shuffle.
 | TAX_VENDOR | 3% | 60 | 3.0% | 6 | 3.0% |
 | ARITHMETIC | (edge case EC-02) | 20 | 1.0% | 2 | 1.0% |
 | INVOICE_BEFORE_PO | (edge case EC-03) | 20 | 1.0% | 2 | 1.0% |
+| CAPTURE_REVIEW | (degraded scans) | 10 | 0.5% | 1 | 0.5% |
 | **Total** | 100% | 2000 | 100.0% | 200 | 100.0% |
 
 **Table G3 - invoice population split**
@@ -152,12 +158,13 @@ Which PO gets which line count is a seeded shuffle.
 
 | Archetype | Meaning | GRNs/PO | Invoices/PO | Full POs | Full GRNs | Full invoices | Starter POs | Starter GRNs | Starter invoices |
 |---|---|---|---|---|---|---|---|---|---|
-| A11 | single delivery, single invoice | 1 | 1 | 930 | 930 | 930 | 93 | 93 | 93 |
-| A22 | split delivery, one invoice per delivery | 2 | 2 | 300 | 600 | 600 | 30 | 60 | 60 |
+| A11 | single delivery, single invoice | 1 | 1 | 915 | 915 | 915 | 91 | 91 | 91 |
+| A22 | split delivery, one invoice per delivery | 2 | 2 | 295 | 590 | 590 | 30 | 60 | 60 |
 | A33 | three deliveries, one invoice per delivery | 3 | 3 | 50 | 150 | 150 | 5 | 15 | 15 |
-| A21 | split delivery, one consolidated invoice (N:M allocation) | 2 | 1 | 40 | 80 | 40 | 4 | 8 | 4 |
+| A21 | split delivery, one consolidated invoice (N:M: 1 invoice line -> 2 GRN lines) | 2 | 1 | 45 | 90 | 45 | 4 | 8 | 4 |
+| A12 | single delivery billed on two invoices (N:M: 1 GRN line -> 2 invoice lines) | 1 | 2 | 10 | 10 | 20 | 1 | 1 | 2 |
 | A01 | invoiced but never received (missing receipt) | 0 | 1 | 80 | 0 | 80 | 8 | 0 | 8 |
-| A10 | received, invoice not yet arrived at the as-of date | 1 | 0 | 40 | 40 | 0 | 4 | 4 | 0 |
+| A10 | received, invoice not yet arrived at the as-of date | 1 | 0 | 45 | 45 | 0 | 5 | 5 | 0 |
 | A00 | open PO: neither received nor invoiced at the as-of date | 0 | 0 | 60 | 0 | 0 | 6 | 0 | 0 |
 | **Total** |  |  |  | 1500 | 1800 | 1800 | 150 | 180 | 180 |
 
@@ -179,7 +186,7 @@ Which PO gets which line count is a seeded shuffle.
 
 | Sub-scenario | Category | Placement | Edge cases | Intended issue labels | Decision | Full | Starter |
 |---|---|---|---|---|---|---|---|
-| C-STD | CLEAN | S11 | - | none | APPROVAL_PATH | 325 | 32 |
+| C-STD | CLEAN | S11 | - | none | APPROVAL_PATH | 310 | 30 |
 | C-PARTIAL-OPEN | CLEAN | S11 | EC-04 | none | APPROVAL_PATH | 60 | 6 |
 | C-OVERRECEIPT-WITHIN | CLEAN | S11 | - | none | APPROVAL_PATH | 20 | 2 |
 | C-QTY-AT-TOL | CLEAN | S11 | - | none | APPROVAL_PATH | 10 | 1 |
@@ -188,10 +195,10 @@ Which PO gets which line count is a seeded shuffle.
 | C-PRICE-SMALL-VAR | CLEAN | S11 | - | none | APPROVAL_PATH | 40 | 4 |
 | C-TAX-ROUNDING | CLEAN | S11 | - | none | APPROVAL_PATH | 20 | 2 |
 | C-TN-SAME-DAY | CLEAN | PAIR11 | - | none | APPROVAL_PATH | 10 | 2 |
-| C-CAPTURE-DEGRADED | CLEAN | S11 | - | EXT_LOW_CONFIDENCE | HOLD | 10 | 1 |
-| C-SPLIT-PARTIAL | CLEAN | SPLIT_PARTIAL | EC-04 | none | APPROVAL_PATH | 400 | 40 |
-| C-SPLIT-FINAL | CLEAN | SPLIT_FINAL | - | none | APPROVAL_PATH | 290 | 29 |
-| C-CONSOLIDATED | CLEAN | S21 | EC-04 | none | APPROVAL_PATH | 40 | 4 |
+| C-SPLIT-PARTIAL | CLEAN | SPLIT_PARTIAL | EC-04 | none | APPROVAL_PATH | 395 | 40 |
+| C-SPLIT-FINAL | CLEAN | SPLIT_FINAL | - | none | APPROVAL_PATH | 285 | 29 |
+| C-CONSOLIDATED | CLEAN | S21 | EC-04 | none | APPROVAL_PATH | 45 | 4 |
+| C-PARTIAL-BILLING | CLEAN | S12 | - | none | APPROVAL_PATH | 20 | 2 |
 | C-NPO-RECURRING | CLEAN | NPO | - | none | APPROVAL_PATH | 57 | 5 |
 | C-NPO-ONEOFF | CLEAN | NPO | - | none | APPROVAL_PATH | 38 | 4 |
 | PV-OVER | PRICE_VARIANCE | S11 | - | PRICE_VARIANCE | HOLD | 120 | 12 |
@@ -219,6 +226,7 @@ Which PO gets which line count is a seeded shuffle.
 | ARITH-HEADER-TOTAL | ARITHMETIC | S11 | EC-02 | HEADER_TOTAL_MISMATCH | HOLD | 15 | 1 |
 | ARITH-LINE-EXTENSION | ARITHMETIC | S11 | - | LINE_AMOUNT_MISMATCH | HOLD | 5 | 1 |
 | DATE-INVOICE-BEFORE-PO | INVOICE_BEFORE_PO | S11 | EC-03 | INVOICE_BEFORE_PO | HOLD | 20 | 2 |
+| CAP-DEGRADED-SCAN | CAPTURE_REVIEW | S11 | - | EXT_LOW_CONFIDENCE | HOLD | 10 | 1 |
 | **Total** |  |  |  |  |  | 2000 | 200 |
 
 **Table G7 - required edge-case coverage**
@@ -260,9 +268,9 @@ These are the planned parameters. Stage 2 reports the realised values in
 | Tax codes | Mostly GST18; GST5 for canteen, safety and part of office supplies; GST0 and EXEMPT for a few SKUs and services. |
 | Lead times | Per category, e.g. canteen 1-3 days, IT hardware 7-28 days; receipts land on business days. |
 | Deliveries | Partial first delivery 40-70% of the ordered quantity; split deliveries 5-20 days apart; over-receipt 1-5% (inside tolerance) or 6-20% (outside). |
-| Dates | POs on business days 2026-01-05 to 2026-10-30, with mild quarter-end peaks (March, June, September). Invoice date = delivery date - 3 to + 7 days. Channel delay: PORTAL/EDI 0-1 days, EMAIL 0-3, SCAN 3-8. Intake closes 2026-12-24. Above 95% of business events fall on weekdays. |
+| Dates | All completed events fall inside 2026-01-05 to the as-of date 2026-10-22. POs are on business days from 2026-01-05, with mild quarter-end peaks (March, June, September). Late POs are mostly open (A00) or received-not-invoiced (A10), so their events still fit before the as-of date. Invoice date = delivery date - 3 to + 7 days. Channel delay: PORTAL/EDI 0-1 days, EMAIL 0-3, SCAN 3-8. Intake closes 2026-10-21. Above 95% of business events fall on weekdays. Due dates, SLA dates and scheduled payment dates may fall after the as-of date. |
 | Payment terms | NET15 / NET30 / NET45 / NET60 = 10 / 45 / 30 / 15% of vendors. |
-| Channels | By tier: STRATEGIC mostly EDI or PORTAL, CORE mostly PORTAL or EMAIL, TAIL mostly EMAIL or SCAN. All four channels appear at both scales. |
+| Channels | By tier: STRATEGIC mostly EDI or PORTAL, CORE mostly PORTAL or EMAIL, TAIL mostly EMAIL or SCAN. All four channels appear at both scales. Sender metadata is channel-realistic (ADR-037): PORTAL and EDI carry the authenticated vendor; about 15% of EMAIL documents arrive from a forwarding mailbox rather than the vendor's remit address; SCAN carries only a mailroom batch ID. A sender-based shortcut would therefore misidentify vendors, which the evaluation would expose. |
 | Amounts and approval bands | The product of quantity and price gives a long-tailed gross (median in the tens of thousands of INR, tail above 50 lakh), so all approval bands P1-P4 and N1-N3 occur. Each band and boundary is reported. |
 | Non-PO services | Monthly recurring series with a fixed amount on the same day each month (true negatives), plus one-off jobs. |
 
@@ -289,7 +297,8 @@ Totals are recomputed from the lines unless the defect *is* a printed total.
 | ARITH-HEADER-TOTAL | Printed gross differs from the line sum (digit transposition or an omitted line) | Lines consistent |
 | ARITH-LINE-EXTENSION | One printed line amount differs from quantity x price | Header = sum of printed lines |
 | DATE-INVOICE-BEFORE-PO | Invoice dated 1-20 days before the PO date (retrospective PO) | Receipt after the PO date |
-| C-CAPTURE-DEGRADED | Rendered as a SCAN with one required header field unreadable | The true invoice is clean |
+| CAP-DEGRADED-SCAN | Rendered as a SCAN with one required header field unreadable | The true invoice is otherwise clean |
+| C-PARTIAL-BILLING | One full delivery billed on two invoices (for example 60% + 40%) | Cumulative billed = received |
 
 ## 7. Duplicates
 
@@ -332,5 +341,11 @@ ground truth is written to its own folder. It is never an input to the engine.
   No `math.exp`, `random.gauss`, `lognormvariate`, wall clock or `uuid` (banned by a test).
 - Everything is iterated in sorted ID order; ties are broken by ID.
 - Output is byte-stable: UTF-8, `\n` line endings, fixed column order from the spec, decimals as
-  canonical strings, JSON with `sort_keys`. Stage 5 proves this by building twice and comparing
-  SHA-256 checksums.
+  canonical strings, JSON with `sort_keys`. Stage 5 proves this by building twice, with
+  PYTHONHASHSEED 1 and 2, and comparing SHA-256 checksums.
+- Time window (S1-R1-04): a Stage-2 test asserts that no completed-event timestamp lies after
+  `as_of_date`. That covers GRN posting, invoice receipt and capture, exceptions raised, approval
+  decisions, PAID payments and vendor status changes. Only due, SLA and scheduled dates may be later.
+- Scenario spread (A-61): each sub-scenario's invoices are spread across the intake timeline and the
+  ID range (reported as decile positions). The exception is resubmissions, which necessarily follow
+  their originals.

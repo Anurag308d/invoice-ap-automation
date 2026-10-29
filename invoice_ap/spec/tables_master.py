@@ -2,9 +2,9 @@
 from __future__ import annotations
 
 from ..common import enums as E
-from .model import Table, day, enum, flag, integer, money, pct, pk, qty, ref, text, ts
+from .model import Table, day, enum, flag, integer, money, ordinal, pct, pk, qty, ref, text, ts
 
-AS_OF = "as of policy.as_of_date (2026-12-31)"
+AS_OF = "at policy.as_of_date (reporting only)"
 
 ACTOR_ROLE = Table(
     "actor_role", "master", "generator",
@@ -31,7 +31,8 @@ APP_USER = Table(
              required_when="role_code = APPROVER"),
         text("email", "Synthetic address on the reserved example.com domain",
              pattern=r"^[a-z0-9.\-]+@example\.com$", unique=True),
-        day("active_from", "Date the user became active"),
+        day("active_from", "Date the user became active",
+            rule="<= policy.effective_from and <= the user's first event"),
     ))
 
 PAYMENT_TERMS = Table(
@@ -53,7 +54,7 @@ TAX_CODE = Table(
         pct("rate_pct", "Tax rate", min_value="0.00", max_value="40.00"),
         enum("tax_category", E.TAX_CATEGORIES, "Tax category"),
         text("description", "Description"),
-        day("valid_from", "First date the code may be used"),
+        day("valid_from", "First date the code may be used", rule="valid_from < valid_to when valid_to is set"),
         day("valid_to", "Last date the code may be used (empty = open-ended)", required=False,
             rule="valid_to >= valid_from; GST12 is retired before 2026 (TAX-01 rejects it)"),
     ))
@@ -91,7 +92,8 @@ VENDOR = Table(
              pattern=r"^ap@vnd-\d{5}\.example$", unique=True),
         day("onboarded_date", "Start of the vendor's active window",
             rule="equals effective_date of the vendor's first status event"),
-        enum("status_as_of", E.VENDOR_STATUSES, f"Current status {AS_OF}", origin="derived",
+        enum("snapshot_status", E.VENDOR_STATUSES, f"Status {AS_OF}", origin="derived",
+             reporting_only=True,
              derivation="to_status of the last vendor_status_history row with effective_date <= as_of"),
         ref("created_by", "app_user.user_id", "System administrator who onboarded the vendor", "user_id"),
     ), entity="Vendor")
@@ -102,14 +104,15 @@ VENDOR_STATUS_HISTORY = Table(
     "one row per vendor status change", ("vsh_id",), (
         pk("vsh_id", "vsh_id", "Status event identifier VSH-000001"),
         ref("vendor_id", "vendor.vendor_id", "Vendor", "vendor_id"),
-        integer("seq", "1-based sequence per vendor", min_value="1", origin="assigned"),
+        ordinal("seq", "1-based sequence per vendor", min_value="1", origin="assigned"),
         enum("from_status", E.VENDOR_STATUSES, "Status before the change (empty for the first row)",
              required=False, required_when="seq > 1"),
         enum("to_status", E.VENDOR_STATUSES, "Status after the change",
              rule="transition allowed by the vendor state machine"),
         day("effective_date", "Date the new status takes effect",
             rule="non-decreasing per vendor; first = onboarded_date"),
-        ts("recorded_at", "When the change was recorded"),
+        ts("recorded_at", "When the change was recorded",
+           rule="on or before effective_date (no back-dating) and <= as_of_date"),
         enum("actor_role", ("SYSTEM_ADMINISTRATOR",), "Role that made the change"),
         ref("actor_id", "app_user.user_id", "User that made the change", "user_id"),
         enum("reason_code", E.VENDOR_STATUS_REASONS, "Reason for the change"),
@@ -135,7 +138,8 @@ PURCHASE_ORDER = Table(
               derivation="sum(line_tax_amount)"),
         money("total_gross_amount", "Net plus tax", origin="derived",
               derivation="total_net_amount + total_tax_amount"),
-        enum("status_as_of", E.PO_STATUSES, f"Receiving status {AS_OF}", origin="derived",
+        enum("snapshot_status", E.PO_STATUSES, f"Receiving status {AS_OF}", origin="derived",
+             reporting_only=True,
              derivation="to_status of the last erp_event for the PO with event_at <= as_of"),
     ), entity="PurchaseOrder")
 
@@ -145,7 +149,7 @@ PURCHASE_ORDER_LINE = Table(
         pk("po_line_id", "po_line_id", "PO line identifier POL-<po_id>-01"),
         ref("po_id", "purchase_order.po_id", "Parent PO", "po_id",
             rule="must exist; equals the po_id embedded in po_line_id"),
-        integer("line_number", "1-based line number", min_value="1", max_value="8", origin="assigned"),
+        ordinal("line_number", "1-based line number", min_value="1", max_value="8", origin="assigned"),
         ref("sku_id", "sku.sku_id", "Ordered SKU", "sku_id"),
         text("description", "Item description copied from the SKU", origin="derived",
              derivation="sku.description"),
@@ -164,10 +168,10 @@ PURCHASE_ORDER_LINE = Table(
               derivation="line_net_amount + line_tax_amount"),
         day("promised_delivery_date", "Delivery date promised on the PO",
             rule="po_date + SKU lead time (min..max days)"),
-        qty("received_qty_as_of", f"Total received {AS_OF}", origin="derived",
-            derivation="sum(goods_receipt_line.received_qty) for this PO line"),
-        qty("open_qty_as_of", f"Quantity still to receive {AS_OF}", origin="derived",
-            derivation="max(ordered_qty - received_qty_as_of, 0)"),
+        qty("snapshot_received_qty", f"Total received {AS_OF}", origin="derived", reporting_only=True,
+            derivation="sum(goods_receipt_line.received_qty) for this PO line posted <= as_of"),
+        qty("snapshot_open_qty", f"Quantity still to receive {AS_OF}", origin="derived",
+            reporting_only=True, derivation="max(ordered_qty - snapshot_received_qty, 0)"),
     ), entity="PurchaseOrderLine", unique_together=(("po_id", "line_number"),))
 
 GOODS_RECEIPT = Table(
@@ -184,8 +188,8 @@ GOODS_RECEIPT = Table(
         text("delivery_note_number", "Vendor delivery-note reference"),
         integer("line_count", "Number of receipt lines", min_value="1", origin="derived",
                 derivation="count(goods_receipt_line)"),
-        enum("status_as_of", E.GRN_STATUSES, f"Status {AS_OF}", origin="derived",
-             derivation="to_status of the last erp_event for the GRN"),
+        enum("snapshot_status", E.GRN_STATUSES, f"Status {AS_OF}", origin="derived",
+             reporting_only=True, derivation="to_status of the last erp_event for the GRN"),
     ), entity="GoodsReceipt")
 
 GOODS_RECEIPT_LINE = Table(
@@ -195,7 +199,7 @@ GOODS_RECEIPT_LINE = Table(
         ref("grn_id", "goods_receipt.grn_id", "Parent GRN", "grn_id"),
         ref("po_line_id", "purchase_order_line.po_line_id", "PO line received", "po_line_id",
             rule="must belong to the GRN's PO"),
-        integer("line_number", "1-based line number within the GRN", min_value="1", origin="assigned"),
+        ordinal("line_number", "1-based line number within the GRN", min_value="1", origin="assigned"),
         qty("received_qty", "Quantity received", min_value="0.01"),
         enum("uom", E.UOMS, "Unit of measure", origin="derived", derivation="purchase_order_line.uom"),
         qty("cumulative_received_qty", "Running received total for the PO line, in posting order",
@@ -211,7 +215,7 @@ ERP_EVENT = Table(
         pk("event_id", "erp_event_id", "Event identifier ERP-2026-000001"),
         enum("entity_type", ("PURCHASE_ORDER", "GOODS_RECEIPT"), "Entity whose state changed"),
         text("entity_id", "po_id or grn_id", rule="exists in the table named by entity_type"),
-        integer("seq", "1-based sequence per entity", min_value="1", origin="assigned"),
+        ordinal("seq", "1-based sequence per entity", min_value="1", origin="assigned"),
         enum("from_status", E.PO_STATUSES + E.GRN_STATUSES, "Status before (empty on creation)",
              required=False, required_when="seq > 1"),
         enum("to_status", E.PO_STATUSES + E.GRN_STATUSES, "Status after",

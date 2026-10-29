@@ -9,7 +9,8 @@ from .catalogue import CATEGORY_WEIGHTS, SUBSCENARIOS
 
 TARGET_SHARES = {"CLEAN": "~70%", "PRICE_VARIANCE": "10%", "QTY_MISMATCH": "8%",
                  "DUPLICATE": "5%", "MISSING_RECEIPT": "4%", "TAX_VENDOR": "3%",
-                 "ARITHMETIC": "(edge case EC-02)", "INVOICE_BEFORE_PO": "(edge case EC-03)"}
+                 "ARITHMETIC": "(edge case EC-02)", "INVOICE_BEFORE_PO": "(edge case EC-03)",
+                 "CAPTURE_REVIEW": "(degraded scans)"}
 
 
 def _pct(part: int, whole: int) -> str:

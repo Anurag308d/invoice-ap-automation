@@ -62,9 +62,11 @@ later checks for that invoice. All other checks are collected, so every issue is
 | PAY-06 | Ready after the due date: pay next business day and warn | `PAYMENT_DUE_DATE_PASSED` (non-blocking) | |
 
 Cumulative quantities are per PO line. "Prior invoiced" is the sum of quantities on earlier
-non-duplicate invoices, in intake order, that billed the same PO line. That includes invoices
-currently on hold, because they are claims against the receipt. Duplicate documents never consume
-quantity (`duplicates_consume_receipts = false`). Over-receipt is allowed only up to the same 5%,
+invoices, in intake order, that billed the same PO line and reached line matching. That includes
+invoices currently on hold, because they are claims against the receipt. It excludes duplicates
+(`duplicates_consume_receipts = false`), capture holds (the values cannot be trusted) and invoices
+quoting a missing or foreign PO (they were never matched). Processing time is the receipt
+timestamp: only GRNs posted before it count. Over-receipt is allowed only up to the same 5%,
 so a receipt beyond 5% that is billed in full raises `QTY_EXCEEDS_PO`.
 
 ## 3. Tolerances and why these values
@@ -172,10 +174,10 @@ An open exception past its SLA date at the as-of date is reported as overdue.
 | Level | Role | Assignee rule | Simulated turnaround (business days) |
 |---|---|---|---|
 | AUTO | SYSTEM | SYSTEM_USER | 0 |
-| REQ | BUSINESS_REQUESTER | INVOICE_ATTENTION_REQUESTER | 1 |
-| L1 | APPROVER | COST_CENTER_MANAGER | 1 |
-| L2 | APPROVER | FINANCE_CONTROLLER | 2 |
-| L3 | APPROVER | CHIEF_FINANCIAL_OFFICER | 2 |
+| REQ | BUSINESS_REQUESTER | INVOICE_ATTENTION_REQUESTER | 2 |
+| L1 | APPROVER | COST_CENTER_MANAGER | 2 |
+| L2 | APPROVER | FINANCE_CONTROLLER | 3 |
+| L3 | APPROVER | CHIEF_FINANCIAL_OFFICER | 3 |
 <!-- END GENERATED: approval-matrix -->
 
 Eligibility: approvals are created only when an invoice has no open blocking exception after

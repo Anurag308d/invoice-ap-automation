@@ -3486,7 +3486,7 @@
           "reporting_only": false,
           "required": true,
           "required_when": "",
-          "rule": "must equal intended_issue_types (generation fails otherwise)",
+          "rule": "its blocking subset must equal intended_issue_types (generation fails otherwise); it may add the non-blocking PAYMENT_DUE_DATE_PASSED warning",
           "type": "list",
           "unique": false,
           "unit": ""
@@ -7357,7 +7357,7 @@
       "sqlite": "INTEGER"
     },
     "list": {
-      "representation": "pipe-separated, sorted, no spaces (empty = none)",
+      "representation": "pipe-separated in canonical order (precedence order for issue types, sequence order for approval levels, sorted otherwise), no spaces; empty = none",
       "sqlite": "TEXT"
     },
     "money": {

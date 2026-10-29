@@ -18,3 +18,6 @@ Thumbs.db
 # Throw-away build areas (reproducibility runs regenerate into these)
 .scratch/
 data/_repro/
+
+# Generated datasets: committed only when Stages 5 and 6 close (REV ruling Q3, ADR-028)
+data/

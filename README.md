@@ -9,11 +9,11 @@ actors (business requester, process owner, approver, operations analyst, system 
 requests approvals and schedules payments. Its decisions are scored against a ground truth derived
 by a documented rule-based oracle.
 
-> **Status: Stage 1 of 6 (specification, design and repository skeleton).** The design documents,
-> the policy configuration, the machine-readable data dictionary and the exact volume and mix
-> allocation are complete and tested. The generator (Stage 2), extraction (Stage 3), the decision
-> engine and evaluation (Stage 4), and the validation, exports and dashboard (Stage 5) follow.
-> This README is a stub that grows each stage.
+> **Status: Stage 2 of 6.** Stage 1 (the specification, the policy, the data dictionary and the
+> exact allocation) and Stage 2 (the synthetic data generator, the rule-based ground truth and the
+> self-checks) are done. Document rendering and extraction (Stage 3), the decision engine and
+> evaluation (Stage 4), and the validation suite, exports and dashboard (Stage 5) follow. This README
+> grows each stage.
 
 ## Quickstart (works today)
 
@@ -27,6 +27,8 @@ git clone <repo-url> invoice-ap-automation && cd invoice-ap-automation
 python3 -m pip install -r requirements-dev.txt   # pytest only
 python3 -m pytest                                # all tests
 python3 -m invoice_ap plan --scale starter       # exact volume and mix allocation (both scales)
+python3 -m invoice_ap generate --scale full       # synthetic dataset -> data/full (about 2.5 s)
+python3 -m invoice_ap validate --quick --scale full   # defect-aware self-checks
 python3 -m invoice_ap policy                     # validate config/ap_policy.toml
 python3 -m invoice_ap docs --check               # generated docs are in sync with code
 ```
@@ -38,11 +40,13 @@ git clone <repo-url> invoice-ap-automation; cd invoice-ap-automation
 py -m pip install -r requirements-dev.txt
 py -m pytest
 py -m invoice_ap plan --scale starter
+py -m invoice_ap generate --scale full
+py -m invoice_ap validate --quick --scale full
 py -m invoice_ap policy
 py -m invoice_ap docs --check
 ```
 
-The remaining commands (`generate`, `run`, `evaluate`, `validate`, `export`, `repro`, `queue`,
+The remaining commands (`run`, `evaluate`, `export`, `repro`, `queue`,
 `explain`, `dashboard`, `build-all`) are registered. Until their stage lands they exit with status 2
 and a "planned" message. See [architecture §8](docs/architecture.md#8-cli-surface).
 
@@ -51,7 +55,7 @@ and a "planned" message. See [architecture §8](docs/architecture.md#8-cli-surfa
 | What | Where | Default |
 |---|---|---|
 | Business rules, tolerances, routing, approval and payment policy | [`config/ap_policy.toml`](config/ap_policy.toml) (versioned; every decision records its version) | `AP-POLICY` 1.0.0 |
-| Random seed | `--seed` (Stage 2) | `20261022` |
+| Random seed | `--seed` | `20261022` |
 | Scale | `--scale starter\|full\|<factor>` | starter = 1/10 of full |
 
 ## Documentation

@@ -12,10 +12,8 @@ from pathlib import Path
 from .common.paths import DEFAULT_POLICY, DOCS_DIR, SPEC_JSON
 
 PLANNED = {
-    "generate": ("Generate master data, documents, source invoices and ground truth", 2),
     "run": ("Run the AP engine on master data and the inbox only", 3),
     "evaluate": ("Compare engine output with ground truth and source invoices", 4),
-    "validate": ("Run the defect-aware validation suite over every table", 5),
     "export": ("Write CSV / JSON / SQL seed exports", 5),
     "repro": ("Regenerate twice with the same seed and compare checksums", 5),
     "build-all": ("Build, run, evaluate, validate, export and report for both scales", 5),
@@ -89,6 +87,38 @@ def _cmd_policy(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_generate(args: argparse.Namespace) -> int:
+    import time
+    from .generator.build import generate
+    started = time.perf_counter()   # duration for the console only; never written to any output
+    result = generate(args.scale, args.seed, args.out)
+    seconds = time.perf_counter() - started
+    t = result.final.tables
+    print(f"{result.alloc.scale}: {len(t['vendor'])} vendors, {len(t['purchase_order'])} POs, "
+          f"{len(t['purchase_order_line'])} PO lines, {len(t['goods_receipt'])} GRNs, {len(t['invoice'])} invoices "
+          f"-> {result.out} in {seconds:.2f}s")
+    print(f"baseline: {result.baseline_report['status']} ({result.baseline_report['violations']} violations); "
+          f"final: {result.report['status']} ({result.report['violations']} violations, "
+          f"{result.report['labelled']} labelled defects reported as expected); oracle == intent")
+    return 0
+
+
+def _cmd_validate(args: argparse.Namespace) -> int:
+    from .common.paths import DEFAULT_DATA_DIR
+    from .common.policy import load_policy
+    from .generator.allocation import allocate
+    from .quality.quick import load, validate
+    if not args.quick:
+        print("the full validation suite is planned for Stage 5; use --quick", file=sys.stderr)
+        return 2
+    root = Path(args.data) if args.data else DEFAULT_DATA_DIR / args.scale
+    report = validate(load(root), load_policy(), allocate(args.scale))
+    for item in report["checks"]:
+        print(f"{item['status']:4}  {item['check']}: {item['violations']} violations, {item['labelled']} labelled")
+    print(f"{report['status'].upper()}: {report['violations']} violations, {report['labelled']} labelled defects")
+    return 0 if report["status"] == "pass" else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="python -m invoice_ap", description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="command", required=True)
@@ -101,6 +131,16 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("policy", help="Validate the policy config and print a summary")
     p.add_argument("--path", type=Path, default=DEFAULT_POLICY)
     p.set_defaults(func=_cmd_policy)
+    p = sub.add_parser("generate", help="Generate master data, source invoices and ground truth")
+    p.add_argument("--scale", default="starter", help="starter | full | numeric factor (default starter)")
+    p.add_argument("--seed", type=int, default=20261022)
+    p.add_argument("--out", default=None, help="output folder (default data/<scale>, git-ignored until Stage 5)")
+    p.set_defaults(func=_cmd_generate)
+    p = sub.add_parser("validate", help="Self-check a built dataset (--quick now; full suite in Stage 5)")
+    p.add_argument("--quick", action="store_true")
+    p.add_argument("--scale", default="starter")
+    p.add_argument("--data", default=None, help="dataset folder (default data/<scale>)")
+    p.set_defaults(func=_cmd_validate)
     for name, (help_text, stage) in PLANNED.items():
         p = sub.add_parser(name, help=f"{help_text} (planned: Stage {stage})")
         p.set_defaults(func=lambda a, n=name, s=stage: _planned(n, s))

@@ -20,7 +20,7 @@ Spec version 1.0.0. Machine-readable copy: `invoice_ap/spec/data_dictionary.json
 | `date` | ISO date YYYY-MM-DD | TEXT |
 | `datetime` | ISO timestamp YYYY-MM-DDTHH:MM:SS+05:30 (IST) | TEXT |
 | `bool` | true or false | INTEGER |
-| `list` | pipe-separated, sorted, no spaces (empty = none) | TEXT |
+| `list` | pipe-separated in canonical order (precedence order for issue types, sequence order for approval levels, sorted otherwise), no spaces; empty = none | TEXT |
 
 Origins: `source` = generated or printed as-is; `derived` = computed from other records by the formula shown (never generated independently, Step 6); `assigned` = deterministic ID or sequence; `captured` = extracted by the engine from a document; `decided` = set by an engine or oracle rule (rule IDs in docs/business_rules.md). Empty CSV cell = null. `*_as_of` and `snapshot_*` fields are evaluated at `policy.as_of_date` (2026-10-22). `snapshot_*` columns in engine-readable layers are reporting only: the engine never reads them (ADR-038).
 
@@ -403,7 +403,7 @@ Expected labels and decisions per invoice, derived by the rule-based oracle from
 | `is_po_backed` | bool | yes | true, false | - | - | derived | = invoice.po_id is not empty | PO quoted |
 | `capture_overlay` | enum | yes | NONE, DEGRADED_SCAN | - | - | source | - | Document-quality overlay applied when rendering |
 | `intended_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | source | - | Labels the generator intended to inject |
-| `expected_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | must equal intended_issue_types (generation fails otherwise) | Labels the oracle derives under the policy |
+| `expected_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | its blocking subset must equal intended_issue_types (generation fails otherwise); it may add the non-blocking PAYMENT_DUE_DATE_PASSED warning | Labels the oracle derives under the policy |
 | `expected_primary_issue` | enum | yes | EXT_LOW_CONFIDENCE, DUPLICATE_EXACT, DUPLICATE_NUMBER_REUSE, DUPLICATE_SUSPECTED, VENDOR_NOT_FOUND, VENDOR_SENDER_MISMATCH, VENDOR_CLOSED, VENDOR_BLOCKED, PO_NOT_FOUND, VENDOR_PO_MISMATCH, INVOICE_DATE_IN_FUTURE, INVOICE_BEFORE_PO, HEADER_TOTAL_MISMATCH, LINE_AMOUNT_MISMATCH, TAX_CODE_INVALID, TAX_CODE_MISMATCH, TAX_AMOUNT_MISMATCH, PO_LINE_UNMATCHED, MISSING_RECEIPT, QTY_EXCEEDS_PO, QTY_EXCEEDS_RECEIVED, PRICE_VARIANCE, VENDOR_NOT_PAYABLE, PAYMENT_DUE_DATE_PASSED, NONE | - | - | decided | PRI-01 | Highest-precedence blocking issue |
 | `expected_blocked` | bool | yes | true, false | - | - | decided | - | At least one blocking issue |
 | `expected_match_status` | enum | yes | `enums.MATCH_STATUSES` (8 values) | - | - | decided | MS-01 | Expected invoice match status |

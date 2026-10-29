@@ -186,10 +186,11 @@ approval turnaround and payment scheduling all use business-day arithmetic. `*_a
 | `plan [--scale]` | Print the exact allocation tables | 1 (done) |
 | `docs [--check]` | Regenerate the data dictionary, JSON spec and generated doc tables | 1 (done) |
 | `policy [--path]` | Validate the policy and print a summary | 1 (done) |
-| `generate --scale --seed` | Build master, inbox, source and ground truth | 2-3 |
+| `generate --scale --seed [--out]` | Build master data, the intake manifest, source invoices and ground truth (documents: Stage 3) | 2 (done) |
+| `validate --quick` | Defect-aware self-checks over a built dataset | 2 (done) |
 | `run --scale` | Run the engine (master + inbox only) | 3-4 |
 | `evaluate`, `explain <invoice_id>` | Metrics and per-invoice decision trace | 4 |
-| `validate`, `export`, `repro`, `queue --role`, `dashboard` | Validation suite, exports, reproducibility, actor queues, HTML dashboard | 5 |
+| `validate` (full), `export`, `repro`, `queue --role`, `dashboard` | Validation suite, exports, reproducibility, actor queues, HTML dashboard | 5 |
 | `build-all` | One command that builds everything for both scales | 5 |
 
 ## 9. Performance and size budget

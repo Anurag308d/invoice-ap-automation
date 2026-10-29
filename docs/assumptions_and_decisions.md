@@ -92,8 +92,9 @@ checking, because the values cannot be trusted. A detected duplicate stops match
 consumes receipt quantity. A missing or foreign PO stops line matching. Otherwise every issue is
 collected, so multi-issue invoices are fully labelled.
 
-**ADR-024 Cumulative quantity semantics.** Per PO line, prior invoiced = earlier non-duplicate
-invoices in intake order, including those on hold, because they are claims on the receipt. The
+**ADR-024 Cumulative quantity semantics.** Per PO line, prior invoiced = earlier invoices in intake
+order that reached line matching, including those on hold, because they are claims on the receipt.
+Duplicates, capture holds and foreign-PO invoices are excluded. The
 check is against cumulative received at processing time and against ordered x 1.05. *Alternative:*
 count only approved invoices. That would let two held invoices both bill the same receipt.
 
@@ -128,7 +129,9 @@ never binary floats. JSON money is a string, documented in the data dictionary.
 
 **ADR-030 Approval matrix.** Matched PO invoices up to 2,00,000 are approved automatically by the
 SYSTEM (touchless, STP). Above that, L1, then L1+L2 above 10 lakh, then L1+L2+L3 above 50 lakh.
-Non-PO invoices: the requester always, plus L1 above 50,000 and L2 above 5 lakh. STP = invoices that
+Non-PO invoices: the requester always, plus L1 above 50,000 and L2 above 5 lakh. Simulated
+turnarounds are 2 business days for REQ and L1 and 3 for L2 and L3. That is realistic, and it leaves
+the latest invoices in flight (PENDING_APPROVAL) at the as-of date. STP = invoices that
 became payment-ready with only SYSTEM actions. *Alternative:* human approval for everything, which
 makes the STP rate meaningless.
 
@@ -199,7 +202,7 @@ manifest handed the engine the true vendor twice: inside `invoice_id`, and in a 
 that was set for every channel, including scans. Both of REV's paths are taken.
 - **(a) Channel-realistic intake.** The manifest has `doc_id` and `intake_seq` but no `invoice_id`.
   `sender_vendor_id` is set only where the channel authenticates the sender (PORTAL account, EDI
-  partner). EMAIL carries only the From address, and about 15% of those are forwarding mailboxes.
+  partner). EMAIL carries only the From address, and 10-15% of those are forwarding mailboxes.
   SCAN carries only a mailroom batch ID.
 - VEN-01 reads the vendor from the printed tax registration number and is the only source of
   `captured_invoice.vendor_id`. ID-01 then builds the invoice ID from that vendor. An unresolved
@@ -236,6 +239,24 @@ posted before processing time instead.
 
 *Alternative:* move the snapshots out of master. Rejected: they make the committed CSVs easier to
 read, and the guards make any read of them detectable.
+
+**ADR-039 Stage-2 generator mechanics.**
+- **Two phases from one plan.** Every random draw is made once, in the planner. `materialize()`
+  then builds a baseline (all invoices clean, no duplicates, no injected status changes), which
+  must self-validate with 0 violations and 0 labelled defects, and a final phase that adds only
+  the labelled injections. A test compares the phases. Master rows are identical except the
+  labelled vendors and the over-receipt POs, and clean invoices are identical.
+- **Dates.** Each PO's timeline is drawn from an optimistic window and redrawn deterministically,
+  up to 11 times, if any invoice would arrive after intake close (2026-10-21). The worst-case
+  window is the last resort. Invoices of one PO arrive in billing order, so cumulative labels land
+  on the intended invoice.
+- **Dedicated vendors.** Closed and blocked vendors are tail vendors whose only 2026 activity is
+  their scenario PO. The status change falls strictly between the receipt and the invoice date.
+- **Duplicates.** An exact resubmission copies its original's content, defects included. The
+  validator reports such a copy under the original's label, never as an unlabelled defect.
+- **Intake manifest.** It is written in Stage 2, because the oracle needs intake times and
+  `invoice.doc_id` must resolve. `file_sha256` and `file_bytes` stay empty until Stage 3 renders
+  the documents, and the validator reports this as pending, not as a violation.
 
 ## Data, determinism and engineering
 

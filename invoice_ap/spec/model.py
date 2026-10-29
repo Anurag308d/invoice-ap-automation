@@ -31,7 +31,8 @@ TYPES = {  # logical type -> (CSV/JSON representation, SQLite affinity)
     "date": ("ISO date YYYY-MM-DD", "TEXT"),
     "datetime": ("ISO timestamp YYYY-MM-DDTHH:MM:SS+05:30 (IST)", "TEXT"),
     "bool": ("true or false", "INTEGER"),
-    "list": ("pipe-separated, sorted, no spaces (empty = none)", "TEXT"),
+    "list": ("pipe-separated in canonical order (precedence order for issue types, sequence order for "
+             "approval levels, sorted otherwise), no spaces; empty = none", "TEXT"),
 }
 ORIGINS = ("source", "derived", "assigned", "captured", "decided")
 LAYERS = ("master", "inbox", "source", "ground_truth", "processed")

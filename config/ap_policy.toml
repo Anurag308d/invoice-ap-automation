@@ -146,10 +146,10 @@ simulation_rule_id = "APR-SIM-01"         # simulated approvers decide after a f
 
 [approval.levels]
 AUTO = { role = "SYSTEM",             assignee = "SYSTEM_USER",                 turnaround_business_days = 0 }
-REQ  = { role = "BUSINESS_REQUESTER", assignee = "INVOICE_ATTENTION_REQUESTER", turnaround_business_days = 1 }
-L1   = { role = "APPROVER",           assignee = "COST_CENTER_MANAGER",         turnaround_business_days = 1 }
-L2   = { role = "APPROVER",           assignee = "FINANCE_CONTROLLER",          turnaround_business_days = 2 }
-L3   = { role = "APPROVER",           assignee = "CHIEF_FINANCIAL_OFFICER",     turnaround_business_days = 2 }
+REQ  = { role = "BUSINESS_REQUESTER", assignee = "INVOICE_ATTENTION_REQUESTER", turnaround_business_days = 2 }
+L1   = { role = "APPROVER",           assignee = "COST_CENTER_MANAGER",         turnaround_business_days = 2 }
+L2   = { role = "APPROVER",           assignee = "FINANCE_CONTROLLER",          turnaround_business_days = 3 }
+L3   = { role = "APPROVER",           assignee = "CHIEF_FINANCIAL_OFFICER",     turnaround_business_days = 3 }
 
 [[approval.bands]]
 rule_id = "APR-PO-01"

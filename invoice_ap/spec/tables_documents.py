@@ -119,7 +119,8 @@ GROUND_TRUTH = Table(
         enum("capture_overlay", E.CAPTURE_OVERLAYS, "Document-quality overlay applied when rendering"),
         lst("intended_issue_types", "Labels the generator intended to inject", _ISSUES),
         lst("expected_issue_types", "Labels the oracle derives under the policy", _ISSUES,
-            origin="decided", rule="must equal intended_issue_types (generation fails otherwise)"),
+            origin="decided", rule="its blocking subset must equal intended_issue_types (generation fails "
+                                   "otherwise); it may add the non-blocking PAYMENT_DUE_DATE_PASSED warning"),
         enum("expected_primary_issue", _ISSUES + ("NONE",), "Highest-precedence blocking issue",
              origin="decided", rule="PRI-01"),
         flag("expected_blocked", "At least one blocking issue", origin="decided"),

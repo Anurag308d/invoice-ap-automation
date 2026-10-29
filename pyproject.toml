@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "invoice-ap-automation"
+version = "0.1.0"
+description = "Invoice-to-pay automation: intake, field extraction, PO/receipt matching, exception routing and payment readiness on a reproducible synthetic dataset."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Anurag" }]
+dependencies = []  # standard library only at runtime
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+invoice-ap = "invoice_ap.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["invoice_ap*"]
+
+[tool.setuptools.package-data]
+invoice_ap = ["spec/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

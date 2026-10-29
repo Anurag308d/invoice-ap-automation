@@ -1,0 +1,212 @@
+# =====================================================================================================
+# Accounts-payable policy configuration, read with Python's tomllib.
+#
+# Every engine decision and every ground-truth label records [policy].version plus the rule IDs below,
+# so any decision can be traced back to the exact policy text that produced it. Money and percentages
+# are strings so they parse exactly into Decimal (TOML floats are binary floats). Change a value,
+# bump the version, rebuild. Rationale for every value: docs/business_rules.md.
+# =====================================================================================================
+
+[policy]
+id = "AP-POLICY"
+version = "1.0.0"
+effective_from = "2026-01-01"
+owner_role = "PROCESS_OWNER"              # owns the policy content
+maintainer_role = "SYSTEM_ADMINISTRATOR"  # maintains this file, runs builds, keeps the audit trail
+currency = "INR"
+fiscal_year = 2026
+as_of_date = "2026-12-31"                 # fixed "today" for current statuses; no wall clock is read
+
+[calendar]
+weekend = ["SAT", "SUN"]
+holidays = ["2026-01-26", "2026-08-15", "2026-10-02", "2026-12-25"]
+
+[rounding]
+money_quantum = "0.01"
+mode = "ROUND_HALF_UP"
+tax_basis = "LINE"                        # tax = round(line net x rate) per line, then summed
+
+[extraction]
+rule_id = "CAP-01"
+min_field_confidence = "0.90"             # any required field below this routes to capture review
+gate = true                               # a low-confidence document skips all later checks
+required_header_fields = ["vendor_name", "vendor_tax_id", "vendor_invoice_number", "invoice_date",
+                          "currency", "header_net_amount", "header_tax_amount", "header_gross_amount"]
+required_line_fields = ["line_number", "description", "quantity", "uom", "unit_price",
+                        "line_net_amount", "tax_code", "tax_amount"]
+conditional_fields = { po_number = "PO_BACKED", po_line_number = "PO_BACKED", attention_user = "NON_PO" }
+
+[duplicates]
+rule_ids = { exact = "DUP-01", number_reuse = "DUP-02", content = "DUP-03" }
+normalization = ["UPPERCASE", "SPLIT_ON_NON_ALPHANUMERIC", "STRIP_LEADING_ZEROS_PER_NUMERIC_TOKEN", "JOIN"]
+exact_keys = ["vendor_id", "normalized_number", "invoice_date", "header_gross_amount"]
+number_reuse_keys = ["vendor_id", "normalized_number"]
+content_keys = ["vendor_id", "invoice_date", "header_gross_amount", "po_id"]
+exact_action = "REJECT"
+number_reuse_action = "HOLD"
+content_action = "HOLD"
+lookback = "ALL_PRIOR_IN_INTAKE_ORDER"
+gate = true                               # a detected duplicate skips matching
+duplicates_consume_receipts = false       # duplicates never reduce the quantity still billable
+
+[vendor]
+rule_ids = { exists = "VEN-01", closed = "VEN-02", blocked = "VEN-03" }
+status_basis_date = "INVOICE_DATE"        # status effective on the invoice date decides VEN-02/VEN-03
+payable_statuses = ["ACTIVE"]
+
+[po_reference]
+rule_ids = { exists = "PO-01", vendor_consistency = "PO-02", line_resolution = "PO-03" }
+line_resolution_order = ["PO_LINE_NUMBER", "SKU"]
+gate_matching_on_failure = true           # no line matching against a PO that is missing or foreign
+
+[dates]
+rule_ids = { not_after_received = "DATE-01", not_before_po = "DATE-02" }
+invoice_not_after_received = true
+invoice_not_before_po = true
+
+[arithmetic]
+rule_ids = { line_extension = "ARI-01", header_totals = "ARI-02" }
+line_amount_abs = "0.01"                  # |printed line amount - round(qty x price)| <= 0.01
+header_amount_abs = "0.01"                # header net, tax and gross vs the sums of the lines
+
+[tax]
+rule_ids = { code_valid = "TAX-01", code_matches_po = "TAX-02", amount = "TAX-03" }
+amount_abs = "0.01"                       # |printed tax - round(printed net x rate)| <= 0.01
+code_must_match_po_line = true
+
+[matching]
+rule_ids = { receipt_exists = "MAT-01", price = "MAT-02", qty_received = "MAT-03", qty_ordered = "MAT-04", status = "MS-01" }
+price_tolerance_pct = "2.00"              # symmetric, on the PO unit price, inclusive
+price_tolerance_inclusive = true
+over_receipt_tolerance_pct = "5.00"       # cumulative invoiced may reach ordered x 1.05
+quantity_basis = "CUMULATIVE"             # prior non-duplicate invoices + this one, per PO line
+receipt_cutoff = "PROCESSING_TIME"        # only GRNs posted before the invoice is processed count
+match_status_precedence = ["TAX_MISMATCH", "MISSING_RECEIPT", "QTY_MISMATCH", "PRICE_VARIANCE"]
+
+[precedence]
+rule_id = "PRI-01"
+# Primary status = the highest blocking issue in this list (the same order as invoice_ap/common/enums.py).
+order = [
+  "EXT_LOW_CONFIDENCE", "DUPLICATE_EXACT", "DUPLICATE_NUMBER_REUSE", "DUPLICATE_SUSPECTED",
+  "VENDOR_NOT_FOUND", "VENDOR_CLOSED", "VENDOR_BLOCKED", "PO_NOT_FOUND", "VENDOR_PO_MISMATCH",
+  "INVOICE_DATE_IN_FUTURE", "INVOICE_BEFORE_PO", "HEADER_TOTAL_MISMATCH", "LINE_AMOUNT_MISMATCH",
+  "TAX_CODE_INVALID", "TAX_CODE_MISMATCH", "TAX_AMOUNT_MISMATCH", "PO_LINE_UNMATCHED",
+  "MISSING_RECEIPT", "QTY_EXCEEDS_PO", "QTY_EXCEEDS_RECEIVED", "PRICE_VARIANCE",
+  "VENDOR_NOT_PAYABLE", "PAYMENT_DUE_DATE_PASSED",
+]
+
+# ---- Routing matrix (rule RTE-01): exception type -> severity, blocking, actor role, queue, SLA.
+[routing]
+rule_id = "RTE-01"
+sla_rule_id = "SLA-01"                    # due = created date + N business days
+
+[routing.types]
+EXT_LOW_CONFIDENCE      = { raised_by = "CAP-01",  severity = "MEDIUM", blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_CAPTURE_REVIEW",    sla_business_days = 1 }
+DUPLICATE_EXACT         = { raised_by = "DUP-01",  severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_DUPLICATES",        sla_business_days = 2 }
+DUPLICATE_NUMBER_REUSE  = { raised_by = "DUP-02",  severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_DUPLICATES",        sla_business_days = 2 }
+DUPLICATE_SUSPECTED     = { raised_by = "DUP-03",  severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_DUPLICATES",        sla_business_days = 2 }
+VENDOR_NOT_FOUND        = { raised_by = "VEN-01",  severity = "HIGH",   blocking = true,  role = "SYSTEM_ADMINISTRATOR", queue = "VENDOR_MASTER",        sla_business_days = 3 }
+VENDOR_CLOSED           = { raised_by = "VEN-02",  severity = "HIGH",   blocking = true,  role = "SYSTEM_ADMINISTRATOR", queue = "VENDOR_MASTER",        sla_business_days = 3 }
+VENDOR_BLOCKED          = { raised_by = "VEN-03",  severity = "HIGH",   blocking = true,  role = "SYSTEM_ADMINISTRATOR", queue = "VENDOR_MASTER",        sla_business_days = 3 }
+PO_NOT_FOUND            = { raised_by = "PO-01",   severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_VALIDATION",        sla_business_days = 2 }
+VENDOR_PO_MISMATCH      = { raised_by = "PO-02",   severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_VALIDATION",        sla_business_days = 2 }
+INVOICE_DATE_IN_FUTURE  = { raised_by = "DATE-01", severity = "MEDIUM", blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_VALIDATION",        sla_business_days = 2 }
+INVOICE_BEFORE_PO       = { raised_by = "DATE-02", severity = "MEDIUM", blocking = true,  role = "PROCESS_OWNER",        queue = "POLICY_EXCEPTIONS",    sla_business_days = 3 }
+HEADER_TOTAL_MISMATCH   = { raised_by = "ARI-02",  severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_VALIDATION",        sla_business_days = 2 }
+LINE_AMOUNT_MISMATCH    = { raised_by = "ARI-01",  severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_VALIDATION",        sla_business_days = 2 }
+TAX_CODE_INVALID        = { raised_by = "TAX-01",  severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_TAX",               sla_business_days = 2 }
+TAX_CODE_MISMATCH       = { raised_by = "TAX-02",  severity = "HIGH",   blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_TAX",               sla_business_days = 2 }
+TAX_AMOUNT_MISMATCH     = { raised_by = "TAX-03",  severity = "MEDIUM", blocking = true,  role = "OPERATIONS_ANALYST",   queue = "AP_TAX",               sla_business_days = 2 }
+PO_LINE_UNMATCHED       = { raised_by = "PO-03",   severity = "MEDIUM", blocking = true,  role = "BUSINESS_REQUESTER",   queue = "PO_QUERIES",           sla_business_days = 3 }
+MISSING_RECEIPT         = { raised_by = "MAT-01",  severity = "MEDIUM", blocking = true,  role = "BUSINESS_REQUESTER",   queue = "RECEIPT_CONFIRMATION", sla_business_days = 3 }
+QTY_EXCEEDS_PO          = { raised_by = "MAT-04",  severity = "HIGH",   blocking = true,  role = "PROCESS_OWNER",        queue = "POLICY_EXCEPTIONS",    sla_business_days = 3 }
+QTY_EXCEEDS_RECEIVED    = { raised_by = "MAT-03",  severity = "MEDIUM", blocking = true,  role = "BUSINESS_REQUESTER",   queue = "RECEIPT_CONFIRMATION", sla_business_days = 3 }
+PRICE_VARIANCE          = { raised_by = "MAT-02",  severity = "MEDIUM", blocking = true,  role = "BUSINESS_REQUESTER",   queue = "PRICE_REVIEW",         sla_business_days = 3 }
+VENDOR_NOT_PAYABLE      = { raised_by = "PAY-03",  severity = "HIGH",   blocking = true,  role = "SYSTEM_ADMINISTRATOR", queue = "VENDOR_MASTER",        sla_business_days = 2 }
+PAYMENT_DUE_DATE_PASSED = { raised_by = "PAY-06",  severity = "LOW",    blocking = false, role = "OPERATIONS_ANALYST",   queue = "PAYMENT_WATCH",        sla_business_days = 1 }
+
+[assignment]
+# How a routed exception picks a named user inside the role (deterministic, no randomness).
+BUSINESS_REQUESTER = "PO_REQUESTER_ELSE_INVOICE_ATTENTION"
+PROCESS_OWNER = "POLICY_OWNER"
+OPERATIONS_ANALYST = "ROUND_ROBIN_IN_EXCEPTION_ID_ORDER"
+SYSTEM_ADMINISTRATOR = "VENDOR_MASTER_OWNER"
+
+# ---- Approval matrix. Eligible = no open blocking exception after validation and matching.
+[approval]
+rule_id = "APR-01"
+basis = "HEADER_GROSS_AMOUNT"
+sequential = true                         # level n+1 is requested when level n is approved
+simulation_rule_id = "APR-SIM-01"         # simulated approvers decide after a fixed turnaround
+
+[approval.levels]
+AUTO = { role = "SYSTEM",             assignee = "SYSTEM_USER",                 turnaround_business_days = 0 }
+REQ  = { role = "BUSINESS_REQUESTER", assignee = "INVOICE_ATTENTION_REQUESTER", turnaround_business_days = 1 }
+L1   = { role = "APPROVER",           assignee = "COST_CENTER_MANAGER",         turnaround_business_days = 1 }
+L2   = { role = "APPROVER",           assignee = "FINANCE_CONTROLLER",          turnaround_business_days = 2 }
+L3   = { role = "APPROVER",           assignee = "CHIEF_FINANCIAL_OFFICER",     turnaround_business_days = 2 }
+
+[[approval.bands]]
+rule_id = "APR-PO-01"
+path = "PO"
+band = "P1"
+lower_exclusive = "0.00"
+upper_inclusive = "200000.00"
+levels = ["AUTO"]                         # touchless: matched PO invoices up to 2 lakh
+
+[[approval.bands]]
+rule_id = "APR-PO-02"
+path = "PO"
+band = "P2"
+lower_exclusive = "200000.00"
+upper_inclusive = "1000000.00"
+levels = ["L1"]
+
+[[approval.bands]]
+rule_id = "APR-PO-03"
+path = "PO"
+band = "P3"
+lower_exclusive = "1000000.00"
+upper_inclusive = "5000000.00"
+levels = ["L1", "L2"]
+
+[[approval.bands]]
+rule_id = "APR-PO-04"
+path = "PO"
+band = "P4"
+lower_exclusive = "5000000.00"
+levels = ["L1", "L2", "L3"]               # no upper bound
+
+[[approval.bands]]
+rule_id = "APR-NPO-01"
+path = "NON_PO"
+band = "N1"
+lower_exclusive = "0.00"
+upper_inclusive = "50000.00"
+levels = ["REQ"]
+
+[[approval.bands]]
+rule_id = "APR-NPO-02"
+path = "NON_PO"
+band = "N2"
+lower_exclusive = "50000.00"
+upper_inclusive = "500000.00"
+levels = ["REQ", "L1"]
+
+[[approval.bands]]
+rule_id = "APR-NPO-03"
+path = "NON_PO"
+band = "N3"
+lower_exclusive = "500000.00"
+levels = ["REQ", "L1", "L2"]
+
+# ---- Payment readiness and scheduling.
+[payment]
+rule_ids = { readiness = "PAY-01", schedule = "PAY-02", vendor_payable = "PAY-03", method = "PAY-04", release = "PAY-05", due_passed = "PAY-06" }
+requires = ["NO_OPEN_BLOCKING_EXCEPTION", "ALL_APPROVAL_LEVELS_APPROVED", "VENDOR_PAYABLE_ON_READY_DATE"]
+due_date_basis = "INVOICE_DATE_PLUS_TERM_DAYS"
+schedule_on = "DUE_DATE"                  # pay on time, not early
+non_business_day = "PREVIOUS_BUSINESS_DAY"
+earliest = "NEXT_BUSINESS_DAY_AFTER_READY"  # if the due date has passed: next business day, plus PAY-06
+rtgs_min_amount = "200000.00"             # RTGS at or above 2 lakh, NEFT below
+release_on_scheduled_date = true          # payment run: SCHEDULED -> PAID when scheduled date <= as_of_date

@@ -72,9 +72,6 @@ def evaluate_decisions(root: Path, as_of: date) -> tuple[dict, list[dict]]:
         apr[a["invoice_id"]].append(a)
     pairs = {doc_of[p["invoice_id"]]: p for p in read_table(root / "processed", "duplicate_pair")}
     gt_doc_of = {g["invoice_id"]: d for d, g in gt.items()}
-    extraction_ok = {}
-    for f in ():
-        pass
 
     types = Counter()
     per_type = {t: [0, 0, 0] for t in EXCEPTION_TYPES}
@@ -256,6 +253,7 @@ def _value_at_risk(root, gt, cap, dec, src, src_lines) -> dict:
     lines = defaultdict(dict)
     for l in read_table(root / "processed", "captured_invoice_line"):
         lines[l["invoice_id"]][l["invoice_line_id"]] = l
+    rates = {t["tax_code"]: D(t["rate_pct"]) for t in read_table(root / "master", "tax_code")}
     by_issue, total, missed = Counter(), D(0), D(0)
     for doc_id, g in gt.items():
         d, c = dec[doc_id], cap[doc_id]
@@ -286,7 +284,12 @@ def _value_at_risk(root, gt, cap, dec, src, src_lines) -> dict:
             amount = abs(D(c["header_gross_amount"] or 0) - nets - taxes)
             for l in lines[c["invoice_id"]].values():
                 amount += abs(D(l["line_net_amount"]) - line_net(D(l["quantity"]), D(l["unit_price"])))
-            amount = amount or D("0.00")
+            for r in mres[c["invoice_id"]]:              # tax: printed vs expected, and the PO code's tax
+                l = lines[c["invoice_id"]][r["invoice_line_id"]]
+                if r["expected_tax_amount"]:
+                    amount += abs(D(l["tax_amount"]) - D(r["expected_tax_amount"]))
+                if r["po_tax_code"] and r["po_tax_code"] != l["tax_code"]:
+                    amount += abs(D(l["tax_amount"]) - tax_amount(D(l["line_net_amount"]), rates[r["po_tax_code"]]))
         by_issue[issue] += amount
         total += amount
     q = lambda x: f"{D(x).quantize(D('0.01')):f}"

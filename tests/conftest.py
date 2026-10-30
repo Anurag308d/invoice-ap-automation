@@ -5,6 +5,7 @@ import pytest
 
 from invoice_ap.common.policy import load_policy
 from invoice_ap.engine import run_engine
+from invoice_ap.evaluation.decisions import evaluate_decisions
 from invoice_ap.evaluation.extraction import evaluate
 from invoice_ap.generator.build import generate
 from invoice_ap.quality.quick import load
@@ -23,10 +24,10 @@ def builds(tmp_path_factory):
 
 @pytest.fixture(scope="session")
 def engine_runs(builds):
-    """scale -> (dataset root, engine summary, extraction evaluation)."""
+    """scale -> (dataset root, engine summary, extraction evaluation, decision evaluation)."""
     out = {}
     for scale, (result, _) in builds.items():
         root = result.out
         summary = run_engine(root / "master", root / "inbox", root / "processed", load_policy())
-        out[scale] = (root, summary, evaluate(root))
+        out[scale] = (root, summary, evaluate(root), evaluate_decisions(root, load_policy().as_of_date)[0])
     return out

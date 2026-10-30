@@ -1,7 +1,7 @@
 """Command-line interface: python -m invoice_ap <command>.
 
-Implemented: `plan`, `docs`, `policy` (Stage 1), `generate`, `validate --quick` (Stage 2), `run` and
-`evaluate` (Stage 3: intake and extraction; Stage 4 extends both). The remaining commands are registered
+Implemented: `plan`, `docs`, `policy` (Stage 1), `generate`, `validate --quick` (Stage 2), `run`,
+`evaluate` and `explain` (Stages 3-4). The remaining commands are registered
 so the planned surface is visible; they exit with status 2 until their stage lands.
 """
 from __future__ import annotations
@@ -17,7 +17,6 @@ PLANNED = {
     "repro": ("Regenerate twice with the same seed and compare checksums", 5),
     "build-all": ("Build, run, evaluate, validate, export and report for both scales", 5),
     "queue": ("Show an actor role its work queue", 5),
-    "explain": ("Show the decision trace of one invoice", 4),
     "dashboard": ("Write the offline HTML dashboard", 5),
 }
 
@@ -138,19 +137,51 @@ def _cmd_run(args: argparse.Namespace) -> int:
 
 def _cmd_evaluate(args: argparse.Namespace) -> int:
     import json
+    from .common.policy import load_policy
+    from .evaluation.decisions import acceptance_csv, evaluate_decisions
+    from .evaluation.decisions import to_markdown as decisions_md
     from .evaluation.extraction import evaluate, to_markdown
     root = _root(args)
+    reports = root / "reports"
+    reports.mkdir(parents=True, exist_ok=True)
+
+    def dump(name: str, obj) -> None:
+        (reports / name).write_text(json.dumps(obj, indent=1, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    manifest = root / "reports" / "source_manifest.json"
+    label = json.loads(manifest.read_text(encoding="utf-8"))["scale"] if manifest.exists() else root.name
     report = evaluate(root)
-    (root / "reports").mkdir(parents=True, exist_ok=True)
-    (root / "reports" / "extraction_evaluation.json").write_text(
-        json.dumps(report, indent=1, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
-    (root / "reports" / "extraction_evaluation.md").write_text(
-        to_markdown(report, f"Extraction evaluation ({root.name})"), encoding="utf-8")
+    dump("extraction_evaluation.json", report)
+    (reports / "extraction_evaluation.md").write_text(to_markdown(report, f"Extraction evaluation ({label})"),
+                                                      encoding="utf-8")
+    decisions, acceptance = evaluate_decisions(root, load_policy().as_of_date)
+    dump("evaluation.json", {"extraction_summary": {k: v for k, v in report.items() if k != "mismatches"},
+                             "decisions": decisions})
+    (reports / "evaluation.md").write_text(decisions_md(decisions, f"Decision evaluation ({label})"), encoding="utf-8")
+    (reports / "acceptance_per_invoice.csv").write_bytes(acceptance_csv(acceptance))
     bad = len(report["non_degraded_documents_with_mismatch"])
+    acc = decisions["acceptance"]
     print(f"extraction: {report['documents_exact']}/{report['documents']} documents exact, field match "
           f"{report['field_match_rate']}, silent errors {report['silent_errors']}, degraded scans flagged "
           f"{report['degraded_scans_flagged']}/{report['degraded_scans']}, non-degraded mismatches {bad}")
-    return 0 if report["silent_errors"] == 0 and bad == 0 else 1
+    print(f"decisions: issue types {decisions['agreement']['issue_types']}, primary {decisions['agreement']['primary_issue']}, "
+          f"final status {decisions['agreement']['final_status']}, duplicate pairs {decisions['duplicates']['correct_pairs']}/"
+          f"{decisions['duplicates']['expected_pairs']}, unsafe payments "
+          f"{decisions['payments']['blocked_or_unapproved_with_payment']}, STP {decisions['kpis']['stp_rate']}")
+    print(f"acceptance (R34a-e): pass {acc['pass']}/{acc['invoices']}, fail {acc['fail']} "
+          f"(capture review flagged {acc['r34a_flagged_capture_review']}) -> {reports}")
+    ok = report["silent_errors"] == 0 and bad == 0 and acc["fail"] == 0 \
+        and decisions["payments"]["blocked_or_unapproved_with_payment"] == 0
+    return 0 if ok else 1
+
+
+def _cmd_explain(args: argparse.Namespace) -> int:
+    from .engine.explain import explain
+    try:
+        print(explain(_root(args) / "processed", args.invoice_id), end="")
+    except KeyError as err:
+        print(err.args[0], file=sys.stderr)
+        return 1
+    return 0
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -176,8 +207,11 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--data", default=None, help="dataset folder (default data/<scale>)")
     p.set_defaults(func=_cmd_validate)
     for name, func, help_text in (("run", _cmd_run, "Run the AP engine on master data and the inbox only"),
-                                  ("evaluate", _cmd_evaluate, "Compare engine output with the source invoices")):
+                                  ("evaluate", _cmd_evaluate, "Compare engine output with source and ground truth"),
+                                  ("explain", _cmd_explain, "Show one invoice's decision, exceptions, events and trace")):
         p = sub.add_parser(name, help=help_text)
+        if name == "explain":
+            p.add_argument("invoice_id")
         p.add_argument("--scale", default="starter")
         p.add_argument("--data", default=None, help="dataset folder (default data/<scale>)")
         p.set_defaults(func=func)

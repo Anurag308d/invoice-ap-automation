@@ -561,7 +561,7 @@ Line-level three-way match (PO line vs receipts vs invoice line) with the tolera
 | `price_status` | enum | yes | EXACT, WITHIN_TOLERANCE, OUT_OF_TOLERANCE, NOT_EVALUATED | - | - | decided | MAT-02 | Price check |
 | `po_unit_price` | money | no | range [0.00, inf] | INR | - | source | - | PO unit price |
 | `invoice_unit_price` | money | no | range [0.00, inf] | INR | - | source | - | Invoiced unit price |
-| `price_variance_pct` | decimal | no | - | % | - | derived | = exact, not rounded | Signed variance (invoice - PO) / PO x 100 |
+| `price_variance_pct` | decimal | no | - | % | - | derived | = (invoice - PO price) x 100 / PO price, shown to 4 decimals (ROUND_HALF_UP); the tolerance test uses the exact value | Signed variance (invoice - PO) / PO x 100 |
 | `price_tolerance_pct` | pct | no | - | % | - | derived | = matching.price_tolerance_pct | Tolerance applied |
 | `qty_status` | enum | yes | OK, EXCEEDS_RECEIVED, EXCEEDS_PO, NO_RECEIPT, NOT_EVALUATED | - | - | decided | MAT-01, MAT-03, MAT-04 | Quantity check |
 | `ordered_qty` | qty | no | range [0, inf] | unit of measure of the line | - | source | - | PO line quantity |
@@ -688,7 +688,7 @@ Payment records, created only for payment-ready invoices (no open blocking excep
 | `created_at` | datetime | yes | - | IST timestamp | - | decided | PAY-01 | Payment-ready time |
 | `paid_at` | datetime | conditional | - | IST timestamp | - | decided | PAY-05; required when status_as_of = PAID | Release time in the payment run |
 | `status_as_of` | enum | yes | SCHEDULED, PAID | - | - | derived | = last PAYMENT ap_event | Status at the as-of date |
-| `due_date_passed` | bool | yes | true, false | - | - | derived | = created_at date > due_date | Ready after the due date (PAY-06 warning) |
+| `due_date_passed` | bool | yes | true, false | - | - | derived | = PAY-06: the scheduled date had to move past the due-date schedule (next business day after ready) | Ready after the due date (PAY-06 warning) |
 | `policy_version` | text | yes | - | - | - | source | FK -> `policy_version.policy_version` | Policy version |
 
 ### ap_event

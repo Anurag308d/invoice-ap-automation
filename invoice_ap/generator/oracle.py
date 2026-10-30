@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 from datetime import date, timedelta
-from decimal import Decimal
+from decimal import ROUND_HALF_UP, Decimal
 
 from ..common.calendar import BusinessCalendar
 from ..common.enums import EDGE_CASES, EXCEPTION_TYPES
@@ -189,7 +189,7 @@ class Oracle:
                     s["qty"] = "EXCEEDS_PO" if s["qty"] == "EXCEEDS_PO" else "EXCEEDS_RECEIVED"
                 s["within_qty"] = s["qty"] == "OK" and cum > pol["ordered_qty"]
             diff = ln["unit_price"] - pol["unit_price"]
-            s["variance"] = (diff * HUNDRED / pol["unit_price"]).quantize(Decimal("0.0001"))
+            s["variance"] = (diff * HUNDRED / pol["unit_price"]).quantize(Decimal("0.0001"), rounding=ROUND_HALF_UP)
             if abs(diff) * HUNDRED <= pol["unit_price"] * self.price_tol:          # MAT-02, inclusive
                 s["price"] = "EXACT" if diff == 0 else "WITHIN_TOLERANCE"
             else:
@@ -215,6 +215,8 @@ class Oracle:
             return "QTY_MISMATCH"
         if any(s["price"] == "OUT_OF_TOLERANCE" for s in st):
             return "PRICE_VARIANCE"
+        if any(s["price"] == "NOT_EVALUATED" for s in st):                      # a line without a PO line
+            return "NOT_EVALUATED"
         if all(s["price"] == "EXACT" and s["tax"] == "OK" and not s["within_qty"] for s in st):
             return "MATCHED"
         return "MATCHED_WITHIN_TOLERANCE"

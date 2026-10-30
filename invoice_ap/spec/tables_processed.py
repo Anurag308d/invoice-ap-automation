@@ -134,7 +134,7 @@ MATCH_RESULT = Table(
         money("po_unit_price", "PO unit price", required=False),
         money("invoice_unit_price", "Invoiced unit price", required=False),
         dec("price_variance_pct", "Signed variance (invoice - PO) / PO x 100", required=False,
-            unit="%", origin="derived", derivation="exact, not rounded"),
+            unit="%", origin="derived", derivation="(invoice - PO price) x 100 / PO price, shown to 4 decimals (ROUND_HALF_UP); the tolerance test uses the exact value"),
         pct("price_tolerance_pct", "Tolerance applied", required=False, origin="derived",
             derivation="matching.price_tolerance_pct"),
         enum("qty_status", E.LINE_QTY_STATUSES, "Quantity check", origin="decided",
@@ -268,7 +268,7 @@ PAYMENT = Table(
         enum("status_as_of", E.PAYMENT_STATUSES, "Status at the as-of date", origin="derived",
              derivation="last PAYMENT ap_event"),
         flag("due_date_passed", "Ready after the due date (PAY-06 warning)", origin="derived",
-             derivation="created_at date > due_date"),
+             derivation="PAY-06: the scheduled date had to move past the due-date schedule (next business day after ready)"),
         text("policy_version", "Policy version", fk="policy_version.policy_version"),
     ), entity="Payment")
 

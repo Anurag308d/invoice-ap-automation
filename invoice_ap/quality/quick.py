@@ -153,10 +153,12 @@ def _timeline(t, c, as_of_end, code_of):
     bad += [f"{b['doc_id']} not after {a['doc_id']}" for a, b in zip(rows, rows[1:])
             if datetime.fromisoformat(b["received_at"]) <= datetime.fromisoformat(a["received_at"])]
     completed = [("vendor_status_history", "recorded_at"), ("goods_receipt", "posted_at"), ("erp_event", "event_at"),
-                 ("intake_manifest", "received_at")]
-    for name, col in completed:
+                 ("intake_manifest", "received_at"), ("captured_invoice", "captured_at"), ("ap_event", "event_at"),
+                 ("invoice_decision", "decided_at"), ("ap_exception", "created_at"), ("approval", "decided_at"),
+                 ("payment", "created_at"), ("payment", "paid_at")]
+    for name, col in completed:                 # completed engine events too (forward plans may lie later)
         bad += [f"{name}.{col}={r[col]} after as-of" for r in t.get(name, [])
-                if datetime.fromisoformat(r[col]) > as_of_end]
+                if r[col] and datetime.fromisoformat(r[col]) > as_of_end]
     bad += [f"vendor_status_history effective {r['effective_date']} after as-of" for r in t.get("vendor_status_history", [])
             if r["effective_date"] > as_of_end.date().isoformat()]
     bad += [f"{r['vsh_id']} recorded after its effective date" for r in t.get("vendor_status_history", [])
@@ -241,6 +243,19 @@ def _lifecycles(t, c):
             evs = events.get((etype, r[key]))
             if not evs or evs[-1]["to_status"] != r["snapshot_status"]:
                 bad.append(f"{r[key]} snapshot_status != last event")
+    ap = defaultdict(list)
+    for e in sorted(t.get("ap_event", []), key=lambda e: e["event_id"]):
+        ap[(e["entity_type"], e["entity_id"])].append(e)
+    for (etype, eid), evs in ap.items():
+        bad += [f"{eid}: {m}" for m in lifecycle.sequence_errors(etype, [e["to_status"] for e in evs])]
+        bad += [f"{eid} AP events out of order" for a, b in zip(evs, evs[1:])
+                if a["event_at"] > b["event_at"] or int(b["seq"]) != int(a["seq"]) + 1]
+    for name, etype, key in (("invoice_decision", "INVOICE", "invoice_id"), ("ap_exception", "EXCEPTION", "exception_id"),
+                             ("approval", "APPROVAL", "approval_id"), ("payment", "PAYMENT", "payment_id")):
+        for r in t.get(name, []):
+            evs = ap.get((etype, r[key]))
+            if not evs or evs[-1]["to_status"] != r["status_as_of"]:
+                bad.append(f"{r[key]} status_as_of != last AP event")
     c.add("lifecycle events (state machines, order, current = last event)", bad)
 
 

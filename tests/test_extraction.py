@@ -28,7 +28,7 @@ THRESHOLD = D("0.90")
 # ------------------------------------------------------------------ accuracy on the generated data
 @pytest.mark.parametrize("scale", ["starter", "full"])
 def test_every_non_degraded_document_matches_source_on_every_field(engine_runs, scale):
-    root, summary, report = engine_runs[scale]
+    root, summary, report, _ = engine_runs[scale]
     assert report["non_degraded_documents_with_mismatch"] == []
     assert report["silent_errors"] == 0
     assert report["vendor_resolution_rate"] == "100.00%" and report["invoice_id_agreement_rate"] == "100.00%"
@@ -38,15 +38,15 @@ def test_every_non_degraded_document_matches_source_on_every_field(engine_runs, 
 
 
 def test_confidence_is_calibrated(engine_runs):
-    _, _, report = engine_runs["full"]
+    _, _, report, _ = engine_runs["full"]
     for bucket, c in report["confidence_calibration"].items():
         if bucket != "not printed" and D(bucket) >= THRESHOLD:
             assert c["accuracy"] == "100.00%", bucket
 
 
 def test_capture_review_routes_to_the_operations_analyst(engine_runs):
-    root, _, _ = engine_runs["full"]
-    exc = read_table(root / "processed", "ap_exception")
+    root, _, _, _ = engine_runs["full"]
+    exc = [e for e in read_table(root / "processed", "ap_exception") if e["exception_type"] == "EXT_LOW_CONFIDENCE"]
     cap = {c["invoice_id"]: c for c in read_table(root / "processed", "captured_invoice")}
     assert len(exc) == 10
     for e in exc:
@@ -58,7 +58,7 @@ def test_capture_review_routes_to_the_operations_analyst(engine_runs):
 
 def test_arithmetic_defects_survive_extraction(engine_runs):
     """A-41: a wrong printed total is captured as printed, never recomputed from the lines."""
-    root, _, _ = engine_runs["full"]
+    root, _, _, _ = engine_runs["full"]
     gt = {g["doc_id"]: g for g in read_table(root / "ground_truth", "ground_truth")}
     src = {s["doc_id"]: s for s in read_table(root / "source", "invoice")}
     cap = {c["doc_id"]: c for c in read_table(root / "processed", "captured_invoice")}
@@ -203,7 +203,7 @@ def test_single_digit_mutations_are_read_as_printed_or_flagged(engine_runs, tmp_
     """Change one digit inside a printed value (located by its captured raw text, occurring exactly
     once in the file). The engine must then either flag that field (or the document) or capture a
     value different from the original: it must never silently restore the original value."""
-    root, _, _ = engine_runs["full"]
+    root, _, _, _ = engine_runs["full"]
     ds = _copy(root, tmp_path)
     before = _run(ds)
     manifest = {m["doc_id"]: m for m in read_table(ds / "inbox", "intake_manifest")}
@@ -248,7 +248,7 @@ def test_single_digit_mutations_are_read_as_printed_or_flagged(engine_runs, tmp_
 
 @pytest.mark.parametrize("damage", ["smudge", "lookalike", "delete_total", "unknown_trn", "truncate"])
 def test_damaged_documents_are_flagged_never_silently_fixed(engine_runs, tmp_path, damage):
-    root, _, _ = engine_runs["starter"]
+    root, _, _, _ = engine_runs["starter"]
     ds = _copy(root, tmp_path)
     before = _run(ds)
     manifest = read_table(ds / "inbox", "intake_manifest")

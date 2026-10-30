@@ -128,7 +128,7 @@ evaluation (inputs, threshold, outcome), and `python -m invoice_ap explain <invo
 | Layer separation | Evaluation-only data lives in `source/` and `ground_truth/`, never in `master/` or `inbox/`. | dataset layout |
 | Narrow engine entry point | `run_engine(master_dir, inbox_dir, out_dir, policy)`: the engine is never given the dataset root. | `invoice_ap/engine/pipeline.py` (done, Stage 3) |
 | Vendor from the document only (S1-R1-01, ADR-037) | The manifest has no `invoice_id` (it would embed the vendor) and carries `sender_vendor_id` only for authenticated PORTAL/EDI senders. VEN-01 takes the vendor from the printed tax registration number, and ID-01 then assigns the invoice ID. Sender fields feed only the VEN-04 cross-check. | static ban `tests/test_boundary.py::test_engine_never_takes_the_vendor_from_the_sender_or_an_id` (active now); **ID-blind sandbox** `tests/test_engine_sandbox.py::test_id_blind_run_gives_identical_decisions` (done, Stage 3): blank `sender_vendor_id` and `sender_address` in a temp copy of the inbox; every decision must be identical |
-| No future information (S1-R1-02, ADR-038) | `snapshot_*` columns (vendor, PO, PO line, GRN) are evaluated at the as-of date and flagged reporting only. The engine uses effective-dated history and receipts posted before processing time. | static ban on `snapshot_` in engine code (active now); **time-travel sandbox** `tests/test_time_travel.py` (*Stage 4*): for sampled invoices, drop master rows and events recorded after the invoice's processing time and blank every `snapshot_*` column; the decision must not change |
+| No future information (S1-R1-02, ADR-038) | `snapshot_*` columns (vendor, PO, PO line, GRN) are evaluated at the as-of date and flagged reporting only. The engine uses effective-dated history and receipts posted before processing time. | static ban on `snapshot_` in engine code (active now); **time-travel sandbox** `tests/test_decisions.py::test_time_travel_*` and `::test_snapshots_and_post_as_of_rows_never_change_a_decision` (done, Stage 4): for sampled invoices, drop master rows and events recorded after the invoice's processing time and blank every `snapshot_*` column; the decision must not change |
 | Labels out of the SQL seed | Source and ground-truth tables are exported to separate files (`sql/evaluation_seed.sql`, `json/evaluation/`), never into the seed's input tables. | export layout (*Stage 5*) |
 | Static import rule | The engine imports only `common`, `spec` and itself, and `common` and `spec` import nothing from the generator. Evaluation-only names never appear in engine source. | `tests/test_boundary.py` (active now) |
 | Runtime sandbox | The engine runs on a temp copy that contains only `master/` and `inbox/`; its output must be byte-identical to the normal run. | `tests/test_engine_sandbox.py` (done, Stage 3) |
@@ -188,9 +188,9 @@ approval turnaround and payment scheduling all use business-day arithmetic. `*_a
 | `policy [--path]` | Validate the policy and print a summary | 1 (done) |
 | `generate --scale --seed [--out]` | Build master data, the intake manifest, source invoices and ground truth and the rendered inbox documents | 2-3 (done) |
 | `validate --quick` | Defect-aware self-checks over a built dataset | 2 (done) |
-| `run --scale [--data]` | Run the engine (master + inbox only) | 3 (capture stage done), 4 |
-| `evaluate --scale [--data]` | Metrics vs source and ground truth | 3 (extraction done), 4 |
-| `explain <invoice_id>` | Per-invoice decision trace | 4 |
+| `run --scale [--data]` | Run the engine (master + inbox only) | 3-4 (done) |
+| `evaluate --scale [--data]` | Metrics vs source and ground truth, per-invoice acceptance | 3-4 (done) |
+| `explain <invoice_id> [--scale]` | Per-invoice decision, exceptions, events and trace | 4 (done) |
 | `validate` (full), `export`, `repro`, `queue --role`, `dashboard` | Validation suite, exports, reproducibility, actor queues, HTML dashboard | 5 |
 | `build-all` | One command that builds everything for both scales | 5 |
 

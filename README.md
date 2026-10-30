@@ -9,11 +9,13 @@ actors (business requester, process owner, approver, operations analyst, system 
 requests approvals and schedules payments. Its decisions are scored against a ground truth derived
 by a documented rule-based oracle.
 
-> **Status: Stage 3 of 6.** Stage 1 (the specification, the policy, the data dictionary and the
+> **Status: Stage 4 of 6.** Stage 1 (the specification, the policy, the data dictionary and the
 > exact allocation), Stage 2 (the synthetic data generator, the rule-based ground truth and the
 > self-checks) and Stage 3 (document rendering in four channel formats, extraction with per-field
-> confidence, vendor resolution and the extraction evaluation) are done. The decision engine and its
-> evaluation (Stage 4), and the validation suite, exports and dashboard (Stage 5) follow. This README
+> confidence, vendor resolution and the extraction evaluation) and Stage 4 (the decision engine:
+> duplicates, validation, three-way match, routing, approvals, payments, the event log, `explain`,
+> and the evaluation against ground truth) are done. The validation suite, exports and dashboard
+> (Stage 5) follow. This README
 > grows each stage.
 
 ## Quickstart (works today)
@@ -31,7 +33,8 @@ python3 -m invoice_ap plan --scale starter       # exact volume and mix allocati
 python3 -m invoice_ap generate --scale full       # synthetic dataset + documents -> data/full (about 3 s)
 python3 -m invoice_ap validate --quick --scale full   # defect-aware self-checks
 python3 -m invoice_ap run --scale full            # engine: master + inbox only -> data/full/processed
-python3 -m invoice_ap evaluate --scale full       # extraction accuracy -> data/full/reports
+python3 -m invoice_ap evaluate --scale full       # metrics + per-invoice acceptance -> data/full/reports
+python3 -m invoice_ap explain INV-VND-00279-2026-000032 --scale full   # one invoice's decision and trace
 python3 -m invoice_ap policy                     # validate config/ap_policy.toml
 python3 -m invoice_ap docs --check               # generated docs are in sync with code
 ```
@@ -47,12 +50,13 @@ py -m invoice_ap generate --scale full
 py -m invoice_ap validate --quick --scale full
 py -m invoice_ap run --scale full
 py -m invoice_ap evaluate --scale full
+py -m invoice_ap explain INV-VND-00279-2026-000032 --scale full
 py -m invoice_ap policy
 py -m invoice_ap docs --check
 ```
 
 The remaining commands (`export`, `repro`, `queue`,
-`explain`, `dashboard`, `build-all`) are registered. Until their stage lands they exit with status 2
+`dashboard`, `build-all`) are registered. Until their stage lands they exit with status 2
 and a "planned" message. See [architecture §8](docs/architecture.md#8-cli-surface).
 
 ## Known limitations (so far)
@@ -60,10 +64,12 @@ and a "planned" message. See [architecture §8](docs/architecture.md#8-cli-surfa
 - Every business event (PO, receipt, invoice date, intake) falls on a business day. This is a
   simplification (S2-R1-02); SLA, approval and payment arithmetic use business days either way.
 - Eight exception types do not occur in the generated data: the seven of ADR-036 and the
-  non-blocking `PAYMENT_DUE_DATE_PASSED`. Stage 4 covers them with unit fixtures and reports them as
-  "not present" in the per-type metrics.
-- Stage 3 runs only the capture-stage rules (CAP-01, VEN-01, ID-01, VEN-04); the remaining rules
-  arrive in Stage 4.
+  non-blocking `PAYMENT_DUE_DATE_PASSED`. Each is covered by a test fixture through the engine
+  (`tests/test_decisions.py`) and reported as "not present" in the per-type metrics.
+- Approver rejection exists in the state machine but is not simulated: simulated approvers approve
+  after a fixed turnaround (ADR-011), and exceptions are never resolved within the snapshot.
+- Engine and oracle were written by the same author; agreement is evidence of a consistent
+  implementation of the documented rules, not of independent judgement (ADR-016, ADR-041).
 
 ## Configure
 

@@ -42,7 +42,7 @@ def _run(ds: Path) -> dict[str, bytes]:
 
 @pytest.mark.parametrize("scale", ["starter", "full"])
 def test_blind_run_is_byte_identical(engine_runs, tmp_path, scale):
-    root, _, _ = engine_runs[scale]
+    root, _, _, _ = engine_runs[scale]
     normal = {name: (root / "processed" / name).read_bytes() for name in OUTPUTS}
     assert _run(_blind_copy(root, tmp_path / "blind")) == normal
 
@@ -61,7 +61,7 @@ def _blank_senders(ds: Path) -> None:
 
 @pytest.mark.parametrize("scale", ["starter", "full"])
 def test_id_blind_run_gives_identical_decisions(engine_runs, tmp_path, scale):
-    root, _, _ = engine_runs[scale]
+    root, _, _, _ = engine_runs[scale]
     normal = {name: (root / "processed" / name).read_bytes() for name in OUTPUTS}
     ds = _blind_copy(root, tmp_path / "idblind")
     _blank_senders(ds)
@@ -76,7 +76,7 @@ def test_id_blind_run_gives_identical_decisions(engine_runs, tmp_path, scale):
 
 
 def test_sender_mismatch_is_raised_and_never_changes_the_vendor(engine_runs, tmp_path):
-    root, _, _ = engine_runs["starter"]
+    root, _, _, _ = engine_runs["starter"]
     ds = _blind_copy(root, tmp_path / "mismatch")
     rows = read_table(ds / "inbox", "intake_manifest")
     portal = next(r for r in rows if r["channel"] == "PORTAL")
@@ -94,7 +94,7 @@ def test_sender_mismatch_is_raised_and_never_changes_the_vendor(engine_runs, tmp
 
 
 def test_engine_output_is_deterministic_across_hash_seeds(engine_runs, tmp_path):
-    root, _, _ = engine_runs["starter"]
+    root, _, _, _ = engine_runs["starter"]
     digests = []
     for seed in ("1", "2"):
         ds = _blind_copy(root, tmp_path / f"h{seed}")

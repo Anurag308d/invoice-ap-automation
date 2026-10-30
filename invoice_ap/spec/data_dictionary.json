@@ -5439,7 +5439,7 @@
         },
         {
           "allowed": [],
-          "derivation": "exact, not rounded",
+          "derivation": "(invoice - PO price) x 100 / PO price, shown to 4 decimals (ROUND_HALF_UP); the tolerance test uses the exact value",
           "description": "Signed variance (invoice - PO) / PO x 100",
           "fk": "",
           "max_value": "",
@@ -6873,7 +6873,7 @@
             "true",
             "false"
           ],
-          "derivation": "created_at date > due_date",
+          "derivation": "PAY-06: the scheduled date had to move past the due-date schedule (next business day after ready)",
           "description": "Ready after the due date (PAY-06 warning)",
           "fk": "",
           "max_value": "",

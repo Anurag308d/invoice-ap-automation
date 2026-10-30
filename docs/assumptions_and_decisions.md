@@ -285,11 +285,42 @@ read, and the guards make any read of them detectable.
   lines or from the PO.
 - **Stage-3 engine scope.** Intake order, CAP-01, VEN-01, ID-01 and VEN-04, with EXT_LOW_CONFIDENCE,
   VENDOR_NOT_FOUND and VENDOR_SENDER_MISMATCH routed by RTE-01 into `processed/ap_exception.csv`, and
-  `processed/decision_trace.jsonl`. Stage 4 adds the later rules; it will also move the VEN-04
-  exception behind the duplicate gates, as in the rule order. `captured_at` = `received_at` + 1 minute
+  `processed/decision_trace.jsonl`. Stage 4 added the later rules and moved the VEN-04 check behind
+  the duplicate gates, as in the rule order (ADR-041). `captured_at` = `received_at` + 1 minute
   (a synthetic processing time, never the wall clock).
 - **Not in this stage:** the printed tax code must be one of the five codes, so an unknown code is
   unreadable rather than captured; TAX_CODE_INVALID therefore stays a unit-test-only type (ADR-036).
+
+**ADR-041 Stage-4 decision engine mechanics.**
+- **Independent implementation.** The engine (`engine/validate.py`, `engine/decide.py`) applies the
+  rule catalogue to *captured* values and master data; it imports nothing from the generator or the
+  oracle. Agreement with ground truth is measured, not assumed; a tolerance mutation makes the
+  engine and the evaluation disagree, which proves the comparison is not circular (ADR-016 states
+  the remaining limitation: one author wrote both).
+- **Processing time.** Receipt and PO cutoffs use the intake timestamp (`receipt_cutoff =
+  PROCESSING_TIME`), as the oracle does. Vendor status uses the effective-dated history *recorded*
+  by the moment of the decision, so a back-dated change entered later cannot leak backwards.
+  Events are stamped: RECEIVED at intake, CAPTURED +1 minute, the decision +1 more minute.
+- **Gates and order.** CAP-01, VEN-01 and the duplicate gates stop later checks; VEN-04 runs after
+  the duplicate gates; everything else is collected. Duplicates never reach matching, so they
+  neither consume receipts nor count as prior invoiced quantity. An exact duplicate is REJECTED and
+  its exception auto-closes; every other blocking issue puts the invoice ON_HOLD.
+- **Match status.** As in business_rules section 4; a line that maps to no PO line makes the match
+  status NOT_EVALUATED (the oracle was aligned; no generated invoice has such a line).
+- **N:M bridge.** Each invoice line that reached matching is allocated FIFO to the GRN lines of its
+  PO line posted before processing, net of earlier allocations: one GRN line can serve several
+  invoice lines (partial billing) and one invoice line several GRN lines (consolidated billing).
+- **Approvals and payments.** Requested at the decision time; each level decides after its
+  turnaround at the same clock time; a level due after the as-of date stays PENDING. The ready
+  moment is the last approval; PAY-03 reads the vendor status known then; the payment run releases
+  at 10:00 IST on the scheduled date.
+- **Assignment.** L1 is the cost-centre manager of the PO's cost centre (non-PO: of the requester);
+  REQ is the requester named on the invoice; operations-analyst exceptions round-robin in exception-id
+  order; exceptions raised after approval (PAY-03, PAY-06) take the next IDs when they are raised.
+- **Metrics.** STP = PAYMENT_READY or PAID with no exception and AUTO approval. Value at risk = full
+  gross for duplicate, vendor, PO, date, receipt and capture holds; the excess quantity or price
+  difference (with tax) for quantity and price variances; the absolute difference for tax and
+  arithmetic. Types with no expected and no predicted instance report "not present", never 0/0.
 
 ## Data, determinism and engineering
 

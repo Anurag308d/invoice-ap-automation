@@ -1,4 +1,4 @@
-"""State machines: complete diagram labels (S1-R1-07) and transition checking."""
+"""State machines: complete diagram labels and transition checking."""
 from __future__ import annotations
 
 from invoice_ap.common.lifecycle import TERMINAL, TRANSITIONS, sequence_errors

@@ -1,4 +1,4 @@
-"""One-command build (R35, A-71) and the reproducibility check (R35b, A-54).
+"""One-command build (R35) and the reproducibility check (R35b).
 
 `build`: generate -> run (engine on master + inbox only) -> evaluate -> validate (full suite) ->
 export (CSV / JSON / SQL) -> dashboard -> manifest, for one scale.

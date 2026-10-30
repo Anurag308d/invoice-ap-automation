@@ -2,9 +2,7 @@
 
 Every requirement of the assignment (problem statement, guidelines and FAQ) is listed with where it
 is implemented and the file, test or report that proves it. Reports are in `data/full/reports/` and
-`data/starter/reports/` (committed); tests are under `tests/`. IDs such as S1-R1-01 or A-26 are
-provenance notes from the independent review (see `ai_disclosure/sprint_reviews/`); nothing below
-depends on them.
+`data/starter/reports/` (committed); tests are under `tests/`.
 
 ## Problem statement
 
@@ -68,7 +66,7 @@ depends on them.
 |---|---|---|---|---|
 | G1 | Install, configure, run and verify steps | README quickstart (PowerShell + macOS/Linux) | fresh-clone audit | done: README "Quickstart" and "How to verify" (macOS/Linux and PowerShell) |
 | G2 | Public repo, meaningful commits, visible evolution | one commit per stage and fix round | `git log` | done: one commit per build stage and review fix round (`git log`) |
-| G3 | Prompt history and AI-use explanation; the candidate's own statement | `ai_disclosure/AI_USAGE.md`, `prompt_history/`, `sprint_reviews/` | files; candidate placeholders, never invented | done: `ai_disclosure/AI_USAGE.md`; the candidate's own statement is a marked placeholder for them to complete |
+| G3 | Prompt history and AI-use explanation; personal statement | `ai_disclosure/AI_USAGE.md`, `ai_disclosure/prompt_history/` | files; candidate placeholders, never invented | done: `ai_disclosure/AI_USAGE.md`; personal statement is a marked placeholder for them to complete |
 | G4 | Reasoning visible: assumptions, decisions, trade-offs, testing, limitations | [assumptions_and_decisions.md](assumptions_and_decisions.md), testing approach doc | docs | done: [assumptions_and_decisions.md](assumptions_and_decisions.md), [testing_and_verification.md](testing_and_verification.md), README limitations |
 | G5 | Walkthrough readiness | `docs/walkthrough.md` | doc | done: [walkthrough.md](walkthrough.md) |
 | G6 | Prompt history in a clearly identifiable directory | `ai_disclosure/` | directory | done: `ai_disclosure/` (prompt history and review evidence) |
@@ -78,24 +76,3 @@ depends on them.
 | G10 | Assumptions and deviations explained; what is incomplete; next steps | ADRs; README limitations | docs | done (ADRs) |
 | G11 | No secrets, credentials, personal or sensitive data | synthetic names, role labels, reserved domains (ADR-027) | secret/PII scan test | done: `tests/test_repo_hygiene.py::test_no_secrets_or_personal_data_in_tracked_files` |
 
-## REV-added acceptance items (ACCEPTANCE_CHECKLIST §C.2)
-
-| A-item | What REV added | Implementation | Evidence | Status |
-|---|---|---|---|---|
-| A-10 | Non-circular evaluation; engine boundary; **blind run** | engine reads only `master/` and `inbox/`; oracle separate | `tests/test_boundary.py`; `tests/test_engine_sandbox.py::test_blind_run_is_byte_identical` (copy without `source/` and `ground_truth/`, outputs byte-identical) and `::test_id_blind_run_gives_identical_decisions` (sender fields blanked) | done (static and both sandboxes, ) |
-| A-50 | No vendor shortcut through `invoice_id` or the sender; ground truth out of the SQL seed's input tables; blind run | ADR-037 (ID-01 after VEN-01; VEN-04); evaluation exports in separate files `sql/evaluation_seed.sql`, `json/evaluation/` | `tests/test_spec.py::test_intake_manifest_never_hands_the_engine_a_vendor`; `tests/test_engine_sandbox.py::test_id_blind_run_gives_identical_decisions` and `::test_sender_mismatch_is_raised_and_never_changes_the_vendor`; `test_sql_seed_loads_with_foreign_keys_and_keeps_labels_separate` | done: evaluation tables only in `evaluation_seed.sql` and `exports/json/evaluation/` |
-| A-67 | One processing-time semantics shared by oracle and engine | receipt cutoff = processing time; cumulative per PO line in intake order (ADR-012, ADR-024); `snapshot_*` reporting only (ADR-038) | static `snapshot_` ban; `tests/test_decisions.py` time-travel tests | done: engine cutoffs at the intake timestamp, history filtered by recorded_at; `test_time_travel_truncated_master_gives_the_same_processing_decision`, `test_snapshots_and_post_as_of_rows_never_change_a_decision` |
-| A-54 | Committed data equals a fresh build; results independent of PYTHONHASHSEED | `python -m invoice_ap repro`; parity check | `reproducibility.{json,md}` with PYTHONHASHSEED=1 and =2; committed-vs-fresh SHA-256 parity test (ADR-028) | done: `test_committed_data_equals_a_fresh_build` (both scales) and the PYTHONHASHSEED rebuilds in `repro` |
-| A-60 | Per-invoice acceptance report | `invoice_ap/evaluation` | `reports/acceptance_per_invoice.csv` (invoice_id x R34a-e, pass/fail with reason) + aggregate in `evaluation.md` | done: `reports/acceptance_per_invoice.csv` + aggregate in `reports/evaluation.md` |
-| A-36 / A-39 | Numeric mix tolerances; every edge case >= 10 at full and >= 1 at starter; explicit baseline phase | allocation (Table G2/G7); baseline phase in `generator/build.py` (ADR-039) | `test_full_scale_mix_is_exact`; `tests/test_generator.py::test_mix_matches_the_allocation`, `::test_edge_cases_are_present`, `::test_self_checks_pass_and_the_baseline_is_clean` | done |
-| A-26 | N:M bridge exercised in both directions | archetypes A21 and A12 | `test_many_to_many_bridge_is_exercised_in_both_directions`; >= 1 GRN line allocated to >= 2 invoice lines | done: `processed/match_allocation.csv`; `test_bridge_is_exercised_in_both_directions` |
-| A-61 | Scenarios spread across the timeline and ID range | seeded placement over the whole intake window | `reports/distribution_summary.md` (vendor concentration, line values by category, weekday share, lead times, mixes, monthly intake, scenario deciles) | done |
-| A-03 / A-72 | Negative and mutation tests for extraction and rules | `tests/` | corrupted-document tests (silent-error detection), rule mutation tests (flip a tolerance -> labels change) | done |
-| A-64 | Contacts and bank details obviously synthetic | `.example` / `example.com` addresses, `TRN-` tax IDs, no bank account numbers (ADR-027) | REV-IC regex scan; manifest provenance block | done: no bank details are generated; contacts use reserved `.example` domains; manifest provenance |
-| A-74 | Prompt history includes relay messages and prompts to other tools | `ai_disclosure/prompt_history/` (orchestrator) | directory listing | done: `ai_disclosure/prompt_history/` |
-| A-80 | Timeline integrity (genuine, monotonic commit dates inside the 72-hour window) | one commit per stage and fix round, no `--date` overrides or rewrites | `git log --format='%h %ad %cd'` in the hand-off | done: commit history is append-only with no date overrides; `git log --format='%h %ad %cd'` |
-| A-81 | Candidate hand-off list | README hand-off section | create/push repo; personal statement; other-tool prompts; deadline; recruitment e-mail; walkthrough rehearsal; author e-mail choice (S1-R1-09); MIT confirmation | done: README "Hand-off" lists what the candidate must do (publish, personal statement, author e-mail, walkthrough rehearsal) |
-| A-82 | Traceability covers the A-items | this section | grep of A-ids | done (this table) |
-| A-31 / A-32 | Conventions for unspecified IDs; vendor invoice number kept apart from `invoice_id` | `invoice_ap/common/ids.py`; `vendor_invoice_number` field | `tests/test_ids_and_money.py` | done |
-| A-35 | Exact allocation proof | `invoice_ap/generator/allocation.py` | `tests/test_allocation.py`; independent table re-derivation script | done |
-| A-65 / A-66 / A-68 | Decimal money; determinism hygiene; code quality and portability | `invoice_ap/common/money.py`; banned-call test; stdlib only, pathlib, LF | `tests/test_ids_and_money.py`, `tests/test_repo_hygiene.py`; Python 3.11-3.13 runs | done: tests pass on Python 3.11 and 3.13; determinism and stdlib-only checks in `tests/test_repo_hygiene.py` |

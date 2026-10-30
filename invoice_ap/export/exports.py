@@ -1,11 +1,11 @@
-"""Exports of one built dataset (R32, A-52): JSON for every table and a SQL seed with PK / FK / CHECK
+"""Exports of one built dataset (R32): JSON for every table and a SQL seed with PK / FK / CHECK
 constraints, generated from the spec so the DDL can never drift from the data dictionary.
 
 - `exports/json/<table>.json` for master, inbox and processed tables; `exports/json/evaluation/` for
   source and ground truth.
 - `exports/sql/seed.sql`: DDL + INSERTs for master, inbox and processed (the engine's world).
 - `exports/sql/evaluation_seed.sql`: DDL + INSERTs for source and ground truth, a separate file that
-  is loaded after the seed, so labels never sit in the seed's input tables (REV P-4).
+  is loaded after the seed, so labels never sit in the seed's input tables.
 
 Everything is derived from the layer CSVs, in spec order, with LF line endings: byte-stable.
 """

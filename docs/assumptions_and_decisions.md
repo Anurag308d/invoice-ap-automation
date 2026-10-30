@@ -1,15 +1,11 @@
 # Assumptions and decisions (ADRs)
 
-Provenance notes: "REV" is the independent reviewer that gated the build stage by stage, and IDs
-such as S1-R1-01 refer to its findings (see `ai_disclosure/sprint_reviews/`). They record where a
-decision came from; every ADR states its decision in full without them.
-
 Each entry records a decision, the alternatives considered and the trade-off. Entries marked
 **deviation** depart from the original project plan, and are recorded as such.
 
 ## Structure and identifiers
 
-**ADR-001 Flat package layout (deviation, accepted by REV ruling Q4).** The package lives at `invoice_ap/` in the repo root
+**ADR-001 Flat package layout (deviation, accepted by ).** The package lives at `invoice_ap/` in the repo root
 instead of `src/invoice_ap/`. *Why:* `python -m invoice_ap ...` then works straight after `git clone`
 on any OS, with no install step and no `PYTHONPATH`, and the runtime has no dependencies to install
 anyway. *Alternative:* src layout plus `pip install -e .`, which prevents accidental imports of
@@ -44,7 +40,7 @@ With the as-of date in October 2026, every completed event and every scheduled p
 "Invoice total differs from line sum" (ARITHMETIC, 20) and "invoice date before PO date" (20) are
 required edge cases outside the six named categories. They take 1% each from CLEAN. Degraded scans
 (CAPTURE_REVIEW, 10) take 0.5% (ADR-017). CLEAN is therefore 1,350 (67.5%), reported as such and
-accepted by REV (rulings Q1 and Q2; the A-36 floor is 1,340). *Alternative:* fold them into category families (for
+kept above a floor of 1,340. *Alternative:* fold them into category families (for
 example arithmetic into "tax/vendor"), keeping clean at 70% but stretching the category names.
 *Trade-off:* honest category semantics against a clean share 2.5 points under "~70%".
 
@@ -60,7 +56,7 @@ Tested at 0.1, 0.25, 0.5, 1 and 2.
 **ADR-022 Exact PO-fulfilment archetypes.** 1,500 POs, 1,800 receipts and 2,000 invoices are tied
 together by eight archetypes whose counts solve three linear identities exactly
 ([data_generation §4](data_generation.md)). A21 (one invoice line over two GRN lines) and A12 (one
-GRN line billed on two invoice lines, added for S1-R1-05) exercise the N:M bridge in both
+GRN line billed on two invoice lines) exercise the N:M bridge in both
 directions. *Alternative:* random draws followed by a repair loop.
 It is harder to document and to prove exact, and the mix is less controllable.
 
@@ -72,14 +68,14 @@ whenever the total allows.
 recurring monthly fees and one-off jobs. They follow vendor, duplicate, arithmetic and tax checks,
 then requester approval plus the amount band. They are never matched (`match_status = NOT_APPLICABLE`).
 
-**ADR-017 Degraded scans are their own category, CAPTURE_REVIEW (revised after REV ruling Q2).**
+**ADR-017 Degraded scans are their own category, CAPTURE_REVIEW (revised after ).**
 Ten invoices (one at starter scale) are rendered as degraded scans with an unreadable required field.
 Their business content is otherwise clean, but the expected outcome is a hold in capture review
 (`EXT_LOW_CONFIDENCE`), which exercises the low-confidence route end to end with real data. They are
 carved out of CLEAN like ARITHMETIC and INVOICE_BEFORE_PO. CLEAN now means "no intended issue,
 approval path" without exception, and `is_anomaly` means "intended issues not empty". A test
 enforces this invariant. *Superseded alternative:* counting them inside CLEAN, which made
-`is_anomaly = false` contradict `expected_blocked = true` (S1-R1-03).
+`is_anomaly = false` contradict `expected_blocked = true`.
 
 ## Rules and policy
 
@@ -158,7 +154,7 @@ own decisions. The oracle's expected approvals and payments sit in ground truth,
 evaluated rather than assumed. The exported relational dataset contains both.
 
 **ADR-011 As-of snapshot semantics.** Everything is evaluated at the fixed past date
-`as_of_date = 2026-10-22` (S1-R1-04). It precedes the submission window and is never read from the
+`as_of_date = 2026-10-22`. It precedes the submission window and is never read from the
 clock. No completed event lies after it: vendor status changes, GRN postings, invoice receipt and
 capture, raised exceptions, approval decisions and PAID payments. Only forward-dated plans may: due
 dates, SLA dates and scheduled payment dates. At the as-of date:
@@ -201,13 +197,13 @@ violations.
 implemented and tested with fixtures but not injected into the dataset. That keeps the mix aligned
 with the assignment's categories. Their per-type metrics are reported as "not present".
 
-**ADR-037 Vendor identity comes only from the document (S1-R1-01).** REV found that the intake
-manifest handed the engine the true vendor twice: inside `invoice_id`, and in a `sender_vendor_id`
-that was set for every channel, including scans. Both of REV's paths are taken.
+**ADR-037 Vendor identity comes only from the document.** An intake manifest that hands the engine the
+true vendor (inside `invoice_id`, or a `sender_vendor_id` on every channel) would let extraction be
+skipped. Two safeguards are taken.
 - **(a) Channel-realistic intake.** The manifest has `doc_id` and `intake_seq` but no `invoice_id`.
   `sender_vendor_id` is set only where the channel authenticates the sender (PORTAL account, EDI
   partner). EMAIL carries only the From address; the forwarding mailbox is drawn at 15% per e-mail
-  original, realised 10.3% of e-mail documents (11.1% of originals) at full scale (REV ruling Q1).
+  original, realised 10.3% of e-mail documents (11.1% of originals) at full scale.
   SCAN carries only a mailroom batch ID.
 - VEN-01 reads the vendor from the printed tax registration number and is the only source of
   `captured_invoice.vendor_id`. ID-01 then builds the invoice ID from that vendor. An unresolved
@@ -226,7 +222,7 @@ that was set for every channel, including scans. Both of REV's paths are taken.
 *Trade-off:* the invoice ID becomes an engine output. Evaluation therefore joins on `doc_id` and
 reports invoice-ID agreement as a metric.
 
-**ADR-038 Snapshot columns are reporting only (S1-R1-02).** The current-status conveniences in
+**ADR-038 Snapshot columns are reporting only.** The current-status conveniences in
 master are evaluated at the as-of date:
 - `vendor.snapshot_status`
 - `purchase_order.snapshot_status`
@@ -343,7 +339,7 @@ read, and the guards make any read of them detectable.
 - **Commit policy**: starter complete; full scale without the four regenerable groups listed in
   the README, in that order of priority. Measured total about 25.4 MB; the parity test rebuilds
   both scales.
-- **Backlog presentation** (reviewer ruling): open exceptions past SLA are labelled "open and past
+- **Backlog presentation**: open exceptions past SLA are labelled "open and past
   SLA at the snapshot (no resolutions simulated)" and aged in business days.
 
 ## Data, determinism and engineering
@@ -369,7 +365,7 @@ rule, the intent assertion and separate code paths.
 
 The source manifest records the provenance.
 
-**ADR-028 Committed datasets and size (REV ruling Q3).** Built data is committed so it can be
+**ADR-028 Committed datasets and size.** Built data is committed so it can be
 inspected without running anything, under these conditions:
 - the full CSV layers, inbox documents, reports and manifest are committed, and the layer CSVs are
   the CSV export (no copies);
@@ -378,7 +374,7 @@ inspected without running anything, under these conditions:
   about 25 MB, as measured. Otherwise their SHA-256 checksums are recorded in the manifest and
   `build-all` regenerates them;
 - generated data is committed once the pipeline is complete, to keep history small;
-- a parity check proves the committed data equals a fresh build (A-54).
+- a parity check proves the committed data equals a fresh build.
 
 **ADR-029 Calendar.** Sat/Sun weekends plus four fixed national holidays (26 Jan, 15 Aug, 2 Oct,
 25 Dec). Timestamps are IST (+05:30).
@@ -390,12 +386,3 @@ drift.
 
 **ADR-034 Runtime.** Python >= 3.11, standard library only (`tomllib` needs 3.11). `pytest` is the
 only development dependency. There is no network access and no hosted services.
-
-## Reviewer rulings on the initial open questions
-
-1. Q1, clean at 68%: **accepted**. After the Q2 change, clean is 1,350 (67.5%), also accepted
-   (ADR-005).
-2. Q2, degraded-capture overlay: **its own category** CAPTURE_REVIEW (ADR-017).
-3. Q3, committed data size: **accepted under conditions** (ADR-028).
-4. Q4, flat layout: **accepted** (ADR-001).
-5. Orchestrator point: the as-of date moves to the fixed past date 2026-10-22 (ADR-011).

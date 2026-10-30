@@ -57,7 +57,7 @@ def test_capture_review_routes_to_the_operations_analyst(engine_runs):
 
 
 def test_arithmetic_defects_survive_extraction(engine_runs):
-    """A-41: a wrong printed total is captured as printed, never recomputed from the lines."""
+    """a wrong printed total is captured as printed, never recomputed from the lines."""
     root, _, _, _ = engine_runs["full"]
     gt = {g["doc_id"]: g for g in read_table(root / "ground_truth", "ground_truth")}
     src = {s["doc_id"]: s for s in read_table(root / "source", "invoice")}

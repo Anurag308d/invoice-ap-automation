@@ -2,7 +2,7 @@
 
 Every random draw happens here, once. materialize() then builds the baseline phase (no injected
 anomalies) and the final phase (injections applied) from the same plan, so the two differ only
-by the labelled injections (A-28, A-39).
+by the labelled injections.
 """
 from __future__ import annotations
 

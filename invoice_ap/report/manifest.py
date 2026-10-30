@@ -1,4 +1,4 @@
-"""`reports/source_manifest.json` (R33, A-53): what a build contains and how to reproduce it.
+"""`reports/source_manifest.json` (R33): what a build contains and how to reproduce it.
 
 Every file of the dataset is listed with its byte size, SHA-256 and row count, and whether it is
 committed to git. Files left out of the commit by the size budget (about 25 MB)
@@ -83,7 +83,7 @@ def write_manifest(root: Path, policy) -> dict:
             "engine_inputs": ["master/", "inbox/"],
             "evaluation_only": ["source/", "ground_truth/", "exports/json/evaluation/", "exports/sql/evaluation_seed.sql"],
             "sql": "exports/sql/seed.sql holds master, inbox and processed tables only; ground truth and source "
-                   "invoices are in exports/sql/evaluation_seed.sql, loaded after it (REV P-4)"},
+                   "invoices are in exports/sql/evaluation_seed.sql, loaded after it"},
         "commit_policy": {"excluded_from_commit": list(EXCLUDED_FROM_COMMIT.get(scale, ())),
                           "reason": "repository size budget (about 25 MB); "
                                     "regenerate with `python -m invoice_ap build-all` and verify against the "

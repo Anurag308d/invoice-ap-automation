@@ -75,7 +75,7 @@ categories keep their exact assignment shares: 10, 8, 5, 4 and 3%. The two extra
 cases ("invoice total differs from line sum" and "invoice date before PO date") are carved out of
 CLEAN at 1% each. Degraded scans that must go to capture review form CAPTURE_REVIEW, carved out at
 0.5% (ADR-017). CLEAN is therefore 1,350 (67.5%), transparently below the "~70%" target and above
-REV's floor of 1,340 (ADR-005, rulings Q1 and Q2). Each non-clean category is apportioned over its
+a floor of 1,340 (ADR-005). Each non-clean category is apportioned over its
 sub-scenarios (Table G6).
 
 **Populations.** Duplicates are extra documents; they have no slot of their own. Non-PO originals
@@ -354,9 +354,9 @@ ground truth is written to its own folder. It is never an input to the engine.
 - Output is byte-stable: UTF-8, `\n` line endings, fixed column order from the spec, decimals as
   canonical strings, JSON with `sort_keys`. `repro` proves this by building twice, with
   PYTHONHASHSEED 1 and 2, and comparing SHA-256 checksums.
-- Time window (S1-R1-04): a generator test asserts that no completed-event timestamp lies after
+- Time window: a generator test asserts that no completed-event timestamp lies after
   `as_of_date`. That covers GRN posting, invoice receipt and capture, exceptions raised, approval
   decisions, PAID payments and vendor status changes. Only due, SLA and scheduled dates may be later.
-- Scenario spread (A-61): each sub-scenario's invoices are spread across the intake timeline and the
+- Scenario spread: each sub-scenario's invoices are spread across the intake timeline and the
   ID range (reported as decile positions). The exception is resubmissions, which necessarily follow
   their originals.

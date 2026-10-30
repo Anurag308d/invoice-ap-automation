@@ -98,7 +98,7 @@ def _domains(t, c):
             for r in rows:
                 v = r[f.name]
                 if v == "":
-                    if f.required:                      # lists are never required: empty = none (S2-R1-01)
+                    if f.required:                      # lists are never required: empty = none
                         bad.append(f"{name}.{f.name} empty")
                     continue
                 items = v.split("|") if f.type == "list" else [v]

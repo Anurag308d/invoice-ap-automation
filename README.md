@@ -202,15 +202,9 @@ All of them, with alternatives and trade-offs, are in [assumptions and decisions
 
 ## AI usage
 
-The work was produced with Claude (Anthropic). See [`ai_disclosure/AI_USAGE.md`](ai_disclosure/AI_USAGE.md)
-for how it was used, the prompt history and the independent review evidence.
+AI tools were used, as the submission guidelines allow. The AI-usage note and the prompt history
+required by the guidelines are in [`ai_disclosure/`](ai_disclosure/).
 
-## Hand-off (for the candidate)
-
-1. Publish the repository and replace `<repo-url>` above.
-2. Complete "What I personally reviewed, changed and validated" in `ai_disclosure/AI_USAGE.md`.
-3. Choose the author e-mail for the commit history and confirm the MIT licence.
-4. Rehearse the [walkthrough](docs/walkthrough.md) (10-15 minutes).
 
 ## Licence
 

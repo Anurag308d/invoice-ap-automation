@@ -30,7 +30,7 @@ def test_full_scale_mix_is_exact():
     assert cats == {"CLEAN": 1350, "PRICE_VARIANCE": 200, "QTY_MISMATCH": 160, "DUPLICATE": 100,
                     "MISSING_RECEIPT": 80, "TAX_VENDOR": 60, "ARITHMETIC": 20, "INVOICE_BEFORE_PO": 20,
                     "CAPTURE_REVIEW": 10}
-    assert cats["CLEAN"] >= 1340  # REV A-36 floor for the carve-out variant (67%)
+    assert cats["CLEAN"] >= 1340  # floor for the carve-out variant (67%)
     # the five named exception categories hit their exact shares: 10/8/5/4/3 percent
     assert [cats[c] * 100 // 2000 for c in ("PRICE_VARIANCE", "QTY_MISMATCH", "DUPLICATE",
                                             "MISSING_RECEIPT", "TAX_VENDOR")] == [10, 8, 5, 4, 3]
@@ -79,7 +79,7 @@ def test_every_scenario_and_edge_case_appears_at_least_once(scale):
 
 
 def test_each_edge_case_has_at_least_ten_invoices_at_full_scale():
-    a = allocate("full")  # REV A-39: >= 10 at full scale, >= 1 at starter (previous test)
+    a = allocate("full")  # >= 10 at full scale, >= 1 at starter (previous test)
     for ec in enums.EDGE_CASES:
         assert sum(a.subscenarios[s.code] for s in SUBSCENARIOS if ec in s.edge_cases) >= 10, ec
 
@@ -131,7 +131,7 @@ def test_catalogue_is_consistent_with_vocabulary():
 
 
 def test_clean_means_no_issue_and_the_approval_path():
-    """S1-R1-03: CLEAN sub-scenarios intend no issue and go to approval; every other one is held or rejected."""
+    """CLEAN sub-scenarios intend no issue and go to approval; every other one is held or rejected."""
     for s in SUBSCENARIOS:
         if s.category == "CLEAN":
             assert not s.intended_issues and s.decision == "APPROVAL_PATH", s.code

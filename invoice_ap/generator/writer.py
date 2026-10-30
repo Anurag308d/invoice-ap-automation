@@ -1,6 +1,6 @@
 """Byte-stable CSV and JSON output in the exact column order of the spec (ADR-015).
 
-Data JSON (exports and ground_truth.json) is compact (REV ruling Q3): no indent, sorted keys,
+Data JSON (exports and ground_truth.json) is compact: no indent, sorted keys,
 separators (",", ":"). Small human-facing reports keep an indent.
 """
 from __future__ import annotations
@@ -36,7 +36,7 @@ def json_bytes(obj) -> bytes:
 
 
 def json_compact(obj) -> bytes:
-    """Compact JSON for data files (REV ruling Q3)."""
+    """Compact JSON for data files."""
     return (json.dumps(obj, sort_keys=True, ensure_ascii=False, separators=(",", ":")) + "\n").encode("utf-8")
 
 

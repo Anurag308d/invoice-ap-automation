@@ -1,4 +1,4 @@
-"""Runtime no-leakage boundary: the blind run and the ID-blind run (REV P-2, A-10, A-50).
+"""Runtime no-leakage boundary: the blind run and the ID-blind run.
 
 - Blind run: the engine runs on a copy that holds only master/ and inbox/; its output must be
   byte-identical to the normal run next to source/ and ground_truth/.

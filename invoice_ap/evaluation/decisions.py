@@ -1,4 +1,4 @@
-"""E3-E11 decision evaluation against ground truth, and the per-invoice acceptance check (R34a-e, A-60).
+"""E3-E11 decision evaluation against ground truth, and the per-invoice acceptance check (R34a-e).
 
 Engine invoices are joined to ground truth on `doc_id` (the engine assigns invoice IDs; agreement of
 those IDs is itself reported). Every metric is computed from the files of one built dataset:

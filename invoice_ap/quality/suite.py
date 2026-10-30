@@ -1,4 +1,4 @@
-"""Full validation suite over every table of a built dataset (R31, A-51).
+"""Full validation suite over every table of a built dataset (R31).
 
 It runs the defect-aware checks of `quick.py` (keys, every declared FK, enums and formats, embedded
 IDs, date order and the as-of limit, arithmetic, lifecycles replayed from both event logs, mix,

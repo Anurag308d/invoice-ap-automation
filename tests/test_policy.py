@@ -19,7 +19,7 @@ def raw():
 def test_policy_loads_and_is_versioned():
     pol = load_policy()
     assert pol.id == "AP-POLICY" and pol.version == "1.0.0"
-    assert str(pol.as_of_date) == "2026-10-22"  # S1-R1-04: fixed past snapshot (<= 2026-10-28)
+    assert str(pol.as_of_date) == "2026-10-22"  # fixed past snapshot (<= 2026-10-28)
     assert len(pol.sha256) == 64
     assert validate_policy(pol.raw) == []
 
@@ -32,7 +32,7 @@ def test_precedence_and_routing_cover_every_exception_type(raw):
 
 
 def test_vendor_identity_rules(raw):
-    """S1-R1-01: VEN-04 cross-checks the authenticated sender; ID-01 assigns the ID after VEN-01."""
+    """VEN-04 cross-checks the authenticated sender; ID-01 assigns the ID after VEN-01."""
     assert raw["vendor"]["rule_ids"]["sender"] == "VEN-04"
     assert raw["vendor"]["sender_check_channels"] == ["PORTAL", "EDI"]
     assert raw["vendor"]["invoice_id_after_vendor_resolution"] is True

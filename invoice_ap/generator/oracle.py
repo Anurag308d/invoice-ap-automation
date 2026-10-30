@@ -5,7 +5,7 @@ It walks the documents in intake order and applies the rule catalogue of docs/bu
 PRI-01, RTE-01, APR-01, APR-SIM-01, PAY-01..06). It reads only the generated tables plus two
 generator-side facts: the capture overlay (rendering metadata) and the planned scenario. Generation
 fails loudly unless the oracle's blocking labels equal the injection intent for every invoice and
-every duplicate points to its planned original (R11, A-22).
+every duplicate points to its planned original (R11).
 """
 from __future__ import annotations
 

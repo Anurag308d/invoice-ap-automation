@@ -10481,7 +10481,7 @@
    "exports/json/evaluation/",
    "exports/sql/evaluation_seed.sql"
   ],
-  "sql": "exports/sql/seed.sql holds master, inbox and processed tables only; ground truth and source invoices are in exports/sql/evaluation_seed.sql, loaded after it (REV P-4)"
+  "sql": "exports/sql/seed.sql holds master, inbox and processed tables only; ground truth and source invoices are in exports/sql/evaluation_seed.sql, loaded after it"
  },
  "policy": {
   "id": "AP-POLICY",

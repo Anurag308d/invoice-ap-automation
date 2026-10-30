@@ -1,4 +1,4 @@
-"""Distribution summary of a built dataset: evidence for Evaluation Focus (a) (A-61)."""
+"""Distribution summary of a built dataset: evidence for Evaluation Focus (a)."""
 from __future__ import annotations
 
 from collections import Counter, defaultdict

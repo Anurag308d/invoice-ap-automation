@@ -1,5 +1,5 @@
 """Decision engine: agreement with ground truth, the event log, the N:M bridge, payment
-safety, REV rulings (VEN-04 precedence, retired GST12), unit fixtures for every exception type absent
+safety, VEN-04 precedence, retired GST12, unit fixtures for every exception type absent
 from the data, the time-travel sandbox and a rule-mutation probe (the evaluation is not circular)."""
 from __future__ import annotations
 
@@ -66,7 +66,7 @@ def test_event_log_and_processed_tables_validate(engine_runs):
 
 
 def test_bridge_is_exercised_in_both_directions(engine_runs):
-    """A-26: one GRN line allocated to several invoice lines (partial billing) and one invoice line
+    """one GRN line allocated to several invoice lines (partial billing) and one invoice line
     allocated to several GRN lines (consolidated billing); never more than received, never a future GRN."""
     root, _, _, _ = engine_runs["full"]
     alloc = read_table(root / "processed", "match_allocation")
@@ -174,7 +174,7 @@ DOC_FIXTURES = {
     "INVOICE_DATE_IN_FUTURE": lambda o: o["invoice"].update(
         date=(date.fromisoformat(o["invoice"]["date"]) + timedelta(days=40)).isoformat()),
     "PO_LINE_UNMATCHED": lambda o: o["lines"][0].update(po_line_no="9"),
-    "TAX_CODE_INVALID": lambda o: o["lines"][0].update(tax_code="GST12"),       # REV ruling 3: retired in 2025
+    "TAX_CODE_INVALID": lambda o: o["lines"][0].update(tax_code="GST12"),       # retired in 2025
 }
 
 
@@ -250,7 +250,7 @@ def test_payment_due_date_passed_is_a_warning(engine_runs, tmp_path):
 
 
 def test_sender_mismatch_on_a_duplicate_reports_the_duplicate(engine_runs, tmp_path):
-    """REV ruling 2: VEN-04 runs after the duplicate gates, so a duplicate with a forged sender is
+    """VEN-04 runs after the duplicate gates, so a duplicate with a forged sender is
     reported as DUPLICATE_* and VEN-04 is not evaluated for it."""
     root, _, _, _ = engine_runs["full"]
     ds = _copy(root, tmp_path / "ds")

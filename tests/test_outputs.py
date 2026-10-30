@@ -183,7 +183,7 @@ def test_gitignore_excludes_exactly_the_budgeted_files():
 
 @pytest.mark.parametrize("scale", ["starter", "full"])
 def test_committed_data_equals_a_fresh_build(complete_builds, scale):
-    """A-54 parity: every committed file is byte-identical to a fresh build, and every file left out of
+    """every committed file is byte-identical to a fresh build, and every file left out of
     the commit matches the checksum recorded in the committed manifest."""
     committed = DEFAULT_DATA_DIR / scale
     if not (committed / "reports/source_manifest.json").exists():

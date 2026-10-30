@@ -1,4 +1,4 @@
-"""Offline HTML dashboard (R36, A-69): one self-contained file, no CDN, no external fonts, no clock.
+"""Offline HTML dashboard (R36): one self-contained file, no CDN, no external fonts, no clock.
 
 It shows the KPIs, the validation and evaluation results, a work queue per actor, and an invoice
 explorer with each invoice's decision trace (exceptions, line match, approvals, payment, events).

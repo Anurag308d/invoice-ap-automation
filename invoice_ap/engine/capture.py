@@ -3,7 +3,7 @@
 Printed values are copied as read; nothing is recomputed or corrected (ADR-032). References are
 resolved against master data only to the extent of "does this ID exist": the printed PO number
 becomes po_id when that PO exists, and the printed PO line number becomes po_line_id when that line
-exists on it. Whether the PO belongs to the vendor is a later rule (PO-02, Stage 4).
+exists on it. Whether the PO belongs to the vendor is a later rule (PO-02).
 """
 from __future__ import annotations
 

@@ -21,7 +21,7 @@
   "excluded_bytes": 0,
   "excluded_files": 0,
   "excluded_from_commit": [],
-  "reason": "repository size budget (about 25 MB, REV ruling Q3 and Stage-4 ruling 1); regenerate with `python -m invoice_ap build-all` and verify against the checksums below"
+  "reason": "repository size budget (about 25 MB); regenerate with `python -m invoice_ap build-all` and verify against the checksums below"
  },
  "documents": {
   "bytes": 146697,

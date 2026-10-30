@@ -1,1 +1,1 @@
-"""Defect-aware validation suite over every table (Stage 5)."""
+"""Defect-aware validation suite over every table."""

@@ -1,4 +1,4 @@
-"""Stage-2 generator: exact counts, IDs, FKs, arithmetic, edge cases, boundary exactness, the
+"""Generator: exact counts, IDs, FKs, arithmetic, edge cases, boundary exactness, the
 as-of limit, no accidental duplicates, closures after activity, isolation of injections, the
 oracle-vs-intent assertion, and determinism (same seed, PYTHONHASHSEED independence)."""
 from __future__ import annotations
@@ -288,7 +288,7 @@ def test_inbox_never_hands_over_the_vendor(build):
 
 
 def test_one_receipt_line_is_billed_by_two_invoice_lines(build):
-    """A-26 at data level (the bridge rows themselves are written by the Stage-4 engine)."""
+    """A-26 at data level (the bridge rows themselves are written by the engine)."""
     _, t = build
     gt = _gt(t)
     grn_lines = Counter(g["po_line_id"] for g in t["goods_receipt_line"])

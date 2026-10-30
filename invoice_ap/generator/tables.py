@@ -379,7 +379,7 @@ def _invoices(plan: Plan, final: bool, ds: Dataset, policy_version: str) -> None
                                         "SCAN": "OCR_TEXT"}[channel],
                         "received_at": at, "sender_address": sender, "sender_vendor_id": sender_vendor,
                         "file_path": f"documents/{channel.lower()}/{doc_id}.{FILE_EXT[channel]}",
-                        "file_sha256": None, "file_bytes": None}      # filled when Stage 3 renders documents
+                        "file_sha256": None, "file_bytes": None}      # filled when the documents are rendered
         line_rows = []
         for n, ln in enumerate(inv_lines, start=1):
             rate = TAX_CODES[ln["tax_code"]][0]

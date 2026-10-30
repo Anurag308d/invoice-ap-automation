@@ -2,7 +2,7 @@
 
 Pure integer and Fraction arithmetic: no randomness and no floats. Given a scale it returns exact
 counts for every table total, PO fulfilment archetype, PO line-count histogram, scenario category
-and sub-scenario. The Stage-2 generator consumes these counts and only uses its seeded RNG to
+and sub-scenario. The generator consumes these counts and only uses its seeded RNG to
 decide *which* PO, vendor or date gets each slot, never *how many*. docs/data_generation.md embeds
 the tables rendered by render_markdown(); tests/test_allocation.py proves every identity.
 """

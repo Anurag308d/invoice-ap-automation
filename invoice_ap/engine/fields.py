@@ -1,6 +1,6 @@
 """Extracted values with provenance: raw text, normalised value, method and confidence (ADR-032).
 
-Confidence is fixed per method (calibrated in Stage 3, reported by the extraction evaluation):
+Confidence is fixed per method (calibration reported by the extraction evaluation):
 a structured or segment read is near-certain; a label read is high; an OCR repair or a conflicting
 read is below the CAP-01 threshold (0.90), so the document goes to capture review.
 """

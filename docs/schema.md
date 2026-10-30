@@ -244,7 +244,7 @@ The bridge allocates billed quantity to received quantity in FIFO order of posti
 Every state change is an append-only event (`vendor_status_history`, `erp_event`, `ap_event`)
 carrying from-status, to-status, timestamp, actor role and id, and a reason or rule id. History is
 never overwritten. An entity's current status (`snapshot_status` in master, `*_as_of` in processed) must
-equal the `to_status` of its last event, and the validation suite (Stage 5) checks every recorded
+equal the `to_status` of its last event, and the validation suite checks every recorded
 sequence against these machines.
 
 <!-- BEGIN GENERATED: state-machines (python -m invoice_ap docs) -->
@@ -377,7 +377,7 @@ stateDiagram-v2
 | SCHEDULED | PAID | PAY-05 released | payment run on a scheduled date on or before the as-of date (SYSTEM) | yes |
 <!-- END GENERATED: state-machines -->
 
-## 9. Join validation (implemented in Stage 5)
+## 9. Join validation
 
 The validation suite checks every declared FK above. It also checks these semantic joins:
 - the vendor code embedded in each `invoice_id` equals `invoice.vendor_id`, and for captured

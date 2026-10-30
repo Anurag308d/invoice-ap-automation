@@ -77,7 +77,7 @@ so a receipt beyond 5% that is billed in full raises `QTY_EXCEEDS_PO`.
 | `matching.over_receipt_tolerance_pct` | 5.00 | Bulk goods (packaging, raw materials) ship approximately; ERP over-delivery tolerances are commonly 0-10%. |
 | `tax.amount_abs` | 0.01 | Only a per-line rounding difference is acceptable; 0.02 is already an error. |
 | `arithmetic.*_abs` | 0.01 | Same reasoning for line extensions and header totals. |
-| `extraction.min_field_confidence` | 0.90 | Clean structured reads and known label synonyms score >= 0.95. Any OCR repair or heuristic fallback scores <= 0.80 and is routed to a human (calibrated in Stage 3). |
+| `extraction.min_field_confidence` | 0.90 | Clean structured reads and known label synonyms score >= 0.95. Any OCR repair or heuristic fallback scores <= 0.80 and is routed to a human (calibration in reports/extraction_evaluation.md). |
 | Auto-approval limit (P1) | 2,00,000.00 | The PO already authorised the spend, and a clean three-way match proves receipt and price. Larger amounts keep a human in the loop. The limit equals the RTGS threshold. |
 
 ## 4. Match status (MS-01)

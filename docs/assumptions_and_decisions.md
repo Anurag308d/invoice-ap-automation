@@ -1,7 +1,11 @@
 # Assumptions and decisions (ADRs)
 
+Provenance notes: "REV" is the independent reviewer that gated the build stage by stage, and IDs
+such as S1-R1-01 refer to its findings (see `ai_disclosure/sprint_reviews/`). They record where a
+decision came from; every ADR states its decision in full without them.
+
 Each entry records a decision, the alternatives considered and the trade-off. Entries marked
-**deviation** depart from a sprint recommendation, as the brief requires them to be recorded.
+**deviation** depart from the original project plan, and are recorded as such.
 
 ## Structure and identifiers
 
@@ -214,7 +218,7 @@ that was set for every channel, including scans. Both of REV's paths are taken.
 - **Guards.**
   - A static test bans, in engine code: reading sender fields outside the VEN-04 module,
     `vendor_of_invoice`, and slicing an `invoice_id`. It is active now.
-  - The Stage-3 ID-blind sandbox blanks `sender_vendor_id` and `sender_address` in a temp copy of
+  - The ID-blind sandbox blanks `sender_vendor_id` and `sender_address` in a temp copy of
     the inbox and requires identical decisions.
   - An engine that took the vendor from the sender would also misidentify the forwarded e-mails,
     and vendor-resolution accuracy would expose it.
@@ -235,13 +239,13 @@ posted before processing time instead.
 
 *Guards:*
 - a static ban on `snapshot_` in engine code (active now);
-- the Stage-4 time-travel sandbox: for sampled invoices, drop master rows and events recorded after
+- the time-travel sandbox: for sampled invoices, drop master rows and events recorded after
   the processing time and blank the snapshots; the decision must not change.
 
 *Alternative:* move the snapshots out of master. Rejected: they make the committed CSVs easier to
 read, and the guards make any read of them detectable.
 
-**ADR-039 Stage-2 generator mechanics.**
+**ADR-039 Generator mechanics.**
 - **Two phases from one plan.** Every random draw is made once, in the planner. `materialize()`
   then builds a baseline (all invoices clean, no duplicates, no injected status changes), which
   must self-validate with 0 violations and 0 labelled defects, and a final phase that adds only
@@ -255,11 +259,11 @@ read, and the guards make any read of them detectable.
   their scenario PO. The status change falls strictly between the receipt and the invoice date.
 - **Duplicates.** An exact resubmission copies its original's content, defects included. The
   validator reports such a copy under the original's label, never as an unlabelled defect.
-- **Intake manifest.** It is written in Stage 2, because the oracle needs intake times and
-  `invoice.doc_id` must resolve. Since Stage 3, `file_sha256` and `file_bytes` describe the rendered
-  document (ADR-040), so no manifest field is pending any more.
+- **Intake manifest.** It is written by the generator, because the oracle needs intake times and
+  `invoice.doc_id` must resolve; `file_sha256` and `file_bytes` describe the rendered document
+  (ADR-040).
 
-**ADR-040 Documents and extraction (Stage 3).**
+**ADR-040 Documents and extraction.**
 - **Four formats, one per channel.** PORTAL_JSON (portal schema v1 with string values, or v2 with
   camelCase keys, numeric amounts and timestamps), EDI_FLAT (segments; the separator, terminator
   and amount mode, decimal or two implied decimals, vary by trading partner), EMAIL_TEXT (an RFC 822
@@ -283,15 +287,13 @@ read, and the guards make any read of them detectable.
   transport headers and forwarded-message header blocks are never invoice content; dates are
   day-first; a value that fails its format is unreadable, never guessed. Nothing is recomputed from
   lines or from the PO.
-- **Stage-3 engine scope.** Intake order, CAP-01, VEN-01, ID-01 and VEN-04, with EXT_LOW_CONFIDENCE,
-  VENDOR_NOT_FOUND and VENDOR_SENDER_MISMATCH routed by RTE-01 into `processed/ap_exception.csv`, and
-  `processed/decision_trace.jsonl`. Stage 4 added the later rules and moved the VEN-04 check behind
+- **Capture-stage rules.** CAP-01, VEN-01 and ID-01 run first, in intake order; VEN-04 runs after
   the duplicate gates, as in the rule order (ADR-041). `captured_at` = `received_at` + 1 minute
   (a synthetic processing time, never the wall clock).
 - **Not in this stage:** the printed tax code must be one of the five codes, so an unknown code is
   unreadable rather than captured; TAX_CODE_INVALID therefore stays a unit-test-only type (ADR-036).
 
-**ADR-041 Stage-4 decision engine mechanics.**
+**ADR-041 Decision engine mechanics.**
 - **Independent implementation.** The engine (`engine/validate.py`, `engine/decide.py`) applies the
   rule catalogue to *captured* values and master data; it imports nothing from the generator or the
   oracle. Agreement with ground truth is measured, not assumed; a tolerance mutation makes the
@@ -322,7 +324,7 @@ read, and the guards make any read of them detectable.
   difference (with tax) for quantity and price variances; the absolute difference for tax and
   arithmetic. Types with no expected and no predicted instance report "not present", never 0/0.
 
-**ADR-042 Stage-5 outputs: validation, exports, manifest, reproducibility, data commit.**
+**ADR-042 Outputs: validation, exports, manifest, reproducibility, data commit.**
 - **Validation suite** (`quality/suite.py`): the defect-aware quick checks plus engine invariants
   (polymorphic event references, decision consistency, R34e, approvals only when unblocked, the
   N:M bridge, duplicate pairs, capture consistency, policy provenance). Labelled defects are
@@ -339,9 +341,9 @@ read, and the guards make any read of them detectable.
 - **Reproducibility**: two subprocess rebuilds with PYTHONHASHSEED 1 and 2 and one with seed + 1;
   the report holds no paths or times, so it is itself reproducible.
 - **Commit policy**: starter complete; full scale without the four regenerable groups listed in
-  the README, in the order the ruling gives. Measured total about 25.4 MB; the parity test rebuilds
+  the README, in that order of priority. Measured total about 25.4 MB; the parity test rebuilds
   both scales.
-- **Backlog presentation** (Stage-4 ruling 2): open exceptions past SLA are labelled "open and past
+- **Backlog presentation** (reviewer ruling): open exceptions past SLA are labelled "open and past
   SLA at the snapshot (no resolutions simulated)" and aged in business days.
 
 ## Data, determinism and engineering
@@ -375,7 +377,7 @@ inspected without running anything, under these conditions:
 - the full-scale JSON and SQL are committed only if the total committed data stays at or below
   about 25 MB, as measured. Otherwise their SHA-256 checksums are recorded in the manifest and
   `build-all` regenerates them;
-- generated data is committed only when Stages 5 and 6 close, to keep history small;
+- generated data is committed once the pipeline is complete, to keep history small;
 - a parity check proves the committed data equals a fresh build (A-54).
 
 **ADR-029 Calendar.** Sat/Sun weekends plus four fixed national holidays (26 Jan, 15 Aug, 2 Oct,
@@ -389,7 +391,7 @@ drift.
 **ADR-034 Runtime.** Python >= 3.11, standard library only (`tomllib` needs 3.11). `pytest` is the
 only development dependency. There is no network access and no hosted services.
 
-## Rulings on the Stage-1 open questions (stage-1-review-1)
+## Reviewer rulings on the initial open questions
 
 1. Q1, clean at 68%: **accepted**. After the Q2 change, clean is 1,350 (67.5%), also accepted
    (ADR-005).

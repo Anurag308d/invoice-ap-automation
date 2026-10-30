@@ -1,7 +1,6 @@
 # Architecture
 
-Status: Stage 1 (design). Sections marked *planned* are built in later stages; the module and
-file names below are the contract those stages implement.
+The module and file names below are the ones the code implements.
 
 ## 1. What the system does
 
@@ -56,12 +55,12 @@ section 4.
 |---|---|---|---|---|
 | `invoice_ap.common` | Vocabulary (`enums`), ID formats, Decimal money, paths, policy loader, doc sync. No business logic. | `config/ap_policy.toml` | - | stdlib only |
 | `invoice_ap.spec` | Machine-readable data dictionary; renders `docs/data_dictionary.md` and the JSON spec. | - | docs | `common` |
-| `invoice_ap.generator` | Exact allocation, synthetic world, true invoices, injections, document rendering, oracle (*Stage 2-3*). | policy | `master/`, `inbox/`, `source/`, `ground_truth/` | `common`, `spec` |
-| `invoice_ap.engine` | Intake, extraction, validation, duplicates, matching, routing, approvals, payments, events, explain (*Stage 3-4*). | policy, `master/`, `inbox/` **only** | `processed/` | `common`, `spec` **only** |
-| `invoice_ap.evaluation` | Extraction accuracy, per-type precision/recall/F1, confusion matrix, duplicate pairs, approval and payment safety, KPIs (*Stage 3-4*). | everything | `reports/evaluation.*` | all |
-| `invoice_ap.quality` | Defect-aware validation suite: PK, FK, enums, date order, arithmetic, lifecycles, duplicates (*Stage 5*). | everything | `reports/validation_summary.*` | all but `engine` internals |
-| `invoice_ap.export` | CSV and JSON for every table; SQL seed with PK/FK/CHECK constraints (*Stage 5*). | everything | `exports/` | `common`, `spec` |
-| `invoice_ap.report` | Source manifest, distribution summary, reproducibility report, offline HTML dashboard (*Stage 5*). | everything | `reports/` | all |
+| `invoice_ap.generator` | Exact allocation, synthetic world, true invoices, injections, document rendering, oracle. | policy | `master/`, `inbox/`, `source/`, `ground_truth/` | `common`, `spec` |
+| `invoice_ap.engine` | Intake, extraction, validation, duplicates, matching, routing, approvals, payments, events, explain. | policy, `master/`, `inbox/` **only** | `processed/` | `common`, `spec` **only** |
+| `invoice_ap.evaluation` | Extraction accuracy, per-type precision/recall/F1, confusion matrix, duplicate pairs, approval and payment safety, KPIs. | everything | `reports/evaluation.*` | all |
+| `invoice_ap.quality` | Defect-aware validation suite: PK, FK, enums, date order, arithmetic, lifecycles, duplicates. | everything | `reports/validation_summary.*` | all but `engine` internals |
+| `invoice_ap.export` | CSV and JSON for every table; SQL seed with PK/FK/CHECK constraints. | everything | `exports/` | `common`, `spec` |
+| `invoice_ap.report` | Source manifest, distribution summary, reproducibility report, offline HTML dashboard. | everything | `reports/` | all |
 | `invoice_ap.cli` | `python -m invoice_ap <command>` | - | - | all |
 
 ## 3. Dataset layout of one build
@@ -89,7 +88,7 @@ data/<scale>/                 scale = starter | full
 The field-level definition of every table is in [data_dictionary.md](data_dictionary.md). Keys,
 cardinalities and state machines are in [schema.md](schema.md).
 
-## 4. Engine pipeline (*Stage 3-4*)
+## 4. Engine pipeline
 
 Invoices are processed one at a time in intake order (`received_at`, then `doc_id`). Each one uses
 only the receipts posted before its processing time and only earlier invoices, so the engine
@@ -126,14 +125,14 @@ evaluation (inputs, threshold, outcome), and `python -m invoice_ap explain <invo
 | Mechanism | What it guarantees | Where |
 |---|---|---|
 | Layer separation | Evaluation-only data lives in `source/` and `ground_truth/`, never in `master/` or `inbox/`. | dataset layout |
-| Narrow engine entry point | `run_engine(master_dir, inbox_dir, out_dir, policy)`: the engine is never given the dataset root. | `invoice_ap/engine/pipeline.py` (done, Stage 3) |
-| Vendor from the document only (S1-R1-01, ADR-037) | The manifest has no `invoice_id` (it would embed the vendor) and carries `sender_vendor_id` only for authenticated PORTAL/EDI senders. VEN-01 takes the vendor from the printed tax registration number, and ID-01 then assigns the invoice ID. Sender fields feed only the VEN-04 cross-check. | static ban `tests/test_boundary.py::test_engine_never_takes_the_vendor_from_the_sender_or_an_id` (active now); **ID-blind sandbox** `tests/test_engine_sandbox.py::test_id_blind_run_gives_identical_decisions` (done, Stage 3): blank `sender_vendor_id` and `sender_address` in a temp copy of the inbox; every decision must be identical |
-| No future information (S1-R1-02, ADR-038) | `snapshot_*` columns (vendor, PO, PO line, GRN) are evaluated at the as-of date and flagged reporting only. The engine uses effective-dated history and receipts posted before processing time. | static ban on `snapshot_` in engine code (active now); **time-travel sandbox** `tests/test_decisions.py::test_time_travel_*` and `::test_snapshots_and_post_as_of_rows_never_change_a_decision` (done, Stage 4): for sampled invoices, drop master rows and events recorded after the invoice's processing time and blank every `snapshot_*` column; the decision must not change |
-| Labels out of the SQL seed | Source and ground-truth tables are exported to separate files (`sql/evaluation_seed.sql`, `json/evaluation/`), never into the seed's input tables. | export layout (*Stage 5*) |
-| Static import rule | The engine imports only `common`, `spec` and itself, and `common` and `spec` import nothing from the generator. Evaluation-only names never appear in engine source. | `tests/test_boundary.py` (active now) |
-| Runtime sandbox | The engine runs on a temp copy that contains only `master/` and `inbox/`; its output must be byte-identical to the normal run. | `tests/test_engine_sandbox.py` (done, Stage 3) |
-| Label-free inputs | No master or inbox column has a label-like name; rendered documents contain no scenario codes or label words. | `tests/test_spec.py` (active now) + `tests/test_documents.py` document scan (done, Stage 3) |
-| Independent oracle | The oracle applies the documented rules to the true source data; generation asserts that its labels equal the injection intent and fails loudly otherwise. | `invoice_ap/generator/oracle.py` (*Stage 2*) |
+| Narrow engine entry point | `run_engine(master_dir, inbox_dir, out_dir, policy)`: the engine is never given the dataset root. | `invoice_ap/engine/pipeline.py` |
+| Vendor from the document only (S1-R1-01, ADR-037) | The manifest has no `invoice_id` (it would embed the vendor) and carries `sender_vendor_id` only for authenticated PORTAL/EDI senders. VEN-01 takes the vendor from the printed tax registration number, and ID-01 then assigns the invoice ID. Sender fields feed only the VEN-04 cross-check. | static ban `tests/test_boundary.py::test_engine_never_takes_the_vendor_from_the_sender_or_an_id`; **ID-blind sandbox** `tests/test_engine_sandbox.py::test_id_blind_run_gives_identical_decisions`: blank `sender_vendor_id` and `sender_address` in a temp copy of the inbox; every decision must be identical |
+| No future information (S1-R1-02, ADR-038) | `snapshot_*` columns (vendor, PO, PO line, GRN) are evaluated at the as-of date and flagged reporting only. The engine uses effective-dated history and receipts posted before processing time. | static ban on `snapshot_` in engine code; **time-travel sandbox** `tests/test_decisions.py::test_time_travel_*` and `::test_snapshots_and_post_as_of_rows_never_change_a_decision`: for sampled invoices, drop master rows and events recorded after the invoice's processing time and blank every `snapshot_*` column; the decision must not change |
+| Labels out of the SQL seed | Source and ground-truth tables are exported to separate files (`sql/evaluation_seed.sql`, `json/evaluation/`), never into the seed's input tables. | export layout |
+| Static import rule | The engine imports only `common`, `spec` and itself, and `common` and `spec` import nothing from the generator. Evaluation-only names never appear in engine source. | `tests/test_boundary.py` |
+| Runtime sandbox | The engine runs on a temp copy that contains only `master/` and `inbox/`; its output must be byte-identical to the normal run. | `tests/test_engine_sandbox.py` |
+| Label-free inputs | No master or inbox column has a label-like name; rendered documents contain no scenario codes or label words. | `tests/test_spec.py` + `tests/test_documents.py` document scan |
+| Independent oracle | The oracle applies the documented rules to the true source data; generation asserts that its labels equal the injection intent and fails loudly otherwise. | `invoice_ap/generator/oracle.py` |
 
 Ground truth is produced by rules applied to true data (assignment rule 5), and the engine reproduces
 it independently from extracted documents. Agreement between the two is therefore evidence, not a
@@ -146,14 +145,14 @@ tautology. The remaining limitation, that one author wrote both, is discussed in
 - Counts come from the exact allocation (`invoice_ap/generator/allocation.py`). The RNG only decides
   which PO, vendor, SKU or date gets each slot. Labels are never drawn at random.
 - No wall clock. "Today" is `policy.as_of_date` (2026-10-22) and every timestamp is synthetic.
-- No dependence on hash order: Stage 5 builds with `PYTHONHASHSEED=1` and `=2` and compares checksums.
+- No dependence on hash order: `repro` builds with `PYTHONHASHSEED=1` and `=2` and compares checksums.
 - Floats never touch money. Distributions use integer draws plus `Decimal` arithmetic (including
   `Decimal.exp` for log-normal values), never `math.exp` or `random.gauss`, whose results can differ
   across platforms. `tests/test_repo_hygiene.py` bans these calls.
 - Iteration is always sorted. CSV output is UTF-8 with `\n` line endings and a fixed header order;
   JSON uses `sort_keys` and fixed separators; SQL statements are emitted in a fixed order.
 - `.gitattributes` forces LF so the SHA-256 values recorded in `source_manifest.json` match on Windows checkouts too.
-- `python -m invoice_ap repro` (*Stage 5*) builds twice with the same seed into separate folders,
+- `python -m invoice_ap repro` builds twice with the same seed into separate folders,
   compares row counts and checksums, and runs a second seed as a sanity check.
 
 ## 7. Time model
@@ -172,7 +171,7 @@ category lead times, and invoices arrive until 21 October.
 - payments marked PAID.
 
 Only forward-dated plans may lie later: due dates, SLA due dates and scheduled payment dates.
-Such items stay PENDING, OPEN or SCHEDULED at the as-of date. A Stage-2 test asserts this for
+Such items stay PENDING, OPEN or SCHEDULED at the as-of date. A generator test asserts this for
 every timestamp.
 
 Timestamps are IST (`+05:30`). Business days skip weekends and the policy holidays. SLA due dates,
@@ -202,11 +201,11 @@ approval turnaround and payment scheduling all use business-day arithmetic. `*_a
 The full build must take well under a minute on a laptop. The approach is single-pass and in
 memory, with indexed dictionaries and standard-library CSV, and no dataframe dependency.
 
-Committed data follows REV's Q3 ruling (ADR-028) and Stage-4 ruling 1 (ADR-042), as measured at
-Stage 5 (about 25.4 MB in total):
+Committed data follows the repository size budget of about 25 MB (ADR-028, ADR-042), as measured
+(about 25.4 MB in total):
 - `data/starter/` is committed complete, in every format;
 - `data/full/` is committed except `exports/json/`, `exports/sql/`, `processed/decision_trace.jsonl`
-  and `processed/extraction_field.csv` (removed in the ruling's order); their checksums are in the
+  and `processed/extraction_field.csv` (removed in that order of priority); their checksums are in the
   manifest and `build-all` regenerates them;
 - `tests/test_outputs.py::test_committed_data_equals_a_fresh_build` proves parity.
 

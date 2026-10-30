@@ -6,6 +6,8 @@ import re
 import sys
 import tomllib
 
+import pytest
+
 from invoice_ap.common.paths import PACKAGE_DIR, REPO_ROOT
 
 SOURCES = sorted(PACKAGE_DIR.rglob("*.py"))
@@ -60,3 +62,26 @@ def test_licence_is_mit():
 def test_text_files_use_lf_line_endings():
     for path in [*SOURCES, *(REPO_ROOT / "docs").glob("*.md"), REPO_ROOT / "config" / "ap_policy.toml"]:
         assert b"\r\n" not in path.read_bytes(), path.name
+
+
+def test_no_secrets_or_personal_data_in_tracked_files():
+    """No credentials or keys anywhere, and every e-mail address in code, docs and generated data uses a
+    reserved example domain (the only exception is the AI tool's commit-trailer address in docs)."""
+    import re
+    import subprocess
+    try:
+        files = subprocess.run(["git", "ls-files"], cwd=REPO_ROOT, capture_output=True, text=True,
+                               check=True).stdout.split()
+    except (OSError, subprocess.CalledProcessError):
+        pytest.skip("not a git checkout")
+    secret = re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----|AKIA[0-9A-Z]{16}|\bsk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{30,}")
+    email = re.compile(r"[A-Za-z0-9._%+-]+@([A-Za-z0-9-]+\.)+[A-Za-z]{2,}")
+    allowed = (".example", "example.com", "noreply@anthropic.com")
+    for rel in files:
+        path = REPO_ROOT / rel
+        if path.suffix in (".png", ".pdf") or not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        assert not secret.search(text), f"{rel} contains something that looks like a secret"
+        for m in email.finditer(text):
+            assert m.group(0).endswith(allowed), f"{rel}: non-example e-mail address {m.group(0)}"

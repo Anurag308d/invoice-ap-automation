@@ -1,4 +1,4 @@
-"""Render every received document into its channel's file format (Stage 3, ADR-040).
+"""Render every received document into its channel's file format (ADR-040).
 
 Four heterogeneous formats, one per intake channel:
 - PORTAL -> PORTAL_JSON: the buyer portal's JSON (schema v1 snake_case strings, v2 camelCase with

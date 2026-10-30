@@ -1,7 +1,7 @@
 """`reports/source_manifest.json` (R33, A-53): what a build contains and how to reproduce it.
 
 Every file of the dataset is listed with its byte size, SHA-256 and row count, and whether it is
-committed to git. Files left out of the commit by the size budget (REV ruling Q3 / Stage-4 ruling 1)
+committed to git. Files left out of the commit by the size budget (about 25 MB)
 keep their checksum here, so a rebuild can be verified against it. The reproducibility report is
 written after the manifest and is not listed in it (it describes the build rather than being part
 of it).
@@ -85,7 +85,7 @@ def write_manifest(root: Path, policy) -> dict:
             "sql": "exports/sql/seed.sql holds master, inbox and processed tables only; ground truth and source "
                    "invoices are in exports/sql/evaluation_seed.sql, loaded after it (REV P-4)"},
         "commit_policy": {"excluded_from_commit": list(EXCLUDED_FROM_COMMIT.get(scale, ())),
-                          "reason": "repository size budget (about 25 MB, REV ruling Q3 and Stage-4 ruling 1); "
+                          "reason": "repository size budget (about 25 MB); "
                                     "regenerate with `python -m invoice_ap build-all` and verify against the "
                                     "checksums below",
                           "excluded_files": len(excluded),

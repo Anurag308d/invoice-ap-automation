@@ -10,7 +10,7 @@ uniqueness, validation rule) plus a description and an origin:
 
 `reporting_only` marks convenience snapshots (named snapshot_*) that sit in an engine-readable layer
 but are evaluated at the as-of date. They would reveal the future to an invoice processed earlier,
-so the engine must never read them (static test plus the Stage-4 time-travel sandbox; ADR-038).
+so the engine must never read them (static test plus the time-travel sandbox; ADR-038).
 """
 from __future__ import annotations
 

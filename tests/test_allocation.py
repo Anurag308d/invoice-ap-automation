@@ -1,4 +1,4 @@
-"""The volume and mix math is exact and feasible at both scales (Stage-1 DoD)."""
+"""The volume and mix math is exact and feasible at both scales."""
 from __future__ import annotations
 
 import pytest

@@ -1,4 +1,4 @@
-"""Quick, defect-aware self-checks over a built dataset (Stage 2; the full suite is Stage 5).
+"""Quick, defect-aware self-checks over a built dataset (the full suite is suite.py).
 
 Works on the rows exactly as written to CSV (strings), so it checks what an evaluator will read.
 Deliberately labelled defects (from ground truth) are reported as "labelled", never as violations.

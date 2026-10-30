@@ -19,7 +19,7 @@ Thumbs.db
 .scratch/
 data/_repro/
 
-# Full-scale files left out of the commit by the size budget (REV ruling Q3, Stage-4 ruling 1).
+# Full-scale files left out of the commit by the repository size budget (about 25 MB).
 # `python -m invoice_ap build-all` regenerates them; their SHA-256 values are recorded in
 # data/full/reports/source_manifest.json. Everything else under data/ is committed.
 data/full/exports/json/

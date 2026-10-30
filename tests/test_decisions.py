@@ -1,4 +1,4 @@
-"""Stage-4 decision engine: agreement with ground truth, the event log, the N:M bridge, payment
+"""Decision engine: agreement with ground truth, the event log, the N:M bridge, payment
 safety, REV rulings (VEN-04 precedence, retired GST12), unit fixtures for every exception type absent
 from the data, the time-travel sandbox and a rule-mutation probe (the evaluation is not circular)."""
 from __future__ import annotations

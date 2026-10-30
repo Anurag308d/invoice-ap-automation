@@ -1,4 +1,4 @@
-"""Stage 5: validation suite, exports and SQL seed, manifest, reproducibility, queues, dashboard and
+"""Outputs: validation suite, exports and SQL seed, manifest, reproducibility, queues, dashboard and
 the committed data (parity with a fresh build)."""
 from __future__ import annotations
 

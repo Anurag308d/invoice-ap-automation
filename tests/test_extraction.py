@@ -1,4 +1,4 @@
-"""Stage-3 extraction (REV P-2): accuracy against source, tricky formats, and negative / mutation tests.
+"""Extraction: accuracy against source, tricky formats, and negative / mutation tests.
 
 The extractor must either read what is printed or flag the field; it must never produce a silent
 "correct" value from somewhere else (the PO, the lines, master data or the sender).

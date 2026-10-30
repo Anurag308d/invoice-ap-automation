@@ -1,4 +1,4 @@
-"""Stage-3 documents: four heterogeneous channel formats, vendor templates with recoverable variation,
+"""Documents: four heterogeneous channel formats, vendor templates with recoverable variation,
 the manifest describes each file exactly, and documents carry no labels or vendor shortcuts."""
 from __future__ import annotations
 

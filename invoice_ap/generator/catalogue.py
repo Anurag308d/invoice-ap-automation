@@ -1,7 +1,7 @@
 """Scenario catalogue: what the generator injects and the label it intends each injection to get.
 
 This is generator-side truth. The engine never imports it (enforced by tests/test_boundary.py).
-The Stage-2 oracle derives labels independently from the true data under config/ap_policy.toml,
+The oracle derives labels independently from the true data under config/ap_policy.toml,
 and generation fails loudly unless oracle labels == intended_issues for every invoice.
 
 Placement codes (see docs/data_generation.md section 4):

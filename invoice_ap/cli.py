@@ -11,7 +11,6 @@ from pathlib import Path
 
 from .common.paths import DEFAULT_POLICY, DOCS_DIR, SPEC_JSON
 
-PLANNED: dict[str, tuple[str, int]] = {}
 
 
 def _cmd_plan(args: argparse.Namespace) -> int:
@@ -223,7 +222,7 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("generate", help="Generate master data, source invoices and ground truth")
     p.add_argument("--scale", default="starter", help="starter | full | numeric factor (default starter)")
     p.add_argument("--seed", type=int, default=20261022)
-    p.add_argument("--out", default=None, help="output folder (default data/<scale>, git-ignored until Stage 5)")
+    p.add_argument("--out", default=None, help="output folder (default data/<scale>)")
     p.set_defaults(func=_cmd_generate)
     p = sub.add_parser("validate", help="Full validation suite over every table (--quick: the generator self-checks)")
     p.add_argument("--quick", action="store_true")
@@ -265,15 +264,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--seed", type=int, default=20261022)
     p.add_argument("--no-check", action="store_true", help="skip the reproducibility rebuilds")
     p.set_defaults(func=_cmd_build_all)
-    for name, (help_text, stage) in PLANNED.items():
-        p = sub.add_parser(name, help=f"{help_text} (planned: Stage {stage})")
-        p.set_defaults(func=lambda a, n=name, s=stage: _planned(n, s))
     return parser
-
-
-def _planned(name: str, stage: int) -> int:
-    print(f"'{name}' is planned for Stage {stage} and is not implemented yet.", file=sys.stderr)
-    return 2
 
 
 def main(argv: list[str] | None = None) -> int:

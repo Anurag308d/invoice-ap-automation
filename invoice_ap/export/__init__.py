@@ -1,1 +1,1 @@
-"""CSV / JSON / SQL seed exports (Stage 5)."""
+"""JSON exports and SQL seeds."""

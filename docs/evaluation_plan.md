@@ -41,9 +41,9 @@ deviation is listed and explained.
 | E10 | Operational KPIs | **STP rate** = invoices that reached PAYMENT_READY or PAID with only SYSTEM actions (no exception, AUTO approval) / all invoices. **Exception rate** = invoices with >= 1 blocking exception / all invoices. Exceptions by type, role and queue; cycle time received -> ready (median, p90). |
 | E11 | Value at risk prevented | Money held back on invoices with a true blocking issue: the full gross for duplicates, closed or blocked vendors, foreign POs, missing receipts and invoices before the PO; the over-billed amount (excess quantity x price, or price difference x quantity, plus tax) for quantity and price variances; the absolute difference for tax and arithmetic errors. Reported prevented vs missed. |
 | E12 | Mix vs target | Actual category and sub-scenario counts vs Table G2/G6 targets, and the edge-case coverage table. |
-| E13 | Data quality | Pass/fail counts of the validation suite (PK, FK, enums, date order, arithmetic, lifecycle, duplicates), with labelled defects reported apart from violations (Stage 5, `validation_summary.*`). |
-| E14 | Distribution realism | Vendor concentration (top-20% share, Gini), line values by category (quantiles), weekday share, lead times, payment terms, channels, approval bands, monthly volumes (Stage 2-5, `distribution_summary.*`). |
-| E15 | Reproducibility | Two builds with the same seed: identical row counts and SHA-256 per file. A different seed: same counts and mix, different checksums (Stage 5, `reproducibility.*`). |
+| E13 | Data quality | Pass/fail counts of the validation suite (PK, FK, enums, date order, arithmetic, lifecycle, duplicates), with labelled defects reported apart from violations (`validation_summary.*`). |
+| E14 | Distribution realism | Vendor concentration (top-20% share, Gini), line values by category (quantiles), weekday share, lead times, payment terms, channels, approval bands, monthly volumes (`distribution_summary.*`). |
+| E15 | Reproducibility | Two builds with the same seed: identical row counts and SHA-256 per file. A different seed: same counts and mix, different checksums (`reproducibility.*`). |
 
 ## 3. Per-invoice acceptance check
 

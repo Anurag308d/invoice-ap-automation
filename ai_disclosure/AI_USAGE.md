@@ -22,4 +22,16 @@ assignment text given to the tools.
 
 ## What I personally reviewed, changed and validated
 
-_To be written by me before submission._
+I, Anurag Kumar, directed the work instead of typing the code myself. Specifically:
+
+- I read the problem statement, the submission guidelines and the FAQ, and gave them to the AI as the source of truth.
+- I chose the working method. One AI agent built the solution in stages, and a second, independent agent reviewed each
+  stage against the assignment. A stage moved forward only after its review passed.
+- I made sure the work was saved continuously and resumed after interruptions. When the AI hit usage limits, I
+  restarted the work so nothing was lost.
+- I asked for the final repository to contain only what the assignment requires. That meant removing internal review
+  notes and process clutter, while keeping this prompt history as the guidelines require.
+- The prompts listed in `prompt_history/INDEX.md` are mine or were sent on my instruction.
+
+The correctness evidence (544 automated tests, the validation suite, the evaluation against ground truth and the
+reproducibility check) was produced and run by the AI tools. The results are in `data/full/reports/`.

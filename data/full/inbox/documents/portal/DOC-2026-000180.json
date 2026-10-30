@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rosir Foods Industries",
+  "taxId": "TRN-565016045"
+ },
+ "header": {
+  "invoiceNo": "ROS/25-26/224",
+  "invoiceDate": "2026-02-20T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000166",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 21926.46,
+  "tax": 0.00,
+  "payable": 21926.46
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00395",
+   "text": "Sunflower oil - grade D - M395",
+   "unit": "KG",
+   "qty": 161.07,
+   "rate": 136.13,
+   "value": 21926.46,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  }
+ ]
+}

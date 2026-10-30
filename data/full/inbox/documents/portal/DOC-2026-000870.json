@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumir Electricals Industries",
+    "tax_registration_id": "TRN-144326083"
+  },
+  "invoice": {
+    "number": "INV-2026-0155",
+    "date": "2026-05-21",
+    "po_number": "PO-2026-000625",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "118566.08",
+    "tax_total": "21341.89",
+    "grand_total": "139907.97"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00072",
+      "description": "Contactor - grade B - M072",
+      "uom": "EA",
+      "quantity": "100",
+      "unit_price": "1096.10",
+      "amount": "109610.00",
+      "tax_code": "GST18",
+      "tax_amount": "19729.80"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00064",
+      "description": "Contactor - grade A - M064",
+      "uom": "EA",
+      "quantity": "7",
+      "unit_price": "1279.44",
+      "amount": "8956.08",
+      "tax_code": "GST18",
+      "tax_amount": "1612.09"
+    }
+  ]
+}

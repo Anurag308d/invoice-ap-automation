@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Faltav Metals Pvt Ltd",
+  "taxId": "TRN-844321990"
+ },
+ "header": {
+  "invoiceNo": "000083",
+  "invoiceDate": "2026-09-07T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001192",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 147817.16,
+  "tax": 25276.74,
+  "payable": 173093.90
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00042",
+   "text": "Aluminium ingot - grade F - M042",
+   "unit": "KG",
+   "qty": 798.58,
+   "rate": 185.10,
+   "value": 147817.16,
+   "taxCode": "GST18",
+   "taxValue": 25276.74
+  }
+ ]
+}

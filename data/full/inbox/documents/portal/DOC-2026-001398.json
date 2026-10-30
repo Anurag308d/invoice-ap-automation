@@ -1,0 +1,55 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urgar Electricals Enterprises",
+    "tax_registration_id": "TRN-781434012"
+  },
+  "invoice": {
+    "number": "URG/26-27/283",
+    "date": "2026-08-03",
+    "po_number": "PO-2026-001005",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "452943.73",
+    "tax_total": "81529.87",
+    "grand_total": "534473.60"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00106",
+      "description": "Junction box - grade F - M106",
+      "uom": "EA",
+      "quantity": "72",
+      "unit_price": "228.30",
+      "amount": "16437.60",
+      "tax_code": "GST18",
+      "tax_amount": "2958.77"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00094",
+      "description": "MCB switch - grade E - M094",
+      "uom": "EA",
+      "quantity": "179",
+      "unit_price": "2094.02",
+      "amount": "374829.58",
+      "tax_code": "GST18",
+      "tax_amount": "67469.32"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00067",
+      "description": "Relay module - grade A - M067",
+      "uom": "EA",
+      "quantity": "169",
+      "unit_price": "364.95",
+      "amount": "61676.55",
+      "tax_code": "GST18",
+      "tax_amount": "11101.78"
+    }
+  ]
+}

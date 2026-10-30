@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Orar Safety Gear Pvt Ltd",
+    "tax_registration_id": "TRN-816178590"
+  },
+  "invoice": {
+    "number": "INV-2026-0315",
+    "date": "2026-08-21",
+    "po_number": "PO-2026-001214",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "144602.86",
+    "tax_total": "26028.51",
+    "grand_total": "170631.37"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00356",
+      "description": "Ear muffs - grade D - M356",
+      "uom": "EA",
+      "quantity": "142",
+      "unit_price": "1018.33",
+      "amount": "144602.86",
+      "tax_code": "GST18",
+      "tax_amount": "26028.51"
+    }
+  ]
+}

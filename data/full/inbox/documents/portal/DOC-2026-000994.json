@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0602",
+  "invoiceDate": "2026-06-10T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000726",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 45685.21,
+  "tax": 1723.68,
+  "payable": 47408.89
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00380",
+   "text": "Wheat flour - grade B - M380",
+   "unit": "KG",
+   "qty": 76.61,
+   "rate": 184.29,
+   "value": 14118.46,
+   "taxCode": "GST5",
+   "taxValue": 705.92
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00383",
+   "text": "Coffee powder - grade B - M383",
+   "unit": "KG",
+   "qty": 232.02,
+   "rate": 87.73,
+   "value": 20355.11,
+   "taxCode": "GST5",
+   "taxValue": 1017.76
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00379",
+   "text": "Sunflower oil - grade B - M379",
+   "unit": "KG",
+   "qty": 98.46,
+   "rate": 113.87,
+   "value": 11211.64,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

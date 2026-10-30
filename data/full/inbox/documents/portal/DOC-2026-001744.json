@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urfal Electricals Industries",
+  "taxId": "TRN-583464262"
+ },
+ "header": {
+  "invoiceNo": "000134",
+  "invoiceDate": "2026-09-17T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001181",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 17647.02,
+  "tax": 3176.46,
+  "payable": 20823.48
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00072",
+   "text": "Contactor - grade B - M072",
+   "unit": "EA",
+   "qty": 17,
+   "rate": 1038.06,
+   "value": 17647.02,
+   "taxCode": "GST18",
+   "taxValue": 3176.46
+  }
+ ]
+}

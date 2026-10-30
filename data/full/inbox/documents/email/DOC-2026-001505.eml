@@ -1,0 +1,45 @@
+From: ap@vnd-00038.example
+To: invoices@buyer.example
+Date: Tue, 18 Aug 2026 12:17:00 +0530
+Subject: Invoice INV-2026-0381
+Message-ID: <doc-2026-001505@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller: Zanur Metals Enterprises
+TRN: TRN-601705858
+Plot 41, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Invoice Number: INV-2026-0381
+Invoice Date: 14/08/2026
+Purchase Order: PO/2026/001061
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln: 1
+  Item: SKU-00046
+  Description: Stainless steel coil - grade F - M046
+  UOM: KG
+  Qty: 1059.99
+  Unit Price: 269.14
+  Value: 285,285.71
+  Tax Rate: GST 18%
+  Tax Amt: 51,351.43
+
+Taxable Value: 285,285.71
+GST: 51,351.43
+Grand Total: 336,637.14
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Zanur Metals Enterprises

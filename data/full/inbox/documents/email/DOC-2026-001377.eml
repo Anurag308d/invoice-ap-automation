@@ -1,0 +1,38 @@
+From: ap@vnd-00089.example
+To: invoices@buyer.example
+Date: Thu, 30 Jul 2026 09:30:00 +0530
+Subject: Invoice QUI/26-27/207
+Message-ID: <doc-2026-001377@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier: Quinir Metals Industries
+TRN: TRN-686482467
+Plot 92, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No: QUI/26-27/207
+Bill Date: 2026-07-27
+P.O. #: PO 2026-000937
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | PO Line | Item Code | Item Description | Unit | Qty | Price | Value | Tax Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00006 | Stainless steel coil - grade A - M006 | KG | 559.43 | 266.86 | 1,49,289.49 | GST18 | 26,872.11 |
+
+Net Amount: 1,49,289.49
+Tax: 26,872.11
+Invoice Total: 1,76,161.60
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Quinir Metals Industries

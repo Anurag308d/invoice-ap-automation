@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumir Electricals Industries",
+    "tax_registration_id": "TRN-144326083"
+  },
+  "invoice": {
+    "number": "INV-2026-0160",
+    "date": "2026-07-20",
+    "po_number": "PO-2026-000983",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "221197.35",
+    "tax_total": "39815.52",
+    "grand_total": "261012.87"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00100",
+      "description": "Terminal block - grade E - M100",
+      "uom": "EA",
+      "quantity": "111",
+      "unit_price": "368.35",
+      "amount": "40886.85",
+      "tax_code": "GST18",
+      "tax_amount": "7359.63"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00099",
+      "description": "Relay module - grade E - M099",
+      "uom": "EA",
+      "quantity": "153",
+      "unit_price": "1178.50",
+      "amount": "180310.50",
+      "tax_code": "GST18",
+      "tax_amount": "32455.89"
+    }
+  ]
+}

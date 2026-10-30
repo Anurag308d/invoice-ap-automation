@@ -1,0 +1,38 @@
+From: ap@vnd-00095.example
+To: invoices@buyer.example
+Date: Fri, 29 May 2026 14:29:00 +0530
+Subject: Invoice ENP/26-27/043
+Message-ID: <doc-2026-000910@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Enpar Packaging & Co
+Tax Reg No: TRN-856219942
+Plot 98, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Inv #: ENP/26-27/043
+Date: May 28, 2026
+PO Number: PO-2026-000666
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Line | SKU | Description | Unit | Quantity | Unit Price | Taxable Amt | Tax Code | Tax Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00224 | Shipping label roll - grade C - M224 | BOX | 188 | 59.26 | 11,140.88 | GST 18% | 2,005.36 |
+
+Net Amount: 11,140.88
+Tax: 2,005.36
+Total: 13,146.24
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enpar Packaging & Co

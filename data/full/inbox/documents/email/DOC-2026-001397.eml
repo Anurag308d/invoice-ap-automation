@@ -1,0 +1,37 @@
+From: ap@vnd-00244.example
+To: invoices@buyer.example
+Date: Mon, 03 Aug 2026 09:09:00 +0530
+Subject: Invoice INV-2026-0357
+Message-ID: <doc-2026-001397@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller : Tavkav Stationers Industries
+Tax Regn. No. : TRN-146288496
+Plot 53, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice No : INV-2026-0357
+Date : 30-Jul-2026
+Your Order Ref : PO-2026-001006
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Line | SKU | Item Description | UOM | Qty | Unit Price | Amount | GST Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00317 | Notebook - grade E - M317 | PACK | 192 | 530.93 | 101,938.56 | Exempt | 0.00 |
+
+Net Amount : Rs. 101,938.56
+GST : Rs. 0.00
+Amount Payable : Rs. 101,938.65
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Tavkav Stationers Industries

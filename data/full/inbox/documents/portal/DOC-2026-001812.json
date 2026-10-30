@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Selwyn Metals Enterprises",
+  "taxId": "TRN-975298949"
+ },
+ "header": {
+  "invoiceNo": "SI00122",
+  "invoiceDate": "2026-09-28T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001227",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 37695.65,
+  "tax": 6785.22,
+  "payable": 44480.87
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00023",
+   "text": "Brass rod - grade C - M023",
+   "unit": "KG",
+   "qty": 162.09,
+   "rate": 232.56,
+   "value": 37695.65,
+   "taxCode": "GST18",
+   "taxValue": 6785.22
+  }
+ ]
+}

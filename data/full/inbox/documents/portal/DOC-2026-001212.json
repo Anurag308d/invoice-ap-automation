@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/368",
+    "date": "2026-07-06",
+    "po_number": "PO-2026-000869",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "68650.04",
+    "tax_total": "12357.01",
+    "grand_total": "81007.05"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00318",
+      "description": "Stapler - grade E - M318",
+      "uom": "PACK",
+      "quantity": "59",
+      "unit_price": "427.63",
+      "amount": "25230.17",
+      "tax_code": "GST18",
+      "tax_amount": "4541.43"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00305",
+      "description": "Copier paper - grade D - M305",
+      "uom": "PACK",
+      "quantity": "153",
+      "unit_price": "283.79",
+      "amount": "43419.87",
+      "tax_code": "GST18",
+      "tax_amount": "7815.58"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+From: ap@vnd-00140.example
+To: invoices@buyer.example
+Date: Tue, 29 Sep 2026 15:07:00 +0530
+Subject: Invoice INV-2026-0253
+Message-ID: <doc-2026-001835@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor: Arbel Engineering Spares & Co
+Tax Regn. No.: TRN-798177451
+Plot 46, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Bill No: INV-2026-0253
+Date: 2026-09-29
+Your Order Ref: PO-2026-001297
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | Order Line | Item | Description | Unit | Quantity | Unit Price | Taxable Amt | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00195 | Hydraulic seal - grade J - M195 | EA | 7 | 847.41 | 5931.87 | GST 18% | 1067.74 |
+
+Total Before Tax: INR 5931.87
+Tax: INR 1067.74
+Total Amount Due: INR 6999.61
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Arbel Engineering Spares & Co

@@ -1,0 +1,81 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rosur Engineering Spares Industries",
+  "taxId": "TRN-577176981"
+ },
+ "header": {
+  "invoiceNo": "000387",
+  "invoiceDate": "2026-07-23T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000854",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 363294.48,
+  "tax": 65393.00,
+  "payable": 428687.48
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00140",
+   "text": "Gear coupling - grade C - M140",
+   "unit": "EA",
+   "qty": 10,
+   "rate": 1345.35,
+   "value": 13453.50,
+   "taxCode": "GST18",
+   "taxValue": 2421.63
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00142",
+   "text": "Valve actuator - grade C - M142",
+   "unit": "EA",
+   "qty": 2,
+   "rate": 1724.80,
+   "value": 3449.60,
+   "taxCode": "GST18",
+   "taxValue": 620.93
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00164",
+   "text": "Gear coupling - grade F - M164",
+   "unit": "EA",
+   "qty": 26,
+   "rate": 2952.86,
+   "value": 76774.36,
+   "taxCode": "GST18",
+   "taxValue": 13819.38
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00154",
+   "text": "V-belt - grade E - M154",
+   "unit": "EA",
+   "qty": 12,
+   "rate": 21364.84,
+   "value": 256378.08,
+   "taxCode": "GST18",
+   "taxValue": 46148.05
+  },
+  {
+   "seq": 5,
+   "orderLine": 5,
+   "itemCode": "SKU-00162",
+   "text": "V-belt - grade F - M162",
+   "unit": "EA",
+   "qty": 11,
+   "rate": 1203.54,
+   "value": 13238.94,
+   "taxCode": "GST18",
+   "taxValue": 2383.01
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urnov Engineering Spares Enterprises",
+    "tax_registration_id": "TRN-164788210"
+  },
+  "invoice": {
+    "number": "URN/26-27/223",
+    "date": "2026-10-19",
+    "po_number": "PO-2026-001386",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "48378.30",
+    "tax_total": "8708.09",
+    "grand_total": "57086.39"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00136",
+      "description": "Chain sprocket - grade B - M136",
+      "uom": "EA",
+      "quantity": "30",
+      "unit_price": "1612.61",
+      "amount": "48378.30",
+      "tax_code": "GST18",
+      "tax_amount": "8708.09"
+    }
+  ]
+}

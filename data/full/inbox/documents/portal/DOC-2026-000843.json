@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0188A",
+  "invoiceDate": "2026-05-11T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000613",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 49565.30,
+  "tax": 8921.75,
+  "payable": 58487.05
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00282",
+   "text": "Toner cartridge - grade A - M282",
+   "unit": "PACK",
+   "qty": 95,
+   "rate": 521.74,
+   "value": 49565.30,
+   "taxCode": "GST18",
+   "taxValue": 8921.75
+  }
+ ]
+}

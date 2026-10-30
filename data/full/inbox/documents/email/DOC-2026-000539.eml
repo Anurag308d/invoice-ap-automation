@@ -1,0 +1,37 @@
+From: ap@vnd-00043.example
+To: invoices@buyer.example
+Date: Tue, 07 Apr 2026 15:55:00 +0530
+Subject: Invoice LUM/26-27/203
+Message-ID: <doc-2026-000539@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Lumur Metals Enterprises
+Tax Reg No : TRN-745604698
+Plot 46, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Invoice No : LUM/26-27/203
+Dated : 06.04.2026
+Your Order Ref : PO-2026-000304
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| # | Order Line | Item | Description | Unit | Quantity | Price | Taxable Amt | GST Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00004 | PVC resin - grade A - M004 | KG | 169.94 | 124.68 | 21,188.12 | 18% | 3,813.86 |
+
+Subtotal : Rs. 21,188.12
+Total Tax : Rs. 3,813.86
+Total Amount Due : Rs. 25,001.98
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Lumur Metals Enterprises

@@ -1,0 +1,69 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0249",
+  "invoiceDate": "2026-02-12T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000046",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 216887.00,
+  "tax": 39039.66,
+  "payable": 255926.66
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00158",
+   "text": "Valve actuator - grade E - M158",
+   "unit": "EA",
+   "qty": 11,
+   "rate": 3405.01,
+   "value": 37455.11,
+   "taxCode": "GST18",
+   "taxValue": 6741.92
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00121",
+   "text": "Ball bearing - grade A - M121",
+   "unit": "EA",
+   "qty": 21,
+   "rate": 5528.63,
+   "value": 116101.23,
+   "taxCode": "GST18",
+   "taxValue": 20898.22
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00172",
+   "text": "Gear coupling - grade G - M172",
+   "unit": "EA",
+   "qty": 38,
+   "rate": 1027.11,
+   "value": 39030.18,
+   "taxCode": "GST18",
+   "taxValue": 7025.43
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00178",
+   "text": "V-belt - grade H - M178",
+   "unit": "EA",
+   "qty": 16,
+   "rate": 1518.78,
+   "value": 24300.48,
+   "taxCode": "GST18",
+   "taxValue": 4374.09
+  }
+ ]
+}

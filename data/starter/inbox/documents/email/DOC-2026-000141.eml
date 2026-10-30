@@ -1,0 +1,37 @@
+From: ap@vnd-00004.example
+To: invoices@buyer.example
+Date: Mon, 13 Jul 2026 15:57:00 +0530
+Subject: Invoice 000330
+Message-ID: <doc-2026-000141@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Arkav Foods Industries
+Tax Reg No:  TRN-807336037
+Plot 7, Industrial Area, Chennai 600058
+
+Tax Invoice
+
+Invoice No:  000330
+Dated:  July 08, 2026
+Your Order Ref:  PO 2026-000106
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   PO Ln   Item        Item Description            UOM   Qty      Rate    Amount    GST Rate   Tax
+1      1       SKU-00057   Toor dal - grade A - M057   KG    154.50   50.77   7843.97   GST0       0.00
+
+Taxable Value:  7843.97
+Tax Amount:  0.00
+Grand Total:  7843.97
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Arkav Foods Industries

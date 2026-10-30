@@ -1,0 +1,22 @@
+Supplier: Corir Engineering Spares Industries
+Tax Registration Number: TRN-992189234
+Plot 77, Industrial Area, Nagpur 440016
+
+TAX INVOICE
+
+Invoice Number: COR/26-27/198-RV
+Invoice Date: 21.04.2026
+P.O. #: PO/2026/000323
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   Item        Item Description                Unit   Qty   Price       Amount        Tax Rate   Tax
+1    1         SKU-00137   Ball bearing - grade C - M137   EA     28    23,110.09   6,47,082.52   GST 18%    1,16,474.85
+
+Total Before Tax: ₹6,47,082.52
+Tax Amount: ₹1,16,474.85
+Total Amount Due: ₹7,63,557.37
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

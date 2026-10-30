@@ -1,0 +1,45 @@
+From: requester.corporate.01@example.com
+To: invoices@buyer.example
+Date: Fri, 10 Apr 2026 11:26:00 +0530
+Subject: Invoice URR/26-27/175
+Message-ID: <doc-2026-000569@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Urros Consulting Pvt Ltd <ap@vnd-00161.example>
+Date: Fri, 10 Apr 2026 11:26:00 +0530
+Subject: Invoice URR/26-27/175
+To: requester.corporate.01@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Urros Consulting Pvt Ltd
+TRN: TRN-837449187
+Plot 67, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Inv #: URR/26-27/175
+Bill Date: 09-04-2026
+Attn: USR-0027
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   Item   Description          UOM   Quantity   Rate      Amount      GST Rate   Tax Amt
+1   -      Audit advisory       HR    35.0       3000.00   105000.00   GST 18%    18900.00
+2   -      Training programme   HR    23.0       5800.00   133400.00   Exempt     0.00
+
+Subtotal: ₹238400.00
+Tax Amount: ₹18900.00
+Total Amount Due: ₹257300.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Urros Consulting Pvt Ltd

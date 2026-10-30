@@ -1,0 +1,22 @@
+SELLER: ARHAL STATIONERS ENTERPRISES
+TAX REGN. NO.: TRN-675704134
+Plot 5, Industrial Area, Pune 411019
+
+TAX INVOICE
+
+INVOICE NUMBER: INV-2026-0374
+DATE: 09 Jun 2026
+PO NUMBER: PO-2026-000698
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   PO LN   ITEM CODE   ITEM DESCRIPTION                  UOM    QTY   UNIT PRICE   TAXABLE AMT   TAX RATE   GST AMT
+1   1       SKU-00319   Desk organiser - grade E - M319   PACK   147   180.95       26,599.65     Exempt     0.00
+
+TOTAL BEFORE TAX: Rs. 26,599.65
+GST: Rs. 0.00
+GRAND TOTAL: Rs. 26,599.65
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

@@ -1,0 +1,51 @@
+Seller  Quinwyn Engineering Spares Pvt Ltd
+Tax Registration Number  TRN-843564065
+Plot 75, Industrial Area, Hosur 635126
+
+TAX INVOICE
+
+Inv #  QUI/25-26/033
+Dated  2026-02-19
+Your Order Ref  PO-2026-000162
+Currency  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line: 1
+  Item Code: SKU-00195
+  Particulars: Hydraulic seal - grade J - M195
+  Unit: EA
+  Quantity: 13
+  Price: 908.45
+  Value: 11,809.85
+  GST Rate: GST18
+  GST Amt: 2,125.77
+Item 2
+  PO Line: 2
+  Item Code: SKU-00177
+  Particulars: Ball bearing - grade H - M177
+  Unit: EA
+  Quantity: 1
+  Price: 4,115.66
+  Value: 4,115.66
+  GST Rate: GST18
+  GST Amt: 740.82
+Item 3
+  PO Line: 3
+  Item Code: SKU-00162
+  Particulars: V-belt - grade F - M162
+  Unit: EA
+  Quantity: 15
+  Price: 1,254.54
+  Value: 18,818.10
+  GST Rate: GST18
+  GST Amt: 3,387.26
+
+Net Amount  34,743.61
+Tax  6,253.85
+Total Amount Due  40,997.46
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

@@ -1,0 +1,37 @@
+From: ap@vnd-00114.example
+To: invoices@buyer.example
+Date: Mon, 21 Sep 2026 14:07:00 +0530
+Subject: Invoice FAL/26-27/033
+Message-ID: <doc-2026-001763@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Falen Packaging Industries
+TRN : TRN-134648990
+Plot 20, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No : FAL/26-27/033
+Inv Date : 2026-09-18
+PO Number : PO/2026/001281
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | SKU | Particulars | UOM | Qty | Unit Price | Amount | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00233 | Corrugated box - grade E - M233 | BOX | 811 | 101.07 | 81,967.77 | GST18 | 14,754.20 |
+
+Subtotal : Rs. 81,967.77
+GST : Rs. 14,754.20
+Invoice Total : Rs. 96,721.97
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Falen Packaging Industries

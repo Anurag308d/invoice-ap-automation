@@ -1,0 +1,23 @@
+Ortav Engineering Spares LLP
+Tax Reg No  TRN-468754766
+Plot 90, Industrial Area, Hosur 635126
+
+TAX INVOICE
+
+Inv #  INV-2026-0236
+Dated  22-Apr-2026
+P.O. #  PO-2026-000492
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   Item        Particulars                       Unit   Quantity   Price      Taxable Amt   GST Rate   GST Amt
+1    1         SKU-00140   Gear coupling - grade C - M140    EA     10         1,393.22   13,932.20     GST18      2,507.80
+2    2         SKU-00152   Chain sprocket - grade D - M152   EA     19         572.63     10,879.97     GST18      1,958.39
+
+Net Amount  ₹24,812.17
+Tax  ₹4,466.19
+Invoice Total  ₹29,278.36
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

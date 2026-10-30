@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0473",
+  "invoiceDate": "2026-03-24T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000405",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 13944.60,
+  "tax": 0.00,
+  "payable": 13944.60
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00399",
+   "text": "Coffee powder - grade D - M399",
+   "unit": "KG",
+   "qty": 152.35,
+   "rate": 91.53,
+   "value": 13944.60,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

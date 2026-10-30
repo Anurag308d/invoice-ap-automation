@@ -1,0 +1,74 @@
+From: ap@vnd-00101.example
+To: invoices@buyer.example
+Date: Mon, 07 Sep 2026 15:20:00 +0530
+Subject: Invoice inv/2026-874
+Message-ID: <doc-2026-001662@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Halmer Infotech Pvt Ltd
+Tax Registration Number: TRN-211047529
+Plot 7, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Inv #: inv/2026-874
+Date: 24-Aug-2026
+PO Number: PO/2026/001102
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00241
+  Description: Laptop - grade A - M241
+  Unit: EA
+  Quantity: 15
+  Rate: 34,460.86
+  Taxable Amt: 516,912.90
+  GST Rate: GST 18%
+  Tax: 93,044.32
+Item 2
+  Order Line: 2
+  Item: SKU-00269
+  Description: Rack server - grade D - M269
+  Unit: EA
+  Quantity: 3
+  Rate: 8,371.46
+  Taxable Amt: 25,114.38
+  GST Rate: GST 18%
+  Tax: 4,520.59
+Item 3
+  Order Line: 3
+  Item: SKU-00262
+  Description: Wireless access point - grade C - M262
+  Unit: EA
+  Quantity: 4
+  Rate: 5,210.46
+  Taxable Amt: 20,841.84
+  GST Rate: GST 18%
+  Tax: 3,751.53
+Item 4
+  Order Line: 4
+  Item: SKU-00266
+  Description: Desktop workstation - grade D - M266
+  Unit: EA
+  Quantity: 16
+  Rate: 20,418.51
+  Taxable Amt: 326,696.16
+  GST Rate: GST 18%
+  Tax: 58,805.31
+
+Subtotal: INR 889,565.28
+Tax Amount: INR 160,121.75
+Grand Total: INR 1,049,687.03
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halmer Infotech Pvt Ltd

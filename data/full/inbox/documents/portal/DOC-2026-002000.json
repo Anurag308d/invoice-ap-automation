@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Irsel Stationers LLP",
+  "taxId": "TRN-264874055"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0057",
+  "invoiceDate": "2026-10-20T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001475",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 52964.62,
+  "tax": 9533.63,
+  "payable": 62498.25
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00292",
+   "text": "Whiteboard marker - grade B - M292",
+   "unit": "PACK",
+   "qty": 82,
+   "rate": 645.91,
+   "value": 52964.62,
+   "taxCode": "GST18",
+   "taxValue": 9533.63
+  }
+ ]
+}

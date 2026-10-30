@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0494",
+  "invoiceDate": "2026-03-30T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000212",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 14625.70,
+  "tax": 0.00,
+  "payable": 14625.70
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00391",
+   "text": "Coffee powder - grade C - M391",
+   "unit": "KG",
+   "qty": 159.20,
+   "rate": 91.87,
+   "value": 14625.70,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+From: ap@vnd-00220.example
+To: invoices@buyer.example
+Date: Thu, 05 Mar 2026 15:01:00 +0530
+Subject: Invoice MER/25-26/135
+Message-ID: <doc-2026-000250@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor:  Merdav Foods & Co
+Tax Reg No:  TRN-192950387
+Plot 29, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Tax Invoice No:  MER/25-26/135
+Invoice Date:  02-03-2026
+PO No:  PO 2026-000200
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line:  1
+  Item Code:  SKU-00378
+  Description:  Toor dal - grade B - M378
+  Unit:  KG
+  Qty:  289.41
+  Price:  150.06
+  Taxable Amt:  43428.86
+  GST Rate:  0%
+  GST Amt:  0.00
+
+Net Amount:  Rs. 43428.86
+Tax Amount:  Rs. 0.00
+Grand Total:  Rs. 43428.86
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merdav Foods & Co

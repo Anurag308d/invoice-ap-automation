@@ -1,0 +1,22 @@
+MERNOV PACKAGING LLP
+TAX REGN. NO.  TRN-262975787
+Plot 45, Industrial Area, Vadodara 390010
+
+TAX INVOICE
+
+INVOICE NO  INV-2026-0353
+DATED  2026-05-15
+PO NO  PO/2026/000622
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+LINE   PO LINE   ITEM        PARTICULARS                           UOM   QUANTITY   PRICE    AMOUNT      GST RATE   TAX
+1      1         SKU-00221   Carton sealer tape - grade C - M221   BOX   841        113.06   95,083.46   GST18      17,115.02
+
+TAXABLE VALUE  ₹95,083.46
+TAX  ₹17,115.02
+GRAND TOTAL  ₹1,12,198.48
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

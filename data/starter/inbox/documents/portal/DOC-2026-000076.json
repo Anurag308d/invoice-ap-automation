@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Parkav Electricals Industries",
+    "tax_registration_id": "TRN-961826361"
+  },
+  "invoice": {
+    "number": "INV-2026-0364",
+    "date": "2026-04-20",
+    "po_number": "PO-2026-000046",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "63816.50",
+    "tax_total": "11486.97",
+    "grand_total": "75303.47"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00018",
+      "description": "Copper cable - grade B - M018",
+      "uom": "EA",
+      "quantity": "55",
+      "unit_price": "1160.30",
+      "amount": "63816.50",
+      "tax_code": "GST18",
+      "tax_amount": "11486.97"
+    }
+  ]
+}

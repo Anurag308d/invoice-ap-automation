@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/25-26/364",
+    "date": "2026-03-23",
+    "po_number": "PO-2026-000322",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "708891.34",
+    "tax_total": "127600.44",
+    "grand_total": "836491.78"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00036",
+      "description": "PVC resin - grade E - M036",
+      "uom": "KG",
+      "quantity": "1596.71",
+      "unit_price": "443.97",
+      "amount": "708891.34",
+      "tax_code": "GST18",
+      "tax_amount": "127600.44"
+    }
+  ]
+}

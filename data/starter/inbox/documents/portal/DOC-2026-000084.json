@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/243",
+  "invoiceDate": "2026-04-29T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000054",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 35222.01,
+  "tax": 6339.96,
+  "payable": 41561.97
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00021",
+   "text": "Hydraulic seal - grade A - M021",
+   "unit": "EA",
+   "qty": 19,
+   "rate": 1853.79,
+   "value": 35222.01,
+   "taxCode": "GST18",
+   "taxValue": 6339.96
+  }
+ ]
+}

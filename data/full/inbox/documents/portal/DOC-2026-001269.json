@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Faltav Metals Pvt Ltd",
+  "taxId": "TRN-844321990"
+ },
+ "header": {
+  "invoiceNo": "000081",
+  "invoiceDate": "2026-07-13T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000924",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 171206.41,
+  "tax": 30817.15,
+  "payable": 202023.56
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00027",
+   "text": "Copper rod - grade D - M027",
+   "unit": "KG",
+   "qty": 1857.91,
+   "rate": 92.15,
+   "value": 171206.41,
+   "taxCode": "GST18",
+   "taxValue": 30817.15
+  }
+ ]
+}

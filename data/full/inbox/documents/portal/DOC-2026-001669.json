@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Arnov Electricals & Co",
+    "tax_registration_id": "TRN-367241317"
+  },
+  "invoice": {
+    "number": "SI00142",
+    "date": "2026-09-07",
+    "po_number": "PO-2026-001182",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "92078.20",
+    "tax_total": "16574.08",
+    "grand_total": "108652.28"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00073",
+      "description": "Cable tray - grade B - M073",
+      "uom": "EA",
+      "quantity": "92",
+      "unit_price": "1000.85",
+      "amount": "92078.20",
+      "tax_code": "GST18",
+      "tax_amount": "16574.08"
+    }
+  ]
+}

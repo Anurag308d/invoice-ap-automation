@@ -1,0 +1,40 @@
+From: ap@vnd-00168.example
+To: invoices@buyer.example
+Date: Thu, 16 Jul 2026 17:42:00 +0530
+Subject: Invoice ENH/26-27/368
+Message-ID: <doc-2026-001276@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor : Enhal Engineering Spares Enterprises
+Tax Registration Number : TRN-570899680
+Plot 74, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Invoice Number : ENH/26-27/368
+Bill Date : July 13, 2026
+PO No : PO-2026-000938
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| # | Order Line | Item Code | Particulars | UOM | Qty | Price | Taxable Amt | Tax Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00141 | Pump impeller - grade C - M141 | EA | 7 | 1,021.58 | 7,151.06 | 18% | 1,287.19 |
+| 2 | 2 | SKU-00198 | Valve actuator - grade J - M198 | EA | 4 | 2,294.57 | 9,178.28 | 18% | 1,652.09 |
+| 3 | 3 | SKU-00145 | Ball bearing - grade D - M145 | EA | 35 | 1,299.93 | 45,497.55 | 18% | 8,189.56 |
+| 4 | 4 | SKU-00133 | Pump impeller - grade B - M133 | EA | 29 | 2,310.68 | 67,009.72 | 18% | 12,061.75 |
+
+Total Before Tax : ₹1,28,836.61
+Total Tax : ₹23,190.59
+Invoice Total : ₹1,52,027.20
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enhal Engineering Spares Enterprises

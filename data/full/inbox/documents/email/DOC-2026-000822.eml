@@ -1,0 +1,45 @@
+From: requester.it.01@example.com
+To: invoices@buyer.example
+Date: Wed, 13 May 2026 09:17:00 +0530
+Subject: Invoice INV-2026-0240
+Message-ID: <doc-2026-000822@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Halsel Infotech Industries <ap@vnd-00019.example>
+Date: Wed, 13 May 2026 09:17:00 +0530
+Subject: Invoice INV-2026-0240
+To: requester.it.01@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Halsel Infotech Industries
+Tax Reg No:  TRN-680712908
+Plot 22, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0240
+Bill Date:  11/05/2026
+PO No:  PO 2026-000561
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | Item | Item Description | UOM | Qty | Unit Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00257 | Laptop - grade C - M257 | EA | 11 | 4041.12 | 44452.32 | 18% | 8001.42 |
+
+Subtotal:  INR 44452.32
+GST:  INR 8001.42
+Invoice Total:  INR 52453.74
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halsel Infotech Industries

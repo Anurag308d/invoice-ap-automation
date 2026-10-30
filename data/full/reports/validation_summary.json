@@ -1,0 +1,194 @@
+{
+ "checks": [
+  {
+   "check": "primary and unique keys",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "foreign keys (every declared FK)",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "allowed values, formats, ranges, required",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "embedded IDs and intake numbering",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "date order and the as-of limit (no completed event after as-of)",
+   "examples": [],
+   "labelled": 22,
+   "labelled_examples": [
+    "INV-VND-00193-2026-000125 dated before PO-2026-000115",
+    "INV-VND-00174-2026-000139 dated before PO-2026-000114",
+    "INV-VND-00270-2026-000246 dated before PO-2026-000228"
+   ],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "arithmetic (lines -> headers, PO and receipt balances)",
+   "examples": [],
+   "labelled": 65,
+   "labelled_examples": [
+    "GRNL-GRN-2026-000006-01 received beyond 5% tolerance",
+    "GRNL-GRN-2026-000031-01 received beyond 5% tolerance",
+    "GRNL-GRN-2026-000039-01 received beyond 5% tolerance"
+   ],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "lifecycle events (state machines, order, current = last event)",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "mix and edge-case counts vs target",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "oracle labels == injection intent (blocking issues)",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "no accidental duplicate pairs (number or content collisions)",
+   "examples": [],
+   "labelled": 100,
+   "labelled_examples": [
+    "INV-VND-00209-2026-000085 collides with INV-VND-00209-2026-000080",
+    "INV-VND-00298-2026-000102 collides with INV-VND-00298-2026-000096",
+    "INV-VND-00298-2026-000150 collides with INV-VND-00298-2026-000082"
+   ],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "polymorphic event references (ap_event, erp_event)",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "decision consistency (one decision per invoice, primary, blocked, issues, payment link)",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "R34e: no payment for a blocked or unapproved invoice",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "approvals only for invoices without a blocking issue at decision time",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "N:M bridge and duplicate pairs",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  },
+  {
+   "check": "capture consistency and policy provenance",
+   "examples": [],
+   "labelled": 0,
+   "labelled_examples": [],
+   "note": "",
+   "status": "pass",
+   "violations": 0
+  }
+ ],
+ "labelled": 187,
+ "status": "pass",
+ "tables": {
+  "actor_role": 6,
+  "ap_event": 16215,
+  "ap_exception": 745,
+  "app_user": 28,
+  "approval": 1497,
+  "captured_invoice": 2000,
+  "captured_invoice_line": 2960,
+  "duplicate_pair": 100,
+  "erp_event": 5050,
+  "extraction_field": 49435,
+  "goods_receipt": 1800,
+  "goods_receipt_line": 2669,
+  "ground_truth": 2000,
+  "ground_truth_line": 2960,
+  "intake_manifest": 2000,
+  "invoice": 2000,
+  "invoice_decision": 2000,
+  "invoice_line": 2960,
+  "match_allocation": 2591,
+  "match_result": 2960,
+  "payment": 1348,
+  "payment_terms": 4,
+  "policy_version": 1,
+  "purchase_order": 1500,
+  "purchase_order_line": 2200,
+  "sku": 400,
+  "tax_code": 5,
+  "vendor": 300,
+  "vendor_status_history": 340
+ },
+ "violations": 0
+}

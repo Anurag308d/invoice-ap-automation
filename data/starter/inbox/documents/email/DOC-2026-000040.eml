@@ -1,0 +1,37 @@
+From: ap@vnd-00004.example
+To: invoices@buyer.example
+Date: Tue, 24 Mar 2026 10:52:00 +0530
+Subject: Invoice 000321
+Message-ID: <doc-2026-000040@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Arkav Foods Industries
+Tax Reg No:  TRN-807336037
+Plot 7, Industrial Area, Chennai 600058
+
+Tax Invoice
+
+Invoice No:  000321
+Dated:  March 23, 2026
+Your Order Ref:  PO 2026-000042
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   PO Ln   Item        Item Description         UOM   Qty      Rate     Amount     GST Rate   Tax
+1      1       SKU-00060   Sugar - grade A - M060   KG    274.00   182.37   49969.38   GST0       0.00
+
+Taxable Value:  49969.38
+Tax Amount:  0.00
+Grand Total:  49969.38
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Arkav Foods Industries

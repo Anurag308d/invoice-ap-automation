@@ -1,0 +1,52 @@
+From: requester.manufacturing.02@example.com
+To: invoices@buyer.example
+Date: Tue, 07 Apr 2026 12:10:00 +0530
+Subject: Invoice INV-2026-0322
+Message-ID: <doc-2026-000527@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Arkav Metals Enterprises <ap@vnd-00138.example>
+Date: Tue, 07 Apr 2026 12:10:00 +0530
+Subject: Invoice INV-2026-0322
+To: requester.manufacturing.02@example.com
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier:  Arkav Metals Enterprises
+Tax Registration Number:  TRN-385905130
+Plot 44, Industrial Area, Hosur 635126
+
+Tax Invoice
+
+Inv #:  INV-2026-0322
+Inv Date:  07 Apr 2026
+PO Number:  PO 2026-000359
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln:  1
+  Item:  SKU-00042
+  Description:  Aluminium ingot - grade F - M042
+  UOM:  KG
+  Qty:  924.52
+  Unit Price:  185.34
+  Value:  171350.54
+  Tax Rate:  18%
+  Tax Amt:  30843.10
+
+Taxable Value:  Rs. 171350.54
+Tax Amount:  Rs. 30843.10
+Amount Payable:  Rs. 202193.64
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Arkav Metals Enterprises

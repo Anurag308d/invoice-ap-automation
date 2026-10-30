@@ -1,0 +1,37 @@
+From: ap@vnd-00046.example
+To: invoices@buyer.example
+Date: Mon, 11 May 2026 16:26:00 +0530
+Subject: Invoice INV-2026-0166
+Message-ID: <doc-2026-000803@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier: Zantav Packaging Pvt Ltd
+TRN: TRN-670152970
+Plot 49, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Invoice Number: INV-2026-0166
+Date: 2026-05-07
+Your Order Ref: PO/2026/000574
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | Order Line | Item | Item Description | Unit | Qty | Unit Price | Taxable Amt | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00207 | Strapping roll - grade A - M207 | BOX | 1044 | 107.54 | 112271.76 | 5% | 5613.59 |
+
+Taxable Value: Rs. 112271.76
+Tax: Rs. 5613.59
+Invoice Total: Rs. 117885.35
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Zantav Packaging Pvt Ltd

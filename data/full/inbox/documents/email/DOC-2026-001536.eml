@@ -1,0 +1,37 @@
+From: ap@vnd-00187.example
+To: invoices@buyer.example
+Date: Fri, 21 Aug 2026 11:00:00 +0530
+Subject: Invoice COR/26-27/101
+Message-ID: <doc-2026-001536@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller: Corsel Cloud Services LLP
+Tax Registration Number: TRN-634419480
+Plot 93, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Invoice No: COR/26-27/101
+Bill Date: 18-08-2026
+Kind Attn: USR-0022
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | Item | Description | Unit | Qty | Unit Price | Taxable Amt | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|
+| 1 | - | Cloud subscription | MONTH | 1 | 10,300.00 | 10,300.00 | GST 18% | 1,854.00 |
+
+Subtotal: Rs. 10,300.00
+Total Tax: Rs. 1,854.00
+Amount Payable: Rs. 12,154.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Corsel Cloud Services LLP

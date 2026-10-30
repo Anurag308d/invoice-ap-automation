@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Zankav Electricals Enterprises",
+    "tax_registration_id": "TRN-559614291"
+  },
+  "invoice": {
+    "number": "INV-2026-0352",
+    "date": "2026-06-16",
+    "po_number": "PO-2026-000790",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "422853.71",
+    "tax_total": "76113.67",
+    "grand_total": "498967.38"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00092",
+      "description": "Terminal block - grade D - M092",
+      "uom": "EA",
+      "quantity": "121",
+      "unit_price": "902.11",
+      "amount": "109155.31",
+      "tax_code": "GST18",
+      "tax_amount": "19647.96"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00105",
+      "description": "Cable tray - grade F - M105",
+      "uom": "EA",
+      "quantity": "191",
+      "unit_price": "1642.40",
+      "amount": "313698.40",
+      "tax_code": "GST18",
+      "tax_amount": "56465.71"
+    }
+  ]
+}

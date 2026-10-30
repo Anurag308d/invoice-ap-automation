@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0695",
+  "invoiceDate": "2026-07-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001032",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 41804.76,
+  "tax": 2090.24,
+  "payable": 43895.00
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00392",
+   "text": "Milk powder - grade C - M392",
+   "unit": "KG",
+   "qty": 33.98,
+   "rate": 84.43,
+   "value": 2868.93,
+   "taxCode": "GST5",
+   "taxValue": 143.45
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00381",
+   "text": "Sugar - grade B - M381",
+   "unit": "KG",
+   "qty": 279.25,
+   "rate": 139.43,
+   "value": 38935.83,
+   "taxCode": "GST5",
+   "taxValue": 1946.79
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urmer Stationers & Co",
+  "taxId": "TRN-459032004"
+ },
+ "header": {
+  "invoiceNo": "URM/25-26/226",
+  "invoiceDate": "2026-03-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000353",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 59483.52,
+  "tax": 0.00,
+  "payable": 59483.52
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00297",
+   "text": "Copier paper - grade C - M297",
+   "unit": "PACK",
+   "qty": 72,
+   "rate": 826.16,
+   "value": 59483.52,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  }
+ ]
+}

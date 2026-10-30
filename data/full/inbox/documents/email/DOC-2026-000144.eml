@@ -1,0 +1,38 @@
+From: ap@vnd-00226.example
+To: invoices@buyer.example
+Date: Tue, 17 Feb 2026 09:28:00 +0530
+Subject: Invoice SI00163
+Message-ID: <doc-2026-000144@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Tavhal Packaging Pvt Ltd
+Tax Reg No: TRN-248478217
+Plot 35, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Inv #: SI00163
+Bill Date: 2026-02-16
+PO No: PO 2026-000156
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Ln | SKU | Item Description | UOM | Qty | Unit Price | Value | GST Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00233 | Corrugated box - grade E - M233 | BOX | 61 | 106.42 | 6,491.62 | 18% | 1,168.49 |
+| 2 | 2 | SKU-00237 | Carton sealer tape - grade E - M237 | BOX | 258 | 35.20 | 9,081.60 | 5% | 454.08 |
+
+Total Before Tax: INR 15,573.22
+GST: INR 1,622.57
+Amount Payable: INR 17,195.79
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Tavhal Packaging Pvt Ltd

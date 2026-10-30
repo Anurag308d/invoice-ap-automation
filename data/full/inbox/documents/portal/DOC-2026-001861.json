@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0803",
+  "invoiceDate": "2026-09-30T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001451",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 27945.62,
+  "tax": 1397.28,
+  "payable": 29342.90
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00389",
+   "text": "Sugar - grade C - M389",
+   "unit": "KG",
+   "qty": 197.37,
+   "rate": 141.59,
+   "value": 27945.62,
+   "taxCode": "GST5",
+   "taxValue": 1397.28
+  }
+ ]
+}

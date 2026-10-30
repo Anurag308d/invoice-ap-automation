@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Orgar Electricals Industries",
+    "tax_registration_id": "TRN-487171397"
+  },
+  "invoice": {
+    "number": "INV-2026-0370",
+    "date": "2026-10-12",
+    "po_number": "PO-2026-001365",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "142746.39",
+    "tax_total": "25694.35",
+    "grand_total": "168440.74"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00095",
+      "description": "LED panel - grade E - M095",
+      "uom": "EA",
+      "quantity": "73",
+      "unit_price": "1955.43",
+      "amount": "142746.39",
+      "tax_code": "GST18",
+      "tax_amount": "25694.35"
+    }
+  ]
+}

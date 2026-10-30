@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Zanquin Metals Industries",
+    "tax_registration_id": "TRN-637316222"
+  },
+  "invoice": {
+    "number": "000356",
+    "date": "2026-01-28",
+    "po_number": "PO-2026-000065",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "110967.36",
+    "tax_total": "19974.12",
+    "grand_total": "130941.48"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00020",
+      "description": "PVC resin - grade C - M020",
+      "uom": "KG",
+      "quantity": "429.54",
+      "unit_price": "258.34",
+      "amount": "110967.36",
+      "tax_code": "GST18",
+      "tax_amount": "19974.12"
+    }
+  ]
+}

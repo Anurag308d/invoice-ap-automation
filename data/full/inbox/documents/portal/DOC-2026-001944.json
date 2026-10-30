@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0202",
+  "invoiceDate": "2026-10-12T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001450",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 20570.72,
+  "tax": 0.00,
+  "payable": 20570.72
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00300",
+   "text": "Whiteboard marker - grade C - M300",
+   "unit": "PACK",
+   "qty": 166,
+   "rate": 123.92,
+   "value": 20570.72,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  }
+ ]
+}

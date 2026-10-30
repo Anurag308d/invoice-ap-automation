@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Garen Foods Pvt Ltd",
+  "taxId": "TRN-257802712"
+ },
+ "header": {
+  "invoiceNo": "SI00385",
+  "invoiceDate": "2026-01-12T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000017",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 12184.06,
+  "tax": 609.20,
+  "payable": 12793.26
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00392",
+   "text": "Milk powder - grade C - M392",
+   "unit": "KG",
+   "qty": 154.62,
+   "rate": 78.80,
+   "value": 12184.06,
+   "taxCode": "GST5",
+   "taxValue": 609.20
+  }
+ ]
+}

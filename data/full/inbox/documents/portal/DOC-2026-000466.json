@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Corjor Stationers Pvt Ltd",
+    "tax_registration_id": "TRN-236408597"
+  },
+  "invoice": {
+    "number": "COR/25-26/252",
+    "date": "2026-03-30",
+    "po_number": "PO-2026-000352",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "96971.68",
+    "tax_total": "11755.96",
+    "grand_total": "108727.64"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00310",
+      "description": "Stapler - grade D - M310",
+      "uom": "PACK",
+      "quantity": "80",
+      "unit_price": "395.76",
+      "amount": "31660.80",
+      "tax_code": "EXEMPT",
+      "tax_amount": "0.00"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00306",
+      "description": "Toner cartridge - grade D - M306",
+      "uom": "PACK",
+      "quantity": "79",
+      "unit_price": "826.72",
+      "amount": "65310.88",
+      "tax_code": "GST18",
+      "tax_amount": "11755.96"
+    }
+  ]
+}

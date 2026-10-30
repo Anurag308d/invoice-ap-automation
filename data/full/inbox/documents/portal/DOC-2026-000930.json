@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Zanlum Stationers Enterprises",
+    "tax_registration_id": "TRN-268005687"
+  },
+  "invoice": {
+    "number": "INV-2026-0073",
+    "date": "2026-06-01",
+    "po_number": "PO-2026-000664",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "24301.62",
+    "tax_total": "4374.29",
+    "grand_total": "28675.91"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00321",
+      "description": "Copier paper - grade F - M321",
+      "uom": "PACK",
+      "quantity": "63",
+      "unit_price": "385.74",
+      "amount": "24301.62",
+      "tax_code": "GST18",
+      "tax_amount": "4374.29"
+    }
+  ]
+}

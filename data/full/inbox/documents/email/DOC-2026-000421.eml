@@ -1,0 +1,53 @@
+From: requester.it.02@example.com
+To: invoices@buyer.example
+Date: Thu, 26 Mar 2026 12:03:00 +0530
+Subject: Invoice INV-2026-0315
+Message-ID: <doc-2026-000421@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Veltav Infotech Pvt Ltd <ap@vnd-00251.example>
+Date: Thu, 26 Mar 2026 12:03:00 +0530
+Subject: Invoice INV-2026-0315
+To: requester.it.02@example.com
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor:  Veltav Infotech Pvt Ltd
+Tax Registration Number:  TRN-374028505
+Plot 60, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Invoice No:  INV-2026-0315
+Invoice Date:  23.03.2026
+Purchase Order:  PO-2026-000277
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line:  1
+  Item:  SKU-00261
+  Particulars:  Rack server - grade C - M261
+  UOM:  EA
+  Qty:  6
+  Price:  6,346.57
+  Value:  38,079.42
+  Tax Code:  GST18
+  GST Amt:  6,854.30
+
+Taxable Value:  38,079.42
+GST:  6,854.30
+Invoice Total:  44,933.72
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Veltav Infotech Pvt Ltd

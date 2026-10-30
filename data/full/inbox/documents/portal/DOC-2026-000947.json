@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ennov Engineering Spares Pvt Ltd",
+    "tax_registration_id": "TRN-779290292"
+  },
+  "invoice": {
+    "number": "ENN/26-27/299",
+    "date": "2026-06-04",
+    "po_number": "PO-2026-000612",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "30458.96",
+    "tax_total": "5482.61",
+    "grand_total": "35941.57"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00200",
+      "description": "Chain sprocket - grade J - M200",
+      "uom": "EA",
+      "quantity": "28",
+      "unit_price": "1087.82",
+      "amount": "30458.96",
+      "tax_code": "GST18",
+      "tax_amount": "5482.61"
+    }
+  ]
+}

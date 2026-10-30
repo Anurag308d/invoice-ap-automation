@@ -1,0 +1,36 @@
+From: ap@vnd-00020.example
+To: invoices@buyer.example
+Date: Mon, 21 Sep 2026 16:26:00 +0530
+Subject: Invoice INV-2026-0245
+Message-ID: <doc-2026-000184@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller : Halmer Safety Gear & Co
+Tax Regn. No. : TRN-125563786
+Plot 23, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Invoice Number : INV-2026-0245
+Inv Date : 15/09/2026
+Purchase Order : PO 2026-000127
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   Order Line   Item Code   Item Description                  Unit   Qty   Unit Price   Taxable Amt   Tax Code   GST Amt
+1      1            SKU-00052   Nitrile gloves - grade A - M052   EA     46    876.97       40340.62      GST5       2017.03
+
+Total Before Tax : ₹40340.62
+Tax Amount : ₹2017.03
+Grand Total : ₹42357.65
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halmer Safety Gear & Co

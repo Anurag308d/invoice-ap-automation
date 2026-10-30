@@ -1,0 +1,69 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0512",
+  "invoiceDate": "2026-04-07T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000482",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 119972.00,
+  "tax": 3000.37,
+  "payable": 122972.37
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00392",
+   "text": "Milk powder - grade C - M392",
+   "unit": "KG",
+   "qty": 335.08,
+   "rate": 79.95,
+   "value": 26789.65,
+   "taxCode": "GST5",
+   "taxValue": 1339.48
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00398",
+   "text": "Tea leaves - grade D - M398",
+   "unit": "KG",
+   "qty": 204.38,
+   "rate": 162.53,
+   "value": 33217.88,
+   "taxCode": "GST5",
+   "taxValue": 1660.89
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00399",
+   "text": "Coffee powder - grade D - M399",
+   "unit": "KG",
+   "qty": 194.58,
+   "rate": 89.48,
+   "value": 17411.02,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00375",
+   "text": "Coffee powder - grade A - M375",
+   "unit": "KG",
+   "qty": 407.21,
+   "rate": 104.50,
+   "value": 42553.45,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

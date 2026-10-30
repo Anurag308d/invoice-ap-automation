@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/297",
+  "invoiceDate": "2026-09-14T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000133",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 38532.24,
+  "tax": 6935.80,
+  "payable": 45468.04
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00030",
+   "text": "Gear coupling - grade B - M030",
+   "unit": "EA",
+   "qty": 36,
+   "rate": 1070.34,
+   "value": 38532.24,
+   "taxCode": "GST18",
+   "taxValue": 6935.80
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Irsel Stationers LLP",
+  "taxId": "TRN-264874055"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0053",
+  "invoiceDate": "2026-02-06T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000109",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 107033.72,
+  "tax": 19266.07,
+  "payable": 126299.79
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00305",
+   "text": "Copier paper - grade D - M305",
+   "unit": "PACK",
+   "qty": 148,
+   "rate": 292.94,
+   "value": 43355.12,
+   "taxCode": "GST18",
+   "taxValue": 7803.92
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00293",
+   "text": "Notebook - grade B - M293",
+   "unit": "PACK",
+   "qty": 170,
+   "rate": 374.58,
+   "value": 63678.60,
+   "taxCode": "GST18",
+   "taxValue": 11462.15
+  }
+ ]
+}

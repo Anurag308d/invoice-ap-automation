@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0200",
+  "invoiceDate": "2026-09-28T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001404",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 66605.22,
+  "tax": 1451.64,
+  "payable": 68056.86
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00315",
+   "text": "File folder - grade E - M315",
+   "unit": "PACK",
+   "qty": 198,
+   "rate": 146.63,
+   "value": 29032.74,
+   "taxCode": "GST5",
+   "taxValue": 1451.64
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00310",
+   "text": "Stapler - grade D - M310",
+   "unit": "PACK",
+   "qty": 99,
+   "rate": 379.52,
+   "value": 37572.48,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  }
+ ]
+}

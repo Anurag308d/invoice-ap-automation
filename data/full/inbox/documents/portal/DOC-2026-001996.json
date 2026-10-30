@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0279",
+  "invoiceDate": "2026-10-19T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001423",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 13027.61,
+  "tax": 2344.97,
+  "payable": 15372.58
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00138",
+   "text": "V-belt - grade C - M138",
+   "unit": "EA",
+   "qty": 17,
+   "rate": 766.33,
+   "value": 13027.61,
+   "taxCode": "GST18",
+   "taxValue": 2344.97
+  }
+ ]
+}

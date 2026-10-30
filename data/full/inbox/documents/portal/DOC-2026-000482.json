@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Selwyn Metals Enterprises",
+  "taxId": "TRN-975298949"
+ },
+ "header": {
+  "invoiceNo": "SI00107",
+  "invoiceDate": "2026-04-02T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000174",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 180982.91,
+  "tax": 32576.92,
+  "payable": 213559.83
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00036",
+   "text": "PVC resin - grade E - M036",
+   "unit": "KG",
+   "qty": 117.50,
+   "rate": 458.06,
+   "value": 53822.05,
+   "taxCode": "GST18",
+   "taxValue": 9687.97
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00042",
+   "text": "Aluminium ingot - grade F - M042",
+   "unit": "KG",
+   "qty": 715.11,
+   "rate": 177.82,
+   "value": 127160.86,
+   "taxCode": "GST18",
+   "taxValue": 22888.95
+  }
+ ]
+}

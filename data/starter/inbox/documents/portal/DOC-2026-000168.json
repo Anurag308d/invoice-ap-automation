@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumzan Engineering Spares LLP",
+  "taxId": "TRN-973008159"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0101",
+  "invoiceDate": "2026-08-21T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000120",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 43431.50,
+  "tax": 7817.67,
+  "payable": 51249.17
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00026",
+   "text": "Chain sprocket - grade A - M026",
+   "unit": "EA",
+   "qty": 35,
+   "rate": 1240.90,
+   "value": 43431.50,
+   "taxCode": "GST18",
+   "taxValue": 7817.67
+  }
+ ]
+}

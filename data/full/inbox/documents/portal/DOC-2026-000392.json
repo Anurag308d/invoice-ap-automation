@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Parur Engineering Spares & Co",
+  "taxId": "TRN-151942954"
+ },
+ "header": {
+  "invoiceNo": "PAR/25-26/163",
+  "invoiceDate": "2026-03-23T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000376",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 239327.28,
+  "tax": 43078.91,
+  "payable": 282406.19
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00180",
+   "text": "Gear coupling - grade H - M180",
+   "unit": "EA",
+   "qty": 36,
+   "rate": 6647.98,
+   "value": 239327.28,
+   "taxCode": "GST18",
+   "taxValue": 43078.91
+  }
+ ]
+}

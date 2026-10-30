@@ -1,0 +1,54 @@
+From: ap@vnd-00270.example
+To: invoices@buyer.example
+Date: Wed, 07 Oct 2026 14:37:00 +0530
+Subject: Invoice MER/26-27/362
+Message-ID: <doc-2026-001910@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor: Merjor Engineering Spares & Co
+Tax Reg No: TRN-906966165
+Plot 79, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: MER/26-27/362
+Invoice Date: 05 Oct 2026
+PO No: PO/2026/001368
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line: 1
+  Item: SKU-00154
+  Description: V-belt - grade E - M154
+  Unit: EA
+  Qty: 32
+  Rate: 20,641.81
+  Amount: 6,60,537.92
+  Tax Code: GST18
+  Tax Amt: 1,18,896.83
+Item 2
+  PO Line: 2
+  Item: SKU-00153
+  Description: Ball bearing - grade E - M153
+  Unit: EA
+  Qty: 34
+  Rate: 4,558.72
+  Amount: 1,54,996.48
+  Tax Code: GST18
+  Tax Amt: 27,899.37
+
+Taxable Value: ₹8,15,534.40
+GST: ₹1,46,796.20
+Grand Total: ₹9,62,330.60
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merjor Engineering Spares & Co

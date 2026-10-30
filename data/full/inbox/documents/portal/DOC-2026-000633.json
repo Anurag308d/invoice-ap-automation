@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Faltav Metals Pvt Ltd",
+  "taxId": "TRN-844321990"
+ },
+ "header": {
+  "invoiceNo": "000077",
+  "invoiceDate": "2026-04-16T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000305",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 34210.79,
+  "tax": 6157.94,
+  "payable": 40368.73
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00039",
+   "text": "Brass rod - grade E - M039",
+   "unit": "KG",
+   "qty": 187.59,
+   "rate": 182.37,
+   "value": 34210.79,
+   "taxCode": "GST18",
+   "taxValue": 6157.94
+  }
+ ]
+}

@@ -1,8 +1,7 @@
 """Command-line interface: python -m invoice_ap <command>.
 
-Implemented: `plan`, `docs`, `policy` (Stage 1), `generate`, `validate --quick` (Stage 2), `run`,
-`evaluate` and `explain` (Stages 3-4). The remaining commands are registered
-so the planned surface is visible; they exit with status 2 until their stage lands.
+Commands: plan, docs, policy, generate, run, evaluate, explain, validate [--quick], export, dashboard,
+queue, build (one scale end to end), build-all (both scales + reproducibility check) and repro.
 """
 from __future__ import annotations
 
@@ -12,13 +11,7 @@ from pathlib import Path
 
 from .common.paths import DEFAULT_POLICY, DOCS_DIR, SPEC_JSON
 
-PLANNED = {
-    "export": ("Write CSV / JSON / SQL seed exports", 5),
-    "repro": ("Regenerate twice with the same seed and compare checksums", 5),
-    "build-all": ("Build, run, evaluate, validate, export and report for both scales", 5),
-    "queue": ("Show an actor role its work queue", 5),
-    "dashboard": ("Write the offline HTML dashboard", 5),
-}
+PLANNED: dict[str, tuple[str, int]] = {}
 
 
 def _cmd_plan(args: argparse.Namespace) -> int:
@@ -106,11 +99,18 @@ def _cmd_validate(args: argparse.Namespace) -> int:
     from .common.policy import load_policy
     from .generator.allocation import allocate
     from .quality.quick import load, validate
-    if not args.quick:
-        print("the full validation suite is planned for Stage 5; use --quick", file=sys.stderr)
-        return 2
     root = Path(args.data) if args.data else DEFAULT_DATA_DIR / args.scale
-    report = validate(load(root), load_policy(), allocate(args.scale))
+    if args.quick:
+        report = validate(load(root), load_policy(), allocate(args.scale))
+    else:
+        import json
+        from .quality.suite import run_suite, to_markdown
+        report = run_suite(root, load_policy(), allocate(args.scale))
+        (root / "reports").mkdir(parents=True, exist_ok=True)
+        (root / "reports" / "validation_summary.json").write_text(
+            json.dumps(report, indent=1, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+        (root / "reports" / "validation_summary.md").write_text(to_markdown(report, f"Validation summary ({args.scale})"),
+                                                               encoding="utf-8")
     for item in report["checks"]:
         print(f"{item['status']:4}  {item['check']}: {item['violations']} violations, {item['labelled']} labelled")
     print(f"{report['status'].upper()}: {report['violations']} violations, {report['labelled']} labelled defects")
@@ -136,28 +136,10 @@ def _cmd_run(args: argparse.Namespace) -> int:
 
 
 def _cmd_evaluate(args: argparse.Namespace) -> int:
-    import json
     from .common.policy import load_policy
-    from .evaluation.decisions import acceptance_csv, evaluate_decisions
-    from .evaluation.decisions import to_markdown as decisions_md
-    from .evaluation.extraction import evaluate, to_markdown
+    from .evaluation.report import passed, write_reports
     root = _root(args)
-    reports = root / "reports"
-    reports.mkdir(parents=True, exist_ok=True)
-
-    def dump(name: str, obj) -> None:
-        (reports / name).write_text(json.dumps(obj, indent=1, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
-    manifest = root / "reports" / "source_manifest.json"
-    label = json.loads(manifest.read_text(encoding="utf-8"))["scale"] if manifest.exists() else root.name
-    report = evaluate(root)
-    dump("extraction_evaluation.json", report)
-    (reports / "extraction_evaluation.md").write_text(to_markdown(report, f"Extraction evaluation ({label})"),
-                                                      encoding="utf-8")
-    decisions, acceptance = evaluate_decisions(root, load_policy().as_of_date)
-    dump("evaluation.json", {"extraction_summary": {k: v for k, v in report.items() if k != "mismatches"},
-                             "decisions": decisions})
-    (reports / "evaluation.md").write_text(decisions_md(decisions, f"Decision evaluation ({label})"), encoding="utf-8")
-    (reports / "acceptance_per_invoice.csv").write_bytes(acceptance_csv(acceptance))
+    report, decisions = write_reports(root, load_policy())
     bad = len(report["non_degraded_documents_with_mismatch"])
     acc = decisions["acceptance"]
     print(f"extraction: {report['documents_exact']}/{report['documents']} documents exact, field match "
@@ -168,10 +150,52 @@ def _cmd_evaluate(args: argparse.Namespace) -> int:
           f"{decisions['duplicates']['expected_pairs']}, unsafe payments "
           f"{decisions['payments']['blocked_or_unapproved_with_payment']}, STP {decisions['kpis']['stp_rate']}")
     print(f"acceptance (R34a-e): pass {acc['pass']}/{acc['invoices']}, fail {acc['fail']} "
-          f"(capture review flagged {acc['r34a_flagged_capture_review']}) -> {reports}")
-    ok = report["silent_errors"] == 0 and bad == 0 and acc["fail"] == 0 \
-        and decisions["payments"]["blocked_or_unapproved_with_payment"] == 0
-    return 0 if ok else 1
+          f"(capture review flagged {acc['r34a_flagged_capture_review']}) -> {root / 'reports'}")
+    return 0 if passed(report, decisions) else 1
+
+
+def _cmd_build(args: argparse.Namespace) -> int:
+    from .common.paths import DEFAULT_DATA_DIR
+    from .orchestrate import build
+    out = Path(args.out) if args.out else DEFAULT_DATA_DIR / args.scale
+    return 0 if build(args.scale, args.seed, out)["ok"] else 1
+
+
+def _cmd_build_all(args: argparse.Namespace) -> int:
+    from .orchestrate import build_all
+    return 0 if build_all(args.seed, check=not args.no_check) else 1
+
+
+def _cmd_repro(args: argparse.Namespace) -> int:
+    from .orchestrate import repro
+    root = _root(args)
+    return 0 if repro(args.scale, args.seed, root if root.exists() else None)["pass"] else 1
+
+
+def _cmd_export(args: argparse.Namespace) -> int:
+    from .export.exports import write_exports
+    written = write_exports(_root(args))
+    print(f"exports: {len(written)} files, {sum(written.values()) / 1e6:.1f} MB -> {_root(args) / 'exports'}")
+    return 0
+
+
+def _cmd_queue(args: argparse.Namespace) -> int:
+    from .common.policy import load_policy
+    from .report.queue import ROLES, queue_items, render
+    policy = load_policy()
+    for role in ([args.role] if args.role else ROLES):
+        print(render(queue_items(_root(args), role, policy.as_of_date, policy.raw, args.user), role, args.user)[
+              :None if args.all else 4000])
+    return 0
+
+
+def _cmd_dashboard(args: argparse.Namespace) -> int:
+    from .common.policy import load_policy
+    from .report.dashboard import build_dashboard
+    path = _root(args) / "reports" / "dashboard.html"
+    path.write_bytes(build_dashboard(_root(args), load_policy()))
+    print(f"dashboard: {path} ({path.stat().st_size / 1e6:.1f} MB, offline)")
+    return 0
 
 
 def _cmd_explain(args: argparse.Namespace) -> int:
@@ -201,7 +225,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--seed", type=int, default=20261022)
     p.add_argument("--out", default=None, help="output folder (default data/<scale>, git-ignored until Stage 5)")
     p.set_defaults(func=_cmd_generate)
-    p = sub.add_parser("validate", help="Self-check a built dataset (--quick now; full suite in Stage 5)")
+    p = sub.add_parser("validate", help="Full validation suite over every table (--quick: the generator self-checks)")
     p.add_argument("--quick", action="store_true")
     p.add_argument("--scale", default="starter")
     p.add_argument("--data", default=None, help="dataset folder (default data/<scale>)")
@@ -215,6 +239,32 @@ def build_parser() -> argparse.ArgumentParser:
         p.add_argument("--scale", default="starter")
         p.add_argument("--data", default=None, help="dataset folder (default data/<scale>)")
         p.set_defaults(func=func)
+    for name, func, help_text in (("export", _cmd_export, "Write JSON exports and the SQL seeds"),
+                                  ("dashboard", _cmd_dashboard, "Write the offline HTML dashboard"),
+                                  ("repro", _cmd_repro, "Rebuild twice (+ another seed) and compare checksums")):
+        p = sub.add_parser(name, help=help_text)
+        p.add_argument("--scale", default="starter")
+        p.add_argument("--data", default=None, help="dataset folder (default data/<scale>)")
+        if name == "repro":
+            p.add_argument("--seed", type=int, default=20261022)
+        p.set_defaults(func=func)
+    p = sub.add_parser("queue", help="Show the open work queue of one actor role (or all five)")
+    p.add_argument("--role", choices=("BUSINESS_REQUESTER", "PROCESS_OWNER", "APPROVER", "OPERATIONS_ANALYST",
+                                      "SYSTEM_ADMINISTRATOR"))
+    p.add_argument("--user", default=None)
+    p.add_argument("--all", action="store_true", help="print every item, not the first screenful")
+    p.add_argument("--scale", default="starter")
+    p.add_argument("--data", default=None)
+    p.set_defaults(func=_cmd_queue)
+    p = sub.add_parser("build", help="Build one scale end to end: generate, run, evaluate, validate, export, dashboard")
+    p.add_argument("--scale", default="starter")
+    p.add_argument("--seed", type=int, default=20261022)
+    p.add_argument("--out", default=None)
+    p.set_defaults(func=_cmd_build)
+    p = sub.add_parser("build-all", help="Build both scales into data/ and check reproducibility")
+    p.add_argument("--seed", type=int, default=20261022)
+    p.add_argument("--no-check", action="store_true", help="skip the reproducibility rebuilds")
+    p.set_defaults(func=_cmd_build_all)
     for name, (help_text, stage) in PLANNED.items():
         p = sub.add_parser(name, help=f"{help_text} (planned: Stage {stage})")
         p.set_defaults(func=lambda a, n=name, s=stage: _planned(n, s))

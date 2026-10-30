@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0176",
+  "invoiceDate": "2026-02-25T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000203",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 87517.87,
+  "tax": 15753.22,
+  "payable": 103271.09
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00322",
+   "text": "Toner cartridge - grade F - M322",
+   "unit": "PACK",
+   "qty": 187,
+   "rate": 468.01,
+   "value": 87517.87,
+   "taxCode": "GST18",
+   "taxValue": 15753.22
+  }
+ ]
+}

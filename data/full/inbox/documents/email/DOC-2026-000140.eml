@@ -1,0 +1,36 @@
+From: ap@vnd-00082.example
+To: invoices@buyer.example
+Date: Mon, 16 Feb 2026 16:54:00 +0530
+Subject: Invoice MER/25-26/365
+Message-ID: <doc-2026-000140@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Mersel Packaging LLP
+Tax Reg No: TRN-340306941
+Plot 85, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Bill No: MER/25-26/365
+Bill Date: 16-Feb-2026
+Purchase Order: PO-2026-000106
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   PO Line   Item        Description                         Unit   Qty    Rate    Amount        Tax Rate   Tax Amt
+1      1         SKU-00228   Bubble wrap roll - grade D - M228   BOX    1173   86.07   1,00,960.11   18%        18,172.82
+
+Total Before Tax: INR 1,00,960.11
+Tax: INR 18,172.82
+Invoice Total: INR 1,19,132.93
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Mersel Packaging LLP

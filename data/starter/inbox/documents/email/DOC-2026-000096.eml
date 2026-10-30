@@ -1,0 +1,38 @@
+From: ap@vnd-00019.example
+To: invoices@buyer.example
+Date: Mon, 18 May 2026 13:34:00 +0530
+Subject: Invoice INV-2026-0236
+Message-ID: <doc-2026-000096@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Wynir Consulting Industries
+Tax Reg No:  TRN-375125426
+Plot 22, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0236
+Bill Date:  14/05/2026
+Requested By:  USR-0027
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Item | Item Description | UOM | Qty | Unit Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|
+| 1 | - | Audit advisory | HR | 57.0 | 3400.00 | 193800.00 | 18% | 34884.00 |
+| 2 | - | Legal consultation | HR | 27.0 | 4200.00 | 113400.00 | 18% | 20412.00 |
+
+Subtotal:  INR 307200.00
+GST:  INR 55296.00
+Invoice Total:  INR 362496.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Wynir Consulting Industries

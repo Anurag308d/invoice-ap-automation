@@ -1,0 +1,23 @@
+ZANCOR ENGINEERING SPARES & CO
+TAX REGN. NO. : TRN-406946036
+Plot 94, Industrial Area, Vadodara 390010
+
+TAX INVOICE
+
+INVOICE NUMBER : ZAN/26-27/369
+INV DATE : 27/08/2026
+YOUR ORDER REF : PO-2026-001075
+CURRENCY : INR
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ORDER LINE   ITEM        PARTICULARS                       UNIT   QUANTITY   UNIT PRICE   VALUE       TAX CODE   GST AMT
+1   1            SKU-00171   Hydraulic seal - grade G - M171   EA     7          4,913.67     34,395.69   GST 18%    6,191.22
+
+SUBTOTAL : 34,395.69
+GST : 6,191.22
+INVOICE TOTAL : 40,586.91
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000011",
+  "invoiceDate": "2026-04-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000417",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 180280.40,
+  "tax": 32450.47,
+  "payable": 212730.87
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00126",
+   "text": "Valve actuator - grade A - M126",
+   "unit": "EA",
+   "qty": 20,
+   "rate": 9014.02,
+   "value": 180280.40,
+   "taxCode": "GST18",
+   "taxValue": 32450.47
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Corzan Metals LLP",
+  "taxId": "TRN-946536957"
+ },
+ "header": {
+  "invoiceNo": "COR/25-26/327",
+  "invoiceDate": "2026-03-30T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000025",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 58962.19,
+  "tax": 10613.19,
+  "payable": 69575.38
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00009",
+   "text": "MS sheet - grade B - M009",
+   "unit": "KG",
+   "qty": 341.79,
+   "rate": 172.51,
+   "value": 58962.19,
+   "taxCode": "GST18",
+   "taxValue": 10613.19
+  }
+ ]
+}

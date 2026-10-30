@@ -1,0 +1,36 @@
+From: ap@vnd-00181.example
+To: invoices@buyer.example
+Date: Wed, 29 Apr 2026 13:44:00 +0530
+Subject: Invoice GAR/26-27/012
+Message-ID: <doc-2026-000725@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier:  Garpar Electricals Pvt Ltd
+Tax Registration Number:  TRN-648289964
+Plot 87, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Inv #:  GAR/26-27/012
+Bill Date:  April 29, 2026
+P.O. #:  PO/2026/000530
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   SKU         Description                   Unit   Quantity   Rate       Value        Tax Rate   Tax Amt
+1    1       SKU-00089   Cable tray - grade D - M089   EA     156        2,214.04   345,390.24   18%        62,170.24
+
+Taxable Value:  Rs. 345,390.24
+Total Tax:  Rs. 62,170.24
+Total Amount Due:  Rs. 407,560.48
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Garpar Electricals Pvt Ltd

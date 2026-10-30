@@ -1,0 +1,23 @@
+VENDOR: TAVEN ELECTRICALS & CO
+TAX REGISTRATION NUMBER: TRN-553361854
+Plot 91, Industrial Area, Nagpur 440016
+
+TAX INVOICE
+
+INV #: INV-2026-0372
+DATED: 2026-06-08
+PO NO: PO 2026-000611
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+LINE   PO LN   ITEM        DESCRIPTION                   UNIT   QUANTITY   RATE      TAXABLE AMT   GST RATE   TAX
+1      1       SKU-00097   Cable tray - grade E - M097   EA     14         378.18    5294.52       GST18      953.01
+2      2       SKU-00065   Cable tray - grade A - M065   EA     24         1019.16   24459.84      GST18      4402.77
+
+SUBTOTAL: Rs. 29754.36
+TAX: Rs. 5355.78
+GRAND TOTAL: Rs. 35110.14
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

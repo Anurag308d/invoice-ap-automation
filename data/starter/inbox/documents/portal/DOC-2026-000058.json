@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumen Engineering Spares Industries",
+  "taxId": "TRN-266048241"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0295",
+  "invoiceDate": "2026-04-09T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000037",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 6324.42,
+  "tax": 1138.40,
+  "payable": 7462.82
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00029",
+   "text": "Hydraulic seal - grade B - M029",
+   "unit": "EA",
+   "qty": 6,
+   "rate": 1054.07,
+   "value": 6324.42,
+   "taxCode": "GST18",
+   "taxValue": 1138.40
+  }
+ ]
+}

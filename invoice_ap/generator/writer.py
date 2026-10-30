@@ -48,16 +48,14 @@ def write_file(root: Path, rel: str, data: bytes, manifest: dict) -> None:
 
 
 def write_dataset(root: Path, tables: dict[str, list[dict]], extra_json: dict[str, object]) -> dict:
-    """Write every table as CSV in its layer folder and as JSON under exports/json (evaluation
-    layers in exports/json/evaluation/). Returns {relative path: {bytes, sha256, rows?}}."""
+    """Write every table as CSV in its layer folder (exports are written by invoice_ap.export once
+    the engine has run). Returns {relative path: {bytes, sha256, rows?}}."""
     files: dict[str, dict] = {}
     for table in sorted(tables):
         rows = tables[table]
         spec = BY_NAME[table]
         write_file(root, spec.file, csv_bytes(table, rows), files)
         files[spec.file]["rows"] = len(rows)
-        sub = "evaluation/" if spec.layer in ("source", "ground_truth") else ""
-        write_file(root, f"exports/json/{sub}{table}.json", json_compact(json_rows(table, rows)), files)
     for rel, obj in sorted(extra_json.items()):
         write_file(root, rel, json_compact(obj), files)
     return files

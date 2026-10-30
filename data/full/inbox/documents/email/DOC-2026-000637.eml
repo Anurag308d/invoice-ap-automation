@@ -1,0 +1,39 @@
+From: ap@vnd-00019.example
+To: invoices@buyer.example
+Date: Fri, 17 Apr 2026 10:38:00 +0530
+Subject: Invoice INV-2026-0238
+Message-ID: <doc-2026-000637@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Halsel Infotech Industries
+Tax Reg No:  TRN-680712908
+Plot 22, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0238
+Bill Date:  13/04/2026
+PO No:  PO 2026-000369
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | Item | Item Description | UOM | Qty | Unit Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00244 | Monitor - grade A - M244 | EA | 16 | 11089.08 | 177425.28 | 18% | 31936.55 |
+| 2 | 2 | SKU-00274 | Desktop workstation - grade E - M274 | EA | 18 | 39017.40 | 702313.20 | 18% | 126416.38 |
+| 3 | 3 | SKU-00255 | Storage array - grade B - M255 | EA | 12 | 6742.82 | 80913.84 | 18% | 14564.49 |
+
+Subtotal:  INR 960652.32
+GST:  INR 172917.42
+Invoice Total:  INR 1133569.74
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halsel Infotech Industries

@@ -1,0 +1,21 @@
+TAVLUM FOODS LLP
+TRN: TRN-437024387
+Plot 83, Industrial Area, Coimbatore 641021
+
+TAX INVOICE
+
+INVOICE NO: INV-2026-0084      INV DATE: 14 Apr 2026
+PO NUMBER: PO/2026/000488
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+S.NO   PO LN   ITEM        PARTICULARS                      UNIT   QUANTITY   UNIT PRICE   VALUE       GST RATE   TAX
+1      1       SKU-00391   Coffee powder - grade C - M391   KG     292.08     95.12        27,782.65   GST 0%     0.00
+
+NET AMOUNT: Rs. 27,782.65
+GST: Rs. 0.00
+TOTAL AMOUNT DUE: Rs. 27,782.65
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

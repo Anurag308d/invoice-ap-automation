@@ -1,0 +1,44 @@
+From: ap@vnd-00105.example
+To: invoices@buyer.example
+Date: Thu, 02 Jul 2026 17:26:00 +0530
+Subject: Invoice INV-2026-0402
+Message-ID: <doc-2026-001170@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller: Novur Packaging & Co
+Tax Registration Number: TRN-809031863
+Plot 11, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice No: INV-2026-0402
+Date: 01-07-2026
+PO No: PO 2026-000855
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  SKU: SKU-00222
+  Item Description: Foam insert - grade C - M222
+  UOM: BOX
+  Quantity: 2046
+  Rate: 35.36
+  Value: 72346.56
+  GST Rate: GST18
+  Tax Amt: 13022.38
+
+Taxable Value: ₹72346.56
+Total Tax: ₹13022.38
+Invoice Total: ₹85368.94
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Novur Packaging & Co

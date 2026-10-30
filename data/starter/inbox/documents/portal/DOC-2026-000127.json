@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ornov Infotech Enterprises",
+    "tax_registration_id": "TRN-290148694"
+  },
+  "invoice": {
+    "number": "ORN/26-27/002",
+    "date": "2026-06-29",
+    "po_number": "PO-2026-000089",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "369061.38",
+    "tax_total": "66431.05",
+    "grand_total": "435492.43"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00040",
+      "description": "Monitor - grade A - M040",
+      "uom": "EA",
+      "quantity": "27",
+      "unit_price": "13668.94",
+      "amount": "369061.38",
+      "tax_code": "GST18",
+      "tax_amount": "66431.05"
+    }
+  ]
+}

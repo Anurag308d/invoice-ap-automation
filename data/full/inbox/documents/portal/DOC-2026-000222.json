@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Selwyn Metals Enterprises",
+  "taxId": "TRN-975298949"
+ },
+ "header": {
+  "invoiceNo": "SI00092",
+  "invoiceDate": "2026-03-02T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000165",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 774003.62,
+  "tax": 139320.65,
+  "payable": 913324.27
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00041",
+   "text": "MS sheet - grade F - M041",
+   "unit": "KG",
+   "qty": 749.31,
+   "rate": 484.59,
+   "value": 363108.13,
+   "taxCode": "GST18",
+   "taxValue": 65359.46
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00019",
+   "text": "Copper rod - grade C - M019",
+   "unit": "KG",
+   "qty": 771.07,
+   "rate": 532.89,
+   "value": 410895.49,
+   "taxCode": "GST18",
+   "taxValue": 73961.19
+  }
+ ]
+}

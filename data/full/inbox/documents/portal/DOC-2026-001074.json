@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0190",
+  "invoiceDate": "2026-06-22T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000840",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 63184.59,
+  "tax": 11373.23,
+  "payable": 74557.82
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00292",
+   "text": "Whiteboard marker - grade B - M292",
+   "unit": "PACK",
+   "qty": 18,
+   "rate": 622.83,
+   "value": 11210.94,
+   "taxCode": "GST18",
+   "taxValue": 2017.97
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00321",
+   "text": "Copier paper - grade F - M321",
+   "unit": "PACK",
+   "qty": 123,
+   "rate": 422.55,
+   "value": 51973.65,
+   "taxCode": "GST18",
+   "taxValue": 9355.26
+  }
+ ]
+}

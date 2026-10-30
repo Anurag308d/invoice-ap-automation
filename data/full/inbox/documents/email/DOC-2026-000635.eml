@@ -1,0 +1,44 @@
+From: ap@vnd-00041.example
+To: invoices@buyer.example
+Date: Thu, 16 Apr 2026 16:04:00 +0530
+Subject: Invoice GAR/26-27/256
+Message-ID: <doc-2026-000635@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier:  Garor Metals Pvt Ltd
+TRN:  TRN-329663217
+Plot 44, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Invoice Number:  GAR/26-27/256
+Date:  14.04.2026
+P.O. #:  PO 2026-000481
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line:  1
+  Item:  SKU-00020
+  Description:  PVC resin - grade C - M020
+  Unit:  KG
+  Qty:  1613.96
+  Unit Price:  240.20
+  Amount:  3,87,673.19
+  Tax Rate:  GST 18%
+  Tax:  69,781.17
+
+Net Amount:  ₹3,87,673.19
+Total Tax:  ₹69,781.17
+Grand Total:  ₹4,57,454.36
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Garor Metals Pvt Ltd

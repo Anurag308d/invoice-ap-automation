@@ -1,0 +1,37 @@
+From: ap@vnd-00019.example
+To: invoices@buyer.example
+Date: Wed, 27 May 2026 13:42:00 +0530
+Subject: Invoice INV-2026-0239
+Message-ID: <doc-2026-000902@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Halsel Infotech Industries
+Tax Reg No:  TRN-680712908
+Plot 22, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0239
+Bill Date:  14/05/2026
+PO No:  PO 2026-000511
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | Item | Item Description | UOM | Qty | Unit Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00254 | Wireless access point - grade B - M254 | EA | 5 | 16695.84 | 83479.20 | 18% | 15026.26 |
+
+Subtotal:  INR 83479.20
+GST:  INR 15026.26
+Invoice Total:  INR 98505.46
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halsel Infotech Industries

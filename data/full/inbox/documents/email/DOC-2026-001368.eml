@@ -1,0 +1,37 @@
+From: ap@vnd-00124.example
+To: invoices@buyer.example
+Date: Wed, 29 Jul 2026 09:10:00 +0530
+Subject: Invoice 000031
+Message-ID: <doc-2026-001368@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier: Tavfal Engineering Spares Industries
+TRN: TRN-741779684
+Plot 30, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: 000031
+Invoice Date: 28.07.2026
+P.O. #: PO 2026-000864
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   PO Line   Item Code   Description                      UOM   Quantity   Price     Amount      Tax Code   Tax Amt
+1   1         SKU-00132   Gear coupling - grade B - M132   EA    38         1264.77   48061.26    18%        8651.03
+2   2         SKU-00180   Gear coupling - grade H - M180   EA    15         7142.21   107133.15   18%        19283.97
+
+Taxable Value: INR 155194.41
+Tax Amount: INR 27935.00
+Amount Payable: INR 183129.41
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Tavfal Engineering Spares Industries

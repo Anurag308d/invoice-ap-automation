@@ -1,0 +1,21 @@
+TAVZAN STATIONERS & CO
+TAX REGN. NO.: TRN-972853163
+Plot 54, Industrial Area, Ahmedabad 382445
+
+TAX INVOICE
+
+TAX INVOICE NO: TAV/25-26/285      INVOICE DATE: 17 Mar 2026
+YOUR ORDER REF: PO/2026/000327
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ORDER LINE   ITEM CODE   PARTICULARS                        UOM    QUANTITY   UNIT PRICE   VALUE       TAX RATE   TAX AMT
+1   1            SKU-00298   Toner cartridge - grade C - M298   PACK   140        164.92       23,088.80   EXEMPT     0.00
+
+TAXABLE VALUE: ₹23,088.80
+GST: ₹0.00
+AMOUNT PAYABLE: ₹23,088.80
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

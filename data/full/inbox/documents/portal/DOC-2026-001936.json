@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Faltav Metals Pvt Ltd",
+  "taxId": "TRN-844321990"
+ },
+ "header": {
+  "invoiceNo": "000091",
+  "invoiceDate": "2026-10-09T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001371",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 15775.16,
+  "tax": 2839.53,
+  "payable": 18614.69
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00058",
+   "text": "Aluminium ingot - grade H - M058",
+   "unit": "KG",
+   "qty": 178.19,
+   "rate": 88.53,
+   "value": 15775.16,
+   "taxCode": "GST18",
+   "taxValue": 2839.53
+  }
+ ]
+}

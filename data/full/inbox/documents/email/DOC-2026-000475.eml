@@ -1,0 +1,36 @@
+From: ap@vnd-00012.example
+To: invoices@buyer.example
+Date: Wed, 01 Apr 2026 12:44:00 +0530
+Subject: Invoice INV-2026-0139
+Message-ID: <doc-2026-000475@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller: Kavsel Engineering Spares LLP
+Tax Reg No: TRN-877445023
+Plot 15, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Invoice No: INV-2026-0139
+Invoice Date: 2026-04-01
+PO Number: PO 2026-000377
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   Item Code   Particulars                       UOM   Quantity   Rate     Amount      Tax Rate   GST Amt
+1    1       SKU-00143   Pressure gauge - grade C - M143   EA    33         896.29   29,577.57   18%        5,323.96
+
+Total Before Tax: INR 29,577.57
+Tax: INR 5,323.96
+Grand Total: INR 34,901.53
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kavsel Engineering Spares LLP

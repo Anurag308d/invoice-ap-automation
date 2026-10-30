@@ -1,0 +1,31 @@
+Seller  Garjor Infotech Industries
+Tax Reg No  TRN-916893324
+Plot 78, Industrial Area, Lucknow 226010
+
+TAX INVOICE
+
+Invoice Number  GAR/26-27/127
+Bill Date  2026-04-23
+P.O. #  PO-2026-000425
+Currency  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item Code: SKU-00245
+  Particulars: Rack server - grade A - M245
+  UOM: EA
+  Quantity: 10
+  Rate: 45210.47
+  Amount: 452104.70
+  Tax Code: 18%
+  GST Amt: 81378.85
+
+Total Before Tax  452104.70
+Total Tax  81378.85
+Total Amount Due  533483.~5
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

@@ -1,0 +1,30 @@
+Jorcor Infotech & Co
+Tax Regn. No. : TRN-188556541
+Plot 53, Industrial Area, Indore 452015
+
+TAX INVOICE
+
+Invoice No : SI00110
+Date : 15-Sep-2#?6
+P.O. # : PO/2026/001172
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line : 1
+  Item Code : SKU-00243
+  Item Description : Network switch - grade A - M243
+  Unit : EA
+  Qty : 19
+  Unit Price : 75,201.05
+  Amount : 14,28,819.95
+  Tax Code : 18%
+  GST Amt : 2,57,187.59
+
+Net Amount : ₹14,28,819.95
+Total Tax : ₹2,57,187.59
+Total : ₹16,86,007.54
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

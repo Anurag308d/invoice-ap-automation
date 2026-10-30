@@ -1,0 +1,302 @@
+{
+ "capture_routing": {
+  "documents_with_any_mismatch": 8,
+  "precision": "80.00%",
+  "recall": "100.00%",
+  "routed": 10,
+  "routed_equals_ground_truth": true
+ },
+ "confidence_calibration": {
+  "0.00": {
+   "accuracy": "0.00%",
+   "fields": 8
+  },
+  "0.60": {
+   "accuracy": "100.00%",
+   "fields": 2
+  },
+  "0.95": {
+   "accuracy": "100.00%",
+   "fields": 6979
+  },
+  "0.97": {
+   "accuracy": "100.00%",
+   "fields": 930
+  },
+  "0.98": {
+   "accuracy": "100.00%",
+   "fields": 3077
+  },
+  "0.99": {
+   "accuracy": "100.00%",
+   "fields": 22806
+  },
+  "1.00": {
+   "accuracy": "100.00%",
+   "fields": 16673
+  },
+  "not printed": {
+   "accuracy": "100.00%",
+   "fields": 2165
+  }
+ },
+ "degraded_scans": 10,
+ "degraded_scans_flagged": 10,
+ "document_exact_rate": "99.60%",
+ "documents": 2000,
+ "documents_exact": 1992,
+ "field_match_rate": "99.98%",
+ "fields_compared": 52640,
+ "invoice_id_agreement_rate": "100.00%",
+ "mismatches": [
+  {
+   "captured": "",
+   "channel": "SCAN",
+   "degraded_scan": true,
+   "doc_id": "DOC-2026-000325",
+   "expected": "2026-03-10",
+   "field": "invoice_date",
+   "flagged": true,
+   "invoice_line": ""
+  },
+  {
+   "captured": "",
+   "channel": "SCAN",
+   "degraded_scan": true,
+   "doc_id": "DOC-2026-000432",
+   "expected": "INV-2026-0243",
+   "field": "vendor_invoice_number",
+   "flagged": true,
+   "invoice_line": ""
+  },
+  {
+   "captured": "",
+   "channel": "SCAN",
+   "degraded_scan": true,
+   "doc_id": "DOC-2026-000650",
+   "expected": "578041.41",
+   "field": "header_gross_amount",
+   "flagged": true,
+   "invoice_line": ""
+  },
+  {
+   "captured": "",
+   "channel": "SCAN",
+   "degraded_scan": true,
+   "doc_id": "DOC-2026-000738",
+   "expected": "533483.55",
+   "field": "header_gross_amount",
+   "flagged": true,
+   "invoice_line": ""
+  },
+  {
+   "captured": "",
+   "channel": "SCAN",
+   "degraded_scan": true,
+   "doc_id": "DOC-2026-001621",
+   "expected": "2026-08-26",
+   "field": "invoice_date",
+   "flagged": true,
+   "invoice_line": ""
+  },
+  {
+   "captured": "",
+   "channel": "SCAN",
+   "degraded_scan": true,
+   "doc_id": "DOC-2026-001769",
+   "expected": "2026-09-15",
+   "field": "invoice_date",
+   "flagged": true,
+   "invoice_line": ""
+  },
+  {
+   "captured": "",
+   "channel": "SCAN",
+   "degraded_scan": true,
+   "doc_id": "DOC-2026-001820",
+   "expected": "INV-2026-0263",
+   "field": "vendor_invoice_number",
+   "flagged": true,
+   "invoice_line": ""
+  },
+  {
+   "captured": "",
+   "channel": "SCAN",
+   "degraded_scan": true,
+   "doc_id": "DOC-2026-001949",
+   "expected": "136614.41",
+   "field": "header_gross_amount",
+   "flagged": true,
+   "invoice_line": ""
+  }
+ ],
+ "non_degraded_documents": 1990,
+ "non_degraded_documents_with_mismatch": [],
+ "per_channel": {
+  "EDI": {
+   "accuracy": "100.00%",
+   "documents": 900,
+   "documents_exact": 900,
+   "fields": 23706,
+   "silent_errors": 0
+  },
+  "EMAIL": {
+   "accuracy": "100.00%",
+   "documents": 340,
+   "documents_exact": 340,
+   "fields": 8947,
+   "silent_errors": 0
+  },
+  "PORTAL": {
+   "accuracy": "100.00%",
+   "documents": 656,
+   "documents_exact": 656,
+   "fields": 17375,
+   "silent_errors": 0
+  },
+  "SCAN": {
+   "accuracy": "99.69%",
+   "documents": 104,
+   "documents_exact": 96,
+   "fields": 2612,
+   "silent_errors": 0
+  }
+ },
+ "per_field": {
+  "attention_user_id": {
+   "accuracy": "100.00%",
+   "fields": 2000,
+   "match": 2000,
+   "silent_errors": 0
+  },
+  "currency": {
+   "accuracy": "100.00%",
+   "fields": 2000,
+   "match": 2000,
+   "silent_errors": 0
+  },
+  "description": {
+   "accuracy": "100.00%",
+   "fields": 2960,
+   "match": 2960,
+   "silent_errors": 0
+  },
+  "header_gross_amount": {
+   "accuracy": "99.85%",
+   "fields": 2000,
+   "match": 1997,
+   "silent_errors": 0
+  },
+  "header_net_amount": {
+   "accuracy": "100.00%",
+   "fields": 2000,
+   "match": 2000,
+   "silent_errors": 0
+  },
+  "header_tax_amount": {
+   "accuracy": "100.00%",
+   "fields": 2000,
+   "match": 2000,
+   "silent_errors": 0
+  },
+  "invoice_date": {
+   "accuracy": "99.85%",
+   "fields": 2000,
+   "match": 1997,
+   "silent_errors": 0
+  },
+  "invoice_id": {
+   "accuracy": "100.00%",
+   "fields": 2000,
+   "match": 2000,
+   "silent_errors": 0
+  },
+  "line_count": {
+   "accuracy": "100.00%",
+   "fields": 2000,
+   "match": 2000,
+   "silent_errors": 0
+  },
+  "line_net_amount": {
+   "accuracy": "100.00%",
+   "fields": 2960,
+   "match": 2960,
+   "silent_errors": 0
+  },
+  "po_id": {
+   "accuracy": "100.00%",
+   "fields": 2000,
+   "match": 2000,
+   "silent_errors": 0
+  },
+  "po_line_id": {
+   "accuracy": "100.00%",
+   "fields": 2960,
+   "match": 2960,
+   "silent_errors": 0
+  },
+  "quantity": {
+   "accuracy": "100.00%",
+   "fields": 2960,
+   "match": 2960,
+   "silent_errors": 0
+  },
+  "sku_id": {
+   "accuracy": "100.00%",
+   "fields": 2960,
+   "match": 2960,
+   "silent_errors": 0
+  },
+  "tax_amount": {
+   "accuracy": "100.00%",
+   "fields": 2960,
+   "match": 2960,
+   "silent_errors": 0
+  },
+  "tax_code": {
+   "accuracy": "100.00%",
+   "fields": 2960,
+   "match": 2960,
+   "silent_errors": 0
+  },
+  "unit_price": {
+   "accuracy": "100.00%",
+   "fields": 2960,
+   "match": 2960,
+   "silent_errors": 0
+  },
+  "uom": {
+   "accuracy": "100.00%",
+   "fields": 2960,
+   "match": 2960,
+   "silent_errors": 0
+  },
+  "vendor_id": {
+   "accuracy": "100.00%",
+   "fields": 2000,
+   "match": 2000,
+   "silent_errors": 0
+  },
+  "vendor_invoice_number": {
+   "accuracy": "99.90%",
+   "fields": 2000,
+   "match": 1998,
+   "silent_errors": 0
+  },
+  "vendor_name": {
+   "accuracy": "100.00%",
+   "fields": 2000,
+   "match": 2000,
+   "silent_errors": 0
+  },
+  "vendor_tax_id": {
+   "accuracy": "100.00%",
+   "fields": 2000,
+   "match": 2000,
+   "silent_errors": 0
+  }
+ },
+ "silent_errors": 0,
+ "threshold": "0.90",
+ "vendor_resolution_rate": "100.00%"
+}

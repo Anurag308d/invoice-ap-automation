@@ -1,0 +1,45 @@
+From: requester.manufacturing.01@example.com
+To: invoices@buyer.example
+Date: Mon, 10 Aug 2026 11:21:00 +0530
+Subject: Invoice INV-2026-0364
+Message-ID: <doc-2026-001451@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Halpar Engineering Spares Industries <ap@vnd-00009.example>
+Date: Mon, 10 Aug 2026 11:21:00 +0530
+Subject: Invoice INV-2026-0364
+To: requester.manufacturing.01@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Halpar Engineering Spares Industries
+TRN:  TRN-449796472
+Plot 12, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0364
+Date:  10-Aug-2026
+Purchase Order:  PO-2026-000991
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Line | Item | Description | UOM | Quantity | Unit Price | Taxable Amt | Tax Code | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00150 | Valve actuator - grade D - M150 | EA | 6 | 3116.97 | 18701.82 | 18% | 3366.33 |
+
+Subtotal:  ₹18701.82
+GST:  ₹3366.33
+Invoice Total:  ₹22068.15
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halpar Engineering Spares Industries

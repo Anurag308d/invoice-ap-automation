@@ -1,0 +1,81 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000021",
+  "invoiceDate": "2026-07-02T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000819",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 293468.64,
+  "tax": 52824.36,
+  "payable": 346293.00
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00172",
+   "text": "Gear coupling - grade G - M172",
+   "unit": "EA",
+   "qty": 17,
+   "rate": 978.74,
+   "value": 16638.58,
+   "taxCode": "GST18",
+   "taxValue": 2994.94
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00180",
+   "text": "Gear coupling - grade H - M180",
+   "unit": "EA",
+   "qty": 25,
+   "rate": 7149.83,
+   "value": 178745.75,
+   "taxCode": "GST18",
+   "taxValue": 32174.24
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00157",
+   "text": "Pump impeller - grade E - M157",
+   "unit": "EA",
+   "qty": 23,
+   "rate": 3805.55,
+   "value": 87527.65,
+   "taxCode": "GST18",
+   "taxValue": 15754.98
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00129",
+   "text": "Ball bearing - grade B - M129",
+   "unit": "EA",
+   "qty": 10,
+   "rate": 659.35,
+   "value": 6593.50,
+   "taxCode": "GST18",
+   "taxValue": 1186.83
+  },
+  {
+   "seq": 5,
+   "orderLine": 5,
+   "itemCode": "SKU-00196",
+   "text": "Gear coupling - grade J - M196",
+   "unit": "EA",
+   "qty": 2,
+   "rate": 1981.58,
+   "value": 3963.16,
+   "taxCode": "GST18",
+   "taxValue": 713.37
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+From: ap@vnd-00282.example
+To: invoices@buyer.example
+Date: Wed, 21 Oct 2026 09:59:00 +0530
+Subject: Invoice HAL/26-27/193
+Message-ID: <doc-2026-001997@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller: Halwyn Foods LLP
+Tax Reg No: TRN-585504593
+Plot 91, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No: HAL/26-27/193
+Bill Date: 19 Oct 2026
+P.O. #: PO/2026/001487
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   PO Line   Item Code   Description                    UOM   Quantity   Unit Price   Value       Tax Code   Tax Amt
+1      1         SKU-00376   Milk powder - grade A - M376   KG    431.54     116.61       50,321.88   GST 18%    9,057.94
+
+Net Amount: 50,321.88
+GST: 9,057.94
+Invoice Total: 59,379.82
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halwyn Foods LLP

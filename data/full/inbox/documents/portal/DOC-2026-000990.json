@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Velquin Engineering Spares LLP",
+  "taxId": "TRN-843651370"
+ },
+ "header": {
+  "invoiceNo": "VEL/26-27/030",
+  "invoiceDate": "2026-06-09T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000763",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 63251.40,
+  "tax": 11385.25,
+  "payable": 74636.65
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00168",
+   "text": "Chain sprocket - grade F - M168",
+   "unit": "EA",
+   "qty": 5,
+   "rate": 1579.40,
+   "value": 7897.00,
+   "taxCode": "GST18",
+   "taxValue": 1421.46
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00125",
+   "text": "Pump impeller - grade A - M125",
+   "unit": "EA",
+   "qty": 40,
+   "rate": 1383.86,
+   "value": 55354.40,
+   "taxCode": "GST18",
+   "taxValue": 9963.79
+  }
+ ]
+}

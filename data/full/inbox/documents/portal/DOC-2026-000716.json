@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0253",
+  "invoiceDate": "2026-04-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000554",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 47775.68,
+  "tax": 8599.62,
+  "payable": 56375.30
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00190",
+   "text": "Valve actuator - grade I - M190",
+   "unit": "EA",
+   "qty": 8,
+   "rate": 5971.96,
+   "value": 47775.68,
+   "taxCode": "GST18",
+   "taxValue": 8599.62
+  }
+ ]
+}

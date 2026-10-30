@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0196",
+  "invoiceDate": "2026-08-20T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001144",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 96324.48,
+  "tax": 0.00,
+  "payable": 96324.48
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00327",
+   "text": "Desk organiser - grade F - M327",
+   "unit": "PACK",
+   "qty": 126,
+   "rate": 764.48,
+   "value": 96324.48,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

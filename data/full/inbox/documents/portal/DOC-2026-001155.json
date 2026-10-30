@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000017",
+  "invoiceDate": "2026-06-26T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000741",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 93661.59,
+  "tax": 16859.10,
+  "payable": 110520.69
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00185",
+   "text": "Ball bearing - grade I - M185",
+   "unit": "EA",
+   "qty": 31,
+   "rate": 1569.27,
+   "value": 48647.37,
+   "taxCode": "GST18",
+   "taxValue": 8756.54
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00176",
+   "text": "Chain sprocket - grade G - M176",
+   "unit": "EA",
+   "qty": 23,
+   "rate": 1957.14,
+   "value": 45014.22,
+   "taxCode": "GST18",
+   "taxValue": 8102.56
+  }
+ ]
+}

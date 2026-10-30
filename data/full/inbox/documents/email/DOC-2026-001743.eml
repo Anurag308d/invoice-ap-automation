@@ -1,0 +1,44 @@
+From: ap@vnd-00190.example
+To: invoices@buyer.example
+Date: Thu, 17 Sep 2026 14:20:00 +0530
+Subject: Invoice SI00380
+Message-ID: <doc-2026-001743@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Enmer Metals & Co
+TRN:  TRN-785941819
+Plot 96, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Invoice No:  SI00380
+Inv Date:  15.09.2026
+P.O. #:  PO/2026/001155
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line:  1
+  Item Code:  SKU-00003
+  Description:  Copper rod - grade A - M003
+  Unit:  KG
+  Quantity:  483.50
+  Rate:  259.03
+  Taxable Amt:  125241.01
+  Tax Code:  GST18
+  Tax Amt:  22543.38
+
+Subtotal:  Rs. 125241.01
+Tax Amount:  Rs. 22543.38
+Total:  Rs. 147784.39
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enmer Metals & Co

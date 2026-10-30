@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0276",
+  "invoiceDate": "2026-09-18T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001185",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 47556.48,
+  "tax": 8560.17,
+  "payable": 56116.65
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00185",
+   "text": "Ball bearing - grade I - M185",
+   "unit": "EA",
+   "qty": 32,
+   "rate": 1486.14,
+   "value": 47556.48,
+   "taxCode": "GST18",
+   "taxValue": 8560.17
+  }
+ ]
+}

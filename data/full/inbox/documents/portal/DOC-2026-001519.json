@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Zanlum Stationers Enterprises",
+    "tax_registration_id": "TRN-268005687"
+  },
+  "invoice": {
+    "number": "INV-2026-0076",
+    "date": "2026-08-19",
+    "po_number": "PO-2026-001090",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "345349.52",
+    "tax_total": "62162.91",
+    "grand_total": "407512.43"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00314",
+      "description": "Toner cartridge - grade E - M314",
+      "uom": "PACK",
+      "quantity": "173",
+      "unit_price": "1996.24",
+      "amount": "345349.52",
+      "tax_code": "GST18",
+      "tax_amount": "62162.91"
+    }
+  ]
+}

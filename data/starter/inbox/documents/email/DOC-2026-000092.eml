@@ -1,0 +1,36 @@
+From: ap@vnd-00010.example
+To: invoices@buyer.example
+Date: Thu, 07 May 2026 16:38:00 +0530
+Subject: Invoice ENU/26-27/226
+Message-ID: <doc-2026-000092@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier : Enur Packaging & Co
+Tax Registration Number : TRN-234677061
+Plot 13, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Inv # : ENU/26-27/226
+Bill Date : 04 May 2026
+PO Number : PO 2026-000067
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   SKU         Description               UOM   Qty    Rate     Amount        Tax Rate   GST Amt
+1    1       SKU-00033   Pallet - grade A - M033   BOX   1723   141.39   2,43,614.97   GST 18%    43,850.69
+
+Total Before Tax : ₹2,43,614.97
+Total Tax : ₹43,850.69
+Total : ₹2,87,465.66
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enur Packaging & Co

@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0764",
+  "invoiceDate": "2026-09-04T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001217",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 74101.09,
+  "tax": 3705.06,
+  "payable": 77806.15
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00382",
+   "text": "Tea leaves - grade B - M382",
+   "unit": "KG",
+   "qty": 448.16,
+   "rate": 35.29,
+   "value": 15815.57,
+   "taxCode": "GST5",
+   "taxValue": 790.78
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00395",
+   "text": "Sunflower oil - grade D - M395",
+   "unit": "KG",
+   "qty": 426.75,
+   "rate": 136.58,
+   "value": 58285.52,
+   "taxCode": "GST5",
+   "taxValue": 2914.28
+  }
+ ]
+}

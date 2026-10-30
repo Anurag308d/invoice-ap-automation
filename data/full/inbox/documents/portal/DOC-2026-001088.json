@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0262",
+  "invoiceDate": "2026-06-22T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000811",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 241491.04,
+  "tax": 43468.39,
+  "payable": 284959.43
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00167",
+   "text": "Pressure gauge - grade F - M167",
+   "unit": "EA",
+   "qty": 37,
+   "rate": 5808.25,
+   "value": 214905.25,
+   "taxCode": "GST18",
+   "taxValue": 38682.95
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00177",
+   "text": "Ball bearing - grade H - M177",
+   "unit": "EA",
+   "qty": 7,
+   "rate": 3797.97,
+   "value": 26585.79,
+   "taxCode": "GST18",
+   "taxValue": 4785.44
+  }
+ ]
+}

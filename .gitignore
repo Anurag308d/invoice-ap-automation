@@ -19,5 +19,10 @@ Thumbs.db
 .scratch/
 data/_repro/
 
-# Generated datasets: committed only when Stages 5 and 6 close (REV ruling Q3, ADR-028)
-data/
+# Full-scale files left out of the commit by the size budget (REV ruling Q3, Stage-4 ruling 1).
+# `python -m invoice_ap build-all` regenerates them; their SHA-256 values are recorded in
+# data/full/reports/source_manifest.json. Everything else under data/ is committed.
+data/full/exports/json/
+data/full/exports/sql/
+data/full/processed/decision_trace.jsonl
+data/full/processed/extraction_field.csv

@@ -1,0 +1,44 @@
+From: ap@vnd-00005.example
+To: invoices@buyer.example
+Date: Wed, 23 Sep 2026 16:32:00 +0530
+Subject: Invoice LUM/26-27/083
+Message-ID: <doc-2026-001791@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Lumtav Safety Gear & Co
+Tax Regn. No.: TRN-720142472
+Plot 8, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: LUM/26-27/083
+Invoice Date: 21/09/2026
+P.O. #: PO-2026-001273
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00357
+  Item Description: Safety goggles - grade D - M357
+  Unit: EA
+  Qty: 33
+  Rate: 913.46
+  Value: 30,144.18
+  Tax Rate: 5%
+  Tax Amt: 1,507.21
+
+Net Amount: ₹30,144.18
+Total Tax: ₹1,507.21
+Grand Total: ₹31,651.39
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Lumtav Safety Gear & Co

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0266",
+  "invoiceDate": "2026-07-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001099",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 45214.96,
+  "tax": 8138.69,
+  "payable": 53353.65
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00168",
+   "text": "Chain sprocket - grade F - M168",
+   "unit": "EA",
+   "qty": 28,
+   "rate": 1614.82,
+   "value": 45214.96,
+   "taxCode": "GST18",
+   "taxValue": 8138.69
+  }
+ ]
+}

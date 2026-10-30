@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Gardav Stationers Pvt Ltd",
+    "tax_registration_id": "TRN-161859703"
+  },
+  "invoice": {
+    "number": "INV-2026-0095",
+    "date": "2026-04-20",
+    "po_number": "PO-2026-000531",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "12277.15",
+    "tax_total": "613.86",
+    "grand_total": "12891.01"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00289",
+      "description": "Copier paper - grade B - M289",
+      "uom": "PACK",
+      "quantity": "29",
+      "unit_price": "423.35",
+      "amount": "12277.15",
+      "tax_code": "GST5",
+      "tax_amount": "613.86"
+    }
+  ]
+}

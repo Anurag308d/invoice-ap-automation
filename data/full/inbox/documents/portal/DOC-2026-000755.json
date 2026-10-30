@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0542",
+  "invoiceDate": "2026-04-30T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000584",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 31402.43,
+  "tax": 1570.12,
+  "payable": 32972.55
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00393",
+   "text": "Basmati rice - grade D - M393",
+   "unit": "KG",
+   "qty": 149.45,
+   "rate": 210.12,
+   "value": 31402.43,
+   "taxCode": "GST5",
+   "taxValue": 1570.12
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+From: ap@vnd-00101.example
+To: invoices@buyer.example
+Date: Wed, 29 Apr 2026 17:04:00 +0530
+Subject: Invoice INV-2026-0454
+Message-ID: <doc-2026-000728@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Halmer Infotech Pvt Ltd
+Tax Registration Number: TRN-211047529
+Plot 7, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Inv #: INV-2026-0454
+Date: 17-Apr-2026
+PO Number: PO/2026/000372
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00243
+  Description: Network switch - grade A - M243
+  Unit: EA
+  Quantity: 13
+  Rate: 78,865.78
+  Taxable Amt: 1,025,255.14
+  GST Rate: GST 18%
+  Tax: 184,545.93
+
+Subtotal: INR 1,025,255.14
+Tax Amount: INR 184,545.93
+Grand Total: INR 1,209,801.07
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halmer Infotech Pvt Ltd

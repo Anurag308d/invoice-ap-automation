@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0374",
+  "invoiceDate": "2026-01-09T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000012",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 172068.07,
+  "tax": 8603.40,
+  "payable": 180671.47
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00388",
+   "text": "Wheat flour - grade C - M388",
+   "unit": "KG",
+   "qty": 439.41,
+   "rate": 236.32,
+   "value": 103841.37,
+   "taxCode": "GST5",
+   "taxValue": 5192.07
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00381",
+   "text": "Sugar - grade B - M381",
+   "unit": "KG",
+   "qty": 270.34,
+   "rate": 134.84,
+   "value": 36452.65,
+   "taxCode": "GST5",
+   "taxValue": 1822.63
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00396",
+   "text": "Wheat flour - grade D - M396",
+   "unit": "KG",
+   "qty": 345.22,
+   "rate": 92.04,
+   "value": 31774.05,
+   "taxCode": "GST5",
+   "taxValue": 1588.70
+  }
+ ]
+}

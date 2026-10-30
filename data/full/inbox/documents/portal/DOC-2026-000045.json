@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urzan Engineering Spares Industries",
+    "tax_registration_id": "TRN-972851033"
+  },
+  "invoice": {
+    "number": "URZ/25-26/166",
+    "date": "2026-01-27",
+    "po_number": "PO-2026-000043",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "116841.24",
+    "tax_total": "21031.42",
+    "grand_total": "137872.66"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00140",
+      "description": "Gear coupling - grade C - M140",
+      "uom": "EA",
+      "quantity": "36",
+      "unit_price": "1491.46",
+      "amount": "53692.56",
+      "tax_code": "GST18",
+      "tax_amount": "9664.66"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00157",
+      "description": "Pump impeller - grade E - M157",
+      "uom": "EA",
+      "quantity": "18",
+      "unit_price": "3508.26",
+      "amount": "63148.68",
+      "tax_code": "GST18",
+      "tax_amount": "11366.76"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/390",
+    "date": "2026-08-31",
+    "po_number": "PO-2026-001167",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "79771.31",
+    "tax_total": "13730.79",
+    "grand_total": "93502.10"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00309",
+      "description": "Notebook - grade D - M309",
+      "uom": "PACK",
+      "quantity": "23",
+      "unit_price": "210.05",
+      "amount": "4831.15",
+      "tax_code": "GST5",
+      "tax_amount": "241.56"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00303",
+      "description": "Desk organiser - grade C - M303",
+      "uom": "PACK",
+      "quantity": "127",
+      "unit_price": "590.08",
+      "amount": "74940.16",
+      "tax_code": "GST18",
+      "tax_amount": "13489.23"
+    }
+  ]
+}

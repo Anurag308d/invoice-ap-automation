@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0566",
+  "invoiceDate": "2026-05-11T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000618",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 37775.45,
+  "tax": 431.45,
+  "payable": 38206.90
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00387",
+   "text": "Sunflower oil - grade C - M387",
+   "unit": "KG",
+   "qty": 105.00,
+   "rate": 82.18,
+   "value": 8628.90,
+   "taxCode": "GST5",
+   "taxValue": 431.45
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00386",
+   "text": "Toor dal - grade C - M386",
+   "unit": "KG",
+   "qty": 328.19,
+   "rate": 88.81,
+   "value": 29146.55,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/25-26/228",
+  "invoiceDate": "2026-03-04T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000017",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 29061.24,
+  "tax": 5231.02,
+  "payable": 34292.26
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00027",
+   "text": "Ball bearing - grade B - M027",
+   "unit": "EA",
+   "qty": 39,
+   "rate": 745.16,
+   "value": 29061.24,
+   "taxCode": "GST18",
+   "taxValue": 5231.02
+  }
+ ]
+}

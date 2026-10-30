@@ -1,0 +1,37 @@
+From: ap@vnd-00014.example
+To: invoices@buyer.example
+Date: Wed, 24 Jun 2026 15:44:00 +0530
+Subject: Invoice 000138
+Message-ID: <doc-2026-000124@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier : Urfal Metals Industries
+Tax Reg No : TRN-144020969
+Plot 17, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Inv # : 000138
+Dated : 23 Jun 2026
+PO Number : PO/2026/000091
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   Order Line   Item Code   Item Description                        UOM   Qty       Rate     Value        Tax Rate   Tax Amt
+1      1            SKU-00006   Stainless steel coil - grade A - M006   KG    124.15    298.62   37,073.67    18%        6,673.26
+2      2            SKU-00004   PVC resin - grade A - M004              KG    1286.38   128.29   165,029.69   18%        29,705.34
+
+Subtotal : INR 202,103.36
+Tax Amount : INR 36,378.60
+Total : INR 238,481.96
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Urfal Metals Industries

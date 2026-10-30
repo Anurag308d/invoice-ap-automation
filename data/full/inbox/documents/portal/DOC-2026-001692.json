@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/402",
+    "date": "2026-09-11",
+    "po_number": "PO-2026-001250",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "6425.32",
+    "tax_total": "1156.56",
+    "grand_total": "7581.88"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00305",
+      "description": "Copier paper - grade D - M305",
+      "uom": "PACK",
+      "quantity": "22",
+      "unit_price": "292.06",
+      "amount": "6425.32",
+      "tax_code": "GST18",
+      "tax_amount": "1156.56"
+    }
+  ]
+}

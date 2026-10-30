@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Zansel Stationers Pvt Ltd",
+  "taxId": "TRN-517840014"
+ },
+ "header": {
+  "invoiceNo": "SI00399",
+  "invoiceDate": "2026-04-21T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000526",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 139318.56,
+  "tax": 5665.19,
+  "payable": 144983.75
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00302",
+   "text": "Stapler - grade C - M302",
+   "unit": "PACK",
+   "qty": 56,
+   "rate": 464.55,
+   "value": 26014.80,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00307",
+   "text": "File folder - grade D - M307",
+   "unit": "PACK",
+   "qty": 157,
+   "rate": 721.68,
+   "value": 113303.76,
+   "taxCode": "GST5",
+   "taxValue": 5665.19
+  }
+ ]
+}

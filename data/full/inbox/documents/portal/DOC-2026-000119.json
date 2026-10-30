@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0398",
+  "invoiceDate": "2026-02-09T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000080",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 4974.83,
+  "tax": 248.74,
+  "payable": 5223.57
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00382",
+   "text": "Tea leaves - grade B - M382",
+   "unit": "KG",
+   "qty": 140.97,
+   "rate": 35.29,
+   "value": 4974.83,
+   "taxCode": "GST5",
+   "taxValue": 248.74
+  }
+ ]
+}

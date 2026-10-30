@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Garros Engineering Spares Industries",
+    "tax_registration_id": "TRN-147914743"
+  },
+  "invoice": {
+    "number": "INV-2026-0392",
+    "date": "2026-03-16",
+    "po_number": "PO-2026-000188",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "19154.50",
+    "tax_total": "3447.81",
+    "grand_total": "22602.31"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00148",
+      "description": "Gear coupling - grade D - M148",
+      "uom": "EA",
+      "quantity": "5",
+      "unit_price": "3830.90",
+      "amount": "19154.50",
+      "tax_code": "GST18",
+      "tax_amount": "3447.81"
+    }
+  ]
+}

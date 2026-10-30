@@ -1,0 +1,24 @@
+VENDOR: GARTAV SAFETY GEAR LLP
+TAX REGN. NO.: TRN-596925384
+Plot 66, Industrial Area, Faridabad 121003
+
+TAX INVOICE
+
+TAX INVOICE NO: SI00067
+BILL DATE: 20-Feb-2026
+PURCHASE ORDER: PO/2026/000092
+CURRENCY: INR
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ORDER LINE   ITEM        DESCRIPTION                       UNIT   QTY   PRICE      TAXABLE AMT   TAX RATE   GST AMT
+1   1            SKU-00364   Ear muffs - grade E - M364        EA     243   1,011.32   245,750.76    5%         12,287.54
+2   2            SKU-00333   Safety goggles - grade A - M333   EA     76    339.62     25,811.12     18%        4,646.00
+
+TAXABLE VALUE: 271,561.88
+TAX: 16,933.54
+INVOICE TOTAL: 288,495.42
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

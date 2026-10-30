@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0194",
+  "invoiceDate": "2026-08-03T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001014",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 53004.24,
+  "tax": 0.00,
+  "payable": 53004.24
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00317",
+   "text": "Notebook - grade E - M317",
+   "unit": "PACK",
+   "qty": 106,
+   "rate": 500.04,
+   "value": 53004.24,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  }
+ ]
+}

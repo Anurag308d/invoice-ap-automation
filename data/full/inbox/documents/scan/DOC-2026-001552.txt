@@ -1,0 +1,26 @@
+SUPPLIER  SELTAV CLOUD SERVICES PVT LTD
+TAX REGN. NO.  TRN-100378383
+Plot 15, Industrial Area, Faridabad 121003
+
+TAX INVOICE
+
+BILL NO: INV-2026-0296      DATED: 20-08-2026
+ATTN: USR-0021
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ITEM   DESCRIPTION          UOM     QUANTITY   UNIT PRICE   TAXABLE AMT   TAX RATE   TAX
+1   -      Cloud subscription   MONTH   1          69300.00     69300.00      GST 18%    12099.78
+2   -      Software licence     MONTH   1          29900.00     29900.00      GST 18%    5382.00
+-- Page 1 of 2 --
+
+#   ITEM   DESCRIPTION          UOM     QUANTITY   UNIT PRICE   TAXABLE AMT   TAX RATE   TAX
+3   -      Cloud subscription   MONTH   1          140800.00    140800.00     GST 18%    25344.00
+
+TAXABLE VALUE  Rs. 240000.00
+TAX  Rs. 42825.78
+INVOICE TOTAL  Rs. 282825.78
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+-- end of document --

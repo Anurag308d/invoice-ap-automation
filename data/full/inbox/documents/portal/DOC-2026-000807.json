@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Parur Engineering Spares & Co",
+  "taxId": "TRN-151942954"
+ },
+ "header": {
+  "invoiceNo": "PAR/26-27/163",
+  "invoiceDate": "2026-05-08T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000514",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 203052.87,
+  "tax": 36549.51,
+  "payable": 239602.38
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00129",
+   "text": "Ball bearing - grade B - M129",
+   "unit": "EA",
+   "qty": 27,
+   "rate": 682.69,
+   "value": 18432.63,
+   "taxCode": "GST18",
+   "taxValue": 3317.87
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00177",
+   "text": "Ball bearing - grade H - M177",
+   "unit": "EA",
+   "qty": 18,
+   "rate": 3770.50,
+   "value": 67869.00,
+   "taxCode": "GST18",
+   "taxValue": 12216.42
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00150",
+   "text": "Valve actuator - grade D - M150",
+   "unit": "EA",
+   "qty": 34,
+   "rate": 3433.86,
+   "value": 116751.24,
+   "taxCode": "GST18",
+   "taxValue": 21015.22
+  }
+ ]
+}

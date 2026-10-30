@@ -1,0 +1,102 @@
+From: requester.operations.01@example.com
+To: invoices@buyer.example
+Date: Fri, 14 Aug 2026 12:16:00 +0530
+Subject: Invoice INV-2026-0033
+Message-ID: <doc-2026-001488@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Velros Electricals Industries <ap@vnd-00139.example>
+Date: Fri, 14 Aug 2026 12:16:00 +0530
+Subject: Invoice INV-2026-0033
+To: requester.operations.01@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Velros Electricals Industries
+Tax Registration Number: TRN-724845921
+Plot 45, Industrial Area, Hosur 635126
+
+Tax Invoice
+
+Invoice No: INV-2026-0033
+Bill Date: August 11, 2026
+Your Order Ref: PO/2026/001055
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00099
+  Item Description: Relay module - grade E - M099
+  Unit: EA
+  Qty: 5
+  Unit Price: 1,189.45
+  Taxable Amt: 5,947.25
+  GST Rate: 18%
+  Tax Amt: 1,070.51
+Item 2
+  Order Line: 2
+  Item: SKU-00062
+  Item Description: MCB switch - grade A - M062
+  Unit: EA
+  Qty: 4
+  Unit Price: 1,166.71
+  Taxable Amt: 4,666.84
+  GST Rate: 18%
+  Tax Amt: 840.03
+Item 3
+  Order Line: 3
+  Item: SKU-00109
+  Item Description: Copper cable - grade G - M109
+  Unit: EA
+  Qty: 33
+  Unit Price: 1,404.21
+  Taxable Amt: 46,338.93
+  GST Rate: 18%
+  Tax Amt: 8,341.01
+Item 4
+  Order Line: 4
+  Item: SKU-00070
+  Item Description: MCB switch - grade B - M070
+  Unit: EA
+  Qty: 38
+  Unit Price: 976.67
+  Taxable Amt: 37,113.46
+  GST Rate: 18%
+  Tax Amt: 6,680.42
+Item 5
+  Order Line: 5
+  Item: SKU-00072
+  Item Description: Contactor - grade B - M072
+  Unit: EA
+  Qty: 62
+  Unit Price: 1,003.11
+  Taxable Amt: 62,192.82
+  GST Rate: 18%
+  Tax Amt: 11,194.71
+Item 6
+  Order Line: 6
+  Item: SKU-00088
+  Item Description: Contactor - grade D - M088
+  Unit: EA
+  Qty: 15
+  Unit Price: 540.99
+  Taxable Amt: 8,114.85
+  GST Rate: 18%
+  Tax Amt: 1,460.67
+
+Taxable Value: INR 164,374.15
+Tax Amount: INR 29,587.35
+Total Amount Due: INR 193,961.50
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Velros Electricals Industries

@@ -1,0 +1,37 @@
+From: ap@vnd-00193.example
+To: invoices@buyer.example
+Date: Tue, 26 May 2026 16:30:00 +0530
+Subject: Invoice ENK/26-27/354
+Message-ID: <doc-2026-000899@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Enkav Stationers Enterprises
+TRN : TRN-352070107
+Plot 99, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No : ENK/26-27/354
+Bill Date : 22-May-2026
+P.O. # : PO-2026-000652
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Ln | SKU | Description | Unit | Quantity | Rate | Taxable Amt | GST Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00325 | Notebook - grade F - M325 | PACK | 180 | 433.71 | 78,067.80 | GST 18% | 14,052.20 |
+
+Subtotal : Rs. 78,067.80
+Tax : Rs. 14,052.20
+Grand Total : Rs. 92,120.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enkav Stationers Enterprises

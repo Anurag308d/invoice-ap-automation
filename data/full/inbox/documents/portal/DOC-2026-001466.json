@@ -1,0 +1,67 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/382",
+    "date": "2026-08-10",
+    "po_number": "PO-2026-001062",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "183045.19",
+    "tax_total": "31559.43",
+    "grand_total": "214604.62"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00311",
+      "description": "Desk organiser - grade D - M311",
+      "uom": "PACK",
+      "quantity": "118",
+      "unit_price": "480.93",
+      "amount": "56749.74",
+      "tax_code": "GST18",
+      "tax_amount": "10214.95"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00292",
+      "description": "Whiteboard marker - grade B - M292",
+      "uom": "PACK",
+      "quantity": "49",
+      "unit_price": "691.55",
+      "amount": "33885.95",
+      "tax_code": "GST18",
+      "tax_amount": "6099.47"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00320",
+      "description": "Printer ribbon - grade E - M320",
+      "uom": "PACK",
+      "quantity": "100",
+      "unit_price": "77.15",
+      "amount": "7715.00",
+      "tax_code": "EXEMPT",
+      "tax_amount": "0.00"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00322",
+      "description": "Toner cartridge - grade F - M322",
+      "uom": "PACK",
+      "quantity": "177",
+      "unit_price": "478.50",
+      "amount": "84694.50",
+      "tax_code": "GST18",
+      "tax_amount": "15245.01"
+    }
+  ]
+}

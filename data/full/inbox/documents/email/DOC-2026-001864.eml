@@ -1,0 +1,37 @@
+From: ap@vnd-00181.example
+To: invoices@buyer.example
+Date: Mon, 05 Oct 2026 09:05:00 +0530
+Subject: Invoice GAR/26-27/014
+Message-ID: <doc-2026-001864@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier:  Garpar Electricals Pvt Ltd
+Tax Registration Number:  TRN-648289964
+Plot 87, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Inv #:  GAR/26-27/014
+Bill Date:  September 30, 2026
+P.O. #:  PO/2026/001287
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   SKU         Description                       Unit   Quantity   Rate       Value        Tax Rate   Tax Amt
+1    1       SKU-00084   Terminal block - grade C - M084   EA     88         3,440.81   302,791.28   18%        54,502.43
+2    2       SKU-00096   Contactor - grade E - M096        EA     101        118.09     11,927.09    18%        2,146.88
+
+Taxable Value:  Rs. 314,718.37
+Total Tax:  Rs. 56,649.31
+Total Amount Due:  Rs. 371,367.68
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Garpar Electricals Pvt Ltd

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Uren Engineering Spares LLP",
+    "tax_registration_id": "TRN-310579660"
+  },
+  "invoice": {
+    "number": "SI00185",
+    "date": "2026-09-08",
+    "po_number": "PO-2026-001082",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "41615.00",
+    "tax_total": "7490.70",
+    "grand_total": "49105.70"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00133",
+      "description": "Pump impeller - grade B - M133",
+      "uom": "EA",
+      "quantity": "20",
+      "unit_price": "2080.75",
+      "amount": "41615.00",
+      "tax_code": "GST18",
+      "tax_amount": "7490.70"
+    }
+  ]
+}

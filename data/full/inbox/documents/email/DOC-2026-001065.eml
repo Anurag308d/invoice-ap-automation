@@ -1,0 +1,39 @@
+From: ap@vnd-00114.example
+To: invoices@buyer.example
+Date: Fri, 19 Jun 2026 16:29:00 +0530
+Subject: Invoice FAL/26-27/027
+Message-ID: <doc-2026-001065@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Falen Packaging Industries
+TRN : TRN-134648990
+Plot 20, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No : FAL/26-27/027
+Inv Date : 2026-06-16
+PO Number : PO/2026/000663
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | SKU | Particulars | UOM | Qty | Unit Price | Amount | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00213 | Carton sealer tape - grade B - M213 | BOX | 422 | 67.24 | 28,375.28 | GST18 | 5,107.55 |
+| 2 | 2 | SKU-00226 | Stretch film roll - grade D - M226 | BOX | 88 | 160.98 | 14,166.24 | GST18 | 2,549.92 |
+| 3 | 3 | SKU-00238 | Foam insert - grade E - M238 | BOX | 217 | 84.19 | 18,269.23 | GST18 | 3,288.46 |
+
+Subtotal : Rs. 60,810.75
+GST : Rs. 10,945.93
+Invoice Total : Rs. 71,756.68
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Falen Packaging Industries

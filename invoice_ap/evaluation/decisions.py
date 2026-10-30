@@ -172,6 +172,7 @@ def evaluate_decisions(root: Path, as_of: date) -> tuple[dict, list[dict]]:
     all_exc = [e for es in exc.values() for e in es]
     open_exc = [e for e in all_exc if e["status_as_of"] == "OPEN"]
     var = _value_at_risk(root, gt, cap, dec, src, src_lines)
+    backlog = _backlog(open_exc, as_of)
     cycle = [(datetime.fromisoformat(pay[d["invoice_id"]]["created_at"][:19]) -
               datetime.fromisoformat(c["captured_at"][:19])).days for doc, c in cap.items()
              for d in [dec[doc]] if d["invoice_id"] in pay]
@@ -207,12 +208,11 @@ def evaluate_decisions(root: Path, as_of: date) -> tuple[dict, list[dict]]:
         "kpis": {"stp_rate": _pct(stp, n), "stp_invoices": stp, "exception_rate": _pct(len(blocked), n),
                  "exceptions_by_type": dict(sorted(Counter(e["exception_type"] for e in all_exc).items())),
                  "open_by_role": dict(sorted(Counter(e["assigned_role"] for e in open_exc).items())),
-                 "overdue_by_role": dict(sorted(Counter(e["assigned_role"] for e in open_exc
-                                                        if e["is_overdue_as_of"] == "true").items())),
                  "open_by_queue": dict(sorted(Counter(e["queue"] for e in open_exc).items())),
                  "cycle_days_capture_to_ready": {"median": _median(cycle),
                                                  "p90": str(sorted(cycle)[len(cycle) * 9 // 10]) if cycle else "-"}},
         "value_at_risk": var,
+        "backlog": backlog,
         "acceptance": {"invoices": n, "pass": sum(r["result"] == "pass" for r in acceptance),
                        "fail": sum(r["result"] == "fail" for r in acceptance),
                        "r34a_flagged_capture_review": sum(r["r34a_extraction"] == "flagged" for r in acceptance),
@@ -222,6 +222,27 @@ def evaluate_decisions(root: Path, as_of: date) -> tuple[dict, list[dict]]:
                        "deviations": [r for r in acceptance if r["result"] == "fail"]},
     }
     return report, acceptance
+
+
+AGE_BUCKETS = (("<= 5 business days", 5), ("6-20 business days", 20), ("> 20 business days", None))
+
+
+def _backlog(open_exc: list[dict], as_of: date) -> dict:
+    """Open exceptions past their SLA at the snapshot. No resolutions are simulated (ADR-011), so this
+    is the backlog an AP team would inherit on the as-of date, aged in business days since creation."""
+    from ..common.calendar import BusinessCalendar
+    from ..common.policy import load_policy
+    cal = BusinessCalendar.from_policy(load_policy().raw)
+    past = [e for e in open_exc if e["is_overdue_as_of"] == "true"]
+    table: dict[str, Counter] = defaultdict(Counter)
+    for e in past:
+        age = len(cal.business_days(date.fromisoformat(e["created_at"][:10]), as_of)) - 1
+        bucket = next(name for name, limit in AGE_BUCKETS if limit is None or age <= limit)
+        table[e["assigned_role"]][bucket] += 1
+        table["ALL ROLES"][bucket] += 1
+    return {"label": "open and past SLA at the snapshot (no resolutions simulated)",
+            "open_exceptions": len(open_exc), "past_sla": len(past),
+            "by_role_and_age": {role: {name: c[name] for name, _ in AGE_BUCKETS} for role, c in sorted(table.items())}}
 
 
 def _gated(g: dict) -> bool:
@@ -307,31 +328,101 @@ def acceptance_csv(rows: list[dict]) -> bytes:
     return buf.getvalue().encode("utf-8")
 
 
+DEFINITIONS = (
+    ("STP rate", "Invoices that reached PAYMENT_READY or PAID with no exception at all and AUTO approval, divided "
+                 "by all invoices (evaluation_plan E10)."),
+    ("Exception rate", "Invoices blocked at the snapshot (an open blocking exception, or REJECTED) divided by all "
+                       "invoices."),
+    ("Precision / recall / F1", "Per exception type, over invoices (or lines): TP = expected and raised, FP = raised "
+                                "but not expected, FN = expected but not raised. A type with no expected and no "
+                                "raised instance is 'not present', never 0/0."),
+    ("Agreement", "Share of invoices whose engine value equals the ground-truth value exactly (joined on doc_id)."),
+    ("Payment-ready safety", "Invoices with a payment record and an open blocking exception or an unapproved level "
+                             "(R34e). Must be 0."),
+    ("Value at risk held", "Money held back on truly blocked invoices: full gross for duplicate, vendor, PO, date, "
+                           "receipt and capture holds; excess quantity or price difference (with tax) for quantity and "
+                           "price variances; the absolute difference for tax and arithmetic (E11)."),
+    ("Per-invoice acceptance", "R34a extracted fields equal the source (or the document is flagged for capture "
+                               "review); R34b arithmetic and tax verdicts equal ground truth and an independent "
+                               "recomputation; R34c the duplicate pair is correct; R34d match status, primary issue, "
+                               "approval band, levels and final status agree; R34e no blocked invoice is payable."),
+    ("Blocked value released in error", "Gross of invoices that ground truth blocks but the engine did not. Must "
+                                        "be 0.00."),
+    ("Cycle days", "Calendar days from capture to the payment record (ready), over payment-ready invoices."),
+    ("Open and past SLA", "Open exceptions whose SLA due date is before the as-of date. The snapshot simulates no "
+                          "resolutions (ADR-011), so this is the inherited backlog, aged in business days since the "
+                          "exception was raised."),
+)
+
+
+def _table(head: list[str], rows: list[list]) -> list[str]:
+    return ["| " + " | ".join(head) + " |", "|" + "---|" * len(head)] + [
+        "| " + " | ".join(str(c) for c in r) + " |" for r in rows]
+
+
+def _kv(d: dict, key: str = "Item", value: str = "Value") -> list[str]:
+    return _table([key, value], [[k, v] for k, v in d.items()])
+
+
 def to_markdown(r: dict, title: str) -> str:
-    out = [f"# {title}", "", f"Invoices: {r['invoices']}", "", "## Agreement with ground truth (invoice level)", "",
-           "| Item | Agreement |", "|---|---|"] + [f"| {k} | {v} |" for k, v in r["agreement"].items()]
-    out += ["", "## Line level", "", "| Item | Agreement |", "|---|---|"] + [
-        f"| {k} | {v} |" for k, v in r["line_agreement"].items()]
-    out += ["", "## Per exception type (invoice level)", "", "| Type | TP | FP | FN | Precision | Recall | F1 |",
-            "|---|---|---|---|---|---|---|"]
-    out += [f"| {t} | {m['tp']} | {m['fp']} | {m['fn']} | {m['precision']} | {m['recall']} | {m['f1']} |"
-            for t, m in r["per_type_invoice"].items()]
-    out += ["", "Types not present in this dataset (no expected and no predicted instance): "
-            + ", ".join(r["not_present_types"]), "", "## Primary issue confusion (expected -> engine)", "",
-            "| Pair | Invoices |", "|---|---|"] + [f"| {k} | {v} |" for k, v in r["primary_issue_confusion"].items()]
-    out += ["", "## Final status confusion", "", "| Pair | Invoices |", "|---|---|"] + [
-        f"| {k} | {v} |" for k, v in r["final_status_confusion"].items()]
+    k, a = r["kpis"], r["acceptance"]
+    out = [f"# {title}", "", f"Invoices evaluated: {r['invoices']}. Definitions are at the end of this page.", "",
+           "## Headline", ""]
+    out += _kv({"STP rate": f"{k['stp_rate']} ({k['stp_invoices']} invoices)", "Exception rate": k["exception_rate"],
+                "Payment-ready safety (R34e) violations": r["payments"]["blocked_or_unapproved_with_payment"],
+                "Per-invoice acceptance (R34a-e)": f"{a['pass']} pass / {a['fail']} fail",
+                "Value at risk held (INR)": r["value_at_risk"]["held_value_inr"],
+                "Blocked value released in error (INR)": r["value_at_risk"]["blocked_invoices_released_in_error_value_inr"],
+                "Cycle days capture -> ready (median / p90)": f"{k['cycle_days_capture_to_ready']['median']} / "
+                                                              f"{k['cycle_days_capture_to_ready']['p90']}"}, "KPI")
+    out += ["", "## Agreement with ground truth (invoice level)", ""] + _kv(r["agreement"], "Item", "Agreement")
+    out += ["", "## Agreement with ground truth (line level)", ""] + _kv(r["line_agreement"], "Item", "Agreement")
+    out += ["", "## Per exception type (invoice level)", ""]
+    out += _table(["Type", "TP", "FP", "FN", "Precision", "Recall", "F1"],
+                  [[t, m["tp"], m["fp"], m["fn"], m["precision"], m["recall"], m["f1"]]
+                   for t, m in r["per_type_invoice"].items()])
+    out += ["", "## Per exception type (line level)", ""]
+    out += _table(["Type", "TP", "FP", "FN", "Precision", "Recall", "F1"],
+                  [[t, m["tp"], m["fp"], m["fn"], m["precision"], m["recall"], m["f1"]]
+                   for t, m in r["per_type_line"].items()])
+    out += ["", "Not present in this dataset (covered by unit fixtures): " + ", ".join(r["not_present_types"]) + ".",
+            "", f"## Primary issue confusion (expected -> engine; off-diagonal {r['primary_issue_off_diagonal']})", ""]
+    out += _kv(r["primary_issue_confusion"], "Expected -> engine", "Invoices")
+    out += ["", "## Final status confusion", ""] + _kv(r["final_status_confusion"], "Expected -> engine", "Invoices")
     dup = r["duplicates"]
-    out += ["", "## Duplicates", "", f"- Expected pairs {dup['expected_pairs']}, detected {dup['detected_pairs']}, "
-            f"correct {dup['correct_pairs']} (precision {dup['pair_precision']}, recall {dup['pair_recall']}).",
-            f"- By type: {dup['by_type']}.", f"- False positives on true negatives: {dup['true_negative_false_positives']}."]
-    out += ["", "## Approvals and payments", "", f"- Approvals: {r['approvals']}", f"- Payments: {r['payments']}",
-            "", "## KPIs", ""] + [f"- {k}: {v}" for k, v in r["kpis"].items()]
-    out += ["", "## Value at risk", ""] + [f"- {k}: {v}" for k, v in r["value_at_risk"].items()]
-    a = r["acceptance"]
-    out += ["", "## Per-invoice acceptance (R34a-e)", "", f"- Pass {a['pass']} / {a['invoices']}, fail {a['fail']}; "
-            f"R34a flagged for capture review (expected outcome): {a['r34a_flagged_capture_review']}.",
-            f"- By criterion: {a['by_criterion']}", "", "Deviations:", ""]
-    out += [f"- {d['doc_id']} {d['invoice_id']} ({d['scenario_code']}): {d['deviation']}" for d in a["deviations"]] or [
-        "- none"]
+    out += ["", "## Duplicates", ""]
+    out += _kv({"Expected pairs": dup["expected_pairs"], "Detected pairs": dup["detected_pairs"],
+                "Correct pairs": dup["correct_pairs"], "Pair precision": dup["pair_precision"],
+                "Pair recall": dup["pair_recall"],
+                "False positives on true negatives": dup["true_negative_false_positives"]})
+    out += ["", "Correct by scenario:", ""] + _kv(dup["by_type"], "Scenario", "Correct / expected")
+    ap = r["approvals"]
+    out += ["", "## Approvals", ""]
+    out += _kv({"Eligible invoices": ap["eligible_invoices"], "Approvals for blocked invoices": ap["approvals_for_blocked_invoices"],
+                "Levels pending at the as-of date": ap["pending_at_as_of"]})
+    out += ["", "Invoices by approval band:", ""] + _kv(ap["levels_by_band"], "Band", "Invoices")
+    out += ["", "## Payments", ""] + _kv({"Payment records": r["payments"]["payment_records"],
+                                         "PAID": r["payments"]["paid"], "SCHEDULED": r["payments"]["scheduled"],
+                                         "RTGS": r["payments"]["rtgs"],
+                                         "Blocked or unapproved with a payment": r["payments"]["blocked_or_unapproved_with_payment"]})
+    out += ["", "## Exceptions", "", "Raised, by type:", ""] + _kv(k["exceptions_by_type"], "Type", "Exceptions")
+    out += ["", "Open at the snapshot, by role:", ""] + _kv(k["open_by_role"], "Role", "Open")
+    out += ["", "Open at the snapshot, by queue:", ""] + _kv(k["open_by_queue"], "Queue", "Open")
+    b = r["backlog"]
+    out += ["", f"## Backlog: {b['label']}", "",
+            f"{b['past_sla']} of {b['open_exceptions']} open exceptions are past their SLA at the snapshot. Age is in "
+            "business days since the exception was raised.", ""]
+    names = [n for n, _ in AGE_BUCKETS]
+    out += _table(["Role"] + names, [[role] + [c[n] for n in names] for role, c in b["by_role_and_age"].items()])
+    v = r["value_at_risk"]
+    out += ["", "## Value at risk held, by primary issue (INR)", ""] + _kv(v["by_primary_issue"], "Primary issue", "INR")
+    out += ["", "## Per-invoice acceptance (R34a-e)", "",
+            f"{a['pass']} of {a['invoices']} invoices pass; {a['r34a_flagged_capture_review']} are flagged for capture "
+            "review, which is their expected outcome. Full list: `acceptance_per_invoice.csv`.", ""]
+    out += _table(["Criterion"] + ["pass", "flagged", "fail"],
+                  [[c] + [v.get(x, 0) for x in ("pass", "flagged", "fail")] for c, v in a["by_criterion"].items()])
+    out += ["", "Deviations:", ""]
+    out += [f"- {d['doc_id']} {d['invoice_id']} ({d['scenario_code']}): {d['deviation']}" for d in a["deviations"]] \
+        or ["- none"]
+    out += ["", "## Definitions", ""] + _table(["Term", "Definition"], [list(d) for d in DEFINITIONS])
     return "\n".join(out) + "\n"

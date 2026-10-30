@@ -1,0 +1,44 @@
+From: ap@vnd-00005.example
+To: invoices@buyer.example
+Date: Mon, 20 Jul 2026 15:56:00 +0530
+Subject: Invoice MER/26-27/087
+Message-ID: <doc-2026-000150@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Merfal Metals & Co
+Tax Regn. No.: TRN-614819478
+Plot 8, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: MER/26-27/087
+Invoice Date: 15/07/2026
+P.O. #: PO-2026-000100
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00005
+  Item Description: HDPE granules - grade A - M005
+  Unit: KG
+  Qty: 1227.65
+  Rate: 219.27
+  Value: 269,186.82
+  Tax Rate: 18%
+  Tax Amt: 48,453.63
+
+Net Amount: ₹269,186.82
+Total Tax: ₹48,453.63
+Grand Total: ₹317,640.45
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merfal Metals & Co

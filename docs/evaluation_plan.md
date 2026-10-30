@@ -5,9 +5,11 @@ with two independent references:
 - the true source invoices, which drive the extraction metrics;
 - the oracle's ground truth, which drives the decision metrics.
 
-It writes `reports/evaluation.json` (machine-readable) and `reports/evaluation.md` (readable) for
-each scale, and the dashboard shows the same numbers. Stage 3 delivers the extraction part, Stage 4
-the decision part and Stage 5 the data-quality and reproducibility parts.
+It writes `reports/evaluation.json` (machine-readable), `reports/evaluation.md` (readable, with the
+definitions of every KPI), `reports/extraction_evaluation.{json,md}` and
+`reports/acceptance_per_invoice.csv` for each scale; `reports/validation_summary.md` (E13) and
+`reports/reproducibility.md` (E15) complete the set, and `reports/dashboard.html` shows the same
+numbers. All of them are committed under `data/starter/` and `data/full/`.
 
 ## 1. Acceptance criteria -> metrics
 
@@ -64,7 +66,7 @@ The report lists every failing invoice with the differing fields.
 | (c) dependency and lifecycle consistency | Parent-before-child generation order; date-order checks; event sequences checked against `invoice_ap/common/lifecycle.py`; current status = last event (E13) |
 | (d) correct derived values and reconciliation | Independent recomputation of every derived column (E13); R34b metrics (E3) |
 | (e) normal, boundary, failure and exception coverage | Mix vs target and edge-case table (E12); boundary sub-scenarios (price at, inside and outside tolerance; quantity at and outside; tax rounding); true negatives (E6) |
-| (f) separate ground truth | `ground_truth/` folder; label-free input check; no-leakage tests: static import, sender, ID and snapshot bans (active now), runtime and ID-blind sandboxes (Stage 3), time-travel sandbox (Stage 4); evaluation exports in separate files (Stage 5) |
+| (f) separate ground truth | `ground_truth/` folder; label-free input check; no-leakage tests: static import, sender, ID and snapshot bans (active now), runtime and ID-blind sandboxes, time-travel sandbox; evaluation exports in separate files (`exports/sql/evaluation_seed.sql`, `exports/json/evaluation/`) |
 | (g) fixed-seed reproducibility, documentation and lawful provenance | E15 report; `source_manifest.json` (command, seed, scale, policy version, per-file SHA-256, provenance: 100% synthetic, no external data); these docs |
 
 ## 5. How we know it works

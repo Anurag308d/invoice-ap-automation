@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Garhal Electricals & Co",
+  "taxId": "TRN-438794432"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0126",
+  "invoiceDate": "2026-08-12T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001036",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 609945.84,
+  "tax": 109790.25,
+  "payable": 719736.09
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00098",
+   "text": "Junction box - grade E - M098",
+   "unit": "EA",
+   "qty": 168,
+   "rate": 3630.63,
+   "value": 609945.84,
+   "taxCode": "GST18",
+   "taxValue": 109790.25
+  }
+ ]
+}

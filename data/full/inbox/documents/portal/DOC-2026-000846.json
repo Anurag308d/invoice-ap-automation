@@ -1,0 +1,67 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/367",
+    "date": "2026-05-19",
+    "po_number": "PO-2026-000570",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "1175754.57",
+    "tax_total": "211635.83",
+    "grand_total": "1387390.40"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00044",
+      "description": "PVC resin - grade F - M044",
+      "uom": "KG",
+      "quantity": "1910.61",
+      "unit_price": "178.49",
+      "amount": "341024.78",
+      "tax_code": "GST18",
+      "tax_amount": "61384.46"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00051",
+      "description": "Copper rod - grade G - M051",
+      "uom": "KG",
+      "quantity": "1337.31",
+      "unit_price": "248.95",
+      "amount": "332923.32",
+      "tax_code": "GST18",
+      "tax_amount": "59926.20"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00040",
+      "description": "Zinc ingot - grade E - M040",
+      "uom": "KG",
+      "quantity": "931.37",
+      "unit_price": "139.11",
+      "amount": "129562.88",
+      "tax_code": "GST18",
+      "tax_amount": "23321.32"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00024",
+      "description": "Zinc ingot - grade C - M024",
+      "uom": "KG",
+      "quantity": "1311.04",
+      "unit_price": "283.93",
+      "amount": "372243.59",
+      "tax_code": "GST18",
+      "tax_amount": "67003.85"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+From: ap@vnd-00220.example
+To: invoices@buyer.example
+Date: Mon, 27 Apr 2026 09:58:01 +0530
+Subject: Invoice MER/26-27/135
+Message-ID: <doc-2026-000695@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor:  Merdav Foods & Co
+Tax Reg No:  TRN-192950387
+Plot 29, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Tax Invoice No:  MER/26-27/135
+Invoice Date:  23-04-2026
+PO No:  PO 2026-000521
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line:  1
+  Item Code:  SKU-00391
+  Description:  Coffee powder - grade C - M391
+  Unit:  KG
+  Qty:  133.89
+  Price:  92.61
+  Taxable Amt:  12399.55
+  GST Rate:  0%
+  GST Amt:  0.00
+Item 2
+  Order Line:  2
+  Item Code:  SKU-00398
+  Description:  Tea leaves - grade D - M398
+  Unit:  KG
+  Qty:  198.36
+  Price:  170.39
+  Taxable Amt:  33798.56
+  GST Rate:  5%
+  GST Amt:  1689.93
+
+Net Amount:  Rs. 46198.11
+Tax Amount:  Rs. 1689.93
+Grand Total:  Rs. 47888.04
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merdav Foods & Co

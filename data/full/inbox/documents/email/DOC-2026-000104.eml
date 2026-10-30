@@ -1,0 +1,38 @@
+From: ap@vnd-00282.example
+To: invoices@buyer.example
+Date: Tue, 10 Feb 2026 11:16:00 +0530
+Subject: Invoice HAL/25-26/193
+Message-ID: <doc-2026-000104@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller: Halwyn Foods LLP
+Tax Reg No: TRN-585504593
+Plot 91, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No: HAL/25-26/193
+Bill Date: 09 Feb 2026
+P.O. #: PO/2026/000093
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   PO Line   Item Code   Description                    UOM   Quantity   Unit Price   Value       Tax Code   Tax Amt
+1      1         SKU-00388   Wheat flour - grade C - M388   KG    44.78      255.54       11,443.08   GST 5%     572.15
+2      2         SKU-00396   Wheat flour - grade D - M396   KG    267.91     85.05        22,785.75   GST 5%     1,139.29
+
+Net Amount: 34,228.83
+GST: 1,711.44
+Invoice Total: 35,940.27
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halwyn Foods LLP

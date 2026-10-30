@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Davkav Electricals LLP",
+  "taxId": "TRN-301846241"
+ },
+ "header": {
+  "invoiceNo": "SI00270",
+  "invoiceDate": "2026-03-16T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000237",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 80023.00,
+  "tax": 14404.14,
+  "payable": 94427.14
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00092",
+   "text": "Terminal block - grade D - M092",
+   "unit": "EA",
+   "qty": 86,
+   "rate": 930.50,
+   "value": 80023.00,
+   "taxCode": "GST18",
+   "taxValue": 14404.14
+  }
+ ]
+}

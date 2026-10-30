@@ -322,6 +322,28 @@ read, and the guards make any read of them detectable.
   difference (with tax) for quantity and price variances; the absolute difference for tax and
   arithmetic. Types with no expected and no predicted instance report "not present", never 0/0.
 
+**ADR-042 Stage-5 outputs: validation, exports, manifest, reproducibility, data commit.**
+- **Validation suite** (`quality/suite.py`): the defect-aware quick checks plus engine invariants
+  (polymorphic event references, decision consistency, R34e, approvals only when unblocked, the
+  N:M bridge, duplicate pairs, capture consistency, policy provenance). Labelled defects are
+  reported as expected, never as violations. Tests inject five kinds of fault to show it fails.
+- **SQL seeds** are generated from the spec: PK, UNIQUE, FK and CHECK constraints (enums, booleans,
+  ISO dates and timestamps, numeric ranges). `seed.sql` holds master, inbox and processed tables;
+  `evaluation_seed.sql` holds source and ground truth and is loaded after it, so labels are never
+  in the seed's input tables. Both load into SQLite with `foreign_keys=ON` and a clean
+  `foreign_key_check`.
+- **JSON exports** are produced from the layer CSVs by `invoice_ap.export` (the generator no longer
+  writes them), compact, typed by the spec.
+- **Manifest** lists every file with bytes, SHA-256, rows and a commit flag; the reproducibility
+  report is written after it and not listed, because it describes the build.
+- **Reproducibility**: two subprocess rebuilds with PYTHONHASHSEED 1 and 2 and one with seed + 1;
+  the report holds no paths or times, so it is itself reproducible.
+- **Commit policy**: starter complete; full scale without the four regenerable groups listed in
+  the README, in the order the ruling gives. Measured total about 25.4 MB; the parity test rebuilds
+  both scales.
+- **Backlog presentation** (Stage-4 ruling 2): open exceptions past SLA are labelled "open and past
+  SLA at the snapshot (no resolutions simulated)" and aged in business days.
+
 ## Data, determinism and engineering
 
 **ADR-015 Determinism.**

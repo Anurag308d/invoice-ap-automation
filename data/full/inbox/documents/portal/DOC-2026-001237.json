@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Davhal Safety Gear Enterprises",
+    "tax_registration_id": "TRN-667907397"
+  },
+  "invoice": {
+    "number": "INV-2026-0396",
+    "date": "2026-07-06",
+    "po_number": "PO-2026-000934",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "89649.54",
+    "tax_total": "16136.91",
+    "grand_total": "105786.45"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00339",
+      "description": "Nitrile gloves - grade B - M339",
+      "uom": "EA",
+      "quantity": "45",
+      "unit_price": "709.94",
+      "amount": "31947.30",
+      "tax_code": "GST18",
+      "tax_amount": "5750.51"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00356",
+      "description": "Ear muffs - grade D - M356",
+      "uom": "EA",
+      "quantity": "57",
+      "unit_price": "1012.32",
+      "amount": "57702.24",
+      "tax_code": "GST18",
+      "tax_amount": "10386.40"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0437",
+  "invoiceDate": "2026-03-16T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000280",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 6093.38,
+  "tax": 304.67,
+  "payable": 6398.05
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00396",
+   "text": "Wheat flour - grade D - M396",
+   "unit": "KG",
+   "qty": 66.01,
+   "rate": 92.31,
+   "value": 6093.38,
+   "taxCode": "GST5",
+   "taxValue": 304.67
+  }
+ ]
+}

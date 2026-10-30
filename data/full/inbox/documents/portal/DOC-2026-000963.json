@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0258",
+  "invoiceDate": "2026-06-02T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000711",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 123404.40,
+  "tax": 22212.79,
+  "payable": 145617.19
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00156",
+   "text": "Gear coupling - grade E - M156",
+   "unit": "EA",
+   "qty": 35,
+   "rate": 3525.84,
+   "value": 123404.40,
+   "taxCode": "GST18",
+   "taxValue": 22212.79
+  }
+ ]
+}

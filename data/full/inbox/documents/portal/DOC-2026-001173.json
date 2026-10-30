@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halros Electricals LLP",
+  "taxId": "TRN-323841260"
+ },
+ "header": {
+  "invoiceNo": "HAL/26-27/219",
+  "invoiceDate": "2026-07-03T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000873",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 129712.20,
+  "tax": 23348.20,
+  "payable": 153060.40
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00061",
+   "text": "Copper cable - grade A - M061",
+   "unit": "EA",
+   "qty": 106,
+   "rate": 1223.70,
+   "value": 129712.20,
+   "taxCode": "GST18",
+   "taxValue": 23348.20
+  }
+ ]
+}

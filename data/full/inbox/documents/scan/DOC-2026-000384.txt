@@ -1,0 +1,23 @@
+Belor Facility Services Pvt Ltd
+Tax Reg No: TRN-678666050
+Plot 54, Industrial Area, Chennai 600058
+
+TAX INVOICE
+
+Bill No: INV-2026-0275
+Date: 18/03/2026
+Attn: USR-0024
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   Item   Item Description        Unit    Quantity   Unit Price    Amount        Tax Code   Tax
+1      -      Security services       MONTH   1          1,43,300.00   1,43,300.00   GST18      25,794.00
+2      -      Housekeeping services   MONTH   1          2,21,400.00   2,21,400.00   GST18      39,852.00
+
+Taxable Value: Rs. 3,64,700.00
+GST: Rs. 65,646.00
+Total: Rs. 4,30,346.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

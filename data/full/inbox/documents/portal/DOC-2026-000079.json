@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000005",
+  "invoiceDate": "2026-02-04T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000006",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 207333.45,
+  "tax": 37320.02,
+  "payable": 244653.47
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00167",
+   "text": "Pressure gauge - grade F - M167",
+   "unit": "EA",
+   "qty": 23,
+   "rate": 5046.27,
+   "value": 116064.21,
+   "taxCode": "GST18",
+   "taxValue": 20891.56
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00183",
+   "text": "Pressure gauge - grade H - M183",
+   "unit": "EA",
+   "qty": 2,
+   "rate": 9008.04,
+   "value": 18016.08,
+   "taxCode": "GST18",
+   "taxValue": 3242.89
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00184",
+   "text": "Chain sprocket - grade H - M184",
+   "unit": "EA",
+   "qty": 36,
+   "rate": 2034.81,
+   "value": 73253.16,
+   "taxCode": "GST18",
+   "taxValue": 13185.57
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rospar Safety Gear Pvt Ltd",
+  "taxId": "TRN-432562169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0407",
+  "invoiceDate": "2026-06-19T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000753",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 350249.76,
+  "tax": 17512.48,
+  "payable": 367762.24
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00343",
+   "text": "Respirator mask - grade B - M343",
+   "unit": "EA",
+   "qty": 256,
+   "rate": 638.66,
+   "value": 163496.96,
+   "taxCode": "GST5",
+   "taxValue": 8174.84
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00345",
+   "text": "Safety helmet - grade C - M345",
+   "unit": "EA",
+   "qty": 208,
+   "rate": 897.85,
+   "value": 186752.80,
+   "taxCode": "GST5",
+   "taxValue": 9337.64
+  }
+ ]
+}

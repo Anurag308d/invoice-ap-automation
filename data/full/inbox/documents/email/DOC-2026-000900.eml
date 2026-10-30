@@ -1,0 +1,37 @@
+From: ap@vnd-00161.example
+To: invoices@buyer.example
+Date: Wed, 27 May 2026 09:03:00 +0530
+Subject: Invoice URR/26-27/176
+Message-ID: <doc-2026-000900@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller: Urros Consulting Pvt Ltd
+TRN: TRN-837449187
+Plot 67, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Inv #: URR/26-27/176
+Bill Date: 25-05-2026
+Attn: USR-0027
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   Item   Description          UOM   Quantity   Rate      Amount      GST Rate   Tax Amt
+1   -      Training programme   HR    79.0       6000.00   474000.00   GST 18%    85320.00
+2   -      Audit advisory       HR    40.0       2700.00   108000.00   GST 18%    19440.00
+
+Subtotal: ₹582000.00
+Tax Amount: ₹104760.00
+Total Amount Due: ₹686760.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Urros Consulting Pvt Ltd

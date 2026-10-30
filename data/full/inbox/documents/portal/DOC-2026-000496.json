@@ -1,0 +1,55 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumtav Safety Gear & Co",
+    "tax_registration_id": "TRN-720142472"
+  },
+  "invoice": {
+    "number": "LUM/25-26/085",
+    "date": "2026-03-31",
+    "po_number": "PO-2026-000394",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "260967.66",
+    "tax_total": "35141.94",
+    "grand_total": "296109.60"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00351",
+      "description": "Respirator mask - grade C - M351",
+      "uom": "EA",
+      "quantity": "73",
+      "unit_price": "560.97",
+      "amount": "40950.81",
+      "tax_code": "GST18",
+      "tax_amount": "7371.15"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00341",
+      "description": "Safety goggles - grade B - M341",
+      "uom": "EA",
+      "quantity": "133",
+      "unit_price": "684.34",
+      "amount": "91017.22",
+      "tax_code": "GST5",
+      "tax_amount": "4550.86"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00344",
+      "description": "Fall-arrest harness - grade B - M344",
+      "uom": "EA",
+      "quantity": "131",
+      "unit_price": "984.73",
+      "amount": "128999.63",
+      "tax_code": "GST18",
+      "tax_amount": "23219.93"
+    }
+  ]
+}

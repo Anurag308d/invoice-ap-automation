@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Parcor Facility Services LLP",
+  "taxId": "TRN-713701123"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0199",
+  "invoiceDate": "2026-05-05T00:00:00+05:30",
+  "purchaseOrder": null,
+  "requesterId": "USR-0023",
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 124700.00,
+  "tax": 22446.00,
+  "payable": 147146.00
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": null,
+   "itemCode": null,
+   "text": "Security services",
+   "unit": "MONTH",
+   "qty": 1,
+   "rate": 124700.00,
+   "value": 124700.00,
+   "taxCode": "GST18",
+   "taxValue": 22446.00
+  }
+ ]
+}

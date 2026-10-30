@@ -1,0 +1,44 @@
+From: ap@vnd-00152.example
+To: invoices@buyer.example
+Date: Tue, 29 Sep 2026 16:52:00 +0530
+Subject: Invoice INV-2026-0118
+Message-ID: <doc-2026-001840@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor : Corvel Electricals LLP
+Tax Reg No : TRN-962696566
+Plot 58, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Bill No : INV-2026-0118
+Inv Date : 28-09-2026
+PO No : PO-2026-001283
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln : 1
+  Item : SKU-00073
+  Item Description : Cable tray - grade B - M073
+  Unit : EA
+  Quantity : 173
+  Unit Price : 1018.85
+  Amount : 176261.05
+  Tax Code : GST18
+  Tax : 31726.99
+
+Taxable Value : Rs. 176261.05
+Tax Amount : Rs. 31726.99
+Amount Payable : Rs. 207988.04
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Corvel Electricals LLP

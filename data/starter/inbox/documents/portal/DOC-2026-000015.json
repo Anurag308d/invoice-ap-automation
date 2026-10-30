@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumzan Engineering Spares LLP",
+  "taxId": "TRN-973008159"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0092",
+  "invoiceDate": "2026-02-16T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000010",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 17809.20,
+  "tax": 3205.66,
+  "payable": 21014.86
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00021",
+   "text": "Hydraulic seal - grade A - M021",
+   "unit": "EA",
+   "qty": 9,
+   "rate": 1978.80,
+   "value": 17809.20,
+   "taxCode": "GST18",
+   "taxValue": 3205.66
+  }
+ ]
+}

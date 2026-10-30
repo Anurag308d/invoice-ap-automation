@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rospar Safety Gear Pvt Ltd",
+  "taxId": "TRN-432562169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0398",
+  "invoiceDate": "2026-05-08T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000573",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 121953.36,
+  "tax": 6097.67,
+  "payable": 128051.03
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00332",
+   "text": "Ear muffs - grade A - M332",
+   "unit": "EA",
+   "qty": 138,
+   "rate": 883.72,
+   "value": 121953.36,
+   "taxCode": "GST5",
+   "taxValue": 6097.67
+  }
+ ]
+}

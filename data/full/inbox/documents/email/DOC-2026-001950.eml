@@ -1,0 +1,36 @@
+From: ap@vnd-00179.example
+To: invoices@buyer.example
+Date: Wed, 14 Oct 2026 12:30:00 +0530
+Subject: Invoice 000157
+Message-ID: <doc-2026-001950@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller : Novsel Stationers Industries
+TRN : TRN-219076680
+Plot 85, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Tax Invoice No : 000157
+Invoice Date : 14 Oct 2026
+Your Order Ref : PO 2026-001362
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   Order Line   Item Code   Description                        UOM    Quantity   Price    Taxable Amt   Tax Code   GST Amt
+1      1            SKU-00290   Toner cartridge - grade B - M290   PACK   29         244.19   7,081.51      18%        1,274.67
+
+Total Before Tax : ₹7,081.51
+Tax Amount : ₹1,274.67
+Total : ₹8,356.18
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Novsel Stationers Industries

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumir Electricals Industries",
+    "tax_registration_id": "TRN-144326083"
+  },
+  "invoice": {
+    "number": "INV-2026-0149",
+    "date": "2026-01-13",
+    "po_number": "PO-2026-000010",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "79183.49",
+    "tax_total": "14253.03",
+    "grand_total": "93436.52"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00109",
+      "description": "Copper cable - grade G - M109",
+      "uom": "EA",
+      "quantity": "61",
+      "unit_price": "1298.09",
+      "amount": "79183.49",
+      "tax_code": "GST18",
+      "tax_amount": "14253.03"
+    }
+  ]
+}

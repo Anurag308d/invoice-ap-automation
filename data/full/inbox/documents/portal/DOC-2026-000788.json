@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ennov Engineering Spares Pvt Ltd",
+    "tax_registration_id": "TRN-779290292"
+  },
+  "invoice": {
+    "number": "ENN/26-27/297",
+    "date": "2026-05-04",
+    "po_number": "PO-2026-000398",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "42970.78",
+    "tax_total": "7734.74",
+    "grand_total": "50705.52"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00184",
+      "description": "Chain sprocket - grade H - M184",
+      "uom": "EA",
+      "quantity": "19",
+      "unit_price": "2261.62",
+      "amount": "42970.78",
+      "tax_code": "GST18",
+      "tax_amount": "7734.74"
+    }
+  ]
+}

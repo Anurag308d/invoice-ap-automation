@@ -1,0 +1,44 @@
+From: ap@vnd-00152.example
+To: invoices@buyer.example
+Date: Wed, 20 May 2026 17:43:00 +0530
+Subject: Invoice INV-2026-0115
+Message-ID: <doc-2026-000862@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor : Corvel Electricals LLP
+Tax Reg No : TRN-962696566
+Plot 58, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Bill No : INV-2026-0115
+Inv Date : 18-05-2026
+PO No : PO-2026-000616
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln : 1
+  Item : SKU-00117
+  Item Description : Copper cable - grade H - M117
+  Unit : EA
+  Quantity : 22
+  Unit Price : 4822.76
+  Amount : 106100.72
+  Tax Code : GST18
+  Tax : 19098.13
+
+Taxable Value : Rs. 106100.72
+Tax Amount : Rs. 19098.13
+Amount Payable : Rs. 125198.85
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Corvel Electricals LLP

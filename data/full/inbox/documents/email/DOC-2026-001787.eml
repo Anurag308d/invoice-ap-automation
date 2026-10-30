@@ -1,0 +1,37 @@
+From: ap@vnd-00226.example
+To: invoices@buyer.example
+Date: Wed, 23 Sep 2026 13:39:00 +0530
+Subject: Invoice SI00165
+Message-ID: <doc-2026-001787@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Tavhal Packaging Pvt Ltd
+Tax Reg No: TRN-248478217
+Plot 35, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Inv #: SI00165
+Bill Date: 2026-09-22
+PO No: PO 2026-001246
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Ln | SKU | Item Description | UOM | Qty | Unit Price | Value | GST Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00229 | Carton sealer tape - grade D - M229 | BOX | 967 | 226.07 | 218,609.69 | 18% | 39,349.74 |
+
+Total Before Tax: INR 218,609.69
+GST: INR 39,349.74
+Amount Payable: INR 257,959.43
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Tavhal Packaging Pvt Ltd

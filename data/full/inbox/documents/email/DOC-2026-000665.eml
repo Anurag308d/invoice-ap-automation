@@ -1,0 +1,36 @@
+From: ap@vnd-00132.example
+To: invoices@buyer.example
+Date: Tue, 21 Apr 2026 15:47:00 +0530
+Subject: Invoice INV-2026-0120
+Message-ID: <doc-2026-000665@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor:  Kaven Foods LLP
+Tax Registration Number:  TRN-704740374
+Plot 38, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Invoice Number:  INV-2026-0120
+Date:  21-04-2026
+Purchase Order:  PO 2026-000517
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   PO Line   SKU         Description                    Unit   Qty     Price    Value      Tax Code   Tax
+1      1         SKU-00376   Milk powder - grade A - M376   KG     93.83   105.41   9,890.62   GST 5%     494.53
+
+Total Before Tax:  INR 9,890.62
+Tax Amount:  INR 494.53
+Total Amount Due:  INR 10,385.15
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kaven Foods LLP

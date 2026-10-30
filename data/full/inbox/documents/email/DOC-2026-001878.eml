@@ -1,0 +1,37 @@
+From: ap@vnd-00172.example
+To: invoices@buyer.example
+Date: Mon, 05 Oct 2026 17:24:00 +0530
+Subject: Invoice NOV/26-27/063
+Message-ID: <doc-2026-001878@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor : Novtav Engineering Spares LLP
+Tax Registration Number : TRN-878041667
+Plot 78, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Invoice No : NOV/26-27/063
+Inv Date : 28/08/2026
+PO Number : PO/2026/001272
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Ln | SKU | Item Description | UOM | Quantity | Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00141 | Pump impeller - grade C - M141 | EA | 13 | 1,013.54 | 13,176.02 | GST 18% | 2,371.68 |
+
+Net Amount : INR 13,176.02
+GST : INR 2,371.68
+Invoice Total : INR 15,547.70
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Novtav Engineering Spares LLP

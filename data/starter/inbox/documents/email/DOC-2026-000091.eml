@@ -1,0 +1,44 @@
+From: ap@vnd-00005.example
+To: invoices@buyer.example
+Date: Thu, 07 May 2026 12:51:00 +0530
+Subject: Invoice MER/26-27/085
+Message-ID: <doc-2026-000091@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Merfal Metals & Co
+Tax Regn. No.: TRN-614819478
+Plot 8, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: MER/26-27/085
+Invoice Date: 05/05/2026
+P.O. #: PO-2026-000061
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00006
+  Item Description: Stainless steel coil - grade A - M006
+  Unit: KG
+  Qty: 703.10
+  Rate: 283.05
+  Value: 199,012.46
+  Tax Rate: 18%
+  Tax Amt: 35,822.24
+
+Net Amount: ₹199,012.46
+Total Tax: ₹35,822.24
+Grand Total: ₹234,834.70
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merfal Metals & Co

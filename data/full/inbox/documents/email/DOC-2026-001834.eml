@@ -1,0 +1,37 @@
+From: ap@vnd-00075.example
+To: invoices@buyer.example
+Date: Tue, 29 Sep 2026 14:47:00 +0530
+Subject: Invoice QUI/26-27/224
+Message-ID: <doc-2026-001834@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Quinur Safety Gear & Co
+Tax Registration Number: TRN-654111937
+Plot 78, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice Number: QUI/26-27/224
+Dated: 22/09/2026
+PO No: PO 2026-001332
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Line | Item | Description | Unit | Quantity | Price | Value | Tax Code | Tax Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00347 | Nitrile gloves - grade C - M347 | EA | 136 | 717.88 | 97,631.68 | 5% | 4,881.58 |
+
+Taxable Value: INR 97,631.68
+GST: INR 4,881.58
+Amount Payable: INR 102,513.26
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Quinur Safety Gear & Co

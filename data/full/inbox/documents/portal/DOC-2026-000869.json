@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/354",
+    "date": "2026-05-22",
+    "po_number": "PO-2026-000652",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "78067.80",
+    "tax_total": "14052.20",
+    "grand_total": "92120.00"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00325",
+      "description": "Notebook - grade F - M325",
+      "uom": "PACK",
+      "quantity": "180",
+      "unit_price": "433.71",
+      "amount": "78067.80",
+      "tax_code": "GST18",
+      "tax_amount": "14052.20"
+    }
+  ]
+}

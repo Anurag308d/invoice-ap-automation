@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Rosar Electricals Enterprises",
+    "tax_registration_id": "TRN-249409140"
+  },
+  "invoice": {
+    "number": "000302",
+    "date": "2026-07-20",
+    "po_number": "PO-2026-000962",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "344437.74",
+    "tax_total": "61998.79",
+    "grand_total": "406436.53"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00075",
+      "description": "Relay module - grade B - M075",
+      "uom": "EA",
+      "quantity": "95",
+      "unit_price": "3118.54",
+      "amount": "296261.30",
+      "tax_code": "GST18",
+      "tax_amount": "53327.03"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00065",
+      "description": "Cable tray - grade A - M065",
+      "uom": "EA",
+      "quantity": "52",
+      "unit_price": "926.47",
+      "amount": "48176.44",
+      "tax_code": "GST18",
+      "tax_amount": "8671.76"
+    }
+  ]
+}

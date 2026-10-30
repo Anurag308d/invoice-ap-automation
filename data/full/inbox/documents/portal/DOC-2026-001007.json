@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumkav Engineering Spares Industries",
+    "tax_registration_id": "TRN-788381542"
+  },
+  "invoice": {
+    "number": "000035",
+    "date": "2026-06-15",
+    "po_number": "PO-2026-000702",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "28847.20",
+    "tax_total": "5192.49",
+    "grand_total": "34039.69"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00169",
+      "description": "Ball bearing - grade G - M169",
+      "uom": "EA",
+      "quantity": "8",
+      "unit_price": "332.03",
+      "amount": "2656.24",
+      "tax_code": "GST18",
+      "tax_amount": "478.12"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00141",
+      "description": "Pump impeller - grade C - M141",
+      "uom": "EA",
+      "quantity": "24",
+      "unit_price": "1091.29",
+      "amount": "26190.96",
+      "tax_code": "GST18",
+      "tax_amount": "4714.37"
+    }
+  ]
+}

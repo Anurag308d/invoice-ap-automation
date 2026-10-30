@@ -1,0 +1,22 @@
+SUPPLIER : PARQUIN FOODS LLP
+TAX REG NO : TRN-347619293
+Plot 61, Industrial Area, Faridabad 121003
+
+TAX INVOICE
+
+BILL NO : PAR/26-27/263
+BILL DATE : 01 Apr 2026
+PO NUMBER : PO 2026-000396
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+S.NO   PO LINE   ITEM        ITEM DESCRIPTION              UNIT   QUANTITY   UNIT PRICE   TAXABLE AMT   TAX CODE   TAX
+1      1         SKU-00398   Tea leaves - grade D - M398   KG     387.49     166.78       64,625.58     GST5       3,231.28
+
+SUBTOTAL : Rs. 64,625.58
+TOTAL TAX : Rs. 3,231.28
+GRAND TOTAL : Rs. 67,856.86
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

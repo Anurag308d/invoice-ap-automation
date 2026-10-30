@@ -1,0 +1,55 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/418",
+    "date": "2026-10-01",
+    "po_number": "PO-2026-001357",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "44724.01",
+    "tax_total": "7661.43",
+    "grand_total": "52385.44"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00324",
+      "description": "Whiteboard marker - grade F - M324",
+      "uom": "PACK",
+      "quantity": "76",
+      "unit_price": "508.56",
+      "amount": "38650.56",
+      "tax_code": "GST18",
+      "tax_amount": "6957.10"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00285",
+      "description": "Notebook - grade A - M285",
+      "uom": "PACK",
+      "quantity": "29",
+      "unit_price": "134.93",
+      "amount": "3912.97",
+      "tax_code": "GST18",
+      "tax_amount": "704.33"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00316",
+      "description": "Whiteboard marker - grade E - M316",
+      "uom": "PACK",
+      "quantity": "7",
+      "unit_price": "308.64",
+      "amount": "2160.48",
+      "tax_code": "EXEMPT",
+      "tax_amount": "0.00"
+    }
+  ]
+}

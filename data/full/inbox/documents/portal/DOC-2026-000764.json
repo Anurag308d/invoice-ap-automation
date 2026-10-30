@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0186",
+  "invoiceDate": "2026-05-04T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000559",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 8444.80,
+  "tax": 0.00,
+  "payable": 8444.80
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00313",
+   "text": "Copier paper - grade E - M313",
+   "unit": "PACK",
+   "qty": 65,
+   "rate": 129.92,
+   "value": 8444.80,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  }
+ ]
+}

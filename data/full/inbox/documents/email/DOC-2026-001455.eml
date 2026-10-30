@@ -1,0 +1,36 @@
+From: ap@vnd-00173.example
+To: invoices@buyer.example
+Date: Mon, 10 Aug 2026 13:44:00 +0530
+Subject: Invoice INV-2026-0047
+Message-ID: <doc-2026-001455@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier: Kavir Foods Enterprises
+Tax Regn. No.: TRN-704441020
+Plot 79, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No: INV-2026-0047
+Dated: 06.08.2026
+Your Order Ref: PO 2026-000987
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   SKU         Item Description                 UOM   Quantity   Rate    Value     Tax Code   Tax Amt
+1    1         SKU-00383   Coffee powder - grade B - M383   KG    31.24      85.71   2677.58   GST5       133.88
+
+Net Amount: ₹2677.58
+Total Tax: ₹133.88
+Amount Payable: ₹2811.46
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kavir Foods Enterprises

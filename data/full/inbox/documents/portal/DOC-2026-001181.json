@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000023",
+  "invoiceDate": "2026-07-06T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000831",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 36697.76,
+  "tax": 6605.60,
+  "payable": 43303.36
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00147",
+   "text": "Hydraulic seal - grade D - M147",
+   "unit": "EA",
+   "qty": 22,
+   "rate": 1668.08,
+   "value": 36697.76,
+   "taxCode": "GST18",
+   "taxValue": 6605.60
+  }
+ ]
+}

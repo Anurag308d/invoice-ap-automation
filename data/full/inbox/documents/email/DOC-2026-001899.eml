@@ -1,0 +1,36 @@
+From: ap@vnd-00173.example
+To: invoices@buyer.example
+Date: Tue, 06 Oct 2026 17:18:00 +0530
+Subject: Invoice INV-2026-0057
+Message-ID: <doc-2026-001899@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier: Kavir Foods Enterprises
+Tax Regn. No.: TRN-704441020
+Plot 79, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No: INV-2026-0057
+Dated: 05.10.2026
+Your Order Ref: PO 2026-001448
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   SKU         Item Description         UOM   Quantity   Rate     Value      Tax Code   Tax Amt
+1    1         SKU-00381   Sugar - grade B - M381   KG    388.98     123.32   47969.01   GST5       2398.45
+
+Net Amount: ₹47969.01
+Total Tax: ₹2398.45
+Amount Payable: ₹50367.46
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kavir Foods Enterprises

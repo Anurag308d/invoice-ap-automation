@@ -1,0 +1,67 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ennov Engineering Spares Pvt Ltd",
+    "tax_registration_id": "TRN-779290292"
+  },
+  "invoice": {
+    "number": "ENN/26-27/301",
+    "date": "2026-07-24",
+    "po_number": "PO-2026-000896",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "175718.52",
+    "tax_total": "31629.33",
+    "grand_total": "207347.85"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00122",
+      "description": "V-belt - grade A - M122",
+      "uom": "EA",
+      "quantity": "33",
+      "unit_price": "2493.15",
+      "amount": "82273.95",
+      "tax_code": "GST18",
+      "tax_amount": "14809.31"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00148",
+      "description": "Gear coupling - grade D - M148",
+      "uom": "EA",
+      "quantity": "9",
+      "unit_price": "3923.39",
+      "amount": "35310.51",
+      "tax_code": "GST18",
+      "tax_amount": "6355.89"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00159",
+      "description": "Pressure gauge - grade E - M159",
+      "uom": "EA",
+      "quantity": "24",
+      "unit_price": "2042.62",
+      "amount": "49022.88",
+      "tax_code": "GST18",
+      "tax_amount": "8824.12"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00168",
+      "description": "Chain sprocket - grade F - M168",
+      "uom": "EA",
+      "quantity": "6",
+      "unit_price": "1518.53",
+      "amount": "9111.18",
+      "tax_code": "GST18",
+      "tax_amount": "1640.01"
+    }
+  ]
+}

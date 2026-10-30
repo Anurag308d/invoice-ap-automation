@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Davhal Safety Gear Enterprises",
+    "tax_registration_id": "TRN-667907397"
+  },
+  "invoice": {
+    "number": "INV-2026-0387",
+    "date": "2026-03-27",
+    "po_number": "PO-2026-000465",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "17960.04",
+    "tax_total": "3232.81",
+    "grand_total": "21192.85"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00331",
+      "description": "Nitrile gloves - grade A - M331",
+      "uom": "EA",
+      "quantity": "36",
+      "unit_price": "498.89",
+      "amount": "17960.04",
+      "tax_code": "GST18",
+      "tax_amount": "3232.81"
+    }
+  ]
+}

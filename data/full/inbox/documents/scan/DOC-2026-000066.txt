@@ -1,0 +1,21 @@
+TAVZAN STATIONERS & CO
+TAX REGN. NO.: TRN-972853163
+Plot 54, Industrial Area, Ahmedabad 382445
+
+TAX INVOICE
+
+TAX INVOICE NO: TAV/25-26/283      INVOICE DATE: 29 Jan 2026
+YOUR ORDER REF: PO/2026/000005
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ORDER LINE   ITEM CODE   PARTICULARS                     UOM    QUANTITY   UNIT PRICE   VALUE       TAX RATE   TAX AMT
+1   1            SKU-00305   Copier paper - grade D - M305   PACK   124        276.50       34,286.00   GST18      6,171.48
+
+TAXABLE VALUE: ₹34,286.00
+GST: ₹6,171.48
+AMOUNT PAYABLE: ₹40,457.48
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

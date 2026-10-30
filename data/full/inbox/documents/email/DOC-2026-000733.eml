@@ -1,0 +1,44 @@
+From: ap@vnd-00011.example
+To: invoices@buyer.example
+Date: Thu, 30 Apr 2026 11:33:00 +0530
+Subject: Invoice JOR/26-27/090
+Message-ID: <doc-2026-000733@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier : Jorur Metals Pvt Ltd
+TRN : TRN-257470808
+Plot 14, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Invoice Number : JOR/26-27/090
+Date : April 29, 2026
+P.O. # : PO 2026-000534
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line : 1
+  Item : SKU-00022
+  Item Description : Stainless steel coil - grade C - M022
+  Unit : KG
+  Quantity : 684.18
+  Price : 78.98
+  Taxable Amt : 54,036.54
+  GST Rate : GST 18%
+  Tax : 9,726.58
+
+Taxable Value : INR 54,036.54
+GST : INR 9,726.58
+Invoice Total : INR 63,763.12
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Jorur Metals Pvt Ltd

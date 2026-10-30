@@ -1,0 +1,93 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-831401137"
+ },
+ "header": {
+  "invoiceNo": "URK/25-26/204",
+  "invoiceDate": "2026-02-05T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000047",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 336409.68,
+  "tax": 60553.74,
+  "payable": 396963.42
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00150",
+   "text": "Valve actuator - grade D - M150",
+   "unit": "EA",
+   "qty": 14,
+   "rate": 3328.66,
+   "value": 46601.24,
+   "taxCode": "GST18",
+   "taxValue": 8388.22
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00174",
+   "text": "Valve actuator - grade G - M174",
+   "unit": "EA",
+   "qty": 1,
+   "rate": 469.23,
+   "value": 469.23,
+   "taxCode": "GST18",
+   "taxValue": 84.46
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00124",
+   "text": "Gear coupling - grade A - M124",
+   "unit": "EA",
+   "qty": 18,
+   "rate": 7017.95,
+   "value": 126323.10,
+   "taxCode": "GST18",
+   "taxValue": 22738.16
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00145",
+   "text": "Ball bearing - grade D - M145",
+   "unit": "EA",
+   "qty": 17,
+   "rate": 1308.01,
+   "value": 22236.17,
+   "taxCode": "GST18",
+   "taxValue": 4002.51
+  },
+  {
+   "seq": 5,
+   "orderLine": 5,
+   "itemCode": "SKU-00149",
+   "text": "Pump impeller - grade D - M149",
+   "unit": "EA",
+   "qty": 21,
+   "rate": 4995.84,
+   "value": 104912.64,
+   "taxCode": "GST18",
+   "taxValue": 18884.28
+  },
+  {
+   "seq": 6,
+   "orderLine": 6,
+   "itemCode": "SKU-00156",
+   "text": "Gear coupling - grade E - M156",
+   "unit": "EA",
+   "qty": 10,
+   "rate": 3586.73,
+   "value": 35867.30,
+   "taxCode": "GST18",
+   "taxValue": 6456.11
+  }
+ ]
+}

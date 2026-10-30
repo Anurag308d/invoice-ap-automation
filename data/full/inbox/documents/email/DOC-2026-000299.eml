@@ -1,0 +1,37 @@
+From: ap@vnd-00102.example
+To: invoices@buyer.example
+Date: Wed, 11 Mar 2026 16:23:00 +0530
+Subject: Invoice 000047
+Message-ID: <doc-2026-000299@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier:  Orjor Infotech LLP
+Tax Registration Number:  TRN-533620255
+Plot 8, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Invoice Number:  000047
+Inv Date:  09-03-2026
+PO No:  PO 2026-000140
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Ln | SKU | Particulars | UOM | Qty | Unit Price | Taxable Amt | Tax Code | Tax Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00263 | Storage array - grade C - M263 | EA | 30 | 38610.72 | 1158321.60 | 18% | 208497.89 |
+
+Total Before Tax:  ₹1158321.60
+Tax Amount:  ₹208497.89
+Amount Payable:  ₹1366819.49
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Orjor Infotech LLP

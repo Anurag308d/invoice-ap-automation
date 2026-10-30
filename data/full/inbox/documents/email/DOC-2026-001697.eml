@@ -1,0 +1,74 @@
+From: ap@vnd-00152.example
+To: invoices@buyer.example
+Date: Mon, 14 Sep 2026 09:43:00 +0530
+Subject: Invoice INV-2026-0117
+Message-ID: <doc-2026-001697@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor : Corvel Electricals LLP
+Tax Reg No : TRN-962696566
+Plot 58, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Bill No : INV-2026-0117
+Inv Date : 10-09-2026
+PO No : PO-2026-001159
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln : 1
+  Item : SKU-00071
+  Item Description : LED panel - grade B - M071
+  Unit : EA
+  Quantity : 193
+  Unit Price : 1458.98
+  Amount : 281583.14
+  Tax Code : GST18
+  Tax : 50684.97
+Item 2
+  PO Ln : 2
+  Item : SKU-00096
+  Item Description : Contactor - grade E - M096
+  Unit : EA
+  Quantity : 164
+  Unit Price : 109.22
+  Amount : 17912.08
+  Tax Code : GST18
+  Tax : 3224.17
+Item 3
+  PO Ln : 3
+  Item : SKU-00086
+  Item Description : MCB switch - grade D - M086
+  Unit : EA
+  Quantity : 50
+  Unit Price : 3741.88
+  Amount : 187094.00
+  Tax Code : GST18
+  Tax : 33676.92
+Item 4
+  PO Ln : 4
+  Item : SKU-00104
+  Item Description : Contactor - grade F - M104
+  Unit : EA
+  Quantity : 150
+  Unit Price : 4405.10
+  Amount : 660765.00
+  Tax Code : GST18
+  Tax : 118937.70
+
+Taxable Value : Rs. 1147354.22
+Tax Amount : Rs. 206523.76
+Amount Payable : Rs. 1353877.98
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Corvel Electricals LLP

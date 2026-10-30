@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Arnov Electricals & Co",
+    "tax_registration_id": "TRN-367241317"
+  },
+  "invoice": {
+    "number": "SI00143",
+    "date": "2026-09-28",
+    "po_number": "PO-2026-001342",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "85713.81",
+    "tax_total": "15428.49",
+    "grand_total": "101142.30"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00081",
+      "description": "Cable tray - grade C - M081",
+      "uom": "EA",
+      "quantity": "91",
+      "unit_price": "941.91",
+      "amount": "85713.81",
+      "tax_code": "GST18",
+      "tax_amount": "15428.49"
+    }
+  ]
+}

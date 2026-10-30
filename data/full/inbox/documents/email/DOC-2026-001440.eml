@@ -1,0 +1,36 @@
+From: ap@vnd-00217.example
+To: invoices@buyer.example
+Date: Fri, 07 Aug 2026 09:07:00 +0530
+Subject: Invoice INV-2026-0081
+Message-ID: <doc-2026-001440@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Jortav Facility Services LLP
+Tax Reg No:  TRN-103736348
+Plot 26, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0081
+Invoice Date:  August 07, 2026
+Kind Attn:  USR-0023
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   SKU   Particulars             Unit    Qty   Unit Price   Taxable Amt   Tax Code   GST Amt
+1      -     Housekeeping services   MONTH   1     174800.00    174800.00     GST18      31464.00
+
+Net Amount:  ₹174800.00
+Tax Amount:  ₹31464.00
+Grand Total:  ₹206264.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Jortav Facility Services LLP

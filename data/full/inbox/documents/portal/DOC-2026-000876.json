@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0252",
+  "invoiceDate": "2026-04-15T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000583",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 24135.65,
+  "tax": 4344.42,
+  "payable": 28480.07
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00181",
+   "text": "Pump impeller - grade H - M181",
+   "unit": "EA",
+   "qty": 1,
+   "rate": 644.81,
+   "value": 644.81,
+   "taxCode": "GST18",
+   "taxValue": 116.07
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00175",
+   "text": "Pressure gauge - grade G - M175",
+   "unit": "EA",
+   "qty": 19,
+   "rate": 1236.36,
+   "value": 23490.84,
+   "taxCode": "GST18",
+   "taxValue": 4228.35
+  }
+ ]
+}

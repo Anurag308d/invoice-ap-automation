@@ -1,0 +1,43 @@
+From: ap@vnd-00089.example
+To: invoices@buyer.example
+Date: Fri, 17 Jul 2026 12:57:00 +0530
+Subject: Invoice QUI/26-27/206
+Message-ID: <doc-2026-001279@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier: Quinir Metals Industries
+TRN: TRN-686482467
+Plot 92, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No: QUI/26-27/206
+Bill Date: 2026-07-17
+P.O. #: PO 2026-000865
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | PO Line | Item Code | Item Description | Unit | Qty | Price | Value | Tax Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00026 | Aluminium ingot - grade D - M026 | KG | 207.53 | 114.85 | 23,834.82 | GST18 | 4,290.27 |
+| 2 | 2 | SKU-00006 | Stainless steel coil - grade A - M006 | KG | 957.73 | 307.47 | 2,94,473.24 | GST18 | 53,005.18 |
+| 3 | 3 | SKU-00007 | Brass rod - grade A - M007 | KG | 1404.11 | 104.96 | 1,47,375.39 | GST18 | 26,527.57 |
+| 4 | 4 | SKU-00052 | PVC resin - grade G - M052 | KG | 1759.02 | 243.81 | 4,28,866.67 | GST18 | 77,196.00 |
+| 5 | 5 | SKU-00005 | HDPE granules - grade A - M005 | KG | 382.39 | 243.82 | 93,234.33 | GST18 | 16,782.18 |
+| 6 | 6 | SKU-00048 | Zinc ingot - grade F - M048 | KG | 1285.57 | 214.40 | 2,75,626.21 | GST18 | 49,612.72 |
+
+Net Amount: 12,63,410.66
+Tax: 2,27,413.92
+Invoice Total: 14,90,824.58
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Quinir Metals Industries

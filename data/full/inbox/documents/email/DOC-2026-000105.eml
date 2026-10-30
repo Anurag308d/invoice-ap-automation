@@ -1,0 +1,36 @@
+From: ap@vnd-00020.example
+To: invoices@buyer.example
+Date: Tue, 10 Feb 2026 14:00:00 +0530
+Subject: Invoice INV-2026-0242
+Message-ID: <doc-2026-000105@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller : Quinjor Foods & Co
+Tax Regn. No. : TRN-234700317
+Plot 23, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Invoice Number : INV-2026-0242
+Inv Date : 10/02/2026
+Purchase Order : PO 2026-000029
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   Order Line   Item Code   Item Description                 Unit   Qty      Unit Price   Taxable Amt   Tax Code   GST Amt
+1      1            SKU-00383   Coffee powder - grade B - M383   KG     189.56   89.67        16997.85      GST5       849.89
+
+Total Before Tax : ₹16997.85
+Tax Amount : ₹849.89
+Grand Total : ₹17847.74
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Quinjor Foods & Co

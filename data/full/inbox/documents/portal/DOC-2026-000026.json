@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rospar Safety Gear Pvt Ltd",
+  "taxId": "TRN-432562169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0389",
+  "invoiceDate": "2026-01-20T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000054",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 552158.70,
+  "tax": 80214.05,
+  "payable": 632372.75
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00354",
+   "text": "Safety shoes - grade D - M354",
+   "unit": "EA",
+   "qty": 273,
+   "rate": 1482.28,
+   "value": 404662.44,
+   "taxCode": "GST18",
+   "taxValue": 72839.24
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00358",
+   "text": "Hi-vis vest - grade D - M358",
+   "unit": "EA",
+   "qty": 194,
+   "rate": 760.29,
+   "value": 147496.26,
+   "taxCode": "GST5",
+   "taxValue": 7374.81
+  }
+ ]
+}

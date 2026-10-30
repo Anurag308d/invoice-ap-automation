@@ -1,0 +1,44 @@
+From: ap@vnd-00292.example
+To: invoices@buyer.example
+Date: Tue, 30 Jun 2026 15:11:00 +0530
+Subject: Invoice 000139
+Message-ID: <doc-2026-001152@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier: Velcor Stationers LLP
+Tax Reg No: TRN-651670880
+Plot 4, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Inv #: 000139
+Bill Date: 2026-06-29
+Purchase Order: PO 2026-000895
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item Code: SKU-00301
+  Item Description: Notebook - grade C - M301
+  Unit: PACK
+  Quantity: 64
+  Price: 1,215.77
+  Taxable Amt: 77,809.28
+  GST Rate: GST 18%
+  Tax Amt: 14,005.67
+
+Net Amount: ₹77,809.28
+Total Tax: ₹14,005.67
+Amount Payable: ₹91,814.95
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Velcor Stationers LLP

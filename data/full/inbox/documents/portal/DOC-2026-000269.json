@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Irsel Stationers LLP",
+  "taxId": "TRN-264874055"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0054",
+  "invoiceDate": "2026-03-09T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000226",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 97063.16,
+  "tax": 17284.38,
+  "payable": 114347.54
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00290",
+   "text": "Toner cartridge - grade B - M290",
+   "unit": "PACK",
+   "qty": 114,
+   "rate": 227.81,
+   "value": 25970.34,
+   "taxCode": "GST18",
+   "taxValue": 4487.67
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00321",
+   "text": "Copier paper - grade F - M321",
+   "unit": "PACK",
+   "qty": 166,
+   "rate": 428.27,
+   "value": 71092.82,
+   "taxCode": "GST18",
+   "taxValue": 12796.71
+  }
+ ]
+}

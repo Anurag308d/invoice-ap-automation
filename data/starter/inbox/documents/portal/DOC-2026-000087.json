@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumen Engineering Spares Industries",
+  "taxId": "TRN-266048241"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0301",
+  "invoiceDate": "2026-05-04T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000059",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 53202.24,
+  "tax": 9576.40,
+  "payable": 62778.64
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00028",
+   "text": "V-belt - grade B - M028",
+   "unit": "EA",
+   "qty": 26,
+   "rate": 2046.24,
+   "value": 53202.24,
+   "taxCode": "GST18",
+   "taxValue": 9576.40
+  }
+ ]
+}

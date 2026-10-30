@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumir Electricals Industries",
+    "tax_registration_id": "TRN-144326083"
+  },
+  "invoice": {
+    "number": "INV-2026-0161",
+    "date": "2026-08-17",
+    "po_number": "PO-2026-001054",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "35756.92",
+    "tax_total": "6436.25",
+    "grand_total": "42193.17"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00106",
+      "description": "Junction box - grade F - M106",
+      "uom": "EA",
+      "quantity": "164",
+      "unit_price": "218.03",
+      "amount": "35756.92",
+      "tax_code": "GST18",
+      "tax_amount": "6436.25"
+    }
+  ]
+}

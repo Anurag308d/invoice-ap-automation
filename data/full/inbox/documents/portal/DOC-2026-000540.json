@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/361",
+    "date": "2026-04-06",
+    "po_number": "PO-2026-000351",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "28711.08",
+    "tax_total": "5167.99",
+    "grand_total": "33879.07"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00035",
+      "description": "Copper rod - grade E - M035",
+      "uom": "KG",
+      "quantity": "154.76",
+      "unit_price": "185.52",
+      "amount": "28711.08",
+      "tax_code": "GST18",
+      "tax_amount": "5167.99"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Wynnov Engineering Spares & Co",
+    "tax_registration_id": "TRN-398884951"
+  },
+  "invoice": {
+    "number": "000339",
+    "date": "2026-08-28",
+    "po_number": "PO-2026-000999",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "41976.81",
+    "tax_total": "7555.82",
+    "grand_total": "49532.63"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00134",
+      "description": "Valve actuator - grade B - M134",
+      "uom": "EA",
+      "quantity": "9",
+      "unit_price": "1963.41",
+      "amount": "17670.69",
+      "tax_code": "GST18",
+      "tax_amount": "3180.72"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00148",
+      "description": "Gear coupling - grade D - M148",
+      "uom": "EA",
+      "quantity": "6",
+      "unit_price": "4051.02",
+      "amount": "24306.12",
+      "tax_code": "GST18",
+      "tax_amount": "4375.10"
+    }
+  ]
+}

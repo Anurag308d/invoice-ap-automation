@@ -1,0 +1,79 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Arnov Electricals & Co",
+    "tax_registration_id": "TRN-367241317"
+  },
+  "invoice": {
+    "number": "SI00138",
+    "date": "2026-05-07",
+    "po_number": "PO-2026-000547",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "656285.25",
+    "tax_total": "118131.35",
+    "grand_total": "774416.60"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00090",
+      "description": "Junction box - grade D - M090",
+      "uom": "EA",
+      "quantity": "153",
+      "unit_price": "484.13",
+      "amount": "74071.89",
+      "tax_code": "GST18",
+      "tax_amount": "13332.94"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00066",
+      "description": "Junction box - grade A - M066",
+      "uom": "EA",
+      "quantity": "92",
+      "unit_price": "664.68",
+      "amount": "61150.56",
+      "tax_code": "GST18",
+      "tax_amount": "11007.10"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00092",
+      "description": "Terminal block - grade D - M092",
+      "uom": "EA",
+      "quantity": "86",
+      "unit_price": "831.11",
+      "amount": "71475.46",
+      "tax_code": "GST18",
+      "tax_amount": "12865.58"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00117",
+      "description": "Copper cable - grade H - M117",
+      "uom": "EA",
+      "quantity": "70",
+      "unit_price": "4630.41",
+      "amount": "324128.70",
+      "tax_code": "GST18",
+      "tax_amount": "58343.17"
+    },
+    {
+      "line_no": 5,
+      "po_line_no": "5",
+      "sku": "SKU-00081",
+      "description": "Cable tray - grade C - M081",
+      "uom": "EA",
+      "quantity": "136",
+      "unit_price": "922.49",
+      "amount": "125458.64",
+      "tax_code": "GST18",
+      "tax_amount": "22582.56"
+    }
+  ]
+}

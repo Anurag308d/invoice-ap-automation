@@ -1,0 +1,36 @@
+From: ap@vnd-00132.example
+To: invoices@buyer.example
+Date: Tue, 19 May 2026 15:42:00 +0530
+Subject: Invoice INV-2026-0124
+Message-ID: <doc-2026-000853@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor:  Kaven Foods LLP
+Tax Registration Number:  TRN-704740374
+Plot 38, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Invoice Number:  INV-2026-0124
+Date:  18-05-2026
+Purchase Order:  PO 2026-000639
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   PO Line   SKU         Description                    Unit   Qty      Price    Value       Tax Code   Tax
+1      1         SKU-00380   Wheat flour - grade B - M380   KG     192.26   165.38   31,795.96   GST 5%     1,589.80
+
+Total Before Tax:  INR 31,795.96
+Tax Amount:  INR 1,589.80
+Total Amount Due:  INR 33,385.76
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kaven Foods LLP

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Ardav Packaging Industries",
+  "taxId": "TRN-687502822"
+ },
+ "header": {
+  "invoiceNo": "ARD/26-27/052",
+  "invoiceDate": "2026-05-06T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000578",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 134903.16,
+  "tax": 6745.16,
+  "payable": 141648.32
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00215",
+   "text": "Strapping roll - grade B - M215",
+   "unit": "BOX",
+   "qty": 987,
+   "rate": 136.68,
+   "value": 134903.16,
+   "taxCode": "GST5",
+   "taxValue": 6745.16
+  }
+ ]
+}

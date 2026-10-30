@@ -1,0 +1,44 @@
+From: ap@vnd-00005.example
+To: invoices@buyer.example
+Date: Mon, 23 Mar 2026 15:25:00 +0530
+Subject: Invoice LUM/25-26/083
+Message-ID: <doc-2026-000390@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Lumtav Safety Gear & Co
+Tax Regn. No.: TRN-720142472
+Plot 8, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: LUM/25-26/083
+Invoice Date: 23/03/2026
+P.O. #: PO-2026-000179
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00361
+  Item Description: Safety helmet - grade E - M361
+  Unit: EA
+  Qty: 62
+  Rate: 434.29
+  Value: 26,925.98
+  Tax Rate: 5%
+  Tax Amt: 1,346.30
+
+Net Amount: ₹26,925.98
+Total Tax: ₹1,346.30
+Grand Total: ₹28,272.28
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Lumtav Safety Gear & Co

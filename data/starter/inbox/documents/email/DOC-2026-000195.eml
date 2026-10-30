@@ -1,0 +1,45 @@
+From: ap@vnd-00030.example
+To: invoices@buyer.example
+Date: Mon, 12 Oct 2026 10:31:00 +0530
+Subject: Invoice 000123
+Message-ID: <doc-2026-000195@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller : Arhal Infotech & Co
+Tax Reg No : TRN-805435787
+Plot 33, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Invoice No : 000123
+Invoice Date : 08-10-2026
+Purchase Order : PO/2026/000147
+Currency : INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line : 1
+  Item : SKU-00037
+  Item Description : Laptop - grade A - M037
+  Unit : EA
+  Qty : 28
+  Rate : 23354.90
+  Value : 653937.20
+  Tax Code : 18%
+  Tax Amt : 117708.70
+
+Taxable Value : 653937.20
+Tax Amount : 117708.70
+Amount Payable : 771645.90
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Arhal Infotech & Co

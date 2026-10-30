@@ -1,0 +1,54 @@
+From: ap@vnd-00292.example
+To: invoices@buyer.example
+Date: Mon, 14 Sep 2026 14:07:00 +0530
+Subject: Invoice 000145
+Message-ID: <doc-2026-001701@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier: Velcor Stationers LLP
+Tax Reg No: TRN-651670880
+Plot 4, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Inv #: 000145
+Bill Date: 2026-09-09
+Purchase Order: PO 2026-001259
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item Code: SKU-00315
+  Item Description: File folder - grade E - M315
+  Unit: PACK
+  Quantity: 102
+  Price: 151.48
+  Taxable Amt: 15,450.96
+  GST Rate: GST 5%
+  Tax Amt: 772.55
+Item 2
+  Order Line: 2
+  Item Code: SKU-00307
+  Item Description: File folder - grade D - M307
+  Unit: PACK
+  Quantity: 40
+  Price: 666.26
+  Taxable Amt: 26,650.40
+  GST Rate: GST 5%
+  Tax Amt: 1,332.52
+
+Net Amount: ₹42,101.36
+Total Tax: ₹2,105.07
+Amount Payable: ₹44,206.43
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Velcor Stationers LLP

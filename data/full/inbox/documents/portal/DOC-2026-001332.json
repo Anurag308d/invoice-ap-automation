@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Arquin Electricals LLP",
+  "taxId": "TRN-450958623"
+ },
+ "header": {
+  "invoiceNo": "298",
+  "invoiceDate": "2026-07-15T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000914",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 211971.05,
+  "tax": 38154.79,
+  "payable": 250125.84
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00110",
+   "text": "MCB switch - grade G - M110",
+   "unit": "EA",
+   "qty": 113,
+   "rate": 1875.85,
+   "value": 211971.05,
+   "taxCode": "GST18",
+   "taxValue": 38154.79
+  }
+ ]
+}

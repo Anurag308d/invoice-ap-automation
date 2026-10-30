@@ -1,0 +1,44 @@
+From: ap@vnd-00164.example
+To: invoices@buyer.example
+Date: Wed, 05 Aug 2026 09:17:00 +0530
+Subject: Invoice ROS/26-27/118
+Message-ID: <doc-2026-001423@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Rosor Engineering Spares Industries
+Tax Registration Number:  TRN-763931567
+Plot 70, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Inv #:  ROS/26-27/118
+Date:  03-08-2026
+P.O. #:  PO 2026-000975
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line:  1
+  Item Code:  SKU-00121
+  Description:  Ball bearing - grade A - M121
+  UOM:  EA
+  Quantity:  34
+  Rate:  5,812.53
+  Taxable Amt:  1,97,626.02
+  GST Rate:  18%
+  Tax:  35,572.69
+
+Total Before Tax:  ₹1,97,626.02
+Tax:  ₹35,572.69
+Invoice Total:  ₹2,33,198.71
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Rosor Engineering Spares Industries

@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0198",
+  "invoiceDate": "2026-09-02T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001179",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 163908.85,
+  "tax": 27145.26,
+  "payable": 191054.11
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00316",
+   "text": "Whiteboard marker - grade E - M316",
+   "unit": "PACK",
+   "qty": 44,
+   "rate": 297.77,
+   "value": 13101.88,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00306",
+   "text": "Toner cartridge - grade D - M306",
+   "unit": "PACK",
+   "qty": 103,
+   "rate": 757.24,
+   "value": 77995.72,
+   "taxCode": "GST18",
+   "taxValue": 14039.23
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00312",
+   "text": "Printer ribbon - grade D - M312",
+   "unit": "PACK",
+   "qty": 155,
+   "rate": 469.75,
+   "value": 72811.25,
+   "taxCode": "GST18",
+   "taxValue": 13106.03
+  }
+ ]
+}

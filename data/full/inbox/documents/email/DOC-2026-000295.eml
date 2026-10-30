@@ -1,0 +1,37 @@
+From: ap@vnd-00246.example
+To: invoices@buyer.example
+Date: Wed, 11 Mar 2026 09:27:00 +0530
+Subject: Invoice INV-2026-0413
+Message-ID: <doc-2026-000295@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier: Halfal Foods Pvt Ltd
+TRN: TRN-920769419
+Plot 55, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Invoice Number: INV-2026-0413
+Invoice Date: 24-02-2026
+P.O. #: PO-2026-000212
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Ln | Item | Particulars | Unit | Qty | Price | Taxable Amt | Tax Rate | Tax Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00391 | Coffee powder - grade C - M391 | KG | 179.10 | 91.87 | 16,453.92 | GST 0% | 0.00 |
+
+Subtotal: INR 16,453.92
+GST: INR 0.00
+Total: INR 16,453.92
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halfal Foods Pvt Ltd

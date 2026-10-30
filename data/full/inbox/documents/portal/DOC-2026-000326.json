@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Rosar Electricals Enterprises",
+    "tax_registration_id": "TRN-249409140"
+  },
+  "invoice": {
+    "number": "000296",
+    "date": "2026-03-16",
+    "po_number": "PO-2026-000249",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "26389.96",
+    "tax_total": "4750.19",
+    "grand_total": "31140.15"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00108",
+      "description": "Terminal block - grade F - M108",
+      "uom": "EA",
+      "quantity": "67",
+      "unit_price": "393.88",
+      "amount": "26389.96",
+      "tax_code": "GST18",
+      "tax_amount": "4750.19"
+    }
+  ]
+}

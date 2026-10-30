@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Beljor Foods & Co",
+    "tax_registration_id": "TRN-119834936"
+  },
+  "invoice": {
+    "number": "BEL/26-27/290",
+    "date": "2026-09-01",
+    "po_number": "PO-2026-001184",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "18765.02",
+    "tax_total": "0.00",
+    "grand_total": "18765.02"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00400",
+      "description": "Milk powder - grade D - M400",
+      "uom": "KG",
+      "quantity": "82.48",
+      "unit_price": "227.51",
+      "amount": "18765.02",
+      "tax_code": "GST0",
+      "tax_amount": "0.00"
+    }
+  ]
+}

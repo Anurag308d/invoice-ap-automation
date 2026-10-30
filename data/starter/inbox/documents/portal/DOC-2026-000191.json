@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumen Engineering Spares Industries",
+  "taxId": "TRN-266048241"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0322",
+  "invoiceDate": "2026-09-28T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000128",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 30346.76,
+  "tax": 5462.42,
+  "payable": 35809.18
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00030",
+   "text": "Gear coupling - grade B - M030",
+   "unit": "EA",
+   "qty": 29,
+   "rate": 1046.44,
+   "value": 30346.76,
+   "taxCode": "GST18",
+   "taxValue": 5462.42
+  }
+ ]
+}

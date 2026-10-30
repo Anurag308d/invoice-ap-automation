@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/412",
+    "date": "2026-09-28",
+    "po_number": "PO-2026-001352",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "58118.50",
+    "tax_total": "10461.33",
+    "grand_total": "68579.83"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00322",
+      "description": "Toner cartridge - grade F - M322",
+      "uom": "PACK",
+      "quantity": "110",
+      "unit_price": "528.35",
+      "amount": "58118.50",
+      "tax_code": "GST18",
+      "tax_amount": "10461.33"
+    }
+  ]
+}

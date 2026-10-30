@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0680",
+  "invoiceDate": "2026-07-23T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000985",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 8204.75,
+  "tax": 410.24,
+  "payable": 8614.99
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00383",
+   "text": "Coffee powder - grade B - M383",
+   "unit": "KG",
+   "qty": 93.79,
+   "rate": 87.48,
+   "value": 8204.75,
+   "taxCode": "GST5",
+   "taxValue": 410.24
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urir Engineering Spares & Co",
+    "tax_registration_id": "TRN-912635395"
+  },
+  "invoice": {
+    "number": "INV-2026-0225",
+    "date": "2026-06-08",
+    "po_number": "PO-2026-000693",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "5454.18",
+    "tax_total": "981.75",
+    "grand_total": "6435.93"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00181",
+      "description": "Pump impeller - grade H - M181",
+      "uom": "EA",
+      "quantity": "9",
+      "unit_price": "606.02",
+      "amount": "5454.18",
+      "tax_code": "GST18",
+      "tax_amount": "981.75"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0428",
+  "invoiceDate": "2026-03-09T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000255",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 191254.24,
+  "tax": 2063.10,
+  "payable": 193317.34
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00390",
+   "text": "Tea leaves - grade C - M390",
+   "unit": "KG",
+   "qty": 224.64,
+   "rate": 93.83,
+   "value": 21077.97,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00394",
+   "text": "Toor dal - grade D - M394",
+   "unit": "KG",
+   "qty": 378.40,
+   "rate": 167.51,
+   "value": 63385.78,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00377",
+   "text": "Basmati rice - grade B - M377",
+   "unit": "KG",
+   "qty": 418.13,
+   "rate": 76.73,
+   "value": 32083.11,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00382",
+   "text": "Tea leaves - grade B - M382",
+   "unit": "KG",
+   "qty": 395.64,
+   "rate": 36.73,
+   "value": 14531.86,
+   "taxCode": "GST5",
+   "taxValue": 726.59
+  },
+  {
+   "seq": 5,
+   "orderLine": 5,
+   "itemCode": "SKU-00383",
+   "text": "Coffee powder - grade B - M383",
+   "unit": "KG",
+   "qty": 308.13,
+   "rate": 86.75,
+   "value": 26730.28,
+   "taxCode": "GST5",
+   "taxValue": 1336.51
+  },
+  {
+   "seq": 6,
+   "orderLine": 6,
+   "itemCode": "SKU-00378",
+   "text": "Toor dal - grade B - M378",
+   "unit": "KG",
+   "qty": 223.43,
+   "rate": 149.69,
+   "value": 33445.24,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

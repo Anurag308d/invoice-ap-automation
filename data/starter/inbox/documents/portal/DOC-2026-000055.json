@@ -1,0 +1,93 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Irzan Stationers & Co",
+  "taxId": "TRN-352743263"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0086",
+  "invoiceDate": "2026-04-07T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000048",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 119252.98,
+  "tax": 10311.87,
+  "payable": 129564.85
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00048",
+   "text": "Stapler - grade A - M048",
+   "unit": "PACK",
+   "qty": 60,
+   "rate": 341.71,
+   "value": 20502.60,
+   "taxCode": "GST5",
+   "taxValue": 1025.13
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00047",
+   "text": "Notebook - grade A - M047",
+   "unit": "PACK",
+   "qty": 100,
+   "rate": 239.33,
+   "value": 23933.00,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00043",
+   "text": "Copier paper - grade A - M043",
+   "unit": "PACK",
+   "qty": 130,
+   "rate": 247.36,
+   "value": 32156.80,
+   "taxCode": "GST5",
+   "taxValue": 1607.84
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00045",
+   "text": "File folder - grade A - M045",
+   "unit": "PACK",
+   "qty": 29,
+   "rate": 243.93,
+   "value": 7073.97,
+   "taxCode": "GST18",
+   "taxValue": 1273.31
+  },
+  {
+   "seq": 5,
+   "orderLine": 5,
+   "itemCode": "SKU-00049",
+   "text": "Desk organiser - grade A - M049",
+   "unit": "PACK",
+   "qty": 107,
+   "rate": 226.74,
+   "value": 24261.18,
+   "taxCode": "GST18",
+   "taxValue": 4367.01
+  },
+  {
+   "seq": 6,
+   "orderLine": 6,
+   "itemCode": "SKU-00046",
+   "text": "Whiteboard marker - grade A - M046",
+   "unit": "PACK",
+   "qty": 23,
+   "rate": 492.41,
+   "value": 11325.43,
+   "taxCode": "GST18",
+   "taxValue": 2038.58
+  }
+ ]
+}

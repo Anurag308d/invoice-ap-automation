@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Davkav Electricals LLP",
+  "taxId": "TRN-301846241"
+ },
+ "header": {
+  "invoiceNo": "SI00272",
+  "invoiceDate": "2026-08-26T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001120",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 240129.26,
+  "tax": 43223.27,
+  "payable": 283352.53
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00085",
+   "text": "Copper cable - grade D - M085",
+   "unit": "EA",
+   "qty": 74,
+   "rate": 3244.99,
+   "value": 240129.26,
+   "taxCode": "GST18",
+   "taxValue": 43223.27
+  }
+ ]
+}

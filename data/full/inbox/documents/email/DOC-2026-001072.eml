@@ -1,0 +1,36 @@
+From: ap@vnd-00173.example
+To: invoices@buyer.example
+Date: Mon, 22 Jun 2026 11:09:00 +0530
+Subject: Invoice INV-2026-0037
+Message-ID: <doc-2026-001072@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier: Kavir Foods Enterprises
+Tax Regn. No.: TRN-704441020
+Plot 79, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No: INV-2026-0037
+Dated: 17.06.2026
+Your Order Ref: PO 2026-000829
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   SKU         Item Description               UOM   Quantity   Rate     Value      Tax Code   Tax Amt
+1    1         SKU-00396   Wheat flour - grade D - M396   KG    291.34     106.96   31161.73   GST5       1558.09
+
+Net Amount: ₹31161.73
+Total Tax: ₹1558.09
+Amount Payable: ₹32719.82
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kavir Foods Enterprises

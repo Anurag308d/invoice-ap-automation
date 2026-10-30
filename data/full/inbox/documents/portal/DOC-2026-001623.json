@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Corjor Stationers Pvt Ltd",
+    "tax_registration_id": "TRN-236408597"
+  },
+  "invoice": {
+    "number": "COR/26-27/254",
+    "date": "2026-08-31",
+    "po_number": "PO-2026-001133",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "1212.66",
+    "tax_total": "218.28",
+    "grand_total": "1430.94"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00304",
+      "description": "Printer ribbon - grade C - M304",
+      "uom": "PACK",
+      "quantity": "6",
+      "unit_price": "202.11",
+      "amount": "1212.66",
+      "tax_code": "GST18",
+      "tax_amount": "218.28"
+    }
+  ]
+}

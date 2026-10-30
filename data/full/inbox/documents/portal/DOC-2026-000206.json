@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Uren Engineering Spares LLP",
+    "tax_registration_id": "TRN-310579660"
+  },
+  "invoice": {
+    "number": "SI00175",
+    "date": "2026-02-26",
+    "po_number": "PO-2026-000118",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "91277.19",
+    "tax_total": "16429.89",
+    "grand_total": "107707.08"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00178",
+      "description": "V-belt - grade H - M178",
+      "uom": "EA",
+      "quantity": "21",
+      "unit_price": "1422.39",
+      "amount": "29870.19",
+      "tax_code": "GST18",
+      "tax_amount": "5376.63"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00166",
+      "description": "Valve actuator - grade F - M166",
+      "uom": "EA",
+      "quantity": "9",
+      "unit_price": "6823.00",
+      "amount": "61407.00",
+      "tax_code": "GST18",
+      "tax_amount": "11053.26"
+    }
+  ]
+}

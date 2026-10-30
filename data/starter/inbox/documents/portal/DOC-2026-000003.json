@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/25-26/216",
+  "invoiceDate": "2026-01-20T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000004",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 7313.04,
+  "tax": 1316.35,
+  "payable": 8629.39
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00029",
+   "text": "Hydraulic seal - grade B - M029",
+   "unit": "EA",
+   "qty": 7,
+   "rate": 1044.72,
+   "value": 7313.04,
+   "taxCode": "GST18",
+   "taxValue": 1316.35
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+From: ap@vnd-00089.example
+To: invoices@buyer.example
+Date: Thu, 26 Feb 2026 11:03:00 +0530
+Subject: Invoice QUI/25-26/202
+Message-ID: <doc-2026-000205@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier: Quinir Metals Industries
+TRN: TRN-686482467
+Plot 92, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No: QUI/25-26/202
+Bill Date: 2026-02-23
+P.O. #: PO 2026-000154
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | PO Line | Item Code | Item Description | Unit | Qty | Price | Value | Tax Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00034 | Aluminium ingot - grade E - M034 | KG | 1304.46 | 229.65 | 2,99,569.24 | GST18 | 53,922.46 |
+| 2 | 2 | SKU-00010 | Aluminium ingot - grade B - M010 | KG | 583.69 | 124.21 | 72,500.13 | GST18 | 13,050.02 |
+
+Net Amount: 3,72,069.37
+Tax: 66,972.48
+Invoice Total: 4,39,041.85
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Quinir Metals Industries

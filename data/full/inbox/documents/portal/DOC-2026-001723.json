@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rosir Foods Industries",
+  "taxId": "TRN-565016045"
+ },
+ "header": {
+  "invoiceNo": "ROS/26-27/228",
+  "invoiceDate": "2026-09-11T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001286",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 53887.44,
+  "tax": 2694.37,
+  "payable": 56581.81
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00395",
+   "text": "Sunflower oil - grade D - M395",
+   "unit": "KG",
+   "qty": 106.19,
+   "rate": 134.19,
+   "value": 14249.64,
+   "taxCode": "GST5",
+   "taxValue": 712.48
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00376",
+   "text": "Milk powder - grade A - M376",
+   "unit": "KG",
+   "qty": 381.72,
+   "rate": 103.84,
+   "value": 39637.80,
+   "taxCode": "GST5",
+   "taxValue": 1981.89
+  }
+ ]
+}

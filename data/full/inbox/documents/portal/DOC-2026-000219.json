@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0178",
+  "invoiceDate": "2026-03-02T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000193",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 63007.73,
+  "tax": 2233.71,
+  "payable": 65241.44
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00317",
+   "text": "Notebook - grade E - M317",
+   "unit": "PACK",
+   "qty": 4,
+   "rate": 482.32,
+   "value": 1929.28,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00281",
+   "text": "Copier paper - grade A - M281",
+   "unit": "PACK",
+   "qty": 67,
+   "rate": 244.84,
+   "value": 16404.28,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00289",
+   "text": "Copier paper - grade B - M289",
+   "unit": "PACK",
+   "qty": 111,
+   "rate": 402.47,
+   "value": 44674.17,
+   "taxCode": "GST5",
+   "taxValue": 2233.71
+  }
+ ]
+}

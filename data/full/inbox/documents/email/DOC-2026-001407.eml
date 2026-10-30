@@ -1,0 +1,44 @@
+From: ap@vnd-00101.example
+To: invoices@buyer.example
+Date: Mon, 03 Aug 2026 13:53:00 +0530
+Subject: Invoice inv/2026-784
+Message-ID: <doc-2026-001407@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Halmer Infotech Pvt Ltd
+Tax Registration Number: TRN-211047529
+Plot 7, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Inv #: inv/2026-784
+Date: 30-Jul-2026
+PO Number: PO/2026/000945
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00248
+  Description: Docking station - grade A - M248
+  Unit: EA
+  Quantity: 29
+  Rate: 15,994.87
+  Taxable Amt: 463,851.23
+  GST Rate: GST 18%
+  Tax: 83,493.22
+
+Subtotal: INR 463,851.23
+Tax Amount: INR 83,493.22
+Grand Total: INR 547,344.45
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halmer Infotech Pvt Ltd

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Wynnov Engineering Spares & Co",
+    "tax_registration_id": "TRN-398884951"
+  },
+  "invoice": {
+    "number": "000341",
+    "date": "2026-10-14",
+    "po_number": "PO-2026-001313",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "8873.80",
+    "tax_total": "1597.28",
+    "grand_total": "10471.08"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00161",
+      "description": "Ball bearing - grade F - M161",
+      "uom": "EA",
+      "quantity": "10",
+      "unit_price": "887.38",
+      "amount": "8873.80",
+      "tax_code": "GST18",
+      "tax_amount": "1597.28"
+    }
+  ]
+}

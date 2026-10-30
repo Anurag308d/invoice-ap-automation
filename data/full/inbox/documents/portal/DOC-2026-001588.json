@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0272",
+  "invoiceDate": "2026-08-25T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001066",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 64816.28,
+  "tax": 11666.93,
+  "payable": 76483.21
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00199",
+   "text": "Pressure gauge - grade J - M199",
+   "unit": "EA",
+   "qty": 3,
+   "rate": 9120.18,
+   "value": 27360.54,
+   "taxCode": "GST18",
+   "taxValue": 4924.90
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00122",
+   "text": "V-belt - grade A - M122",
+   "unit": "EA",
+   "qty": 14,
+   "rate": 2675.41,
+   "value": 37455.74,
+   "taxCode": "GST18",
+   "taxValue": 6742.03
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urzan Engineering Spares Industries",
+    "tax_registration_id": "TRN-972851033"
+  },
+  "invoice": {
+    "number": "URZ/26-27/168",
+    "date": "2026-04-13",
+    "po_number": "PO-2026-000350",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "26540.64",
+    "tax_total": "4777.32",
+    "grand_total": "31317.96"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00147",
+      "description": "Hydraulic seal - grade D - M147",
+      "uom": "EA",
+      "quantity": "16",
+      "unit_price": "1658.79",
+      "amount": "26540.64",
+      "tax_code": "GST18",
+      "tax_amount": "4777.32"
+    }
+  ]
+}

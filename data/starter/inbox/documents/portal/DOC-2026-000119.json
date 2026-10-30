@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/258",
+  "invoiceDate": "2026-06-19T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000090",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 171381.57,
+  "tax": 30848.69,
+  "payable": 202230.26
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00020",
+   "text": "V-belt - grade A - M020",
+   "unit": "EA",
+   "qty": 32,
+   "rate": 4390.77,
+   "value": 140504.64,
+   "taxCode": "GST18",
+   "taxValue": 25290.84
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00026",
+   "text": "Chain sprocket - grade A - M026",
+   "unit": "EA",
+   "qty": 27,
+   "rate": 1143.59,
+   "value": 30876.93,
+   "taxCode": "GST18",
+   "taxValue": 5557.85
+  }
+ ]
+}

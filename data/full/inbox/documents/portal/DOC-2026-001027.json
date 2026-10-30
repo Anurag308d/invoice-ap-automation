@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Garros Engineering Spares Industries",
+    "tax_registration_id": "TRN-147914743"
+  },
+  "invoice": {
+    "number": "INV-2026-0402",
+    "date": "2026-06-15",
+    "po_number": "PO-2026-000683",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "22091.80",
+    "tax_total": "3976.52",
+    "grand_total": "26068.32"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00141",
+      "description": "Pump impeller - grade C - M141",
+      "uom": "EA",
+      "quantity": "20",
+      "unit_price": "1104.59",
+      "amount": "22091.80",
+      "tax_code": "GST18",
+      "tax_amount": "3976.52"
+    }
+  ]
+}

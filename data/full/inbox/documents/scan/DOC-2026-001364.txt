@@ -1,0 +1,27 @@
+Uror Metals Enterprises
+Tax Regn. No.: TRN-582808240
+Plot 84, Industrial Area, Nagpur 440016
+
+TAX INVOICE
+
+Tax Invoice No: INV-2026-0133
+Inv Date: 21.07.2026
+PO Number: PO-2026-000905
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   SKU         Item Description                 UOM   Quantity   Unit Price   Value       GST Rate   GST Amt
+1    1         SKU-00037   HDPE granules - grade E - M037   KG    1468.18    238.01       349441.52   GST18      62899.47
+2    2         SKU-00028   PVC resin - grade D - M028       KG    507.99     154.83       78652.09    GST18      14157.38
+-- Page 1 of 2 --
+
+Sr   PO Line   SKU         Item Description                 UOM   Quantity   Unit Price   Value       GST Rate   GST Amt
+3    3         SKU-00057   MS sheet - grade H - M057        KG    416.57     49.16        20478.58    GST18      3686.14
+
+Total Before Tax: INR 448572.19
+Tax Amount: INR 80742.99
+Total Amount Due: INR 529315.18
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+-- end of document --

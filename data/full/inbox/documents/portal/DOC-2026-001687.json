@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Orgar Electricals Industries",
+    "tax_registration_id": "TRN-487171397"
+  },
+  "invoice": {
+    "number": "INV-2026-0366",
+    "date": "2026-09-08",
+    "po_number": "PO-2026-001150",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "6454.00",
+    "tax_total": "1161.72",
+    "grand_total": "7615.72"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00093",
+      "description": "Copper cable - grade E - M093",
+      "uom": "EA",
+      "quantity": "28",
+      "unit_price": "230.50",
+      "amount": "6454.00",
+      "tax_code": "GST18",
+      "tax_amount": "1161.72"
+    }
+  ]
+}

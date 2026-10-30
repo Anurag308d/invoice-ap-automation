@@ -1,0 +1,81 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0650",
+  "invoiceDate": "2026-07-08T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000946",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 202523.40,
+  "tax": 7950.24,
+  "payable": 210473.64
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00388",
+   "text": "Wheat flour - grade C - M388",
+   "unit": "KG",
+   "qty": 316.01,
+   "rate": 250.50,
+   "value": 79160.51,
+   "taxCode": "GST5",
+   "taxValue": 3958.03
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00382",
+   "text": "Tea leaves - grade B - M382",
+   "unit": "KG",
+   "qty": 366.08,
+   "rate": 34.46,
+   "value": 12615.12,
+   "taxCode": "GST5",
+   "taxValue": 630.76
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00375",
+   "text": "Coffee powder - grade A - M375",
+   "unit": "KG",
+   "qty": 432.12,
+   "rate": 100.71,
+   "value": 43518.81,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00384",
+   "text": "Milk powder - grade B - M384",
+   "unit": "KG",
+   "qty": 346.92,
+   "rate": 140.83,
+   "value": 48856.74,
+   "taxCode": "GST5",
+   "taxValue": 2442.84
+  },
+  {
+   "seq": 5,
+   "orderLine": 5,
+   "itemCode": "SKU-00369",
+   "text": "Basmati rice - grade A - M369",
+   "unit": "KG",
+   "qty": 203.21,
+   "rate": 90.41,
+   "value": 18372.22,
+   "taxCode": "GST5",
+   "taxValue": 918.61
+  }
+ ]
+}

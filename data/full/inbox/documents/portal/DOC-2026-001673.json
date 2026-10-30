@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Orgar Electricals Industries",
+    "tax_registration_id": "TRN-487171397"
+  },
+  "invoice": {
+    "number": "INV-2026-0364",
+    "date": "2026-09-07",
+    "po_number": "PO-2026-001109",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "131237.54",
+    "tax_total": "23622.76",
+    "grand_total": "154860.30"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00087",
+      "description": "LED panel - grade D - M087",
+      "uom": "EA",
+      "quantity": "46",
+      "unit_price": "2852.99",
+      "amount": "131237.54",
+      "tax_code": "GST18",
+      "tax_amount": "23622.76"
+    }
+  ]
+}

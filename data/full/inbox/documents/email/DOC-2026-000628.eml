@@ -1,0 +1,44 @@
+From: ap@vnd-00152.example
+To: invoices@buyer.example
+Date: Thu, 16 Apr 2026 10:17:00 +0530
+Subject: Invoice INV-2026-0113
+Message-ID: <doc-2026-000628@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor : Corvel Electricals LLP
+Tax Reg No : TRN-962696566
+Plot 58, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Bill No : INV-2026-0113
+Inv Date : 15-04-2026
+PO No : PO-2026-000294
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln : 1
+  Item : SKU-00074
+  Item Description : Junction box - grade B - M074
+  Unit : EA
+  Quantity : 4
+  Unit Price : 769.24
+  Amount : 3076.96
+  Tax Code : GST18
+  Tax : 553.85
+
+Taxable Value : Rs. 3076.96
+Tax Amount : Rs. 553.85
+Amount Payable : Rs. 3630.81
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Corvel Electricals LLP

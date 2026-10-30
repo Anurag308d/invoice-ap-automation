@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000015",
+  "invoiceDate": "2026-06-22T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000793",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 15325.50,
+  "tax": 2758.59,
+  "payable": 18084.09
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00181",
+   "text": "Pump impeller - grade H - M181",
+   "unit": "EA",
+   "qty": 25,
+   "rate": 613.02,
+   "value": 15325.50,
+   "taxCode": "GST18",
+   "taxValue": 2758.59
+  }
+ ]
+}

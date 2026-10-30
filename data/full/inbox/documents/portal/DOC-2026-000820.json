@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Zansel Stationers Pvt Ltd",
+  "taxId": "TRN-517840014"
+ },
+ "header": {
+  "invoiceNo": "SI00403",
+  "invoiceDate": "2026-05-11T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000510",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 40968.80,
+  "tax": 0.00,
+  "payable": 40968.80
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00317",
+   "text": "Notebook - grade E - M317",
+   "unit": "PACK",
+   "qty": 83,
+   "rate": 493.60,
+   "value": 40968.80,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  }
+ ]
+}

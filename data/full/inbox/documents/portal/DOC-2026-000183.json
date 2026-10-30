@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Arzan Safety Gear Industries",
+  "taxId": "TRN-515169999"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0241",
+  "invoiceDate": "2026-02-23T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000204",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 578660.92,
+  "tax": 78707.51,
+  "payable": 657368.43
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00334",
+   "text": "Hi-vis vest - grade A - M334",
+   "unit": "EA",
+   "qty": 295,
+   "rate": 1297.90,
+   "value": 382880.50,
+   "taxCode": "GST18",
+   "taxValue": 68918.49
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00332",
+   "text": "Ear muffs - grade A - M332",
+   "unit": "EA",
+   "qty": 99,
+   "rate": 915.94,
+   "value": 90678.06,
+   "taxCode": "GST5",
+   "taxValue": 4533.90
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00364",
+   "text": "Ear muffs - grade E - M364",
+   "unit": "EA",
+   "qty": 108,
+   "rate": 973.17,
+   "value": 105102.36,
+   "taxCode": "GST5",
+   "taxValue": 5255.12
+  }
+ ]
+}

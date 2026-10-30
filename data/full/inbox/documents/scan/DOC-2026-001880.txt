@@ -1,0 +1,22 @@
+SUPPLIER: ORHAL METALS ENTERPRISES
+TAX REGN. NO.: TRN-952841401
+Plot 59, Industrial Area, Coimbatore 641021
+
+TAX INVOICE
+
+INVOICE NUMBER: SI00120
+INVOICE DATE: 2026-09-28
+P.O. #: PO 2026-001264
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ORDER LINE   SKU         PARTICULARS                   UOM   QUANTITY   PRICE    AMOUNT       GST RATE   TAX
+1   1            SKU-00048   Zinc ingot - grade F - M048   KG    1205.39    219.30   264,342.03   GST18      47,581.57
+
+NET AMOUNT: ₹264,342.03
+TAX: ₹47,581.57
+TOTAL: ₹311,923.60
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

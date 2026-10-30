@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Selcor Safety Gear & Co",
+    "tax_registration_id": "TRN-592545963"
+  },
+  "invoice": {
+    "number": "SEL/26-27/241",
+    "date": "2026-06-15",
+    "po_number": "PO-2026-000744",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "153166.86",
+    "tax_total": "27570.03",
+    "grand_total": "180736.89"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00351",
+      "description": "Respirator mask - grade C - M351",
+      "uom": "EA",
+      "quantity": "257",
+      "unit_price": "595.98",
+      "amount": "153166.86",
+      "tax_code": "GST18",
+      "tax_amount": "27570.03"
+    }
+  ]
+}

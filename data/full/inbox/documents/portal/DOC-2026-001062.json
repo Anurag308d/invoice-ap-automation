@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rospar Safety Gear Pvt Ltd",
+  "taxId": "TRN-432562169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0410",
+  "invoiceDate": "2026-06-19T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000695",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 26472.88,
+  "tax": 4765.12,
+  "payable": 31238.00
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00356",
+   "text": "Ear muffs - grade D - M356",
+   "unit": "EA",
+   "qty": 28,
+   "rate": 945.46,
+   "value": 26472.88,
+   "taxCode": "GST18",
+   "taxValue": 4765.12
+  }
+ ]
+}

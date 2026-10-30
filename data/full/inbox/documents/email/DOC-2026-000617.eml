@@ -1,0 +1,37 @@
+From: ap@vnd-00233.example
+To: invoices@buyer.example
+Date: Wed, 15 Apr 2026 11:51:00 +0530
+Subject: Invoice INV-2026-0238
+Message-ID: <doc-2026-000617@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier:  Irzan Stationers Enterprises
+Tax Reg No:  TRN-159285900
+Plot 42, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0238
+Date:  13-04-2026
+P.O. #:  PO 2026-000452
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | Order Line | SKU | Description | UOM | Quantity | Price | Taxable Amt | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00298 | Toner cartridge - grade C - M298 | PACK | 91 | 179.17 | 16304.47 | EXEMPT | 0.00 |
+
+Taxable Value:  ₹16304.47
+Tax:  ₹0.00
+Grand Total:  ₹16304.47
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Irzan Stationers Enterprises

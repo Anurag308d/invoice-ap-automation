@@ -1,0 +1,22 @@
+VENDOR : WYNCOR METALS & CO
+TAX REGN. NO. : TRN-396075294
+Plot 88, Industrial Area, Indore 452015
+
+TAX INVOICE
+
+INVOICE NO : INV-2026-0202
+DATED : 10/06/2026
+PO NO : PO 2026-000644
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+LINE   ORDER LINE   ITEM        ITEM DESCRIPTION              UNIT   QTY       UNIT PRICE   AMOUNT      TAX CODE   TAX
+1      1            SKU-00043   Copper rod - grade F - M043   KG     1167.28   159.55       186239.52   GST18      33523.11
+
+NET AMOUNT : Rs. 186239.52
+TOTAL TAX : Rs. 33523.11
+INVOICE TOTAL : Rs. 219762.63
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

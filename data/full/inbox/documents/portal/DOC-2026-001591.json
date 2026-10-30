@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Garros Engineering Spares Industries",
+    "tax_registration_id": "TRN-147914743"
+  },
+  "invoice": {
+    "number": "INV-2026-0406",
+    "date": "2026-08-28",
+    "po_number": "PO-2026-001118",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "55849.75",
+    "tax_total": "10052.96",
+    "grand_total": "65902.71"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00170",
+      "description": "V-belt - grade G - M170",
+      "uom": "EA",
+      "quantity": "25",
+      "unit_price": "2233.99",
+      "amount": "55849.75",
+      "tax_code": "GST18",
+      "tax_amount": "10052.96"
+    }
+  ]
+}

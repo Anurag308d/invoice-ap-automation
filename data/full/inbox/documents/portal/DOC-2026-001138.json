@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halros Electricals LLP",
+  "taxId": "TRN-323841260"
+ },
+ "header": {
+  "invoiceNo": "HAL/26-27/216",
+  "invoiceDate": "2026-06-23T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000740",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 738887.92,
+  "tax": 132999.83,
+  "payable": 871887.75
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00117",
+   "text": "Copper cable - grade H - M117",
+   "unit": "EA",
+   "qty": 172,
+   "rate": 4295.86,
+   "value": 738887.92,
+   "taxCode": "GST18",
+   "taxValue": 132999.83
+  }
+ ]
+}

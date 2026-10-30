@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enbel Safety Gear Pvt Ltd",
+  "taxId": "TRN-390244468"
+ },
+ "header": {
+  "invoiceNo": "000078",
+  "invoiceDate": "2026-04-21T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000460",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 78564.64,
+  "tax": 14141.64,
+  "payable": 92706.28
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00344",
+   "text": "Fall-arrest harness - grade B - M344",
+   "unit": "EA",
+   "qty": 88,
+   "rate": 892.78,
+   "value": 78564.64,
+   "taxCode": "GST18",
+   "taxValue": 14141.64
+  }
+ ]
+}

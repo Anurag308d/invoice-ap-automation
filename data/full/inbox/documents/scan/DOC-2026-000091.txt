@@ -1,0 +1,22 @@
+SELLER: NOVQUIN ELECTRICALS & CO
+TAX REGN. NO.: TRN-644585520
+Plot 61, Industrial Area, Indore 452015
+
+TAX INVOICE
+
+INVOICE NO: INV-2026-0392      DATED: 02-02-2026
+PURCHASE ORDER: PO-2026-000028
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+LINE   PO LINE   ITEM CODE   DESCRIPTION                     UOM   QTY   RATE       TAXABLE AMT   TAX CODE   TAX
+1      1         SKU-00101   Copper cable - grade F - M101   EA    41    395.31     16,207.71     18%        2,917.39
+2      2         SKU-00078   MCB switch - grade C - M078     EA    136   1,999.21   2,71,892.56   18%        48,940.66
+
+SUBTOTAL: INR 2,88,100.27
+TAX: INR 51,858.05
+TOTAL AMOUNT DUE: INR 3,39,958.32
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

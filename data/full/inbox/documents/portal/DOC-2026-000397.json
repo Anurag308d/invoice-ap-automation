@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Selwyn Metals Enterprises",
+  "taxId": "TRN-975298949"
+ },
+ "header": {
+  "invoiceNo": "SI00104",
+  "invoiceDate": "2026-03-23T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000236",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 116626.95,
+  "tax": 20992.85,
+  "payable": 137619.80
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00001",
+   "text": "MS sheet - grade A - M001",
+   "unit": "KG",
+   "qty": 890.69,
+   "rate": 130.94,
+   "value": 116626.95,
+   "taxCode": "GST18",
+   "taxValue": 20992.85
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+From: ap@vnd-00053.example
+To: invoices@buyer.example
+Date: Thu, 12 Mar 2026 16:29:00 +0530
+Subject: Invoice INV-2026-0221
+Message-ID: <doc-2026-000308@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Halquin Packaging Enterprises
+Tax Reg No:  TRN-332656559
+Plot 56, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Invoice No:  INV-2026-0221
+Invoice Date:  March 09, 2026
+P.O. #:  PO/2026/000214
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Ln | Item | Particulars | Unit | Quantity | Price | Value | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00212 | Bubble wrap roll - grade B - M212 | BOX | 400 | 105.55 | 42220.00 | GST 18% | 7599.60 |
+
+Taxable Value:  INR 42220.00
+Tax Amount:  INR 7599.60
+Invoice Total:  INR 49819.60
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halquin Packaging Enterprises

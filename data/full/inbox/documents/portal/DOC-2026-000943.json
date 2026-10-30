@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Irsel Stationers LLP",
+  "taxId": "TRN-264874055"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0055",
+  "invoiceDate": "2026-06-01T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000701",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 44058.42,
+  "tax": 0.00,
+  "payable": 44058.42
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00323",
+   "text": "File folder - grade F - M323",
+   "unit": "PACK",
+   "qty": 146,
+   "rate": 301.77,
+   "value": 44058.42,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+From: ap@vnd-00230.example
+To: invoices@buyer.example
+Date: Fri, 13 Feb 2026 10:48:00 +0530
+Subject: Invoice INV-2026-0235
+Message-ID: <doc-2026-000129@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier : Merfal Logistics & Co
+Tax Regn. No. : TRN-791819618
+Plot 39, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Tax Invoice No : INV-2026-0235
+Invoice Date : 11-Feb-2026
+Attn : USR-0025
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   Item Code   Description           UOM   Quantity   Rate        Value        Tax Code   Tax
+1      -           Courier services      JOB   3          57,500.00   172,500.00   GST5       8,625.00
+2      -           Warehousing charges   JOB   1          14,200.00   14,200.00    GST18      2,556.00
+3      -           Warehousing charges   JOB   1          21,300.00   21,300.00    GST18      3,834.00
+
+Total Before Tax : INR 208,000.00
+Tax Amount : INR 15,015.00
+Total : INR 223,015.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merfal Logistics & Co

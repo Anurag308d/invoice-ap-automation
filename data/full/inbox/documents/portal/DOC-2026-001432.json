@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Rossel Metals Pvt Ltd",
+    "tax_registration_id": "TRN-554940502"
+  },
+  "invoice": {
+    "number": "000335",
+    "date": "2026-08-06",
+    "po_number": "PO-2026-000982",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "188088.95",
+    "tax_total": "33856.01",
+    "grand_total": "221944.96"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00033",
+      "description": "MS sheet - grade E - M033",
+      "uom": "KG",
+      "quantity": "637.46",
+      "unit_price": "295.06",
+      "amount": "188088.95",
+      "tax_code": "GST18",
+      "tax_amount": "33856.01"
+    }
+  ]
+}

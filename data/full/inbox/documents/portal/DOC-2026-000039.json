@@ -1,0 +1,69 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0377",
+  "invoiceDate": "2026-01-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000003",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 104136.57,
+  "tax": 4424.93,
+  "payable": 108561.50
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00373",
+   "text": "Sugar - grade A - M373",
+   "unit": "KG",
+   "qty": 157.77,
+   "rate": 77.01,
+   "value": 12149.87,
+   "taxCode": "GST5",
+   "taxValue": 607.49
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00388",
+   "text": "Wheat flour - grade C - M388",
+   "unit": "KG",
+   "qty": 250.02,
+   "rate": 250.73,
+   "value": 62687.51,
+   "taxCode": "GST5",
+   "taxValue": 3134.38
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00370",
+   "text": "Toor dal - grade A - M370",
+   "unit": "KG",
+   "qty": 162.32,
+   "rate": 96.34,
+   "value": 15637.91,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00393",
+   "text": "Basmati rice - grade D - M393",
+   "unit": "KG",
+   "qty": 71.57,
+   "rate": 190.88,
+   "value": 13661.28,
+   "taxCode": "GST5",
+   "taxValue": 683.06
+  }
+ ]
+}

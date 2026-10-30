@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Uren Engineering Spares LLP",
+    "tax_registration_id": "TRN-310579660"
+  },
+  "invoice": {
+    "number": "SI00179",
+    "date": "2026-05-15",
+    "po_number": "PO-2026-000624",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "15390.00",
+    "tax_total": "2770.20",
+    "grand_total": "18160.20"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00138",
+      "description": "V-belt - grade C - M138",
+      "uom": "EA",
+      "quantity": "19",
+      "unit_price": "810.00",
+      "amount": "15390.00",
+      "tax_code": "GST18",
+      "tax_amount": "2770.20"
+    }
+  ]
+}

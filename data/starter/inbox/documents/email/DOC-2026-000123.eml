@@ -1,0 +1,37 @@
+From: ap@vnd-00003.example
+To: invoices@buyer.example
+Date: Wed, 24 Jun 2026 14:25:00 +0530
+Subject: Invoice INV-2026-0046
+Message-ID: <doc-2026-000123@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor:  Lumhal Stationers Enterprises
+Tax Registration Number:  TRN-736550090
+Plot 6, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0046
+Inv Date:  2026-06-24
+P.O. #:  PO-2026-000093
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   PO Line   SKU         Particulars                          Unit   Qty   Unit Price   Value       Tax Code   GST Amt
+1   1         SKU-00046   Whiteboard marker - grade A - M046   PACK   124   498.30       61,789.20   GST18      11,122.06
+
+Net Amount:  61,789.20
+Tax Amount:  11,122.06
+Total Amount Due:  72,911.26
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Lumhal Stationers Enterprises

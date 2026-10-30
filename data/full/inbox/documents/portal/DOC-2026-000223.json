@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urzan Engineering Spares Industries",
+    "tax_registration_id": "TRN-972851033"
+  },
+  "invoice": {
+    "number": "URZ/25-26/170",
+    "date": "2026-02-24",
+    "po_number": "PO-2026-000124",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "55061.02",
+    "tax_total": "9910.98",
+    "grand_total": "64972.00"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00177",
+      "description": "Ball bearing - grade H - M177",
+      "uom": "EA",
+      "quantity": "14",
+      "unit_price": "3932.93",
+      "amount": "55061.02",
+      "tax_code": "GST18",
+      "tax_amount": "9910.98"
+    }
+  ]
+}

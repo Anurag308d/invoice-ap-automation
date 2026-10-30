@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumir Electricals Industries",
+    "tax_registration_id": "TRN-144326083"
+  },
+  "invoice": {
+    "number": "INV-2026-0159",
+    "date": "2026-07-13",
+    "po_number": "PO-2026-000910",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "236596.50",
+    "tax_total": "42587.37",
+    "grand_total": "279183.87"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00095",
+      "description": "LED panel - grade E - M095",
+      "uom": "EA",
+      "quantity": "145",
+      "unit_price": "1631.70",
+      "amount": "236596.50",
+      "tax_code": "GST18",
+      "tax_amount": "42587.37"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+From: ap@vnd-00144.example
+To: invoices@buyer.example
+Date: Thu, 12 Feb 2026 12:29:00 +0530
+Subject: Invoice KAV/25-26/379
+Message-ID: <doc-2026-000121@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier: Kavmer Consulting Industries
+Tax Registration Number: TRN-586605756
+Plot 50, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Bill No: KAV/25-26/379
+Inv Date: 10/02/2026
+Attention: USR-0027
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   SKU   Particulars          Unit   Qty    Rate       Taxable Amt   Tax Rate   GST Amt
+1    -     Legal consultation   HR     52.0   4,900.00   254,800.00    GST 18%    45,864.00
+
+Subtotal: ₹254,800.00
+Total Tax: ₹45,864.00
+Invoice Total: ₹300,664.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kavmer Consulting Industries

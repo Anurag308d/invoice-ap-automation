@@ -1,0 +1,55 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/25-26/363",
+    "date": "2026-03-17",
+    "po_number": "PO-2026-000223",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "224216.15",
+    "tax_total": "40358.91",
+    "grand_total": "264575.06"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00031",
+      "description": "Brass rod - grade D - M031",
+      "uom": "KG",
+      "quantity": "196.13",
+      "unit_price": "373.77",
+      "amount": "73307.51",
+      "tax_code": "GST18",
+      "tax_amount": "13195.35"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00029",
+      "description": "HDPE granules - grade D - M029",
+      "uom": "KG",
+      "quantity": "1168.64",
+      "unit_price": "114.13",
+      "amount": "133376.88",
+      "tax_code": "GST18",
+      "tax_amount": "24007.84"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00060",
+      "description": "PVC resin - grade H - M060",
+      "uom": "KG",
+      "quantity": "62.91",
+      "unit_price": "278.68",
+      "amount": "17531.76",
+      "tax_code": "GST18",
+      "tax_amount": "3155.72"
+    }
+  ]
+}

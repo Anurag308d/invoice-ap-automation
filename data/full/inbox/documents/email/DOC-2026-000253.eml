@@ -1,0 +1,43 @@
+From: ap@vnd-00094.example
+To: invoices@buyer.example
+Date: Thu, 05 Mar 2026 16:49:00 +0530
+Subject: Invoice INV-2026-0035
+Message-ID: <doc-2026-000253@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller : Novgar Logistics Industries
+Tax Regn. No. : TRN-982036447
+Plot 97, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Bill No : INV-2026-0035
+Dated : 2026-03-04
+Attn : USR-0025
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item Code : -
+  Item Description : Freight charges
+  Unit : JOB
+  Qty : 3
+  Price : 42,700.00
+  Value : 128,100.00
+  Tax Rate : 18%
+  GST Amt : 23,058.00
+
+Total Before Tax : Rs. 128,100.00
+Total Tax : Rs. 23,058.00
+Amount Payable : Rs. 151,158.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Novgar Logistics Industries

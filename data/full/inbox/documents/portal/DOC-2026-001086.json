@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Pargar Engineering Spares LLP",
+    "tax_registration_id": "TRN-519040436"
+  },
+  "invoice": {
+    "number": "PAR/26-27/008",
+    "date": "2026-06-22",
+    "po_number": "PO-2026-000735",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "35175.20",
+    "tax_total": "6331.54",
+    "grand_total": "41506.74"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00143",
+      "description": "Pressure gauge - grade C - M143",
+      "uom": "EA",
+      "quantity": "40",
+      "unit_price": "879.38",
+      "amount": "35175.20",
+      "tax_code": "GST18",
+      "tax_amount": "6331.54"
+    }
+  ]
+}

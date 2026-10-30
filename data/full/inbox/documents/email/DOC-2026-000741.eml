@@ -1,0 +1,38 @@
+From: ap@vnd-00089.example
+To: invoices@buyer.example
+Date: Fri, 01 May 2026 17:37:00 +0530
+Subject: Invoice QUI/26-27/204
+Message-ID: <doc-2026-000741@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier: Quinir Metals Industries
+TRN: TRN-686482467
+Plot 92, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No: QUI/26-27/204
+Bill Date: 2026-05-01
+P.O. #: PO 2026-000496
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | PO Line | Item Code | Item Description | Unit | Qty | Price | Value | Tax Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00003 | Copper rod - grade A - M003 | KG | 774.27 | 252.19 | 1,95,263.15 | GST18 | 35,147.37 |
+
+Net Amount: 1,95,263.15
+Tax: 35,147.37
+Invoice Total: 2,30,410.52
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Quinir Metals Industries

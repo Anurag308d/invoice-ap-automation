@@ -1,0 +1,37 @@
+From: ap@vnd-00009.example
+To: invoices@buyer.example
+Date: Thu, 24 Sep 2026 10:18:00 +0530
+Subject: Invoice INV-2026-0367
+Message-ID: <doc-2026-001795@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Halpar Engineering Spares Industries
+TRN:  TRN-449796472
+Plot 12, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0367
+Date:  21-Sep-2026
+Purchase Order:  PO-2026-001203
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Line | Item | Description | UOM | Quantity | Unit Price | Taxable Amt | Tax Code | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00169 | Ball bearing - grade G - M169 | EA | 18 | 311.13 | 5600.34 | 18% | 1008.06 |
+
+Subtotal:  ₹5600.34
+GST:  ₹1008.06
+Invoice Total:  ₹6608.40
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halpar Engineering Spares Industries

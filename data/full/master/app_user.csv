@@ -1,0 +1,29 @@
+user_id,display_name,role_code,responsibility,cost_center,approval_level,email,active_from
+USR-0001,AP Automation Engine,SYSTEM,SYSTEM_USER,,,ap.automation.engine@example.com,2025-04-01
+USR-0002,Vendor Master Admin,SYSTEM_ADMINISTRATOR,VENDOR_MASTER_OWNER,,,vendor.master.admin@example.com,2025-04-01
+USR-0003,Platform Admin,SYSTEM_ADMINISTRATOR,PLATFORM_ADMIN,,,platform.admin@example.com,2025-04-01
+USR-0004,AP Policy Owner,PROCESS_OWNER,POLICY_OWNER,,,ap.policy.owner@example.com,2025-04-01
+USR-0005,AP Analyst 01,OPERATIONS_ANALYST,AP_ANALYST,,,ap.analyst.01@example.com,2025-04-01
+USR-0006,AP Analyst 02,OPERATIONS_ANALYST,AP_ANALYST,,,ap.analyst.02@example.com,2025-04-01
+USR-0007,AP Analyst 03,OPERATIONS_ANALYST,AP_ANALYST,,,ap.analyst.03@example.com,2025-04-01
+USR-0008,AP Analyst 04,OPERATIONS_ANALYST,AP_ANALYST,,,ap.analyst.04@example.com,2025-04-01
+USR-0009,Approver L1 - Operations,APPROVER,COST_CENTER_MANAGER,OPERATIONS,L1,approver.l1.operations@example.com,2025-04-01
+USR-0010,Approver L1 - Manufacturing,APPROVER,COST_CENTER_MANAGER,MANUFACTURING,L1,approver.l1.manufacturing@example.com,2025-04-01
+USR-0011,Approver L1 - IT,APPROVER,COST_CENTER_MANAGER,IT,L1,approver.l1.it@example.com,2025-04-01
+USR-0012,Approver L1 - Facilities,APPROVER,COST_CENTER_MANAGER,FACILITIES,L1,approver.l1.facilities@example.com,2025-04-01
+USR-0013,Approver L1 - Logistics,APPROVER,COST_CENTER_MANAGER,LOGISTICS,L1,approver.l1.logistics@example.com,2025-04-01
+USR-0014,Approver L1 - Corporate,APPROVER,COST_CENTER_MANAGER,CORPORATE,L1,approver.l1.corporate@example.com,2025-04-01
+USR-0015,Finance Controller,APPROVER,FINANCE_CONTROLLER,,L2,finance.controller@example.com,2025-04-01
+USR-0016,Chief Financial Officer,APPROVER,CHIEF_FINANCIAL_OFFICER,,L3,chief.financial.officer@example.com,2025-04-01
+USR-0017,Requester - Operations 01,BUSINESS_REQUESTER,REQUESTER,OPERATIONS,,requester.operations.01@example.com,2025-04-01
+USR-0018,Requester - Operations 02,BUSINESS_REQUESTER,REQUESTER,OPERATIONS,,requester.operations.02@example.com,2025-04-01
+USR-0019,Requester - Manufacturing 01,BUSINESS_REQUESTER,REQUESTER,MANUFACTURING,,requester.manufacturing.01@example.com,2025-04-01
+USR-0020,Requester - Manufacturing 02,BUSINESS_REQUESTER,REQUESTER,MANUFACTURING,,requester.manufacturing.02@example.com,2025-04-01
+USR-0021,Requester - IT 01,BUSINESS_REQUESTER,REQUESTER,IT,,requester.it.01@example.com,2025-04-01
+USR-0022,Requester - IT 02,BUSINESS_REQUESTER,REQUESTER,IT,,requester.it.02@example.com,2025-04-01
+USR-0023,Requester - Facilities 01,BUSINESS_REQUESTER,REQUESTER,FACILITIES,,requester.facilities.01@example.com,2025-04-01
+USR-0024,Requester - Facilities 02,BUSINESS_REQUESTER,REQUESTER,FACILITIES,,requester.facilities.02@example.com,2025-04-01
+USR-0025,Requester - Logistics 01,BUSINESS_REQUESTER,REQUESTER,LOGISTICS,,requester.logistics.01@example.com,2025-04-01
+USR-0026,Requester - Logistics 02,BUSINESS_REQUESTER,REQUESTER,LOGISTICS,,requester.logistics.02@example.com,2025-04-01
+USR-0027,Requester - Corporate 01,BUSINESS_REQUESTER,REQUESTER,CORPORATE,,requester.corporate.01@example.com,2025-04-01
+USR-0028,Requester - Corporate 02,BUSINESS_REQUESTER,REQUESTER,CORPORATE,,requester.corporate.02@example.com,2025-04-01

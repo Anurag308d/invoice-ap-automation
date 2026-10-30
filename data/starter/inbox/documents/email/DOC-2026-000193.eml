@@ -1,0 +1,44 @@
+From: ap@vnd-00005.example
+To: invoices@buyer.example
+Date: Wed, 07 Oct 2026 16:59:00 +0530
+Subject: Invoice MER/26-27/093
+Message-ID: <doc-2026-000193@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Merfal Metals & Co
+Tax Regn. No.: TRN-614819478
+Plot 8, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: MER/26-27/093
+Invoice Date: 07/10/2026
+P.O. #: PO-2026-000126
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00007
+  Item Description: Brass rod - grade A - M007
+  Unit: KG
+  Qty: 599.17
+  Rate: 102.12
+  Value: 61,187.24
+  Tax Rate: 18%
+  Tax Amt: 11,013.70
+
+Net Amount: ₹61,187.24
+Total Tax: ₹11,013.70
+Grand Total: ₹72,200.94
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merfal Metals & Co

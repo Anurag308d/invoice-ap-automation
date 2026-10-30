@@ -1,0 +1,36 @@
+From: ap@vnd-00146.example
+To: invoices@buyer.example
+Date: Mon, 17 Aug 2026 14:32:00 +0530
+Subject: Invoice LUM/26-27/371
+Message-ID: <doc-2026-001496@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller:  Lumjor Infotech Pvt Ltd
+Tax Registration Number:  TRN-465590135
+Plot 52, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No:  LUM/26-27/371
+Bill Date:  2026-08-14
+P.O. #:  PO/2026/001053
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   Order Line   Item Code   Description                      UOM   Quantity   Rate        Value         Tax Rate   GST Amt
+1    1            SKU-00279   Storage array - grade E - M279   EA    18         11,309.47   2,03,570.46   GST 18%    36,642.68
+
+Taxable Value:  ₹2,03,570.46
+Tax:  ₹36,642.68
+Amount Payable:  ₹2,40,213.14
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Lumjor Infotech Pvt Ltd

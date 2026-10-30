@@ -31,3 +31,16 @@ def engine_runs(builds):
         summary = run_engine(root / "master", root / "inbox", root / "processed", load_policy())
         out[scale] = (root, summary, evaluate(root), evaluate_decisions(root, load_policy().as_of_date)[0])
     return out
+
+
+@pytest.fixture(scope="session")
+def complete_builds(tmp_path_factory):
+    """scale -> dataset root of a complete `build` (generate, run, evaluate, validate, export, dashboard,
+    manifest), exactly as `python -m invoice_ap build` makes it."""
+    from invoice_ap.orchestrate import build
+    out = {}
+    for scale in ("starter", "full"):
+        root = tmp_path_factory.mktemp(f"complete-{scale}")
+        assert build(scale, 20261022, root, log=lambda *_: None)["ok"]
+        out[scale] = root
+    return out

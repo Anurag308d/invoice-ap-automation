@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0833",
+  "invoiceDate": "2026-10-07T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001426",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 33692.10,
+  "tax": 1684.61,
+  "payable": 35376.71
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00388",
+   "text": "Wheat flour - grade C - M388",
+   "unit": "KG",
+   "qty": 143.56,
+   "rate": 234.69,
+   "value": 33692.10,
+   "taxCode": "GST5",
+   "taxValue": 1684.61
+  }
+ ]
+}

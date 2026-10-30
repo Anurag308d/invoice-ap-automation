@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Zankav Electricals Enterprises",
+    "tax_registration_id": "TRN-559614291"
+  },
+  "invoice": {
+    "number": "INV-2026-0354",
+    "date": "2026-10-15",
+    "po_number": "PO-2026-001418",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "377322.62",
+    "tax_total": "67918.07",
+    "grand_total": "445240.69"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00104",
+      "description": "Contactor - grade F - M104",
+      "uom": "EA",
+      "quantity": "89",
+      "unit_price": "4239.58",
+      "amount": "377322.62",
+      "tax_code": "GST18",
+      "tax_amount": "67918.07"
+    }
+  ]
+}

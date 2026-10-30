@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Zankav Electricals Enterprises",
+    "tax_registration_id": "TRN-559614291"
+  },
+  "invoice": {
+    "number": "INV-2026-0350",
+    "date": "2026-06-01",
+    "po_number": "PO-2026-000689",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "155913.16",
+    "tax_total": "28064.37",
+    "grand_total": "183977.53"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00092",
+      "description": "Terminal block - grade D - M092",
+      "uom": "EA",
+      "quantity": "164",
+      "unit_price": "950.69",
+      "amount": "155913.16",
+      "tax_code": "GST18",
+      "tax_amount": "28064.37"
+    }
+  ]
+}

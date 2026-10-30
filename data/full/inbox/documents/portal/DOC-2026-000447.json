@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0485",
+  "invoiceDate": "2026-03-30T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000399",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 29834.72,
+  "tax": 1491.74,
+  "payable": 31326.46
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00381",
+   "text": "Sugar - grade B - M381",
+   "unit": "KG",
+   "qty": 231.69,
+   "rate": 128.77,
+   "value": 29834.72,
+   "taxCode": "GST5",
+   "taxValue": 1491.74
+  }
+ ]
+}

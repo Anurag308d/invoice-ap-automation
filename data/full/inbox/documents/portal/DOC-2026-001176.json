@@ -1,0 +1,91 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Orgar Electricals Industries",
+    "tax_registration_id": "TRN-487171397"
+  },
+  "invoice": {
+    "number": "INV-2026-0356",
+    "date": "2026-07-03",
+    "po_number": "PO-2026-000875",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "464937.15",
+    "tax_total": "83688.68",
+    "grand_total": "548625.83"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00100",
+      "description": "Terminal block - grade E - M100",
+      "uom": "EA",
+      "quantity": "65",
+      "unit_price": "370.72",
+      "amount": "24096.80",
+      "tax_code": "GST18",
+      "tax_amount": "4337.42"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00078",
+      "description": "MCB switch - grade C - M078",
+      "uom": "EA",
+      "quantity": "40",
+      "unit_price": "2017.11",
+      "amount": "80684.40",
+      "tax_code": "GST18",
+      "tax_amount": "14523.19"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00073",
+      "description": "Cable tray - grade B - M073",
+      "uom": "EA",
+      "quantity": "113",
+      "unit_price": "886.26",
+      "amount": "100147.38",
+      "tax_code": "GST18",
+      "tax_amount": "18026.53"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00113",
+      "description": "Cable tray - grade G - M113",
+      "uom": "EA",
+      "quantity": "176",
+      "unit_price": "496.31",
+      "amount": "87350.56",
+      "tax_code": "GST18",
+      "tax_amount": "15723.10"
+    },
+    {
+      "line_no": 5,
+      "po_line_no": "5",
+      "sku": "SKU-00106",
+      "description": "Junction box - grade F - M106",
+      "uom": "EA",
+      "quantity": "137",
+      "unit_price": "232.65",
+      "amount": "31873.05",
+      "tax_code": "GST18",
+      "tax_amount": "5737.15"
+    },
+    {
+      "line_no": 6,
+      "po_line_no": "6",
+      "sku": "SKU-00064",
+      "description": "Contactor - grade A - M064",
+      "uom": "EA",
+      "quantity": "106",
+      "unit_price": "1328.16",
+      "amount": "140784.96",
+      "tax_code": "GST18",
+      "tax_amount": "25341.29"
+    }
+  ]
+}

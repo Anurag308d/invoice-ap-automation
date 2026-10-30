@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Davbel Infotech LLP",
+    "tax_registration_id": "TRN-756874821"
+  },
+  "invoice": {
+    "number": "INV-2026-0026",
+    "date": "2026-07-07",
+    "po_number": "PO-2026-000710",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "233065.90",
+    "tax_total": "41951.86",
+    "grand_total": "275017.76"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00276",
+      "description": "Monitor - grade E - M276",
+      "uom": "EA",
+      "quantity": "5",
+      "unit_price": "46613.18",
+      "amount": "233065.90",
+      "tax_code": "GST18",
+      "tax_amount": "41951.86"
+    }
+  ]
+}

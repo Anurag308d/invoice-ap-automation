@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Zansel Stationers Pvt Ltd",
+  "taxId": "TRN-517840014"
+ },
+ "header": {
+  "invoiceNo": "SI00397",
+  "invoiceDate": "2026-04-21T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000533",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 4267.44,
+  "tax": 0.00,
+  "payable": 4267.44
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00319",
+   "text": "Desk organiser - grade E - M319",
+   "unit": "PACK",
+   "qty": 24,
+   "rate": 177.81,
+   "value": 4267.44,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  }
+ ]
+}

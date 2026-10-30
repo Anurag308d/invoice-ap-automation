@@ -1,0 +1,64 @@
+From: ap@vnd-00023.example
+To: invoices@buyer.example
+Date: Wed, 11 Feb 2026 14:59:00 +0530
+Subject: Invoice BEL/25-26/354
+Message-ID: <doc-2026-000115@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Belen Engineering Spares Enterprises
+Tax Reg No:  TRN-157734661
+Plot 26, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Invoice No:  BEL/25-26/354
+Invoice Date:  09-02-2026
+Your Order Ref:  PO/2026/000105
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line:  1
+  Item Code:  SKU-00121
+  Item Description:  Ball bearing - grade A - M121
+  Unit:  EA
+  Qty:  11
+  Price:  5854.33
+  Amount:  64397.63
+  GST Rate:  18%
+  Tax:  11591.57
+Item 2
+  PO Line:  2
+  Item Code:  SKU-00124
+  Item Description:  Gear coupling - grade A - M124
+  Unit:  EA
+  Qty:  11
+  Price:  6499.84
+  Amount:  71498.24
+  GST Rate:  18%
+  Tax:  12869.68
+Item 3
+  PO Line:  3
+  Item Code:  SKU-00141
+  Item Description:  Pump impeller - grade C - M141
+  Unit:  EA
+  Qty:  5
+  Price:  1070.35
+  Amount:  5351.75
+  GST Rate:  18%
+  Tax:  963.32
+
+Taxable Value:  Rs. 141247.62
+Tax:  Rs. 25424.57
+Amount Payable:  Rs. 166672.19
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Belen Engineering Spares Enterprises

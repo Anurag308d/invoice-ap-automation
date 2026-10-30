@@ -1,0 +1,22 @@
+Uror Metals Enterprises
+Tax Regn. No.: TRN-582808240
+Plot 84, Industrial Area, Nagpur 440016
+
+TAX INVOICE
+
+Tax Invoice No: INV-2026-0127
+Inv Date: 06.05.2026
+PO Number: PO-2026-000522
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   SKU         Item Description              UOM   Quantity   Unit Price   Value       GST Rate   GST Amt
+1    1         SKU-00048   Zinc ingot - grade F - M048   KG    765.17     203.77       155918.69   GST18      28065.36
+
+Total Before Tax: INR 155918.69
+Tax Amount: INR 28065.36
+Total Amount Due: INR 183984.05
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

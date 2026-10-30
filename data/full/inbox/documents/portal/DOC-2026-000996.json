@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0605",
+  "invoiceDate": "2026-06-11T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000760",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 38135.08,
+  "tax": 1906.75,
+  "payable": 40041.83
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00387",
+   "text": "Sunflower oil - grade C - M387",
+   "unit": "KG",
+   "qty": 209.11,
+   "rate": 76.25,
+   "value": 15944.64,
+   "taxCode": "GST5",
+   "taxValue": 797.23
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00384",
+   "text": "Milk powder - grade B - M384",
+   "unit": "KG",
+   "qty": 40.66,
+   "rate": 135.46,
+   "value": 5507.80,
+   "taxCode": "GST5",
+   "taxValue": 275.39
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00392",
+   "text": "Milk powder - grade C - M392",
+   "unit": "KG",
+   "qty": 199.84,
+   "rate": 83.48,
+   "value": 16682.64,
+   "taxCode": "GST5",
+   "taxValue": 834.13
+  }
+ ]
+}

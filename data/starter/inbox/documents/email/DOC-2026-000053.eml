@@ -1,0 +1,74 @@
+From: ap@vnd-00005.example
+To: invoices@buyer.example
+Date: Mon, 06 Apr 2026 16:43:00 +0530
+Subject: Invoice MER/26-27/081
+Message-ID: <doc-2026-000053@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Merfal Metals & Co
+Tax Regn. No.: TRN-614819478
+Plot 8, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: MER/26-27/081
+Invoice Date: 03/04/2026
+P.O. #: PO-2026-000043
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00008
+  Item Description: Zinc ingot - grade A - M008
+  Unit: KG
+  Qty: 1531.42
+  Rate: 136.35
+  Value: 208,809.12
+  Tax Rate: 18%
+  Tax Amt: 37,585.64
+Item 2
+  Order Line: 2
+  Item: SKU-00009
+  Item Description: MS sheet - grade B - M009
+  Unit: KG
+  Qty: 1066.69
+  Rate: 170.27
+  Value: 181,625.31
+  Tax Rate: 18%
+  Tax Amt: 32,692.56
+Item 3
+  Order Line: 3
+  Item: SKU-00001
+  Item Description: MS sheet - grade A - M001
+  Unit: KG
+  Qty: 301.45
+  Rate: 115.90
+  Value: 34,938.06
+  Tax Rate: 18%
+  Tax Amt: 6,288.85
+Item 4
+  Order Line: 4
+  Item: SKU-00007
+  Item Description: Brass rod - grade A - M007
+  Unit: KG
+  Qty: 1424.34
+  Rate: 106.83
+  Value: 152,162.24
+  Tax Rate: 18%
+  Tax Amt: 27,389.20
+
+Net Amount: ₹577,534.73
+Total Tax: ₹103,956.25
+Grand Total: ₹681,490.98
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merfal Metals & Co

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/213",
+  "invoiceDate": "2026-04-07T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000038",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 97152.66,
+  "tax": 17487.48,
+  "payable": 114640.14
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00023",
+   "text": "Pump impeller - grade A - M023",
+   "unit": "EA",
+   "qty": 33,
+   "rate": 2944.02,
+   "value": 97152.66,
+   "taxCode": "GST18",
+   "taxValue": 17487.48
+  }
+ ]
+}

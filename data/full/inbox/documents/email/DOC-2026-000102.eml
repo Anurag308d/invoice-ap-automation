@@ -1,0 +1,54 @@
+From: ap@vnd-00298.example
+To: invoices@buyer.example
+Date: Tue, 10 Feb 2026 10:21:00 +0530
+Subject: Invoice IRG/25-26/275
+Message-ID: <doc-2026-000102@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller: Irgar Metals Enterprises
+Tax Regn. No.: TRN-680696425
+Plot 10, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Invoice No: IRG/25-26/275
+Date: 05/02/2026
+PO Number: PO/2026/000101
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item Code: SKU-00020
+  Particulars: PVC resin - grade C - M020
+  UOM: KG
+  Quantity: 323.44
+  Price: 268.07
+  Amount: 86,704.56
+  Tax Code: 18%
+  GST Amt: 15,606.82
+Item 2
+  Order Line: 2
+  Item Code: SKU-00018
+  Particulars: Aluminium ingot - grade C - M018
+  UOM: KG
+  Quantity: 1579.00
+  Price: 212.31
+  Amount: 335,237.49
+  Tax Code: 18%
+  GST Amt: 60,342.75
+
+Total Before Tax: ₹421,942.05
+Tax Amount: ₹75,949.57
+Amount Payable: ₹497,891.62
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Irgar Metals Enterprises

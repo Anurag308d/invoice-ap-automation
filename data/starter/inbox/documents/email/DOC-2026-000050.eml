@@ -1,0 +1,43 @@
+From: ap@vnd-00014.example
+To: invoices@buyer.example
+Date: Mon, 06 Apr 2026 09:22:00 +0530
+Subject: Invoice 000135
+Message-ID: <doc-2026-000050@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier : Urfal Metals Industries
+Tax Reg No : TRN-144020969
+Plot 17, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Inv # : 000135
+Dated : 06 Apr 2026
+PO Number : PO/2026/000035
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   Order Line   Item Code   Item Description                        UOM   Qty       Rate     Value        Tax Rate   Tax Amt
+1      1            SKU-00004   PVC resin - grade A - M004              KG    344.97    119.13   41,096.28    18%        7,397.33
+2      2            SKU-00007   Brass rod - grade A - M007              KG    117.52    116.80   13,726.34    18%        2,470.74
+3      3            SKU-00003   Copper rod - grade A - M003             KG    1259.48   250.54   315,550.12   18%        56,799.02
+4      4            SKU-00009   MS sheet - grade B - M009               KG    1998.70   157.49   314,775.26   18%        56,659.55
+5      5            SKU-00008   Zinc ingot - grade A - M008             KG    1344.61   129.21   173,737.06   18%        31,272.67
+6      6            SKU-00002   Aluminium ingot - grade A - M002        KG    1439.59   221.83   319,344.25   18%        57,481.97
+7      7            SKU-00001   MS sheet - grade A - M001               KG    1108.24   113.81   126,128.79   18%        22,703.18
+8      8            SKU-00006   Stainless steel coil - grade A - M006   KG    266.13    302.77   80,576.18    18%        14,503.71
+
+Subtotal : INR 1,384,934.28
+Tax Amount : INR 249,288.17
+Total : INR 1,634,222.45
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Urfal Metals Industries

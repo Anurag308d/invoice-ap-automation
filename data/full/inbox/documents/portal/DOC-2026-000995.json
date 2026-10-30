@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Beltav Safety Gear Industries",
+    "tax_registration_id": "TRN-725976457"
+  },
+  "invoice": {
+    "number": "INV-2026-0316",
+    "date": "2026-06-08",
+    "po_number": "PO-2026-000762",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "134555.42",
+    "tax_total": "6727.78",
+    "grand_total": "141283.20"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00352",
+      "description": "Fall-arrest harness - grade C - M352",
+      "uom": "EA",
+      "quantity": "83",
+      "unit_price": "723.90",
+      "amount": "60083.70",
+      "tax_code": "GST5",
+      "tax_amount": "3004.19"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00332",
+      "description": "Ear muffs - grade A - M332",
+      "uom": "EA",
+      "quantity": "79",
+      "unit_price": "942.68",
+      "amount": "74471.72",
+      "tax_code": "GST5",
+      "tax_amount": "3723.59"
+    }
+  ]
+}

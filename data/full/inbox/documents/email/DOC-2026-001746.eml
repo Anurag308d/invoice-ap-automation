@@ -1,0 +1,36 @@
+From: ap@vnd-00082.example
+To: invoices@buyer.example
+Date: Thu, 17 Sep 2026 17:54:00 +0530
+Subject: Invoice MER/26-27/369
+Message-ID: <doc-2026-001746@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Mersel Packaging LLP
+Tax Reg No: TRN-340306941
+Plot 85, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Bill No: MER/26-27/369
+Bill Date: 15-Sep-2026
+Purchase Order: PO-2026-001257
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   PO Line   Item        Description                       Unit   Qty    Rate     Amount        Tax Rate   Tax Amt
+1      1         SKU-00231   Strapping roll - grade D - M231   BOX    1718   198.46   3,40,954.28   18%        61,371.77
+
+Total Before Tax: INR 3,40,954.28
+Tax: INR 61,371.77
+Invoice Total: INR 4,02,326.05
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Mersel Packaging LLP

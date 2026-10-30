@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Selwyn Metals Enterprises",
+  "taxId": "TRN-975298949"
+ },
+ "header": {
+  "invoiceNo": "SI00089",
+  "invoiceDate": "2026-02-23T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000111",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 82634.69,
+  "tax": 14874.24,
+  "payable": 97508.93
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00006",
+   "text": "Stainless steel coil - grade A - M006",
+   "unit": "KG",
+   "qty": 298.73,
+   "rate": 276.62,
+   "value": 82634.69,
+   "taxCode": "GST18",
+   "taxValue": 14874.24
+  }
+ ]
+}

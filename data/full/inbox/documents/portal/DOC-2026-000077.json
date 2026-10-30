@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Corjor Stationers Pvt Ltd",
+    "tax_registration_id": "TRN-236408597"
+  },
+  "invoice": {
+    "number": "COR/25-26/250",
+    "date": "2026-02-02",
+    "po_number": "PO-2026-000084",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "57954.31",
+    "tax_total": "10431.78",
+    "grand_total": "68386.09"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00324",
+      "description": "Whiteboard marker - grade F - M324",
+      "uom": "PACK",
+      "quantity": "113",
+      "unit_price": "512.87",
+      "amount": "57954.31",
+      "tax_code": "GST18",
+      "tax_amount": "10431.78"
+    }
+  ]
+}

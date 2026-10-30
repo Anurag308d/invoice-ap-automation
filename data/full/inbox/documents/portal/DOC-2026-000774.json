@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0554",
+  "invoiceDate": "2026-05-06T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000599",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 158087.37,
+  "tax": 2319.94,
+  "payable": 160407.31
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00400",
+   "text": "Milk powder - grade D - M400",
+   "unit": "KG",
+   "qty": 485.56,
+   "rate": 230.02,
+   "value": 111688.51,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00398",
+   "text": "Tea leaves - grade D - M398",
+   "unit": "KG",
+   "qty": 260.20,
+   "rate": 178.32,
+   "value": 46398.86,
+   "taxCode": "GST5",
+   "taxValue": 2319.94
+  }
+ ]
+}

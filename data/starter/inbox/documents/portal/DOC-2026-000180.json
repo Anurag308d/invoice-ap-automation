@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/300",
+  "invoiceDate": "2026-09-14T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000123",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 98737.54,
+  "tax": 17772.75,
+  "payable": 116510.29
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00024",
+   "text": "Valve actuator - grade A - M024",
+   "unit": "EA",
+   "qty": 21,
+   "rate": 4486.94,
+   "value": 94225.74,
+   "taxCode": "GST18",
+   "taxValue": 16960.63
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00029",
+   "text": "Hydraulic seal - grade B - M029",
+   "unit": "EA",
+   "qty": 4,
+   "rate": 1127.95,
+   "value": 4511.80,
+   "taxCode": "GST18",
+   "taxValue": 812.12
+  }
+ ]
+}

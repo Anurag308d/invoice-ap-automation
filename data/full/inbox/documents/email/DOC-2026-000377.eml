@@ -1,0 +1,62 @@
+From: ap@vnd-00013.example
+To: invoices@buyer.example
+Date: Mon, 23 Mar 2026 09:33:00 +0530
+Subject: Invoice 000024
+Message-ID: <doc-2026-000377@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor : Davar Consulting Enterprises
+Tax Registration Number : TRN-472968273
+Plot 16, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Inv # : 000024
+Dated : 23-Mar-2026
+Attention : USR-0028
+Currency : INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item Code : -
+  Description : Training programme
+  Unit : HR
+  Quantity : 79.0
+  Price : 4200.00
+  Amount : 331800.00
+  Tax Rate : Exempt
+  Tax Amt : 0.02
+Item 2
+  Item Code : -
+  Description : Training programme
+  Unit : HR
+  Quantity : 39.0
+  Price : 2800.00
+  Amount : 109200.00
+  Tax Rate : 18%
+  Tax Amt : 19656.00
+Item 3
+  Item Code : -
+  Description : Training programme
+  Unit : HR
+  Quantity : 20.0
+  Price : 4800.00
+  Amount : 96000.00
+  Tax Rate : Exempt
+  Tax Amt : 0.00
+
+Subtotal : 537000.00
+Tax : 19656.02
+Invoice Total : 556656.02
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Davar Consulting Enterprises

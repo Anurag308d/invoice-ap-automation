@@ -1,0 +1,53 @@
+From: requester.manufacturing.02@example.com
+To: invoices@buyer.example
+Date: Wed, 30 Sep 2026 09:59:00 +0530
+Subject: Invoice INV-2026-0125
+Message-ID: <doc-2026-001845@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Belwyn Packaging Enterprises <ap@vnd-00228.example>
+Date: Wed, 30 Sep 2026 09:59:00 +0530
+Subject: Invoice INV-2026-0125
+To: requester.manufacturing.02@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier:  Belwyn Packaging Enterprises
+TRN:  TRN-968770560
+Plot 37, Industrial Area, Hosur 635126
+
+Tax Invoice
+
+Invoice Number:  INV-2026-0125
+Bill Date:  September 28, 2026
+PO No:  PO 2026-001280
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line:  1
+  Item Code:  SKU-00239
+  Item Description:  Strapping roll - grade E - M239
+  Unit:  BOX
+  Qty:  1165
+  Price:  43.57
+  Value:  50,759.05
+  Tax Rate:  GST 18%
+  Tax:  9,136.63
+
+Net Amount:  50,759.05
+Total Tax:  9,136.63
+Amount Payable:  59,895.68
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Belwyn Packaging Enterprises

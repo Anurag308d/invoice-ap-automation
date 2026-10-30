@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Pargar Engineering Spares LLP",
+    "tax_registration_id": "TRN-519040436"
+  },
+  "invoice": {
+    "number": "PAR/26-27/007",
+    "date": "2026-05-12",
+    "po_number": "PO-2026-000420",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "190662.00",
+    "tax_total": "34319.16",
+    "grand_total": "224981.16"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00154",
+      "description": "V-belt - grade E - M154",
+      "uom": "EA",
+      "quantity": "8",
+      "unit_price": "23832.75",
+      "amount": "190662.00",
+      "tax_code": "GST18",
+      "tax_amount": "34319.16"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumir Electricals Industries",
+    "tax_registration_id": "TRN-144326083"
+  },
+  "invoice": {
+    "number": "INV-2026-0152",
+    "date": "2026-03-05",
+    "po_number": "PO-2026-000180",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "381988.34",
+    "tax_total": "68757.90",
+    "grand_total": "450746.42"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00081",
+      "description": "Cable tray - grade C - M081",
+      "uom": "EA",
+      "quantity": "158",
+      "unit_price": "926.17",
+      "amount": "146334.86",
+      "tax_code": "GST18",
+      "tax_amount": "26340.27"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00091",
+      "description": "Relay module - grade D - M091",
+      "uom": "EA",
+      "quantity": "162",
+      "unit_price": "457.29",
+      "amount": "74080.98",
+      "tax_code": "GST18",
+      "tax_amount": "13334.58"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00099",
+      "description": "Relay module - grade E - M099",
+      "uom": "EA",
+      "quantity": "125",
+      "unit_price": "1292.58",
+      "amount": "161572.50",
+      "tax_code": "GST18",
+      "tax_amount": "29083.05"
+    }
+  ]
+}

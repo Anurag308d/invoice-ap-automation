@@ -1,0 +1,115 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinpar Packaging & Co",
+    "tax_registration_id": "TRN-578691835"
+  },
+  "invoice": {
+    "number": "QUI/26-27/063",
+    "date": "2026-06-26",
+    "po_number": "PO-2026-000810",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "580468.37",
+    "tax_total": "92882.31",
+    "grand_total": "673350.68"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00234",
+      "description": "Stretch film roll - grade E - M234",
+      "uom": "BOX",
+      "quantity": "1232",
+      "unit_price": "72.44",
+      "amount": "89246.08",
+      "tax_code": "GST5",
+      "tax_amount": "4462.30"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00235",
+      "description": "Pallet - grade E - M235",
+      "uom": "BOX",
+      "quantity": "654",
+      "unit_price": "110.53",
+      "amount": "72286.62",
+      "tax_code": "GST18",
+      "tax_amount": "13011.59"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00222",
+      "description": "Foam insert - grade C - M222",
+      "uom": "BOX",
+      "quantity": "367",
+      "unit_price": "35.33",
+      "amount": "12966.11",
+      "tax_code": "GST18",
+      "tax_amount": "2333.90"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00210",
+      "description": "Stretch film roll - grade B - M210",
+      "uom": "BOX",
+      "quantity": "687",
+      "unit_price": "50.60",
+      "amount": "34762.20",
+      "tax_code": "GST18",
+      "tax_amount": "6257.20"
+    },
+    {
+      "line_no": 5,
+      "po_line_no": "5",
+      "sku": "SKU-00228",
+      "description": "Bubble wrap roll - grade D - M228",
+      "uom": "BOX",
+      "quantity": "627",
+      "unit_price": "95.86",
+      "amount": "60104.22",
+      "tax_code": "GST18",
+      "tax_amount": "10818.76"
+    },
+    {
+      "line_no": 6,
+      "po_line_no": "6",
+      "sku": "SKU-00203",
+      "description": "Pallet - grade A - M203",
+      "uom": "BOX",
+      "quantity": "1474",
+      "unit_price": "104.24",
+      "amount": "153649.76",
+      "tax_code": "GST18",
+      "tax_amount": "27656.96"
+    },
+    {
+      "line_no": 7,
+      "po_line_no": "7",
+      "sku": "SKU-00201",
+      "description": "Corrugated box - grade A - M201",
+      "uom": "BOX",
+      "quantity": "430",
+      "unit_price": "41.71",
+      "amount": "17935.30",
+      "tax_code": "GST18",
+      "tax_amount": "3228.35"
+    },
+    {
+      "line_no": 8,
+      "po_line_no": "8",
+      "sku": "SKU-00214",
+      "description": "Foam insert - grade B - M214",
+      "uom": "BOX",
+      "quantity": "1312",
+      "unit_price": "106.34",
+      "amount": "139518.08",
+      "tax_code": "GST18",
+      "tax_amount": "25113.25"
+    }
+  ]
+}

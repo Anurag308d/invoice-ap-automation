@@ -1,0 +1,69 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Belnov Infotech Industries",
+  "taxId": "TRN-299092169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0116",
+  "invoiceDate": "2026-02-16T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000022",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 527605.74,
+  "tax": 94969.04,
+  "payable": 622574.78
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00260",
+   "text": "Monitor - grade C - M260",
+   "unit": "EA",
+   "qty": 9,
+   "rate": 29488.25,
+   "value": 265394.25,
+   "taxCode": "GST18",
+   "taxValue": 47770.97
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00258",
+   "text": "Desktop workstation - grade C - M258",
+   "unit": "EA",
+   "qty": 7,
+   "rate": 22425.99,
+   "value": 156981.93,
+   "taxCode": "GST18",
+   "taxValue": 28256.75
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00244",
+   "text": "Monitor - grade A - M244",
+   "unit": "EA",
+   "qty": 5,
+   "rate": 11768.92,
+   "value": 58844.60,
+   "taxCode": "GST18",
+   "taxValue": 10592.03
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00261",
+   "text": "Rack server - grade C - M261",
+   "unit": "EA",
+   "qty": 8,
+   "rate": 5798.12,
+   "value": 46384.96,
+   "taxCode": "GST18",
+   "taxValue": 8349.29
+  }
+ ]
+}

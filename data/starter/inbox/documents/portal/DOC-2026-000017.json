@@ -1,0 +1,81 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/25-26/222",
+  "invoiceDate": "2026-02-18T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000009",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 287510.71,
+  "tax": 51751.94,
+  "payable": 339262.65
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00028",
+   "text": "V-belt - grade B - M028",
+   "unit": "EA",
+   "qty": 31,
+   "rate": 2042.58,
+   "value": 63319.98,
+   "taxCode": "GST18",
+   "taxValue": 11397.60
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00020",
+   "text": "V-belt - grade A - M020",
+   "unit": "EA",
+   "qty": 23,
+   "rate": 3932.71,
+   "value": 90452.33,
+   "taxCode": "GST18",
+   "taxValue": 16281.42
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00026",
+   "text": "Chain sprocket - grade A - M026",
+   "unit": "EA",
+   "qty": 23,
+   "rate": 1193.44,
+   "value": 27449.12,
+   "taxCode": "GST18",
+   "taxValue": 4940.84
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00023",
+   "text": "Pump impeller - grade A - M023",
+   "unit": "EA",
+   "qty": 9,
+   "rate": 3424.96,
+   "value": 30824.64,
+   "taxCode": "GST18",
+   "taxValue": 5548.44
+  },
+  {
+   "seq": 5,
+   "orderLine": 5,
+   "itemCode": "SKU-00021",
+   "text": "Hydraulic seal - grade A - M021",
+   "unit": "EA",
+   "qty": 36,
+   "rate": 2096.24,
+   "value": 75464.64,
+   "taxCode": "GST18",
+   "taxValue": 13583.64
+  }
+ ]
+}

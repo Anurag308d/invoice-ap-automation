@@ -1,0 +1,21 @@
+SELLER  IRKAV STATIONERS PVT LTD
+TAX REG NO  TRN-642411834
+Plot 14, Industrial Area, Coimbatore 641021
+
+TAX INVOICE
+
+INVOICE NUMBER: IRK/26-27/092      INV DATE: 14 Sep 2026
+PO NO: PO-2026-000125
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ORDER LINE   ITEM        PARTICULARS                     UOM    QTY   PRICE    TAXABLE AMT   GST RATE   GST AMT
+1   1            SKU-00043   Copier paper - grade A - M043   PACK   9     265.21   2,386.89      GST5       119.34
+
+TOTAL BEFORE TAX  ₹2,386.89
+TAX AMOUNT  ₹119.34
+TOTAL  ₹2,506.23
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

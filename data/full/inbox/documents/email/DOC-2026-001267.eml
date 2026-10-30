@@ -1,0 +1,54 @@
+From: ap@vnd-00220.example
+To: invoices@buyer.example
+Date: Wed, 15 Jul 2026 10:26:00 +0530
+Subject: Invoice MER/26-27/137
+Message-ID: <doc-2026-001267@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor:  Merdav Foods & Co
+Tax Reg No:  TRN-192950387
+Plot 29, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Tax Invoice No:  MER/26-27/137
+Invoice Date:  13-07-2026
+PO No:  PO 2026-000932
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line:  1
+  Item Code:  SKU-00374
+  Description:  Tea leaves - grade A - M374
+  Unit:  KG
+  Qty:  169.47
+  Price:  64.48
+  Taxable Amt:  10927.43
+  GST Rate:  5%
+  GST Amt:  546.37
+Item 2
+  Order Line:  2
+  Item Code:  SKU-00386
+  Description:  Toor dal - grade C - M386
+  Unit:  KG
+  Qty:  103.13
+  Price:  102.95
+  Taxable Amt:  10617.23
+  GST Rate:  0%
+  GST Amt:  0.00
+
+Net Amount:  Rs. 21544.66
+Tax Amount:  Rs. 546.37
+Grand Total:  Rs. 22091.03
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merdav Foods & Co

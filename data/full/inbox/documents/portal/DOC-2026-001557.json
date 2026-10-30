@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0270",
+  "invoiceDate": "2026-08-21T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001113",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 49724.15,
+  "tax": 8950.35,
+  "payable": 58674.50
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00140",
+   "text": "Gear coupling - grade C - M140",
+   "unit": "EA",
+   "qty": 35,
+   "rate": 1420.69,
+   "value": 49724.15,
+   "taxCode": "GST18",
+   "taxValue": 8950.35
+  }
+ ]
+}

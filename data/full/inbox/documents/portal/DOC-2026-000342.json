@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Zanjor Infotech LLP",
+    "tax_registration_id": "TRN-302320209"
+  },
+  "invoice": {
+    "number": "ZAN/25-26/015",
+    "date": "2026-03-16",
+    "po_number": "PO-2026-000205",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "166060.13",
+    "tax_total": "29890.83",
+    "grand_total": "195950.96"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00268",
+      "description": "Monitor - grade D - M268",
+      "uom": "EA",
+      "quantity": "7",
+      "unit_price": "14509.37",
+      "amount": "101565.59",
+      "tax_code": "GST18",
+      "tax_amount": "18281.81"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00264",
+      "description": "Docking station - grade C - M264",
+      "uom": "EA",
+      "quantity": "11",
+      "unit_price": "5863.14",
+      "amount": "64494.54",
+      "tax_code": "GST18",
+      "tax_amount": "11609.02"
+    }
+  ]
+}

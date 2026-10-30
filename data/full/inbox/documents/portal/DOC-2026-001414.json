@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0710",
+  "invoiceDate": "2026-08-04T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001050",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 5269.36,
+  "tax": 263.47,
+  "payable": 5532.83
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00395",
+   "text": "Sunflower oil - grade D - M395",
+   "unit": "KG",
+   "qty": 40.69,
+   "rate": 129.50,
+   "value": 5269.36,
+   "taxCode": "GST5",
+   "taxValue": 263.47
+  }
+ ]
+}

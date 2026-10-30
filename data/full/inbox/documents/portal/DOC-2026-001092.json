@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/370",
+    "date": "2026-06-23",
+    "po_number": "PO-2026-000812",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "92417.94",
+    "tax_total": "16635.23",
+    "grand_total": "109053.17"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00032",
+      "description": "Zinc ingot - grade D - M032",
+      "uom": "KG",
+      "quantity": "833.42",
+      "unit_price": "110.89",
+      "amount": "92417.94",
+      "tax_code": "GST18",
+      "tax_amount": "16635.23"
+    }
+  ]
+}

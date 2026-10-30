@@ -11,6 +11,7 @@
 *.jsonl text eol=lf
 *.sql   text eol=lf
 *.edi   text eol=lf
+*.eml   text eol=lf
 *.html  text eol=lf
 *.png   binary
 *.pdf   binary

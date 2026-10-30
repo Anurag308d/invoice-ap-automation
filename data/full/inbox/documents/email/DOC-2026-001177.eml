@@ -1,0 +1,37 @@
+From: ap@vnd-00200.example
+To: invoices@buyer.example
+Date: Fri, 03 Jul 2026 16:26:00 +0530
+Subject: Invoice INV-2026-0202
+Message-ID: <doc-2026-001177@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Roslum Stationers & Co
+Tax Reg No : TRN-873024481
+Plot 9, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Bill No : INV-2026-0202
+Inv Date : 29/06/2026
+Purchase Order : PO/2026/000902
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | PO Line | Item Code | Item Description | Unit | Quantity | Unit Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00284 | Whiteboard marker - grade A - M284 | PACK | 10 | 273.37 | 2,733.70 | GST 5% | 136.69 |
+
+Taxable Value : ₹2,733.70
+Tax : ₹136.69
+Total : ₹2,870.39
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Roslum Stationers & Co

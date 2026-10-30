@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0536",
+  "invoiceDate": "2026-04-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000563",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 47174.63,
+  "tax": 0.00,
+  "payable": 47174.63
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00370",
+   "text": "Toor dal - grade A - M370",
+   "unit": "KG",
+   "qty": 490.84,
+   "rate": 96.11,
+   "value": 47174.63,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/25-26/346",
+    "date": "2026-01-20",
+    "po_number": "PO-2026-000008",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "7788.64",
+    "tax_total": "1401.96",
+    "grand_total": "9190.60"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00282",
+      "description": "Toner cartridge - grade A - M282",
+      "uom": "PACK",
+      "quantity": "16",
+      "unit_price": "486.79",
+      "amount": "7788.64",
+      "tax_code": "GST18",
+      "tax_amount": "1401.96"
+    }
+  ]
+}

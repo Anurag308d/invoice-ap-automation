@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Velur Metals Enterprises",
+  "taxId": "TRN-527923554"
+ },
+ "header": {
+  "invoiceNo": "VEL/26-27/112",
+  "invoiceDate": "2026-07-02T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000783",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 123734.38,
+  "tax": 22272.19,
+  "payable": 146006.57
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00005",
+   "text": "HDPE granules - grade A - M005",
+   "unit": "KG",
+   "qty": 574.44,
+   "rate": 215.40,
+   "value": 123734.38,
+   "taxCode": "GST18",
+   "taxValue": 22272.19
+  }
+ ]
+}

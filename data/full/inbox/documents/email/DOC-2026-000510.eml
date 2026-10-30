@@ -1,0 +1,44 @@
+From: ap@vnd-00105.example
+To: invoices@buyer.example
+Date: Mon, 06 Apr 2026 13:20:00 +0530
+Subject: Invoice INV-2026-0400
+Message-ID: <doc-2026-000510@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Novur Packaging & Co
+Tax Registration Number: TRN-809031863
+Plot 11, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice No: INV-2026-0400
+Date: 01-04-2026
+PO No: PO 2026-000418
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  SKU: SKU-00201
+  Item Description: Corrugated box - grade A - M201
+  UOM: BOX
+  Quantity: 595
+  Rate: 40.06
+  Value: 23835.70
+  GST Rate: GST18
+  Tax Amt: 4290.43
+
+Taxable Value: ₹23835.70
+Total Tax: ₹4290.43
+Invoice Total: ₹28126.13
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Novur Packaging & Co

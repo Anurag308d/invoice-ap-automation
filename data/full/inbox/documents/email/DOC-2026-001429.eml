@@ -1,0 +1,37 @@
+From: ap@vnd-00214.example
+To: invoices@buyer.example
+Date: Thu, 06 Aug 2026 09:00:00 +0530
+Subject: Invoice SI00070
+Message-ID: <doc-2026-001429@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Corhal Foods Industries
+Tax Registration Number: TRN-196588918
+Plot 23, Industrial Area, Chennai 600058
+
+Tax Invoice
+
+Tax Invoice No: SI00070
+Invoice Date: 2026-08-04
+PO Number: PO 2026-001056
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| # | PO Ln | SKU | Description | Unit | Qty | Unit Price | Value | Tax Code | Tax Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00385 | Basmati rice - grade C - M385 | KG | 145.47 | 220.80 | 32,119.78 | GST 5% | 1,605.99 |
+
+Subtotal: Rs. 32,119.78
+Tax Amount: Rs. 1,605.99
+Grand Total: Rs. 33,725.77
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Corhal Foods Industries

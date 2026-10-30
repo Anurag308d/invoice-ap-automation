@@ -1,0 +1,84 @@
+From: ap@vnd-00190.example
+To: invoices@buyer.example
+Date: Thu, 27 Aug 2026 11:48:00 +0530
+Subject: Invoice SI00374
+Message-ID: <doc-2026-001585@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Enmer Metals & Co
+TRN:  TRN-785941819
+Plot 96, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Invoice No:  SI00374
+Inv Date:  26.08.2026
+P.O. #:  PO/2026/001117
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line:  1
+  Item Code:  SKU-00031
+  Description:  Brass rod - grade D - M031
+  Unit:  KG
+  Quantity:  959.48
+  Rate:  367.34
+  Taxable Amt:  352455.38
+  Tax Code:  GST18
+  Tax Amt:  63441.97
+Item 2
+  Order Line:  2
+  Item Code:  SKU-00053
+  Description:  HDPE granules - grade G - M053
+  Unit:  KG
+  Quantity:  38.44
+  Rate:  26.74
+  Taxable Amt:  1027.89
+  Tax Code:  GST18
+  Tax Amt:  185.02
+Item 3
+  Order Line:  3
+  Item Code:  SKU-00038
+  Description:  Stainless steel coil - grade E - M038
+  Unit:  KG
+  Quantity:  341.62
+  Rate:  149.83
+  Taxable Amt:  51184.92
+  Tax Code:  GST18
+  Tax Amt:  9213.29
+Item 4
+  Order Line:  4
+  Item Code:  SKU-00007
+  Description:  Brass rod - grade A - M007
+  Unit:  KG
+  Quantity:  647.25
+  Rate:  112.45
+  Taxable Amt:  72783.26
+  Tax Code:  GST18
+  Tax Amt:  13100.99
+Item 5
+  Order Line:  5
+  Item Code:  SKU-00016
+  Description:  Zinc ingot - grade B - M016
+  Unit:  KG
+  Quantity:  221.54
+  Rate:  62.18
+  Taxable Amt:  13775.36
+  Tax Code:  GST18
+  Tax Amt:  2479.56
+
+Subtotal:  Rs. 491226.81
+Tax Amount:  Rs. 88420.83
+Total:  Rs. 579647.64
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enmer Metals & Co

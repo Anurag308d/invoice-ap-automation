@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0593",
+  "invoiceDate": "2026-05-29T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000700",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 31212.36,
+  "tax": 1560.62,
+  "payable": 32772.98
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00392",
+   "text": "Milk powder - grade C - M392",
+   "unit": "KG",
+   "qty": 418.06,
+   "rate": 74.66,
+   "value": 31212.36,
+   "taxCode": "GST5",
+   "taxValue": 1560.62
+  }
+ ]
+}

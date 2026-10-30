@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000033",
+  "invoiceDate": "2026-07-29T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000915",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 17863.92,
+  "tax": 3215.51,
+  "payable": 21079.43
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00135",
+   "text": "Pressure gauge - grade B - M135",
+   "unit": "EA",
+   "qty": 9,
+   "rate": 1984.88,
+   "value": 17863.92,
+   "taxCode": "GST18",
+   "taxValue": 3215.51
+  }
+ ]
+}

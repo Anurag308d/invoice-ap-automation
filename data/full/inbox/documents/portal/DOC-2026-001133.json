@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Uren Engineering Spares LLP",
+    "tax_registration_id": "TRN-310579660"
+  },
+  "invoice": {
+    "number": "SI00183",
+    "date": "2026-06-24",
+    "po_number": "PO-2026-000707",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "44295.96",
+    "tax_total": "7973.28",
+    "grand_total": "52269.24"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00189",
+      "description": "Pump impeller - grade I - M189",
+      "uom": "EA",
+      "quantity": "3",
+      "unit_price": "7060.70",
+      "amount": "21182.10",
+      "tax_code": "GST18",
+      "tax_amount": "3812.79"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00184",
+      "description": "Chain sprocket - grade H - M184",
+      "uom": "EA",
+      "quantity": "11",
+      "unit_price": "2101.26",
+      "amount": "23113.86",
+      "tax_code": "GST18",
+      "tax_amount": "4160.49"
+    }
+  ]
+}

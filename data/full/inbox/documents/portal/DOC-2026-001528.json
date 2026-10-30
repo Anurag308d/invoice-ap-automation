@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000037",
+  "invoiceDate": "2026-08-19T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001119",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 15149.54,
+  "tax": 2726.92,
+  "payable": 17876.46
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00141",
+   "text": "Pump impeller - grade C - M141",
+   "unit": "EA",
+   "qty": 14,
+   "rate": 1082.11,
+   "value": 15149.54,
+   "taxCode": "GST18",
+   "taxValue": 2726.92
+  }
+ ]
+}

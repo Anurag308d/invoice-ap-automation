@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Garhal Electricals & Co",
+  "taxId": "TRN-438794432"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0124",
+  "invoiceDate": "2026-06-15T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000709",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 195723.96,
+  "tax": 35230.31,
+  "payable": 230954.27
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00071",
+   "text": "LED panel - grade B - M071",
+   "unit": "EA",
+   "qty": 129,
+   "rate": 1517.24,
+   "value": 195723.96,
+   "taxCode": "GST18",
+   "taxValue": 35230.31
+  }
+ ]
+}

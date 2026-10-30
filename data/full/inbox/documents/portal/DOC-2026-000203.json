@@ -1,0 +1,67 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/25-26/356",
+    "date": "2026-02-25",
+    "po_number": "PO-2026-000207",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "288360.42",
+    "tax_total": "47427.51",
+    "grand_total": "335787.93"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00308",
+      "description": "Whiteboard marker - grade D - M308",
+      "uom": "PACK",
+      "quantity": "142",
+      "unit_price": "1214.46",
+      "amount": "172453.32",
+      "tax_code": "GST18",
+      "tax_amount": "31041.60"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00286",
+      "description": "Stapler - grade A - M286",
+      "uom": "PACK",
+      "quantity": "158",
+      "unit_price": "131.81",
+      "amount": "20825.98",
+      "tax_code": "GST18",
+      "tax_amount": "3748.68"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00281",
+      "description": "Copier paper - grade A - M281",
+      "uom": "PACK",
+      "quantity": "94",
+      "unit_price": "264.62",
+      "amount": "24874.28",
+      "tax_code": "EXEMPT",
+      "tax_amount": "0.00"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00324",
+      "description": "Whiteboard marker - grade F - M324",
+      "uom": "PACK",
+      "quantity": "132",
+      "unit_price": "531.87",
+      "amount": "70206.84",
+      "tax_code": "GST18",
+      "tax_amount": "12637.23"
+    }
+  ]
+}

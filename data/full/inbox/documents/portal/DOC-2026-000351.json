@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Selwyn Metals Enterprises",
+  "taxId": "TRN-975298949"
+ },
+ "header": {
+  "invoiceNo": "SI00101",
+  "invoiceDate": "2026-03-18T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000243",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 181910.62,
+  "tax": 32743.91,
+  "payable": 214654.53
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00042",
+   "text": "Aluminium ingot - grade F - M042",
+   "unit": "KG",
+   "qty": 919.53,
+   "rate": 197.83,
+   "value": 181910.62,
+   "taxCode": "GST18",
+   "taxValue": 32743.91
+  }
+ ]
+}

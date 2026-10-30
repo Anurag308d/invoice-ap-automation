@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Belnov Infotech Industries",
+  "taxId": "TRN-299092169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0119",
+  "invoiceDate": "2026-04-03T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000342",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 1318874.07,
+  "tax": 237397.34,
+  "payable": 1556271.41
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00247",
+   "text": "Storage array - grade A - M247",
+   "unit": "EA",
+   "qty": 27,
+   "rate": 30142.03,
+   "value": 813834.81,
+   "taxCode": "GST18",
+   "taxValue": 146490.27
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00276",
+   "text": "Monitor - grade E - M276",
+   "unit": "EA",
+   "qty": 11,
+   "rate": 45912.66,
+   "value": 505039.26,
+   "taxCode": "GST18",
+   "taxValue": 90907.07
+  }
+ ]
+}

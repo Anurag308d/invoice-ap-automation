@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0278",
+  "invoiceDate": "2026-10-12T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001311",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 63758.63,
+  "tax": 11476.55,
+  "payable": 75235.18
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00196",
+   "text": "Gear coupling - grade J - M196",
+   "unit": "EA",
+   "qty": 31,
+   "rate": 2056.73,
+   "value": 63758.63,
+   "taxCode": "GST18",
+   "taxValue": 11476.55
+  }
+ ]
+}

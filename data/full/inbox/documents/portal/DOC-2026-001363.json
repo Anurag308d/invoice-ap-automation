@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000031",
+  "invoiceDate": "2026-07-28T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000864",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 155194.41,
+  "tax": 27935.00,
+  "payable": 183129.41
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00132",
+   "text": "Gear coupling - grade B - M132",
+   "unit": "EA",
+   "qty": 38,
+   "rate": 1264.77,
+   "value": 48061.26,
+   "taxCode": "GST18",
+   "taxValue": 8651.03
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00180",
+   "text": "Gear coupling - grade H - M180",
+   "unit": "EA",
+   "qty": 15,
+   "rate": 7142.21,
+   "value": 107133.15,
+   "taxCode": "GST18",
+   "taxValue": 19283.97
+  }
+ ]
+}

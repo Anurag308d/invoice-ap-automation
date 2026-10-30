@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/285",
+  "invoiceDate": "2026-07-22T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000111",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 25222.95,
+  "tax": 4540.13,
+  "payable": 29763.08
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00026",
+   "text": "Chain sprocket - grade A - M026",
+   "unit": "EA",
+   "qty": 23,
+   "rate": 1096.65,
+   "value": 25222.95,
+   "taxCode": "GST18",
+   "taxValue": 4540.13
+  }
+ ]
+}

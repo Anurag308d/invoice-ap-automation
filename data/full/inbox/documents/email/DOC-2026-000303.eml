@@ -1,0 +1,40 @@
+From: ap@vnd-00089.example
+To: invoices@buyer.example
+Date: Thu, 12 Mar 2026 11:07:00 +0530
+Subject: Invoice QUI/25-26/203
+Message-ID: <doc-2026-000303@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier: Quinir Metals Industries
+TRN: TRN-686482467
+Plot 92, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No: QUI/25-26/203
+Bill Date: 2026-03-11
+P.O. #: PO 2026-000217
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | PO Line | Item Code | Item Description | Unit | Qty | Price | Value | Tax Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00049 | MS sheet - grade G - M049 | KG | 780.46 | 202.76 | 1,58,246.07 | GST18 | 28,484.29 |
+| 2 | 2 | SKU-00012 | PVC resin - grade B - M012 | KG | 1001.24 | 195.40 | 1,95,642.30 | GST18 | 35,215.61 |
+| 3 | 3 | SKU-00023 | Brass rod - grade C - M023 | KG | 1283.38 | 224.12 | 2,87,631.13 | GST18 | 51,773.60 |
+
+Net Amount: 6,41,519.50
+Tax: 1,15,473.50
+Invoice Total: 7,56,993.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Quinir Metals Industries

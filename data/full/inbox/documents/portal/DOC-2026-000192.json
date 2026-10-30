@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0250",
+  "invoiceDate": "2026-02-23T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000082",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 82656.30,
+  "tax": 14878.13,
+  "payable": 97534.43
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00174",
+   "text": "Valve actuator - grade G - M174",
+   "unit": "EA",
+   "qty": 30,
+   "rate": 494.41,
+   "value": 14832.30,
+   "taxCode": "GST18",
+   "taxValue": 2669.81
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00136",
+   "text": "Chain sprocket - grade B - M136",
+   "unit": "EA",
+   "qty": 40,
+   "rate": 1695.60,
+   "value": 67824.00,
+   "taxCode": "GST18",
+   "taxValue": 12208.32
+  }
+ ]
+}

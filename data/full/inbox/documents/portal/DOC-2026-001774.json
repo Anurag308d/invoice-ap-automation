@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0785",
+  "invoiceDate": "2026-09-21T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001344",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 28118.13,
+  "tax": 1405.91,
+  "payable": 29524.04
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00384",
+   "text": "Milk powder - grade B - M384",
+   "unit": "KG",
+   "qty": 213.94,
+   "rate": 131.43,
+   "value": 28118.13,
+   "taxCode": "GST5",
+   "taxValue": 1405.91
+  }
+ ]
+}

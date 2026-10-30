@@ -1,0 +1,79 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/368",
+    "date": "2026-05-22",
+    "po_number": "PO-2026-000596",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "705660.88",
+    "tax_total": "127018.97",
+    "grand_total": "832679.85"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00058",
+      "description": "Aluminium ingot - grade H - M058",
+      "uom": "KG",
+      "quantity": "1795.90",
+      "unit_price": "86.18",
+      "amount": "154770.66",
+      "tax_code": "GST18",
+      "tax_amount": "27858.72"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00010",
+      "description": "Aluminium ingot - grade B - M010",
+      "uom": "KG",
+      "quantity": "1688.52",
+      "unit_price": "131.03",
+      "amount": "221246.78",
+      "tax_code": "GST18",
+      "tax_amount": "39824.42"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00025",
+      "description": "MS sheet - grade D - M025",
+      "uom": "KG",
+      "quantity": "989.45",
+      "unit_price": "250.84",
+      "amount": "248193.64",
+      "tax_code": "GST18",
+      "tax_amount": "44674.86"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00018",
+      "description": "Aluminium ingot - grade C - M018",
+      "uom": "KG",
+      "quantity": "304.06",
+      "unit_price": "216.57",
+      "amount": "65850.27",
+      "tax_code": "GST18",
+      "tax_amount": "11853.05"
+    },
+    {
+      "line_no": 5,
+      "po_line_no": "5",
+      "sku": "SKU-00053",
+      "description": "HDPE granules - grade G - M053",
+      "uom": "KG",
+      "quantity": "542.97",
+      "unit_price": "28.73",
+      "amount": "15599.53",
+      "tax_code": "GST18",
+      "tax_amount": "2807.92"
+    }
+  ]
+}

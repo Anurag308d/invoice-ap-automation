@@ -1,0 +1,44 @@
+From: requester.facilities.01@example.com
+To: invoices@buyer.example
+Date: Wed, 16 Sep 2026 14:01:00 +0530
+Subject: Invoice INV-2026-0055
+Message-ID: <doc-2026-001732@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Kavir Foods Enterprises <ap@vnd-00173.example>
+Date: Wed, 16 Sep 2026 14:01:00 +0530
+Subject: Invoice INV-2026-0055
+To: requester.facilities.01@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier: Kavir Foods Enterprises
+Tax Regn. No.: TRN-704441020
+Plot 79, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No: INV-2026-0055
+Dated: 14.09.2026
+Your Order Ref: PO 2026-001204
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   SKU         Item Description            UOM   Quantity   Rate     Value      Tax Code   Tax Amt
+1    1         SKU-00378   Toor dal - grade B - M378   KG    108.56     153.06   16616.19   GST0       0.00
+
+Net Amount: ₹16616.19
+Total Tax: ₹0.00
+Amount Payable: ₹16616.19
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kavir Foods Enterprises

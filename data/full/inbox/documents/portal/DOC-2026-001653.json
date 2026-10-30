@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/377",
+    "date": "2026-09-04",
+    "po_number": "PO-2026-001121",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "427650.45",
+    "tax_total": "76977.08",
+    "grand_total": "504627.53"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00030",
+      "description": "Stainless steel coil - grade D - M030",
+      "uom": "KG",
+      "quantity": "1586.62",
+      "unit_price": "100.76",
+      "amount": "159867.83",
+      "tax_code": "GST18",
+      "tax_amount": "28776.21"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00047",
+      "description": "Brass rod - grade F - M047",
+      "uom": "KG",
+      "quantity": "1939.47",
+      "unit_price": "138.07",
+      "amount": "267782.62",
+      "tax_code": "GST18",
+      "tax_amount": "48200.87"
+    }
+  ]
+}

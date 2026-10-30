@@ -1,0 +1,45 @@
+From: requester.operations.02@example.com
+To: invoices@buyer.example
+Date: Thu, 19 Mar 2026 11:12:00 +0530
+Subject: Invoice INV-2026-0351
+Message-ID: <doc-2026-000360@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Tavkav Stationers Industries <ap@vnd-00244.example>
+Date: Thu, 19 Mar 2026 11:12:00 +0530
+Subject: Invoice INV-2026-0351
+To: requester.operations.02@example.com
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller : Tavkav Stationers Industries
+Tax Regn. No. : TRN-146288496
+Plot 53, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice No : INV-2026-0351
+Date : 16-Mar-2026
+Your Order Ref : PO-2026-000290
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Line | SKU | Item Description | UOM | Qty | Unit Price | Amount | GST Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00287 | Desk organiser - grade A - M287 | PACK | 23 | 637.23 | 14,656.29 | Exempt | 0.00 |
+
+Net Amount : Rs. 14,656.29
+GST : Rs. 0.00
+Amount Payable : Rs. 14,656.29
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Tavkav Stationers Industries

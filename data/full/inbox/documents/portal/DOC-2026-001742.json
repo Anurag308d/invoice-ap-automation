@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Ordav Electricals Pvt Ltd",
+  "taxId": "TRN-749849221"
+ },
+ "header": {
+  "invoiceNo": "159",
+  "invoiceDate": "2026-08-17T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001164",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 68236.20,
+  "tax": 12282.52,
+  "payable": 80518.72
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00077",
+   "text": "Copper cable - grade C - M077",
+   "unit": "EA",
+   "qty": 90,
+   "rate": 758.18,
+   "value": 68236.20,
+   "taxCode": "GST18",
+   "taxValue": 12282.52
+  }
+ ]
+}

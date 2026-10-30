@@ -1,0 +1,37 @@
+From: ap@vnd-00044.example
+To: invoices@buyer.example
+Date: Wed, 02 Sep 2026 12:54:00 +0530
+Subject: Invoice INV-2026-0253
+Message-ID: <doc-2026-001630@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller : Corfal Safety Gear Industries
+TRN : TRN-639735598
+Plot 47, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Invoice No : INV-2026-0253
+Invoice Date : 31/08/2026
+PO No : PO/2026/001147
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   PO Line   Item        Particulars                            UOM   Qty   Rate       Value         GST Rate   Tax Amt
+1   1         SKU-00354   Safety shoes - grade D - M354          EA    219   1,242.64   2,72,138.16   GST 18%    48,984.87
+2   2         SKU-00368   Fall-arrest harness - grade E - M368   EA    107   892.40     95,486.80     GST 18%    17,187.62
+
+Total Before Tax : ₹3,67,624.96
+GST : ₹66,172.49
+Amount Payable : ₹4,33,797.45
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Corfal Safety Gear Industries

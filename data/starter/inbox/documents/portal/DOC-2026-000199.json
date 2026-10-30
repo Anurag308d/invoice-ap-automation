@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/303",
+  "invoiceDate": "2026-10-19T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000143",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 48586.48,
+  "tax": 8745.57,
+  "payable": 57332.05
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00030",
+   "text": "Gear coupling - grade B - M030",
+   "unit": "EA",
+   "qty": 14,
+   "rate": 1111.23,
+   "value": 15557.22,
+   "taxCode": "GST18",
+   "taxValue": 2800.30
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00026",
+   "text": "Chain sprocket - grade A - M026",
+   "unit": "EA",
+   "qty": 29,
+   "rate": 1138.94,
+   "value": 33029.26,
+   "taxCode": "GST18",
+   "taxValue": 5945.27
+  }
+ ]
+}

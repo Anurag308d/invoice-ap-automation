@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rosir Foods Industries",
+  "taxId": "TRN-565016045"
+ },
+ "header": {
+  "invoiceNo": "ROS/25-26/222",
+  "invoiceDate": "2026-02-20T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000167",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 16340.28,
+  "tax": 0.00,
+  "payable": 16340.28
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00390",
+   "text": "Tea leaves - grade C - M390",
+   "unit": "KG",
+   "qty": 181.70,
+   "rate": 89.93,
+   "value": 16340.28,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

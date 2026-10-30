@@ -1,0 +1,21 @@
+SELLER  IRKAV STATIONERS PVT LTD
+TAX REG NO  TRN-642411834
+Plot 14, Industrial Area, Coimbatore 641021
+
+TAX INVOICE
+
+INVOICE NUMBER: IRK/26-27/090      INV DATE: 13 Jul 2026
+PO NO: PO-2026-000104
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ORDER LINE   ITEM        PARTICULARS                        UOM    QTY   PRICE    TAXABLE AMT   GST RATE   GST AMT
+1   1            SKU-00044   Toner cartridge - grade A - M044   PACK   53    344.62   18,264.86     GST18      3,287.67
+
+TOTAL BEFORE TAX  ₹18,264.86
+TAX AMOUNT  ₹3,287.67
+TOTAL  ₹21,552.53
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

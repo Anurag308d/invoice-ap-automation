@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Orgar Electricals Industries",
+    "tax_registration_id": "TRN-487171397"
+  },
+  "invoice": {
+    "number": "INV-2026-0352",
+    "date": "2026-03-13",
+    "po_number": "PO-2026-000221",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "25488.60",
+    "tax_total": "4587.95",
+    "grand_total": "30076.55"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00069",
+      "description": "Copper cable - grade B - M069",
+      "uom": "EA",
+      "quantity": "92",
+      "unit_price": "277.05",
+      "amount": "25488.60",
+      "tax_code": "GST18",
+      "tax_amount": "4587.95"
+    }
+  ]
+}

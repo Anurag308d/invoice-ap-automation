@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Zankav Electricals Enterprises",
+    "tax_registration_id": "TRN-559614291"
+  },
+  "invoice": {
+    "number": "INV-2026-0348",
+    "date": "2026-02-12",
+    "po_number": "PO-2026-000040",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "47491.15",
+    "tax_total": "8548.41",
+    "grand_total": "56039.56"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00064",
+      "description": "Contactor - grade A - M064",
+      "uom": "EA",
+      "quantity": "35",
+      "unit_price": "1356.89",
+      "amount": "47491.15",
+      "tax_code": "GST18",
+      "tax_amount": "8548.41"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+From: ap@vnd-00010.example
+To: invoices@buyer.example
+Date: Wed, 11 Mar 2026 16:50:00 +0530
+Subject: Invoice ENU/25-26/226
+Message-ID: <doc-2026-000029@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier : Enur Packaging & Co
+Tax Registration Number : TRN-234677061
+Plot 13, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Inv # : ENU/25-26/226
+Bill Date : 09 Mar 2026
+PO Number : PO 2026-000026
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   SKU         Description                          UOM   Qty   Rate    Amount      Tax Rate   GST Amt
+1    1       SKU-00032   Stretch film roll - grade A - M032   BOX   959   64.40   61,759.60   GST 18%    11,116.73
+
+Total Before Tax : ₹61,759.60
+Total Tax : ₹11,116.73
+Total : ₹72,876.33
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enur Packaging & Co

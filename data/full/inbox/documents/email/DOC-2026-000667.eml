@@ -1,0 +1,54 @@
+From: ap@vnd-00164.example
+To: invoices@buyer.example
+Date: Tue, 21 Apr 2026 16:22:00 +0530
+Subject: Invoice ROS/26-27/115
+Message-ID: <doc-2026-000667@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Rosor Engineering Spares Industries
+Tax Registration Number:  TRN-763931567
+Plot 70, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Inv #:  ROS/26-27/115
+Date:  20-04-2026
+P.O. #:  PO 2026-000373
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line:  1
+  Item Code:  SKU-00153
+  Description:  Ball bearing - grade E - M153
+  UOM:  EA
+  Quantity:  7
+  Rate:  4,176.22
+  Taxable Amt:  29,233.54
+  GST Rate:  18%
+  Tax:  5,262.04
+Item 2
+  PO Line:  2
+  Item Code:  SKU-00142
+  Description:  Valve actuator - grade C - M142
+  UOM:  EA
+  Quantity:  1
+  Rate:  1,711.08
+  Taxable Amt:  1,711.08
+  GST Rate:  18%
+  Tax:  307.99
+
+Total Before Tax:  ₹30,944.62
+Tax:  ₹5,570.03
+Invoice Total:  ₹36,514.65
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Rosor Engineering Spares Industries

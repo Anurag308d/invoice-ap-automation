@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ennov Engineering Spares Pvt Ltd",
+    "tax_registration_id": "TRN-779290292"
+  },
+  "invoice": {
+    "number": "ENN/26-27/305",
+    "date": "2026-08-20",
+    "po_number": "PO-2026-001045",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "114210.18",
+    "tax_total": "20557.83",
+    "grand_total": "134768.01"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00166",
+      "description": "Valve actuator - grade F - M166",
+      "uom": "EA",
+      "quantity": "18",
+      "unit_price": "6345.01",
+      "amount": "114210.18",
+      "tax_code": "GST18",
+      "tax_amount": "20557.83"
+    }
+  ]
+}

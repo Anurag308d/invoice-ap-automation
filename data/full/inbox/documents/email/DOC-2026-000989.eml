@@ -1,0 +1,52 @@
+From: ap@vnd-00060.example
+To: invoices@buyer.example
+Date: Wed, 10 Jun 2026 13:03:00 +0530
+Subject: Invoice INV-2026-0294
+Message-ID: <doc-2026-000989@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller:  Zanhal Consulting & Co
+Tax Reg No:  TRN-506292474
+Plot 63, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice Number:  INV-2026-0294
+Inv Date:  10-Jun-2026
+Attn:  USR-0027
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item:  -
+  Description:  Audit advisory
+  UOM:  HR
+  Quantity:  42.0
+  Price:  3,900.00
+  Taxable Amt:  1,63,800.00
+  Tax Rate:  GST 18%
+  Tax Amt:  29,484.00
+Item 2
+  Item:  -
+  Description:  Training programme
+  UOM:  HR
+  Quantity:  13.0
+  Price:  3,700.00
+  Taxable Amt:  48,100.00
+  Tax Rate:  Exempt
+  Tax Amt:  0.00
+
+Total Before Tax:  Rs. 2,11,900.00
+Total Tax:  Rs. 29,484.00
+Amount Payable:  Rs. 2,41,384.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Zanhal Consulting & Co

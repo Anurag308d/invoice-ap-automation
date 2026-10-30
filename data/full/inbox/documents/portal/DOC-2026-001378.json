@@ -1,0 +1,69 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0267",
+  "invoiceDate": "2026-07-28T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000904",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 266718.58,
+  "tax": 48009.34,
+  "payable": 314727.92
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00127",
+   "text": "Pressure gauge - grade A - M127",
+   "unit": "EA",
+   "qty": 2,
+   "rate": 11485.55,
+   "value": 22971.10,
+   "taxCode": "GST18",
+   "taxValue": 4134.80
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00157",
+   "text": "Pump impeller - grade E - M157",
+   "unit": "EA",
+   "qty": 18,
+   "rate": 3716.88,
+   "value": 66903.84,
+   "taxCode": "GST18",
+   "taxValue": 12042.69
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00180",
+   "text": "Gear coupling - grade H - M180",
+   "unit": "EA",
+   "qty": 24,
+   "rate": 6942.16,
+   "value": 166611.84,
+   "taxCode": "GST18",
+   "taxValue": 29990.13
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00169",
+   "text": "Ball bearing - grade G - M169",
+   "unit": "EA",
+   "qty": 30,
+   "rate": 341.06,
+   "value": 10231.80,
+   "taxCode": "GST18",
+   "taxValue": 1841.72
+  }
+ ]
+}

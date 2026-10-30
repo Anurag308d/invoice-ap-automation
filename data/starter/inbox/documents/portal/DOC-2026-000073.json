@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/231",
+  "invoiceDate": "2026-04-20T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000033",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 227833.60,
+  "tax": 41010.05,
+  "payable": 268843.65
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00019",
+   "text": "Ball bearing - grade A - M019",
+   "unit": "EA",
+   "qty": 16,
+   "rate": 14239.60,
+   "value": 227833.60,
+   "taxCode": "GST18",
+   "taxValue": 41010.05
+  }
+ ]
+}

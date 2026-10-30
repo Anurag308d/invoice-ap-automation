@@ -1,0 +1,38 @@
+From: ap@vnd-00108.example
+To: invoices@buyer.example
+Date: Wed, 04 Mar 2026 13:19:00 +0530
+Subject: Invoice INV-2026-0202
+Message-ID: <doc-2026-000243@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Novar Metals Enterprises
+Tax Regn. No.: TRN-805118037
+Plot 14, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Inv #: INV-2026-0202
+Bill Date: 02-03-2026
+Your Order Ref: PO 2026-000150
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | Item Code | Particulars | Unit | Quantity | Rate | Taxable Amt | Tax Code | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00033 | MS sheet - grade E - M033 | KG | 34.56 | 255.48 | 8,829.39 | 18% | 1,589.29 |
+
+Total Before Tax: 8,829.39
+Tax Amount: 1,589.29
+Invoice Total: 10,418.68
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Novar Metals Enterprises

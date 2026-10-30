@@ -1,0 +1,37 @@
+From: ap@vnd-00200.example
+To: invoices@buyer.example
+Date: Tue, 30 Jun 2026 11:23:00 +0530
+Subject: Invoice INV-2026-0204
+Message-ID: <doc-2026-001147@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Roslum Stationers & Co
+Tax Reg No : TRN-873024481
+Plot 9, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Bill No : INV-2026-0204
+Inv Date : 29/06/2026
+Purchase Order : PO/2026/000733
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | PO Line | Item Code | Item Description | Unit | Quantity | Unit Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00288 | Printer ribbon - grade A - M288 | PACK | 100 | 377.84 | 37,784.00 | GST 18% | 6,801.12 |
+
+Taxable Value : ₹37,784.00
+Tax : ₹6,801.12
+Total : ₹44,585.12
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Roslum Stationers & Co

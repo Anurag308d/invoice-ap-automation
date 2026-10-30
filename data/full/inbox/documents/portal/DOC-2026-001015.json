@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urquin Safety Gear Enterprises",
+    "tax_registration_id": "TRN-782942859"
+  },
+  "invoice": {
+    "number": "INV-2026-0028",
+    "date": "2026-06-15",
+    "po_number": "PO-2026-000769",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "265634.25",
+    "tax_total": "13281.71",
+    "grand_total": "278915.96"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00360",
+      "description": "Fall-arrest harness - grade D - M360",
+      "uom": "EA",
+      "quantity": "285",
+      "unit_price": "932.05",
+      "amount": "265634.25",
+      "tax_code": "GST5",
+      "tax_amount": "13281.71"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0572",
+  "invoiceDate": "2026-05-14T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000607",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 35401.19,
+  "tax": 1770.06,
+  "payable": 37171.25
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00376",
+   "text": "Milk powder - grade A - M376",
+   "unit": "KG",
+   "qty": 312.29,
+   "rate": 113.36,
+   "value": 35401.19,
+   "taxCode": "GST5",
+   "taxValue": 1770.06
+  }
+ ]
+}

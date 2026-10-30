@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Artav Logistics Industries",
+    "tax_registration_id": "TRN-959368625"
+  },
+  "invoice": {
+    "number": "ART/25-26/328",
+    "date": "2026-03-23",
+    "po_number": null,
+    "attention": "USR-0025",
+    "currency": "INR",
+    "net_total": "111600.00",
+    "tax_total": "8544.00",
+    "grand_total": "120144.00"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": null,
+      "sku": null,
+      "description": "Warehousing charges",
+      "uom": "JOB",
+      "quantity": "3",
+      "unit_price": "29600.00",
+      "amount": "88800.00",
+      "tax_code": "GST5",
+      "tax_amount": "4440.00"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": null,
+      "sku": null,
+      "description": "Courier services",
+      "uom": "JOB",
+      "quantity": "1",
+      "unit_price": "22800.00",
+      "amount": "22800.00",
+      "tax_code": "GST18",
+      "tax_amount": "4104.00"
+    }
+  ]
+}

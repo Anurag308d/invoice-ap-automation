@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rosur Engineering Spares Industries",
+  "taxId": "TRN-577176981"
+ },
+ "header": {
+  "invoiceNo": "000383",
+  "invoiceDate": "2026-05-11T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000512",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 122098.68,
+  "tax": 21977.77,
+  "payable": 144076.45
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00187",
+   "text": "Hydraulic seal - grade I - M187",
+   "unit": "EA",
+   "qty": 27,
+   "rate": 3271.09,
+   "value": 88319.43,
+   "taxCode": "GST18",
+   "taxValue": 15897.50
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00156",
+   "text": "Gear coupling - grade E - M156",
+   "unit": "EA",
+   "qty": 9,
+   "rate": 3753.25,
+   "value": 33779.25,
+   "taxCode": "GST18",
+   "taxValue": 6080.27
+  }
+ ]
+}

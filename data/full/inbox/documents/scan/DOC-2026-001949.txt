@@ -1,0 +1,21 @@
+VELZAN METALS & CO
+TRN: TRN-495850574
+Plot 44, Industrial Area, Pune 411019
+
+TAX INVOICE
+
+INV #: SI00019      INVOICE DATE: 05 Oct 2026
+PO NUMBER: PO/2026/001346
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+S.NO   PO LINE   ITEM        PARTICULARS                  UNIT   QUANTITY   UNIT PRICE   VALUE       TAX CODE   GST AMT
+1      1         SKU-00012   PVC resin - grade B - M012   KG     595.55     194.40       115774.92   18%        20839.49
+
+NET AMOUNT: Rs. 115774.92
+TOTAL TAX: Rs. 20839.49
+TOTAL: Rs. 13~6#4.41
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

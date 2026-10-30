@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000039",
+  "invoiceDate": "2026-08-28T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001051",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 132422.36,
+  "tax": 23836.02,
+  "payable": 156258.38
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00200",
+   "text": "Chain sprocket - grade J - M200",
+   "unit": "EA",
+   "qty": 33,
+   "rate": 1131.33,
+   "value": 37333.89,
+   "taxCode": "GST18",
+   "taxValue": 6720.10
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00146",
+   "text": "V-belt - grade D - M146",
+   "unit": "EA",
+   "qty": 31,
+   "rate": 3067.37,
+   "value": 95088.47,
+   "taxCode": "GST18",
+   "taxValue": 17115.92
+  }
+ ]
+}

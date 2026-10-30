@@ -1,0 +1,39 @@
+From: ap@vnd-00287.example
+To: invoices@buyer.example
+Date: Mon, 23 Mar 2026 10:32:00 +0530
+Subject: Invoice KAV/25-26/185
+Message-ID: <doc-2026-000381@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Kavbel Safety Gear LLP
+Tax Reg No:  TRN-925596671
+Plot 96, Industrial Area, Hosur 635126
+
+Tax Invoice
+
+Invoice No:  KAV/25-26/185
+Dated:  23/03/2026
+PO Number:  PO/2026/000303
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | SKU | Description | Unit | Quantity | Rate | Value | Tax Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00331 | Nitrile gloves - grade A - M331 | EA | 87 | 474.75 | 41303.25 | GST 18% | 7434.59 |
+| 2 | 2 | SKU-00351 | Respirator mask - grade C - M351 | EA | 159 | 618.59 | 98355.81 | GST 18% | 17704.05 |
+| 3 | 3 | SKU-00343 | Respirator mask - grade B - M343 | EA | 163 | 592.45 | 96569.35 | GST 5% | 4828.47 |
+
+Total Before Tax:  ₹236228.41
+Tax:  ₹29967.11
+Invoice Total:  ₹266195.52
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kavbel Safety Gear LLP

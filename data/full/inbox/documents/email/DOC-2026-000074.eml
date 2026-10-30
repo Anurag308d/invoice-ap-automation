@@ -1,0 +1,37 @@
+From: ap@vnd-00028.example
+To: invoices@buyer.example
+Date: Wed, 04 Feb 2026 12:17:00 +0530
+Subject: Invoice IRC/25-26/002
+Message-ID: <doc-2026-000074@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier : Ircor Logistics Enterprises
+Tax Registration Number : TRN-141939991
+Plot 31, Industrial Area, Chennai 600058
+
+Tax Invoice
+
+Bill No : IRC/25-26/002
+Dated : 02-Feb-2026
+Attention : USR-0026
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | SKU | Particulars | UOM | Quantity | Unit Price | Amount | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|
+| 1 | - | Warehousing charges | JOB | 1 | 7,300.00 | 7,300.00 | GST 18% | 1,314.00 |
+
+Net Amount : Rs. 7,300.00
+Tax : Rs. 1,314.00
+Invoice Total : Rs. 8,614.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Ircor Logistics Enterprises

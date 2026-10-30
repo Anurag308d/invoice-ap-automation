@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/365",
+    "date": "2026-04-27",
+    "po_number": "PO-2026-000532",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "345865.55",
+    "tax_total": "62255.80",
+    "grand_total": "181217.06"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00042",
+      "description": "Aluminium ingot - grade F - M042",
+      "uom": "KG",
+      "quantity": "790.68",
+      "unit_price": "194.23",
+      "amount": "153573.78",
+      "tax_code": "GST18",
+      "tax_amount": "27643.28"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00030",
+      "description": "Stainless steel coil - grade D - M030",
+      "uom": "KG",
+      "quantity": "1681.46",
+      "unit_price": "114.36",
+      "amount": "192291.77",
+      "tax_code": "GST18",
+      "tax_amount": "34612.52"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+From: ap@vnd-00284.example
+To: invoices@buyer.example
+Date: Mon, 06 Jul 2026 13:24:00 +0530
+Subject: Invoice INV-2026-0328
+Message-ID: <doc-2026-001191@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Enlum Infotech Industries
+TRN:  TRN-521485061
+Plot 93, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Bill No:  INV-2026-0328
+Inv Date:  July 02, 2026
+P.O. #:  PO/2026/000777
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | PO Line | Item | Description | UOM | Quantity | Price | Value | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00241 | Laptop - grade A - M241 | EA | 5 | 31245.35 | 156226.75 | GST18 | 28120.82 |
+
+Subtotal:  156226.75
+Total Tax:  28120.82
+Invoice Total:  184347.57
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enlum Infotech Industries

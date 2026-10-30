@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Garros Engineering Spares Industries",
+    "tax_registration_id": "TRN-147914743"
+  },
+  "invoice": {
+    "number": "INV-2026-0398",
+    "date": "2026-04-06",
+    "po_number": "PO-2026-000311",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "110844.10",
+    "tax_total": "19951.94",
+    "grand_total": "130796.04"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00155",
+      "description": "Hydraulic seal - grade E - M155",
+      "uom": "EA",
+      "quantity": "38",
+      "unit_price": "2916.95",
+      "amount": "110844.10",
+      "tax_code": "GST18",
+      "tax_amount": "19951.94"
+    }
+  ]
+}

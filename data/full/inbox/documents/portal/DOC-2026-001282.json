@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/374",
+    "date": "2026-07-17",
+    "po_number": "PO-2026-000953",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "223024.28",
+    "tax_total": "40144.37",
+    "grand_total": "263168.65"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00020",
+      "description": "PVC resin - grade C - M020",
+      "uom": "KG",
+      "quantity": "915.61",
+      "unit_price": "243.58",
+      "amount": "223024.28",
+      "tax_code": "GST18",
+      "tax_amount": "40144.37"
+    }
+  ]
+}

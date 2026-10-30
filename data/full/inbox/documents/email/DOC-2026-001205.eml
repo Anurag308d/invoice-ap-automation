@@ -1,0 +1,44 @@
+From: ap@vnd-00253.example
+To: invoices@buyer.example
+Date: Tue, 07 Jul 2026 13:50:00 +0530
+Subject: Invoice BEL/26-27/391
+Message-ID: <doc-2026-001205@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller : Belros Safety Gear Enterprises
+Tax Regn. No. : TRN-513869351
+Plot 62, Industrial Area, Hosur 635126
+
+Tax Invoice
+
+Bill No : BEL/26-27/391
+Bill Date : 2026-07-06
+P.O. # : PO 2026-000861
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line : 1
+  Item Code : SKU-00355
+  Particulars : Nitrile gloves - grade D - M355
+  Unit : EA
+  Quantity : 199
+  Unit Price : 520.79
+  Amount : 1,03,637.21
+  Tax Rate : GST5
+  Tax Amt : 5,181.86
+
+Subtotal : ₹1,03,637.21
+Tax : ₹5,181.86
+Amount Payable : ₹1,08,819.07
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Belros Safety Gear Enterprises

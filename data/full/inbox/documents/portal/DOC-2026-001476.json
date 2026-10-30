@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Selwyn Metals Enterprises",
+  "taxId": "TRN-975298949"
+ },
+ "header": {
+  "invoiceNo": "SI00119",
+  "invoiceDate": "2026-08-12T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000972",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 138463.20,
+  "tax": 24923.37,
+  "payable": 163386.57
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00009",
+   "text": "MS sheet - grade B - M009",
+   "unit": "KG",
+   "qty": 775.20,
+   "rate": 162.30,
+   "value": 125814.96,
+   "taxCode": "GST18",
+   "taxValue": 22646.69
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00025",
+   "text": "MS sheet - grade D - M025",
+   "unit": "KG",
+   "qty": 52.80,
+   "rate": 239.55,
+   "value": 12648.24,
+   "taxCode": "GST18",
+   "taxValue": 2276.68
+  }
+ ]
+}

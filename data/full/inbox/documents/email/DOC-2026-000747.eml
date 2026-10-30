@@ -1,0 +1,43 @@
+From: ap@vnd-00145.example
+To: invoices@buyer.example
+Date: Mon, 04 May 2026 10:50:00 +0530
+Subject: Invoice INV-2026-0355
+Message-ID: <doc-2026-000747@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor : Urpar Facility Services & Co
+Tax Registration Number : TRN-797120650
+Plot 51, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Invoice No : INV-2026-0355
+Dated : 04-May-2026
+Attn : USR-0024
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item : -
+  Description : Housekeeping services
+  Unit : MONTH
+  Quantity : 1
+  Price : 69,200.00
+  Amount : 69,200.00
+  GST Rate : 18%
+  Tax Amt : 12,456.00
+
+Taxable Value : Rs. 69,200.00
+Total Tax : Rs. 12,456.00
+Total : Rs. 81,656.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Urpar Facility Services & Co

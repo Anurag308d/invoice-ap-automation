@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Tavcor Metals Enterprises",
+    "tax_registration_id": "TRN-504843347"
+  },
+  "invoice": {
+    "number": "TAV/26-27/048",
+    "date": "2026-06-09",
+    "po_number": "PO-2026-000727",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "18938.81",
+    "tax_total": "3408.99",
+    "grand_total": "22347.80"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00054",
+      "description": "Stainless steel coil - grade G - M054",
+      "uom": "KG",
+      "quantity": "34.01",
+      "unit_price": "556.86",
+      "amount": "18938.81",
+      "tax_code": "GST18",
+      "tax_amount": "3408.99"
+    }
+  ]
+}

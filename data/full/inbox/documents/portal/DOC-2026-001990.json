@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/424",
+    "date": "2026-10-19",
+    "po_number": "PO-2026-001473",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "114081.36",
+    "tax_total": "9420.66",
+    "grand_total": "123502.02"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00294",
+      "description": "Stapler - grade B - M294",
+      "uom": "PACK",
+      "quantity": "100",
+      "unit_price": "523.37",
+      "amount": "52337.00",
+      "tax_code": "GST18",
+      "tax_amount": "9420.66"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00310",
+      "description": "Stapler - grade D - M310",
+      "uom": "PACK",
+      "quantity": "164",
+      "unit_price": "376.49",
+      "amount": "61744.36",
+      "tax_code": "EXEMPT",
+      "tax_amount": "0.00"
+    }
+  ]
+}

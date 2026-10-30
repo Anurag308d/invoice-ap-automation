@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumkav Engineering Spares Industries",
+    "tax_registration_id": "TRN-788381542"
+  },
+  "invoice": {
+    "number": "000032",
+    "date": "2026-02-25",
+    "po_number": "PO-2026-000041",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "31171.30",
+    "tax_total": "5610.83",
+    "grand_total": "36782.13"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00181",
+      "description": "Pump impeller - grade H - M181",
+      "uom": "EA",
+      "quantity": "18",
+      "unit_price": "640.83",
+      "amount": "11534.94",
+      "tax_code": "GST18",
+      "tax_amount": "2076.29"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00200",
+      "description": "Chain sprocket - grade J - M200",
+      "uom": "EA",
+      "quantity": "17",
+      "unit_price": "1155.08",
+      "amount": "19636.36",
+      "tax_code": "GST18",
+      "tax_amount": "3534.54"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0259",
+  "invoiceDate": "2026-06-08T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000610",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 35314.32,
+  "tax": 6356.58,
+  "payable": 41670.90
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00197",
+   "text": "Pump impeller - grade J - M197",
+   "unit": "EA",
+   "qty": 8,
+   "rate": 4414.29,
+   "value": 35314.32,
+   "taxCode": "GST18",
+   "taxValue": 6356.58
+  }
+ ]
+}

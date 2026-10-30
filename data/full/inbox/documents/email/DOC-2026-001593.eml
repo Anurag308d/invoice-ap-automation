@@ -1,0 +1,94 @@
+From: ap@vnd-00139.example
+To: invoices@buyer.example
+Date: Fri, 28 Aug 2026 12:55:00 +0530
+Subject: Invoice INV-2026-0034
+Message-ID: <doc-2026-001593@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Velros Electricals Industries
+Tax Registration Number: TRN-724845921
+Plot 45, Industrial Area, Hosur 635126
+
+Tax Invoice
+
+Invoice No: INV-2026-0034
+Bill Date: August 25, 2026
+Your Order Ref: PO/2026/001055
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00099
+  Item Description: Relay module - grade E - M099
+  Unit: EA
+  Qty: 4
+  Unit Price: 1,189.45
+  Taxable Amt: 4,757.80
+  GST Rate: 18%
+  Tax Amt: 856.40
+Item 2
+  Order Line: 2
+  Item: SKU-00062
+  Item Description: MCB switch - grade A - M062
+  Unit: EA
+  Qty: 4
+  Unit Price: 1,166.71
+  Taxable Amt: 4,666.84
+  GST Rate: 18%
+  Tax Amt: 840.03
+Item 3
+  Order Line: 3
+  Item: SKU-00109
+  Item Description: Copper cable - grade G - M109
+  Unit: EA
+  Qty: 29
+  Unit Price: 1,404.21
+  Taxable Amt: 40,722.09
+  GST Rate: 18%
+  Tax Amt: 7,329.98
+Item 4
+  Order Line: 4
+  Item: SKU-00070
+  Item Description: MCB switch - grade B - M070
+  Unit: EA
+  Qty: 44
+  Unit Price: 976.67
+  Taxable Amt: 42,973.48
+  GST Rate: 18%
+  Tax Amt: 7,735.23
+Item 5
+  Order Line: 5
+  Item: SKU-00072
+  Item Description: Contactor - grade B - M072
+  Unit: EA
+  Qty: 56
+  Unit Price: 1,003.11
+  Taxable Amt: 56,174.16
+  GST Rate: 18%
+  Tax Amt: 10,111.35
+Item 6
+  Order Line: 6
+  Item: SKU-00088
+  Item Description: Contactor - grade D - M088
+  Unit: EA
+  Qty: 13
+  Unit Price: 540.99
+  Taxable Amt: 7,032.87
+  GST Rate: 18%
+  Tax Amt: 1,265.92
+
+Taxable Value: INR 156,327.24
+Tax Amount: INR 28,138.91
+Total Amount Due: INR 184,466.15
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Velros Electricals Industries

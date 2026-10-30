@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urar Engineering Spares LLP",
+  "taxId": "TRN-632987039"
+ },
+ "header": {
+  "invoiceNo": "SI00186",
+  "invoiceDate": "2026-03-16T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000137",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 13803.76,
+  "tax": 2484.68,
+  "payable": 16288.44
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00188",
+   "text": "Gear coupling - grade I - M188",
+   "unit": "EA",
+   "qty": 8,
+   "rate": 1725.47,
+   "value": 13803.76,
+   "taxCode": "GST18",
+   "taxValue": 2484.68
+  }
+ ]
+}

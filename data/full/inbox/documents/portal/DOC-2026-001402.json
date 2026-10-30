@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-831401137"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/210",
+  "invoiceDate": "2026-07-31T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001008",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 3988.56,
+  "tax": 717.94,
+  "payable": 4706.50
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00176",
+   "text": "Chain sprocket - grade G - M176",
+   "unit": "EA",
+   "qty": 2,
+   "rate": 1994.28,
+   "value": 3988.56,
+   "taxCode": "GST18",
+   "taxValue": 717.94
+  }
+ ]
+}

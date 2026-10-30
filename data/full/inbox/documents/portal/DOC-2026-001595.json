@@ -1,0 +1,81 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-831401137"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/213",
+  "invoiceDate": "2026-08-28T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001074",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 513727.73,
+  "tax": 92471.00,
+  "payable": 606198.73
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00149",
+   "text": "Pump impeller - grade D - M149",
+   "unit": "EA",
+   "qty": 23,
+   "rate": 4949.25,
+   "value": 113832.75,
+   "taxCode": "GST18",
+   "taxValue": 20489.90
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00180",
+   "text": "Gear coupling - grade H - M180",
+   "unit": "EA",
+   "qty": 37,
+   "rate": 7450.94,
+   "value": 275684.78,
+   "taxCode": "GST18",
+   "taxValue": 49623.26
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00166",
+   "text": "Valve actuator - grade F - M166",
+   "unit": "EA",
+   "qty": 8,
+   "rate": 6857.88,
+   "value": 54863.04,
+   "taxCode": "GST18",
+   "taxValue": 9875.35
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00146",
+   "text": "V-belt - grade D - M146",
+   "unit": "EA",
+   "qty": 18,
+   "rate": 2921.22,
+   "value": 52581.96,
+   "taxCode": "GST18",
+   "taxValue": 9464.75
+  },
+  {
+   "seq": 5,
+   "orderLine": 5,
+   "itemCode": "SKU-00130",
+   "text": "V-belt - grade B - M130",
+   "unit": "EA",
+   "qty": 36,
+   "rate": 465.70,
+   "value": 16765.20,
+   "taxCode": "GST18",
+   "taxValue": 3017.74
+  }
+ ]
+}

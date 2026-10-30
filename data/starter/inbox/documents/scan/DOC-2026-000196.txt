@@ -1,0 +1,23 @@
+SUPPLIER : ORTAV ELECTRICALS PVT LTD
+TAX REG NO : TRN-348899465
+Plot 24, Industrial Area, Coimbatore 641021
+
+TAX INVOICE
+
+TAX INVOICE NO : INV-2026-0392
+INV DATE : 08-Oct-2026
+PO NUMBER : PO 2026-000145
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+LINE   ORDER LINE   SKU         ITEM DESCRIPTION                UOM   QUANTITY   UNIT PRICE   TAXABLE AMT   GST RATE   GST AMT
+1      1            SKU-00016   Relay module - grade A - M016   EA    190        170.08       32,315.20     GST 18%    5,816.74
+2      2            SKU-00012   LED panel - grade A - M012      EA    28         1,036.43     29,020.04     GST 18%    5,223.61
+
+SUBTOTAL : ₹61,335.24
+TOTAL TAX : ₹11,040.35
+TOTAL : ₹72,375.59
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

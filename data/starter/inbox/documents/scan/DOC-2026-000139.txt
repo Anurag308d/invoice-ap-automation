@@ -1,0 +1,23 @@
+SUPPLIER : ORTAV ELECTRICALS PVT LTD
+TAX REG NO : TRN-348899465
+Plot 24, Industrial Area, Coimbatore 641021
+
+TAX INVOICE
+
+TAX INVOICE NO : INV-2026-0386
+INV DATE : 03-Jul-2026
+PO NUMBER : PO 2026-000094
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+LINE   ORDER LINE   SKU         ITEM DESCRIPTION                UOM   QUANTITY   UNIT PRICE   TAXABLE AMT   GST RATE   GST AMT
+1      1            SKU-00011   MCB switch - grade A - M011     EA    117        2,088.93     244,404.81    GST 18%    43,992.87
+2      2            SKU-00018   Copper cable - grade B - M018   EA    112        1,071.50     120,008.00    GST 18%    21,601.44
+
+SUBTOTAL : ₹364,412.81
+TOTAL TAX : ₹65,594.31
+TOTAL : ₹430,007.12
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

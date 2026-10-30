@@ -1,0 +1,60 @@
+From: requester.corporate.01@example.com
+To: invoices@buyer.example
+Date: Thu, 05 Feb 2026 15:31:00 +0530
+Subject: Invoice INV-2026-0291
+Message-ID: <doc-2026-000083@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Zanhal Consulting & Co <ap@vnd-00060.example>
+Date: Thu, 05 Feb 2026 15:31:00 +0530
+Subject: Invoice INV-2026-0291
+To: requester.corporate.01@example.com
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller:  Zanhal Consulting & Co
+Tax Reg No:  TRN-506292474
+Plot 63, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice Number:  INV-2026-0291
+Inv Date:  03-Feb-2026
+Attn:  USR-0027
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item:  -
+  Description:  Training programme
+  UOM:  HR
+  Quantity:  8.0
+  Price:  5,200.00
+  Taxable Amt:  41,600.00
+  Tax Rate:  GST 18%
+  Tax Amt:  7,488.00
+Item 2
+  Item:  -
+  Description:  Audit advisory
+  UOM:  HR
+  Quantity:  25.0
+  Price:  3,900.00
+  Taxable Amt:  97,500.00
+  Tax Rate:  GST 18%
+  Tax Amt:  17,550.00
+
+Total Before Tax:  Rs. 1,39,100.00
+Total Tax:  Rs. 25,038.00
+Amount Payable:  Rs. 1,64,138.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Zanhal Consulting & Co

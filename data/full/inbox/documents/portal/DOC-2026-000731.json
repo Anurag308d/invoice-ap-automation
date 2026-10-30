@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Velur Metals Enterprises",
+  "taxId": "TRN-527923554"
+ },
+ "header": {
+  "invoiceNo": "VEL/26-27/110",
+  "invoiceDate": "2026-04-30T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000520",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 145630.07,
+  "tax": 26213.41,
+  "payable": 171843.48
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00056",
+   "text": "Zinc ingot - grade G - M056",
+   "unit": "KG",
+   "qty": 569.29,
+   "rate": 255.81,
+   "value": 145630.07,
+   "taxCode": "GST18",
+   "taxValue": 26213.41
+  }
+ ]
+}

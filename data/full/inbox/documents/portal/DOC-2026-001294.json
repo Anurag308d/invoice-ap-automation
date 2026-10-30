@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumkav Engineering Spares Industries",
+    "tax_registration_id": "TRN-788381542"
+  },
+  "invoice": {
+    "number": "000037",
+    "date": "2026-07-20",
+    "po_number": "PO-2026-000737",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "29626.80",
+    "tax_total": "5332.82",
+    "grand_total": "34959.62"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00194",
+      "description": "V-belt - grade J - M194",
+      "uom": "EA",
+      "quantity": "21",
+      "unit_price": "1410.80",
+      "amount": "29626.80",
+      "tax_code": "GST18",
+      "tax_amount": "5332.82"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rospar Safety Gear Pvt Ltd",
+  "taxId": "TRN-432562169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0386",
+  "invoiceDate": "2026-01-19T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000021",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 192150.62,
+  "tax": 9607.53,
+  "payable": 201758.15
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00355",
+   "text": "Nitrile gloves - grade D - M355",
+   "unit": "EA",
+   "qty": 209,
+   "rate": 526.06,
+   "value": 109946.54,
+   "taxCode": "GST5",
+   "taxValue": 5497.33
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00362",
+   "text": "Safety shoes - grade E - M362",
+   "unit": "EA",
+   "qty": 168,
+   "rate": 489.31,
+   "value": 82204.08,
+   "taxCode": "GST5",
+   "taxValue": 4110.20
+  }
+ ]
+}

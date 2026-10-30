@@ -187,23 +187,29 @@ approval turnaround and payment scheduling all use business-day arithmetic. `*_a
 | `docs [--check]` | Regenerate the data dictionary, JSON spec and generated doc tables | 1 (done) |
 | `policy [--path]` | Validate the policy and print a summary | 1 (done) |
 | `generate --scale --seed [--out]` | Build master data, the intake manifest, source invoices and ground truth and the rendered inbox documents | 2-3 (done) |
-| `validate --quick` | Defect-aware self-checks over a built dataset | 2 (done) |
+| `validate [--quick]` | Full validation suite over every table (`--quick`: generator self-checks) | 2, 5 (done) |
 | `run --scale [--data]` | Run the engine (master + inbox only) | 3-4 (done) |
 | `evaluate --scale [--data]` | Metrics vs source and ground truth, per-invoice acceptance | 3-4 (done) |
 | `explain <invoice_id> [--scale]` | Per-invoice decision, exceptions, events and trace | 4 (done) |
-| `validate` (full), `export`, `repro`, `queue --role`, `dashboard` | Validation suite, exports, reproducibility, actor queues, HTML dashboard | 5 |
-| `build-all` | One command that builds everything for both scales | 5 |
+| `export`, `dashboard` | JSON exports and SQL seeds; the offline HTML dashboard | 5 (done) |
+| `queue [--role] [--user]` | An actor's open work queue at the snapshot (all five roles by default) | 5 (done) |
+| `build --scale [--seed] [--out]` | One scale end to end: generate, run, evaluate, validate, export, dashboard, manifest | 5 (done) |
+| `repro --scale [--seed]` | Two rebuilds (PYTHONHASHSEED 1 and 2) and another seed; file-by-file comparison | 5 (done) |
+| `build-all [--no-check]` | Both scales into `data/`, each followed by the reproducibility check (about 35 s) | 5 (done) |
 
 ## 9. Performance and size budget
 
 The full build must take well under a minute on a laptop. The approach is single-pass and in
 memory, with indexed dictionaries and standard-library CSV, and no dataframe dependency.
 
-Committed data follows REV's Q3 ruling (ADR-028):
-- the full CSV layers, inbox documents, reports and manifest are committed;
-- JSON and SQL exports are committed for the starter build;
-- the full-scale JSON and SQL are committed only if the total committed data stays at or below
-  about 25 MB, as measured. Otherwise their checksums go in the manifest and `build-all`
-  regenerates them;
-- generated data is committed only when Stages 5 and 6 close;
-- a parity check proves the committed data equals a fresh build.
+Committed data follows REV's Q3 ruling (ADR-028) and Stage-4 ruling 1 (ADR-042), as measured at
+Stage 5 (about 25.4 MB in total):
+- `data/starter/` is committed complete, in every format;
+- `data/full/` is committed except `exports/json/`, `exports/sql/`, `processed/decision_trace.jsonl`
+  and `processed/extraction_field.csv` (removed in the ruling's order); their checksums are in the
+  manifest and `build-all` regenerates them;
+- `tests/test_outputs.py::test_committed_data_equals_a_fresh_build` proves parity.
+
+Timing on the development container: `build --scale full` about 7.5 s (generate 2.3, run 1.6,
+evaluate 0.6, validate 1.1, export 1.1, dashboard 0.2, manifest 0.5); `build-all` with both
+reproducibility checks about 35 s.

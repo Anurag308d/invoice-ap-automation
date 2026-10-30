@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Garhal Electricals & Co",
+  "taxId": "TRN-438794432"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0122",
+  "invoiceDate": "2026-03-09T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000183",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 241591.16,
+  "tax": 43486.41,
+  "payable": 285077.57
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00061",
+   "text": "Copper cable - grade A - M061",
+   "unit": "EA",
+   "qty": 84,
+   "rate": 1157.82,
+   "value": 97256.88,
+   "taxCode": "GST18",
+   "taxValue": 17506.24
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00079",
+   "text": "LED panel - grade C - M079",
+   "unit": "EA",
+   "qty": 163,
+   "rate": 686.36,
+   "value": 111876.68,
+   "taxCode": "GST18",
+   "taxValue": 20137.80
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00081",
+   "text": "Cable tray - grade C - M081",
+   "unit": "EA",
+   "qty": 35,
+   "rate": 927.36,
+   "value": 32457.60,
+   "taxCode": "GST18",
+   "taxValue": 5842.37
+  }
+ ]
+}

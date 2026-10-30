@@ -1,0 +1,37 @@
+From: ap@vnd-00114.example
+To: invoices@buyer.example
+Date: Thu, 21 May 2026 12:50:00 +0530
+Subject: Invoice FAL/26-27/023
+Message-ID: <doc-2026-000863@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Falen Packaging Industries
+TRN : TRN-134648990
+Plot 20, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No : FAL/26-27/023
+Inv Date : 2026-05-18
+PO Number : PO/2026/000604
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | SKU | Particulars | UOM | Qty | Unit Price | Amount | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00219 | Pallet - grade C - M219 | BOX | 472 | 73.66 | 34,767.52 | GST18 | 6,258.15 |
+
+Subtotal : Rs. 34,767.52
+GST : Rs. 6,258.15
+Invoice Total : Rs. 41,025.67
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Falen Packaging Industries

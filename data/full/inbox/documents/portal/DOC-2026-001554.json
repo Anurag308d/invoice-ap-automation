@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0271",
+  "invoiceDate": "2026-08-24T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001089",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 51241.48,
+  "tax": 9223.46,
+  "payable": 60464.94
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00145",
+   "text": "Ball bearing - grade D - M145",
+   "unit": "EA",
+   "qty": 32,
+   "rate": 1294.70,
+   "value": 41430.40,
+   "taxCode": "GST18",
+   "taxValue": 7457.47
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00152",
+   "text": "Chain sprocket - grade D - M152",
+   "unit": "EA",
+   "qty": 18,
+   "rate": 545.06,
+   "value": 9811.08,
+   "taxCode": "GST18",
+   "taxValue": 1765.99
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+From: ap@vnd-00114.example
+To: invoices@buyer.example
+Date: Wed, 23 Sep 2026 10:08:00 +0530
+Subject: Invoice FAL/26-27/032
+Message-ID: <doc-2026-001784@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Falen Packaging Industries
+TRN : TRN-134648990
+Plot 20, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No : FAL/26-27/032
+Inv Date : 2026-09-18
+PO Number : PO/2026/001244
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | SKU | Particulars | UOM | Qty | Unit Price | Amount | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00216 | Shipping label roll - grade B - M216 | BOX | 190 | 159.61 | 30,325.90 | GST18 | 5,458.66 |
+
+Subtotal : Rs. 30,325.90
+GST : Rs. 5,458.66
+Invoice Total : Rs. 35,784.56
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Falen Packaging Industries

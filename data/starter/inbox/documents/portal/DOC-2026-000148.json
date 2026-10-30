@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/276",
+  "invoiceDate": "2026-07-13T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000095",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 61091.24,
+  "tax": 10996.42,
+  "payable": 72087.66
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00020",
+   "text": "V-belt - grade A - M020",
+   "unit": "EA",
+   "qty": 14,
+   "rate": 4363.66,
+   "value": 61091.24,
+   "taxCode": "GST18",
+   "taxValue": 10996.42
+  }
+ ]
+}

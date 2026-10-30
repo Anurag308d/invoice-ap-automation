@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0255",
+  "invoiceDate": "2026-05-13T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000505",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 37840.75,
+  "tax": 6811.34,
+  "payable": 44652.09
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00142",
+   "text": "Valve actuator - grade C - M142",
+   "unit": "EA",
+   "qty": 23,
+   "rate": 1645.25,
+   "value": 37840.75,
+   "taxCode": "GST18",
+   "taxValue": 6811.34
+  }
+ ]
+}

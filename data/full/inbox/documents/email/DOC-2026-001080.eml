@@ -1,0 +1,37 @@
+From: ap@vnd-00173.example
+To: invoices@buyer.example
+Date: Mon, 22 Jun 2026 16:45:00 +0530
+Subject: Invoice INV-2026-0039
+Message-ID: <doc-2026-001080@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier: Kavir Foods Enterprises
+Tax Regn. No.: TRN-704441020
+Plot 79, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No: INV-2026-0039
+Dated: 22.06.2026
+Your Order Ref: PO 2026-000839
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   SKU         Item Description                 UOM   Quantity   Rate     Value      Tax Code   Tax Amt
+1    1         SKU-00383   Coffee powder - grade B - M383   KG    241.27     77.38    18669.47   GST5       933.47
+2    2         SKU-00369   Basmati rice - grade A - M369    KG    47.54      100.77   4790.61    GST5       239.53
+
+Net Amount: ₹23460.08
+Total Tax: ₹1173.00
+Amount Payable: ₹24633.08
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kavir Foods Enterprises

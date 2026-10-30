@@ -1,0 +1,38 @@
+From: ap@vnd-00100.example
+To: invoices@buyer.example
+Date: Tue, 22 Sep 2026 12:54:00 +0530
+Subject: Invoice INV-2026-0023
+Message-ID: <doc-2026-001773@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Irtav Foods & Co
+Tax Regn. No.:  TRN-675914390
+Plot 6, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Invoice Number:  INV-2026-0023
+Dated:  18-09-2026
+Purchase Order:  PO/2026/001335
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | Item Code | Item Description | Unit | Qty | Unit Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00376 | Milk powder - grade A - M376 | KG | 69.20 | 119.32 | 8,256.94 | 5% | 412.85 |
+
+Taxable Value:  8,256.94
+Total Tax:  412.85
+Grand Total:  8,669.79
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Irtav Foods & Co

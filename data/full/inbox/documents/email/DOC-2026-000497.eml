@@ -1,0 +1,54 @@
+From: ap@vnd-00292.example
+To: invoices@buyer.example
+Date: Fri, 03 Apr 2026 13:51:00 +0530
+Subject: Invoice 000135
+Message-ID: <doc-2026-000497@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier: Velcor Stationers LLP
+Tax Reg No: TRN-651670880
+Plot 4, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Inv #: 000135
+Bill Date: 2026-04-01
+Purchase Order: PO 2026-000263
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item Code: SKU-00308
+  Item Description: Whiteboard marker - grade D - M308
+  Unit: PACK
+  Quantity: 54
+  Price: 1,151.83
+  Taxable Amt: 62,198.82
+  GST Rate: GST 18%
+  Tax Amt: 11,195.79
+Item 2
+  Order Line: 2
+  Item Code: SKU-00320
+  Item Description: Printer ribbon - grade E - M320
+  Unit: PACK
+  Quantity: 30
+  Price: 77.18
+  Taxable Amt: 2,315.40
+  GST Rate: Exempt
+  Tax Amt: 0.00
+
+Net Amount: ₹64,514.22
+Total Tax: ₹11,195.79
+Amount Payable: ₹75,710.01
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Velcor Stationers LLP

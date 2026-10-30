@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/376",
+    "date": "2026-07-27",
+    "po_number": "PO-2026-001009",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "31778.34",
+    "tax_total": "5720.10",
+    "grand_total": "37498.44"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00288",
+      "description": "Printer ribbon - grade A - M288",
+      "uom": "PACK",
+      "quantity": "89",
+      "unit_price": "357.06",
+      "amount": "31778.34",
+      "tax_code": "GST18",
+      "tax_amount": "5720.10"
+    }
+  ]
+}

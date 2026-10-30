@@ -1,0 +1,36 @@
+From: ap@vnd-00010.example
+To: invoices@buyer.example
+Date: Tue, 01 Sep 2026 11:49:00 +0530
+Subject: Invoice WYN/26-27/226
+Message-ID: <doc-2026-001611@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier : Wyntav Metals & Co
+Tax Registration Number : TRN-719496487
+Plot 13, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Inv # : WYN/26-27/226
+Bill Date : 31 Aug 2026
+PO Number : PO 2026-001122
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   SKU         Description                      UOM   Qty      Rate     Amount      Tax Rate   GST Amt
+1    1       SKU-00045   HDPE granules - grade F - M045   KG    294.31   143.69   42,289.40   GST 18%    7,612.09
+
+Total Before Tax : ₹42,289.40
+Total Tax : ₹7,612.09
+Total : ₹49,901.49
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Wyntav Metals & Co

@@ -1,0 +1,37 @@
+From: ap@vnd-00114.example
+To: invoices@buyer.example
+Date: Fri, 29 May 2026 15:53:00 +0530
+Subject: Invoice FAL/26-27/025
+Message-ID: <doc-2026-000912@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Falen Packaging Industries
+TRN : TRN-134648990
+Plot 20, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No : FAL/26-27/025
+Inv Date : 2026-05-26
+PO Number : PO/2026/000677
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | SKU | Particulars | UOM | Qty | Unit Price | Amount | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00230 | Foam insert - grade D - M230 | BOX | 367 | 125.14 | 45,926.38 | GST18 | 8,266.75 |
+
+Subtotal : Rs. 45,926.38
+GST : Rs. 8,266.75
+Invoice Total : Rs. 54,193.13
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Falen Packaging Industries

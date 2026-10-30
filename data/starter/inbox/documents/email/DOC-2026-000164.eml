@@ -1,0 +1,44 @@
+From: ap@vnd-00024.example
+To: invoices@buyer.example
+Date: Wed, 12 Aug 2026 15:07:00 +0530
+Subject: Invoice INV-2026-0110
+Message-ID: <doc-2026-000164@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor: Roskav Safety Gear Industries
+Tax Regn. No.: TRN-984680054
+Plot 27, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Invoice Number: INV-2026-0110
+Date: 11.08.2026
+P.O. #: PO/2026/000117
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln: 1
+  SKU: SKU-00054
+  Item Description: Safety goggles - grade A - M054
+  Unit: EA
+  Qty: 105
+  Rate: 1,899.90
+  Taxable Amt: 199,489.50
+  Tax Rate: GST 18%
+  Tax: 35,908.11
+
+Total Before Tax: ₹199,489.50
+Tax: ₹35,908.11
+Amount Payable: ₹235,397.61
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Roskav Safety Gear Industries

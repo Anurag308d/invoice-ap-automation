@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rospar Safety Gear Pvt Ltd",
+  "taxId": "TRN-432562169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0413",
+  "invoiceDate": "2026-09-14T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001251",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 82635.00,
+  "tax": 4131.75,
+  "payable": 86766.75
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00358",
+   "text": "Hi-vis vest - grade D - M358",
+   "unit": "EA",
+   "qty": 105,
+   "rate": 787.00,
+   "value": 82635.00,
+   "taxCode": "GST5",
+   "taxValue": 4131.75
+  }
+ ]
+}

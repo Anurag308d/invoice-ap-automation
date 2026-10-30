@@ -1,0 +1,84 @@
+From: ap@vnd-00024.example
+To: invoices@buyer.example
+Date: Mon, 23 Mar 2026 12:53:00 +0530
+Subject: Invoice INV-2026-0098
+Message-ID: <doc-2026-000038@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor: Roskav Safety Gear Industries
+Tax Regn. No.: TRN-984680054
+Plot 27, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Invoice Number: INV-2026-0098
+Date: 19.03.2026
+P.O. #: PO/2026/000028
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln: 1
+  SKU: SKU-00052
+  Item Description: Nitrile gloves - grade A - M052
+  Unit: EA
+  Qty: 58
+  Rate: 848.55
+  Taxable Amt: 49,215.90
+  Tax Rate: GST 5%
+  Tax: 2,460.80
+Item 2
+  PO Ln: 2
+  SKU: SKU-00051
+  Item Description: Safety shoes - grade A - M051
+  Unit: EA
+  Qty: 105
+  Rate: 1,020.91
+  Taxable Amt: 107,195.55
+  Tax Rate: GST 5%
+  Tax: 5,359.78
+Item 3
+  PO Ln: 3
+  SKU: SKU-00054
+  Item Description: Safety goggles - grade A - M054
+  Unit: EA
+  Qty: 33
+  Rate: 1,994.74
+  Taxable Amt: 65,826.42
+  Tax Rate: GST 5%
+  Tax: 3,291.32
+Item 4
+  PO Ln: 4
+  SKU: SKU-00050
+  Item Description: Safety helmet - grade A - M050
+  Unit: EA
+  Qty: 82
+  Rate: 802.80
+  Taxable Amt: 65,829.60
+  Tax Rate: GST 5%
+  Tax: 3,291.48
+Item 5
+  PO Ln: 5
+  SKU: SKU-00055
+  Item Description: Hi-vis vest - grade A - M055
+  Unit: EA
+  Qty: 82
+  Rate: 1,744.26
+  Taxable Amt: 143,029.32
+  Tax Rate: GST 5%
+  Tax: 7,151.47
+
+Total Before Tax: ₹431,096.79
+Tax: ₹21,554.85
+Amount Payable: ₹452,651.64
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Roskav Safety Gear Industries

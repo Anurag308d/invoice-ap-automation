@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumir Electricals Industries",
+    "tax_registration_id": "TRN-144326083"
+  },
+  "invoice": {
+    "number": "INV-2026-0156",
+    "date": "2026-05-25",
+    "po_number": "PO-2026-000628",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "67223.52",
+    "tax_total": "12100.23",
+    "grand_total": "79323.75"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00107",
+      "description": "Relay module - grade F - M107",
+      "uom": "EA",
+      "quantity": "168",
+      "unit_price": "400.14",
+      "amount": "67223.52",
+      "tax_code": "GST18",
+      "tax_amount": "12100.23"
+    }
+  ]
+}

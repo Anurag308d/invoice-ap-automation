@@ -1,0 +1,37 @@
+From: ap@vnd-00268.example
+To: invoices@buyer.example
+Date: Tue, 26 May 2026 13:36:00 +0530
+Subject: Invoice 000356
+Message-ID: <doc-2026-000891@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Davmer Packaging Enterprises
+Tax Registration Number:  TRN-765826887
+Plot 77, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Invoice No:  000356
+Date:  May 25, 2026
+Your Order Ref:  PO/2026/000632
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Ln | Item Code | Item Description | UOM | Quantity | Rate | Value | GST Rate | Tax Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00216 | Shipping label roll - grade B - M216 | BOX | 1543 | 175.13 | 270,225.59 | 18% | 48,640.61 |
+
+Taxable Value:  Rs. 270,225.59
+Total Tax:  Rs. 48,640.61
+Total:  Rs. 318,866.20
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Davmer Packaging Enterprises

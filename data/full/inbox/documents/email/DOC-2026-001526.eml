@@ -1,0 +1,36 @@
+From: ap@vnd-00221.example
+To: invoices@buyer.example
+Date: Thu, 20 Aug 2026 09:12:00 +0530
+Subject: Invoice 000036
+Message-ID: <doc-2026-001526@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller:  Enfal Safety Gear Pvt Ltd
+TRN:  TRN-373792329
+Plot 30, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Inv #:  000036
+Dated:  18-Aug-2026
+PO Number:  PO-2026-001124
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   Order Line   Item Code   Particulars                       UOM   Quantity   Rate     Amount      Tax Rate   GST Amt
+1      1            SKU-00331   Nitrile gloves - grade A - M331   EA    209        472.91   98,838.19   18%        17,790.87
+
+Subtotal:  INR 98,838.19
+Tax:  INR 17,790.87
+Total:  INR 116,629.06
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enfal Safety Gear Pvt Ltd

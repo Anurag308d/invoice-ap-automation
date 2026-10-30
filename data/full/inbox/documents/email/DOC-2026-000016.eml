@@ -1,0 +1,47 @@
+From: requester.operations.02@example.com
+To: invoices@buyer.example
+Date: Mon, 19 Jan 2026 13:56:00 +0530
+Subject: Invoice INV-2026-0247
+Message-ID: <doc-2026-000016@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Arbel Engineering Spares & Co <ap@vnd-00140.example>
+Date: Mon, 19 Jan 2026 13:56:00 +0530
+Subject: Invoice INV-2026-0247
+To: requester.operations.02@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor: Arbel Engineering Spares & Co
+Tax Regn. No.: TRN-798177451
+Plot 46, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Bill No: INV-2026-0247
+Date: 2026-01-16
+Your Order Ref: PO-2026-000023
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | Order Line | Item | Description | Unit | Quantity | Unit Price | Taxable Amt | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00184 | Chain sprocket - grade H - M184 | EA | 19 | 2196.64 | 41736.16 | GST 18% | 7512.51 |
+| 2 | 2 | SKU-00199 | Pressure gauge - grade J - M199 | EA | 11 | 9183.15 | 101014.65 | GST 18% | 18182.64 |
+| 3 | 3 | SKU-00185 | Ball bearing - grade I - M185 | EA | 14 | 1559.47 | 21832.58 | GST 18% | 3929.86 |
+
+Total Before Tax: INR 164583.39
+Tax: INR 29625.01
+Total Amount Due: INR 194208.40
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Arbel Engineering Spares & Co

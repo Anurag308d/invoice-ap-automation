@@ -1,0 +1,38 @@
+From: ap@vnd-00089.example
+To: invoices@buyer.example
+Date: Thu, 30 Apr 2026 13:13:00 +0530
+Subject: Invoice QUI/26-27/203
+Message-ID: <doc-2026-000735@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier: Quinir Metals Industries
+TRN: TRN-686482467
+Plot 92, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No: QUI/26-27/203
+Bill Date: 2026-04-27
+P.O. #: PO 2026-000456
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | PO Line | Item Code | Item Description | Unit | Qty | Price | Value | Tax Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00008 | Zinc ingot - grade A - M008 | KG | 716.43 | 125.73 | 90,076.74 | GST18 | 16,213.81 |
+
+Net Amount: 90,076.74
+Tax: 16,213.81
+Invoice Total: 1,06,290.55
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Quinir Metals Industries

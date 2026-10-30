@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0395",
+  "invoiceDate": "2026-02-09T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000079",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 19186.98,
+  "tax": 0.00,
+  "payable": 19186.98
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00386",
+   "text": "Toor dal - grade C - M386",
+   "unit": "KG",
+   "qty": 207.27,
+   "rate": 92.57,
+   "value": 19186.98,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+From: ap@vnd-00019.example
+To: invoices@buyer.example
+Date: Thu, 16 Jul 2026 11:44:00 +0530
+Subject: Invoice INV-2026-0243
+Message-ID: <doc-2026-001273@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Halsel Infotech Industries
+Tax Reg No:  TRN-680712908
+Plot 22, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0243
+Bill Date:  13/07/2026
+PO No:  PO 2026-000859
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | Item | Item Description | UOM | Qty | Unit Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00251 | Network switch - grade B - M251 | EA | 30 | 7757.60 | 232728.00 | 18% | 41891.04 |
+
+Subtotal:  INR 232728.00
+GST:  INR 41891.04
+Invoice Total:  INR 274619.04
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halsel Infotech Industries

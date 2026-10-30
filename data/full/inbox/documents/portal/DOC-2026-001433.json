@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0269",
+  "invoiceDate": "2026-08-05T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000966",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 188355.28,
+  "tax": 33903.95,
+  "payable": 222259.23
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00126",
+   "text": "Valve actuator - grade A - M126",
+   "unit": "EA",
+   "qty": 23,
+   "rate": 8189.36,
+   "value": 188355.28,
+   "taxCode": "GST18",
+   "taxValue": 33903.95
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumen Engineering Spares Industries",
+  "taxId": "TRN-266048241"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0298",
+  "invoiceDate": "2026-04-22T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000041",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 66307.50,
+  "tax": 11935.35,
+  "payable": 78242.85
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00021",
+   "text": "Hydraulic seal - grade A - M021",
+   "unit": "EA",
+   "qty": 35,
+   "rate": 1894.50,
+   "value": 66307.50,
+   "taxCode": "GST18",
+   "taxValue": 11935.35
+  }
+ ]
+}

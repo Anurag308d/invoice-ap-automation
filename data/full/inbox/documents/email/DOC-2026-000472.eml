@@ -1,0 +1,63 @@
+From: requester.manufacturing.01@example.com
+To: invoices@buyer.example
+Date: Wed, 01 Apr 2026 09:46:00 +0530
+Subject: Invoice INV-2026-0371
+Message-ID: <doc-2026-000472@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Zanur Metals Enterprises <ap@vnd-00038.example>
+Date: Wed, 01 Apr 2026 09:46:00 +0530
+Subject: Invoice INV-2026-0371
+To: requester.manufacturing.01@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Zanur Metals Enterprises
+TRN: TRN-601705858
+Plot 41, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Invoice Number: INV-2026-0371
+Invoice Date: 30/03/2026
+Purchase Order: PO/2026/000247
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln: 1
+  Item: SKU-00033
+  Description: MS sheet - grade E - M033
+  UOM: KG
+  Qty: 1013.36
+  Unit Price: 262.96
+  Value: 266,473.15
+  Tax Rate: GST 18%
+  Tax Amt: 47,965.17
+Item 2
+  PO Ln: 2
+  Item: SKU-00049
+  Description: MS sheet - grade G - M049
+  UOM: KG
+  Qty: 1704.12
+  Unit Price: 215.20
+  Value: 366,726.62
+  Tax Rate: GST 18%
+  Tax Amt: 66,010.79
+
+Taxable Value: 633,199.77
+GST: 113,975.96
+Grand Total: 747,175.73
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Zanur Metals Enterprises

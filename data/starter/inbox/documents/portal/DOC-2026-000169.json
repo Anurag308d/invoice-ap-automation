@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumen Engineering Spares Industries",
+  "taxId": "TRN-266048241"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0319",
+  "invoiceDate": "2026-08-24T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000113",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 1109.31,
+  "tax": 199.68,
+  "payable": 1308.99
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00026",
+   "text": "Chain sprocket - grade A - M026",
+   "unit": "EA",
+   "qty": 1,
+   "rate": 1109.31,
+   "value": 1109.31,
+   "taxCode": "GST18",
+   "taxValue": 199.68
+  }
+ ]
+}

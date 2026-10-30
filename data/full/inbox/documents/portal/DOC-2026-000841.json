@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ennov Engineering Spares Pvt Ltd",
+    "tax_registration_id": "TRN-779290292"
+  },
+  "invoice": {
+    "number": "ENN/26-27/298",
+    "date": "2026-05-18",
+    "po_number": "PO-2026-000602",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "101002.98",
+    "tax_total": "18180.54",
+    "grand_total": "119183.52"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00167",
+      "description": "Pressure gauge - grade F - M167",
+      "uom": "EA",
+      "quantity": "6",
+      "unit_price": "5735.82",
+      "amount": "34414.92",
+      "tax_code": "GST18",
+      "tax_amount": "6194.69"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00150",
+      "description": "Valve actuator - grade D - M150",
+      "uom": "EA",
+      "quantity": "21",
+      "unit_price": "3170.86",
+      "amount": "66588.06",
+      "tax_code": "GST18",
+      "tax_amount": "11985.85"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Garhal Electricals & Co",
+  "taxId": "TRN-438794432"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0120",
+  "invoiceDate": "2026-03-05T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000324",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 101321.44,
+  "tax": 18237.86,
+  "payable": 119559.30
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00112",
+   "text": "Contactor - grade G - M112",
+   "unit": "EA",
+   "qty": 184,
+   "rate": 550.66,
+   "value": 101321.44,
+   "taxCode": "GST18",
+   "taxValue": 18237.86
+  }
+ ]
+}

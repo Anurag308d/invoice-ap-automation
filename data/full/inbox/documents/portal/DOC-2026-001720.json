@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0773",
+  "invoiceDate": "2026-09-14T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001220",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 37489.81,
+  "tax": 0.00,
+  "payable": 37489.81
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00390",
+   "text": "Tea leaves - grade C - M390",
+   "unit": "KG",
+   "qty": 105.00,
+   "rate": 102.67,
+   "value": 10780.35,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00391",
+   "text": "Coffee powder - grade C - M391",
+   "unit": "KG",
+   "qty": 256.97,
+   "rate": 103.94,
+   "value": 26709.46,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

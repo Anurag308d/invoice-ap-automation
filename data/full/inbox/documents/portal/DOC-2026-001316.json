@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000029",
+  "invoiceDate": "2026-07-23T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000952",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 9767.90,
+  "tax": 1758.22,
+  "payable": 11526.12
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00187",
+   "text": "Hydraulic seal - grade I - M187",
+   "unit": "EA",
+   "qty": 2,
+   "rate": 3525.25,
+   "value": 7050.50,
+   "taxCode": "GST18",
+   "taxValue": 1269.09
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00193",
+   "text": "Ball bearing - grade J - M193",
+   "unit": "EA",
+   "qty": 14,
+   "rate": 194.10,
+   "value": 2717.40,
+   "taxCode": "GST18",
+   "taxValue": 489.13
+  }
+ ]
+}

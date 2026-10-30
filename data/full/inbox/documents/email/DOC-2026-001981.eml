@@ -1,0 +1,38 @@
+From: ap@vnd-00100.example
+To: invoices@buyer.example
+Date: Mon, 19 Oct 2026 14:43:00 +0530
+Subject: Invoice INV-2026-0025
+Message-ID: <doc-2026-001981@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Irtav Foods & Co
+Tax Regn. No.:  TRN-675914390
+Plot 6, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Invoice Number:  INV-2026-0025
+Dated:  16-10-2026
+Purchase Order:  PO/2026/001424
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Order Line | Item Code | Item Description | Unit | Qty | Unit Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00393 | Basmati rice - grade D - M393 | KG | 491.89 | 215.43 | 1,05,967.86 | 5% | 5,298.39 |
+
+Taxable Value:  1,05,967.86
+Total Tax:  5,298.39
+Grand Total:  1,11,266.25
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Irtav Foods & Co

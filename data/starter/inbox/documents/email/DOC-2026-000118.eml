@@ -1,0 +1,38 @@
+From: ap@vnd-00006.example
+To: invoices@buyer.example
+Date: Mon, 22 Jun 2026 15:43:00 +0530
+Subject: Invoice INV-2026-0238
+Message-ID: <doc-2026-000118@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor:  Veldav Cloud Services Pvt Ltd
+TRN:  TRN-656927330
+Plot 9, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No:  INV-2026-0238
+Inv Date:  2026-06-19
+Attn:  USR-0021
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | Item | Description | UOM | Quantity | Rate | Taxable Amt | Tax Code | Tax |
+|---|---|---|---|---|---|---|---|---|
+| 1 | - | Software licence | MONTH | 1 | 110,400.00 | 110,400.00 | GST18 | 19,872.00 |
+| 2 | - | Software licence | MONTH | 1 | 54,200.00 | 54,200.00 | GST18 | 9,756.00 |
+
+Net Amount:  Rs. 164,600.00
+GST:  Rs. 29,628.00
+Total:  Rs. 194,228.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Veldav Cloud Services Pvt Ltd

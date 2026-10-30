@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0419",
+  "invoiceDate": "2026-03-04T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000260",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 75587.75,
+  "tax": 905.52,
+  "payable": 76493.27
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00381",
+   "text": "Sugar - grade B - M381",
+   "unit": "KG",
+   "qty": 68.97,
+   "rate": 130.99,
+   "value": 9034.38,
+   "taxCode": "GST5",
+   "taxValue": 451.72
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00394",
+   "text": "Toor dal - grade D - M394",
+   "unit": "KG",
+   "qty": 319.71,
+   "rate": 179.78,
+   "value": 57477.46,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00398",
+   "text": "Tea leaves - grade D - M398",
+   "unit": "KG",
+   "qty": 57.33,
+   "rate": 158.31,
+   "value": 9075.91,
+   "taxCode": "GST5",
+   "taxValue": 453.80
+  }
+ ]
+}

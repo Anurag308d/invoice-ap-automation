@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0740",
+  "invoiceDate": "2026-08-20T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001139",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 22934.77,
+  "tax": 1146.74,
+  "payable": 24081.51
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00385",
+   "text": "Basmati rice - grade C - M385",
+   "unit": "KG",
+   "qty": 99.27,
+   "rate": 210.81,
+   "value": 20927.11,
+   "taxCode": "GST5",
+   "taxValue": 1046.36
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00382",
+   "text": "Tea leaves - grade B - M382",
+   "unit": "KG",
+   "qty": 55.11,
+   "rate": 36.43,
+   "value": 2007.66,
+   "taxCode": "GST5",
+   "taxValue": 100.38
+  }
+ ]
+}

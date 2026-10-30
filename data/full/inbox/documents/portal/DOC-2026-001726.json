@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000041",
+  "invoiceDate": "2026-09-14T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001136",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 116113.71,
+  "tax": 20900.47,
+  "payable": 137014.18
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00184",
+   "text": "Chain sprocket - grade H - M184",
+   "unit": "EA",
+   "qty": 37,
+   "rate": 2086.59,
+   "value": 77203.83,
+   "taxCode": "GST18",
+   "taxValue": 13896.69
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00171",
+   "text": "Hydraulic seal - grade G - M171",
+   "unit": "EA",
+   "qty": 9,
+   "rate": 4323.32,
+   "value": 38909.88,
+   "taxCode": "GST18",
+   "taxValue": 7003.78
+  }
+ ]
+}

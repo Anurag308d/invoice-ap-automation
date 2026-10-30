@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/372",
+    "date": "2026-07-23",
+    "po_number": "PO-2026-000979",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "70806.36",
+    "tax_total": "270.06",
+    "grand_total": "71076.42"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00307",
+      "description": "File folder - grade D - M307",
+      "uom": "PACK",
+      "quantity": "8",
+      "unit_price": "675.16",
+      "amount": "5401.28",
+      "tax_code": "GST5",
+      "tax_amount": "270.06"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00296",
+      "description": "Printer ribbon - grade B - M296",
+      "uom": "PACK",
+      "quantity": "73",
+      "unit_price": "895.96",
+      "amount": "65405.08",
+      "tax_code": "EXEMPT",
+      "tax_amount": "0.00"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinur Safety Gear & Co",
+    "tax_registration_id": "TRN-654111937"
+  },
+  "invoice": {
+    "number": "QUI/26-27/220",
+    "date": "2026-04-01",
+    "po_number": "PO-2026-000446",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "71686.08",
+    "tax_total": "12903.49",
+    "grand_total": "84589.57"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00354",
+      "description": "Safety shoes - grade D - M354",
+      "uom": "EA",
+      "quantity": "54",
+      "unit_price": "1327.52",
+      "amount": "71686.08",
+      "tax_code": "GST18",
+      "tax_amount": "12903.49"
+    }
+  ]
+}

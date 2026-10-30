@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Wynnov Engineering Spares & Co",
+    "tax_registration_id": "TRN-398884951"
+  },
+  "invoice": {
+    "number": "000337",
+    "date": "2026-06-19",
+    "po_number": "PO-2026-000655",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "539590.32",
+    "tax_total": "97126.26",
+    "grand_total": "636716.58"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00137",
+      "description": "Ball bearing - grade C - M137",
+      "uom": "EA",
+      "quantity": "24",
+      "unit_price": "22482.93",
+      "amount": "539590.32",
+      "tax_code": "GST18",
+      "tax_amount": "97126.26"
+    }
+  ]
+}

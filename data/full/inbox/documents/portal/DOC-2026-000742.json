@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urquin Safety Gear Enterprises",
+    "tax_registration_id": "TRN-782942859"
+  },
+  "invoice": {
+    "number": "INV-2026-0022",
+    "date": "2026-04-30",
+    "po_number": "PO-2026-000543",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "113903.05",
+    "tax_total": "20502.55",
+    "grand_total": "134405.60"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00348",
+      "description": "Ear muffs - grade C - M348",
+      "uom": "EA",
+      "quantity": "149",
+      "unit_price": "764.45",
+      "amount": "113903.05",
+      "tax_code": "GST18",
+      "tax_amount": "20502.55"
+    }
+  ]
+}

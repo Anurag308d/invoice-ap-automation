@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Orgar Electricals Industries",
+    "tax_registration_id": "TRN-487171397"
+  },
+  "invoice": {
+    "number": "INV-2026-0354",
+    "date": "2026-07-08",
+    "po_number": "PO-2026-000816",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "465920.31",
+    "tax_total": "83865.66",
+    "grand_total": "549785.97"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00089",
+      "description": "Cable tray - grade D - M089",
+      "uom": "EA",
+      "quantity": "157",
+      "unit_price": "2485.18",
+      "amount": "390173.26",
+      "tax_code": "GST18",
+      "tax_amount": "70231.19"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00077",
+      "description": "Copper cable - grade C - M077",
+      "uom": "EA",
+      "quantity": "115",
+      "unit_price": "658.67",
+      "amount": "75747.05",
+      "tax_code": "GST18",
+      "tax_amount": "13634.47"
+    }
+  ]
+}

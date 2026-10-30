@@ -1,0 +1,11 @@
+duplicate_pair_id,invoice_id,original_invoice_id,match_type,matched_keys
+DUP-2026-000001,INV-VND-00017-2026-000007,INV-VND-00017-2026-000001,NUMBER_REUSE,normalized_number|vendor_id
+DUP-2026-000002,INV-VND-00028-2026-000014,INV-VND-00028-2026-000013,EXACT,header_gross_amount|invoice_date|normalized_number|vendor_id
+DUP-2026-000003,INV-VND-00012-2026-000041,INV-VND-00012-2026-000033,EXACT,header_gross_amount|invoice_date|normalized_number|vendor_id
+DUP-2026-000004,INV-VND-00028-2026-000048,INV-VND-00028-2026-000039,EXACT,header_gross_amount|invoice_date|normalized_number|vendor_id
+DUP-2026-000005,INV-VND-00005-2026-000085,INV-VND-00005-2026-000079,CONTENT,header_gross_amount|invoice_date|po_id|vendor_id
+DUP-2026-000006,INV-VND-00017-2026-000108,INV-VND-00017-2026-000099,EXACT,header_gross_amount|invoice_date|normalized_number|vendor_id
+DUP-2026-000007,INV-VND-00003-2026-000134,INV-VND-00003-2026-000123,NUMBER_REUSE,normalized_number|vendor_id
+DUP-2026-000008,INV-VND-00016-2026-000149,INV-VND-00016-2026-000136,EXACT,header_gross_amount|invoice_date|normalized_number|vendor_id
+DUP-2026-000009,INV-VND-00008-2026-000156,INV-VND-00008-2026-000152,EXACT,header_gross_amount|invoice_date|normalized_number|vendor_id
+DUP-2026-000010,INV-VND-00012-2026-000161,INV-VND-00012-2026-000159,NUMBER_REUSE,normalized_number|vendor_id

@@ -1,0 +1,52 @@
+From: requester.logistics.01@example.com
+To: invoices@buyer.example
+Date: Mon, 05 Oct 2026 12:22:00 +0530
+Subject: Invoice INV-2026-0230
+Message-ID: <doc-2026-001869@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Urtav Logistics & Co <ap@vnd-00130.example>
+Date: Mon, 05 Oct 2026 12:22:00 +0530
+Subject: Invoice INV-2026-0230
+To: requester.logistics.01@example.com
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor: Urtav Logistics & Co
+Tax Registration Number: TRN-899829514
+Plot 36, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Bill No: INV-2026-0230
+Inv Date: 30/09/2026
+Kind Attn: USR-0025
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item: -
+  Description: Warehousing charges
+  UOM: JOB
+  Qty: 2
+  Unit Price: 19,300.00
+  Value: 38,600.00
+  GST Rate: 18%
+  Tax Amt: 6,948.00
+
+Taxable Value: 38,600.00
+Tax: 6,948.00
+Total: 45,548.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Urtav Logistics & Co

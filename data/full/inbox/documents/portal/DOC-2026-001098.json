@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rosur Engineering Spares Industries",
+  "taxId": "TRN-577176981"
+ },
+ "header": {
+  "invoiceNo": "000385",
+  "invoiceDate": "2026-06-22T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000746",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 86142.56,
+  "tax": 15505.66,
+  "payable": 101648.22
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00144",
+   "text": "Chain sprocket - grade C - M144",
+   "unit": "EA",
+   "qty": 14,
+   "rate": 6153.04,
+   "value": 86142.56,
+   "taxCode": "GST18",
+   "taxValue": 15505.66
+  }
+ ]
+}

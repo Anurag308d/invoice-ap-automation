@@ -1,0 +1,37 @@
+From: ap@vnd-00102.example
+To: invoices@buyer.example
+Date: Wed, 04 Feb 2026 10:32:00 +0530
+Subject: Invoice 000045
+Message-ID: <doc-2026-000073@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier:  Orjor Infotech LLP
+Tax Registration Number:  TRN-533620255
+Plot 8, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Invoice Number:  000045
+Inv Date:  04-02-2026
+PO No:  PO 2026-000066
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Ln | SKU | Particulars | UOM | Qty | Unit Price | Taxable Amt | Tax Code | Tax Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00252 | Monitor - grade B - M252 | EA | 7 | 68160.55 | 477123.85 | 18% | 85882.29 |
+
+Total Before Tax:  ₹477123.85
+Tax Amount:  ₹85882.29
+Amount Payable:  ₹563006.14
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Orjor Infotech LLP

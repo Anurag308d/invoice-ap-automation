@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Zansel Stationers Pvt Ltd",
+  "taxId": "TRN-517840014"
+ },
+ "header": {
+  "invoiceNo": "SI00405",
+  "invoiceDate": "2026-06-09T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000714",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 27970.50,
+  "tax": 5034.69,
+  "payable": 33005.19
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00293",
+   "text": "Notebook - grade B - M293",
+   "unit": "PACK",
+   "qty": 75,
+   "rate": 372.94,
+   "value": 27970.50,
+   "taxCode": "GST18",
+   "taxValue": 5034.69
+  }
+ ]
+}

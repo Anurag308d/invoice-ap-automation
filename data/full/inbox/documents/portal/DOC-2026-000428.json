@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0182",
+  "invoiceDate": "2026-03-25T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000401",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 1578.12,
+  "tax": 284.06,
+  "payable": 1862.18
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00286",
+   "text": "Stapler - grade A - M286",
+   "unit": "PACK",
+   "qty": 12,
+   "rate": 131.51,
+   "value": 1578.12,
+   "taxCode": "GST18",
+   "taxValue": 284.06
+  }
+ ]
+}

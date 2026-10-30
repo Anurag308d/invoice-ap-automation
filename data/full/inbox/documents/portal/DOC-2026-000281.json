@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Garros Engineering Spares Industries",
+    "tax_registration_id": "TRN-147914743"
+  },
+  "invoice": {
+    "number": "INV-2026-0388",
+    "date": "2026-03-09",
+    "po_number": "PO-2026-000181",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "44624.37",
+    "tax_total": "8032.39",
+    "grand_total": "52656.76"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00164",
+      "description": "Gear coupling - grade F - M164",
+      "uom": "EA",
+      "quantity": "9",
+      "unit_price": "2781.21",
+      "amount": "25030.89",
+      "tax_code": "GST18",
+      "tax_amount": "4505.56"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00124",
+      "description": "Gear coupling - grade A - M124",
+      "uom": "EA",
+      "quantity": "3",
+      "unit_price": "6531.16",
+      "amount": "19593.48",
+      "tax_code": "GST18",
+      "tax_amount": "3526.83"
+    }
+  ]
+}

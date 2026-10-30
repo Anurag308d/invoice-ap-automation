@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-831401137"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/204",
+  "invoiceDate": "2026-07-06T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000801",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 113707.60,
+  "tax": 20467.37,
+  "payable": 134174.97
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00121",
+   "text": "Ball bearing - grade A - M121",
+   "unit": "EA",
+   "qty": 20,
+   "rate": 5685.38,
+   "value": 113707.60,
+   "taxCode": "GST18",
+   "taxValue": 20467.37
+  }
+ ]
+}

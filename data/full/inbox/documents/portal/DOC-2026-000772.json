@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/366",
+    "date": "2026-05-05",
+    "po_number": "PO-2026-000361",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "77221.73",
+    "tax_total": "13899.91",
+    "grand_total": "91121.64"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00033",
+      "description": "MS sheet - grade E - M033",
+      "uom": "KG",
+      "quantity": "294.01",
+      "unit_price": "262.65",
+      "amount": "77221.73",
+      "tax_code": "GST18",
+      "tax_amount": "13899.91"
+    }
+  ]
+}

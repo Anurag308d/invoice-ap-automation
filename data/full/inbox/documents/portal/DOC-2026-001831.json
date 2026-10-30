@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Davkav Electricals LLP",
+  "taxId": "TRN-301846241"
+ },
+ "header": {
+  "invoiceNo": "SI00274",
+  "invoiceDate": "2026-09-28T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001326",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 62927.78,
+  "tax": 11327.00,
+  "payable": 74254.78
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00069",
+   "text": "Copper cable - grade B - M069",
+   "unit": "EA",
+   "qty": 199,
+   "rate": 316.22,
+   "value": 62927.78,
+   "taxCode": "GST18",
+   "taxValue": 11327.00
+  }
+ ]
+}

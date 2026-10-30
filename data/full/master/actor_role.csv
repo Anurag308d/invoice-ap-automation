@@ -1,0 +1,7 @@
+role_code,role_name,is_human,responsibilities
+BUSINESS_REQUESTER,Business requester,true,"Raises POs, confirms receipts, answers price/receipt/quantity queries, approves non-PO invoices"
+PROCESS_OWNER,Process owner,true,"Owns the AP policy; decides policy exceptions (invoice before PO, PO quantity overrun)"
+APPROVER,Approver,true,"Approves invoices by amount band and level (L1, L2, L3)"
+OPERATIONS_ANALYST,Operations analyst,true,"Works the AP queues: capture review, duplicates, validation, tax, payment watch"
+SYSTEM_ADMINISTRATOR,System administrator,true,"Maintains the vendor master, the policy file, runs and the audit trail"
+SYSTEM,AP automation engine,false,"Automated capture, matching, routing, auto-approval and scheduling"

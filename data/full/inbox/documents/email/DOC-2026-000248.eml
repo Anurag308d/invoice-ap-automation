@@ -1,0 +1,38 @@
+From: ap@vnd-00109.example
+To: invoices@buyer.example
+Date: Thu, 05 Mar 2026 12:05:00 +0530
+Subject: Invoice 000075
+Message-ID: <doc-2026-000248@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor: Rosen Safety Gear Industries
+TRN: TRN-379442087
+Plot 15, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Bill No: 000075
+Bill Date: 05/03/2026
+PO No: PO/2026/000225
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   PO Line   Item        Description                      UOM   Qty   Rate      Amount      GST Rate   GST Amt
+1      1         SKU-00337   Safety helmet - grade B - M337   EA    288   3248.11   935455.68   GST 5%     45837.32
+2      2         SKU-00346   Safety shoes - grade C - M346    EA    86    732.01    62952.86    GST 5%     3147.64
+3      3         SKU-00364   Ear muffs - grade E - M364       EA    283   941.69    266498.27   GST 5%     13324.91
+
+Taxable Value: INR 1264906.81
+Total Tax: INR 62309.87
+Amount Payable: INR 1327216.68
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Rosen Safety Gear Industries

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Ordav Electricals Pvt Ltd",
+  "taxId": "TRN-749849221"
+ },
+ "header": {
+  "invoiceNo": "000156",
+  "invoiceDate": "2026-06-15T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000703",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 25778.82,
+  "tax": 4640.19,
+  "payable": 30419.01
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00106",
+   "text": "Junction box - grade F - M106",
+   "unit": "EA",
+   "qty": 114,
+   "rate": 226.13,
+   "value": 25778.82,
+   "taxCode": "GST18",
+   "taxValue": 4640.19
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+From: ap@vnd-00055.example
+To: invoices@buyer.example
+Date: Thu, 03 Sep 2026 15:20:00 +0530
+Subject: Invoice ROS/26-27/273
+Message-ID: <doc-2026-001642@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Rostav Engineering Spares & Co
+TRN:  TRN-966406828
+Plot 58, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Invoice No:  ROS/26-27/273
+Inv Date:  31.08.2026
+Purchase Order:  PO/2026/001098
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   PO Line   SKU         Item Description                  UOM   Qty   Price     Amount    GST Rate   Tax Amt
+1      1         SKU-00136   Chain sprocket - grade B - M136   EA    3     1861.49   5584.47   GST18      1005.20
+
+Subtotal:  5584.47
+GST:  1005.20
+Amount Payable:  6589.67
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Rostav Engineering Spares & Co

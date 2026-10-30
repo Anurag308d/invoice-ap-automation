@@ -1,0 +1,37 @@
+From: ap@vnd-00025.example
+To: invoices@buyer.example
+Date: Tue, 07 Apr 2026 17:58:00 +0530
+Subject: Invoice INV-2026-0086
+Message-ID: <doc-2026-000545@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Joror Stationers & Co
+Tax Registration Number:  TRN-206646054
+Plot 28, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0086
+Invoice Date:  06/04/2026
+PO No:  PO-2026-000346
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| # | PO Line | Item | Particulars | Unit | Quantity | Unit Price | Taxable Amt | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00321 | Copier paper - grade F - M321 | PACK | 193 | 433.45 | 83,655.85 | GST18 | 15,058.05 |
+
+Taxable Value:  ₹83,655.85
+GST:  ₹15,058.05
+Invoice Total:  ₹98,713.90
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Joror Stationers & Co

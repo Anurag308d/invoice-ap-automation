@@ -1,0 +1,52 @@
+From: requester.facilities.02@example.com
+To: invoices@buyer.example
+Date: Mon, 13 Apr 2026 11:21:00 +0530
+Subject: Invoice MER/26-27/134
+Message-ID: <doc-2026-000581@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Merdav Foods & Co <ap@vnd-00220.example>
+Date: Mon, 13 Apr 2026 11:21:00 +0530
+Subject: Invoice MER/26-27/134
+To: requester.facilities.02@example.com
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor:  Merdav Foods & Co
+Tax Reg No:  TRN-192950387
+Plot 29, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Tax Invoice No:  MER/26-27/134
+Invoice Date:  13-04-2026
+PO No:  PO 2026-000486
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line:  1
+  Item Code:  SKU-00382
+  Description:  Tea leaves - grade B - M382
+  Unit:  KG
+  Qty:  400.46
+  Price:  35.68
+  Taxable Amt:  14288.41
+  GST Rate:  5%
+  GST Amt:  714.42
+
+Net Amount:  Rs. 14288.41
+Tax Amount:  Rs. 714.42
+Grand Total:  Rs. 15002.83
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merdav Foods & Co

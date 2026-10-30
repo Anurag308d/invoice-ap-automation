@@ -1,0 +1,61 @@
+From: ap@vnd-00071.example
+To: invoices@buyer.example
+Date: Mon, 06 Apr 2026 13:54:00 +0530
+Subject: Invoice INV-2026-0112
+Message-ID: <doc-2026-000511@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller: Irdav Consulting Pvt Ltd
+Tax Registration Number: TRN-616222168
+Plot 74, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Inv #: INV-2026-0112
+Bill Date: 03/04/2026
+Attention: USR-0027
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item Code: -
+  Particulars: Legal consultation
+  UOM: HR
+  Quantity: 46.0
+  Rate: 1500.00
+  Amount: 69000.00
+  GST Rate: GST18
+  GST Amt: 12420.00
+Item 2
+  Item Code: -
+  Particulars: Legal consultation
+  UOM: HR
+  Quantity: 18.0
+  Rate: 2100.00
+  Amount: 37800.00
+  GST Rate: GST18
+  GST Amt: 6804.00
+Item 3
+  Item Code: -
+  Particulars: Training programme
+  UOM: HR
+  Quantity: 69.0
+  Rate: 3100.00
+  Amount: 213900.00
+  GST Rate: GST18
+  GST Amt: 38502.00
+
+Total Before Tax: ₹320700.00
+GST: ₹57726.00
+Amount Payable: ₹378426.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Irdav Consulting Pvt Ltd

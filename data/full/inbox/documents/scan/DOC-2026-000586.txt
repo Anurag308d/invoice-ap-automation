@@ -1,0 +1,22 @@
+VENDOR: ENZAN CLOUD SERVICES ENTERPRISES
+TRN: TRN-846536808
+Plot 34, Industrial Area, Ahmedabad 382445
+
+TAX INVOICE
+
+INVOICE NUMBER: INV-2026-0163
+BILL DATE: April 06, 2026
+ATTN: USR-0021
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+LINE   ITEM   PARTICULARS               UOM     QUANTITY   UNIT PRICE   TAXABLE AMT   TAX RATE   TAX
+1      -      Managed network service   MONTH   1          66,000.00    66,000.00     18%        11,880.00
+
+NET AMOUNT: Rs. 66,000.00
+TAX AMOUNT: Rs. 11,880.00
+TOTAL AMOUNT DUE: Rs. 77,880.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

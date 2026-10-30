@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Uren Engineering Spares LLP",
+    "tax_registration_id": "TRN-310579660"
+  },
+  "invoice": {
+    "number": "SI00177",
+    "date": "2026-03-25",
+    "po_number": "PO-2026-000440",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "51716.38",
+    "tax_total": "9308.95",
+    "grand_total": "61025.33"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00194",
+      "description": "V-belt - grade J - M194",
+      "uom": "EA",
+      "quantity": "37",
+      "unit_price": "1397.74",
+      "amount": "51716.38",
+      "tax_code": "GST18",
+      "tax_amount": "9308.95"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ornov Infotech Enterprises",
+    "tax_registration_id": "TRN-290148694"
+  },
+  "invoice": {
+    "number": "ORN/25-26/004",
+    "date": "2026-02-10",
+    "po_number": "PO-2026-000014",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "366153.42",
+    "tax_total": "65907.62",
+    "grand_total": "432061.04"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00038",
+      "description": "Desktop workstation - grade A - M038",
+      "uom": "EA",
+      "quantity": "29",
+      "unit_price": "12625.98",
+      "amount": "366153.42",
+      "tax_code": "GST18",
+      "tax_amount": "65907.62"
+    }
+  ]
+}

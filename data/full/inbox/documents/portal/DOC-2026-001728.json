@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Faltav Metals Pvt Ltd",
+  "taxId": "TRN-844321990"
+ },
+ "header": {
+  "invoiceNo": "000085",
+  "invoiceDate": "2026-09-14T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001208",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 1064672.86,
+  "tax": 191641.11,
+  "payable": 1256313.97
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00055",
+   "text": "Brass rod - grade G - M055",
+   "unit": "KG",
+   "qty": 934.33,
+   "rate": 513.23,
+   "value": 479526.19,
+   "taxCode": "GST18",
+   "taxValue": 86314.71
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00045",
+   "text": "HDPE granules - grade F - M045",
+   "unit": "KG",
+   "qty": 1038.45,
+   "rate": 163.23,
+   "value": 169506.19,
+   "taxCode": "GST18",
+   "taxValue": 30511.11
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00041",
+   "text": "MS sheet - grade F - M041",
+   "unit": "KG",
+   "qty": 882.67,
+   "rate": 470.89,
+   "value": 415640.48,
+   "taxCode": "GST18",
+   "taxValue": 74815.29
+  }
+ ]
+}

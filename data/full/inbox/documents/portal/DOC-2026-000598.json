@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Garros Engineering Spares Industries",
+    "tax_registration_id": "TRN-147914743"
+  },
+  "invoice": {
+    "number": "INV-2026-0400",
+    "date": "2026-04-13",
+    "po_number": "PO-2026-000293",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "24169.05",
+    "tax_total": "4350.43",
+    "grand_total": "28519.48"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00192",
+      "description": "Chain sprocket - grade I - M192",
+      "uom": "EA",
+      "quantity": "9",
+      "unit_price": "2685.45",
+      "amount": "24169.05",
+      "tax_code": "GST18",
+      "tax_amount": "4350.43"
+    }
+  ]
+}

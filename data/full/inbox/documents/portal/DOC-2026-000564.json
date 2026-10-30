@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urquin Safety Gear Enterprises",
+    "tax_registration_id": "TRN-782942859"
+  },
+  "invoice": {
+    "number": "INV-2026-0019",
+    "date": "2026-04-08",
+    "po_number": "PO-2026-000422",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "288376.44",
+    "tax_total": "14418.82",
+    "grand_total": "302795.26"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00365",
+      "description": "Safety goggles - grade E - M365",
+      "uom": "EA",
+      "quantity": "284",
+      "unit_price": "1015.41",
+      "amount": "288376.44",
+      "tax_code": "GST5",
+      "tax_amount": "14418.82"
+    }
+  ]
+}

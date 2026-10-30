@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/358",
+    "date": "2026-06-01",
+    "po_number": "PO-2026-000671",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "33875.52",
+    "tax_total": "4958.44",
+    "grand_total": "38833.69"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00290",
+      "description": "Toner cartridge - grade B - M290",
+      "uom": "PACK",
+      "quantity": "116",
+      "unit_price": "216.49",
+      "amount": "25112.84",
+      "tax_code": "GST18",
+      "tax_amount": "4520.31"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00315",
+      "description": "File folder - grade E - M315",
+      "uom": "PACK",
+      "quantity": "59",
+      "unit_price": "148.52",
+      "amount": "8762.68",
+      "tax_code": "GST5",
+      "tax_amount": "438.13"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+From: requester.manufacturing.02@example.com
+To: invoices@buyer.example
+Date: Mon, 20 Apr 2026 16:21:00 +0530
+Subject: Invoice INV-2026-0227
+Message-ID: <doc-2026-000653@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Halquin Packaging Enterprises <ap@vnd-00053.example>
+Date: Mon, 20 Apr 2026 16:21:00 +0530
+Subject: Invoice INV-2026-0227
+To: requester.manufacturing.02@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Halquin Packaging Enterprises
+Tax Reg No:  TRN-332656559
+Plot 56, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Invoice No:  INV-2026-0227
+Invoice Date:  April 15, 2026
+P.O. #:  PO/2026/000497
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Ln | Item | Particulars | Unit | Quantity | Price | Value | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00206 | Foam insert - grade A - M206 | BOX | 874 | 64.09 | 56014.66 | GST 18% | 10082.64 |
+
+Taxable Value:  INR 56014.66
+Tax Amount:  INR 10082.64
+Invoice Total:  INR 66097.30
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halquin Packaging Enterprises

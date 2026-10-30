@@ -1,0 +1,52 @@
+From: requester.facilities.02@example.com
+To: invoices@buyer.example
+Date: Fri, 04 Sep 2026 12:28:00 +0530
+Subject: Invoice ORC/26-27/354
+Message-ID: <doc-2026-000175@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Orcor Foods Enterprises <ap@vnd-00023.example>
+Date: Fri, 04 Sep 2026 12:28:00 +0530
+Subject: Invoice ORC/26-27/354
+To: requester.facilities.02@example.com
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Orcor Foods Enterprises
+Tax Reg No:  TRN-492194714
+Plot 26, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Invoice No:  ORC/26-27/354
+Invoice Date:  02-09-2026
+Your Order Ref:  PO/2026/000129
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line:  1
+  Item Code:  SKU-00057
+  Item Description:  Toor dal - grade A - M057
+  Unit:  KG
+  Qty:  358.05
+  Price:  47.59
+  Amount:  17039.60
+  GST Rate:  0%
+  Tax:  0.00
+
+Taxable Value:  Rs. 17039.60
+Tax:  Rs. 0.00
+Amount Payable:  Rs. 17039.60
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Orcor Foods Enterprises

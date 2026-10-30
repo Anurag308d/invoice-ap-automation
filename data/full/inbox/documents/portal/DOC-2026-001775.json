@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Davhal Safety Gear Enterprises",
+    "tax_registration_id": "TRN-667907397"
+  },
+  "invoice": {
+    "number": "INV-2026-0411",
+    "date": "2026-09-21",
+    "po_number": "PO-2026-001142",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "6279.68",
+    "tax_total": "313.98",
+    "grand_total": "6593.66"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00340",
+      "description": "Ear muffs - grade B - M340",
+      "uom": "EA",
+      "quantity": "44",
+      "unit_price": "142.72",
+      "amount": "6279.68",
+      "tax_code": "GST5",
+      "tax_amount": "313.98"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/261",
+  "invoiceDate": "2026-06-22T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000076",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 25684.45,
+  "tax": 4623.20,
+  "payable": 30307.65
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00024",
+   "text": "Valve actuator - grade A - M024",
+   "unit": "EA",
+   "qty": 5,
+   "rate": 5136.89,
+   "value": 25684.45,
+   "taxCode": "GST18",
+   "taxValue": 4623.20
+  }
+ ]
+}

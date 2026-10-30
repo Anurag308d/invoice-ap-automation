@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0192",
+  "invoiceDate": "2026-07-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000986",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 29125.20,
+  "tax": 5242.54,
+  "payable": 34367.74
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00303",
+   "text": "Desk organiser - grade C - M303",
+   "unit": "PACK",
+   "qty": 52,
+   "rate": 560.10,
+   "value": 29125.20,
+   "taxCode": "GST18",
+   "taxValue": 5242.54
+  }
+ ]
+}

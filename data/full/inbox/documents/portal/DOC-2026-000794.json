@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Zanpar Stationers Industries",
+  "taxId": "TRN-631808437"
+ },
+ "header": {
+  "invoiceNo": "ZAN/26-27/394",
+  "invoiceDate": "2026-05-07T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000580",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 11639.52,
+  "tax": 581.98,
+  "payable": 12221.50
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00309",
+   "text": "Notebook - grade D - M309",
+   "unit": "PACK",
+   "qty": 59,
+   "rate": 197.28,
+   "value": 11639.52,
+   "taxCode": "GST5",
+   "taxValue": 581.98
+  }
+ ]
+}

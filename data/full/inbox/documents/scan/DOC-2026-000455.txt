@@ -1,0 +1,24 @@
+ZANCOR ENGINEERING SPARES & CO
+TAX REGN. NO. : TRN-406946036
+Plot 94, Industrial Area, Vadodara 390010
+
+TAX INVOICE
+
+INVOICE NUMBER : ZAN/25-26/369
+INV DATE : 23/03/2026
+YOUR ORDER REF : PO-2026-000276
+CURRENCY : INR
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ORDER LINE   ITEM        PARTICULARS                       UNIT   QUANTITY   UNIT PRICE   VALUE       TAX CODE   GST AMT
+1   1            SKU-00144   Chain sprocket - grade C - M144   EA     8          6,250.17     50,001.36   GST 18%    9,000.24
+2   2            SKU-00136   Chain sprocket - grade B - M136   EA     8          1,772.77     14,182.16   GST 18%    2,552.79
+
+SUBTOTAL : 64,183.52
+GST : 11,553.03
+INVOICE TOTAL : 75,736.55
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

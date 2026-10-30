@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/25-26/360",
+    "date": "2026-03-06",
+    "po_number": "PO-2026-000269",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "10327.50",
+    "tax_total": "516.38",
+    "grand_total": "10843.88"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00315",
+      "description": "File folder - grade E - M315",
+      "uom": "PACK",
+      "quantity": "75",
+      "unit_price": "137.70",
+      "amount": "10327.50",
+      "tax_code": "GST5",
+      "tax_amount": "516.38"
+    }
+  ]
+}

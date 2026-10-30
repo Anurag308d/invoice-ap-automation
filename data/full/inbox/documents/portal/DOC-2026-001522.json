@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Orar Safety Gear Pvt Ltd",
+    "tax_registration_id": "TRN-816178590"
+  },
+  "invoice": {
+    "number": "INV-2026-0312",
+    "date": "2026-08-18",
+    "po_number": "PO-2026-001081",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "39987.90",
+    "tax_total": "7197.82",
+    "grand_total": "47185.72"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00368",
+      "description": "Fall-arrest harness - grade E - M368",
+      "uom": "EA",
+      "quantity": "45",
+      "unit_price": "888.62",
+      "amount": "39987.90",
+      "tax_code": "GST18",
+      "tax_amount": "7197.82"
+    }
+  ]
+}

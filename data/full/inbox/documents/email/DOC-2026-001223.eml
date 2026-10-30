@@ -1,0 +1,38 @@
+From: ap@vnd-00151.example
+To: invoices@buyer.example
+Date: Wed, 08 Jul 2026 16:48:00 +0530
+Subject: Invoice BEL/26-27/038
+Message-ID: <doc-2026-001223@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller: Belcor Engineering Spares Pvt Ltd
+Tax Regn. No.: TRN-181774160
+Plot 57, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Bill No: BEL/26-27/038
+Date: 2026-07-07
+PO Number: PO-2026-000826
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   Item Code   Item Description                 UOM   Qty   Rate      Taxable Amt   Tax Code   GST Amt
+1    1       SKU-00165   Pump impeller - grade F - M165   EA    26    1060.29   27567.54      GST 18%    4962.16
+2    2       SKU-00173   Pump impeller - grade G - M173   EA    32    1358.70   43478.40      GST 18%    7826.11
+
+Subtotal: 71045.94
+Tax: 12788.27
+Invoice Total: 83834.21
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Belcor Engineering Spares Pvt Ltd

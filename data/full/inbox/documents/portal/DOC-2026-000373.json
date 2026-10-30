@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Belhal Metals Industries",
+    "tax_registration_id": "TRN-357444628"
+  },
+  "invoice": {
+    "number": "INV-2026-0366",
+    "date": "2026-03-20",
+    "po_number": "PO-2026-000275",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "33366.62",
+    "tax_total": "6005.99",
+    "grand_total": "39372.61"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00031",
+      "description": "Brass rod - grade D - M031",
+      "uom": "KG",
+      "quantity": "94.77",
+      "unit_price": "352.08",
+      "amount": "33366.62",
+      "tax_code": "GST18",
+      "tax_amount": "6005.99"
+    }
+  ]
+}

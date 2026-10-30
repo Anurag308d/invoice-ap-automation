@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Halor Cloud Services Pvt Ltd",
+    "tax_registration_id": "TRN-431484687"
+  },
+  "invoice": {
+    "number": "INV-2026-0307",
+    "date": "2026-09-17",
+    "po_number": null,
+    "attention": "USR-0022",
+    "currency": "INR",
+    "net_total": "53200.00",
+    "tax_total": "9576.00",
+    "grand_total": "62776.00"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": null,
+      "sku": null,
+      "description": "Managed network service",
+      "uom": "MONTH",
+      "quantity": "1",
+      "unit_price": "53200.00",
+      "amount": "53200.00",
+      "tax_code": "GST18",
+      "tax_amount": "9576.00"
+    }
+  ]
+}

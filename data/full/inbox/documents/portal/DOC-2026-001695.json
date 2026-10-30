@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urgar Electricals Enterprises",
+    "tax_registration_id": "TRN-781434012"
+  },
+  "invoice": {
+    "number": "URG/26-27/286",
+    "date": "2026-09-11",
+    "po_number": "PO-2026-001163",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "4616.01",
+    "tax_total": "830.88",
+    "grand_total": "5446.89"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00091",
+      "description": "Relay module - grade D - M091",
+      "uom": "EA",
+      "quantity": "9",
+      "unit_price": "512.89",
+      "amount": "4616.01",
+      "tax_code": "GST18",
+      "tax_amount": "830.88"
+    }
+  ]
+}

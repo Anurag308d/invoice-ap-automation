@@ -1,0 +1,22 @@
+SUPPLIER : URHAL ELECTRICALS PVT LTD
+TAX REG NO : TRN-717873591
+Plot 80, Industrial Area, Chennai 600058
+
+TAX INVOICE
+
+INVOICE NO : URH/26-27/046
+INVOICE DATE : 30-Sep-2026
+P.O. # : PO 2026-001304
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+S.NO   ORDER LINE   ITEM CODE   PARTICULARS                   UNIT   QUANTITY   UNIT PRICE   AMOUNT        GST RATE   TAX
+1      1            SKU-00089   Cable tray - grade D - M089   EA     63         2,493.94     1,57,118.22   GST 18%    28,281.28
+
+TOTAL BEFORE TAX : ₹1,57,118.22
+TAX : ₹28,281.28
+AMOUNT PAYABLE : ₹1,85,399.50
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

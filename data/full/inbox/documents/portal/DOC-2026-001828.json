@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Zansel Stationers Pvt Ltd",
+  "taxId": "TRN-517840014"
+ },
+ "header": {
+  "invoiceNo": "SI00407",
+  "invoiceDate": "2026-09-25T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001363",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 35418.90,
+  "tax": 6375.40,
+  "payable": 41794.30
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00294",
+   "text": "Stapler - grade B - M294",
+   "unit": "PACK",
+   "qty": 66,
+   "rate": 536.65,
+   "value": 35418.90,
+   "taxCode": "GST18",
+   "taxValue": 6375.40
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+Uror Metals Enterprises
+Tax Regn. No.: TRN-582808240
+Plot 84, Industrial Area, Nagpur 440016
+
+TAX INVOICE
+
+Tax Invoice No: INV-2026-0130
+Inv Date: 29.06.2026
+PO Number: PO-2026-000757
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   SKU         Item Description              UOM   Quantity   Unit Price   Value       GST Rate   GST Amt
+1    1         SKU-00059   Copper rod - grade H - M059   KG    1235.36    174.70       215817.39   GST18      38847.13
+
+Total Before Tax: INR 215817.39
+Tax Amount: INR 38847.13
+Total Amount Due: INR 254664.52
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

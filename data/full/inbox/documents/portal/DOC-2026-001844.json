@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/379",
+    "date": "2026-09-29",
+    "po_number": "PO-2026-001317",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "288393.62",
+    "tax_total": "51910.85",
+    "grand_total": "340304.47"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00013",
+      "description": "HDPE granules - grade B - M013",
+      "uom": "KG",
+      "quantity": "1274.33",
+      "unit_price": "226.31",
+      "amount": "288393.62",
+      "tax_code": "GST18",
+      "tax_amount": "51910.85"
+    }
+  ]
+}

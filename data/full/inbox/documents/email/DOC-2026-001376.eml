@@ -1,0 +1,36 @@
+From: ap@vnd-00173.example
+To: invoices@buyer.example
+Date: Wed, 29 Jul 2026 16:32:00 +0530
+Subject: Invoice INV-2026-0043
+Message-ID: <doc-2026-001376@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier: Kavir Foods Enterprises
+Tax Regn. No.: TRN-704441020
+Plot 79, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No: INV-2026-0043
+Dated: 27.07.2026
+Your Order Ref: PO 2026-001023
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   SKU         Item Description               UOM   Quantity   Rate    Value     Tax Code   Tax Amt
+1    1         SKU-00392   Milk powder - grade C - M392   KG    40.43      73.54   2973.22   GST5       148.66
+
+Net Amount: ₹2973.22
+Total Tax: ₹148.66
+Amount Payable: ₹3121.88
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Kavir Foods Enterprises

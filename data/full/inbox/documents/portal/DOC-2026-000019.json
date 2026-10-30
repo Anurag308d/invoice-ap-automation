@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinur Safety Gear & Co",
+    "tax_registration_id": "TRN-654111937"
+  },
+  "invoice": {
+    "number": "QUI/25-26/220",
+    "date": "2026-01-19",
+    "po_number": "PO-2026-000025",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "273188.36",
+    "tax_total": "49173.91",
+    "grand_total": "322362.27"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00344",
+      "description": "Fall-arrest harness - grade B - M344",
+      "uom": "EA",
+      "quantity": "269",
+      "unit_price": "892.69",
+      "amount": "240133.61",
+      "tax_code": "GST18",
+      "tax_amount": "43224.05"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00335",
+      "description": "Respirator mask - grade A - M335",
+      "uom": "EA",
+      "quantity": "45",
+      "unit_price": "734.55",
+      "amount": "33054.75",
+      "tax_code": "GST18",
+      "tax_amount": "5949.86"
+    }
+  ]
+}

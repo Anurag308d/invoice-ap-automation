@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Belgar Facility Services Pvt Ltd",
+  "taxId": "TRN-602013194"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0294",
+  "invoiceDate": "2026-05-05T00:00:00+05:30",
+  "purchaseOrder": null,
+  "requesterId": "USR-0024",
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 106400.00,
+  "tax": 19152.00,
+  "payable": 125552.00
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": null,
+   "itemCode": null,
+   "text": "Housekeeping services",
+   "unit": "MONTH",
+   "qty": 1,
+   "rate": 106400.00,
+   "value": 106400.00,
+   "taxCode": "GST18",
+   "taxValue": 19152.00
+  }
+ ]
+}

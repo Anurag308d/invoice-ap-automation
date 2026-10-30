@@ -1,0 +1,45 @@
+From: ap@vnd-00251.example
+To: invoices@buyer.example
+Date: Mon, 01 Jun 2026 09:08:00 +0530
+Subject: Invoice INV-2026-0321
+Message-ID: <doc-2026-000914@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor:  Veltav Infotech Pvt Ltd
+Tax Registration Number:  TRN-374028505
+Plot 60, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Invoice No:  INV-2026-0321
+Invoice Date:  01.06.2026
+Purchase Order:  PO-2026-000592
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line:  1
+  Item:  SKU-00256
+  Particulars:  Docking station - grade B - M256
+  UOM:  EA
+  Qty:  7
+  Price:  73,970.52
+  Value:  5,17,793.64
+  Tax Code:  GST18
+  GST Amt:  93,202.86
+
+Taxable Value:  5,17,793.64
+GST:  93,202.86
+Invoice Total:  6,10,996.50
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Veltav Infotech Pvt Ltd

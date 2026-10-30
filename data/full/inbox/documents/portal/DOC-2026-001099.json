@@ -1,0 +1,67 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/369",
+    "date": "2026-06-22",
+    "po_number": "PO-2026-000808",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "271379.00",
+    "tax_total": "48848.22",
+    "grand_total": "320227.22"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00004",
+      "description": "PVC resin - grade A - M004",
+      "uom": "KG",
+      "quantity": "1012.13",
+      "unit_price": "113.53",
+      "amount": "114907.12",
+      "tax_code": "GST18",
+      "tax_amount": "20683.28"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00056",
+      "description": "Zinc ingot - grade G - M056",
+      "uom": "KG",
+      "quantity": "61.88",
+      "unit_price": "277.59",
+      "amount": "17177.27",
+      "tax_code": "GST18",
+      "tax_amount": "3091.91"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00026",
+      "description": "Aluminium ingot - grade D - M026",
+      "uom": "KG",
+      "quantity": "859.20",
+      "unit_price": "117.51",
+      "amount": "100964.59",
+      "tax_code": "GST18",
+      "tax_amount": "18173.63"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00057",
+      "description": "MS sheet - grade H - M057",
+      "uom": "KG",
+      "quantity": "777.17",
+      "unit_price": "49.32",
+      "amount": "38330.02",
+      "tax_code": "GST18",
+      "tax_amount": "6899.40"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+SUPPLIER  SELTAV CLOUD SERVICES PVT LTD
+TAX REGN. NO.  TRN-100378383
+Plot 15, Industrial Area, Faridabad 121003
+
+TAX INVOICE
+
+BILL NO: INV-2026-0294      DATED: 01-06-2026
+ATTN: USR-0022
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ITEM   DESCRIPTION               UOM     QUANTITY   UNIT PRICE   TAXABLE AMT   TAX RATE   TAX
+1   -      Managed network service   MONTH   1          38200.00     38200.00      GST 18%    6876.00
+2   -      Managed network service   MONTH   1          10900.00     10900.00      GST 18%    1962.00
+
+TAXABLE VALUE  Rs. 49100.00
+TAX  Rs. 8838.00
+INVOICE TOTAL  Rs. 57938.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

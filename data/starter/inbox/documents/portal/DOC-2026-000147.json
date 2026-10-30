@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/282",
+  "invoiceDate": "2026-07-14T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000088",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 454034.81,
+  "tax": 81726.27,
+  "payable": 535761.08
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00026",
+   "text": "Chain sprocket - grade A - M026",
+   "unit": "EA",
+   "qty": 3,
+   "rate": 1231.20,
+   "value": 3693.60,
+   "taxCode": "GST18",
+   "taxValue": 664.85
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00019",
+   "text": "Ball bearing - grade A - M019",
+   "unit": "EA",
+   "qty": 31,
+   "rate": 14420.51,
+   "value": 447035.81,
+   "taxCode": "GST18",
+   "taxValue": 80466.45
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00029",
+   "text": "Hydraulic seal - grade B - M029",
+   "unit": "EA",
+   "qty": 3,
+   "rate": 1101.80,
+   "value": 3305.40,
+   "taxCode": "GST18",
+   "taxValue": 594.97
+  }
+ ]
+}

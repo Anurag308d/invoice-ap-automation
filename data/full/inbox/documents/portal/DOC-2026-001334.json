@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Beljor Foods & Co",
+    "tax_registration_id": "TRN-119834936"
+  },
+  "invoice": {
+    "number": "BEL/26-27/284",
+    "date": "2026-07-27",
+    "po_number": "PO-2026-000994",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "64962.13",
+    "tax_total": "0.00",
+    "grand_total": "64962.13"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00391",
+      "description": "Coffee powder - grade C - M391",
+      "uom": "KG",
+      "quantity": "440.19",
+      "unit_price": "94.72",
+      "amount": "41694.80",
+      "tax_code": "GST0",
+      "tax_amount": "0.00"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00371",
+      "description": "Sunflower oil - grade A - M371",
+      "uom": "KG",
+      "quantity": "391.64",
+      "unit_price": "59.41",
+      "amount": "23267.33",
+      "tax_code": "GST0",
+      "tax_amount": "0.00"
+    }
+  ]
+}

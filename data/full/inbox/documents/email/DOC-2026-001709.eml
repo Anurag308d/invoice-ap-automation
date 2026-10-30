@@ -1,0 +1,45 @@
+From: requester.manufacturing.02@example.com
+To: invoices@buyer.example
+Date: Tue, 15 Sep 2026 09:41:00 +0530
+Subject: Invoice BEL/26-27/044
+Message-ID: <doc-2026-001709@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Belcor Engineering Spares Pvt Ltd <ap@vnd-00151.example>
+Date: Tue, 15 Sep 2026 09:41:00 +0530
+Subject: Invoice BEL/26-27/044
+To: requester.manufacturing.02@example.com
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller: Belcor Engineering Spares Pvt Ltd
+Tax Regn. No.: TRN-181774160
+Plot 57, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Bill No: BEL/26-27/044
+Date: 2026-09-14
+PO Number: PO-2026-001123
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   Item Code   Item Description                  UOM   Qty   Rate      Taxable Amt   Tax Code   GST Amt
+1    1       SKU-00158   Valve actuator - grade E - M158   EA    16    3379.22   54067.52      GST 18%    9732.15
+
+Subtotal: 54067.52
+Tax: 9732.15
+Invoice Total: 63799.67
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Belcor Engineering Spares Pvt Ltd

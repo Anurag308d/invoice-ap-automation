@@ -1,0 +1,44 @@
+From: ap@vnd-00138.example
+To: invoices@buyer.example
+Date: Tue, 17 Feb 2026 15:29:00 +0530
+Subject: Invoice INV-2026-0320
+Message-ID: <doc-2026-000152@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier:  Arkav Metals Enterprises
+Tax Registration Number:  TRN-385905130
+Plot 44, Industrial Area, Hosur 635126
+
+Tax Invoice
+
+Inv #:  INV-2026-0320
+Inv Date:  16 Feb 2026
+PO Number:  PO 2026-000048
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln:  1
+  Item:  SKU-00053
+  Description:  HDPE granules - grade G - M053
+  UOM:  KG
+  Qty:  91.61
+  Unit Price:  29.41
+  Value:  2694.25
+  Tax Rate:  18%
+  Tax Amt:  484.97
+
+Taxable Value:  Rs. 2694.25
+Tax Amount:  Rs. 484.97
+Amount Payable:  Rs. 3179.22
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Arkav Metals Enterprises

@@ -1,0 +1,37 @@
+From: ap@vnd-00003.example
+To: invoices@buyer.example
+Date: Tue, 14 Apr 2026 10:23:00 +0530
+Subject: Invoice INV-2026-0044
+Message-ID: <doc-2026-000062@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor:  Lumhal Stationers Enterprises
+Tax Registration Number:  TRN-736550090
+Plot 6, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0044
+Inv Date:  2026-04-13
+P.O. #:  PO-2026-000056
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   PO Line   SKU         Particulars                 Unit   Qty   Unit Price   Value       Tax Code   GST Amt
+1   1         SKU-00047   Notebook - grade A - M047   PACK   108   293.22       31,667.76   EXEMPT     0.00
+
+Net Amount:  31,667.76
+Tax Amount:  0.00
+Total Amount Due:  31,667.76
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Lumhal Stationers Enterprises

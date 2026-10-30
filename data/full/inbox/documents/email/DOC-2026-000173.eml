@@ -1,0 +1,44 @@
+From: ap@vnd-00152.example
+To: invoices@buyer.example
+Date: Mon, 23 Feb 2026 12:48:00 +0530
+Subject: Invoice INV-2026-0111
+Message-ID: <doc-2026-000173@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor : Corvel Electricals LLP
+Tax Reg No : TRN-962696566
+Plot 58, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Bill No : INV-2026-0111
+Inv Date : 23-02-2026
+PO No : PO-2026-000133
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln : 1
+  Item : SKU-00110
+  Item Description : MCB switch - grade G - M110
+  Unit : EA
+  Quantity : 12
+  Unit Price : 1704.57
+  Amount : 20454.84
+  Tax Code : GST18
+  Tax : 3681.87
+
+Taxable Value : Rs. 20454.84
+Tax Amount : Rs. 3681.87
+Amount Payable : Rs. 24136.71
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Corvel Electricals LLP

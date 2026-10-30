@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000019",
+  "invoiceDate": "2026-07-02T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000834",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 228133.50,
+  "tax": 41064.03,
+  "payable": 269197.53
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00189",
+   "text": "Pump impeller - grade I - M189",
+   "unit": "EA",
+   "qty": 30,
+   "rate": 7604.45,
+   "value": 228133.50,
+   "taxCode": "GST18",
+   "taxValue": 41064.03
+  }
+ ]
+}

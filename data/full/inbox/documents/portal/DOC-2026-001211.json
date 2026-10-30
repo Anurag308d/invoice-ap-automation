@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/373",
+    "date": "2026-07-03",
+    "po_number": "PO-2026-000862",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "202886.96",
+    "tax_total": "36519.65",
+    "grand_total": "239406.61"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00017",
+      "description": "MS sheet - grade C - M017",
+      "uom": "KG",
+      "quantity": "1598.92",
+      "unit_price": "126.89",
+      "amount": "202886.96",
+      "tax_code": "GST18",
+      "tax_amount": "36519.65"
+    }
+  ]
+}

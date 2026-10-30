@@ -1,0 +1,69 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Velquin Engineering Spares LLP",
+  "taxId": "TRN-843651370"
+ },
+ "header": {
+  "invoiceNo": "VEL/26-27/033",
+  "invoiceDate": "2026-09-22T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001240",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 107096.90,
+  "tax": 19277.44,
+  "payable": 126374.34
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00159",
+   "text": "Pressure gauge - grade E - M159",
+   "unit": "EA",
+   "qty": 24,
+   "rate": 1981.41,
+   "value": 47553.84,
+   "taxCode": "GST18",
+   "taxValue": 8559.69
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00123",
+   "text": "Hydraulic seal - grade A - M123",
+   "unit": "EA",
+   "qty": 21,
+   "rate": 552.73,
+   "value": 11607.33,
+   "taxCode": "GST18",
+   "taxValue": 2089.32
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00173",
+   "text": "Pump impeller - grade G - M173",
+   "unit": "EA",
+   "qty": 35,
+   "rate": 1318.89,
+   "value": 46161.15,
+   "taxCode": "GST18",
+   "taxValue": 8309.01
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00161",
+   "text": "Ball bearing - grade F - M161",
+   "unit": "EA",
+   "qty": 2,
+   "rate": 887.29,
+   "value": 1774.58,
+   "taxCode": "GST18",
+   "taxValue": 319.42
+  }
+ ]
+}

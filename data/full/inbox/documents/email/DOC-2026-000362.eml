@@ -1,0 +1,37 @@
+From: ap@vnd-00219.example
+To: invoices@buyer.example
+Date: Thu, 19 Mar 2026 12:31:00 +0530
+Subject: Invoice ENJ/25-26/304
+Message-ID: <doc-2026-000362@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor: Enjor Electricals Industries
+Tax Reg No: TRN-103709891
+Plot 28, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Invoice No: ENJ/25-26/304
+Dated: 09.03.2026
+Purchase Order: PO 2026-000152
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Line   Item        Item Description              Unit   Qty   Unit Price   Taxable Amt   Tax Code   Tax Amt
+1    1         SKU-00065   Cable tray - grade A - M065   EA     11    1,057.95     11,637.45     GST18      2,094.74
+2    2         SKU-00096   Contactor - grade E - M096    EA     30    103.66       3,109.80      GST18      559.76
+
+Net Amount: ₹14,747.25
+Tax: ₹2,654.50
+Total Amount Due: ₹17,401.75
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enjor Electricals Industries

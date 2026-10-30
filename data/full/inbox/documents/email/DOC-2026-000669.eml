@@ -1,0 +1,44 @@
+From: ap@vnd-00152.example
+To: invoices@buyer.example
+Date: Wed, 22 Apr 2026 09:15:00 +0530
+Subject: Invoice INV-2026-0114
+Message-ID: <doc-2026-000669@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor : Corvel Electricals LLP
+Tax Reg No : TRN-962696566
+Plot 58, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Bill No : INV-2026-0114
+Inv Date : 20-04-2026
+PO No : PO-2026-000508
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln : 1
+  Item : SKU-00100
+  Item Description : Terminal block - grade E - M100
+  Unit : EA
+  Quantity : 138
+  Unit Price : 333.37
+  Amount : 46005.06
+  Tax Code : GST18
+  Tax : 8280.91
+
+Taxable Value : Rs. 46005.06
+Tax Amount : Rs. 8280.91
+Amount Payable : Rs. 54285.97
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Corvel Electricals LLP

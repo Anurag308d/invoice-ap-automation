@@ -1,0 +1,37 @@
+From: ap@vnd-00232.example
+To: invoices@buyer.example
+Date: Tue, 23 Jun 2026 13:41:00 +0530
+Subject: Invoice SEL/26-27/351
+Message-ID: <doc-2026-001093@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Selzan Engineering Spares LLP
+TRN: TRN-836485758
+Plot 41, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Bill No: SEL/26-27/351
+Inv Date: 2026-06-22
+P.O. #: PO-2026-000699
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Ln | Item Code | Description | UOM | Qty | Rate | Amount | Tax Code | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00144 | Chain sprocket - grade C - M144 | EA | 2 | 5,629.15 | 11,258.30 | 18% | 2,026.49 |
+
+Total Before Tax: Rs. 11,258.30
+Total Tax: Rs. 2,026.49
+Grand Total: Rs. 13,284.79
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Selzan Engineering Spares LLP

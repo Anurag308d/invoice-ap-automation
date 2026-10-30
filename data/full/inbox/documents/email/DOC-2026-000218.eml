@@ -1,0 +1,63 @@
+From: requester.it.02@example.com
+To: invoices@buyer.example
+Date: Fri, 27 Feb 2026 17:45:00 +0530
+Subject: Invoice INV-2026-0312
+Message-ID: <doc-2026-000218@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Veltav Infotech Pvt Ltd <ap@vnd-00251.example>
+Date: Fri, 27 Feb 2026 17:45:00 +0530
+Subject: Invoice INV-2026-0312
+To: requester.it.02@example.com
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor:  Veltav Infotech Pvt Ltd
+Tax Registration Number:  TRN-374028505
+Plot 60, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Invoice No:  INV-2026-0312
+Invoice Date:  25.02.2026
+Purchase Order:  PO-2026-000058
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line:  1
+  Item:  SKU-00279
+  Particulars:  Storage array - grade E - M279
+  UOM:  EA
+  Qty:  3
+  Price:  10,885.37
+  Value:  32,656.11
+  Tax Code:  GST18
+  GST Amt:  5,878.10
+Item 2
+  Order Line:  2
+  Item:  SKU-00264
+  Particulars:  Docking station - grade C - M264
+  UOM:  EA
+  Qty:  8
+  Price:  5,432.69
+  Value:  43,461.52
+  Tax Code:  GST18
+  GST Amt:  7,823.07
+
+Taxable Value:  76,117.63
+GST:  13,701.17
+Invoice Total:  89,818.80
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Veltav Infotech Pvt Ltd

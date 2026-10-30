@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0641",
+  "invoiceDate": "2026-07-01T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000921",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 89449.60,
+  "tax": 16744.97,
+  "payable": 106194.57
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00400",
+   "text": "Milk powder - grade D - M400",
+   "unit": "KG",
+   "qty": 398.12,
+   "rate": 224.68,
+   "value": 89449.60,
+   "taxCode": "GST18",
+   "taxValue": 16744.97
+  }
+ ]
+}

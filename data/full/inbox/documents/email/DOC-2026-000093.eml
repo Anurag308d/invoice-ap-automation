@@ -1,0 +1,38 @@
+From: ap@vnd-00073.example
+To: invoices@buyer.example
+Date: Mon, 09 Feb 2026 12:14:00 +0530
+Subject: Invoice INV-2026-0039
+Message-ID: <doc-2026-000093@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Tavros Stationers Enterprises
+Tax Regn. No.: TRN-824456064
+Plot 76, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Invoice Number: INV-2026-0039
+Bill Date: February 03, 2026
+Your Order Ref: PO-2026-000094
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   PO Line   Item Code   Item Description                  UOM    Quantity   Unit Price   Amount       GST Rate   Tax
+1      1         SKU-00315   File folder - grade E - M315      PACK   11         147.93       1,627.23     GST5       81.36
+2      2         SKU-00305   Copier paper - grade D - M305     PACK   5          292.64       1,463.20     GST18      263.38
+3      3         SKU-00287   Desk organiser - grade A - M287   PACK   187        659.69       123,362.03   EXEMPT     0.00
+
+Net Amount: ₹126,452.46
+Tax: ₹344.74
+Invoice Total: ₹126,797.20
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Tavros Stationers Enterprises

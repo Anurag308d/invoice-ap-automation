@@ -1,0 +1,37 @@
+From: ap@vnd-00244.example
+To: invoices@buyer.example
+Date: Thu, 23 Jul 2026 12:47:00 +0530
+Subject: Invoice INV-2026-0355
+Message-ID: <doc-2026-001315@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller : Tavkav Stationers Industries
+Tax Regn. No. : TRN-146288496
+Plot 53, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice No : INV-2026-0355
+Date : 20-Jul-2026
+Your Order Ref : PO-2026-000942
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Line | SKU | Item Description | UOM | Qty | Unit Price | Amount | GST Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00289 | Copier paper - grade B - M289 | PACK | 103 | 390.59 | 40,230.77 | GST 5% | 1,931.08 |
+
+Net Amount : Rs. 40,230.77
+GST : Rs. 1,931.08
+Amount Payable : Rs. 42,161.85
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Tavkav Stationers Industries

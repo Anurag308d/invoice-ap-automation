@@ -1,0 +1,36 @@
+From: ap@vnd-00014.example
+To: invoices@buyer.example
+Date: Thu, 03 Sep 2026 15:06:00 +0530
+Subject: Invoice 000140
+Message-ID: <doc-2026-000173@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier : Urfal Metals Industries
+Tax Reg No : TRN-144020969
+Plot 17, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Inv # : 000140
+Dated : 31 Aug 2026
+PO Number : PO/2026/000116
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   Order Line   Item Code   Item Description                 UOM   Qty      Rate     Value       Tax Rate   Tax Amt
+1      1            SKU-00005   HDPE granules - grade A - M005   KG    198.88   243.78   48,482.97   18%        8,726.93
+
+Subtotal : INR 48,482.97
+Tax Amount : INR 8,726.93
+Total : INR 57,209.90
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Urfal Metals Industries

@@ -1,0 +1,52 @@
+From: requester.manufacturing.01@example.com
+To: invoices@buyer.example
+Date: Mon, 04 May 2026 12:21:00 +0530
+Subject: Invoice MER/26-27/083-R
+Message-ID: <doc-2026-000085@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Merfal Metals & Co <ap@vnd-00005.example>
+Date: Mon, 04 May 2026 12:21:00 +0530
+Subject: Invoice MER/26-27/083-R
+To: requester.manufacturing.01@example.com
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Merfal Metals & Co
+Tax Regn. No.: TRN-614819478
+Plot 8, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: MER/26-27/083-R
+Invoice Date: 24/04/2026
+P.O. #: PO-2026-000061
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00006
+  Item Description: Stainless steel coil - grade A - M006
+  Unit: KG
+  Qty: 1249.95
+  Rate: 283.05
+  Value: 353,798.35
+  Tax Rate: 18%
+  Tax Amt: 63,683.70
+
+Net Amount: ₹353,798.35
+Total Tax: ₹63,683.70
+Grand Total: ₹417,482.05
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merfal Metals & Co

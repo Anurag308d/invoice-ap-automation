@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0467",
+  "invoiceDate": "2026-03-23T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000341",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 23358.81,
+  "tax": 0.00,
+  "payable": 23358.81
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00377",
+   "text": "Basmati rice - grade B - M377",
+   "unit": "KG",
+   "qty": 48.60,
+   "rate": 75.72,
+   "value": 3679.99,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00375",
+   "text": "Coffee powder - grade A - M375",
+   "unit": "KG",
+   "qty": 176.46,
+   "rate": 111.52,
+   "value": 19678.82,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

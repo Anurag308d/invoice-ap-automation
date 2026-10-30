@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumzan Engineering Spares LLP",
+  "taxId": "TRN-973008159"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0095",
+  "invoiceDate": "2026-03-24T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000029",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 70745.24,
+  "tax": 12734.14,
+  "payable": 83479.38
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00025",
+   "text": "Pressure gauge - grade A - M025",
+   "unit": "EA",
+   "qty": 9,
+   "rate": 4193.92,
+   "value": 37745.28,
+   "taxCode": "GST18",
+   "taxValue": 6794.15
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00026",
+   "text": "Chain sprocket - grade A - M026",
+   "unit": "EA",
+   "qty": 28,
+   "rate": 1178.57,
+   "value": 32999.96,
+   "taxCode": "GST18",
+   "taxValue": 5939.99
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enbel Safety Gear Pvt Ltd",
+  "taxId": "TRN-390244468"
+ },
+ "header": {
+  "invoiceNo": "000081",
+  "invoiceDate": "2026-08-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001146",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 146275.48,
+  "tax": 7313.77,
+  "payable": 153589.25
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00341",
+   "text": "Safety goggles - grade B - M341",
+   "unit": "EA",
+   "qty": 221,
+   "rate": 661.88,
+   "value": 146275.48,
+   "taxCode": "GST5",
+   "taxValue": 7313.77
+  }
+ ]
+}

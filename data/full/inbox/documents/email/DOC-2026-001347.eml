@@ -1,0 +1,37 @@
+From: ap@vnd-00297.example
+To: invoices@buyer.example
+Date: Mon, 27 Jul 2026 16:44:00 +0530
+Subject: Invoice TAV/26-27/087
+Message-ID: <doc-2026-001347@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier: Tavvel Engineering Spares LLP
+Tax Reg No: TRN-174314211
+Plot 9, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Inv #: TAV/26-27/087
+Dated: 23-Jul-2026
+PO Number: PO-2026-000779
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| # | Order Line | SKU | Particulars | Unit | Quantity | Unit Price | Amount | Tax Code | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00125 | Pump impeller - grade A - M125 | EA | 7 | 1251.80 | 8762.60 | GST 18% | 1577.27 |
+
+Subtotal: Rs. 8762.60
+Total Tax: Rs. 1577.27
+Total Amount Due: Rs. 10339.87
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Tavvel Engineering Spares LLP

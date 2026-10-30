@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumir Electricals Industries",
+    "tax_registration_id": "TRN-144326083"
+  },
+  "invoice": {
+    "number": "INV-2026-0151",
+    "date": "2026-02-26",
+    "po_number": "PO-2026-000130",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "181455.40",
+    "tax_total": "32661.97",
+    "grand_total": "214117.37"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00082",
+      "description": "Junction box - grade C - M082",
+      "uom": "EA",
+      "quantity": "185",
+      "unit_price": "980.84",
+      "amount": "181455.40",
+      "tax_code": "GST18",
+      "tax_amount": "32661.97"
+    }
+  ]
+}

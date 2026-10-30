@@ -1,0 +1,26 @@
+VENDOR  ENDAV INFOTECH ENTERPRISES
+TAX REGISTRATION NUMBER  TRN-786946188
+Plot 61, Industrial Area, Vadodara 390010
+
+TAX INVOICE
+
+TAX INVOICE NO: END/25-26/339      BILL DATE: March 31, 2026
+PO NO: PO 2026-000300
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+S.NO   PO LN   ITEM        DESCRIPTION                              UNIT   QUANTITY   RATE       VALUE       TAX RATE   GST AMT
+1      1       SKU-00250   Desktop workstation - grade B - M250     EA     23         7686.00    176778.00   GST18      31820.04
+2      2       SKU-00278   Wireless access point - grade E - M278   EA     3          3800.35    11401.05    GST18      2052.19
+-- Page 1 of 2 --
+
+S.NO   PO LN   ITEM        DESCRIPTION                              UNIT   QUANTITY   RATE       VALUE       TAX RATE   GST AMT
+3      3       SKU-00279   Storage array - grade E - M279           EA     29         10527.61   305300.69   GST18      54954.12
+
+SUBTOTAL  Rs. 493479.74
+TAX  Rs. 88826.35
+AMOUNT PAYABLE  Rs. 222051.28
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+-- end of document --

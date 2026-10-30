@@ -1,0 +1,67 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/398",
+    "date": "2026-09-03",
+    "po_number": "PO-2026-001149",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "188742.62",
+    "tax_total": "24584.36",
+    "grand_total": "213326.98"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00316",
+      "description": "Whiteboard marker - grade E - M316",
+      "uom": "PACK",
+      "quantity": "55",
+      "unit_price": "317.18",
+      "amount": "17444.90",
+      "tax_code": "EXEMPT",
+      "tax_amount": "0.00"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00301",
+      "description": "Notebook - grade C - M301",
+      "uom": "PACK",
+      "quantity": "90",
+      "unit_price": "1349.04",
+      "amount": "121413.60",
+      "tax_code": "GST18",
+      "tax_amount": "21854.45"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00297",
+      "description": "Copier paper - grade C - M297",
+      "uom": "PACK",
+      "quantity": "41",
+      "unit_price": "846.78",
+      "amount": "34717.98",
+      "tax_code": "EXEMPT",
+      "tax_amount": "0.00"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00290",
+      "description": "Toner cartridge - grade B - M290",
+      "uom": "PACK",
+      "quantity": "66",
+      "unit_price": "229.79",
+      "amount": "15166.14",
+      "tax_code": "GST18",
+      "tax_amount": "2729.91"
+    }
+  ]
+}

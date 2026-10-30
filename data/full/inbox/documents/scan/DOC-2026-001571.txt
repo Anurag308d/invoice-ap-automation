@@ -1,0 +1,22 @@
+SUPPLIER: ORHAL METALS ENTERPRISES
+TAX REGN. NO.: TRN-952841401
+Plot 59, Industrial Area, Coimbatore 641021
+
+TAX INVOICE
+
+INVOICE NUMBER: SI00118
+INVOICE DATE: 2026-08-19
+P.O. #: PO 2026-001068
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ORDER LINE   SKU         PARTICULARS                      UOM   QUANTITY   PRICE    AMOUNT       GST RATE   TAX
+1   1            SKU-00045   HDPE granules - grade F - M045   KG    788.64     150.75   118,887.48   GST18      21,399.75
+
+NET AMOUNT: ₹118,887.48
+TAX: ₹21,399.75
+TOTAL: ₹l40,287.23
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

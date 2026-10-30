@@ -1,0 +1,45 @@
+From: ap@vnd-00030.example
+To: invoices@buyer.example
+Date: Fri, 17 Apr 2026 09:43:00 +0530
+Subject: Invoice 000111
+Message-ID: <doc-2026-000636@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller : Oren Electricals & Co
+Tax Reg No : TRN-496702013
+Plot 33, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Invoice No : 000111
+Invoice Date : 13-04-2026
+Purchase Order : PO/2026/000331
+Currency : INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line : 1
+  Item : SKU-00112
+  Item Description : Contactor - grade G - M112
+  Unit : EA
+  Qty : 66
+  Rate : 554.64
+  Value : 36606.24
+  Tax Code : 18%
+  Tax Amt : 6589.12
+
+Taxable Value : 36606.24
+Tax Amount : 6589.12
+Amount Payable : 43195.36
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Oren Electricals & Co

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Kavar Metals LLP",
+    "tax_registration_id": "TRN-479062509"
+  },
+  "invoice": {
+    "number": "000155",
+    "date": "2026-08-19",
+    "po_number": "PO-2026-001043",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "87549.89",
+    "tax_total": "15758.98",
+    "grand_total": "103308.87"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00023",
+      "description": "Brass rod - grade C - M023",
+      "uom": "KG",
+      "quantity": "419.24",
+      "unit_price": "208.83",
+      "amount": "87549.89",
+      "tax_code": "GST18",
+      "tax_amount": "15758.98"
+    }
+  ]
+}

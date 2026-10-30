@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumir Electricals Industries",
+    "tax_registration_id": "TRN-144326083"
+  },
+  "invoice": {
+    "number": "INV-2026-0153",
+    "date": "2026-04-07",
+    "po_number": "PO-2026-000499",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "104581.02",
+    "tax_total": "18824.58",
+    "grand_total": "123405.60"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00117",
+      "description": "Copper cable - grade H - M117",
+      "uom": "EA",
+      "quantity": "22",
+      "unit_price": "4509.17",
+      "amount": "99201.74",
+      "tax_code": "GST18",
+      "tax_amount": "17856.31"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00069",
+      "description": "Copper cable - grade B - M069",
+      "uom": "EA",
+      "quantity": "19",
+      "unit_price": "283.12",
+      "amount": "5379.28",
+      "tax_code": "GST18",
+      "tax_amount": "968.27"
+    }
+  ]
+}

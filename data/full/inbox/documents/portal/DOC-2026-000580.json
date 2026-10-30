@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Roskav Stationers Industries",
+  "taxId": "TRN-715603868"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0184",
+  "invoiceDate": "2026-04-13T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000478",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 15666.00,
+  "tax": 0.00,
+  "payable": 15666.00
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00319",
+   "text": "Desk organiser - grade E - M319",
+   "unit": "PACK",
+   "qty": 84,
+   "rate": 186.50,
+   "value": 15666.00,
+   "taxCode": "EXEMPT",
+   "taxValue": 0.00
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumwyn Consulting Industries",
+  "taxId": "TRN-273044129"
+ },
+ "header": {
+  "invoiceNo": "SI00319",
+  "invoiceDate": "2026-10-05T00:00:00+05:30",
+  "purchaseOrder": null,
+  "requesterId": "USR-0028",
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 144900.00,
+  "tax": 26082.00,
+  "payable": 170982.00
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": null,
+   "itemCode": null,
+   "text": "Audit advisory",
+   "unit": "HR",
+   "qty": 58.0,
+   "rate": 2100.00,
+   "value": 121800.00,
+   "taxCode": "GST18",
+   "taxValue": 21924.00
+  },
+  {
+   "seq": 2,
+   "orderLine": null,
+   "itemCode": null,
+   "text": "Training programme",
+   "unit": "HR",
+   "qty": 11.0,
+   "rate": 2100.00,
+   "value": 23100.00,
+   "taxCode": "GST18",
+   "taxValue": 4158.00
+  }
+ ]
+}

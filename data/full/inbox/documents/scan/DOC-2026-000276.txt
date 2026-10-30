@@ -1,0 +1,22 @@
+ROSJOR INFOTECH INDUSTRIES
+TAX REGN. NO. : TRN-970628205
+Plot 58, Industrial Area, Ahmedabad 382445
+
+TAX INVOICE
+
+INV # : ROS/25-26/143
+INVOICE DATE : 05.03.2026
+YOUR ORDER REF : PO/2026/000198
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ORDER LINE   ITEM CODE   ITEM DESCRIPTION                         UNIT   QUANTITY   PRICE      AMOUNT     GST RATE   TAX
+1   1            SKU-00270   Wireless access point - grade D - M270   EA     2          3,142.56   6,285.12   GST18      1,131.32
+
+TAXABLE VALUE : INR 6,285.12
+TOTAL TAX : INR 1,131.32
+GRAND TOTAL : INR 7,416.44
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

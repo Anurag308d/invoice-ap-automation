@@ -1,0 +1,47 @@
+From: requester.logistics.01@example.com
+To: invoices@buyer.example
+Date: Tue, 28 Jul 2026 11:09:00 +0530
+Subject: Invoice ENP/26-27/047
+Message-ID: <doc-2026-001358@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Enpar Packaging & Co <ap@vnd-00095.example>
+Date: Tue, 28 Jul 2026 11:09:00 +0530
+Subject: Invoice ENP/26-27/047
+To: requester.logistics.01@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Enpar Packaging & Co
+Tax Reg No: TRN-856219942
+Plot 98, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Inv #: ENP/26-27/047
+Date: July 27, 2026
+PO Number: PO-2026-000958
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Line | SKU | Description | Unit | Quantity | Unit Price | Taxable Amt | Tax Code | Tax Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00205 | Carton sealer tape - grade A - M205 | BOX | 709 | 23.63 | 16,753.67 | GST 18% | 3,015.66 |
+| 2 | 2 | SKU-00202 | Stretch film roll - grade A - M202 | BOX | 639 | 100.10 | 63,963.90 | GST 5% | 3,198.20 |
+
+Net Amount: 80,717.57
+Tax: 6,213.86
+Total: 86,931.43
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enpar Packaging & Co

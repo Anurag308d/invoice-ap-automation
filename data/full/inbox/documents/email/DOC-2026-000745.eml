@@ -1,0 +1,44 @@
+From: ap@vnd-00033.example
+To: invoices@buyer.example
+Date: Mon, 04 May 2026 10:15:00 +0530
+Subject: Invoice INV-2026-0115
+Message-ID: <doc-2026-000745@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Orur Facility Services Enterprises
+Tax Regn. No.: TRN-954690267
+Plot 36, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Invoice No: INV-2026-0115
+Dated: 2026-05-01
+Attention: USR-0023
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item: -
+  Item Description: Housekeeping services
+  UOM: MONTH
+  Qty: 1
+  Unit Price: 97600.00
+  Amount: 97600.00
+  Tax Rate: 18%
+  GST Amt: 17568.00
+
+Subtotal: 97600.00
+Total Tax: 17568.00
+Total Amount Due: 115168.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Orur Facility Services Enterprises

@@ -1,0 +1,45 @@
+From: requester.manufacturing.01@example.com
+To: invoices@buyer.example
+Date: Mon, 25 May 2026 10:28:00 +0530
+Subject: Invoice BEL/26-27/032
+Message-ID: <doc-2026-000877@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Belcor Engineering Spares Pvt Ltd <ap@vnd-00151.example>
+Date: Mon, 25 May 2026 10:28:00 +0530
+Subject: Invoice BEL/26-27/032
+To: requester.manufacturing.01@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Belcor Engineering Spares Pvt Ltd
+Tax Regn. No.: TRN-181774160
+Plot 57, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Bill No: BEL/26-27/032
+Date: 2026-05-25
+PO Number: PO-2026-000564
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   Item Code   Item Description                  UOM   Qty   Rate      Taxable Amt   Tax Code   GST Amt
+1    1       SKU-00163   Hydraulic seal - grade F - M163   EA    34    1993.01   67762.34      GST 18%    12197.22
+
+Subtotal: 67762.34
+Tax: 12197.22
+Invoice Total: 79959.56
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Belcor Engineering Spares Pvt Ltd

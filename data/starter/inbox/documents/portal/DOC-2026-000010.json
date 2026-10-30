@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ornov Infotech Enterprises",
+    "tax_registration_id": "TRN-290148694"
+  },
+  "invoice": {
+    "number": "ORN/25-26/002",
+    "date": "2026-02-03",
+    "po_number": "PO-2026-000007",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "1520437.54",
+    "tax_total": "273678.76",
+    "grand_total": "1794116.30"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00041",
+      "description": "Rack server - grade A - M041",
+      "uom": "EA",
+      "quantity": "23",
+      "unit_price": "66105.98",
+      "amount": "1520437.54",
+      "tax_code": "GST18",
+      "tax_amount": "273678.76"
+    }
+  ]
+}

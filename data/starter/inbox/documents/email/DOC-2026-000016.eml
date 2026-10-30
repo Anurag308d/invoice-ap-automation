@@ -1,0 +1,52 @@
+From: requester.operations.02@example.com
+To: invoices@buyer.example
+Date: Wed, 18 Feb 2026 14:01:00 +0530
+Subject: Invoice INV-2026-0092
+Message-ID: <doc-2026-000016@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Roskav Safety Gear Industries <ap@vnd-00024.example>
+Date: Wed, 18 Feb 2026 14:01:00 +0530
+Subject: Invoice INV-2026-0092
+To: requester.operations.02@example.com
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor: Roskav Safety Gear Industries
+Tax Regn. No.: TRN-984680054
+Plot 27, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Invoice Number: INV-2026-0092
+Date: 16.02.2026
+P.O. #: PO/2026/000013
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln: 1
+  SKU: SKU-00054
+  Item Description: Safety goggles - grade A - M054
+  Unit: EA
+  Qty: 45
+  Rate: 2,072.21
+  Taxable Amt: 93,249.45
+  Tax Rate: GST 5%
+  Tax: 4,662.47
+
+Total Before Tax: ₹93,249.45
+Tax: ₹4,662.47
+Amount Payable: ₹97,911.92
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Roskav Safety Gear Industries

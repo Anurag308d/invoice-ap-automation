@@ -1,0 +1,37 @@
+From: ap@vnd-00010.example
+To: invoices@buyer.example
+Date: Thu, 20 Aug 2026 09:07:00 +0530
+Subject: Invoice ENU/26-27/232
+Message-ID: <doc-2026-000167@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier : Enur Packaging & Co
+Tax Registration Number : TRN-234677061
+Plot 13, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Inv # : ENU/26-27/232
+Bill Date : 18 Aug 2026
+PO Number : PO 2026-000118
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   SKU         Description                          UOM   Qty   Rate     Amount        Tax Rate   GST Amt
+1    1       SKU-00032   Stretch film roll - grade A - M032   BOX   173   67.39    11,658.47     GST 18%    2,098.52
+2    2       SKU-00036   Foam insert - grade A - M036         BOX   990   225.04   2,22,789.60   GST 18%    40,102.13
+
+Total Before Tax : ₹2,34,448.07
+Total Tax : ₹42,200.65
+Total : ₹2,76,648.72
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enur Packaging & Co

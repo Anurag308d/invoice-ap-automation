@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Irmer Metals Pvt Ltd",
+  "taxId": "TRN-873278545"
+ },
+ "header": {
+  "invoiceNo": "IRM/26-27/059",
+  "invoiceDate": "2026-08-10T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000998",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 207622.67,
+  "tax": 37372.08,
+  "payable": 244994.75
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00010",
+   "text": "Aluminium ingot - grade B - M010",
+   "unit": "KG",
+   "qty": 1678.98,
+   "rate": 123.66,
+   "value": 207622.67,
+   "taxCode": "GST18",
+   "taxValue": 37372.08
+  }
+ ]
+}

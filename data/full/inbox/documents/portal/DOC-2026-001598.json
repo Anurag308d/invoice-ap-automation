@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0273",
+  "invoiceDate": "2026-08-31T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001072",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 64696.10,
+  "tax": 11645.30,
+  "payable": 76341.40
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00147",
+   "text": "Hydraulic seal - grade D - M147",
+   "unit": "EA",
+   "qty": 35,
+   "rate": 1848.46,
+   "value": 64696.10,
+   "taxCode": "GST18",
+   "taxValue": 11645.30
+  }
+ ]
+}

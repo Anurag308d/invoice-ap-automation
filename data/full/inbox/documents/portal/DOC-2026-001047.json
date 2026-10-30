@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Ordav Electricals Pvt Ltd",
+  "taxId": "TRN-749849221"
+ },
+ "header": {
+  "invoiceNo": "000153",
+  "invoiceDate": "2026-06-15T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000690",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 166753.44,
+  "tax": 30015.62,
+  "payable": 196769.06
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00114",
+   "text": "Junction box - grade G - M114",
+   "unit": "EA",
+   "qty": 142,
+   "rate": 1174.32,
+   "value": 166753.44,
+   "taxCode": "GST18",
+   "taxValue": 30015.62
+  }
+ ]
+}

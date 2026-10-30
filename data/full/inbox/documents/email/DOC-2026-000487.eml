@@ -1,0 +1,36 @@
+From: ap@vnd-00117.example
+To: invoices@buyer.example
+Date: Thu, 02 Apr 2026 15:11:00 +0530
+Subject: Invoice INV-2026-0041
+Message-ID: <doc-2026-000487@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Jorquin Engineering Spares LLP
+TRN: TRN-154117299
+Plot 23, Industrial Area, Chennai 600058
+
+Tax Invoice
+
+Tax Invoice No: INV-2026-0041
+Dated: 30/03/2026
+Purchase Order: PO/2026/000383
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   PO Ln   Item Code   Description                       Unit   Qty   Unit Price   Value       Tax Code   GST Amt
+1   1       SKU-00198   Valve actuator - grade J - M198   EA     26    2,270.15     59,023.90   GST18      10,624.30
+
+Taxable Value: Rs. 59,023.90
+Tax: Rs. 10,624.30
+Amount Payable: Rs. 69,648.20
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Jorquin Engineering Spares LLP

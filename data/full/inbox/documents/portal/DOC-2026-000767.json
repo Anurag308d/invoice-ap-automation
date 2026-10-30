@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Lumir Electricals Industries",
+    "tax_registration_id": "TRN-144326083"
+  },
+  "invoice": {
+    "number": "INV-2026-0154",
+    "date": "2026-05-04",
+    "po_number": "PO-2026-000550",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "75223.28",
+    "tax_total": "13540.19",
+    "grand_total": "88763.47"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00065",
+      "description": "Cable tray - grade A - M065",
+      "uom": "EA",
+      "quantity": "76",
+      "unit_price": "989.78",
+      "amount": "75223.28",
+      "tax_code": "GST18",
+      "tax_amount": "13540.19"
+    }
+  ]
+}

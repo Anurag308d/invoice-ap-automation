@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Velquin Engineering Spares LLP",
+  "taxId": "TRN-843651370"
+ },
+ "header": {
+  "invoiceNo": "VEL/25-26/033",
+  "invoiceDate": "2026-03-17T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000175",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 62294.73,
+  "tax": 11213.05,
+  "payable": 73507.78
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00159",
+   "text": "Pressure gauge - grade E - M159",
+   "unit": "EA",
+   "qty": 5,
+   "rate": 1857.63,
+   "value": 9288.15,
+   "taxCode": "GST18",
+   "taxValue": 1671.87
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00191",
+   "text": "Pressure gauge - grade I - M191",
+   "unit": "EA",
+   "qty": 22,
+   "rate": 2409.39,
+   "value": 53006.58,
+   "taxCode": "GST18",
+   "taxValue": 9541.18
+  }
+ ]
+}

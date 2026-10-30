@@ -1,0 +1,24 @@
+VENDOR: JORSEL CONSULTING PVT LTD
+TRN: TRN-835262630
+Plot 95, Industrial Area, Hosur 635126
+
+TAX INVOICE
+
+INVOICE NUMBER: INV-2026-0118
+INVOICE DATE: 23 Feb 2026
+REQUESTED BY: USR-0027
+CURRENCY: INR
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+#   ITEM   PARTICULARS          UNIT   QUANTITY   PRICE      TAXABLE AMT   TAX RATE   TAX
+1   -      Audit advisory       HR     38.0       4,400.00   1,67,200.00   GST18      30,096.00
+2   -      Training programme   HR     68.0       5,800.00   3,94,400.00   GST18      70,992.00
+
+TOTAL BEFORE TAX: 5,61,600.00
+TOTAL TAX: 1,01,088.00
+GRAND TOTAL: 6,62,688.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

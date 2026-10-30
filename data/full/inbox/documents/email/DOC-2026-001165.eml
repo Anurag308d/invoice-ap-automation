@@ -1,0 +1,36 @@
+From: ap@vnd-00062.example
+To: invoices@buyer.example
+Date: Wed, 01 Jul 2026 15:17:00 +0530
+Subject: Invoice 000143
+Message-ID: <doc-2026-001165@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor: Parros Electricals LLP
+Tax Regn. No.: TRN-355115295
+Plot 65, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Invoice Number: 000143
+Invoice Date: 29 Jun 2026
+Purchase Order: PO/2026/000890
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   SKU         Description                       UOM   Qty   Unit Price   Value     GST Rate   GST Amt
+1    1       SKU-00100   Terminal block - grade E - M100   EA    29    320.40       9291.60   GST 18%    1672.49
+
+Subtotal: Rs. 9291.60
+Tax Amount: Rs. 1672.49
+Grand Total: Rs. 10964.09
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Parros Electricals LLP

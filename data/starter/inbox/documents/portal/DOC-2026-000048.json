@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ornov Infotech Enterprises",
+    "tax_registration_id": "TRN-290148694"
+  },
+  "invoice": {
+    "number": "orn 25-26/6",
+    "date": "2026-03-23",
+    "po_number": "PO-2026-000034",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "515756.02",
+    "tax_total": "92836.08",
+    "grand_total": "608592.10"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00039",
+      "description": "Network switch - grade A - M039",
+      "uom": "EA",
+      "quantity": "26",
+      "unit_price": "19836.77",
+      "amount": "515756.02",
+      "tax_code": "GST18",
+      "tax_amount": "92836.08"
+    }
+  ]
+}

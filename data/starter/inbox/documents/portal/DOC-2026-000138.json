@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/273",
+  "invoiceDate": "2026-07-06T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000098",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 25295.79,
+  "tax": 4553.24,
+  "payable": 29849.03
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00022",
+   "text": "Gear coupling - grade A - M022",
+   "unit": "EA",
+   "qty": 39,
+   "rate": 648.61,
+   "value": 25295.79,
+   "taxCode": "GST18",
+   "taxValue": 4553.24
+  }
+ ]
+}

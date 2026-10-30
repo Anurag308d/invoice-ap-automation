@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Irsel Stationers LLP",
+  "taxId": "TRN-264874055"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0056",
+  "invoiceDate": "2026-06-26T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000863",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 179407.08,
+  "tax": 32293.27,
+  "payable": 211700.35
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00283",
+   "text": "File folder - grade A - M283",
+   "unit": "PACK",
+   "qty": 74,
+   "rate": 2424.42,
+   "value": 179407.08,
+   "taxCode": "GST18",
+   "taxValue": 32293.27
+  }
+ ]
+}

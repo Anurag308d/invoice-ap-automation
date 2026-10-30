@@ -1,0 +1,37 @@
+From: ap@vnd-00034.example
+To: invoices@buyer.example
+Date: Thu, 12 Feb 2026 13:04:00 +0530
+Subject: Invoice DAV/25-26/177
+Message-ID: <doc-2026-000122@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor : Davzan Packaging Industries
+Tax Regn. No. : TRN-171346747
+Plot 37, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Tax Invoice No : DAV/25-26/177
+Inv Date : 10 Feb 2026
+P.O. # : PO/2026/000097
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   Order Line   Item        Item Description                       UOM   Quantity   Price    Amount     Tax Code   Tax
+1      1            SKU-00224   Shipping label roll - grade C - M224   BOX   335        53.84    18036.40   GST 18%    3246.55
+2      2            SKU-00212   Bubble wrap roll - grade B - M212      BOX   879        103.17   90686.43   GST 18%    16323.56
+
+Subtotal : INR 108722.83
+Tax : INR 19570.11
+Invoice Total : INR 128292.94
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Davzan Packaging Industries

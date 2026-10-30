@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/240",
+  "invoiceDate": "2026-04-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000049",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 79043.88,
+  "tax": 14227.89,
+  "payable": 93271.77
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00026",
+   "text": "Chain sprocket - grade A - M026",
+   "unit": "EA",
+   "qty": 12,
+   "rate": 1132.09,
+   "value": 13585.08,
+   "taxCode": "GST18",
+   "taxValue": 2445.31
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00030",
+   "text": "Gear coupling - grade B - M030",
+   "unit": "EA",
+   "qty": 12,
+   "rate": 1089.70,
+   "value": 13076.40,
+   "taxCode": "GST18",
+   "taxValue": 2353.75
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00023",
+   "text": "Pump impeller - grade A - M023",
+   "unit": "EA",
+   "qty": 16,
+   "rate": 3273.90,
+   "value": 52382.40,
+   "taxCode": "GST18",
+   "taxValue": 9428.83
+  }
+ ]
+}

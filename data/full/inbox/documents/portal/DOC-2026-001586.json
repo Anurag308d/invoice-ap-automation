@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Beltav Safety Gear Industries",
+    "tax_registration_id": "TRN-725976457"
+  },
+  "invoice": {
+    "number": "INV-2026-0318",
+    "date": "2026-08-27",
+    "po_number": "PO-2026-001141",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "93343.42",
+    "tax_total": "4667.17",
+    "grand_total": "98010.59"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00345",
+      "description": "Safety helmet - grade C - M345",
+      "uom": "EA",
+      "quantity": "122",
+      "unit_price": "765.11",
+      "amount": "93343.42",
+      "tax_code": "GST5",
+      "tax_amount": "4667.17"
+    }
+  ]
+}

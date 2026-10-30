@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Davhal Safety Gear Enterprises",
+    "tax_registration_id": "TRN-667907397"
+  },
+  "invoice": {
+    "number": "INV-2026-0399",
+    "date": "2026-07-15",
+    "po_number": "PO-2026-000954",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "15770.82",
+    "tax_total": "2838.75",
+    "grand_total": "18609.57"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00354",
+      "description": "Safety shoes - grade D - M354",
+      "uom": "EA",
+      "quantity": "13",
+      "unit_price": "1213.14",
+      "amount": "15770.82",
+      "tax_code": "GST18",
+      "tax_amount": "2838.75"
+    }
+  ]
+}

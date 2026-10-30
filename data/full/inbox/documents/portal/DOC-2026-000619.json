@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0521",
+  "invoiceDate": "2026-04-15T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000408",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 54917.67,
+  "tax": 2745.89,
+  "payable": 57663.56
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00388",
+   "text": "Wheat flour - grade C - M388",
+   "unit": "KG",
+   "qty": 196.09,
+   "rate": 260.99,
+   "value": 51177.53,
+   "taxCode": "GST5",
+   "taxValue": 2558.88
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00374",
+   "text": "Tea leaves - grade A - M374",
+   "unit": "KG",
+   "qty": 60.52,
+   "rate": 61.80,
+   "value": 3740.14,
+   "taxCode": "GST5",
+   "taxValue": 187.01
+  }
+ ]
+}

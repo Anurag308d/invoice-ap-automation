@@ -1,0 +1,217 @@
+{
+ "capture_routing": {
+  "documents_with_any_mismatch": 0,
+  "precision": "0.00%",
+  "recall": "-",
+  "routed": 1,
+  "routed_equals_ground_truth": true
+ },
+ "confidence_calibration": {
+  "0.60": {
+   "accuracy": "100.00%",
+   "fields": 1
+  },
+  "0.95": {
+   "accuracy": "100.00%",
+   "fields": 1338
+  },
+  "0.97": {
+   "accuracy": "100.00%",
+   "fields": 142
+  },
+  "0.98": {
+   "accuracy": "100.00%",
+   "fields": 389
+  },
+  "0.99": {
+   "accuracy": "100.00%",
+   "fields": 1122
+  },
+  "1.00": {
+   "accuracy": "100.00%",
+   "fields": 1959
+  },
+  "not printed": {
+   "accuracy": "100.00%",
+   "fields": 223
+  }
+ },
+ "degraded_scans": 1,
+ "degraded_scans_flagged": 1,
+ "document_exact_rate": "100.00%",
+ "documents": 200,
+ "documents_exact": 200,
+ "field_match_rate": "100.00%",
+ "fields_compared": 5174,
+ "invoice_id_agreement_rate": "100.00%",
+ "mismatches": [],
+ "non_degraded_documents": 199,
+ "non_degraded_documents_with_mismatch": [],
+ "per_channel": {
+  "EDI": {
+   "accuracy": "100.00%",
+   "documents": 47,
+   "documents_exact": 47,
+   "fields": 1169,
+   "silent_errors": 0
+  },
+  "EMAIL": {
+   "accuracy": "100.00%",
+   "documents": 65,
+   "documents_exact": 65,
+   "fields": 1772,
+   "silent_errors": 0
+  },
+  "PORTAL": {
+   "accuracy": "100.00%",
+   "documents": 81,
+   "documents_exact": 81,
+   "fields": 2052,
+   "silent_errors": 0
+  },
+  "SCAN": {
+   "accuracy": "100.00%",
+   "documents": 7,
+   "documents_exact": 7,
+   "fields": 181,
+   "silent_errors": 0
+  }
+ },
+ "per_field": {
+  "attention_user_id": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "currency": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "description": {
+   "accuracy": "100.00%",
+   "fields": 286,
+   "match": 286,
+   "silent_errors": 0
+  },
+  "header_gross_amount": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "header_net_amount": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "header_tax_amount": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "invoice_date": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "invoice_id": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "line_count": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "line_net_amount": {
+   "accuracy": "100.00%",
+   "fields": 286,
+   "match": 286,
+   "silent_errors": 0
+  },
+  "po_id": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "po_line_id": {
+   "accuracy": "100.00%",
+   "fields": 286,
+   "match": 286,
+   "silent_errors": 0
+  },
+  "quantity": {
+   "accuracy": "100.00%",
+   "fields": 286,
+   "match": 286,
+   "silent_errors": 0
+  },
+  "sku_id": {
+   "accuracy": "100.00%",
+   "fields": 286,
+   "match": 286,
+   "silent_errors": 0
+  },
+  "tax_amount": {
+   "accuracy": "100.00%",
+   "fields": 286,
+   "match": 286,
+   "silent_errors": 0
+  },
+  "tax_code": {
+   "accuracy": "100.00%",
+   "fields": 286,
+   "match": 286,
+   "silent_errors": 0
+  },
+  "unit_price": {
+   "accuracy": "100.00%",
+   "fields": 286,
+   "match": 286,
+   "silent_errors": 0
+  },
+  "uom": {
+   "accuracy": "100.00%",
+   "fields": 286,
+   "match": 286,
+   "silent_errors": 0
+  },
+  "vendor_id": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "vendor_invoice_number": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "vendor_name": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  },
+  "vendor_tax_id": {
+   "accuracy": "100.00%",
+   "fields": 200,
+   "match": 200,
+   "silent_errors": 0
+  }
+ },
+ "silent_errors": 0,
+ "threshold": "0.90",
+ "vendor_resolution_rate": "100.00%"
+}

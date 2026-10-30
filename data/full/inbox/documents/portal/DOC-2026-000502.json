@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Faldav Electricals Pvt Ltd",
+    "tax_registration_id": "TRN-673896789"
+  },
+  "invoice": {
+    "number": "INV-2026-0102",
+    "date": "2026-04-06",
+    "po_number": "PO-2026-000386",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "22522.68",
+    "tax_total": "2512.87",
+    "grand_total": "25035.55"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00096",
+      "description": "Contactor - grade E - M096",
+      "uom": "EA",
+      "quantity": "83",
+      "unit_price": "103.16",
+      "amount": "8562.28",
+      "tax_code": "GST0",
+      "tax_amount": "0.00"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00108",
+      "description": "Terminal block - grade F - M108",
+      "uom": "EA",
+      "quantity": "40",
+      "unit_price": "349.01",
+      "amount": "13960.40",
+      "tax_code": "GST18",
+      "tax_amount": "2512.87"
+    }
+  ]
+}

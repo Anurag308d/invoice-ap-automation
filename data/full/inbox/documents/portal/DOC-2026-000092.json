@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Faltav Metals Pvt Ltd",
+  "taxId": "TRN-844321990"
+ },
+ "header": {
+  "invoiceNo": "000073",
+  "invoiceDate": "2026-02-04T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000072",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 607454.08,
+  "tax": 109341.73,
+  "payable": 716795.81
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00031",
+   "text": "Brass rod - grade D - M031",
+   "unit": "KG",
+   "qty": 1762.32,
+   "rate": 344.69,
+   "value": 607454.08,
+   "taxCode": "GST18",
+   "taxValue": 109341.73
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Parur Engineering Spares & Co",
+  "taxId": "TRN-151942954"
+ },
+ "header": {
+  "invoiceNo": "PAR/26-27/166",
+  "invoiceDate": "2026-05-25T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000640",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 42740.72,
+  "tax": 7693.33,
+  "payable": 50434.05
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00167",
+   "text": "Pressure gauge - grade F - M167",
+   "unit": "EA",
+   "qty": 8,
+   "rate": 5342.59,
+   "value": 42740.72,
+   "taxCode": "GST18",
+   "taxValue": 7693.33
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+JORWYN INFOTECH LLP
+TAX REG NO: TRN-304291371
+Plot 25, Industrial Area, Lucknow 226010
+
+TAX INVOICE
+
+TAX INVOICE NO: INV-2026-0092      DATE: March 26, 2026
+PO NO: PO/2026/000292      CURRENCY: INR
+BILL TO: YF COMPONENTS MANUFACTURING PVT LTD, PLANT 2, PUNE 411026
+
+SR   PO LINE   SKU         ITEM DESCRIPTION                         UOM   QUANTITY   RATE        AMOUNT        TAX CODE   TAX AMT
+1    1         SKU-00254   Wireless access point - grade B - M254   EA    17         15,763.67   2,67,982.39   18%        48,236.83
+
+NET AMOUNT: 2,67,982.39
+GST: 48,236.83
+GRAND TOTAL: 3,16,219.22
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

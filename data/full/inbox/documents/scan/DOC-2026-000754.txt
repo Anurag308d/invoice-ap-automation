@@ -1,0 +1,23 @@
+Supplier: Zanvel Foods Enterprises
+TRN: TRN-613668784
+Plot 54, Industrial Area, Pune 411019
+
+TAX INVOICE
+
+Tax Invoice No: SI00069
+Bill Date: 27-Apr-2026
+P.O. #: PO 2026-000545
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   Order Line   SKU         Description                   UOM   Quantity   Price   Value     GST Rate   Tax Amt
+1   1            SKU-00374   Tea leaves - grade A - M374   KG    106.59     64.27   6850.54   GST5       342.53
+
+Taxable Value: 6850.54
+GST: 342.53
+Grand Total: 7193.07
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

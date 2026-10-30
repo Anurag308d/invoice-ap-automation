@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Iren Metals Industries",
+  "taxId": "TRN-368646505"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0174",
+  "invoiceDate": "2026-10-14T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001442",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 40002.38,
+  "tax": 7200.43,
+  "payable": 47202.81
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00037",
+   "text": "HDPE granules - grade E - M037",
+   "unit": "KG",
+   "qty": 183.75,
+   "rate": 217.70,
+   "value": 40002.38,
+   "taxCode": "GST18",
+   "taxValue": 7200.43
+  }
+ ]
+}

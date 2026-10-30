@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0268",
+  "invoiceDate": "2026-07-29T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000758",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 1984.95,
+  "tax": 357.29,
+  "payable": 2342.24
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00193",
+   "text": "Ball bearing - grade J - M193",
+   "unit": "EA",
+   "qty": 9,
+   "rate": 220.55,
+   "value": 1984.95,
+   "taxCode": "GST18",
+   "taxValue": 357.29
+  }
+ ]
+}

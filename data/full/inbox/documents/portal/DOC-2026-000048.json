@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Ordav Electricals Pvt Ltd",
+  "taxId": "TRN-749849221"
+ },
+ "header": {
+  "invoiceNo": "000144",
+  "invoiceDate": "2026-01-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000037",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 15411.84,
+  "tax": 2774.13,
+  "payable": 18185.97
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00067",
+   "text": "Relay module - grade A - M067",
+   "unit": "EA",
+   "qty": 48,
+   "rate": 321.08,
+   "value": 15411.84,
+   "taxCode": "GST18",
+   "taxValue": 2774.13
+  }
+ ]
+}

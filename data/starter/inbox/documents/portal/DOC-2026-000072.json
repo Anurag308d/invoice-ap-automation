@@ -1,0 +1,69 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Corzan Metals LLP",
+  "taxId": "TRN-946536957"
+ },
+ "header": {
+  "invoiceNo": "COR/26-27/326",
+  "invoiceDate": "2026-04-17T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000055",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 470446.64,
+  "tax": 84680.39,
+  "payable": 555127.03
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00001",
+   "text": "MS sheet - grade A - M001",
+   "unit": "KG",
+   "qty": 189.76,
+   "rate": 125.10,
+   "value": 23738.98,
+   "taxCode": "GST18",
+   "taxValue": 4273.01
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00007",
+   "text": "Brass rod - grade A - M007",
+   "unit": "KG",
+   "qty": 1230.78,
+   "rate": 106.80,
+   "value": 131447.30,
+   "taxCode": "GST18",
+   "taxValue": 23660.51
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00008",
+   "text": "Zinc ingot - grade A - M008",
+   "unit": "KG",
+   "qty": 1752.41,
+   "rate": 127.03,
+   "value": 222608.64,
+   "taxCode": "GST18",
+   "taxValue": 40069.56
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00002",
+   "text": "Aluminium ingot - grade A - M002",
+   "unit": "KG",
+   "qty": 405.62,
+   "rate": 228.42,
+   "value": 92651.72,
+   "taxCode": "GST18",
+   "taxValue": 16677.31
+  }
+ ]
+}

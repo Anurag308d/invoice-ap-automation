@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0794",
+  "invoiceDate": "2026-09-28T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001422",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 37739.41,
+  "tax": 1886.98,
+  "payable": 39626.39
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00380",
+   "text": "Wheat flour - grade B - M380",
+   "unit": "KG",
+   "qty": 208.16,
+   "rate": 181.30,
+   "value": 37739.41,
+   "taxCode": "GST5",
+   "taxValue": 1886.98
+  }
+ ]
+}

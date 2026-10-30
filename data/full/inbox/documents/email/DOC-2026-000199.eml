@@ -1,0 +1,38 @@
+From: ap@vnd-00275.example
+To: invoices@buyer.example
+Date: Wed, 25 Feb 2026 12:25:00 +0530
+Subject: Invoice FAL/25-26/034
+Message-ID: <doc-2026-000199@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Falgar Infotech & Co
+Tax Registration Number:  TRN-921171440
+Plot 84, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice No:  FAL/25-26/034
+Invoice Date:  February 24, 2026
+PO No:  PO-2026-000091
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Line | Item | Particulars | Unit | Qty | Rate | Amount | Tax Code | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00248 | Docking station - grade A - M248 | EA | 7 | 14,906.29 | 104,344.03 | GST 18% | 18,781.93 |
+| 2 | 2 | SKU-00276 | Monitor - grade E - M276 | EA | 1 | 43,064.72 | 43,064.72 | GST 18% | 7,751.65 |
+
+Net Amount:  Rs. 147,408.75
+GST:  Rs. 26,533.58
+Invoice Total:  Rs. 173,942.33
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Falgar Infotech & Co

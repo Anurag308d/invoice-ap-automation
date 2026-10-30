@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Parkav Electricals Industries",
+    "tax_registration_id": "TRN-961826361"
+  },
+  "invoice": {
+    "number": "INV-2026-0379",
+    "date": "2026-09-21",
+    "po_number": "PO-2026-000130",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "101394.08",
+    "tax_total": "18250.93",
+    "grand_total": "119645.01"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00013",
+      "description": "Contactor - grade A - M013",
+      "uom": "EA",
+      "quantity": "73",
+      "unit_price": "1388.96",
+      "amount": "101394.08",
+      "tax_code": "GST18",
+      "tax_amount": "18250.93"
+    }
+  ]
+}

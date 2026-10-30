@@ -1,0 +1,54 @@
+From: ap@vnd-00125.example
+To: invoices@buyer.example
+Date: Tue, 09 Jun 2026 10:15:00 +0530
+Subject: Invoice GAR/26-27/025
+Message-ID: <doc-2026-000972@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Garzan Electricals & Co
+Tax Reg No : TRN-954376340
+Plot 31, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Invoice Number : GAR/26-27/025
+Bill Date : 08 Jun 2026
+PO Number : PO 2026-000659
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln : 1
+  Item Code : SKU-00108
+  Description : Terminal block - grade F - M108
+  Unit : EA
+  Quantity : 28
+  Price : 359.39
+  Value : 10062.92
+  GST Rate : 18%
+  Tax Amt : 1811.33
+Item 2
+  PO Ln : 2
+  Item Code : SKU-00106
+  Description : Junction box - grade F - M106
+  Unit : EA
+  Quantity : 142
+  Price : 223.40
+  Value : 31722.80
+  GST Rate : 18%
+  Tax Amt : 5710.10
+
+Taxable Value : ₹41785.72
+Tax Amount : ₹7521.43
+Amount Payable : ₹49307.15
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Garzan Electricals & Co

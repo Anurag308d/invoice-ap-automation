@@ -1,0 +1,38 @@
+From: ap@vnd-00207.example
+To: invoices@buyer.example
+Date: Mon, 23 Mar 2026 16:44:00 +0530
+Subject: Invoice INV-2026-0236
+Message-ID: <doc-2026-000391@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier : Novpar Facility Services LLP
+Tax Reg No : TRN-294747057
+Plot 16, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Bill No : INV-2026-0236
+Date : 20.03.2026
+Kind Attn : USR-0023
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | SKU | Particulars | Unit | Qty | Rate | Taxable Amt | GST Rate | Tax Amt |
+|---|---|---|---|---|---|---|---|---|
+| 1 | - | Pest control services | MONTH | 1 | 1,59,000.00 | 1,59,000.00 | GST18 | 28,620.00 |
+| 2 | - | Housekeeping services | MONTH | 1 | 33,300.00 | 33,300.00 | GST18 | 5,994.00 |
+
+Taxable Value : ₹1,92,300.00
+Tax Amount : ₹34,614.00
+Grand Total : ₹2,26,914.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Novpar Facility Services LLP

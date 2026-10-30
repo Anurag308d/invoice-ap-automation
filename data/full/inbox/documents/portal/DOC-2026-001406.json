@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ennov Engineering Spares Pvt Ltd",
+    "tax_registration_id": "TRN-779290292"
+  },
+  "invoice": {
+    "number": "ENN/26-27/303",
+    "date": "2026-07-29",
+    "po_number": "PO-2026-001018",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "13199.12",
+    "tax_total": "2375.84",
+    "grand_total": "15574.96"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00174",
+      "description": "Valve actuator - grade G - M174",
+      "uom": "EA",
+      "quantity": "22",
+      "unit_price": "599.96",
+      "amount": "13199.12",
+      "tax_code": "GST18",
+      "tax_amount": "2375.84"
+    }
+  ]
+}

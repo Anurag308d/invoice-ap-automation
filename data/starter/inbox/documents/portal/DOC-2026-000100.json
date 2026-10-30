@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Parkav Electricals Industries",
+    "tax_registration_id": "TRN-961826361"
+  },
+  "invoice": {
+    "number": "INV-2026-0367",
+    "date": "2026-05-22",
+    "po_number": "PO-2026-000069",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "6301.44",
+    "tax_total": "1134.25",
+    "grand_total": "7435.69"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00010",
+      "description": "Copper cable - grade A - M010",
+      "uom": "EA",
+      "quantity": "12",
+      "unit_price": "525.12",
+      "amount": "6301.44",
+      "tax_code": "GST18",
+      "tax_amount": "1134.25"
+    }
+  ]
+}

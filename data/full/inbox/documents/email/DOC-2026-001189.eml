@@ -1,0 +1,37 @@
+From: ap@vnd-00243.example
+To: invoices@buyer.example
+Date: Mon, 06 Jul 2026 12:59:01 +0530
+Subject: Invoice vel 26-27/112
+Message-ID: <doc-2026-001189@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor:  Velur Metals Enterprises
+Tax Reg No:  TRN-527923554
+Plot 52, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Bill No:  vel 26-27/112
+Dated:  July 02, 2026
+Your Order Ref:  PO 2026-000783
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Ln | SKU | Particulars | UOM | Qty | Unit Price | Amount | Tax Rate | Tax Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00005 | HDPE granules - grade A - M005 | KG | 574.44 | 215.40 | 1,23,734.38 | GST 18% | 22,272.19 |
+
+Net Amount:  ₹1,23,734.38
+GST:  ₹22,272.19
+Invoice Total:  ₹1,46,006.57
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Velur Metals Enterprises

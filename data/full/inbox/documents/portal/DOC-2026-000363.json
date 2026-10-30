@@ -1,0 +1,103 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/25-26/370",
+    "date": "2026-03-19",
+    "po_number": "PO-2026-000307",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "170855.61",
+    "tax_total": "23109.25",
+    "grand_total": "193964.86"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00315",
+      "description": "File folder - grade E - M315",
+      "uom": "PACK",
+      "quantity": "98",
+      "unit_price": "142.40",
+      "amount": "13955.20",
+      "tax_code": "GST5",
+      "tax_amount": "697.76"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00285",
+      "description": "Notebook - grade A - M285",
+      "uom": "PACK",
+      "quantity": "56",
+      "unit_price": "120.84",
+      "amount": "6767.04",
+      "tax_code": "GST18",
+      "tax_amount": "1218.07"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00288",
+      "description": "Printer ribbon - grade A - M288",
+      "uom": "PACK",
+      "quantity": "12",
+      "unit_price": "367.11",
+      "amount": "4405.32",
+      "tax_code": "GST18",
+      "tax_amount": "792.96"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00307",
+      "description": "File folder - grade D - M307",
+      "uom": "PACK",
+      "quantity": "65",
+      "unit_price": "690.01",
+      "amount": "44850.65",
+      "tax_code": "GST5",
+      "tax_amount": "2242.53"
+    },
+    {
+      "line_no": 5,
+      "po_line_no": "5",
+      "sku": "SKU-00326",
+      "description": "Stapler - grade F - M326",
+      "uom": "PACK",
+      "quantity": "21",
+      "unit_price": "952.28",
+      "amount": "19997.88",
+      "tax_code": "GST18",
+      "tax_amount": "3599.62"
+    },
+    {
+      "line_no": 6,
+      "po_line_no": "6",
+      "sku": "SKU-00321",
+      "description": "Copier paper - grade F - M321",
+      "uom": "PACK",
+      "quantity": "126",
+      "unit_price": "399.15",
+      "amount": "50292.90",
+      "tax_code": "GST18",
+      "tax_amount": "9052.72"
+    },
+    {
+      "line_no": 7,
+      "po_line_no": "7",
+      "sku": "SKU-00311",
+      "description": "Desk organiser - grade D - M311",
+      "uom": "PACK",
+      "quantity": "61",
+      "unit_price": "501.42",
+      "amount": "30586.62",
+      "tax_code": "GST18",
+      "tax_amount": "5505.59"
+    }
+  ]
+}

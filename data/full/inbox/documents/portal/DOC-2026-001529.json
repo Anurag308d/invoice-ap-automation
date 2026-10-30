@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rosir Foods Industries",
+  "taxId": "TRN-565016045"
+ },
+ "header": {
+  "invoiceNo": "ROS/26-27/226",
+  "invoiceDate": "2026-08-19T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001143",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 2364.12,
+  "tax": 118.21,
+  "payable": 2482.33
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00373",
+   "text": "Sugar - grade A - M373",
+   "unit": "KG",
+   "qty": 31.53,
+   "rate": 74.98,
+   "value": 2364.12,
+   "taxCode": "GST5",
+   "taxValue": 118.21
+  }
+ ]
+}

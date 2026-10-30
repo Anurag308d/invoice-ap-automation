@@ -1,0 +1,37 @@
+From: ap@vnd-00233.example
+To: invoices@buyer.example
+Date: Tue, 30 Jun 2026 17:01:00 +0530
+Subject: Invoice INV-2026-0241
+Message-ID: <doc-2026-001157@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier:  Irzan Stationers Enterprises
+Tax Reg No:  TRN-159285900
+Plot 42, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0241
+Date:  29-06-2026
+P.O. #:  PO 2026-000880
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Sr | Order Line | SKU | Description | UOM | Quantity | Price | Taxable Amt | Tax Rate | GST Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00324 | Whiteboard marker - grade F - M324 | PACK | 91 | 488.54 | 44457.14 | GST18 | 8002.29 |
+
+Taxable Value:  ₹44457.14
+Tax:  ₹8002.29
+Grand Total:  ₹52459.43
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Irzan Stationers Enterprises

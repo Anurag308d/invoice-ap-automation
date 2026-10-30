@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/25-26/372",
+    "date": "2026-03-23",
+    "po_number": "PO-2026-000256",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "33034.54",
+    "tax_total": "5946.22",
+    "grand_total": "38980.76"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00318",
+      "description": "Stapler - grade E - M318",
+      "uom": "PACK",
+      "quantity": "77",
+      "unit_price": "429.02",
+      "amount": "33034.54",
+      "tax_code": "GST18",
+      "tax_amount": "5946.22"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000009",
+  "invoiceDate": "2026-02-20T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000128",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 540847.44,
+  "tax": 97352.54,
+  "payable": 638199.98
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00126",
+   "text": "Valve actuator - grade A - M126",
+   "unit": "EA",
+   "qty": 39,
+   "rate": 8064.46,
+   "value": 314513.94,
+   "taxCode": "GST18",
+   "taxValue": 56612.51
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00167",
+   "text": "Pressure gauge - grade F - M167",
+   "unit": "EA",
+   "qty": 39,
+   "rate": 5490.76,
+   "value": 214139.64,
+   "taxCode": "GST18",
+   "taxValue": 38545.14
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00133",
+   "text": "Pump impeller - grade B - M133",
+   "unit": "EA",
+   "qty": 6,
+   "rate": 2032.31,
+   "value": 12193.86,
+   "taxCode": "GST18",
+   "taxValue": 2194.89
+  }
+ ]
+}

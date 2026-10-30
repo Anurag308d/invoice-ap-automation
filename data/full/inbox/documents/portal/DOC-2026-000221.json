@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0251",
+  "invoiceDate": "2026-03-02T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000081",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 44687.50,
+  "tax": 8043.75,
+  "payable": 52731.25
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00136",
+   "text": "Chain sprocket - grade B - M136",
+   "unit": "EA",
+   "qty": 26,
+   "rate": 1718.75,
+   "value": 44687.50,
+   "taxCode": "GST18",
+   "taxValue": 8043.75
+  }
+ ]
+}

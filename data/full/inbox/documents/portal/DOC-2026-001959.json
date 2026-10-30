@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Pargar Engineering Spares LLP",
+    "tax_registration_id": "TRN-519040436"
+  },
+  "invoice": {
+    "number": "PAR/26-27/011",
+    "date": "2026-10-15",
+    "po_number": "PO-2026-001333",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "14033.61",
+    "tax_total": "2526.05",
+    "grand_total": "16559.66"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00194",
+      "description": "V-belt - grade J - M194",
+      "uom": "EA",
+      "quantity": "9",
+      "unit_price": "1559.29",
+      "amount": "14033.61",
+      "tax_code": "GST18",
+      "tax_amount": "2526.05"
+    }
+  ]
+}

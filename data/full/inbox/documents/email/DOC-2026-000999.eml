@@ -1,0 +1,38 @@
+From: ap@vnd-00174.example
+To: invoices@buyer.example
+Date: Fri, 12 Jun 2026 11:48:00 +0530
+Subject: Invoice INV-2026-0260
+Message-ID: <doc-2026-000999@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor:  Enor Engineering Spares Industries
+Tax Regn. No.:  TRN-808063745
+Plot 80, Industrial Area, Pune 411019
+
+Tax Invoice
+
+Inv #:  INV-2026-0260
+Invoice Date:  08/06/2026
+P.O. #:  PO-2026-000657
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   Order Line   SKU         Particulars                       Unit   Quantity   Unit Price   Amount      GST Rate   GST Amt
+1   1            SKU-00165   Pump impeller - grade F - M165    EA     4          1,040.81     4,163.24    GST 18%    749.38
+2   2            SKU-00143   Pressure gauge - grade C - M143   EA     19         980.11       18,622.09   GST 18%    3,351.98
+
+Total Before Tax:  22,785.33
+Total Tax:  4,101.36
+Grand Total:  26,886.69
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enor Engineering Spares Industries

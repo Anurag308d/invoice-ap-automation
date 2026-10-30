@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halros Electricals LLP",
+  "taxId": "TRN-323841260"
+ },
+ "header": {
+  "invoiceNo": "HAL/25-26/213",
+  "invoiceDate": "2026-01-29T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000063",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 341992.51,
+  "tax": 61558.65,
+  "payable": 403551.16
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00115",
+   "text": "Relay module - grade G - M115",
+   "unit": "EA",
+   "qty": 216,
+   "rate": 1329.91,
+   "value": 287260.56,
+   "taxCode": "GST18",
+   "taxValue": 51706.90
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00076",
+   "text": "Terminal block - grade B - M076",
+   "unit": "EA",
+   "qty": 91,
+   "rate": 601.45,
+   "value": 54731.95,
+   "taxCode": "GST18",
+   "taxValue": 9851.75
+  }
+ ]
+}

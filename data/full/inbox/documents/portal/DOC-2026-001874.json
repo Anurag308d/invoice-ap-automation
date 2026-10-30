@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Zanquin Metals Industries",
+    "tax_registration_id": "TRN-637316222"
+  },
+  "invoice": {
+    "number": "000358",
+    "date": "2026-09-29",
+    "po_number": "PO-2026-001350",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "468841.82",
+    "tax_total": "84391.53",
+    "grand_total": "553233.35"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00051",
+      "description": "Copper rod - grade G - M051",
+      "uom": "KG",
+      "quantity": "1796.26",
+      "unit_price": "261.01",
+      "amount": "468841.82",
+      "tax_code": "GST18",
+      "tax_amount": "84391.53"
+    }
+  ]
+}

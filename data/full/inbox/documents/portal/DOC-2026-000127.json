@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ennov Engineering Spares Pvt Ltd",
+    "tax_registration_id": "TRN-779290292"
+  },
+  "invoice": {
+    "number": "ENN/25-26/296",
+    "date": "2026-02-11",
+    "po_number": "PO-2026-000064",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "113333.48",
+    "tax_total": "20400.03",
+    "grand_total": "133733.51"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00192",
+      "description": "Chain sprocket - grade I - M192",
+      "uom": "EA",
+      "quantity": "38",
+      "unit_price": "2982.46",
+      "amount": "113333.48",
+      "tax_code": "GST18",
+      "tax_amount": "20400.03"
+    }
+  ]
+}

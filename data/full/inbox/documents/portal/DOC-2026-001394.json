@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/378",
+    "date": "2026-07-30",
+    "po_number": "PO-2026-000943",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "23669.07",
+    "tax_total": "0.00",
+    "grand_total": "23669.07"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00323",
+      "description": "File folder - grade F - M323",
+      "uom": "PACK",
+      "quantity": "69",
+      "unit_price": "343.03",
+      "amount": "23669.07",
+      "tax_code": "EXEMPT",
+      "tax_amount": "0.00"
+    }
+  ]
+}

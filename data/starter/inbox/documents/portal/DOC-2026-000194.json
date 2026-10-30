@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumen Engineering Spares Industries",
+  "taxId": "TRN-266048241"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0325",
+  "invoiceDate": "2026-10-08T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000146",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 93065.28,
+  "tax": 16751.75,
+  "payable": 109817.03
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00027",
+   "text": "Ball bearing - grade B - M027",
+   "unit": "EA",
+   "qty": 23,
+   "rate": 848.10,
+   "value": 19506.30,
+   "taxCode": "GST18",
+   "taxValue": 3511.13
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00023",
+   "text": "Pump impeller - grade A - M023",
+   "unit": "EA",
+   "qty": 22,
+   "rate": 3343.59,
+   "value": 73558.98,
+   "taxCode": "GST18",
+   "taxValue": 13240.62
+  }
+ ]
+}

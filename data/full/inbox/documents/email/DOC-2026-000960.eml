@@ -1,0 +1,37 @@
+From: ap@vnd-00059.example
+To: invoices@buyer.example
+Date: Fri, 05 Jun 2026 16:00:00 +0530
+Subject: Invoice INV-2026-0312
+Message-ID: <doc-2026-000960@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Falquin Cloud Services Industries
+Tax Reg No : TRN-294831445
+Plot 62, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Bill No : INV-2026-0312
+Invoice Date : 01-06-2026
+Requested By : USR-0021
+Currency : INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   Item Code   Item Description     Unit    Qty   Rate        Value       Tax Code   GST Amt
+1   -           Cloud subscription   MONTH   1     75,000.00   75,000.00   18%        13,500.00
+
+Total Before Tax : 75,000.00
+GST : 13,500.00
+Invoice Total : 88,500.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Falquin Cloud Services Industries

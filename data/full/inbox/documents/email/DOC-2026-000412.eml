@@ -1,0 +1,61 @@
+From: ap@vnd-00094.example
+To: invoices@buyer.example
+Date: Wed, 25 Mar 2026 09:26:00 +0530
+Subject: Invoice INV-2026-0038
+Message-ID: <doc-2026-000412@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller : Novgar Logistics Industries
+Tax Regn. No. : TRN-982036447
+Plot 97, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Bill No : INV-2026-0038
+Dated : 2026-03-24
+Attn : USR-0026
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item Code : -
+  Item Description : Courier services
+  Unit : JOB
+  Qty : 1
+  Price : 44,400.00
+  Value : 44,400.00
+  Tax Rate : 5%
+  GST Amt : 2,220.00
+Item 2
+  Item Code : -
+  Item Description : Courier services
+  Unit : JOB
+  Qty : 1
+  Price : 39,100.00
+  Value : 39,100.00
+  Tax Rate : 18%
+  GST Amt : 7,038.00
+Item 3
+  Item Code : -
+  Item Description : Courier services
+  Unit : JOB
+  Qty : 4
+  Price : 19,100.00
+  Value : 76,400.00
+  Tax Rate : 5%
+  GST Amt : 3,820.00
+
+Total Before Tax : Rs. 159,900.00
+Total Tax : Rs. 13,078.00
+Amount Payable : Rs. 172,978.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Novgar Logistics Industries

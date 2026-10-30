@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urzan Engineering Spares Industries",
+    "tax_registration_id": "TRN-972851033"
+  },
+  "invoice": {
+    "number": "URZ/26-27/166",
+    "date": "2026-04-02",
+    "po_number": "PO-2026-000257",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "61526.11",
+    "tax_total": "11074.69",
+    "grand_total": "72600.80"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00184",
+      "description": "Chain sprocket - grade H - M184",
+      "uom": "EA",
+      "quantity": "29",
+      "unit_price": "2121.59",
+      "amount": "61526.11",
+      "tax_code": "GST18",
+      "tax_amount": "11074.69"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+From: ap@vnd-00151.example
+To: invoices@buyer.example
+Date: Tue, 24 Mar 2026 12:30:00 +0530
+Subject: Invoice BEL/25-26/035
+Message-ID: <doc-2026-000403@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller: Belcor Engineering Spares Pvt Ltd
+Tax Regn. No.: TRN-181774160
+Plot 57, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Bill No: BEL/25-26/035
+Date: 2026-03-24
+PO Number: PO-2026-000187
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   Item Code   Item Description          UOM   Qty   Rate      Taxable Amt   Tax Code   GST Amt
+1    1       SKU-00146   V-belt - grade D - M146   EA    15    2776.85   41652.75      GST 18%    7497.50
+
+Subtotal: 41652.75
+Tax: 7497.50
+Invoice Total: 49150.25
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Belcor Engineering Spares Pvt Ltd

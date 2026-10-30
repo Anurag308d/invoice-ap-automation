@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Lumen Engineering Spares Industries",
+  "taxId": "TRN-266048241"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0307",
+  "invoiceDate": "2026-05-18T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000071",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 64737.80,
+  "tax": 11652.80,
+  "payable": 76390.60
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00023",
+   "text": "Pump impeller - grade A - M023",
+   "unit": "EA",
+   "qty": 20,
+   "rate": 3236.89,
+   "value": 64737.80,
+   "taxCode": "GST18",
+   "taxValue": 11652.80
+  }
+ ]
+}

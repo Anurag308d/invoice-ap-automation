@@ -1,0 +1,81 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Selwyn Metals Enterprises",
+  "taxId": "TRN-975298949"
+ },
+ "header": {
+  "invoiceNo": "SI00128",
+  "invoiceDate": "2026-10-05T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001307",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 826217.77,
+  "tax": 148719.20,
+  "payable": 974936.97
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00035",
+   "text": "Copper rod - grade E - M035",
+   "unit": "KG",
+   "qty": 1762.06,
+   "rate": 187.70,
+   "value": 330738.66,
+   "taxCode": "GST18",
+   "taxValue": 59532.96
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00049",
+   "text": "MS sheet - grade G - M049",
+   "unit": "KG",
+   "qty": 1327.35,
+   "rate": 220.51,
+   "value": 292693.95,
+   "taxCode": "GST18",
+   "taxValue": 52684.91
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00047",
+   "text": "Brass rod - grade F - M047",
+   "unit": "KG",
+   "qty": 482.36,
+   "rate": 150.88,
+   "value": 72778.48,
+   "taxCode": "GST18",
+   "taxValue": 13100.13
+  },
+  {
+   "seq": 4,
+   "orderLine": 4,
+   "itemCode": "SKU-00011",
+   "text": "Copper rod - grade B - M011",
+   "unit": "KG",
+   "qty": 186.46,
+   "rate": 351.19,
+   "value": 65482.89,
+   "taxCode": "GST18",
+   "taxValue": 11786.92
+  },
+  {
+   "seq": 5,
+   "orderLine": 5,
+   "itemCode": "SKU-00010",
+   "text": "Aluminium ingot - grade B - M010",
+   "unit": "KG",
+   "qty": 497.60,
+   "rate": 129.67,
+   "value": 64523.79,
+   "taxCode": "GST18",
+   "taxValue": 11614.28
+  }
+ ]
+}

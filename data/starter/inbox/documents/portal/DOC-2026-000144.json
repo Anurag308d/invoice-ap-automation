@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Urkav Engineering Spares LLP",
+  "taxId": "TRN-654155466"
+ },
+ "header": {
+  "invoiceNo": "URK/26-27/279",
+  "invoiceDate": "2026-07-13T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000097",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 92960.66,
+  "tax": 16732.91,
+  "payable": 109693.57
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00029",
+   "text": "Hydraulic seal - grade B - M029",
+   "unit": "EA",
+   "qty": 20,
+   "rate": 1101.59,
+   "value": 22031.80,
+   "taxCode": "GST18",
+   "taxValue": 3965.72
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00023",
+   "text": "Pump impeller - grade A - M023",
+   "unit": "EA",
+   "qty": 16,
+   "rate": 3090.16,
+   "value": 49442.56,
+   "taxCode": "GST18",
+   "taxValue": 8899.66
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00028",
+   "text": "V-belt - grade B - M028",
+   "unit": "EA",
+   "qty": 11,
+   "rate": 1953.30,
+   "value": 21486.30,
+   "taxCode": "GST18",
+   "taxValue": 3867.53
+  }
+ ]
+}

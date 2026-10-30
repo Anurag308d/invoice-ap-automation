@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/340",
+    "date": "2026-04-06",
+    "po_number": "PO-2026-000306",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "26829.09",
+    "tax_total": "4829.24",
+    "grand_total": "31658.33"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00291",
+      "description": "File folder - grade B - M291",
+      "uom": "PACK",
+      "quantity": "27",
+      "unit_price": "993.67",
+      "amount": "26829.09",
+      "tax_code": "GST18",
+      "tax_amount": "4829.24"
+    }
+  ]
+}

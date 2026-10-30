@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halros Electricals LLP",
+  "taxId": "TRN-323841260"
+ },
+ "header": {
+  "invoiceNo": "HAL/26-27/213",
+  "invoiceDate": "2026-06-16T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000796",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 123307.94,
+  "tax": 22195.44,
+  "payable": 145503.38
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00105",
+   "text": "Cable tray - grade F - M105",
+   "unit": "EA",
+   "qty": 49,
+   "rate": 1837.30,
+   "value": 90027.70,
+   "taxCode": "GST18",
+   "taxValue": 16204.99
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00116",
+   "text": "Terminal block - grade G - M116",
+   "unit": "EA",
+   "qty": 7,
+   "rate": 622.75,
+   "value": 4359.25,
+   "taxCode": "GST18",
+   "taxValue": 784.67
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00106",
+   "text": "Junction box - grade F - M106",
+   "unit": "EA",
+   "qty": 123,
+   "rate": 235.13,
+   "value": 28920.99,
+   "taxCode": "GST18",
+   "taxValue": 5205.78
+  }
+ ]
+}

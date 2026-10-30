@@ -1,0 +1,43 @@
+From: ap@vnd-00121.example
+To: invoices@buyer.example
+Date: Wed, 24 Jun 2026 13:12:00 +0530
+Subject: Invoice 000172
+Message-ID: <doc-2026-001101@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor: Cormer Logistics Pvt Ltd
+Tax Regn. No.: TRN-658036894
+Plot 27, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No: 000172
+Date: 22-06-2026
+Requested By: USR-0026
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item: -
+  Item Description: Warehousing charges
+  Unit: JOB
+  Qty: 3
+  Rate: 20000.00
+  Value: 60000.00
+  Tax Code: GST18
+  GST Amt: 10800.00
+
+Net Amount: ₹60000.00
+GST: ₹10800.00
+Grand Total: ₹70800.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Cormer Logistics Pvt Ltd

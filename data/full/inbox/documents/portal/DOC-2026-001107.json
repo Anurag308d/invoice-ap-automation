@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Garros Engineering Spares Industries",
+    "tax_registration_id": "TRN-147914743"
+  },
+  "invoice": {
+    "number": "INV-2026-0404",
+    "date": "2026-06-24",
+    "po_number": "PO-2026-000843",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "42337.44",
+    "tax_total": "7620.74",
+    "grand_total": "49958.18"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00175",
+      "description": "Pressure gauge - grade G - M175",
+      "uom": "EA",
+      "quantity": "36",
+      "unit_price": "1176.04",
+      "amount": "42337.44",
+      "tax_code": "GST18",
+      "tax_amount": "7620.74"
+    }
+  ]
+}

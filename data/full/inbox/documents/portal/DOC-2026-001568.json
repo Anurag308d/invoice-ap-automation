@@ -1,0 +1,55 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Zanlum Stationers Enterprises",
+    "tax_registration_id": "TRN-268005687"
+  },
+  "invoice": {
+    "number": "INV-2026-0079",
+    "date": "2026-08-24",
+    "po_number": "PO-2026-001169",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "159889.02",
+    "tax_total": "9563.38",
+    "grand_total": "169452.40"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00301",
+      "description": "Notebook - grade C - M301",
+      "uom": "PACK",
+      "quantity": "29",
+      "unit_price": "1363.34",
+      "amount": "39536.86",
+      "tax_code": "GST18",
+      "tax_amount": "7116.63"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00287",
+      "description": "Desk organiser - grade A - M287",
+      "uom": "PACK",
+      "quantity": "161",
+      "unit_price": "663.10",
+      "amount": "106759.10",
+      "tax_code": "EXEMPT",
+      "tax_amount": "0.00"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00286",
+      "description": "Stapler - grade A - M286",
+      "uom": "PACK",
+      "quantity": "111",
+      "unit_price": "122.46",
+      "amount": "13593.06",
+      "tax_code": "GST18",
+      "tax_amount": "2446.75"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+From: ap@vnd-00009.example
+To: invoices@buyer.example
+Date: Mon, 15 Jun 2026 12:03:00 +0530
+Subject: Invoice INV-2026-0358
+Message-ID: <doc-2026-001011@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Halpar Engineering Spares Industries
+TRN:  TRN-449796472
+Plot 12, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0358
+Date:  10-Jun-2026
+Purchase Order:  PO-2026-000713
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Line | Item | Description | UOM | Quantity | Unit Price | Taxable Amt | Tax Code | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00198 | Valve actuator - grade J - M198 | EA | 21 | 2214.14 | 46496.94 | 18% | 8369.45 |
+
+Subtotal:  ₹46496.94
+GST:  ₹8369.45
+Invoice Total:  ₹54866.39
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Halpar Engineering Spares Industries

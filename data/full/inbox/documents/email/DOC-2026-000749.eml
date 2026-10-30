@@ -1,0 +1,39 @@
+From: ap@vnd-00135.example
+To: invoices@buyer.example
+Date: Mon, 04 May 2026 11:57:00 +0530
+Subject: Invoice INV-2026-0228
+Message-ID: <doc-2026-000749@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller : Lumhal Electricals & Co
+Tax Regn. No. : TRN-767316067
+Plot 41, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Invoice No : INV-2026-0228
+Bill Date : 29-04-2026
+P.O. # : PO/2026/000402
+Currency : INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   Order Line   Item        Item Description                UOM   Qty   Price     Taxable Amt   Tax Rate   GST Amt
+1      1            SKU-00111   LED panel - grade G - M111      EA    34    482.00    16388.00      GST18      2949.84
+2      2            SKU-00106   Junction box - grade F - M106   EA    6     216.34    1298.04       GST18      233.65
+3      3            SKU-00105   Cable tray - grade F - M105     EA    10    1567.89   15678.90      GST18      2822.20
+
+Subtotal : 33364.94
+Total Tax : 6005.69
+Total Amount Due : 39370.63
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Lumhal Electricals & Co

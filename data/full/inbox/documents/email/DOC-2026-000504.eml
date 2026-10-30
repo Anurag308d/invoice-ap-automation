@@ -1,0 +1,61 @@
+From: ap@vnd-00060.example
+To: invoices@buyer.example
+Date: Mon, 06 Apr 2026 11:33:00 +0530
+Subject: Invoice INV-2026-0293
+Message-ID: <doc-2026-000504@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller:  Zanhal Consulting & Co
+Tax Reg No:  TRN-506292474
+Plot 63, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice Number:  INV-2026-0293
+Inv Date:  02-Apr-2026
+Attn:  USR-0028
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Item:  -
+  Description:  Legal consultation
+  UOM:  HR
+  Quantity:  27.0
+  Price:  5,600.00
+  Taxable Amt:  1,51,200.00
+  Tax Rate:  Exempt
+  Tax Amt:  0.00
+Item 2
+  Item:  -
+  Description:  Legal consultation
+  UOM:  HR
+  Quantity:  56.0
+  Price:  3,300.00
+  Taxable Amt:  1,84,800.00
+  Tax Rate:  GST 18%
+  Tax Amt:  33,264.00
+Item 3
+  Item:  -
+  Description:  Audit advisory
+  UOM:  HR
+  Quantity:  45.0
+  Price:  6,000.00
+  Taxable Amt:  2,70,000.00
+  Tax Rate:  GST 18%
+  Tax Amt:  48,600.00
+
+Total Before Tax:  Rs. 6,06,000.00
+Total Tax:  Rs. 81,864.00
+Amount Payable:  Rs. 6,87,864.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Zanhal Consulting & Co

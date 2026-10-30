@@ -1,0 +1,29 @@
+Seller  Corwyn Infotech Enterprises
+Tax Registration Number  TRN-390373261
+Plot 94, Industrial Area, Chennai 600058
+
+TAX INVOICE
+
+Inv #: INV-2026-0014      Inv Date: 04/06/2026
+P.O. #: PO/2026/000638
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  SKU: SKU-00261
+  Item Description: Rack server - grade C - M261
+  UOM: EA
+  Quantity: 12
+  Unit Price: 6352.65
+  Value: 76231.80
+  Tax Code: GST 18%
+  Tax Amt: 13721.72
+
+Taxable Value  Rs. 76231.80
+GST  Rs. 13721.72
+Total Amount Due  Rs. 89953.52
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

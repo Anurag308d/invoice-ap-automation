@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rospar Safety Gear Pvt Ltd",
+  "taxId": "TRN-432562169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0395",
+  "invoiceDate": "2026-02-16T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000127",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 286932.00,
+  "tax": 51647.76,
+  "payable": 338579.76
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00344",
+   "text": "Fall-arrest harness - grade B - M344",
+   "unit": "EA",
+   "qty": 300,
+   "rate": 956.44,
+   "value": 286932.00,
+   "taxCode": "GST18",
+   "taxValue": 51647.76
+  }
+ ]
+}

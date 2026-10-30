@@ -1,0 +1,36 @@
+From: ap@vnd-00010.example
+To: invoices@buyer.example
+Date: Wed, 07 Oct 2026 14:39:00 +0530
+Subject: Invoice WYN/26-27/232
+Message-ID: <doc-2026-001911@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier : Wyntav Metals & Co
+Tax Registration Number : TRN-719496487
+Plot 13, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Inv # : WYN/26-27/232
+Bill Date : 05 Oct 2026
+PO Number : PO 2026-001201
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   SKU         Description                             UOM   Qty      Rate    Amount      Tax Rate   GST Amt
+1    1       SKU-00022   Stainless steel coil - grade C - M022   KG    711.75   78.83   56,107.25   GST 18%    10,099.31
+
+Total Before Tax : ₹56,107.25
+Total Tax : ₹10,099.31
+Total : ₹66,206.56
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Wyntav Metals & Co

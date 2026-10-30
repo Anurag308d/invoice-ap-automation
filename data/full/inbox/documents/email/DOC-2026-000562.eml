@@ -1,0 +1,53 @@
+From: requester.facilities.02@example.com
+To: invoices@buyer.example
+Date: Thu, 09 Apr 2026 14:10:00 +0530
+Subject: Invoice INV-2026-0057
+Message-ID: <doc-2026-000562@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Lumor Safety Gear LLP <ap@vnd-00107.example>
+Date: Thu, 09 Apr 2026 14:10:00 +0530
+Subject: Invoice INV-2026-0057
+To: requester.facilities.02@example.com
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Seller:  Lumor Safety Gear LLP
+Tax Reg No:  TRN-614502563
+Plot 13, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Tax Invoice No:  INV-2026-0057
+Date:  06 Apr 2026
+PO No:  PO/2026/000424
+Currency:  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line:  1
+  SKU:  SKU-00331
+  Description:  Nitrile gloves - grade A - M331
+  Unit:  EA
+  Qty:  156
+  Price:  477.01
+  Value:  74,413.56
+  GST Rate:  GST 18%
+  GST Amt:  13,394.44
+
+Net Amount:  74,413.56
+Total Tax:  13,394.44
+Total:  87,808.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Lumor Safety Gear LLP

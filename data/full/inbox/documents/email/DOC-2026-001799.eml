@@ -1,0 +1,44 @@
+From: ap@vnd-00299.example
+To: invoices@buyer.example
+Date: Thu, 24 Sep 2026 15:20:00 +0530
+Subject: Invoice SI00269
+Message-ID: <doc-2026-001799@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier:  Irkav Foods Industries
+Tax Registration Number:  TRN-825611613
+Plot 11, Industrial Area, Vadodara 390010
+
+Tax Invoice
+
+Invoice No:  SI00269
+Invoice Date:  September 23, 2026
+P.O. #:  PO 2026-001196
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line:  1
+  Item:  SKU-00391
+  Item Description:  Coffee powder - grade C - M391
+  UOM:  KG
+  Qty:  24.30
+  Rate:  92.68
+  Value:  2252.12
+  Tax Rate:  0%
+  Tax:  0.00
+
+Net Amount:  INR 2252.12
+Tax Amount:  INR 0.00
+Invoice Total:  INR 2252.12
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Irkav Foods Industries

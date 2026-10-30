@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0800",
+  "invoiceDate": "2026-09-29T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001252",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 77980.61,
+  "tax": 2470.12,
+  "payable": 80450.73
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00388",
+   "text": "Wheat flour - grade C - M388",
+   "unit": "KG",
+   "qty": 189.90,
+   "rate": 260.15,
+   "value": 49402.49,
+   "taxCode": "GST5",
+   "taxValue": 2470.12
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00391",
+   "text": "Coffee powder - grade C - M391",
+   "unit": "KG",
+   "qty": 83.98,
+   "rate": 103.22,
+   "value": 8668.42,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00375",
+   "text": "Coffee powder - grade A - M375",
+   "unit": "KG",
+   "qty": 205.70,
+   "rate": 96.79,
+   "value": 19909.70,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

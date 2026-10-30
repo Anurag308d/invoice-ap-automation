@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Rospar Safety Gear Pvt Ltd",
+  "taxId": "TRN-432562169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0392",
+  "invoiceDate": "2026-01-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000032",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 23355.00,
+  "tax": 1167.75,
+  "payable": 24522.75
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00338",
+   "text": "Safety shoes - grade B - M338",
+   "unit": "EA",
+   "qty": 50,
+   "rate": 467.10,
+   "value": 23355.00,
+   "taxCode": "GST5",
+   "taxValue": 1167.75
+  }
+ ]
+}

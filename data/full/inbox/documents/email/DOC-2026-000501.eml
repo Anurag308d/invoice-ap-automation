@@ -1,0 +1,44 @@
+From: ap@vnd-00292.example
+To: invoices@buyer.example
+Date: Mon, 06 Apr 2026 10:47:00 +0530
+Subject: Invoice 000133
+Message-ID: <doc-2026-000501@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier: Velcor Stationers LLP
+Tax Reg No: TRN-651670880
+Plot 4, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Inv #: 000133
+Bill Date: 2026-04-01
+Purchase Order: PO 2026-000370
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item Code: SKU-00316
+  Item Description: Whiteboard marker - grade E - M316
+  Unit: PACK
+  Quantity: 56
+  Price: 290.41
+  Taxable Amt: 16,262.96
+  GST Rate: Exempt
+  Tax Amt: 0.00
+
+Net Amount: ₹16,262.96
+Total Tax: ₹0.00
+Amount Payable: ₹16,262.96
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Velcor Stationers LLP

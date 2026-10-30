@@ -1,0 +1,45 @@
+From: ap@vnd-00038.example
+To: invoices@buyer.example
+Date: Thu, 06 Aug 2026 14:08:00 +0530
+Subject: Invoice INV-2026-0377
+Message-ID: <doc-2026-001436@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller: Zanur Metals Enterprises
+TRN: TRN-601705858
+Plot 41, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Invoice Number: INV-2026-0377
+Invoice Date: 03/08/2026
+Purchase Order: PO/2026/001042
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Ln: 1
+  Item: SKU-00025
+  Description: MS sheet - grade D - M025
+  UOM: KG
+  Qty: 165.02
+  Unit Price: 270.62
+  Value: 44,657.71
+  Tax Rate: GST 18%
+  Tax Amt: 8,038.39
+
+Taxable Value: 44,657.71
+GST: 8,038.39
+Grand Total: 52,696.10
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Zanur Metals Enterprises

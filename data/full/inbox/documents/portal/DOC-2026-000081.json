@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Davkav Electricals LLP",
+  "taxId": "TRN-301846241"
+ },
+ "header": {
+  "invoiceNo": "SI00269",
+  "invoiceDate": "2026-02-02T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000088",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 203549.40,
+  "tax": 36638.89,
+  "payable": 240188.29
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00105",
+   "text": "Cable tray - grade F - M105",
+   "unit": "EA",
+   "qty": 96,
+   "rate": 1668.30,
+   "value": 160156.80,
+   "taxCode": "GST18",
+   "taxValue": 28828.22
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00119",
+   "text": "LED panel - grade H - M119",
+   "unit": "EA",
+   "qty": 18,
+   "rate": 2410.70,
+   "value": 43392.60,
+   "taxCode": "GST18",
+   "taxValue": 7810.67
+  }
+ ]
+}

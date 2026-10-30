@@ -1,0 +1,34 @@
+{
+ "core_row_counts": {
+  "ground_truth/ground_truth.csv": 200,
+  "master/goods_receipt.csv": 180,
+  "master/purchase_order.csv": 150,
+  "master/purchase_order_line.csv": 220,
+  "master/vendor.csv": 30,
+  "source/invoice.csv": 200
+ },
+ "different_seed": {
+  "core_row_counts_equal": true,
+  "core_tables_differ": true,
+  "seed": 20261023,
+  "tree_sha256": "959266cda5ff0e6352b9f9d2fb6e4baa00ce3e1408c5043a9f418156d50daed0"
+ },
+ "matches_this_build": {
+  "identical": true,
+  "tree_sha256": "6207a33439c921829ac2328e6234e11185414d979c173d2312de1d915a43710d"
+ },
+ "pass": true,
+ "same_seed": {
+  "differing_files": [],
+  "files": 274,
+  "hash_seeds": [
+   "1",
+   "2"
+  ],
+  "identical_files": 274,
+  "row_counts_identical": true,
+  "tree_sha256": "6207a33439c921829ac2328e6234e11185414d979c173d2312de1d915a43710d"
+ },
+ "scale": "starter",
+ "seed": 20261022
+}

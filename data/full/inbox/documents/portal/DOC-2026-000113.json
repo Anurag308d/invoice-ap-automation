@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0248",
+  "invoiceDate": "2026-02-10T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000050",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 115997.60,
+  "tax": 20879.57,
+  "payable": 136877.17
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00195",
+   "text": "Hydraulic seal - grade J - M195",
+   "unit": "EA",
+   "qty": 122,
+   "rate": 950.80,
+   "value": 115997.60,
+   "taxCode": "GST18",
+   "taxValue": 20879.57
+  }
+ ]
+}

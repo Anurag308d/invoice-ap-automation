@@ -1,0 +1,44 @@
+From: ap@vnd-00270.example
+To: invoices@buyer.example
+Date: Thu, 05 Mar 2026 10:38:00 +0530
+Subject: Invoice MER/25-26/358
+Message-ID: <doc-2026-000246@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor: Merjor Engineering Spares & Co
+Tax Reg No: TRN-906966165
+Plot 79, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: MER/25-26/358
+Invoice Date: 12 Feb 2026
+PO No: PO/2026/000228
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line: 1
+  Item: SKU-00166
+  Description: Valve actuator - grade F - M166
+  Unit: EA
+  Qty: 5
+  Rate: 6,766.16
+  Amount: 33,830.80
+  Tax Code: GST18
+  Tax Amt: 6,089.54
+
+Taxable Value: ₹33,830.80
+GST: ₹6,089.54
+Grand Total: ₹39,920.34
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merjor Engineering Spares & Co

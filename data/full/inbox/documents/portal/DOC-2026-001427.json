@@ -1,0 +1,55 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Artav Logistics Industries",
+    "tax_registration_id": "TRN-959368625"
+  },
+  "invoice": {
+    "number": "ART/26-27/328",
+    "date": "2026-08-05",
+    "po_number": null,
+    "attention": "USR-0026",
+    "currency": "INR",
+    "net_total": "230400.00",
+    "tax_total": "41472.00",
+    "grand_total": "271872.00"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": null,
+      "sku": null,
+      "description": "Warehousing charges",
+      "uom": "JOB",
+      "quantity": "1",
+      "unit_price": "37200.00",
+      "amount": "37200.00",
+      "tax_code": "GST18",
+      "tax_amount": "6696.00"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": null,
+      "sku": null,
+      "description": "Warehousing charges",
+      "uom": "JOB",
+      "quantity": "3",
+      "unit_price": "18800.00",
+      "amount": "56400.00",
+      "tax_code": "GST18",
+      "tax_amount": "10152.00"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": null,
+      "sku": null,
+      "description": "Warehousing charges",
+      "uom": "JOB",
+      "quantity": "4",
+      "unit_price": "34200.00",
+      "amount": "136800.00",
+      "tax_code": "GST18",
+      "tax_amount": "24624.00"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+From: ap@vnd-00270.example
+To: invoices@buyer.example
+Date: Wed, 03 Jun 2026 14:09:00 +0530
+Subject: Invoice MER/26-27/358
+Message-ID: <doc-2026-000944@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Vendor: Merjor Engineering Spares & Co
+Tax Reg No: TRN-906966165
+Plot 79, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: MER/26-27/358
+Invoice Date: 01 Jun 2026
+PO No: PO/2026/000685
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line: 1
+  Item: SKU-00164
+  Description: Gear coupling - grade F - M164
+  Unit: EA
+  Qty: 2
+  Rate: 3,015.31
+  Amount: 6,030.62
+  Tax Code: GST18
+  Tax Amt: 1,085.51
+
+Taxable Value: ₹6,030.62
+GST: ₹1,085.51
+Grand Total: ₹7,116.13
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Merjor Engineering Spares & Co

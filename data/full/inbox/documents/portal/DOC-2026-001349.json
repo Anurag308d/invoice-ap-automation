@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0689",
+  "invoiceDate": "2026-07-24T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000926",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 7419.22,
+  "tax": 370.96,
+  "payable": 7790.18
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00397",
+   "text": "Sugar - grade D - M397",
+   "unit": "KG",
+   "qty": 49.73,
+   "rate": 149.19,
+   "value": 7419.22,
+   "taxCode": "GST5",
+   "taxValue": 370.96
+  }
+ ]
+}

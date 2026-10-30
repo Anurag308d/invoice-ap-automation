@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Ardav Packaging Industries",
+  "taxId": "TRN-687502822"
+ },
+ "header": {
+  "invoiceNo": "ARD/26-27/054",
+  "invoiceDate": "2026-08-31T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001183",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 109530.36,
+  "tax": 10059.62,
+  "payable": 119589.98
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00210",
+   "text": "Stretch film roll - grade B - M210",
+   "unit": "BOX",
+   "qty": 657,
+   "rate": 53.66,
+   "value": 35254.62,
+   "taxCode": "GST18",
+   "taxValue": 6345.83
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00202",
+   "text": "Stretch film roll - grade A - M202",
+   "unit": "BOX",
+   "qty": 693,
+   "rate": 107.18,
+   "value": 74275.74,
+   "taxCode": "GST5",
+   "taxValue": 3713.79
+  }
+ ]
+}

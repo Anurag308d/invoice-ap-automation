@@ -1,0 +1,36 @@
+From: ap@vnd-00097.example
+To: invoices@buyer.example
+Date: Mon, 13 Apr 2026 17:40:00 +0530
+Subject: Invoice INV-2026-0225
+Message-ID: <doc-2026-000591@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier : Zanir Electricals LLP
+Tax Regn. No. : TRN-377650548
+Plot 3, Industrial Area, Hosur 635126
+
+Tax Invoice
+
+Bill No : INV-2026-0225
+Date : 2026-04-06
+Your Order Ref : PO/2026/000389
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+S.No   Order Line   SKU         Item Description              UOM   Qty   Rate       Value         Tax Code   GST Amt
+1      1            SKU-00110   MCB switch - grade G - M110   EA    64    1,618.67   1,03,594.88   GST18      18,647.08
+
+Net Amount : ₹1,03,594.88
+Tax : ₹18,647.08
+Amount Payable : ₹1,22,241.96
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Zanir Electricals LLP

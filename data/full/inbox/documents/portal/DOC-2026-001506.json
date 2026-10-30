@@ -1,0 +1,115 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Ennov Engineering Spares Pvt Ltd",
+    "tax_registration_id": "TRN-779290292"
+  },
+  "invoice": {
+    "number": "ENN/26-27/304",
+    "date": "2026-08-17",
+    "po_number": "PO-2026-000923",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "173084.83",
+    "tax_total": "31155.29",
+    "grand_total": "204240.12"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00127",
+      "description": "Pressure gauge - grade A - M127",
+      "uom": "EA",
+      "quantity": "5",
+      "unit_price": "13115.75",
+      "amount": "65578.75",
+      "tax_code": "GST18",
+      "tax_amount": "11804.18"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00191",
+      "description": "Pressure gauge - grade I - M191",
+      "uom": "EA",
+      "quantity": "10",
+      "unit_price": "2411.34",
+      "amount": "24113.40",
+      "tax_code": "GST18",
+      "tax_amount": "4340.41"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00140",
+      "description": "Gear coupling - grade C - M140",
+      "uom": "EA",
+      "quantity": "13",
+      "unit_price": "1498.12",
+      "amount": "19475.56",
+      "tax_code": "GST18",
+      "tax_amount": "3505.60"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00145",
+      "description": "Ball bearing - grade D - M145",
+      "uom": "EA",
+      "quantity": "4",
+      "unit_price": "1290.94",
+      "amount": "5163.76",
+      "tax_code": "GST18",
+      "tax_amount": "929.48"
+    },
+    {
+      "line_no": 5,
+      "po_line_no": "5",
+      "sku": "SKU-00169",
+      "description": "Ball bearing - grade G - M169",
+      "uom": "EA",
+      "quantity": "11",
+      "unit_price": "333.14",
+      "amount": "3664.54",
+      "tax_code": "GST18",
+      "tax_amount": "659.62"
+    },
+    {
+      "line_no": 6,
+      "po_line_no": "6",
+      "sku": "SKU-00139",
+      "description": "Hydraulic seal - grade C - M139",
+      "uom": "EA",
+      "quantity": "8",
+      "unit_price": "683.72",
+      "amount": "5469.76",
+      "tax_code": "GST18",
+      "tax_amount": "984.56"
+    },
+    {
+      "line_no": 7,
+      "po_line_no": "7",
+      "sku": "SKU-00190",
+      "description": "Valve actuator - grade I - M190",
+      "uom": "EA",
+      "quantity": "7",
+      "unit_price": "6072.56",
+      "amount": "42507.92",
+      "tax_code": "GST18",
+      "tax_amount": "7651.43"
+    },
+    {
+      "line_no": 8,
+      "po_line_no": "8",
+      "sku": "SKU-00125",
+      "description": "Pump impeller - grade A - M125",
+      "uom": "EA",
+      "quantity": "6",
+      "unit_price": "1185.19",
+      "amount": "7111.14",
+      "tax_code": "GST18",
+      "tax_amount": "1280.01"
+    }
+  ]
+}

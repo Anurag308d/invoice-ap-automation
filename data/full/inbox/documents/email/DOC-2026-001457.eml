@@ -1,0 +1,44 @@
+From: ap@vnd-00292.example
+To: invoices@buyer.example
+Date: Mon, 10 Aug 2026 14:36:00 +0530
+Subject: Invoice 000141
+Message-ID: <doc-2026-001457@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Supplier: Velcor Stationers LLP
+Tax Reg No: TRN-651670880
+Plot 4, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Inv #: 000141
+Bill Date: 2026-08-05
+Purchase Order: PO 2026-001085
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item Code: SKU-00295
+  Item Description: Desk organiser - grade B - M295
+  Unit: PACK
+  Quantity: 25
+  Price: 320.20
+  Taxable Amt: 8,005.00
+  GST Rate: GST 5%
+  Tax Amt: 400.25
+
+Net Amount: ₹8,005.00
+Total Tax: ₹400.25
+Amount Payable: ₹8,405.25
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Velcor Stationers LLP

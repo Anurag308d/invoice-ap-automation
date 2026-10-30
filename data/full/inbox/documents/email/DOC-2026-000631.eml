@@ -1,0 +1,37 @@
+From: ap@vnd-00275.example
+To: invoices@buyer.example
+Date: Thu, 16 Apr 2026 14:05:00 +0530
+Subject: Invoice FAL/26-27/035
+Message-ID: <doc-2026-000631@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Falgar Infotech & Co
+Tax Registration Number:  TRN-921171440
+Plot 84, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Invoice No:  FAL/26-27/035
+Invoice Date:  April 13, 2026
+PO No:  PO-2026-000421
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| S.No | PO Line | Item | Particulars | Unit | Qty | Rate | Amount | Tax Code | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00241 | Laptop - grade A - M241 | EA | 10 | 31,202.35 | 312,023.50 | GST 18% | 56,164.23 |
+
+Net Amount:  Rs. 312,023.50
+GST:  Rs. 56,164.23
+Invoice Total:  Rs. 368,187.73
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Falgar Infotech & Co

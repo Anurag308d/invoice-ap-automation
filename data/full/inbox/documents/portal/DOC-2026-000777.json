@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0551",
+  "invoiceDate": "2026-05-05T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000593",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 6153.11,
+  "tax": 307.66,
+  "payable": 6460.77
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00387",
+   "text": "Sunflower oil - grade C - M387",
+   "unit": "KG",
+   "qty": 77.73,
+   "rate": 79.16,
+   "value": 6153.11,
+   "taxCode": "GST5",
+   "taxValue": 307.66
+  }
+ ]
+}

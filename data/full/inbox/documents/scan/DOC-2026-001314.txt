@@ -1,0 +1,29 @@
+Seller  Corwyn Infotech Enterprises
+Tax Registration Number  TRN-390373261
+Plot 94, Industrial Area, Chennai 600058
+
+TAX INVOICE
+
+Inv #: INV-2026-0016      Inv Date: 20/07/2026
+P.O. #: PO/2026/000872
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  SKU: SKU-00256
+  Item Description: Docking station - grade B - M256
+  UOM: EA
+  Quantity: 25
+  Unit Price: 71880.02
+  Value: 1797000.50
+  Tax Code: GST 18%
+  Tax Amt: 323460.09
+
+Taxable Value  Rs. 1797000.50
+GST  Rs. 323460.09
+Total Amount Due  Rs. 2120460.59
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

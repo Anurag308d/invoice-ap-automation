@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/364",
+    "date": "2026-04-27",
+    "po_number": "PO-2026-000490",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "103686.38",
+    "tax_total": "18663.55",
+    "grand_total": "122349.93"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00027",
+      "description": "Copper rod - grade D - M027",
+      "uom": "KG",
+      "quantity": "69.19",
+      "unit_price": "87.14",
+      "amount": "6029.22",
+      "tax_code": "GST18",
+      "tax_amount": "1085.26"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00039",
+      "description": "Brass rod - grade E - M039",
+      "uom": "KG",
+      "quantity": "515.45",
+      "unit_price": "189.46",
+      "amount": "97657.16",
+      "tax_code": "GST18",
+      "tax_amount": "17578.29"
+    }
+  ]
+}

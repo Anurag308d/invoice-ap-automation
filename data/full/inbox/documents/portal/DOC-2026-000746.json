@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Enor Engineering Spares Industries",
+  "taxId": "TRN-808063745"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0254",
+  "invoiceDate": "2026-05-04T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000557",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 16275.38,
+  "tax": 2929.56,
+  "payable": 19204.94
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00185",
+   "text": "Ball bearing - grade I - M185",
+   "unit": "EA",
+   "qty": 3,
+   "rate": 1624.34,
+   "value": 4873.02,
+   "taxCode": "GST18",
+   "taxValue": 877.14
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00190",
+   "text": "Valve actuator - grade I - M190",
+   "unit": "EA",
+   "qty": 2,
+   "rate": 5701.18,
+   "value": 11402.36,
+   "taxCode": "GST18",
+   "taxValue": 2052.42
+  }
+ ]
+}

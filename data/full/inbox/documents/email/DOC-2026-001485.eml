@@ -1,0 +1,64 @@
+From: ap@vnd-00218.example
+To: invoices@buyer.example
+Date: Thu, 13 Aug 2026 12:35:00 +0530
+Subject: Invoice urg 26-27/283
+Message-ID: <doc-2026-001485@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier: Urgar Electricals Enterprises
+Tax Registration Number: TRN-781434012
+Plot 27, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Bill No: urg 26-27/283
+Inv Date: 03 Aug 2026
+P.O. #: PO-2026-001005
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line: 1
+  Item Code: SKU-00106
+  Description: Junction box - grade F - M106
+  Unit: EA
+  Quantity: 72
+  Rate: 228.30
+  Taxable Amt: 16,437.60
+  Tax Rate: 18%
+  Tax: 2,958.77
+Item 2
+  PO Line: 2
+  Item Code: SKU-00094
+  Description: MCB switch - grade E - M094
+  Unit: EA
+  Quantity: 179
+  Rate: 2,094.02
+  Taxable Amt: 3,74,829.58
+  Tax Rate: 18%
+  Tax: 67,469.32
+Item 3
+  PO Line: 3
+  Item Code: SKU-00067
+  Description: Relay module - grade A - M067
+  Unit: EA
+  Quantity: 169
+  Rate: 364.95
+  Taxable Amt: 61,676.55
+  Tax Rate: 18%
+  Tax: 11,101.78
+
+Net Amount: ₹4,52,943.73
+GST: ₹81,529.87
+Amount Payable: ₹5,34,473.60
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Urgar Electricals Enterprises

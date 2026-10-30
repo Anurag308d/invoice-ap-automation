@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0776",
+  "invoiceDate": "2026-09-14T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001229",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 38772.27,
+  "tax": 482.24,
+  "payable": 39254.51
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00377",
+   "text": "Basmati rice - grade B - M377",
+   "unit": "KG",
+   "qty": 350.89,
+   "rate": 83.01,
+   "value": 29127.38,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00373",
+   "text": "Sugar - grade A - M373",
+   "unit": "KG",
+   "qty": 128.65,
+   "rate": 74.97,
+   "value": 9644.89,
+   "taxCode": "GST5",
+   "taxValue": 482.24
+  }
+ ]
+}

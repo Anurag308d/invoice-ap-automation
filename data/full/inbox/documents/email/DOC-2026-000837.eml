@@ -1,0 +1,44 @@
+From: ap@vnd-00159.example
+To: invoices@buyer.example
+Date: Fri, 15 May 2026 11:11:00 +0530
+Subject: Invoice INV-2026-0186
+Message-ID: <doc-2026-000837@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Supplier : Roskav Stationers Industries
+Tax Reg No : TRN-715603868
+Plot 65, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Bill No : INV-2026-0186
+Inv Date : 2026-05-04
+PO Number : PO 2026-000559
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line : 1
+  Item : SKU-00313
+  Item Description : Copier paper - grade E - M313
+  UOM : PACK
+  Quantity : 65
+  Unit Price : 129.92
+  Taxable Amt : 8444.80
+  Tax Rate : Exempt
+  Tax : 0.00
+
+Total Before Tax : INR 8444.80
+Tax : INR 0.00
+Total : INR 8444.80
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Roskav Stationers Industries

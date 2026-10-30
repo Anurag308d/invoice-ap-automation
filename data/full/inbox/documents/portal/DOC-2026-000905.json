@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Arzan Safety Gear Industries",
+  "taxId": "TRN-515169999"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0242",
+  "invoiceDate": "2026-05-25T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000660",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 6403.20,
+  "tax": 320.16,
+  "payable": 6723.36
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00350",
+   "text": "Hi-vis vest - grade C - M350",
+   "unit": "EA",
+   "qty": 69,
+   "rate": 92.80,
+   "value": 6403.20,
+   "taxCode": "GST5",
+   "taxValue": 320.16
+  }
+ ]
+}

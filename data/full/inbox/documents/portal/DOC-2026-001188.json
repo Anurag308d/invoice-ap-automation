@@ -1,0 +1,43 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Quinvel Metals & Co",
+    "tax_registration_id": "TRN-316250976"
+  },
+  "invoice": {
+    "number": "QUI/26-27/371",
+    "date": "2026-07-01",
+    "po_number": "PO-2026-000848",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "576995.76",
+    "tax_total": "103859.23",
+    "grand_total": "680854.99"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00025",
+      "description": "MS sheet - grade D - M025",
+      "uom": "KG",
+      "quantity": "1929.38",
+      "unit_price": "251.61",
+      "amount": "485451.30",
+      "tax_code": "GST18",
+      "tax_amount": "87381.23"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00030",
+      "description": "Stainless steel coil - grade D - M030",
+      "uom": "KG",
+      "quantity": "798.26",
+      "unit_price": "114.68",
+      "amount": "91544.46",
+      "tax_code": "GST18",
+      "tax_amount": "16478.00"
+    }
+  ]
+}

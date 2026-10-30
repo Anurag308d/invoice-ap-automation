@@ -1,0 +1,45 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Halfal Foods Pvt Ltd",
+  "taxId": "TRN-920769419"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0707",
+  "invoiceDate": "2026-08-03T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001001",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 67100.85,
+  "tax": 1279.06,
+  "payable": 68379.91
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00381",
+   "text": "Sugar - grade B - M381",
+   "unit": "KG",
+   "qty": 190.11,
+   "rate": 134.56,
+   "value": 25581.20,
+   "taxCode": "GST5",
+   "taxValue": 1279.06
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00394",
+   "text": "Toor dal - grade D - M394",
+   "unit": "KG",
+   "qty": 260.54,
+   "rate": 159.36,
+   "value": 41519.65,
+   "taxCode": "GST0",
+   "taxValue": 0.00
+  }
+ ]
+}

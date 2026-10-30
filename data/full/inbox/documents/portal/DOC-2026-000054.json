@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Tavfal Engineering Spares Industries",
+  "taxId": "TRN-741779684"
+ },
+ "header": {
+  "invoiceNo": "000003",
+  "invoiceDate": "2026-01-27T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000034",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 11195.70,
+  "tax": 2015.23,
+  "payable": 13210.93
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00138",
+   "text": "V-belt - grade C - M138",
+   "unit": "EA",
+   "qty": 15,
+   "rate": 746.38,
+   "value": 11195.70,
+   "taxCode": "GST18",
+   "taxValue": 2015.23
+  }
+ ]
+}

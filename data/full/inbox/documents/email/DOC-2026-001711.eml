@@ -1,0 +1,45 @@
+From: requester.it.02@example.com
+To: invoices@buyer.example
+Date: Tue, 15 Sep 2026 10:08:00 +0530
+Subject: Invoice INV-2026-0315
+Message-ID: <doc-2026-001711@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+FYI - forwarding the invoice below for processing.
+
+---------- Forwarded message ---------
+From: Falquin Cloud Services Industries <ap@vnd-00059.example>
+Date: Tue, 15 Sep 2026 10:08:00 +0530
+Subject: Invoice INV-2026-0315
+To: requester.it.02@example.com
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Falquin Cloud Services Industries
+Tax Reg No : TRN-294831445
+Plot 62, Industrial Area, Ahmedabad 382445
+
+Tax Invoice
+
+Bill No : INV-2026-0315
+Invoice Date : 01-09-2026
+Requested By : USR-0022
+Currency : INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   Item Code   Item Description     Unit    Qty   Rate        Value       Tax Code   GST Amt
+1   -           Cloud subscription   MONTH   1     75,000.00   75,000.00   18%        13,500.00
+
+Total Before Tax : 75,000.00
+GST : 13,500.00
+Invoice Total : 88,500.00
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Falquin Cloud Services Industries

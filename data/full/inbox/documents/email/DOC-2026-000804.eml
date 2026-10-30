@@ -1,0 +1,38 @@
+From: ap@vnd-00181.example
+To: invoices@buyer.example
+Date: Mon, 11 May 2026 17:17:00 +0530
+Subject: Invoice GAR/26-27/013
+Message-ID: <doc-2026-000804@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Supplier:  Garpar Electricals Pvt Ltd
+Tax Registration Number:  TRN-648289964
+Plot 87, Industrial Area, Indore 452015
+
+Tax Invoice
+
+Inv #:  GAR/26-27/013
+Bill Date:  May 08, 2026
+P.O. #:  PO/2026/000572
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   SKU         Description                     Unit   Quantity   Rate       Value        Tax Rate   Tax Amt
+1    1       SKU-00075   Relay module - grade B - M075   EA     180        3,734.36   672,184.80   18%        120,993.26
+2    2       SKU-00067   Relay module - grade A - M067   EA     146        336.64     49,149.44    18%        8,846.90
+3    3       SKU-00112   Contactor - grade G - M112      EA     86         508.22     43,706.92    18%        7,867.25
+
+Taxable Value:  Rs. 765,041.16
+Total Tax:  Rs. 137,707.41
+Total Amount Due:  Rs. 902,748.57
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Garpar Electricals Pvt Ltd

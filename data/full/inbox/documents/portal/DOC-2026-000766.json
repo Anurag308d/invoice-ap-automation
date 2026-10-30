@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/346",
+    "date": "2026-05-04",
+    "po_number": "PO-2026-000576",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "3811.92",
+    "tax_total": "686.15",
+    "grand_total": "4498.07"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00304",
+      "description": "Printer ribbon - grade C - M304",
+      "uom": "PACK",
+      "quantity": "21",
+      "unit_price": "181.52",
+      "amount": "3811.92",
+      "tax_code": "GST18",
+      "tax_amount": "686.15"
+    }
+  ]
+}

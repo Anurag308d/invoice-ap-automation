@@ -1,0 +1,57 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Selwyn Metals Enterprises",
+  "taxId": "TRN-975298949"
+ },
+ "header": {
+  "invoiceNo": "SI00113",
+  "invoiceDate": "2026-07-17T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000927",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 922111.39,
+  "tax": 165980.04,
+  "payable": 1088091.43
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00004",
+   "text": "PVC resin - grade A - M004",
+   "unit": "KG",
+   "qty": 488.78,
+   "rate": 127.87,
+   "value": 62500.30,
+   "taxCode": "GST18",
+   "taxValue": 11250.05
+  },
+  {
+   "seq": 2,
+   "orderLine": 2,
+   "itemCode": "SKU-00055",
+   "text": "Brass rod - grade G - M055",
+   "unit": "KG",
+   "qty": 1242.00,
+   "rate": 520.56,
+   "value": 646535.52,
+   "taxCode": "GST18",
+   "taxValue": 116376.39
+  },
+  {
+   "seq": 3,
+   "orderLine": 3,
+   "itemCode": "SKU-00030",
+   "text": "Stainless steel coil - grade D - M030",
+   "unit": "KG",
+   "qty": 1953.03,
+   "rate": 109.10,
+   "value": 213075.57,
+   "taxCode": "GST18",
+   "taxValue": 38353.60
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+From: ap@vnd-00043.example
+To: invoices@buyer.example
+Date: Mon, 17 Aug 2026 16:24:00 +0530
+Subject: Invoice LUM/26-27/206
+Message-ID: <doc-2026-001497@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Lumur Metals Enterprises
+Tax Reg No : TRN-745604698
+Plot 46, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Invoice No : LUM/26-27/206
+Dated : 13.08.2026
+Your Order Ref : PO-2026-001028
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| # | Order Line | Item | Description | Unit | Quantity | Price | Taxable Amt | GST Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00029 | HDPE granules - grade D - M029 | KG | 785.56 | 102.29 | 80,354.93 | 18% | 14,463.89 |
+
+Subtotal : Rs. 80,354.93
+Total Tax : Rs. 14,463.89
+Total Amount Due : Rs. 94,818.82
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Lumur Metals Enterprises

@@ -1,0 +1,36 @@
+From: ap@vnd-00273.example
+To: invoices@buyer.example
+Date: Mon, 01 Jun 2026 12:24:00 +0530
+Subject: Invoice 000242
+Message-ID: <doc-2026-000921@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Vendor : Daven Electricals Enterprises
+Tax Registration Number : TRN-417252507
+Plot 82, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Invoice No : 000242
+Bill Date : 29-May-2026
+PO Number : PO 2026-000651
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Line   PO Line   Item        Item Description                  Unit   Quantity   Price    Taxable Amt   Tax Rate   Tax
+1      1         SKU-00108   Terminal block - grade F - M108   EA     70         367.10   25,697.00     18%        4,625.46
+
+Total Before Tax : ₹25,697.00
+Total Tax : ₹4,625.46
+Total : ₹30,322.46
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Daven Electricals Enterprises

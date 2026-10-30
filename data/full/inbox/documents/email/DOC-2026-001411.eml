@@ -1,0 +1,44 @@
+From: ap@vnd-00095.example
+To: invoices@buyer.example
+Date: Tue, 04 Aug 2026 10:44:00 +0530
+Subject: Invoice ENP/26-27/051
+Message-ID: <doc-2026-001411@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Accounts Payable,
+
+Please find our invoice details below.
+
+Seller: Enpar Packaging & Co
+Tax Reg No: TRN-856219942
+Plot 98, Industrial Area, Nagpur 440016
+
+Tax Invoice
+
+Inv #: ENP/26-27/051
+Date: August 03, 2026
+PO Number: PO-2026-001034
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| Line | PO Line | SKU | Description | Unit | Quantity | Unit Price | Taxable Amt | Tax Code | Tax Amt |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00201 | Corrugated box - grade A - M201 | BOX | 195 | 42.65 | 8,316.75 | GST 18% | 1,497.02 |
+| 2 | 2 | SKU-00213 | Carton sealer tape - grade B - M213 | BOX | 1121 | 62.22 | 69,748.62 | GST 18% | 12,554.75 |
+| 3 | 3 | SKU-00218 | Stretch film roll - grade C - M218 | BOX | 1758 | 83.66 | 147,074.28 | GST 18% | 26,473.37 |
+| 4 | 4 | SKU-00231 | Strapping roll - grade D - M231 | BOX | 703 | 192.24 | 135,144.72 | GST 18% | 24,326.05 |
+| 5 | 5 | SKU-00225 | Corrugated box - grade D - M225 | BOX | 1126 | 53.27 | 59,982.02 | GST 5% | 2,999.10 |
+| 6 | 6 | SKU-00207 | Strapping roll - grade A - M207 | BOX | 328 | 104.54 | 34,289.12 | GST 5% | 1,714.46 |
+| 7 | 7 | SKU-00205 | Carton sealer tape - grade A - M205 | BOX | 1712 | 23.49 | 40,214.88 | GST 18% | 7,238.68 |
+
+Net Amount: 494,770.39
+Tax: 76,803.43
+Total: 571,573.82
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enpar Packaging & Co

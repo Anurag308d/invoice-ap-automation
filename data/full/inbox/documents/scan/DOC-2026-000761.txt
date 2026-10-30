@@ -1,0 +1,51 @@
+Seller  Quinwyn Engineering Spares Pvt Ltd
+Tax Registration Number  TRN-843564065
+Plot 75, Industrial Area, Hosur 635126
+
+TAX INVOICE
+
+Inv #  QUI/26-27/034
+Dated  2026-04-29
+Your Order Ref  PO-2026-000407
+Currency  INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  PO Line: 1
+  Item Code: SKU-00139
+  Particulars: Hydraulic seal - grade C - M139
+  Unit: EA
+  Quantity: 4
+  Price: 672.28
+  Value: 2,689.12
+  GST Rate: GST18
+  GST Amt: 484.04
+Item 2
+  PO Line: 2
+  Item Code: SKU-00131
+  Particulars: Hydraulic seal - grade B - M131
+  Unit: EA
+  Quantity: 13
+  Price: 866.19
+  Value: 11,260.47
+  GST Rate: GST18
+  GST Amt: 2,026.88
+Item 3
+  PO Line: 3
+  Item Code: SKU-00141
+  Particulars: Pump impeller - grade C - M141
+  Unit: EA
+  Quantity: 14
+  Price: 1,062.11
+  Value: 14,869.54
+  GST Rate: GST18
+  GST Amt: 2,676.52
+
+Net Amount  28,819.13
+Tax  5,187.44
+Total Amount Due  34,006.57
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

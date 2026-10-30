@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Parkav Electricals Industries",
+    "tax_registration_id": "TRN-961826361"
+  },
+  "invoice": {
+    "number": "INV-2026-0358",
+    "date": "2026-02-19",
+    "po_number": "PO-2026-000015",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "38428.26",
+    "tax_total": "6917.09",
+    "grand_total": "45345.35"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00017",
+      "description": "Terminal block - grade A - M017",
+      "uom": "EA",
+      "quantity": "78",
+      "unit_price": "492.67",
+      "amount": "38428.26",
+      "tax_code": "GST18",
+      "tax_amount": "6917.09"
+    }
+  ]
+}

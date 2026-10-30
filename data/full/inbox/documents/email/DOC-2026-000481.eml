@@ -1,0 +1,64 @@
+From: ap@vnd-00005.example
+To: invoices@buyer.example
+Date: Thu, 02 Apr 2026 10:25:00 +0530
+Subject: Invoice LUM/25-26/085
+Message-ID: <doc-2026-000481@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello AP team,
+
+Please find our invoice details below.
+
+Lumtav Safety Gear & Co
+Tax Regn. No.: TRN-720142472
+Plot 8, Industrial Area, Faridabad 121003
+
+Tax Invoice
+
+Inv #: LUM/25-26/085
+Invoice Date: 31/03/2026
+P.O. #: PO-2026-000394
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Item 1
+  Order Line: 1
+  Item: SKU-00351
+  Item Description: Respirator mask - grade C - M351
+  Unit: EA
+  Qty: 73
+  Rate: 560.97
+  Value: 40,950.81
+  Tax Rate: 18%
+  Tax Amt: 7,371.15
+Item 2
+  Order Line: 2
+  Item: SKU-00341
+  Item Description: Safety goggles - grade B - M341
+  Unit: EA
+  Qty: 133
+  Rate: 684.34
+  Value: 91,017.22
+  Tax Rate: 5%
+  Tax Amt: 4,550.86
+Item 3
+  Order Line: 3
+  Item: SKU-00344
+  Item Description: Fall-arrest harness - grade B - M344
+  Unit: EA
+  Qty: 131
+  Rate: 984.73
+  Value: 128,999.63
+  Tax Rate: 18%
+  Tax Amt: 23,219.93
+
+Net Amount: ₹260,967.66
+Total Tax: ₹35,141.94
+Grand Total: ₹296,109.60
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Lumtav Safety Gear & Co

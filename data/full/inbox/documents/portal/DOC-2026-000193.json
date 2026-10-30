@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Velquin Engineering Spares LLP",
+  "taxId": "TRN-843651370"
+ },
+ "header": {
+  "invoiceNo": "VEL/25-26/030",
+  "invoiceDate": "2026-02-24T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000160",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 44464.77,
+  "tax": 8243.77,
+  "payable": 52708.54
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00198",
+   "text": "Valve actuator - grade J - M198",
+   "unit": "EA",
+   "qty": 21,
+   "rate": 2117.37,
+   "value": 44464.77,
+   "taxCode": "GST18",
+   "taxValue": 8243.77
+  }
+ ]
+}

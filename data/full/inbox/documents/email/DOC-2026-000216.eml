@@ -1,0 +1,37 @@
+From: ap@vnd-00151.example
+To: invoices@buyer.example
+Date: Fri, 27 Feb 2026 15:46:00 +0530
+Subject: Invoice BEL/25-26/032
+Message-ID: <doc-2026-000216@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Seller: Belcor Engineering Spares Pvt Ltd
+Tax Regn. No.: TRN-181774160
+Plot 57, Industrial Area, Lucknow 226010
+
+Tax Invoice
+
+Bill No: BEL/25-26/032
+Date: 2026-02-24
+PO Number: PO-2026-000098
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+Sr   PO Ln   Item Code   Item Description                  UOM   Qty   Rate     Taxable Amt   Tax Code   GST Amt
+1    1       SKU-00123   Hydraulic seal - grade A - M123   EA    13    537.54   6988.02       GST 18%    1257.84
+
+Subtotal: 6988.02
+Tax: 1257.84
+Invoice Total: 8245.86
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Belcor Engineering Spares Pvt Ltd

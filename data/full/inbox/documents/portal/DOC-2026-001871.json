@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Faltav Metals Pvt Ltd",
+  "taxId": "TRN-844321990"
+ },
+ "header": {
+  "invoiceNo": "000089",
+  "invoiceDate": "2026-10-05T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-001282",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 52343.84,
+  "tax": 9421.89,
+  "payable": 61765.73
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00048",
+   "text": "Zinc ingot - grade F - M048",
+   "unit": "KG",
+   "qty": 266.11,
+   "rate": 196.70,
+   "value": 52343.84,
+   "taxCode": "GST18",
+   "taxValue": 9421.89
+  }
+ ]
+}

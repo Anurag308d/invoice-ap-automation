@@ -1,0 +1,37 @@
+From: ap@vnd-00168.example
+To: invoices@buyer.example
+Date: Fri, 24 Jul 2026 15:42:00 +0530
+Subject: Invoice ENH/26-27/371
+Message-ID: <doc-2026-001327@mail.example>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Dear Sir/Madam,
+
+Please find our invoice details below.
+
+Vendor : Enhal Engineering Spares Enterprises
+Tax Registration Number : TRN-570899680
+Plot 74, Industrial Area, Coimbatore 641021
+
+Tax Invoice
+
+Invoice Number : ENH/26-27/371
+Bill Date : July 22, 2026
+PO No : PO-2026-000879
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+| # | Order Line | Item Code | Particulars | UOM | Qty | Price | Taxable Amt | Tax Rate | Tax |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1 | SKU-00142 | Valve actuator - grade C - M142 | EA | 5 | 1,692.13 | 8,460.65 | 18% | 1,522.92 |
+
+Total Before Tax : ₹8,460.65
+Total Tax : ₹1,522.92
+Invoice Total : ₹9,983.57
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Regards,
+Accounts Team
+Enhal Engineering Spares Enterprises

@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urnov Engineering Spares Enterprises",
+    "tax_registration_id": "TRN-164788210"
+  },
+  "invoice": {
+    "number": "URN/25-26/223",
+    "date": "2026-03-13",
+    "po_number": "PO-2026-000404",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "82107.48",
+    "tax_total": "14779.35",
+    "grand_total": "96886.83"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00160",
+      "description": "Chain sprocket - grade E - M160",
+      "uom": "EA",
+      "quantity": "12",
+      "unit_price": "6842.29",
+      "amount": "82107.48",
+      "tax_code": "GST18",
+      "tax_amount": "14779.35"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Garhal Electricals & Co",
+  "taxId": "TRN-438794432"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0114",
+  "invoiceDate": "2026-02-16T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000113",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 61889.52,
+  "tax": 11140.11,
+  "payable": 73029.63
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00118",
+   "text": "MCB switch - grade H - M118",
+   "unit": "EA",
+   "qty": 44,
+   "rate": 1406.58,
+   "value": 61889.52,
+   "taxCode": "GST18",
+   "taxValue": 11140.11
+  }
+ ]
+}

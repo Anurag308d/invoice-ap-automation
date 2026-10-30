@@ -1,0 +1,33 @@
+{
+ "schemaVersion": "2.0",
+ "vendor": {
+  "legalName": "Belnov Infotech Industries",
+  "taxId": "TRN-299092169"
+ },
+ "header": {
+  "invoiceNo": "INV-2026-0117",
+  "invoiceDate": "2026-02-20T00:00:00+05:30",
+  "purchaseOrder": "PO-2026-000075",
+  "requesterId": null,
+  "currencyCode": "INR"
+ },
+ "totals": {
+  "taxable": 52316.94,
+  "tax": 9417.05,
+  "payable": 61733.99
+ },
+ "items": [
+  {
+   "seq": 1,
+   "orderLine": 1,
+   "itemCode": "SKU-00246",
+   "text": "Wireless access point - grade A - M246",
+   "unit": "EA",
+   "qty": 6,
+   "rate": 8719.49,
+   "value": 52316.94,
+   "taxCode": "GST18",
+   "taxValue": 9417.05
+  }
+ ]
+}

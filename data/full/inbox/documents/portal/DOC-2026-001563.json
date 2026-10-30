@@ -1,0 +1,31 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Enkav Stationers Enterprises",
+    "tax_registration_id": "TRN-352070107"
+  },
+  "invoice": {
+    "number": "ENK/26-27/386",
+    "date": "2026-08-24",
+    "po_number": "PO-2026-001135",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "248900.76",
+    "tax_total": "44354.12",
+    "grand_total": "293254.88"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00314",
+      "description": "Toner cartridge - grade E - M314",
+      "uom": "PACK",
+      "quantity": "114",
+      "unit_price": "2183.34",
+      "amount": "248900.76",
+      "tax_code": "GST18",
+      "tax_amount": "44354.12"
+    }
+  ]
+}

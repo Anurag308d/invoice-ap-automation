@@ -1,0 +1,23 @@
+Supplier: Zanvel Foods Enterprises
+TRN: TRN-613668784
+Plot 54, Industrial Area, Pune 411019
+
+TAX INVOICE
+
+Tax Invoice No: SI00067
+Bill Date: 22-Apr-2026
+P.O. #: PO 2026-000513
+Currency: INR
+Bill To: YF Components Manufacturing Pvt Ltd, Plant 2, Pune 411026
+
+#   Order Line   SKU         Description              UOM   Quantity   Price    Value      GST Rate   Tax Amt
+1   1            SKU-00381   Sugar - grade B - M381   KG    102.96     146.28   15060.99   GST5       753.05
+
+Taxable Value: 15060.99
+GST: 753.05
+Grand Total: 15814.04
+
+Payment terms as per purchase agreement.
+Thank you for your business.
+
+Page 1 of 1

@@ -1,0 +1,115 @@
+{
+  "schema": "buyer-portal/invoice@1",
+  "supplier": {
+    "name": "Urzan Engineering Spares Industries",
+    "tax_registration_id": "TRN-972851033"
+  },
+  "invoice": {
+    "number": "URZ/25-26/174",
+    "date": "2026-03-18",
+    "po_number": "PO-2026-000328",
+    "attention": null,
+    "currency": "INR",
+    "net_total": "1083062.93",
+    "tax_total": "194951.33",
+    "grand_total": "1278014.26"
+  },
+  "lines": [
+    {
+      "line_no": 1,
+      "po_line_no": "1",
+      "sku": "SKU-00156",
+      "description": "Gear coupling - grade E - M156",
+      "uom": "EA",
+      "quantity": "2",
+      "unit_price": "3975.96",
+      "amount": "7951.92",
+      "tax_code": "GST18",
+      "tax_amount": "1431.35"
+    },
+    {
+      "line_no": 2,
+      "po_line_no": "2",
+      "sku": "SKU-00183",
+      "description": "Pressure gauge - grade H - M183",
+      "uom": "EA",
+      "quantity": "23",
+      "unit_price": "8990.53",
+      "amount": "206782.19",
+      "tax_code": "GST18",
+      "tax_amount": "37220.79"
+    },
+    {
+      "line_no": 3,
+      "po_line_no": "3",
+      "sku": "SKU-00144",
+      "description": "Chain sprocket - grade C - M144",
+      "uom": "EA",
+      "quantity": "22",
+      "unit_price": "5522.61",
+      "amount": "121497.42",
+      "tax_code": "GST18",
+      "tax_amount": "21869.54"
+    },
+    {
+      "line_no": 4,
+      "po_line_no": "4",
+      "sku": "SKU-00185",
+      "description": "Ball bearing - grade I - M185",
+      "uom": "EA",
+      "quantity": "13",
+      "unit_price": "1501.15",
+      "amount": "19514.95",
+      "tax_code": "GST18",
+      "tax_amount": "3512.69"
+    },
+    {
+      "line_no": 5,
+      "po_line_no": "5",
+      "sku": "SKU-00159",
+      "description": "Pressure gauge - grade E - M159",
+      "uom": "EA",
+      "quantity": "31",
+      "unit_price": "2024.35",
+      "amount": "62754.85",
+      "tax_code": "GST18",
+      "tax_amount": "11295.87"
+    },
+    {
+      "line_no": 6,
+      "po_line_no": "6",
+      "sku": "SKU-00153",
+      "description": "Ball bearing - grade E - M153",
+      "uom": "EA",
+      "quantity": "14",
+      "unit_price": "4776.78",
+      "amount": "66874.92",
+      "tax_code": "GST18",
+      "tax_amount": "12037.49"
+    },
+    {
+      "line_no": 7,
+      "po_line_no": "7",
+      "sku": "SKU-00173",
+      "description": "Pump impeller - grade G - M173",
+      "uom": "EA",
+      "quantity": "2",
+      "unit_price": "1321.31",
+      "amount": "2642.62",
+      "tax_code": "GST18",
+      "tax_amount": "475.67"
+    },
+    {
+      "line_no": 8,
+      "po_line_no": "8",
+      "sku": "SKU-00137",
+      "description": "Ball bearing - grade C - M137",
+      "uom": "EA",
+      "quantity": "26",
+      "unit_price": "22886.31",
+      "amount": "595044.06",
+      "tax_code": "GST18",
+      "tax_amount": "107107.93"
+    }
+  ]
+}

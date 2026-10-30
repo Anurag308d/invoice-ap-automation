@@ -202,7 +202,8 @@ manifest handed the engine the true vendor twice: inside `invoice_id`, and in a 
 that was set for every channel, including scans. Both of REV's paths are taken.
 - **(a) Channel-realistic intake.** The manifest has `doc_id` and `intake_seq` but no `invoice_id`.
   `sender_vendor_id` is set only where the channel authenticates the sender (PORTAL account, EDI
-  partner). EMAIL carries only the From address, and 10-15% of those are forwarding mailboxes.
+  partner). EMAIL carries only the From address; the forwarding mailbox is drawn at 15% per e-mail
+  original, realised 10.3% of e-mail documents (11.1% of originals) at full scale (REV ruling Q1).
   SCAN carries only a mailroom batch ID.
 - VEN-01 reads the vendor from the printed tax registration number and is the only source of
   `captured_invoice.vendor_id`. ID-01 then builds the invoice ID from that vendor. An unresolved
@@ -255,8 +256,40 @@ read, and the guards make any read of them detectable.
 - **Duplicates.** An exact resubmission copies its original's content, defects included. The
   validator reports such a copy under the original's label, never as an unlabelled defect.
 - **Intake manifest.** It is written in Stage 2, because the oracle needs intake times and
-  `invoice.doc_id` must resolve. `file_sha256` and `file_bytes` stay empty until Stage 3 renders
-  the documents, and the validator reports this as pending, not as a violation.
+  `invoice.doc_id` must resolve. Since Stage 3, `file_sha256` and `file_bytes` describe the rendered
+  document (ADR-040), so no manifest field is pending any more.
+
+**ADR-040 Documents and extraction (Stage 3).**
+- **Four formats, one per channel.** PORTAL_JSON (portal schema v1 with string values, or v2 with
+  camelCase keys, numeric amounts and timestamps), EDI_FLAT (segments; the separator, terminator
+  and amount mode, decimal or two implied decimals, vary by trading partner), EMAIL_TEXT (an RFC 822
+  message, optionally forwarded by an internal mailbox) and OCR_TEXT (the text of a scanned
+  invoice: upper-case labels, two label pairs per line, fixed-width tables that break across
+  pages). Each vendor has one seeded template per channel: labels, date format, amount style, tax
+  code style, PO style and table layout (pipe, columns or item blocks).
+- **Recoverable variation only, except CAPTURE_REVIEW.** In the 10 degraded scans one required header
+  field (total, date or invoice number) is smudged or printed with OCR look-alike characters.
+  Invoice numbers are only smudged, because look-alike letters would be indistinguishable from a
+  legitimate alphanumeric number.
+- **Engine-side synonyms are independent.** The extractor has its own label and column synonym list
+  (`engine/labels.py`) and its own format rules (`engine/normalize.py`); it imports nothing from the
+  renderer. An unknown label is not read, so the field is NOT_FOUND and the document is routed.
+- **Confidence per method:** STRUCTURED 1.00, SEGMENT 0.99, LABEL_EXACT 0.98, PATTERN 0.97,
+  LABEL_SYNONYM 0.95, OCR_REPAIRED 0.60, a conflicting second read 0.50, a quantity with more decimals
+  than its unit allows 0.80, NOT_FOUND 0.00. CAP-01 takes the minimum over the required fields, every
+  optional field that is printed and the line-item block. The extraction evaluation reports accuracy
+  per confidence value, which is the calibration evidence.
+- **Layout rules.** Header fields are read above the item section and totals below it; e-mail
+  transport headers and forwarded-message header blocks are never invoice content; dates are
+  day-first; a value that fails its format is unreadable, never guessed. Nothing is recomputed from
+  lines or from the PO.
+- **Stage-3 engine scope.** Intake order, CAP-01, VEN-01, ID-01 and VEN-04, with EXT_LOW_CONFIDENCE,
+  VENDOR_NOT_FOUND and VENDOR_SENDER_MISMATCH routed by RTE-01 into `processed/ap_exception.csv`, and
+  `processed/decision_trace.jsonl`. Stage 4 adds the later rules; it will also move the VEN-04
+  exception behind the duplicate gates, as in the rule order. `captured_at` = `received_at` + 1 minute
+  (a synthetic processing time, never the wall clock).
+- **Not in this stage:** the printed tax code must be one of the five codes, so an unknown code is
+  unreadable rather than captured; TAX_CODE_INVALID therefore stays a unit-test-only type (ADR-036).
 
 ## Data, determinism and engineering
 

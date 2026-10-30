@@ -98,6 +98,10 @@ def enum(name: str, values, desc: str, **kw) -> Field:
 
 
 def lst(name: str, desc: str, values=(), **kw) -> Field:
+    """A list column is always present, but an empty value is a legitimate empty list (S2-R1-01), so
+    lists are never 'required' in the non-empty sense."""
+    kw.setdefault("required", False)
+    kw.setdefault("rule", "column always present; empty = empty list (none)")
     return Field(name, "list", desc, allowed=tuple(values), **kw)
 
 

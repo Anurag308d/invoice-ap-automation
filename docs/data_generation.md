@@ -55,7 +55,7 @@ is git-ignored until Stages 5 and 6 close (ruling Q3).
 | 7 | injections | 6 | One documented mutation per anomalous slot (section 6). |
 | 8 | duplicate documents | 6-7 | Copies or variants of earlier originals (section 7). |
 | 9 | intake timeline, `intake_manifest` | 6-8 | Global intake order assigns `intake_seq` and `DOC-` IDs. The source `invoice_id` is `INV-<true vendor>-2026-<intake_seq>`. The manifest carries no invoice ID, and carries a sender vendor only for PORTAL and EDI (ADR-037). |
-| 10 | inbox documents (*Stage 3*) | 9 | Rendered per channel and vendor template; the capture overlay is applied here. Until then `intake_manifest.file_sha256` and `file_bytes` are empty (pending, ADR-039). |
+| 10 | inbox documents (*Stage 3*) | 9 | Rendered per channel and vendor template (ADR-040); the degraded-scan overlay is applied here, and `intake_manifest.file_sha256` / `file_bytes` describe each file. |
 | 11 | `ground_truth`, `ground_truth_line` | 2-9 | Oracle labels; asserted equal to the intent. |
 
 ## 4. Exact volume and mix allocation
@@ -267,7 +267,8 @@ Parameters live in `invoice_ap/generator/params.py`. Every build writes the real
 - the top 20% of goods vendors place 77.7% of POs and 88.1% of spend;
 - median line net ranges from 27,946 (canteen) to 198,224 (IT hardware);
 - receipts arrive every month from January to October;
-- every scenario category is spread across all ten intake deciles.
+- the five larger scenario categories appear in all ten intake deciles; INVOICE_BEFORE_PO (20) in 9,
+  ARITHMETIC (20) and CAPTURE_REVIEW (10) in 7.
 
 | Aspect | Planned distribution |
 |---|---|
@@ -279,9 +280,9 @@ Parameters live in `invoice_ap/generator/params.py`. Every build writes the real
 | Tax codes | Mostly GST18; GST5 for canteen, safety and part of office supplies; GST0 and EXEMPT for a few SKUs and services. |
 | Lead times | Per category, e.g. canteen 1-3 days, IT hardware 7-28 days; receipts land on business days. |
 | Deliveries | Partial first delivery 40-70% of the ordered quantity; split deliveries 5-20 days apart; over-receipt 1-5% (inside tolerance) or 6-20% (outside). |
-| Dates | All completed events fall inside 2026-01-05 to the as-of date 2026-10-22. POs are on business days from 2026-01-05, with mild quarter-end peaks (March, June, September). Late POs are mostly open (A00) or received-not-invoiced (A10), so their events still fit before the as-of date. Invoice date = delivery date - 3 to + 7 days. Channel delay: PORTAL/EDI 0-1 days, EMAIL 0-3, SCAN 3-8. Intake closes 2026-10-21. Above 95% of business events fall on weekdays. Due dates, SLA dates and scheduled payment dates may fall after the as-of date. |
+| Dates | All completed events fall inside 2026-01-05 to the as-of date 2026-10-22. POs are on business days from 2026-01-05, with mild quarter-end peaks (March, June, September). Late POs are mostly open (A00) or received-not-invoiced (A10), so their events still fit before the as-of date. Invoice date = delivery date - 3 to + 7 days. Channel delay: PORTAL/EDI 0-1 days, EMAIL 0-3, SCAN 3-8. Intake closes 2026-10-21. Every business event falls on a business day (a documented simplification, S2-R1-02; SLA and payment arithmetic are on business days either way). Due dates, SLA dates and scheduled payment dates may fall after the as-of date. |
 | Payment terms | NET15 / NET30 / NET45 / NET60 = 10 / 45 / 30 / 15% of vendors. |
-| Channels | By tier: STRATEGIC mostly EDI or PORTAL, CORE mostly PORTAL or EMAIL, TAIL mostly EMAIL or SCAN. All four channels appear at both scales. Sender metadata is channel-realistic (ADR-037): PORTAL and EDI carry the authenticated vendor; 10-15% of EMAIL documents arrive from a forwarding mailbox rather than the vendor's remit address; SCAN carries only a mailroom batch ID. A sender-based shortcut would therefore misidentify vendors, which the evaluation would expose (35 forwarded e-mails at full scale). |
+| Channels | By tier: STRATEGIC mostly EDI or PORTAL, CORE mostly PORTAL or EMAIL, TAIL mostly EMAIL or SCAN. All four channels appear at both scales. Sender metadata is channel-realistic (ADR-037): PORTAL and EDI carry the authenticated vendor; a forwarding mailbox rather than the vendor's remit address is drawn at 15% per e-mail original (realised 10.3% of e-mail documents); SCAN carries only a mailroom batch ID. A sender-based shortcut would therefore misidentify vendors, which the evaluation would expose (35 forwarded e-mails at full scale). |
 | Amounts and approval bands | The product of quantity and price gives a long-tailed gross (median in the tens of thousands of INR, tail above 50 lakh), so all approval bands P1-P4 and N1-N3 occur. Each band and boundary is reported. |
 | Non-PO services | Monthly recurring series with a fixed amount on the same day each month (true negatives), plus one-off jobs. |
 

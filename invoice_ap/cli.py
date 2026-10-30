@@ -1,7 +1,8 @@
 """Command-line interface: python -m invoice_ap <command>.
 
-Stage 1 implements `plan`, `docs` and `policy`. The remaining commands are registered so the planned
-surface is visible; they exit with status 2 until their stage lands (see docs/architecture.md).
+Implemented: `plan`, `docs`, `policy` (Stage 1), `generate`, `validate --quick` (Stage 2), `run` and
+`evaluate` (Stage 3: intake and extraction; Stage 4 extends both). The remaining commands are registered
+so the planned surface is visible; they exit with status 2 until their stage lands.
 """
 from __future__ import annotations
 
@@ -12,8 +13,6 @@ from pathlib import Path
 from .common.paths import DEFAULT_POLICY, DOCS_DIR, SPEC_JSON
 
 PLANNED = {
-    "run": ("Run the AP engine on master data and the inbox only", 3),
-    "evaluate": ("Compare engine output with ground truth and source invoices", 4),
     "export": ("Write CSV / JSON / SQL seed exports", 5),
     "repro": ("Regenerate twice with the same seed and compare checksums", 5),
     "build-all": ("Build, run, evaluate, validate, export and report for both scales", 5),
@@ -119,6 +118,41 @@ def _cmd_validate(args: argparse.Namespace) -> int:
     return 0 if report["status"] == "pass" else 1
 
 
+def _root(args: argparse.Namespace) -> Path:
+    from .common.paths import DEFAULT_DATA_DIR
+    return Path(args.data) if args.data else DEFAULT_DATA_DIR / args.scale
+
+
+def _cmd_run(args: argparse.Namespace) -> int:
+    import time
+    from .common.policy import load_policy
+    from .engine import run_engine
+    root = _root(args)
+    started = time.perf_counter()
+    summary = run_engine(root / "master", root / "inbox", root / "processed", load_policy())
+    print(f"engine: {summary['documents']} documents -> {root / 'processed'} in {time.perf_counter() - started:.2f}s; "
+          f"capture review {summary['low_confidence']}, vendor not found {summary['vendor_not_found']}, "
+          f"exceptions {summary['exceptions']}")
+    return 0
+
+
+def _cmd_evaluate(args: argparse.Namespace) -> int:
+    import json
+    from .evaluation.extraction import evaluate, to_markdown
+    root = _root(args)
+    report = evaluate(root)
+    (root / "reports").mkdir(parents=True, exist_ok=True)
+    (root / "reports" / "extraction_evaluation.json").write_text(
+        json.dumps(report, indent=1, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    (root / "reports" / "extraction_evaluation.md").write_text(
+        to_markdown(report, f"Extraction evaluation ({root.name})"), encoding="utf-8")
+    bad = len(report["non_degraded_documents_with_mismatch"])
+    print(f"extraction: {report['documents_exact']}/{report['documents']} documents exact, field match "
+          f"{report['field_match_rate']}, silent errors {report['silent_errors']}, degraded scans flagged "
+          f"{report['degraded_scans_flagged']}/{report['degraded_scans']}, non-degraded mismatches {bad}")
+    return 0 if report["silent_errors"] == 0 and bad == 0 else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="python -m invoice_ap", description=__doc__.splitlines()[0])
     sub = parser.add_subparsers(dest="command", required=True)
@@ -141,6 +175,12 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--scale", default="starter")
     p.add_argument("--data", default=None, help="dataset folder (default data/<scale>)")
     p.set_defaults(func=_cmd_validate)
+    for name, func, help_text in (("run", _cmd_run, "Run the AP engine on master data and the inbox only"),
+                                  ("evaluate", _cmd_evaluate, "Compare engine output with the source invoices")):
+        p = sub.add_parser(name, help=help_text)
+        p.add_argument("--scale", default="starter")
+        p.add_argument("--data", default=None, help="dataset folder (default data/<scale>)")
+        p.set_defaults(func=func)
     for name, (help_text, stage) in PLANNED.items():
         p = sub.add_parser(name, help=f"{help_text} (planned: Stage {stage})")
         p.set_defaults(func=lambda a, n=name, s=stage: _planned(n, s))

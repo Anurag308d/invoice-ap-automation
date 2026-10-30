@@ -398,26 +398,26 @@ Expected labels and decisions per invoice, derived by the rule-based oracle from
 | `doc_id` | id | yes | `^DOC-2026-\d{6}$` | - | yes | source | FK -> `intake_manifest.doc_id` | Document |
 | `scenario_category` | enum | yes | `enums.SCENARIO_CATEGORIES` (9 values) | - | - | source | - | Primary scenario category (mix table) |
 | `scenario_code` | enum | yes | `enums.SCENARIO_CODES` (41 values) | - | - | source | - | Sub-scenario code (docs/data_generation.md Table G6) |
-| `edge_case_ids` | list | yes | EC-01, EC-02, EC-03, EC-04, EC-05, EC-06, EC-07, EC-08 | - | - | source | - | Assignment edge cases this invoice demonstrates |
+| `edge_case_ids` | list | no | EC-01, EC-02, EC-03, EC-04, EC-05, EC-06, EC-07, EC-08 | - | - | source | column always present; empty = empty list (none) | Assignment edge cases this invoice demonstrates |
 | `is_anomaly` | bool | yes | true, false | - | - | derived | = intended_issue_types is not empty (CLEAN never has issues) | True when any issue is intended |
 | `is_po_backed` | bool | yes | true, false | - | - | derived | = invoice.po_id is not empty | PO quoted |
 | `capture_overlay` | enum | yes | NONE, DEGRADED_SCAN | - | - | source | - | Document-quality overlay applied when rendering |
-| `intended_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | source | - | Labels the generator intended to inject |
-| `expected_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | its blocking subset must equal intended_issue_types (generation fails otherwise); it may add the non-blocking PAYMENT_DUE_DATE_PASSED warning | Labels the oracle derives under the policy |
+| `intended_issue_types` | list | no | `enums.EXCEPTION_TYPES` (24 values) | - | - | source | column always present; empty = empty list (none) | Labels the generator intended to inject |
+| `expected_issue_types` | list | no | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | its blocking subset must equal intended_issue_types (generation fails otherwise); it may add the non-blocking PAYMENT_DUE_DATE_PASSED warning | Labels the oracle derives under the policy |
 | `expected_primary_issue` | enum | yes | EXT_LOW_CONFIDENCE, DUPLICATE_EXACT, DUPLICATE_NUMBER_REUSE, DUPLICATE_SUSPECTED, VENDOR_NOT_FOUND, VENDOR_SENDER_MISMATCH, VENDOR_CLOSED, VENDOR_BLOCKED, PO_NOT_FOUND, VENDOR_PO_MISMATCH, INVOICE_DATE_IN_FUTURE, INVOICE_BEFORE_PO, HEADER_TOTAL_MISMATCH, LINE_AMOUNT_MISMATCH, TAX_CODE_INVALID, TAX_CODE_MISMATCH, TAX_AMOUNT_MISMATCH, PO_LINE_UNMATCHED, MISSING_RECEIPT, QTY_EXCEEDS_PO, QTY_EXCEEDS_RECEIVED, PRICE_VARIANCE, VENDOR_NOT_PAYABLE, PAYMENT_DUE_DATE_PASSED, NONE | - | - | decided | PRI-01 | Highest-precedence blocking issue |
 | `expected_blocked` | bool | yes | true, false | - | - | decided | - | At least one blocking issue |
 | `expected_match_status` | enum | yes | `enums.MATCH_STATUSES` (8 values) | - | - | decided | MS-01 | Expected invoice match status |
 | `expected_duplicate_of` | id | conditional | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | decided | FK -> `invoice.invoice_id`; required when scenario_category = DUPLICATE | Original of a duplicate document |
-| `expected_assigned_roles` | list | yes | BUSINESS_REQUESTER, PROCESS_OWNER, APPROVER, OPERATIONS_ANALYST, SYSTEM_ADMINISTRATOR | - | - | decided | RTE-01 | Roles that must receive the blocking exceptions |
-| `expected_queues` | list | yes | `enums.QUEUES` (11 values) | - | - | decided | - | Queues that must receive the exceptions |
+| `expected_assigned_roles` | list | no | BUSINESS_REQUESTER, PROCESS_OWNER, APPROVER, OPERATIONS_ANALYST, SYSTEM_ADMINISTRATOR | - | - | decided | RTE-01 | Roles that must receive the blocking exceptions |
+| `expected_queues` | list | no | `enums.QUEUES` (11 values) | - | - | decided | column always present; empty = empty list (none) | Queues that must receive the exceptions |
 | `expected_approval_band` | text | no | - | - | - | decided | APR-01 | Approval band (empty when not eligible) |
-| `expected_approval_levels` | list | yes | AUTO, REQ, L1, L2, L3 | - | - | decided | - | Approval levels in order (empty when not eligible) |
+| `expected_approval_levels` | list | no | AUTO, REQ, L1, L2, L3 | - | - | decided | column always present; empty = empty list (none) | Approval levels in order (empty when not eligible) |
 | `expected_final_status` | enum | yes | `enums.INVOICE_STATUSES` (8 values) | - | - | decided | - | Invoice status at the as-of date |
 | `expected_payment_ready` | bool | yes | true, false | - | - | decided | PAY-01 | A payment record must exist |
 | `expected_payment_status` | enum | conditional | SCHEDULED, PAID | - | - | decided | required when expected_payment_ready | Payment status at the as-of date |
 | `expected_due_date` | date | conditional | - | calendar date | - | decided | invoice_date + payment-term days (PAY-02); may be after as_of; required when expected_payment_ready | Due date |
 | `expected_scheduled_date` | date | conditional | - | calendar date | - | decided | PAY-02; required when expected_payment_ready | Scheduled payment date |
-| `oracle_rule_ids` | list | yes | `^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$` | - | - | decided | each ID is documented in docs/business_rules.md | Rule IDs that fired in the oracle |
+| `oracle_rule_ids` | list | no | `^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$` | - | - | decided | each ID is documented in docs/business_rules.md | Rule IDs that fired in the oracle |
 | `policy_version` | text | yes | - | - | - | decided | - | Policy version used |
 | `description` | text | yes | - | - | - | source | - | Human-readable description of what was injected |
 
@@ -433,7 +433,7 @@ Expected line-level match results for every invoice line.
 |---|---|---|---|---|---|---|---|---|
 | `invoice_line_id` | id | yes | `^INVL-INV-VND-\d{5}-2026-\d{6}-\d{2}$` | - | yes | source | FK -> `invoice_line.invoice_line_id` | Invoice line |
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | source | FK -> `invoice.invoice_id` | Invoice |
-| `expected_line_issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | - | Line-level labels |
+| `expected_line_issue_types` | list | no | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | column always present; empty = empty list (none) | Line-level labels |
 | `expected_price_status` | enum | yes | EXACT, WITHIN_TOLERANCE, OUT_OF_TOLERANCE, NOT_EVALUATED | - | - | decided | - | Price check result |
 | `expected_qty_status` | enum | yes | OK, EXCEEDS_RECEIVED, EXCEEDS_PO, NO_RECEIPT, NOT_EVALUATED | - | - | decided | - | Quantity check result |
 | `expected_tax_status` | enum | yes | OK, WITHIN_ROUNDING, CODE_MISMATCH, AMOUNT_MISMATCH, NOT_EVALUATED | - | - | decided | - | Tax check result |
@@ -461,7 +461,7 @@ Header fields as extracted from the document, plus engine-resolved references. P
 | `vendor_tax_id` | text | yes | - | - | - | captured | - | Tax registration number as printed |
 | `vendor_id` | id | no | `^VND-\d{5}$` | - | - | decided | FK -> `vendor.vendor_id`; VEN-01 is its only source (never the sender or an ID); empty = VENDOR_NOT_FOUND | Vendor resolved from the printed tax registration number |
 | `vendor_invoice_number` | text | conditional | - | - | - | captured | required when unless capture_status = LOW_CONFIDENCE (then empty when unreadable) | Invoice number as printed |
-| `normalized_invoice_number` | text | yes | - | - | - | derived | = uppercase, split on non-alphanumerics, strip leading zeros per numeric token, join | Number after DUP normalisation |
+| `normalized_invoice_number` | text | conditional | - | - | - | derived | = uppercase, split on non-alphanumerics, strip leading zeros per numeric token, join; required when vendor_invoice_number was read (empty when the printed number is unreadable) | Number after DUP normalisation |
 | `invoice_date` | date | conditional | - | calendar date | - | captured | a valid calendar date; DATE-01 requires &lt;= received date; required when unless capture_status = LOW_CONFIDENCE (then empty when unreadable) | Invoice date (normalised to ISO) |
 | `po_number` | text | no | - | - | - | captured | - | PO reference as printed |
 | `po_id` | id | no | `^PO-2026-\d{6}$` | - | - | decided | FK -> `purchase_order.po_id`; PO-01 | Resolved PO |
@@ -533,17 +533,17 @@ Engine decision summary per invoice (what evaluation compares with ground truth)
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | yes | source | FK -> `captured_invoice.invoice_id` | Invoice |
 | `status_as_of` | enum | yes | `enums.INVOICE_STATUSES` (8 values) | - | - | derived | = to_status of the last INVOICE ap_event | Status at the as-of date |
 | `match_status` | enum | yes | `enums.MATCH_STATUSES` (8 values) | - | - | decided | MS-01 | Invoice match status |
-| `issue_types` | list | yes | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | - | All issues raised (blocking and non-blocking) |
+| `issue_types` | list | no | `enums.EXCEPTION_TYPES` (24 values) | - | - | decided | column always present; empty = empty list (none) | All issues raised (blocking and non-blocking) |
 | `primary_issue` | enum | yes | EXT_LOW_CONFIDENCE, DUPLICATE_EXACT, DUPLICATE_NUMBER_REUSE, DUPLICATE_SUSPECTED, VENDOR_NOT_FOUND, VENDOR_SENDER_MISMATCH, VENDOR_CLOSED, VENDOR_BLOCKED, PO_NOT_FOUND, VENDOR_PO_MISMATCH, INVOICE_DATE_IN_FUTURE, INVOICE_BEFORE_PO, HEADER_TOTAL_MISMATCH, LINE_AMOUNT_MISMATCH, TAX_CODE_INVALID, TAX_CODE_MISMATCH, TAX_AMOUNT_MISMATCH, PO_LINE_UNMATCHED, MISSING_RECEIPT, QTY_EXCEEDS_PO, QTY_EXCEEDS_RECEIVED, PRICE_VARIANCE, VENDOR_NOT_PAYABLE, PAYMENT_DUE_DATE_PASSED, NONE | - | - | decided | PRI-01 | Highest-precedence blocking issue |
 | `blocked` | bool | yes | true, false | - | - | derived | = exists ap_exception with blocking and status_as_of = OPEN, or REJECTED | At least one open blocking exception |
 | `duplicate_of_invoice_id` | id | no | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | decided | FK -> `captured_invoice.invoice_id` | Original of a detected duplicate |
 | `approval_band` | text | no | - | - | - | decided | APR-01 | Approval band applied |
-| `approval_levels` | list | yes | AUTO, REQ, L1, L2, L3 | - | - | decided | - | Approval levels required, in order |
+| `approval_levels` | list | no | AUTO, REQ, L1, L2, L3 | - | - | decided | column always present; empty = empty list (none) | Approval levels required, in order |
 | `payment_ready` | bool | yes | true, false | - | - | derived | = exists payment for invoice_id; never true when blocked | A payment record exists |
 | `payment_id` | id | no | `^PAY-2026-\d{6}$` | - | - | source | FK -> `payment.payment_id` | Payment record |
 | `decided_at` | datetime | yes | - | IST timestamp | - | decided | >= captured_invoice.captured_at and &lt;= as_of_date | When validation and matching finished |
 | `policy_version` | text | yes | - | - | - | source | FK -> `policy_version.policy_version` | Policy version applied |
-| `rule_ids` | list | yes | `^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$` | - | - | decided | each ID is documented in docs/business_rules.md | Rule IDs that fired |
+| `rule_ids` | list | no | `^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$` | - | - | decided | each ID is documented in docs/business_rules.md | Rule IDs that fired |
 
 ### match_result
 
@@ -573,7 +573,7 @@ Line-level three-way match (PO line vs receipts vs invoice line) with the tolera
 | `po_tax_code` | enum | no | GST0, GST5, GST12, GST18, EXEMPT | - | - | source | FK -> `tax_code.tax_code` | PO line tax code |
 | `expected_tax_amount` | money | no | range [0.00, inf] | INR | - | derived | = round_half_up(line_net_amount x rate / 100, 2) | Recomputed tax for the printed net |
 | `line_match_status` | enum | yes | `enums.MATCH_STATUSES` (8 values) | - | - | decided | MS-01 | Line match status |
-| `rule_ids` | list | yes | `^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$` | - | - | decided | each ID is documented in docs/business_rules.md | Rule IDs evaluated |
+| `rule_ids` | list | no | `^(?:[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2}(?:\\|[A-Z]{2,4}(?:-[A-Z]{2,4})?-\d{2})*)?$` | - | - | decided | each ID is documented in docs/business_rules.md | Rule IDs evaluated |
 
 ### match_allocation
 
@@ -606,7 +606,7 @@ Detected duplicate -> original pairs.
 | `invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | yes | source | FK -> `captured_invoice.invoice_id` | Later document flagged as duplicate |
 | `original_invoice_id` | id | yes | `^INV-VND-\d{5}-2026-\d{6}$` | - | - | source | FK -> `captured_invoice.invoice_id`; received before invoice_id; same vendor | Earlier original |
 | `match_type` | enum | yes | EXACT, NUMBER_REUSE, CONTENT | - | - | decided | DUP-01..03 | Which duplicate rule matched |
-| `matched_keys` | list | yes | vendor_id, normalized_number, invoice_date, header_gross_amount, po_id | - | - | decided | the key set of the matching DUP rule | Fields that matched |
+| `matched_keys` | list | no | vendor_id, normalized_number, invoice_date, header_gross_amount, po_id | - | - | decided | the key set of the matching DUP rule | Fields that matched |
 
 ### ap_exception
 

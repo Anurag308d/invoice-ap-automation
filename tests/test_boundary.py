@@ -1,4 +1,4 @@
-"""No-leakage boundary, static half (runtime sandbox test arrives with the engine in Stage 3).
+"""No-leakage boundary, static half (the runtime half is tests/test_engine_sandbox.py).
 
 The engine may import only the standard library, invoice_ap.common, invoice_ap.spec and its own
 modules, and those shared packages may not import generator or evaluation code either, so no
@@ -78,7 +78,7 @@ def test_engine_source_never_names_evaluation_only_data():
 def test_engine_never_takes_the_vendor_from_the_sender_or_an_id():
     """S1-R1-01 static half: vendor identity comes only from the printed tax registration number
     (VEN-01). Sender fields may be read only by the VEN-04 cross-check module, and no engine code
-    slices an invoice_id. The ID-blind sandbox run (Stage 3) is the runtime half."""
+    slices an invoice_id. The ID-blind sandbox run (test_engine_sandbox.py) is the runtime half."""
     for path in _modules("engine"):
         text = path.read_text(encoding="utf-8")
         if path.name != SENDER_CHECK_MODULE:

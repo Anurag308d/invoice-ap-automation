@@ -20,7 +20,6 @@ from ..generator.catalogue import CATEGORY_WEIGHTS, SUBSCENARIOS
 from ..generator.tables import normalize_invoice_number
 from ..spec import BY_NAME, TABLES
 
-PENDING_STAGE3 = {("intake_manifest", "file_sha256"), ("intake_manifest", "file_bytes")}
 D = Decimal
 CODE = {s.code: s for s in SUBSCENARIOS}
 
@@ -99,7 +98,7 @@ def _domains(t, c):
             for r in rows:
                 v = r[f.name]
                 if v == "":
-                    if f.required and f.type != "list" and (name, f.name) not in PENDING_STAGE3:  # [] = none
+                    if f.required:                      # lists are never required: empty = none (S2-R1-01)
                         bad.append(f"{name}.{f.name} empty")
                     continue
                 items = v.split("|") if f.type == "list" else [v]
@@ -115,8 +114,7 @@ def _domains(t, c):
                     bad.append(f"{name}.{f.name}={v} < {f.min_value}")
                 if f.type in ("money", "qty", "pct", "decimal", "int") and f.max_value and D(v) > D(f.max_value):
                     bad.append(f"{name}.{f.name}={v} > {f.max_value}")
-    c.add("allowed values, formats, ranges, required", bad,
-          note="intake_manifest.file_sha256/file_bytes are filled when Stage 3 renders documents")
+    c.add("allowed values, formats, ranges, required", bad)
 
 
 def _ids(t, c):

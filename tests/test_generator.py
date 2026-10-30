@@ -27,16 +27,6 @@ from invoice_ap.spec import BY_NAME
 EXPECTED = {"full": (300, 1500, 2200, 1800, 2000), "starter": (30, 150, 220, 180, 200)}
 
 
-@pytest.fixture(scope="session")
-def builds(tmp_path_factory):
-    out = {}
-    for scale in ("starter", "full"):
-        root = tmp_path_factory.mktemp(scale)
-        result = generate(scale, out=root)
-        out[scale] = (result, load(root))
-    return out
-
-
 @pytest.fixture(params=["starter", "full"])
 def build(request, builds):
     return builds[request.param]
